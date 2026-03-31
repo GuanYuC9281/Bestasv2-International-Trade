@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理後台 - 貝達國際貿易有限公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center z-50">
+        <div class="text-center">
+            <div class="w-32 h-32 mx-auto bg-blue-600 rounded-full flex items-center justify-center mb-8 shadow-lg">
+                <div class="text-white text-4xl font-bold animate-spin">貝</div>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">貝達國際貿易有限公司</h1>
+            <p class="text-lg text-gray-600 mb-8">管理後台載入中...</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="hidden pt-20">
+        <div class="min-h-screen bg-gray-50 py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="mb-8">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">管理後台</h1>
+                    <p class="text-gray-600">歡迎回來！這裡是您的系統總覽</p>
+                </div>
+
+                <!-- Login Form -->
+                <div id="loginSection" class="max-w-md mx-auto">
+                    <div class="card">
+                        <div class="text-center mb-6">
+                            <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-user-shield text-white text-3xl"></i>
+                            </div>
+                            <h2 class="text-2xl font-bold text-gray-900">管理員登入</h2>
+                        </div>
+                        
+                        <form id="adminLoginForm" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">用戶名</label>
+                                <input type="text" name="username" required class="input-field" placeholder="請輸入用戶名">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">密碼</label>
+                                <input type="password" name="password" required class="input-field" placeholder="請輸入密碼">
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="remember" class="mr-2">
+                                    <span class="text-sm text-gray-700">記住我</span>
+                                </label>
+                                <a href="#" class="text-sm text-blue-600 hover:text-blue-800">忘記密碼？</a>
+                            </div>
+                            <button type="submit" class="w-full btn-primary">
+                                <i class="fas fa-sign-in-alt mr-2"></i>
+                                登入系統
+                            </button>
+                        </form>
+                        
+                        <div class="mt-6 text-center">
+                            <p class="text-sm text-gray-500">
+                                <i class="fas fa-info-circle mr-1"></i>
+                                預設帳號：admin / 密碼：admin123
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard (Hidden by default) -->
+                <div id="dashboardSection" class="hidden">
+                    <!-- Stats Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="bg-blue-500 text-white p-3 rounded-lg">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div class="text-green-500 text-sm font-medium">
+                                    <i class="fas fa-arrow-up mr-1"></i>12%
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">24</h3>
+                            <p class="text-gray-600 text-sm">總聯絡數</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="bg-green-500 text-white p-3 rounded-lg">
+                                    <i class="fas fa-newspaper text-xl"></i>
+                                </div>
+                                <div class="text-green-500 text-sm font-medium">
+                                    <i class="fas fa-arrow-up mr-1"></i>8%
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">12</h3>
+                            <p class="text-gray-600 text-sm">新聯絡</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="bg-purple-500 text-white p-3 rounded-lg">
+                                    <i class="fas fa-box text-xl"></i>
+                                </div>
+                                <div class="text-green-500 text-sm font-medium">
+                                    <i class="fas fa-arrow-up mr-1"></i>5%
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">48</h3>
+                            <p class="text-gray-600 text-sm">產品數量</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="bg-yellow-500 text-white p-3 rounded-lg">
+                                    <i class="fas fa-users text-xl"></i>
+                                </div>
+                                <div class="text-green-500 text-sm font-medium">
+                                    <i class="fas fa-arrow-up mr-1"></i>15%
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">156</h3>
+                            <p class="text-gray-600 text-sm">總用戶數</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions & Recent Activity -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                        <div class="card">
+                            <h2 class="text-xl font-bold text-gray-900 mb-6">快速操作</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <button class="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-all duration-200 hover:border-blue-300 text-left">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="bg-blue-500 text-white p-2 rounded-lg">
+                                            <i class="fas fa-plus"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-900">新增消息</h4>
+                                            <p class="text-sm text-gray-600">發布最新動態</p>
+                                        </div>
+                                    </div>
+                                </button>
+                                
+                                <button class="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-all duration-200 hover:border-blue-300 text-left">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="bg-green-500 text-white p-2 rounded-lg">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-900">聯絡表單</h4>
+                                            <p class="text-sm text-gray-600">查看諮詢</p>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h2 class="text-xl font-bold text-gray-900 mb-6">最近聯絡記錄</h2>
+                            <div class="space-y-4" id="recentContacts">
+                                <div class="text-center py-8 text-gray-500">
+                                    <i class="fas fa-inbox text-4xl mb-4"></i>
+                                    <p>暫無聯絡記錄</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Monitoring -->
+                    <div class="card">
+                        <h2 class="text-xl font-bold text-gray-900 mb-6">性能監控</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4">系統性能</h3>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-sm text-gray-600">頁面載入時間</span>
+                                        <span class="text-sm font-medium text-green-600">245ms</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-sm text-gray-600">資料庫操作時間</span>
+                                        <span class="text-sm font-medium text-green-600">32ms</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-sm text-gray-600">記憶體使用量</span>
+                                        <span class="text-sm font-medium text-yellow-600">512MB</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-sm text-gray-600">總操作數</span>
+                                        <span class="text-sm font-medium text-blue-600">1,247</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4">用戶活動</h3>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-sm text-gray-600">活躍用戶</span>
+                                        <span class="text-sm font-medium text-green-600">23</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-sm text-gray-600">今日訪問</span>
+                                        <span class="text-sm font-medium text-blue-600">156</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-sm text-gray-600">平均停留時間</span>
+                                        <span class="text-sm font-medium text-purple-600">3m 24s</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Management Sections -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="card hover:shadow-lg transition-all duration-300">
+                            <div class="text-center mb-4">
+                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto text-blue-600">
+                                    <i class="fas fa-newspaper text-2xl"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">最新消息管理</h3>
+                            <p class="text-gray-600 text-sm mb-4">管理網站新聞和公告</p>
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span>已發布</span>
+                                    <span class="text-green-600 font-medium">8</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span>草稿</span>
+                                    <span class="text-yellow-600 font-medium">3</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span>總計</span>
+                                    <span class="text-blue-600 font-medium">11</span>
+                                </div>
+                            </div>
+                            <button class="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                                <i class="fas fa-arrow-right mr-2"></i>
+                                進入管理
+                            </button>
+                        </div>
+
+                        <div class="card hover:shadow-lg transition-all duration-300">
+                            <div class="text-center mb-4">
+                                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto text-green-600">
+                                    <i class="fas fa-box text-2xl"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">產品管理</h3>
+                            <p class="text-gray-600 text-sm mb-4">管理產品資訊和分類</p>
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span>總產品</span>
+                                    <span class="text-blue-600 font-medium">48</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span>已發布</span>
+                                    <span class="text-green-600 font-medium">42</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span>缺貨中</span>
+                                    <span class="text-red-600 font-medium">6</span>
+                                </div>
+                            </div>
+                            <button class="w-full mt-4 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200">
+                                <i class="fas fa-arrow-right mr-2"></i>
+                                進入管理
+                            </button>
+                        </div>
+
+                        <div class="card hover:shadow-lg transition-all duration-300">
+                            <div class="text-center mb-4">
+                                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto text-purple-600">
+                                    <i class="fas fa-cog text-2xl"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">系統設定</h3>
+                            <p class="text-gray-600 text-sm mb-4">調整系統參數和配置</p>
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span>網站狀態</span>
+                                    <span class="text-green-600 font-medium">正常</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span>備份狀態</span>
+                                    <span class="text-blue-600 font-medium">已更新</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span>快取狀態</span>
+                                    <span class="text-green-600 font-medium">正常</span>
+                                </div>
+                            </div>
+                            <button class="w-full mt-4 bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors duration-200">
+                                <i class="fas fa-arrow-right mr-2"></i>
+                                進入設定
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed top-20 right-4 z-50 space-y-2"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
