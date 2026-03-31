@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常見問題 - 貝達國際貿易有限公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100 flex items-center justify-center z-50">
+        <div class="text-center">
+            <div class="w-32 h-32 mx-auto bg-teal-600 rounded-full flex items-center justify-center mb-8 shadow-lg">
+                <div class="text-white text-4xl font-bold animate-spin">貝</div>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">貝達國際貿易有限公司</h1>
+            <p class="text-lg text-gray-600 mb-8">載入中...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">貝</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900" id="companyName">貝達國際貿易有限公司</h1>
+                        <p class="text-xs text-gray-500">International Trade</p>
+                    </div>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index-fixed-final.html" class="nav-link" id="nav-home">首頁</a>
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-about">關於我們</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="about-optimized.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-about-companyIntro">公司簡介</a>
+                            <a href="about-optimized.html#mission-vision" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-missionVision">使命 / 願景</a>
+                            <a href="about-optimized.html#core-values" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-coreValues">核心價值</a>
+                            <a href="about-optimized.html#markets" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-markets">市場與地區</a>
+                            <a href="about-optimized.html#why-choose-us" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg" id="nav-about-whyChooseUs">為什麼選擇我們</a>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-products">產品與服務</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="services-optimized.html#procurement" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-services-procurement">採購代理</a>
+                            <a href="services-optimized.html#import-export" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-services-importExport">進出口服務</a>
+                            <a href="services-optimized.html#matching" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-services-matching">供應商媒合</a>
+                            <a href="services-optimized.html#quotation" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-services-quotation">報價與樣品安排</a>
+                            <a href="services-optimized.html#coordination" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg" id="nav-services-orderCoordination">訂單與交期協調</a>
+                        </div>
+                    </div>
+                    <a href="process-optimized.html" class="nav-link" id="nav-process">合作流程</a>
+                    <a href="news-optimized.html" class="nav-link" id="nav-news">最新消息</a>
+                    <a href="faq-optimized.html" class="nav-link-active" id="nav-faq">常見問題</a>
+                    <a href="contact-optimized.html" class="nav-link" id="nav-contact">聯絡我們</a>
+                    
+                    <!-- Language Selector -->
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-2" onclick="toggleLanguageDropdown()">
+                            <i class="fas fa-globe text-teal-600"></i>
+                            <span class="language-current" id="currentLangDisplay">中文</span>
+                            <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" id="languageDropdown">
+                            <button onclick="changeLanguage('zh-TW')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg flex items-center space-x-2">
+                                <span class="text-lg">🇹🇼</span>
+                                <span>繁體中文</span>
+                            </button>
+                            <button onclick="changeLanguage('en')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 flex items-center space-x-2">
+                                <span class="text-lg">🇺🇸</span>
+                                <span>English</span>
+                            </button>
+                            <button onclick="changeLanguage('ja')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 flex items-center space-x-2">
+                                <span class="text-lg">🇯🇵</span>
+                                <span>日本語</span>
+                            </button>
+                            <button onclick="changeLanguage('vi')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg flex items-center space-x-2">
+                                <span class="text-lg">🇻🇳</span>
+                                <span>Tiếng Việt</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">常見問題</h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">解答您關於國際貿易服務的疑問</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-6">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold text-gray-900">貝達國際貿易提供哪些服務？</span>
+                        <i class="fas fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 py-4 bg-gray-50 border-t border-gray-200">
+                        <p class="text-gray-600">我們提供全方位的國際貿易服務，包括採購代理、進出口服務、供應商媒合、報價與樣品安排、訂單與交期協調等。我們致力於為客戶提供一站式的貿易解決方案。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold text-gray-900">如何開始與貝達國際貿易合作？</span>
+                        <i class="fas fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 py-4 bg-gray-50 border-t border-gray-200">
+                        <p class="text-gray-600">您可以通過我們的聯絡頁面與我們取得聯繫，我們的專業團隊將與您進行初步溝通，了解您的需求後制定專屬的合作方案。整個流程簡單明瞭，通常1-3天內即可完成初步評估。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold text-gray-900">貝達國際貿易的服務範圍覆蓋哪些地區？</span>
+                        <i class="fas fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 py-4 bg-gray-50 border-t border-gray-200">
+                        <p class="text-gray-600">我們的業務網絡覆蓋全球50多個國家和地區，包括亞洲、歐洲、美洲等主要市場。我們在每個地區都有可靠的供應商網絡和物流合作夥伴，確保為您提供最優質的服務。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold text-gray-900">如何確保供應商的品質？</span>
+                        <i class="fas fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 py-4 bg-gray-50 border-t border-gray-200">
+                        <p class="text-gray-600">我們有嚴格的供應商審核流程，包括工廠考察、資質認證、品質控制體系評估等。我們只與經過嚴格篩選的合格供應商合作，並定期進行品質監督和評估，確保產品和服務的品質。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold text-gray-900">服務費用如何計算？</span>
+                        <i class="fas fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 py-4 bg-gray-50 border-t border-gray-200">
+                        <p class="text-gray-600">我們的服務費用根據具體服務內容、交易規模和複雜程度等因素而定。我們會在合作前提供詳細的報價單，明確列出所有費用項目，確保價格透明合理。我們致力於為客戶提供最具性價比的服務。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold text-gray-900">如何處理國際運輸和通關？</span>
+                        <i class="fas fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 py-4 bg-gray-50 border-t border-gray-200">
+                        <p class="text-gray-600">我們有專業的物流和通關團隊，負責處理所有國際運輸和通關手續。我們與多家國際物流公司合作，能夠提供海運、空運、陸運等多種運輸方式，並確保貨物順利通關，安全送達目的地。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold text-gray-900">如果出現質量問題如何處理？</span>
+                        <i class="fas fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 py-4 bg-gray-50 border-t border-gray-200">
+                        <p class="text-gray-600">我們提供完善的售後服務，如果出現質量問題，我們會第一時間協調供應商進行處理，包括退貨、換貨、賠償等。我們會根據合同條款和相關法律法規，確保客戶的權益得到保障。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold text-gray-900">是否提供小批量採購服務？</span>
+                        <i class="fas fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="hidden px-6 py-4 bg-gray-50 border-t border-gray-200">
+                        <p class="text-gray-600">是的，我們提供小批量採購服務。無論您需要大批量還是小批量採購，我們都能為您提供專業的服務。我們會根據您的具體需求，協調供應商提供最合適的解決方案。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">還有其他問題？</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">如果您有其他疑問，歡迎隨時與我們聯繫</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact-optimized.html" class="inline-flex items-center px-8 py-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-phone mr-3"></i>
+                        聯繫我們
+                    </a>
+                    <a href="mailto:info@bestas-intl.com" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg border border-teal-200">
+                        <i class="fas fa-envelope mr-3"></i>
+                        發送郵件
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-teal-600 to-cyan-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">準備開始合作？</h2>
+            <p class="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">聯繫我們，獲得專業的貿易諮詢</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact-optimized.html" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-phone mr-3"></i>
+                    立即諮詢
+                </a>
+                <a href="services-optimized.html" class="inline-flex items-center px-8 py-4 bg-teal-700 text-white font-semibold rounded-lg hover:bg-teal-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-list mr-3"></i>
+                    查看服務
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">貝</span>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold text-lg" id="companyName-footer">貝達國際貿易有限公司</h3>
+                            <p class="text-gray-400 text-sm">International Trade</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">專業的國際貿易服務提供商，致力於為客戶創造最大商業價值</p>
+                    <div class="space-y-2">
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-phone mr-2 text-teal-400"></i>
+                            +886-985-328-164
+                        </p>
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-envelope mr-2 text-teal-400"></i>
+                            info@bestas-intl.com
+                        </p>
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2 text-teal-400"></i>
+                            台北市文山區木柵路二段
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">快速連結</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index-fixed-final.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">首頁</a></li>
+                        <li><a href="about-optimized.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">關於我們</a></li>
+                        <li><a href="services-optimized.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">服務項目</a></li>
+                        <li><a href="contact-optimized.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">聯絡我們</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">主要服務</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services-optimized.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">採購代理</a></li>
+                        <li><a href="services-optimized.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">進出口服務</a></li>
+                        <li><a href="services-optimized.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">供應商媒合</a></li>
+                        <li><a href="services-optimized.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">報價服務</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">聯絡我們</h3>
+                    <p class="text-gray-400 mb-4">透過以下方式聯繫我們</p>
+                    <div class="flex space-x-4">
+                        <a href="https://line.me/ti/p/@bestas-intl" target="_blank" class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors duration-200">
+                            <i class="fab fa-line text-white"></i>
+                        </a>
+                        <a href="https://facebook.com/bestas-intl" target="_blank" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="https://instagram.com/bestas-intl" target="_blank" class="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="mailto:info@bestas-intl.com" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-200">
+                            <i class="fas fa-envelope text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2026 <span id="companyName-footer-2">貝達國際貿易有限公司</span>. All rights reserved.</p>
+                <p class="text-gray-400 text-sm mt-2">Designed with ❤️ for international trade excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Translation data
+        const translations = {
+            'zh-TW': {
+                companyName: '貝達國際貿易有限公司',
+                'companyName-footer': '貝達國際貿易有限公司',
+                'companyName-footer-2': '貝達國際貿易有限公司',
+                currentLangDisplay: '中文',
+                'nav-home': '首頁',
+                'nav-about': '關於我們',
+                'nav-products': '產品與服務',
+                'nav-process': '合作流程',
+                'nav-news': '最新消息',
+                'nav-faq': '常見問題',
+                'nav-contact': '聯絡我們',
+                'nav-about-companyIntro': '公司簡介',
+                'nav-about-missionVision': '使命 / 願景',
+                'nav-about-coreValues': '核心價值',
+                'nav-about-markets': '市場與地區',
+                'nav-about-whyChooseUs': '為什麼選擇我們',
+                'nav-services-procurement': '採購代理',
+                'nav-services-importExport': '進出口服務',
+                'nav-services-matching': '供應商媒合',
+                'nav-services-quotation': '報價與樣品安排',
+                'nav-services-orderCoordination': '訂單與交期協調'
+            },
+            'en': {
+                companyName: 'Bestas International Trade Co., Ltd.',
+                'companyName-footer': 'Bestas International Trade Co., Ltd.',
+                'companyName-footer-2': 'Bestas International Trade Co., Ltd.',
+                currentLangDisplay: 'English',
+                'nav-home': 'Home',
+                'nav-about': 'About Us',
+                'nav-products': 'Products & Services',
+                'nav-process': 'Process',
+                'nav-news': 'News',
+                'nav-faq': 'FAQ',
+                'nav-contact': 'Contact',
+                'nav-about-companyIntro': 'Company Introduction',
+                'nav-about-missionVision': 'Mission / Vision',
+                'nav-about-coreValues': 'Core Values',
+                'nav-about-markets': 'Markets & Regions',
+                'nav-about-whyChooseUs': 'Why Choose Us',
+                'nav-services-procurement': 'Procurement Agency',
+                'nav-services-importExport': 'Import-Export Services',
+                'nav-services-matching': 'Supplier Matching',
+                'nav-services-quotation': 'Quotation & Samples',
+                'nav-services-orderCoordination': 'Order & Delivery Coordination'
+            },
+            'ja': {
+                companyName: 'ベスタス国際貿易有限公司',
+                'companyName-footer': 'ベスタス国際貿易有限公司',
+                'companyName-footer-2': 'ベスタス国際貿易有限公司',
+                currentLangDisplay: '日本語',
+                'nav-home': 'ホーム',
+                'nav-about': '会社概要',
+                'nav-products': '製品・サービス',
+                'nav-process': 'プロセス',
+                'nav-news': 'ニュース',
+                'nav-faq': 'よくある質問',
+                'nav-contact': 'お問い合わせ',
+                'nav-about-companyIntro': '会社紹介',
+                'nav-about-missionVision': '使命・ビジョン',
+                'nav-about-coreValues': 'コアバリュー',
+                'nav-about-markets': '市場・地域',
+                'nav-about-whyChooseUs': 'なぜ私たちを選ぶのか',
+                'nav-services-procurement': '調達代理',
+                'nav-services-importExport': '輸出入サービス',
+                'nav-services-matching': 'サプライヤーマッチング',
+                'nav-services-quotation': '見積もりとサンプル',
+                'nav-services-orderCoordination': '注文と納期調整'
+            },
+            'vi': {
+                companyName: 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
+                'companyName-footer': 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
+                'companyName-footer-2': 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
+                currentLangDisplay: 'Tiếng Việt',
+                'nav-home': 'Trang chủ',
+                'nav-about': 'Về chúng tôi',
+                'nav-products': 'Sản phẩm & Dịch vụ',
+                'nav-process': 'Quy trình',
+                'nav-news': 'Tin tức',
+                'nav-faq': 'Câu hỏi thường gặp',
+                'nav-contact': 'Liên hệ',
+                'nav-about-companyIntro': 'Giới thiệu Công ty',
+                'nav-about-missionVision': 'Sứ mệnh & Tầm nhìn',
+                'nav-about-coreValues': 'Giá trị cốt lõi',
+                'nav-about-markets': 'Thị trường & Khu vực',
+                'nav-about-whyChooseUs': 'Tại sao chọn chúng tôi',
+                'nav-services-procurement': 'Đại lý Mua hàng',
+                'nav-services-importExport': 'Dịch vụ Xuất nhập khẩu',
+                'nav-services-matching': 'Kết nối Nhà cung cấp',
+                'nav-services-quotation': 'Báo giá & Mẫu',
+                'nav-services-orderCoordination': 'Điều phối Đơn hàng & Giao hàng'
+            }
+        };
+
+        let currentLanguage = 'zh-TW';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded successfully');
+            
+            // Load saved language
+            const savedLang = localStorage.getItem('preferredLanguage') || 'zh-TW';
+            changeLanguage(savedLang);
+            
+            // Hide loading screen
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loadingScreen');
+                if (loadingScreen) {
+                    loadingScreen.style.display = 'none';
+                    console.log('Loading screen hidden');
+                }
+            }, 500);
+        });
+
+        function changeLanguage(lang) {
+            console.log('Changing language to:', lang);
+            currentLanguage = lang;
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Update all translatable elements
+            const translationsForLang = translations[lang];
+            Object.keys(translationsForLang).forEach(function(key) {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = translationsForLang[key];
+                }
+            });
+            
+            // Hide language dropdown
+            const dropdown = document.getElementById('languageDropdown');
+            if (dropdown) {
+                dropdown.classList.add('invisible');
+                dropdown.classList.remove('opacity-100');
+            }
+        }
+
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('invisible');
+                dropdown.classList.toggle('opacity-100');
+            }
+        }
+
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('languageDropdown');
+            const button = event.target.closest('.group');
+            if (!button && dropdown && !dropdown.classList.contains('invisible')) {
+                dropdown.classList.add('invisible');
+                dropdown.classList.remove('opacity-100');
+            }
+        });
+    </script>
+</body>
+</html>

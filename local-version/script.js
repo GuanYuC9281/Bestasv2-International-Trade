@@ -17,16 +17,18 @@ const translations = {
             contact: '聯絡我們',
             admin: '管理後台'
         },
+        about: {
+            companyIntro: '公司簡介',
+            missionVision: '使命 / 願景',
+            coreValues: '核心價值',
+            markets: '市場與地區',
+            whyChooseUs: '為什麼選擇我們'
+        },
         hero: {
             title: '專業國際貿易解決方案',
             subtitle: '貝達國際貿易有限公司提供全方位的採購代理、進出口服務，為您連接全球商機',
             cta: '立即諮詢'
         },
-        services: {
-            title: '服務總覽',
-            procurement: '採購代理',
-            procurementDesc: '專業的全球採購服務，為您找到最優質的供應商',
-            importExport: '進出口服務',
             importExportDesc: '完整的進出口流程管理，確保貨物順利通關',
             matching: '供應商媒合',
             matchingDesc: '精準匹配供應商需求，提升合作效率',
@@ -77,9 +79,17 @@ const translations = {
             delete: '刪除',
             success: '成功',
             error: '錯誤',
-            loading: '載入中...'
+            loading: '載入中...',
+            currentLanguage: '中文',
+            languageSelector: '語言選擇',
+            languages: {
+                'zh-TW': '繁體中文',
+                'en': 'English',
+                'ja': '日本語',
+                'vi': 'Tiếng Việt'
+            }
         }
-    },
+    }
     'en': {
         companyName: 'Bestas International Trade Co., Ltd.',
         phone: '+886-985-328-164',
@@ -94,16 +104,25 @@ const translations = {
             contact: 'Contact',
             admin: 'Admin'
         },
+        about: {
+            companyIntro: 'Company Introduction',
+            missionVision: 'Mission / Vision',
+            coreValues: 'Core Values',
+            markets: 'Markets & Regions',
+            whyChooseUs: 'Why Choose Us'
+        },
+        services: {
+            procurement: 'Procurement Agency',
+            importExport: 'Import-Export Services',
+            matching: 'Supplier Matching',
+            quotation: 'Quotation & Samples',
+            orderCoordination: 'Order & Delivery Coordination'
+        },
         hero: {
             title: 'Professional International Trade Solutions',
             subtitle: 'Bestas International Trade provides comprehensive procurement and import-export services, connecting you to global business opportunities',
             cta: 'Contact Now'
         },
-        services: {
-            title: 'Services Overview',
-            procurement: 'Procurement Agency',
-            procurementDesc: 'Professional global procurement services to find the best suppliers for you',
-            importExport: 'Import-Export Services',
             importExportDesc: 'Complete import-export process management ensuring smooth customs clearance',
             matching: 'Supplier Matching',
             matchingDesc: 'Precise supplier matching to improve cooperation efficiency',
@@ -154,7 +173,15 @@ const translations = {
             delete: 'Delete',
             success: 'Success',
             error: 'Error',
-            loading: 'Loading...'
+            loading: 'Loading...',
+            currentLanguage: 'English',
+            languageSelector: 'Language Selection',
+            languages: {
+                'zh-TW': '繁體中文',
+                'en': 'English',
+                'ja': '日本語',
+                'vi': 'Tiếng Việt'
+            }
         }
     },
     'ja': {
@@ -170,6 +197,20 @@ const translations = {
             faq: 'よくある質問',
             contact: 'お問い合わせ',
             admin: '管理'
+        },
+        about: {
+            companyIntro: '会社紹介',
+            missionVision: '使命・ビジョン',
+            coreValues: 'コアバリュー',
+            markets: '市場・地域',
+            whyChooseUs: 'なぜ私たちを選ぶのか'
+        },
+        services: {
+            procurement: '調達代理',
+            importExport: '輸出入サービス',
+            matching: 'サプライヤーマッチング',
+            quotation: '見積もりとサンプル',
+            orderCoordination: '注文と納期調整'
         },
         hero: {
             title: 'プロフェッショナルな国際貿易ソリューション',
@@ -231,7 +272,15 @@ const translations = {
             delete: '削除',
             success: '成功',
             error: 'エラー',
-            loading: '読み込み中...'
+            loading: '読み込み中...',
+            currentLanguage: '日本語',
+            languageSelector: '言語選択',
+            languages: {
+                'zh-TW': '繁體中文',
+                'en': 'English',
+                'ja': '日本語',
+                'vi': 'Tiếng Việt'
+            }
         }
     },
     'vi': {
@@ -248,21 +297,24 @@ const translations = {
             contact: 'Liên hệ',
             admin: 'Quản trị'
         },
+        about: {
+            companyIntro: 'Giới thiệu Công ty',
+            missionVision: 'Sứ mệnh & Tầm nhìn',
+            coreValues: 'Giá trị cốt lõi',
+            markets: 'Thị trường & Khu vực',
+            whyChooseUs: 'Tại sao chọn chúng tôi'
+        },
+        services: {
+            procurement: 'Đại lý Mua hàng',
+            importExport: 'Dịch vụ Xuất nhập khẩu',
+            matching: 'Kết nối Nhà cung cấp',
+            quotation: 'Báo giá & Mẫu',
+            orderCoordination: 'Điều phối Đơn hàng & Giao hàng'
+        },
         hero: {
             title: 'Giải pháp Thương mại Quốc tế Chuyên nghiệp',
             subtitle: 'Bestas International Trade cung cấp dịch vụ mua hàng và xuất nhập khẩu toàn diện, kết nối bạn với cơ hội kinh doanh toàn cầu',
             cta: 'Liên hệ ngay'
-        },
-        services: {
-            title: 'Tổng quan Dịch vụ',
-            procurement: 'Đại lý Mua hàng',
-            procurementDesc: 'Dịch vụ mua hàng toàn cầu chuyên nghiệp để tìm nhà cung cấp tốt nhất cho bạn',
-            importExport: 'Dịch vụ Xuất nhập khẩu',
-            importExportDesc: 'Quản lý quy trình xuất nhập khẩu hoàn chỉnh đảm bảo thông quan suôn sẻ',
-            matching: 'Kết nối Nhà cung cấp',
-            matchingDesc: 'Kết nối chính xác nhà cung cấp để cải thiện hiệu quả hợp tác',
-            quotation: 'Báo giá & Mẫu',
-            quotationDesc: 'Báo giá nhanh và sắp xếp mẫu để tăng tốc độ ra quyết định'
         },
         about: {
             title: 'Về chúng tôi',
@@ -308,7 +360,15 @@ const translations = {
             delete: 'Xóa',
             success: 'Thành công',
             error: 'Lỗi',
-            loading: 'Đang tải...'
+            loading: 'Đang tải...',
+            currentLanguage: 'Tiếng Việt',
+            languageSelector: 'Lựa chọn ngôn ngữ',
+            languages: {
+                'zh-TW': '繁體中文',
+                'en': 'English',
+                'ja': '日本語',
+                'vi': 'Tiếng Việt'
+            }
         }
     }
 };
@@ -346,9 +406,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeElements() {
     elements.loadingScreen = document.getElementById('loadingScreen');
     elements.mainContent = document.getElementById('mainContent');
-    elements.navbar = document.getElementById('navbar');
-    elements.languageBtn = document.getElementById('languageBtn');
-    elements.langDropdown = document.getElementById('langDropdown');
     elements.mobileMenuBtn = document.getElementById('mobileMenuBtn');
     elements.mobileMenu = document.getElementById('mobileMenu');
     elements.contactForm = document.getElementById('contactForm');
@@ -357,12 +414,9 @@ function initializeElements() {
 
 function initializeEventListeners() {
     // Language selector
-    if (elements.languageBtn) {
-        elements.languageBtn.addEventListener('click', toggleLanguageDropdown);
-    }
-
-    // Language options
-    document.querySelectorAll('.lang-option').forEach(btn => {
+    const languageButtons = document.querySelectorAll('.language-btn');
+    
+    languageButtons.forEach(btn => {
         btn.addEventListener('click', function() {
             changeLanguage(this.dataset.lang);
         });
@@ -431,25 +485,37 @@ function changeLanguage(lang) {
     currentLanguage = lang;
     localStorage.setItem('preferredLanguage', lang);
     
-    // Update language button
-    const langNames = {
-        'zh-TW': '繁體中文',
-        'en': 'English',
-        'ja': '日本語',
-        'vi': 'Tiếng Việt'
-    };
-    
-    if (elements.languageBtn) {
-        document.getElementById('currentLang').textContent = langNames[lang];
-    }
+    // Update all language current displays
+    document.querySelectorAll('.language-current').forEach(element => {
+        const t = translations[lang];
+        if (t && t.common && t.common.currentLanguage) {
+            element.textContent = t.common.currentLanguage;
+        }
+    });
     
     // Update all translatable elements
     updateTranslations();
     
-    // Close dropdown
-    if (elements.langDropdown) {
-        elements.langDropdown.classList.add('hidden');
-    }
+    // Special handling for language names in dropdowns
+    const languageNames = document.querySelectorAll('.language-name');
+    languageNames.forEach(element => {
+        const key = element.dataset.i18n;
+        const value = getNestedValue(translations[lang], key);
+        if (value) {
+            element.textContent = value;
+        }
+    });
+    
+    // Close all dropdowns after a short delay to ensure translation updates first
+    setTimeout(() => {
+        document.querySelectorAll('.group').forEach(group => {
+            const dropdown = group.querySelector('[class*="absolute"]');
+            if (dropdown) {
+                dropdown.classList.add('invisible');
+                dropdown.classList.remove('opacity-100');
+            }
+        });
+    }, 50);
 }
 
 function updateTranslations() {
