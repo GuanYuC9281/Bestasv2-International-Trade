@@ -1,0 +1,162 @@
+{
+  "common": {
+    "companyName": "ベスタス国際貿易有限公司",
+    "phone": "+886-985-328-164",
+    "address": "台北市文山区木柵路二段",
+    "loading": "読み込み中...",
+    "readMore": "詳細を見る",
+    "contactUs": "お問い合わせ",
+    "learnMore": "詳細情報",
+    "backToTop": "トップに戻る",
+    "search": "検索",
+    "menu": "メニュー",
+    "close": "閉じる",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "edit": "編集",
+    "delete": "削除",
+    "add": "追加",
+    "submit": "送信",
+    "confirm": "確認",
+    "success": "成功",
+    "error": "エラー",
+    "warning": "警告",
+    "info": "情報"
+  },
+  "nav": {
+    "home": "ホーム",
+    "about": "会社概要",
+    "products": "製品・サービス",
+    "process": "プロセス",
+    "news": "ニュース",
+    "faq": "よくある質問",
+    "contact": "お問い合わせ",
+    "admin": "管理"
+  },
+  "home": {
+    "hero": {
+      "title": "プロフェッショナルな国際貿易ソリューション",
+      "subtitle": "ベスタス国際貿易は包括的な調達・輸出入サービスを提供し、グローバルなビジネスチャンスにつなげます",
+      "cta": "今すぐ相談"
+    },
+    "services": {
+      "title": "サービス概要",
+      "procurement": "調達代理",
+      "procurementDesc": "最高のサプライヤーを見つけるためのプロフェッショナルなグローバル調達サービス",
+      "importExport": "輸出入サービス",
+      "importExportDesc": "円滑な通関を確保する完全な輸出入プロセス管理",
+      "matching": "サプライヤーマッチング",
+      "matchingDesc": "協力効率を向上させる精密なサプライヤーマッチング",
+      "quotation": "見積もりとサンプル",
+      "quotationDesc": "意思決定を加速する迅速な見積もりとサンプル手配"
+    },
+    "advantages": {
+      "title": "私たちを選ぶ理由",
+      "experience": {
+        "title": "豊富な経験",
+        "desc": "多年の国際貿易経験、各国の市場ルールに精通"
+      },
+      "network": {
+        "title": "グローバルネットワーク",
+        "desc": "世界中のサプライヤーネットワーク、多様な選択肢を提供"
+      },
+      "quality": {
+        "title": "品質保証",
+        "desc": "厳格な品質管理、基準準拠を確保"
+      },
+      "service": {
+        "title": "きめ細やかなサービス",
+        "desc": "一对一の専用サービス、各段階を完全フォロー"
+      }
+    },
+    "categories": {
+      "title": "業種分類",
+      "hardware": "工業金物",
+      "machinery": "機械部品",
+      "construction": "建材・エンジニアリング",
+      "custom": "カスタム調達"
+    },
+    "process": {
+      "title": "協力プロセス",
+      "steps": [
+        "要件確認",
+        "仕様確認",
+        "サプライヤー開発",
+        "見積もりとサンプル",
+        "注文配置",
+        "出荷追跡"
+      ]
+    }
+  },
+  "about": {
+    "title": "会社概要",
+    "intro": "設立以来、ベスタス国際貿易はプロフェッショナルな国際貿易サービスの提供に尽力してきました",
+    "mission": "使命",
+    "missionDesc": "顧客にとって最も信頼できる国際貿易パートナーとなり、最大のビジネス価値を創造する",
+    "vision": "ビジョン",
+    "visionDesc": "グローバルリーディングの貿易サービスプラットフォームを構築し、国際ビジネス交流を促進する",
+    "values": "中核価値",
+    "valuesDesc": "プロフェッショナリズム、誠実さ、革新、サービス",
+    "markets": "市場と地域",
+    "marketsDesc": "サービス範囲はアジア、ヨーロッパ、アメリカなど多くの地域をカバー"
+  },
+  "products": {
+    "title": "製品・サービス",
+    "procurement": {
+      "title": "調達代理",
+      "desc": "最高のサプライヤーと製品を見つけるためのプロフェッショナルなグローバル調達サービス"
+    },
+    "importExport": {
+      "title": "輸出入サービス",
+      "desc": "通関、物流、保険などを含む完全な輸出入プロセス管理"
+    },
+    "matching": {
+      "title": "サプライヤーマッチング",
+      "desc": "顧客のニーズに基づき、最適なサプライヤーを精密にマッチングし、協力効率を向上"
+    },
+    "quotation": {
+      "title": "見積もりとサンプル手配",
+      "desc": "迅速で正確な見積もりサービス、サンプル配送と確認を支援"
+    },
+    "order": {
+      "title": "注文と納期調整",
+      "desc": "注文生産進捗を完全にフォローし、時間通り納品を確保"
+    },
+    "tracking": {
+      "title": "出荷追跡",
+      "desc": "貨物輸送状況をリアルタイムで追跡し、安全な配送を確保"
+    }
+  },
+  "admin": {
+    "dashboard": "ダッシュボード",
+    "newsManagement": "ニュース管理",
+    "contactManagement": "お問い合わせ管理",
+    "productManagement": "製品管理",
+    "serviceManagement": "サービス管理",
+    "systemSettings": "システム設定",
+    "performanceMonitoring": "パフォーマンス監視",
+    "overview": "概要",
+    "statistics": "統計",
+    "recentActivity": "最近の活動",
+    "quickActions": "クイックアクション"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "form": {
+      "name": "氏名",
+      "email": "メール",
+      "phone": "電話",
+      "company": "会社名",
+      "subject": "件名",
+      "message": "メッセージ",
+      "submit": "フォーム送信"
+    },
+    "info": {
+      "title": "連絡先情報",
+      "phone": "電話",
+      "email": "メール",
+      "address": "住所",
+      "hours": "営業時間"
+    }
+  }
+}

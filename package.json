@@ -1,0 +1,19 @@
+{
+  "name": "bestasv2-international-trade",
+  "version": "1.0.0",
+  "description": "貝達國際貿易有限公司官方網站",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start"
+  },
+  "keywords": ["international-trade", "procurement", "import-export"],
+  "author": "貝達國際貿易有限公司",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

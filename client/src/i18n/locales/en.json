@@ -1,0 +1,162 @@
+{
+  "common": {
+    "companyName": "Bestas International Trade Co., Ltd.",
+    "phone": "+886-985-328-164",
+    "address": "Section 2, Muzha Road, Wenshan District, Taipei City",
+    "loading": "Loading...",
+    "readMore": "Read More",
+    "contactUs": "Contact Us",
+    "learnMore": "Learn More",
+    "backToTop": "Back to Top",
+    "search": "Search",
+    "menu": "Menu",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Information"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products & Services",
+    "process": "Process",
+    "news": "News",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "home": {
+    "hero": {
+      "title": "Professional International Trade Solutions",
+      "subtitle": "Bestas International Trade provides comprehensive procurement and import-export services, connecting you to global business opportunities",
+      "cta": "Contact Now"
+    },
+    "services": {
+      "title": "Services Overview",
+      "procurement": "Procurement Agency",
+      "procurementDesc": "Professional global procurement services to find the best suppliers for you",
+      "importExport": "Import-Export Services",
+      "importExportDesc": "Complete import-export process management ensuring smooth customs clearance",
+      "matching": "Supplier Matching",
+      "matchingDesc": "Precise supplier matching to improve cooperation efficiency",
+      "quotation": "Quotation & Samples",
+      "quotationDesc": "Fast quotation and sample arrangement to accelerate decision-making"
+    },
+    "advantages": {
+      "title": "Why Choose Us",
+      "experience": {
+        "title": "Rich Experience",
+        "desc": "Years of international trade experience, familiar with market rules in various countries"
+      },
+      "network": {
+        "title": "Global Network",
+        "desc": "Global supplier network providing diversified choices"
+      },
+      "quality": {
+        "title": "Quality Assurance",
+        "desc": "Strict quality control ensuring products meet standards"
+      },
+      "service": {
+        "title": "Attentive Service",
+        "desc": "One-on-one dedicated service, following up every step"
+      }
+    },
+    "categories": {
+      "title": "Industry Categories",
+      "hardware": "Industrial Hardware",
+      "machinery": "Machinery Parts",
+      "construction": "Construction Materials",
+      "custom": "Custom Procurement"
+    },
+    "process": {
+      "title": "Cooperation Process",
+      "steps": [
+        "Requirement Confirmation",
+        "Specification Confirmation",
+        "Supplier Development",
+        "Quotation & Samples",
+        "Order Placement",
+        "Shipment Tracking"
+      ]
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "intro": "Since its establishment, Bestas International Trade has been committed to providing professional international trade services",
+    "mission": "Mission",
+    "missionDesc": "To become the most trusted international trade partner for clients, creating maximum business value",
+    "vision": "Vision",
+    "visionDesc": "To build a globally leading trade service platform, promoting international business exchange",
+    "values": "Core Values",
+    "valuesDesc": "Professionalism, Integrity, Innovation, Service",
+    "markets": "Markets & Regions",
+    "marketsDesc": "Service coverage includes Asia, Europe, Americas and other regions"
+  },
+  "products": {
+    "title": "Products & Services",
+    "procurement": {
+      "title": "Procurement Agency",
+      "desc": "Professional global procurement services to help clients find the best suppliers and products"
+    },
+    "importExport": {
+      "title": "Import-Export Services",
+      "desc": "Complete import-export process management including customs clearance, logistics, insurance and other one-stop services"
+    },
+    "matching": {
+      "title": "Supplier Matching",
+      "desc": "Precise matching of the most suitable suppliers according to client needs, improving cooperation efficiency"
+    },
+    "quotation": {
+      "title": "Quotation & Sample Arrangement",
+      "desc": "Fast and accurate quotation services, and assistance with sample delivery and confirmation"
+    },
+    "order": {
+      "title": "Order & Delivery Coordination",
+      "desc": "Full follow-up of order production progress to ensure on-time delivery"
+    },
+    "tracking": {
+      "title": "Shipment Tracking",
+      "desc": "Real-time tracking of cargo transportation status to ensure safe delivery"
+    }
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "newsManagement": "News Management",
+    "contactManagement": "Contact Management",
+    "productManagement": "Product Management",
+    "serviceManagement": "Service Management",
+    "systemSettings": "System Settings",
+    "performanceMonitoring": "Performance Monitoring",
+    "overview": "Overview",
+    "statistics": "Statistics",
+    "recentActivity": "Recent Activity",
+    "quickActions": "Quick Actions"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company Name",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Submit Form"
+    },
+    "info": {
+      "title": "Contact Information",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "hours": "Business Hours"
+    }
+  }
+}
