@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>後台管理 - 貝達國際貿易有限公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100 flex items-center justify-center z-50">
+        <div class="text-center">
+            <div class="w-32 h-32 mx-auto bg-teal-600 rounded-full flex items-center justify-center mb-8 shadow-lg">
+                <div class="text-white text-4xl font-bold animate-spin">貝</div>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">貝達國際貿易後台</h1>
+            <p class="text-lg text-gray-600 mb-8">載入中...</p>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="hidden flex min-h-screen">
+        <!-- Sidebar -->
+        <div id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 lg:flex lg:flex-col lg:h-screen">
+            <div class="flex items-center justify-center h-16 bg-gradient-to-r from-teal-600 to-cyan-600 flex-shrink-0">
+                <span class="text-white font-bold text-xl">貝達後台</span>
+            </div>
+            <nav class="flex-1 mt-8 overflow-y-auto h-[calc(100vh-4rem)] lg:h-auto pb-4">
+                <a href="#dashboard" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-tachometer-alt w-5 mr-3"></i>
+                    儀表板
+                </a>
+                <a href="#analytics" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-chart-line w-5 mr-3"></i>
+                    性能監控
+                </a>
+                <a href="#users" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-users w-5 mr-3"></i>
+                    用戶管理
+                </a>
+                <a href="#products" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-box w-5 mr-3"></i>
+                    產品管理
+                </a>
+                <a href="#orders" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-shopping-cart w-5 mr-3"></i>
+                    訂單管理
+                </a>
+                <a href="#content" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-file-alt w-5 mr-3"></i>
+                    內容管理
+                </a>
+                <a href="#settings" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-cog w-5 mr-3"></i>
+                    系統設定
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col min-w-0 lg:ml-0">
+            <!-- Header -->
+            <header class="bg-white shadow-sm flex-shrink-0 fixed top-0 left-0 right-0 z-40 lg:ml-64">
+                <div class="px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between h-16">
+                        <button id="menuToggle" class="lg:hidden text-gray-600 hover:text-gray-900 focus:outline-none p-2">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-sm text-gray-600">管理員：Admin</span>
+                            <button id="logoutBtn" class="text-sm text-red-600 hover:text-red-700">
+                                <i class="fas fa-sign-out-alt mr-1"></i>
+                                登出
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 overflow-auto pt-16 lg:pt-0">
+                <!-- Dashboard Page -->
+                <div id="dashboardPage" class="page p-6">
+                    <h1 class="text-2xl font-bold text-gray-800 mb-6">儀表板</h1>
+                    
+                    <!-- Stats Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-600">總訪客數</p>
+                                    <p class="text-2xl font-bold text-gray-800">12,543</p>
+                                </div>
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-users text-blue-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-600">今日訪客</p>
+                                    <p class="text-2xl font-bold text-gray-800">1,234</p>
+                                </div>
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user-plus text-green-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-600">轉換率</p>
+                                    <p class="text-2xl font-bold text-gray-800">3.2%</p>
+                                </div>
+                                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-chart-line text-yellow-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-600">收入</p>
+                                    <p class="text-2xl font-bold text-gray-800">NT$45K</p>
+                                </div>
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-dollar-sign text-purple-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">訪客趨勢</h3>
+                            <canvas id="visitorChart"></canvas>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">頁面瀏覽量</h3>
+                            <canvas id="pageViewChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Page -->
+                <div id="analyticsPage" class="page hidden p-6">
+                    <h1 class="text-2xl font-bold text-gray-800 mb-6">性能監控</h1>
+                    
+                    <!-- Performance Metrics -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">系統狀態</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>CPU 使用率</span>
+                                        <span id="cpuValue">45%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div id="cpuBar" class="bg-green-500 h-2 rounded-full transition-all duration-500" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>記憶體使用</span>
+                                        <span id="memoryValue">67%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div id="memoryBar" class="bg-yellow-500 h-2 rounded-full transition-all duration-500" style="width: 67%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>磁碟空間</span>
+                                        <span id="diskValue">23%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div id="diskBar" class="bg-blue-500 h-2 rounded-full transition-all duration-500" style="width: 23%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>網路流量</span>
+                                        <span id="networkValue">12%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div id="networkBar" class="bg-purple-500 h-2 rounded-full transition-all duration-500" style="width: 12%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">網站性能</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">頁面載入時間</span>
+                                    <span id="loadTime" class="text-sm font-semibold">1.2s</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">響應時間</span>
+                                    <span id="responseTime" class="text-sm font-semibold">234ms</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">可用性</span>
+                                    <span id="availability" class="text-sm font-semibold text-green-600">99.9%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">同時在線</span>
+                                    <span id="onlineUsers" class="text-sm font-semibold">1,234</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">今日請求</span>
+                                    <span id="todayRequests" class="text-sm font-semibold">45,678</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">錯誤日誌</h3>
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-600">404 錯誤</span>
+                                    <span id="error404" class="text-red-600">12</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-600">500 錯誤</span>
+                                    <span id="error500" class="text-orange-600">3</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-600">403 錯誤</span>
+                                    <span id="error403" class="text-yellow-600">7</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-600">超時錯誤</span>
+                                    <span id="timeout" class="text-purple-600">2</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-600">總錯誤率</span>
+                                    <span id="errorRate" class="text-red-600 font-semibold">0.05%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Real-time Charts -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">即時流量監控</h3>
+                            <canvas id="realtimeTraffic"></canvas>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">CPU & 記憶體使用率</h3>
+                            <canvas id="cpuMemoryChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Additional Monitoring -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">響應時間趨勢</h3>
+                            <canvas id="responseTimeChart"></canvas>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">錯誤率監控</h3>
+                            <canvas id="errorRateChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Server Status -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">伺服器狀態</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="text-center p-4 bg-green-50 rounded-lg">
+                                <div class="w-16 h-16 mx-auto bg-green-500 rounded-full flex items-center justify-center mb-2">
+                                    <i class="fas fa-server text-white text-xl"></i>
+                                </div>
+                                <h4 class="font-semibold text-green-800">主伺服器</h4>
+                                <p class="text-sm text-green-600">正常運行</p>
+                                <p class="text-xs text-gray-500">運行時間: 15天</p>
+                            </div>
+                            <div class="text-center p-4 bg-green-50 rounded-lg">
+                                <div class="w-16 h-16 mx-auto bg-green-500 rounded-full flex items-center justify-center mb-2">
+                                    <i class="fas fa-database text-white text-xl"></i>
+                                </div>
+                                <h4 class="font-semibold text-green-800">資料庫</h4>
+                                <p class="text-sm text-green-600">正常運行</p>
+                                <p class="text-xs text-gray-500">連接數: 45</p>
+                            </div>
+                            <div class="text-center p-4 bg-yellow-50 rounded-lg">
+                                <div class="w-16 h-16 mx-auto bg-yellow-500 rounded-full flex items-center justify-center mb-2">
+                                    <i class="fas fa-hdd text-white text-xl"></i>
+                                </div>
+                                <h4 class="font-semibold text-yellow-800">備份伺服器</h4>
+                                <p class="text-sm text-yellow-600">同步中</p>
+                                <p class="text-xs text-gray-500">進度: 67%</p>
+                            </div>
+                            <div class="text-center p-4 bg-green-50 rounded-lg">
+                                <div class="w-16 h-16 mx-auto bg-green-500 rounded-full flex items-center justify-center mb-2">
+                                    <i class="fas fa-network-wired text-white text-xl"></i>
+                                </div>
+                                <h4 class="font-semibold text-green-800">網路連接</h4>
+                                <p class="text-sm text-green-600">正常運行</p>
+                                <p class="text-xs text-gray-500">延遲: 12ms</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users Management Page -->
+                <div id="usersPage" class="page hidden p-6">
+                    <h1 class="text-2xl font-bold text-gray-800 mb-6">用戶管理</h1>
+                    
+                    <!-- Users Table -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-gray-800">用戶列表</h3>
+                                <button class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+                                    <i class="fas fa-plus mr-2"></i>新增用戶
+                                </button>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">用戶名稱</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">電子郵件</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">角色</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">狀態</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Admin</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">admin@bestas-intl.com</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">管理員</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">活躍</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <button class="text-teal-600 hover:text-teal-900 mr-3">編輯</button>
+                                            <button class="text-red-600 hover:text-red-900">刪除</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Management Page -->
+                <div id="productsPage" class="page hidden p-6">
+                    <h1 class="text-2xl font-bold text-gray-800 mb-6">產品管理</h1>
+                    
+                    <!-- Products Table -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-gray-800">產品列表</h3>
+                                <button class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+                                    <i class="fas fa-plus mr-2"></i>新增產品
+                                </button>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">產品名稱</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">類別</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">價格</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">庫存</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">狀態</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">電子元件 A</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">電子元件</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$1,200</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">500</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">上架</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <button class="text-teal-600 hover:text-teal-900 mr-3">編輯</button>
+                                            <button class="text-red-600 hover:text-red-900">刪除</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orders Management Page -->
+                <div id="ordersPage" class="page hidden p-6">
+                    <h1 class="text-2xl font-bold text-gray-800 mb-6">訂單管理</h1>
+                    
+                    <!-- Orders Table -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-gray-800">訂單列表</h3>
+                                <div class="flex space-x-2">
+                                    <select class="border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                                        <option>全部狀態</option>
+                                        <option>待處理</option>
+                                        <option>處理中</option>
+                                        <option>已完成</option>
+                                        <option>已取消</option>
+                                    </select>
+                                    <button class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+                                        <i class="fas fa-download mr-2"></i>匯出
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">訂單編號</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">客戶</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">金額</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">狀態</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">日期</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#ORD001</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">張先生</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$12,000</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">處理中</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2024-01-15</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <button class="text-teal-600 hover:text-teal-900 mr-3">查看</button>
+                                            <button class="text-red-600 hover:text-red-900">取消</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Management Page -->
+                <div id="contentPage" class="page hidden p-6">
+                    <h1 class="text-2xl font-bold text-gray-800 mb-6">內容管理</h1>
+                    
+                    <!-- Content Editor -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">首頁內容</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">主標題</label>
+                                    <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2" value="貝達國際貿易有限公司">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">副標題</label>
+                                    <textarea class="w-full border border-gray-300 rounded-lg px-3 py-2 h-24">專業的國際貿易服務，為您的商業成功提供強力支援</textarea>
+                                </div>
+                                <button class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+                                    <i class="fas fa-save mr-2"></i>儲存變更
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">關於我們</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">公司簡介</label>
+                                    <textarea class="w-full border border-gray-300 rounded-lg px-3 py-2 h-32">貝達國際貿易有限公司成立於2020年，致力於提供專業的國際貿易服務...</textarea>
+                                </div>
+                                <button class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+                                    <i class="fas fa-save mr-2"></i>儲存變更
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Page -->
+                <div id="settingsPage" class="page hidden p-6">
+                    <h1 class="text-2xl font-bold text-gray-800 mb-6">系統設定</h1>
+                    
+                    <!-- Settings Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- 帳號管理 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6 text-center">
+                                <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-user-cog text-blue-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">帳號管理</h3>
+                                <p class="text-sm text-gray-600 mb-4">管理系統用戶帳號、密碼重置、帳號狀態設定</p>
+                                <div class="text-blue-600 text-sm font-medium">
+                                    <i class="fas fa-arrow-right mr-1"></i>進入管理
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 角色權限 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6 text-center">
+                                <div class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-user-shield text-green-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">角色權限</h3>
+                                <p class="text-sm text-gray-600 mb-4">設定用戶角色、分配權限、管理訪問控制</p>
+                                <div class="text-green-600 text-sm font-medium">
+                                    <i class="fas fa-arrow-right mr-1"></i>進入管理
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 系統日誌 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6 text-center">
+                                <div class="w-16 h-16 mx-auto bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-history text-orange-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">系統日誌</h3>
+                                <p class="text-sm text-gray-600 mb-4">查看系統操作記錄、錯誤日誌、審計追蹤</p>
+                                <div class="text-orange-600 text-sm font-medium">
+                                    <i class="fas fa-arrow-right mr-1"></i>進入管理
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 系統資訊 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6 text-center">
+                                <div class="w-16 h-16 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-info-circle text-purple-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">系統資訊</h3>
+                                <p class="text-sm text-gray-600 mb-4">查看系統版本、硬體資源、運行狀態</p>
+                                <div class="text-purple-600 text-sm font-medium">
+                                    <i class="fas fa-arrow-right mr-1"></i>進入管理
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 資料庫管理 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6 text-center">
+                                <div class="w-16 h-16 mx-auto bg-red-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-database text-red-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">資料庫管理</h3>
+                                <p class="text-sm text-gray-600 mb-4">資料庫備份、還原、優化、維護操作</p>
+                                <div class="text-red-600 text-sm font-medium">
+                                    <i class="fas fa-arrow-right mr-1"></i>進入管理
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 系統設定 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6 text-center">
+                                <div class="w-16 h-16 mx-auto bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-cogs text-indigo-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">系統設定</h3>
+                                <p class="text-sm text-gray-600 mb-4">基本參數配置、系統選項、環境變數</p>
+                                <div class="text-indigo-600 text-sm font-medium">
+                                    <i class="fas fa-arrow-right mr-1"></i>進入管理
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 通知設定 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6 text-center">
+                                <div class="w-16 h-16 mx-auto bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-bell text-yellow-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">通知設定</h3>
+                                <p class="text-sm text-gray-600 mb-4">郵件通知、系統警報、消息推送配置</p>
+                                <div class="text-yellow-600 text-sm font-medium">
+                                    <i class="fas fa-arrow-right mr-1"></i>進入管理
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 安全設定 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6 text-center">
+                                <div class="w-16 h-16 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-shield-alt text-gray-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">安全設定</h3>
+                                <p class="text-sm text-gray-600 mb-4">防火牆規則、加密設定、安全策略配置</p>
+                                <div class="text-gray-600 text-sm font-medium">
+                                    <i class="fas fa-arrow-right mr-1"></i>進入管理
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 社群連結設定 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6 text-center">
+                                <div class="w-16 h-16 mx-auto bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-share-alt text-pink-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">社群連結設定</h3>
+                                <p class="text-sm text-gray-600 mb-4">管理社群媒體連結、社交平台設定</p>
+                                <div class="text-pink-600 text-sm font-medium">
+                                    <i class="fas fa-arrow-right mr-1"></i>進入管理
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal for detailed settings (hidden by default) -->
+                    <div id="settingsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+                        <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 max-h-screen overflow-y-auto">
+                            <div class="p-6 border-b border-gray-200">
+                                <div class="flex justify-between items-center">
+                                    <h2 id="modalTitle" class="text-xl font-bold text-gray-800">設定詳情</h2>
+                                    <button id="closeModal" class="text-gray-400 hover:text-gray-600">
+                                        <i class="fas fa-times text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="modalContent" class="p-6">
+                                <!-- Dynamic content will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginForm" class="min-h-screen flex items-center justify-center py-12 px-4">
+        <div class="max-w-md w-full">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-gradient-to-r from-teal-600 to-cyan-600 p-8 text-center">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-4">
+                        <span class="text-teal-600 font-bold text-2xl">貝</span>
+                    </div>
+                    <h1 class="text-2xl font-bold text-white mb-2">後台管理系統</h1>
+                    <p class="text-teal-100">Bestas International Trade Admin</p>
+                </div>
+                <div class="p-8">
+                    <form id="adminLoginForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">用戶名稱</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-user text-gray-400"></i>
+                                </div>
+                                <input type="text" id="username" name="username" required
+                                    class="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200"
+                                    placeholder="請輸入用戶名稱">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">密碼</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-lock text-gray-400"></i>
+                                </div>
+                                <input type="password" id="password" name="password" required
+                                    class="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200"
+                                    placeholder="請輸入密碼">
+                            </div>
+                        </div>
+                        <button type="submit"
+                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition-all duration-200 transform hover:scale-105">
+                            <i class="fas fa-sign-in-alt mr-2"></i>
+                            登入系統
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Admin page loaded');
+            
+            setTimeout(function() {
+                document.getElementById('loadingScreen').style.display = 'none';
+            }, 500);
+        });
+
+        // Login handling
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username && password) {
+                document.getElementById('loginForm').classList.add('hidden');
+                document.getElementById('adminDashboard').classList.remove('hidden');
+                initCharts();
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        let sidebarOpen = false;
+
+        menuToggle.addEventListener('click', function() {
+            sidebarOpen = !sidebarOpen;
+            if (sidebarOpen) {
+                sidebar.classList.remove('-translate-x-full');
+                // Add overlay
+                if (!document.getElementById('sidebarOverlay')) {
+                    const overlay = document.createElement('div');
+                    overlay.id = 'sidebarOverlay';
+                    overlay.className = 'fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden';
+                    overlay.addEventListener('click', function() {
+                        sidebar.classList.add('-translate-x-full');
+                        sidebarOpen = false;
+                        overlay.remove();
+                    });
+                    document.body.appendChild(overlay);
+                }
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                // Remove overlay
+                const overlay = document.getElementById('sidebarOverlay');
+                if (overlay) {
+                    overlay.remove();
+                }
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 1024) {
+                // Desktop view - ensure sidebar is visible and remove overlay
+                sidebar.classList.remove('-translate-x-full');
+                const overlay = document.getElementById('sidebarOverlay');
+                if (overlay) {
+                    overlay.remove();
+                }
+                sidebarOpen = false;
+            } else {
+                // Mobile view - hide sidebar by default
+                sidebar.classList.add('-translate-x-full');
+                sidebarOpen = false;
+            }
+        }); // Navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const page = this.getAttribute('href').substring(1);
+                showPage(page);
+                
+                // Close mobile menu after navigation
+                if (window.innerWidth < 1024) {
+                    closeSidebar();
+                }
+            });
+        });
+
+        function showPage(pageName) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.add('hidden');
+            });
+            
+            const targetPage = document.getElementById(pageName + 'Page');
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 1024) {
+                // Desktop view - ensure sidebar is visible
+                sidebar.classList.remove('-translate-x-full');
+                const overlay = document.getElementById('sidebarOverlay');
+                if (overlay) {
+                    overlay.remove();
+                }
+                sidebarOpen = false;
+            } else {
+                // Mobile view - hide sidebar by default
+                if (!sidebarOpen) {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            }
+        });
+
+        // Charts
+        function initCharts() {
+            // Visitor Chart
+            const visitorCtx = document.getElementById('visitorChart').getContext('2d');
+            new Chart(visitorCtx, {
+                type: 'line',
+                data: {
+                    labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+                    datasets: [{
+                        label: '訪客數',
+                        data: [1200, 1900, 3000, 5000, 8000, 12000],
+                        borderColor: 'rgb(59, 130, 246)',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return '訪客數: ' + context.parsed.y.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Page View Chart
+            const pageViewCtx = document.getElementById('pageViewChart').getContext('2d');
+            new Chart(pageViewCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['首頁', '關於', '服務', '聯絡', '新聞'],
+                    datasets: [{
+                        label: '瀏覽量',
+                        data: [4500, 3200, 2800, 1900, 1500],
+                        backgroundColor: 'rgba(16, 185, 129, 0.8)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return '瀏覽量: ' + context.parsed.y.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Real-time Traffic Chart
+            const realtimeTrafficCtx = document.getElementById('realtimeTraffic').getContext('2d');
+            const realtimeTrafficChart = new Chart(realtimeTrafficCtx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: '即時流量',
+                        data: [],
+                        borderColor: 'rgb(239, 68, 68)',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            display: true
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '訪客數'
+                            }
+                        }
+                    },
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return '即時訪客: ' + context.parsed.y;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // CPU & Memory Chart
+            const cpuMemoryCtx = document.getElementById('cpuMemoryChart').getContext('2d');
+            const cpuMemoryChart = new Chart(cpuMemoryCtx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'CPU 使用率',
+                        data: [],
+                        borderColor: 'rgb(59, 130, 246)',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        tension: 0.4
+                    }, {
+                        label: '記憶體使用率',
+                        data: [],
+                        borderColor: 'rgb(245, 158, 11)',
+                        backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            display: true
+                        },
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: '使用率 (%)'
+                            }
+                        }
+                    },
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            display: true
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.parsed.y + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Response Time Chart
+            const responseTimeCtx = document.getElementById('responseTimeChart').getContext('2d');
+            const responseTimeChart = new Chart(responseTimeCtx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: '響應時間',
+                        data: [],
+                        borderColor: 'rgb(16, 185, 129)',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            display: true
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '響應時間 (ms)'
+                            }
+                        }
+                    },
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return '響應時間: ' + context.parsed.y + 'ms';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Error Rate Chart
+            const errorRateCtx = document.getElementById('errorRateChart').getContext('2d');
+            const errorRateChart = new Chart(errorRateCtx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: '錯誤率',
+                        data: [],
+                        borderColor: 'rgb(239, 68, 68)',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            display: true
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '錯誤率 (%)'
+                            }
+                        }
+                    },
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return '錯誤率: ' + context.parsed.y.toFixed(2) + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Start real-time updates
+            startRealTimeUpdates(realtimeTrafficChart, cpuMemoryChart, responseTimeChart, errorRateChart);
+        }
+
+        // Real-time data updates
+        function startRealTimeUpdates(trafficChart, cpuChart, responseChart, errorChart) {
+            setInterval(() => {
+                const now = new Date();
+                const timeLabel = now.getHours().toString().padStart(2, '0') + ':' + 
+                                now.getMinutes().toString().padStart(2, '0') + ':' + 
+                                now.getSeconds().toString().padStart(2, '0');
+
+                // Update traffic chart
+                if (trafficChart.data.labels.length > 20) {
+                    trafficChart.data.labels.shift();
+                    trafficChart.data.datasets[0].data.shift();
+                }
+                trafficChart.data.labels.push(timeLabel);
+                trafficChart.data.datasets[0].data.push(Math.floor(Math.random() * 100) + 50);
+                trafficChart.update('none');
+
+                // Update CPU & Memory chart
+                if (cpuChart.data.labels.length > 20) {
+                    cpuChart.data.labels.shift();
+                    cpuChart.data.datasets[0].data.shift();
+                    cpuChart.data.datasets[1].data.shift();
+                }
+                cpuChart.data.labels.push(timeLabel);
+                cpuChart.data.datasets[0].data.push(Math.floor(Math.random() * 30) + 40);
+                cpuChart.data.datasets[1].data.push(Math.floor(Math.random() * 20) + 60);
+                cpuChart.update('none');
+
+                // Update response time chart
+                if (responseChart.data.labels.length > 20) {
+                    responseChart.data.labels.shift();
+                    responseChart.data.datasets[0].data.shift();
+                }
+                responseChart.data.labels.push(timeLabel);
+                responseChart.data.datasets[0].data.push(Math.floor(Math.random() * 100) + 200);
+                responseChart.update('none');
+
+                // Update error rate chart
+                if (errorChart.data.labels.length > 20) {
+                    errorChart.data.labels.shift();
+                    errorChart.data.datasets[0].data.shift();
+                }
+                errorChart.data.labels.push(timeLabel);
+                errorChart.data.datasets[0].data.push(Math.random() * 0.5);
+                errorChart.update('none');
+
+                // Update system metrics
+                updateSystemMetrics();
+            }, 2000);
+        }
+
+        // Update system metrics
+        function updateSystemMetrics() {
+            // Update CPU
+            const cpuValue = Math.floor(Math.random() * 30) + 40;
+            document.getElementById('cpuValue').textContent = cpuValue + '%';
+            document.getElementById('cpuBar').style.width = cpuValue + '%';
+            
+            // Update Memory
+            const memoryValue = Math.floor(Math.random() * 20) + 60;
+            document.getElementById('memoryValue').textContent = memoryValue + '%';
+            document.getElementById('memoryBar').style.width = memoryValue + '%';
+            
+            // Update Disk
+            const diskValue = Math.floor(Math.random() * 10) + 20;
+            document.getElementById('diskValue').textContent = diskValue + '%';
+            document.getElementById('diskBar').style.width = diskValue + '%';
+            
+            // Update Network
+            const networkValue = Math.floor(Math.random() * 20) + 5;
+            document.getElementById('networkValue').textContent = networkValue + '%';
+            document.getElementById('networkBar').style.width = networkValue + '%';
+
+            // Update performance metrics
+            document.getElementById('loadTime').textContent = (Math.random() * 0.5 + 1.0).toFixed(2) + 's';
+            document.getElementById('responseTime').textContent = Math.floor(Math.random() * 100 + 200) + 'ms';
+            document.getElementById('onlineUsers').textContent = (Math.floor(Math.random() * 500 + 1000)).toLocaleString();
+            document.getElementById('todayRequests').textContent = (Math.floor(Math.random() * 10000 + 40000)).toLocaleString();
+
+            // Update error counts
+            document.getElementById('error404').textContent = Math.floor(Math.random() * 10 + 5);
+            document.getElementById('error500').textContent = Math.floor(Math.random() * 5 + 1);
+            document.getElementById('error403').textContent = Math.floor(Math.random() * 8 + 3);
+            document.getElementById('timeout').textContent = Math.floor(Math.random() * 3 + 1);
+            document.getElementById('errorRate').textContent = (Math.random() * 0.1).toFixed(2) + '%';
+        }
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            document.getElementById('adminDashboard').classList.add('hidden');
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('adminLoginForm').reset();
+        });
+
+        // Navigation handling
+        const navItems = document.querySelectorAll('.nav-item');
+        const pages = document.querySelectorAll('.page');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                
+                // Hide all pages
+                pages.forEach(page => {
+                    page.classList.add('hidden');
+                });
+                
+                // Show target page
+                const targetPage = document.getElementById(targetId + 'Page');
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                }
+                
+                // Update active nav item
+                navItems.forEach(navItem => {
+                    navItem.classList.remove('bg-teal-50', 'text-teal-600');
+                });
+                this.classList.add('bg-teal-50', 'text-teal-600');
+            });
+        });
+
+        // Tab handling for settings page
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetTab = this.getAttribute('data-tab');
+                
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show target tab content
+                const targetContent = document.getElementById(targetTab + '-tab');
+                if (targetContent) {
+                    targetContent.classList.remove('hidden');
+                }
+                
+                // Update active tab button
+                tabBtns.forEach(tabBtn => {
+                    tabBtn.classList.remove('border-teal-500', 'text-teal-600');
+                    tabBtn.classList.add('border-transparent', 'text-gray-500');
+                });
+                this.classList.remove('border-transparent', 'text-gray-500');
+                this.classList.add('border-teal-500', 'text-teal-600');
+            });
+        });
+
+        // Settings cards click handling
+        const settingsCards = document.querySelectorAll('#settingsPage .bg-white.rounded-lg.shadow');
+        const settingsModal = document.getElementById('settingsModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+        const closeModal = document.getElementById('closeModal');
+
+        // Settings content definitions
+        const settingsContent = {
+            '帳號管理': `
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">帳號管理</h3>
+                        <p class="text-gray-600 mb-4">管理系統用戶帳號、密碼重置、帳號狀態設定</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-4 bg-white border rounded-lg">
+                            <div>
+                                <h4 class="font-medium text-gray-800">用戶總數</h4>
+                                <p class="text-sm text-gray-600">系統中所有用戶帳號</p>
+                            </div>
+                            <span class="text-2xl font-bold text-blue-600">156</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-white border rounded-lg">
+                            <div>
+                                <h4 class="font-medium text-gray-800">活躍用戶</h4>
+                                <p class="text-sm text-gray-600">當前活躍的用戶數量</p>
+                            </div>
+                            <span class="text-2xl font-bold text-green-600">142</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-white border rounded-lg">
+                            <div>
+                                <h4 class="font-medium text-gray-800">待審核</h4>
+                                <p class="text-sm text-gray-600">等待審核的用戶申請</p>
+                            </div>
+                            <span class="text-2xl font-bold text-orange-600">8</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            <i class="fas fa-plus mr-2"></i>新增用戶
+                        </button>
+                        <button class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                            <i class="fas fa-download mr-2"></i>匯出用戶
+                        </button>
+                    </div>
+                </div>
+            `,
+            '角色權限': `
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">角色權限管理</h3>
+                        <p class="text-gray-600 mb-4">設定用戶角色、分配權限、管理訪問控制</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="border rounded-lg p-4">
+                            <h4 class="font-medium text-gray-800 mb-2">管理員</h4>
+                            <p class="text-sm text-gray-600 mb-3">完全系統訪問權限</p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>用戶管理</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>系統設定</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>資料管理</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border rounded-lg p-4">
+                            <h4 class="font-medium text-gray-800 mb-2">編輯員</h4>
+                            <p class="text-sm text-gray-600 mb-3">內容編輯權限</p>
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>內容管理</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-times text-red-500 mr-2"></i>
+                                    <span>用戶管理</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <i class="fas fa-times text-red-500 mr-2"></i>
+                                    <span>系統設定</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fas fa-plus mr-2"></i>新增角色
+                    </button>
+                </div>
+            `,
+            '系統日誌': `
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">系統日誌</h3>
+                        <p class="text-gray-600 mb-4">查看系統操作記錄、錯誤日誌、審計追蹤</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-500 pl-4 py-2">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">用戶登入</h4>
+                                    <p class="text-sm text-gray-600">Admin 成功登入系統</p>
+                                </div>
+                                <span class="text-sm text-gray-500">2024-01-15 10:30:45</span>
+                            </div>
+                        </div>
+                        <div class="border-l-4 border-green-500 pl-4 py-2">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">資料更新</h4>
+                                    <p class="text-sm text-gray-600">產品資料庫已更新</p>
+                                </div>
+                                <span class="text-sm text-gray-500">2024-01-15 10:25:12</span>
+                            </div>
+                        </div>
+                        <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">系統警告</h4>
+                                    <p class="text-sm text-gray-600">CPU使用率超過80%</p>
+                                </div>
+                                <span class="text-sm text-gray-500">2024-01-15 10:20:33</span>
+                            </div>
+                        </div>
+                        <div class="border-l-4 border-red-500 pl-4 py-2">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-medium text-gray-800">登入失敗</h4>
+                                    <p class="text-sm text-gray-600">多次密碼錯誤嘗試</p>
+                                </div>
+                                <span class="text-sm text-gray-500">2024-01-15 10:15:22</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                        <i class="fas fa-download mr-2"></i>匯出日誌
+                    </button>
+                </div>
+            `,
+            '系統資訊': `
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">系統資訊</h3>
+                        <p class="text-gray-600 mb-4">查看系統版本、硬體資源、運行狀態</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="border rounded-lg p-4">
+                                <h4 class="font-medium text-gray-800 mb-2">系統版本</h4>
+                                <p class="text-sm text-gray-600">Bestas Admin v2.1.0</p>
+                            </div>
+                            <div class="border rounded-lg p-4">
+                                <h4 class="font-medium text-gray-800 mb-2">運行時間</h4>
+                                <p class="text-sm text-gray-600">15天 8小時 32分鐘</p>
+                            </div>
+                            <div class="border rounded-lg p-4">
+                                <h4 class="font-medium text-gray-800 mb-2">最後更新</h4>
+                                <p class="text-sm text-gray-600">2024-01-10 14:30:00</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="border rounded-lg p-4">
+                                <h4 class="font-medium text-gray-800 mb-2">CPU使用率</h4>
+                                <div class="flex items-center">
+                                    <div class="flex-1 bg-gray-200 rounded-full h-2 mr-4">
+                                        <div class="bg-blue-600 h-2 rounded-full" style="width: 45%"></div>
+                                    </div>
+                                    <span class="text-sm font-medium">45%</span>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg p-4">
+                                <h4 class="font-medium text-gray-800 mb-2">記憶體使用</h4>
+                                <div class="flex items-center">
+                                    <div class="flex-1 bg-gray-200 rounded-full h-2 mr-4">
+                                        <div class="bg-green-600 h-2 rounded-full" style="width: 68%"></div>
+                                    </div>
+                                    <span class="text-sm font-medium">68%</span>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg p-4">
+                                <h4 class="font-medium text-gray-800 mb-2">磁碟使用</h4>
+                                <div class="flex items-center">
+                                    <div class="flex-1 bg-gray-200 rounded-full h-2 mr-4">
+                                        <div class="bg-orange-600 h-2 rounded-full" style="width: 32%"></div>
+                                    </div>
+                                    <span class="text-sm font-medium">32%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            '資料庫管理': `
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">資料庫管理</h3>
+                        <p class="text-gray-600 mb-4">資料庫備份、還原、優化、維護操作</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="border rounded-lg p-4">
+                            <h4 class="font-medium text-gray-800 mb-2">資料庫大小</h4>
+                            <p class="text-2xl font-bold text-red-600">2.8 GB</p>
+                        </div>
+                        <div class="border rounded-lg p-4">
+                            <h4 class="font-medium text-gray-800 mb-2">表數量</h4>
+                            <p class="text-2xl font-bold text-blue-600">47</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-4 bg-white border rounded-lg">
+                            <div>
+                                <h4 class="font-medium text-gray-800">最後備份</h4>
+                                <p class="text-sm text-gray-600">自動備份完成</p>
+                            </div>
+                            <span class="text-sm text-gray-500">2024-01-15 02:00:00</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-white border rounded-lg">
+                            <div>
+                                <h4 class="font-medium text-gray-800">下次備份</h4>
+                                <p class="text-sm text-gray-600">計劃自動備份</p>
+                            </div>
+                            <span class="text-sm text-gray-500">2024-01-16 02:00:00</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                            <i class="fas fa-download mr-2"></i>立即備份
+                        </button>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            <i class="fas fa-sync mr-2"></i>優化資料庫
+                        </button>
+                    </div>
+                </div>
+            `,
+            '系統設定': `
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">系統設定</h3>
+                        <p class="text-gray-600 mb-4">基本參數配置、系統選項、環境變數</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">系統名稱</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2" value="貝達國際貿易後台系統">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">時區設定</label>
+                            <select class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                                <option>Asia/Taipei (UTC+8)</option>
+                                <option>UTC</option>
+                                <option>America/New_York</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">語言設定</label>
+                            <select class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                                <option>繁體中文</option>
+                                <option>English</option>
+                                <option>日本語</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="maintenanceMode" class="mr-2">
+                            <label for="maintenanceMode" class="text-sm text-gray-700">啟用維護模式</label>
+                        </div>
+                    </div>
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                        <i class="fas fa-save mr-2"></i>儲存設定
+                    </button>
+                </div>
+            `,
+            '通知設定': `
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">通知設定</h3>
+                        <p class="text-gray-600 mb-4">郵件通知、系統警報、消息推送配置</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="border rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-medium text-gray-800">郵件通知</h4>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            <p class="text-sm text-gray-600">啟用系統郵件通知功能</p>
+                        </div>
+                        <div class="border rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-medium text-gray-800">系統警報</h4>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            <p class="text-sm text-gray-600">系統異常時發送警報通知</p>
+                        </div>
+                        <div class="border rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-medium text-gray-800">推送通知</h4>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            <p class="text-sm text-gray-600">啟用即時推送通知</p>
+                        </div>
+                    </div>
+                    <button class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition-colors">
+                        <i class="fas fa-save mr-2"></i>儲存設定
+                    </button>
+                </div>
+            `,
+            '安全設定': `
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">安全設定</h3>
+                        <p class="text-gray-600 mb-4">防火牆規則、加密設定、安全策略配置</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">密碼複雜度</label>
+                            <select class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                                <option>高（至少8字元，包含大小寫字母、數字、特殊字元）</option>
+                                <option>中（至少6字元，包含字母和數字）</option>
+                                <option>低（至少6字元）</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">登入嘗試次數限制</label>
+                            <input type="number" class="w-full border border-gray-300 rounded-lg px-3 py-2" value="5">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">會話超時時間（分鐘）</label>
+                            <input type="number" class="w-full border border-gray-300 rounded-lg px-3 py-2" value="30">
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="twoFactor" class="mr-2">
+                            <label for="twoFactor" class="text-sm text-gray-700">啟用雙因素驗證</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="firewall" class="mr-2" checked>
+                            <label for="firewall" class="text-sm text-gray-700">啟用防火牆保護</label>
+                        </div>
+                    </div>
+                    <button class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-save mr-2"></i>儲存設定
+                    </button>
+                </div>
+            `,
+            '社群連結設定': `
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">社群連結設定</h3>
+                        <p class="text-gray-600 mb-4">管理社群媒體連結、社交平台設定</p>
+                    </div>
+                    
+                    <!-- 社群媒體連結 -->
+                    <div class="space-y-4">
+                        <h4 class="font-medium text-gray-800 mb-3">社群媒體平台</h4>
+                        
+                        <!-- Facebook -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fab fa-facebook-f text-white text-sm"></i>
+                                    </div>
+                                    <h5 class="font-medium text-gray-800">Facebook</h5>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-600 mb-1">Facebook 連結</label>
+                                <input type="url" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="https://facebook.com/your-page" value="https://facebook.com/bestas-intl">
+                            </div>
+                        </div>
+
+                        <!-- Instagram -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fab fa-instagram text-white text-sm"></i>
+                                    </div>
+                                    <h5 class="font-medium text-gray-800">Instagram</h5>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-600 mb-1">Instagram 連結</label>
+                                <input type="url" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="https://instagram.com/your-account" value="https://instagram.com/bestas_intl">
+                            </div>
+                        </div>
+
+                        <!-- LinkedIn -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-blue-700 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fab fa-linkedin-in text-white text-sm"></i>
+                                    </div>
+                                    <h5 class="font-medium text-gray-800">LinkedIn</h5>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-600 mb-1">LinkedIn 連結</label>
+                                <input type="url" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="https://linkedin.com/company/your-company">
+                            </div>
+                        </div>
+
+                        <!-- Twitter -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center mr-3">
+                                        <i class="fab fa-x-twitter text-white text-sm"></i>
+                                    </div>
+                                    <h5 class="font-medium text-gray-800">Twitter (X)</h5>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-600 mb-1">Twitter 連結</label>
+                                <input type="url" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="https://twitter.com/your-handle">
+                            </div>
+                        </div>
+
+                        <!-- YouTube -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fab fa-youtube text-white text-sm"></i>
+                                    </div>
+                                    <h5 class="font-medium text-gray-800">YouTube</h5>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-600 mb-1">YouTube 連結</label>
+                                <input type="url" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="https://youtube.com/channel/your-channel">
+                            </div>
+                        </div>
+
+                        <!-- Line -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fab fa-line text-white text-sm"></i>
+                                    </div>
+                                    <h5 class="font-medium text-gray-800">LINE</h5>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-600 mb-1">LINE ID 或連結</label>
+                                <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="@line-id 或 https://line.me/ti/p/~line-id" value="@bestas-intl">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 連結顯示設定 -->
+                    <div class="space-y-4">
+                        <h4 class="font-medium text-gray-800 mb-3">連結顯示設定</h4>
+                        
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-medium text-gray-800">在頁首顯示社群圖標</h5>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            <p class="text-sm text-gray-600">在網站頂部導航列顯示社群媒體圖標</p>
+                        </div>
+
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-medium text-gray-800">在頁尾顯示社群圖標</h5>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            <p class="text-sm text-gray-600">在網站底部顯示社群媒體圖標</p>
+                        </div>
+
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <h5 class="font-medium text-gray-800">開啟新分頁</h5>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                </label>
+                            </div>
+                            <p class="text-sm text-gray-600">點擊社群連結時在新分頁開啟</p>
+                        </div>
+                    </div>
+
+                    <!-- 預覽區域 -->
+                    <div class="space-y-4">
+                        <h4 class="font-medium text-gray-800 mb-3">社群圖標預覽</h4>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 bg-gray-50">
+                            <p class="text-sm text-gray-600 mb-4 text-center">這是您的社群圖標在網站上的顯示效果：</p>
+                            <div class="flex justify-center space-x-4">
+                                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer">
+                                    <i class="fab fa-facebook-f text-white"></i>
+                                </div>
+                                <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center hover:from-purple-700 hover:to-pink-700 transition-colors cursor-pointer">
+                                    <i class="fab fa-instagram text-white"></i>
+                                </div>
+                                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors cursor-pointer">
+                                    <i class="fab fa-line text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-4">
+                        <button class="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition-colors">
+                            <i class="fas fa-save mr-2"></i>儲存設定
+                        </button>
+                        <button class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                            <i class="fas fa-undo mr-2"></i>重設預設
+                        </button>
+                    </div>
+                </div>
+            `
+        };
+
+        settingsCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('h3').textContent;
+                const content = settingsContent[title];
+                
+                if (content) {
+                    modalTitle.textContent = title;
+                    modalContent.innerHTML = content;
+                    settingsModal.classList.remove('hidden');
+                    settingsModal.classList.add('flex');
+                }
+            });
+        });
+
+        closeModal.addEventListener('click', function() {
+            settingsModal.classList.add('hidden');
+            settingsModal.classList.remove('flex');
+        });
+
+        // Close modal when clicking outside
+        settingsModal.addEventListener('click', function(e) {
+            if (e.target === settingsModal) {
+                settingsModal.classList.add('hidden');
+                settingsModal.classList.remove('flex');
+            }
+        });
+    </script>
+</body>
+</html>

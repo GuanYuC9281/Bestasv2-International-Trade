@@ -557,6 +557,23 @@ function toggleMobileMenu() {
     }
 }
 
+// Toggle mobile submenus
+function toggleMobileSubmenu(submenuId) {
+    const submenu = document.getElementById(submenuId);
+    if (submenu) {
+        submenu.classList.toggle('hidden');
+        
+        // Update chevron icon
+        const button = submenu.previousElementSibling;
+        if (button) {
+            const icon = button.querySelector('i');
+            if (icon) {
+                icon.className = submenu.classList.contains('hidden') ? 'fas fa-chevron-down text-xs' : 'fas fa-chevron-up text-xs';
+            }
+        }
+    }
+}
+
 function handleNavScroll() {
     if (elements.navbar) {
         if (window.scrollY > 20) {

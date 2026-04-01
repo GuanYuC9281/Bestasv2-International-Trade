@@ -102,9 +102,80 @@
                     </div>
                 </div>
 
-                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100" onclick="toggleMobileMenu()">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index-fixed-final.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-home">首頁</a>
+                
+                <!-- About Dropdown -->
+                <div class="px-3 py-2">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-about')">
+                        <span id="mobile-nav-about">關於我們</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-about" class="hidden pl-4 space-y-1 mt-1">
+                        <a href="about-optimized.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-companyIntro">公司簡介</a>
+                        <a href="about-optimized.html#mission-vision" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-missionVision">使命 / 願景</a>
+                        <a href="about-optimized.html#core-values" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-coreValues">核心價值</a>
+                        <a href="about-optimized.html#markets" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-markets">市場與地區</a>
+                        <a href="about-optimized.html#why-choose-us" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-whyChooseUs">為什麼選擇我們</a>
+                    </div>
+                </div>
+
+                <!-- Services Dropdown -->
+                <div class="px-3 py-2">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-services')">
+                        <span id="mobile-nav-products">產品與服務</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-services" class="hidden pl-4 space-y-1 mt-1">
+                        <a href="services-optimized.html#procurement" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-procurement">採購代理</a>
+                        <a href="services-optimized.html#import-export" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-importExport">進出口服務</a>
+                        <a href="services-optimized.html#matching" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-matching">供應商媒合</a>
+                        <a href="services-optimized.html#quotation" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-quotation">報價與樣品安排</a>
+                        <a href="services-optimized.html#coordination" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-orderCoordination">訂單與交期協調</a>
+                    </div>
+                </div>
+
+                <a href="process-optimized.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-process">合作流程</a>
+                <a href="news-optimized.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-news">最新消息</a>
+                <a href="faq-optimized.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-faq">常見問題</a>
+                <a href="contact-optimized.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-contact">聯絡我們</a>
+                
+                <!-- Language Selector for Mobile -->
+                <div class="px-3 py-2 border-t border-gray-200 mt-2 pt-4">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-language')">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-globe text-blue-600"></i>
+                            <span class="language-current" id="mobile-currentLangDisplay">中文</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-language" class="hidden pl-4 space-y-1 mt-1">
+                        <button onclick="changeLanguage('zh-TW')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇹🇼</span>
+                            <span>繁體中文</span>
+                        </button>
+                        <button onclick="changeLanguage('en')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇺🇸</span>
+                            <span>English</span>
+                        </button>
+                        <button onclick="changeLanguage('ja')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇯🇵</span>
+                            <span>日本語</span>
+                        </button>
+                        <button onclick="changeLanguage('vi')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇻🇳</span>
+                            <span>Tiếng Việt</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -333,10 +404,7 @@
             </div>
             
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400 text-sm"> 2026 貝達國際貿易有限公司. All rights reserved.</p>
-                <p class="text-gray-400 text-sm mt-2">Designed with for international trade excellence</p>
                 <p class="text-gray-400 text-sm">© 2026 <span id="companyName-footer-2">貝達國際貿易有限公司</span>. All rights reserved.</p>
-                <p class="text-gray-400 text-sm mt-2">Designed with ❤️ for international trade excellence</p>
             </div>
         </div>
     </footer>
@@ -485,6 +553,40 @@
             if (dropdown) {
                 dropdown.classList.toggle('invisible');
                 dropdown.classList.toggle('opacity-100');
+            }
+        }
+
+        // Mobile menu functions
+        let isMenuOpen = false;
+        
+        function toggleMobileMenu() {
+            isMenuOpen = !isMenuOpen;
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const icon = menuBtn.querySelector('i');
+            
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('hidden');
+            }
+            
+            if (icon) {
+                icon.className = isMenuOpen ? 'fas fa-times text-xl' : 'fas fa-bars text-xl';
+            }
+        }
+
+        function toggleMobileSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId);
+            if (submenu) {
+                submenu.classList.toggle('hidden');
+                
+                // Update chevron icon
+                const button = submenu.previousElementSibling;
+                if (button) {
+                    const icon = button.querySelector('i');
+                    if (icon) {
+                        icon.className = submenu.classList.contains('hidden') ? 'fas fa-chevron-down text-xs' : 'fas fa-chevron-up text-xs';
+                    }
+                }
             }
         }
 
