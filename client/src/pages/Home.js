@@ -380,7 +380,14 @@ const Home = () => {
 
           {loading && (
             <div className="text-center py-12">
-              <div className="loading-spinner mx-auto"></div>
+              <div className="inline-flex items-center justify-center space-x-8">
+                <div className="text-4xl animate-pulse">🏙️</div>
+                <div className="text-3xl animate-bounce">✈︎</div>
+                <div className="text-4xl animate-pulse">🌍</div>
+              </div>
+              <div className="mt-4 w-64 mx-auto bg-gray-200 rounded-full h-2 overflow-hidden">
+                <div className="bg-gradient-to-r from-teal-500 to-blue-600 h-full rounded-full animate-pulse" style={{width: '60%'}}></div>
+              </div>
             </div>
           )}
 

@@ -261,7 +261,7 @@ const Contact = () => {
                 >
                   {isSubmitting ? (
                     <div className="flex items-center">
-                      <div className="loading-spinner w-5 h-5 mr-2"></div>
+                      <div className="mr-2 text-xl animate-spin">✈︎</div>
                       提交中...
                     </div>
                   ) : (

@@ -175,7 +175,16 @@ const News = () => {
   if (loading && news.length === 0) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="loading-spinner"></div>
+        <div className="text-center">
+          <div className="inline-flex items-center justify-center space-x-8 mb-4">
+            <div className="text-4xl animate-pulse">🏙️</div>
+            <div className="text-3xl animate-bounce">✈︎</div>
+            <div className="text-4xl animate-pulse">🌍</div>
+          </div>
+          <div className="w-64 mx-auto bg-gray-200 rounded-full h-2 overflow-hidden">
+            <div className="bg-gradient-to-r from-teal-500 to-blue-600 h-full rounded-full animate-pulse" style={{width: '60%'}}></div>
+          </div>
+        </div>
       </div>
     );
   }
