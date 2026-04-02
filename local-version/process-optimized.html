@@ -11,12 +11,52 @@
 <body class="bg-gray-50">
     <!-- Loading Screen -->
     <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100 flex items-center justify-center z-50">
-        <div class="text-center">
-            <div class="w-32 h-32 mx-auto mb-8 flex items-center justify-center">
-                <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain animate-pulse">
+        <div class="text-center w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+            <!-- 載入標題 -->
+            <div class="mb-6 sm:mb-8">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                    <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain animate-pulse">
+                </div>
+                <h1 class="text-lg sm:text-xl font-bold text-gray-800">貝達國際貿易有限公司</h1>
             </div>
-            <h1 class="text-3xl font-bold text-gray-800 mb-4">貝達國際貿易有限公司</h1>
-            <p class="text-lg text-gray-600 mb-8">載入中...</p>
+            
+            <!-- 飛機動畫容器 -->
+            <div class="relative h-32 sm:h-40 mb-6 sm:mb-8">
+                <!-- 起點：台北101 🏙️ -->
+                <div class="absolute left-2 sm:left-0 top-1/2 transform -translate-y-1/2">
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-5xl mb-1 sm:mb-2">🏙️</div>
+                    </div>
+                </div>
+                
+                <!-- 終點：全球 🌍 -->
+                <div class="absolute right-2 sm:right-0 top-1/2 transform -translate-y-1/2">
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-5xl animate-pulse">🌍</div>
+                    </div>
+                </div>
+                
+                <!-- 飛行路徑 -->
+                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 160">
+                    <path d="M 50 80 Q 200 40 350 80" stroke="#cbd5e1" stroke-width="2" fill="none" stroke-dasharray="8,4" opacity="0.6"/>
+                </svg>
+                
+                <!-- 飛機 ✈︎ -->
+                <div id="airplane" class="absolute top-1/2 transform -translate-y-1/2 transition-all duration-3000 ease-in-out left-[30px] sm:left-[50px]">
+                    <div class="relative">
+                        <div class="text-2xl sm:text-3xl transform rotate-0 transition-transform duration-3000">✈︎</div>
+                        <!-- 飛行軌跡 -->
+                        <div class="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-blue-400 rounded-full opacity-40 animate-ping"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 載入進度條 -->
+            <div class="w-full max-w-xs sm:max-w-md mx-auto">
+                <div class="bg-gray-200 rounded-full h-2 sm:h-3 overflow-hidden">
+                    <div id="progressBar" class="bg-gradient-to-r from-teal-500 to-blue-600 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -505,14 +545,80 @@
             const savedLang = localStorage.getItem('preferredLanguage') || 'zh-TW';
             changeLanguage(savedLang);
             
-            // Hide loading screen
+            // Hide loading screen with airplane animation
             setTimeout(function() {
+                startLoadingAnimation();
+            }, 100);
+            
+            function startLoadingAnimation() {
+                const airplane = document.getElementById('airplane');
+                const progressBar = document.getElementById('progressBar');
+                
+                if (!airplane || !progressBar) {
+                    hideLoadingScreen();
+                    return;
+                }
+                
+                let progress = 0;
+                
+                // 獲取容器的實際寬度
+                const container = airplane.parentElement;
+                const containerWidth = container.offsetWidth;
+                const screenWidth = window.innerWidth;
+                
+                // 根據螢幕尺寸和容器寬度決定終點位置
+                let endPosition;
+                
+                if (screenWidth < 640) {
+                    // 手機端 - 飛到容器80%位置
+                    endPosition = Math.floor(containerWidth * 0.8) + 'px';
+                } else if (screenWidth < 1024) {
+                    // 平板端 - 飛到容器85%位置
+                    endPosition = Math.floor(containerWidth * 0.85) + 'px';
+                } else {
+                    // 桌面端 - 飛到容器90%位置
+                    endPosition = Math.floor(containerWidth * 0.9) + 'px';
+                }
+                
+                console.log('Screen width:', screenWidth, 'Container width:', containerWidth, 'End position:', endPosition);
+                
+                // 飛機飛行動畫
+                airplane.style.transition = 'left 3s ease-in-out';
+                setTimeout(() => {
+                    airplane.style.left = endPosition; // 響應式終點位置
+                    // 添加飛機傾斜效果
+                    airplane.querySelector('div').style.transform = 'rotate(-10deg)';
+                }, 100);
+                
+                // 進度條動畫
+                const progressInterval = setInterval(() => {
+                    progress += Math.random() * 15 + 5; // 隨機增加5-20%
+                    
+                    if (progress >= 100) {
+                        progress = 100;
+                        clearInterval(progressInterval);
+                        
+                        // 動畫完成後隱藏載入畫面
+                        setTimeout(() => {
+                            hideLoadingScreen();
+                        }, 500);
+                    }
+                    
+                    progressBar.style.width = progress + '%';
+                }, 300);
+            }
+            
+            function hideLoadingScreen() {
                 const loadingScreen = document.getElementById('loadingScreen');
                 if (loadingScreen) {
-                    loadingScreen.style.display = 'none';
-                    console.log('Loading screen hidden');
+                    loadingScreen.style.opacity = '0';
+                    loadingScreen.style.transition = 'opacity 0.5s ease-out';
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                        console.log('Loading screen hidden');
+                    }, 500);
                 }
-            }, 500);
+            }
         });
 
         function changeLanguage(lang) {
