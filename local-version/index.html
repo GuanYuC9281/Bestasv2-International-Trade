@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>關於我們 - 貝達國際貿易有限公司</title>
+    <title>貝達國際貿易有限公司</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-50">
     <!-- Loading Screen -->
-    <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100 flex items-center justify-center z-50">
+    <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center z-50">
         <div class="text-center">
             <div class="w-32 h-32 mx-auto mb-8 flex items-center justify-center">
-                <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain animate-pulse">
+                <img src="images/company/logo.png?v=202604021007" alt="貝達國際貿易有限公司" class="w-full h-full object-contain animate-pulse">
             </div>
             <h1 class="text-3xl font-bold text-gray-800 mb-4">貝達國際貿易有限公司</h1>
-            <p class="text-lg text-gray-600 mb-8">載入中...</p>
+            <p class="text-lg text-gray-600 mb-8">專業國際貿易解決方案</p>
+            <div class="flex justify-center space-x-2">
+                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+            </div>
+            <p class="text-sm text-gray-500 mt-8">載入中...</p>
         </div>
     </div>
 
@@ -26,7 +32,7 @@
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 flex items-center justify-center">
-                        <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                        <img src="images/company/logo.png?v=202604021007" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
                     </div>
                     <div>
                         <h1 class="text-xl font-bold text-gray-900" id="companyName">貝達國際貿易有限公司</h1>
@@ -35,18 +41,18 @@
                 </div>
 
                 <div class="hidden lg:flex items-center space-x-8">
-                    <a href="index.html" class="nav-link" id="nav-home">首頁</a>
+                    <a href="index.html" class="nav-link-active" id="nav-home">首頁</a>
                     <div class="relative group">
-                        <button class="nav-link-active flex items-center space-x-1">
+                        <button class="nav-link flex items-center space-x-1">
                             <span id="nav-about">關於我們</span>
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
                         <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <a href="#company-intro" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-about-companyIntro">公司簡介</a>
-                            <a href="#mission-vision" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-missionVision">使命 / 願景</a>
-                            <a href="#core-values" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-coreValues">核心價值</a>
-                            <a href="#markets" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-markets">市場與地區</a>
-                            <a href="#why-choose-us" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg" id="nav-about-whyChooseUs">為什麼選擇我們</a>
+                            <a href="about-optimized.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-about-companyIntro">公司簡介</a>
+                            <a href="about-optimized.html#mission-vision" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-missionVision">使命 / 願景</a>
+                            <a href="about-optimized.html#core-values" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-coreValues">核心價值</a>
+                            <a href="about-optimized.html#markets" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-markets">市場與地區</a>
+                            <a href="about-optimized.html#why-choose-us" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg" id="nav-about-whyChooseUs">為什麼選擇我們</a>
                         </div>
                     </div>
 
@@ -71,24 +77,24 @@
                     <!-- Language Selector -->
                     <div class="relative group">
                         <button class="nav-link flex items-center space-x-2" onclick="toggleLanguageDropdown()">
-                            <i class="fas fa-globe text-teal-600"></i>
+                            <i class="fas fa-globe text-blue-600"></i>
                             <span class="language-current" id="currentLangDisplay">中文</span>
                             <i class="fas fa-chevron-down text-xs text-gray-500"></i>
                         </button>
                         <div class="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" id="languageDropdown">
-                            <button onclick="changeLanguage('zh-TW')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg flex items-center space-x-2">
+                            <button onclick="changeLanguage('zh-TW')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-lg flex items-center space-x-2">
                                 <span class="text-lg">🇹🇼</span>
                                 <span>繁體中文</span>
                             </button>
-                            <button onclick="changeLanguage('en')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 flex items-center space-x-2">
+                            <button onclick="changeLanguage('en')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
                                 <span class="text-lg">🇺🇸</span>
                                 <span>English</span>
                             </button>
-                            <button onclick="changeLanguage('ja')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 flex items-center space-x-2">
+                            <button onclick="changeLanguage('ja')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
                                 <span class="text-lg">🇯🇵</span>
                                 <span>日本語</span>
                             </button>
-                            <button onclick="changeLanguage('vi')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg flex items-center space-x-2">
+                            <button onclick="changeLanguage('vi')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-lg flex items-center space-x-2">
                                 <span class="text-lg">🇻🇳</span>
                                 <span>Tiếng Việt</span>
                             </button>
@@ -114,11 +120,11 @@
                         <i class="fas fa-chevron-down text-xs"></i>
                     </button>
                     <div id="mobile-about" class="hidden pl-4 space-y-1 mt-1">
-                        <a href="#company-intro" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-companyIntro">公司簡介</a>
-                        <a href="#mission-vision" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-missionVision">使命 / 願景</a>
-                        <a href="#core-values" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-coreValues">核心價值</a>
-                        <a href="#markets" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-markets">市場與地區</a>
-                        <a href="#why-choose-us" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-whyChooseUs">為什麼選擇我們</a>
+                        <a href="about-optimized.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-companyIntro">公司簡介</a>
+                        <a href="about-optimized.html#mission-vision" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-missionVision">使命 / 願景</a>
+                        <a href="about-optimized.html#core-values" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-coreValues">核心價值</a>
+                        <a href="about-optimized.html#markets" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-markets">市場與地區</a>
+                        <a href="about-optimized.html#why-choose-us" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-whyChooseUs">為什麼選擇我們</a>
                     </div>
                 </div>
 
@@ -146,7 +152,7 @@
                 <div class="px-3 py-2 border-t border-gray-200 mt-2 pt-4">
                     <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-language')">
                         <div class="flex items-center space-x-2">
-                            <i class="fas fa-globe text-teal-600"></i>
+                            <i class="fas fa-globe text-blue-600"></i>
                             <span class="language-current" id="mobile-currentLangDisplay">中文</span>
                         </div>
                         <i class="fas fa-chevron-down text-xs"></i>
@@ -178,201 +184,127 @@
     <section class="pt-24 pb-16 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">關於我們</h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">了解貝達國際貿易的專業團隊與服務理念</p>
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                    專業的國際貿易解決方案
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    貝達國際貿易提供全面的採購和進出口服務，連接您到全球商業機會
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-envelope mr-3"></i>
+                        立即聯絡
+                    </a>
+                    <a href="services.html" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg border border-teal-200">
+                        <i class="fas fa-th-large mr-3"></i>
+                        查看服務
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Company Introduction -->
-    <section id="company-intro" class="py-20 bg-white">
+    <!-- Stats Section -->
+    <section class="py-12 bg-white border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
-                    <h2 class="text-4xl font-bold text-gray-900 mb-6">公司簡介</h2>
-                    <p class="text-lg text-gray-600 mb-6">
-                        貝達國際貿易有限公司成立於2020年，是一家專業的國際貿易服務提供商。我們致力於為客戶提供全方位的採購代理、進出口服務和供應商媒合解決方案。
-                    </p>
-                    <p class="text-lg text-gray-600 mb-8">
-                        憑藉豐富的行業經驗和全球網絡，我們已成功為超過500家企業提供專業服務，業務遍及50多個國家和地區。我們的團隊由資深的國際貿易專家組成，具備深厚的行業知識和豐富的實戰經驗。
-                    </p>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-teal-600 mb-2">500+</div>
-                            <div class="text-gray-600">合作客戶</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-cyan-600 mb-2">50+</div>
-                            <div class="text-gray-600">服務國家</div>
-                        </div>
-                    </div>
+                    <div class="text-3xl font-bold text-teal-600 mb-2">500+</div>
+                    <div class="text-gray-600">合作夥伴</div>
                 </div>
-                <div class="relative">
-                    <div class="w-full h-96 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-2xl flex items-center justify-center">
-                        <div class="w-32 h-32 bg-teal-600 rounded-full flex items-center justify-center shadow-lg">
-                            <span class="text-white text-4xl font-bold">貝</span>
-                        </div>
-                    </div>
+                <div>
+                    <div class="text-3xl font-bold text-cyan-600 mb-2">50+</div>
+                    <div class="text-gray-600">國家地區</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-sky-600 mb-2">1000+</div>
+                    <div class="text-gray-600">成功案例</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-emerald-600 mb-2">24/7</div>
+                    <div class="text-gray-600">客戶支援</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission & Vision -->
-    <section id="mission-vision" class="py-20 bg-gray-50">
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">使命與願景</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">我們的理念和未來發展方向</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="text-center p-8 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50">
-                    <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-bullseye text-white text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">使命</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        成為客戶最信賴的國際貿易夥伴，通過專業服務和創新解決方案，為客戶創造最大商業價值，促進全球商業合作與發展。
-                    </p>
-                </div>
-                <div class="text-center p-8 rounded-xl bg-gradient-to-br from-cyan-50 to-sky-50">
-                    <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-eye text-white text-3xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">願景</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        成為亞太地區領先的國際貿易服務平台，建立全球化的商業生態系統，為企業提供一站式的國際貿易解決方案。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Values -->
-    <section id="core-values" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">核心價值</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">指導我們業務運作的基本原則</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-handshake text-teal-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">誠信</h3>
-                    <p class="text-gray-600">以誠待人，以信立業</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-award text-cyan-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">專業</h3>
-                    <p class="text-gray-600">專業知識，精準服務</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-sky-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-lightbulb text-sky-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">創新</h3>
-                    <p class="text-gray-600">創新思維，持續改進</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-globe text-emerald-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">全球</h3>
-                    <p class="text-gray-600">全球視野，本地服務</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Markets & Regions -->
-    <section id="markets" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">市場與地區</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">我們的全球業務網絡覆蓋</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">為什麼選擇貝達國際貿易</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">我們致力於提供最專業、最可靠的國際貿易服務</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-                    <div class="text-3xl font-bold text-teal-600 mb-4">亞洲</div>
-                    <p class="text-gray-600 mb-4">中國大陸、香港、台灣、日本、韓國、新加坡、馬來西亞、泰國、越南等</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-teal-100 text-teal-600 rounded-full text-sm">主要市場</span>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">25+國家</span>
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50 hover:shadow-lg transition-all duration-300">
+                    <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-globe text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">全球網絡</h3>
+                    <p class="text-gray-600 mb-4">連接全球供應商和市場，為您提供最佳商業機會</p>
+                    <div class="text-teal-600 font-medium">
+                        了解更多 <i class="fas fa-arrow-right ml-2"></i>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-                    <div class="text-3xl font-bold text-cyan-600 mb-4">歐洲</div>
-                    <p class="text-gray-600 mb-4">德國、法國、英國、義大利、西班牙、荷蘭、比利時、瑞士等</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-cyan-100 text-cyan-600 rounded-full text-sm">重要市場</span>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">15+國家</span>
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-sky-50 hover:shadow-lg transition-all duration-300">
+                    <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-shield-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">安全可靠</h3>
+                    <p class="text-gray-600 mb-4">嚴格的品質控制和風險管理，確保交易安全</p>
+                    <div class="text-cyan-600 font-medium">
+                        了解更多 <i class="fas fa-arrow-right ml-2"></i>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-                    <div class="text-3xl font-bold text-sky-600 mb-4">美洲</div>
-                    <p class="text-gray-600 mb-4">美國、加拿大、墨西哥、巴西、阿根廷、智利、秘魯等</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-sky-100 text-sky-600 rounded-full text-sm">發展市場</span>
-                        <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">10+國家</span>
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-sky-50 to-emerald-50 hover:shadow-lg transition-all duration-300">
+                    <div class="w-20 h-20 bg-sky-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-chart-line text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">高效服務</h3>
+                    <p class="text-gray-600 mb-4">專業團隊提供快速響應，確保業務順利進行</p>
+                    <div class="text-sky-600 font-medium">
+                        了解更多 <i class="fas fa-arrow-right ml-2"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section id="why-choose-us" class="py-20 bg-white">
+    <!-- Services Preview Section -->
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">為什麼選擇我們</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">我們的優勢和特色服務</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">核心服務</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">提供全方位的國際貿易解決方案</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-users text-white text-3xl"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200">
+                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-shopping-cart text-teal-600 text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">專業團隊</h3>
-                    <p class="text-gray-600">資深的國際貿易專家，具備豐富的行業經驗和專業知識</p>
+                    <h4 class="font-semibold text-gray-900 mb-2">採購代理</h4>
+                    <p class="text-gray-600 text-sm">專業全球採購服務</p>
                 </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-sky-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-network-wired text-white text-3xl"></i>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200">
+                    <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-exchange-alt text-cyan-600 text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">全球網絡</h3>
-                    <p class="text-gray-600">覆蓋全球50多個國家和地區的供應商和客戶網絡</p>
+                    <h4 class="font-semibold text-gray-900 mb-2">進出口服務</h4>
+                    <p class="text-gray-600 text-sm">完整流程管理</p>
                 </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-sky-50 to-emerald-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-sky-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-shield-alt text-white text-3xl"></i>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200">
+                    <div class="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-handshake text-sky-600 text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">品質保證</h3>
-                    <p class="text-gray-600">嚴格的品質控制體系，確保服務和產品的高品質</p>
+                    <h4 class="font-semibold text-gray-900 mb-2">供應商媒合</h4>
+                    <p class="text-gray-600 text-sm">精確匹配合作</p>
                 </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-clock text-white text-3xl"></i>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-file-invoice text-emerald-600 text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">快速響應</h3>
-                    <p class="text-gray-600">24小時內回應客戶需求，提供及時的專業服務</p>
-                </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-chart-line text-white text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">成本優化</h3>
-                    <p class="text-gray-600">通過優化供應鏈和採購策略，為客戶節省成本</p>
-                </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-sky-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-certificate text-white text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">認證資質</h3>
-                    <p class="text-gray-600">具備相關行業認證和資質，確保服務的專業性和可靠性</p>
+                    <h4 class="font-semibold text-gray-900 mb-2">報價服務</h4>
+                    <p class="text-gray-600 text-sm">快速報價處理</p>
                 </div>
             </div>
         </div>
@@ -381,14 +313,14 @@
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-r from-teal-600 to-cyan-600 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold mb-6">準備與我們合作？</h2>
-            <p class="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">聯繫我們，了解更多關於我們的服務和如何為您的業務增值</p>
+            <h2 class="text-4xl font-bold mb-6">準備開始您的國際貿易之旅？</h2>
+            <p class="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">聯繫我們，獲得專業的貿易諮詢和服務</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="contact-optimized.html" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
                     <i class="fas fa-phone mr-3"></i>
                     聯繫我們
                 </a>
-                <a href="services-optimized.html" class="inline-flex items-center px-8 py-4 bg-teal-700 text-white font-semibold rounded-lg hover:bg-teal-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <a href="services.html" class="inline-flex items-center px-8 py-4 bg-teal-700 text-white font-semibold rounded-lg hover:bg-teal-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
                     <i class="fas fa-list mr-3"></i>
                     查看服務
                 </a>
@@ -401,10 +333,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Company Info -->
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
                         <div class="w-12 h-12 flex items-center justify-center">
-                            <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                            <img src="images/company/logo.png?v=202604021007" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h3 class="text-white font-bold text-lg" id="companyName-footer">貝達國際貿易有限公司</h3>
