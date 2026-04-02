@@ -13,8 +13,8 @@
     <!-- Loading Screen -->
     <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100 flex items-center justify-center z-50">
         <div class="text-center">
-            <div class="w-32 h-32 mx-auto bg-teal-600 rounded-full flex items-center justify-center mb-8 shadow-lg">
-                <div class="text-white text-4xl font-bold animate-spin">貝</div>
+            <div class="w-32 h-32 mx-auto mb-8 flex items-center justify-center bg-white rounded-lg">
+                <img src="images/company/logo.png?nocache=<?php echo time(); ?>" alt="BESTAS INTERNATIONAL TRADE" class="w-24 h-24 object-contain">
             </div>
             <h1 class="text-3xl font-bold text-gray-800 mb-4">貝達國際貿易後台</h1>
             <p class="text-lg text-gray-600 mb-8">載入中...</p>
@@ -25,8 +25,8 @@
     <div id="adminDashboard" class="hidden flex min-h-screen">
         <!-- Sidebar -->
         <div id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 lg:flex lg:flex-col lg:h-screen">
-            <div class="flex items-center justify-center h-16 bg-gradient-to-r from-teal-600 to-cyan-600 flex-shrink-0">
-                <span class="text-white font-bold text-xl">貝達後台</span>
+            <div class="flex items-center justify-center h-16 flex-shrink-0 bg-white">
+                <img src="images/company/logo.png?nocache=<?php echo time(); ?>" alt="BESTAS INTERNATIONAL TRADE" class="w-8 h-8 object-contain">
             </div>
             <nav class="flex-1 mt-8 overflow-y-auto h-[calc(100vh-4rem)] lg:h-auto pb-4">
                 <a href="#dashboard" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
@@ -56,6 +56,34 @@
                 <a href="#settings" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
                     <i class="fas fa-cog w-5 mr-3"></i>
                     系統設定
+                </a>
+                
+                <!-- 新增功能模塊 -->
+                <div class="border-t border-gray-200 my-2"></div>
+                
+                <a href="#customer-management" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-user-tie w-5 mr-3"></i>
+                    客戶管理
+                </a>
+                <a href="#customer-database" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-database w-5 mr-3"></i>
+                    客戶資料庫
+                </a>
+                <a href="#trade-logistics" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-shipping-fast w-5 mr-3"></i>
+                    貿易物流
+                </a>
+                <a href="#finance-compliance" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-coins w-5 mr-3"></i>
+                    財務合規
+                </a>
+                <a href="#analytics-decision" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-chart-pie w-5 mr-3"></i>
+                    分析決策
+                </a>
+                <a href="#security-audit" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-shield-alt w-5 mr-3"></i>
+                    安全審計
                 </a>
             </nav>
         </div>
@@ -645,6 +673,1067 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- 客戶管理功能 -->
+                <div id="customer-managementPage" class="page p-6 hidden">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">客戶管理</h2>
+                        <p class="text-gray-600">管理用戶角色、客戶資料庫、商品報價等</p>
+                    </div>
+
+                    <!-- 功能模塊卡片 -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <!-- 用戶與角色管理 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-users-cog text-blue-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">用戶與角色管理</h3>
+                                <p class="text-sm text-gray-600 mb-4">多層級權限控制（管理員、財務、業務、倉儲等）</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-user-shield mr-2 text-blue-500"></i>
+                                        <span>權限等級: 4級</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-users mr-2 text-blue-500"></i>
+                                        <span>用戶總數: 128</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 客戶與供應商資料庫 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-address-book text-green-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">客戶與供應商資料庫</h3>
+                                <p class="text-sm text-gray-600 mb-4">集中管理合作夥伴資訊、聯絡方式、信用評估</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-building mr-2 text-green-500"></i>
+                                        <span>客戶數量: 256</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-truck mr-2 text-green-500"></i>
+                                        <span>供應商數量: 89</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 商品與報價管理 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-tag text-purple-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">商品與報價管理</h3>
+                                <p class="text-sm text-gray-600 mb-4">商品目錄、價格設定、報價單生成</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-box mr-2 text-purple-500"></i>
+                                        <span>商品數量: 1,024</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-file-invoice mr-2 text-purple-500"></i>
+                                        <span>報價單: 456</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 詳細數據表格 -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-lg font-semibold text-gray-800">客戶管理概覽</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">客戶名稱</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">類型</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">信用評級</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">交易次數</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">狀態</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">ABC貿易公司</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">客戶</td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">A級</span>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">156</td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">活躍</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">XYZ供應商</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">供應商</td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">B級</span>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">89</td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">活躍</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 客戶資料庫 -->
+                <div id="customer-databasePage" class="page p-6 hidden">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">客戶資料庫</h2>
+                        <p class="text-gray-600">管理所有客戶詳細資訊，包含新增、預覽、編輯、刪除功能</p>
+                    </div>
+
+                    <!-- 操作工具欄 -->
+                    <div class="bg-white rounded-lg shadow mb-6">
+                        <div class="p-4 border-b border-gray-200">
+                            <div class="flex flex-wrap items-center justify-between gap-4">
+                                <!-- 左側：新增按鈕 -->
+                                <button id="addCustomerBtn" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+                                    <i class="fas fa-plus mr-2"></i>新增客戶
+                                </button>
+                                
+                                <!-- 右側：篩選工具 -->
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <!-- 國家篩選 -->
+                                    <select id="countryFilter" class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                                        <option value="">所有國家</option>
+                                        <option value="台灣">台灣</option>
+                                        <option value="中國">中國</option>
+                                        <option value="日本">日本</option>
+                                        <option value="韓國">韓國</option>
+                                        <option value="越南">越南</option>
+                                        <option value="印尼">印尼</option>
+                                        <option value="澳洲">澳洲</option>
+                                        <option value="加拿大">加拿大</option>
+                                        <option value="美國">美國</option>
+                                        <option value="德國">德國</option>
+                                    </select>
+                                    
+                                    <!-- 產業別篩選 -->
+                                    <select id="industryFilter" class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                                        <option value="">所有產業</option>
+                                        <option value="電子製造">電子製造</option>
+                                        <option value="紡織業">紡織業</option>
+                                        <option value="機械業">機械業</option>
+                                        <option value="化學業">化學業</option>
+                                        <option value="食品業">食品業</option>
+                                        <option value="貿易業">貿易業</option>
+                                    </select>
+                                    
+                                    <!-- 搜尋框 -->
+                                    <div class="relative">
+                                        <input type="text" id="searchInput" placeholder="搜尋公司名稱或負責人..." 
+                                               class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent w-64">
+                                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <i class="fas fa-search text-gray-400"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 清除篩選 -->
+                                    <button id="clearFiltersBtn" class="text-gray-600 hover:text-gray-800 px-3 py-2">
+                                        <i class="fas fa-times mr-1"></i>清除篩選
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 統計信息 -->
+                        <div class="p-4 bg-gray-50">
+                            <div class="flex flex-wrap items-center gap-6 text-sm">
+                                <div class="flex items-center">
+                                    <i class="fas fa-users text-blue-500 mr-2"></i>
+                                    <span class="text-gray-600">總客戶數：</span>
+                                    <span class="font-semibold text-gray-800" id="totalCustomers">0</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-globe text-green-500 mr-2"></i>
+                                    <span class="text-gray-600">覆蓋國家：</span>
+                                    <span class="font-semibold text-gray-800" id="totalCountries">0</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-industry text-purple-500 mr-2"></i>
+                                    <span class="text-gray-600">產業類別：</span>
+                                    <span class="font-semibold text-gray-800" id="totalIndustries">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 客戶資料表格 -->
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">國家</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">公司名稱</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">負責人</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">電話</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mail</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">產業別</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">合作期間</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">合作項目</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">檔案</th>
+                                        <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="customerTableBody" class="bg-white divide-y divide-gray-200">
+                                    <!-- 客戶資料將通過JavaScript動態載入 -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- 分頁 -->
+                        <div class="px-6 py-4 border-t border-gray-200">
+                            <div class="flex items-center justify-between">
+                                <div class="text-sm text-gray-700">
+                                    顯示 <span id="showingFrom">1</span> 到 <span id="showingTo">10</span> 
+                                    共 <span id="totalRecords">0</span> 筆資料
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button id="prevPageBtn" class="px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <span class="px-3 py-1 text-sm">第 <span id="currentPage">1</span> 頁</span>
+                                    <button id="nextPageBtn" class="px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 貿易與物流功能 -->
+                <div id="trade-logisticsPage" class="page p-6 hidden">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">貿易與物流</h2>
+                        <p class="text-gray-600">管理訂單流程、報關文件、物流追蹤等</p>
+                    </div>
+
+                    <!-- 功能模塊卡片 -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <!-- 訂單管理 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-clipboard-list text-orange-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">訂單管理</h3>
+                                <p class="text-sm text-gray-600 mb-4">從下單、審核、出貨到完成的全流程追蹤</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-shopping-cart mr-2 text-orange-500"></i>
+                                        <span>進行中: 45</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-check-circle mr-2 text-orange-500"></i>
+                                        <span>已完成: 1,234</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 進出口報關文件管理 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-red-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-file-contract text-red-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">報關文件管理</h3>
+                                <p class="text-sm text-gray-600 mb-4">自動生成報關單、提單、原產地證明等</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-file-alt mr-2 text-red-500"></i>
+                                        <span>報關單: 234</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-ship mr-2 text-red-500"></i>
+                                        <span>提單: 189</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 物流追蹤 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-map-marked-alt text-indigo-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">物流追蹤</h3>
+                                <p class="text-sm text-gray-600 mb-4">整合貨運公司API，提供即時運輸狀態</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-truck mr-2 text-indigo-500"></i>
+                                        <span>運輸中: 67</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-globe mr-2 text-indigo-500"></i>
+                                        <span>API連接: 12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 訂單狀態追蹤 -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-lg font-semibold text-gray-800">訂單狀態追蹤</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">訂單 #ORD-2024-001</h4>
+                                            <p class="text-sm text-gray-600">客戶: ABC貿易公司</p>
+                                        </div>
+                                        <span class="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">處理中</span>
+                                    </div>
+                                    <div class="mt-2 flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-clock mr-1"></i>
+                                        <span>更新於 2小時前</span>
+                                    </div>
+                                </div>
+                                <div class="border-l-4 border-green-500 pl-4">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">訂單 #ORD-2024-002</h4>
+                                            <p class="text-sm text-gray-600">客戶: XYZ國際</p>
+                                        </div>
+                                        <span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">已出貨</span>
+                                    </div>
+                                    <div class="mt-2 flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-clock mr-1"></i>
+                                        <span>更新於 1天前</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 財務與合規功能 -->
+                <div id="finance-compliancePage" class="page p-6 hidden">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">財務與合規</h2>
+                        <p class="text-gray-600">管理多幣別結算、發票付款、合規審查等</p>
+                    </div>
+
+                    <!-- 功能模塊卡片 -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <!-- 多幣別結算 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer" onclick="toggleCurrencyPanel()">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-coins text-yellow-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">多幣別結算</h3>
+                                <p class="text-sm text-gray-600 mb-4">匯率換算、不同幣別的帳務處理</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-dollar-sign mr-2 text-yellow-500"></i>
+                                        <span>支援幣別: 15</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-chart-line mr-2 text-yellow-500"></i>
+                                        <span>即時匯率</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-green-600">
+                                        <i class="fas fa-sync-alt mr-2"></i>
+                                        <span>最後更新: <span id="lastUpdateTime">--:--:--</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 發票與付款管理 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-teal-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-file-invoice-dollar text-teal-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">發票與付款管理</h3>
+                                <p class="text-sm text-gray-600 mb-4">電子發票、付款提醒、應收應付帳款</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-receipt mr-2 text-teal-500"></i>
+                                        <span>本月發票: 89</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-bell mr-2 text-teal-500"></i>
+                                        <span>待付款: 23</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 合規審查 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-red-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-gavel text-red-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">合規審查</h3>
+                                <p class="text-sm text-gray-600 mb-4">檢查禁運清單、出口管制規範</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-shield-alt mr-2 text-red-500"></i>
+                                        <span>禁運清單: 已更新</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-check-double mr-2 text-red-500"></i>
+                                        <span>審查通過: 98%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 財務概覽 -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-lg font-semibold text-gray-800">財務概覽</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                            <i class="fas fa-arrow-up text-green-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-500">本月收入</p>
+                                            <p class="text-xl font-bold text-gray-800">$1,234,567</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                            <i class="fas fa-arrow-down text-red-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-500">本月支出</p>
+                                            <p class="text-xl font-bold text-gray-800">$890,123</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                            <i class="fas fa-file-invoice text-blue-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-500">應收帳款</p>
+                                            <p class="text-xl font-bold text-gray-800">$456,789</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                                            <i class="fas fa-exclamation-triangle text-yellow-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-500">逾期帳款</p>
+                                            <p class="text-xl font-bold text-gray-800">$23,456</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 即時匯率監控面板 -->
+                    <div id="currencyPanel" class="hidden bg-white rounded-lg shadow-lg mb-6">
+                        <div class="p-6 border-b border-gray-200">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-800">台灣銀行即時匯率監控</h3>
+                                    <p class="text-sm text-gray-500 mt-1">基於台灣銀行公布匯率，每30秒自動更新</p>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <button onclick="refreshRates()" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                        <i class="fas fa-sync-alt mr-2"></i>重新整理
+                                    </button>
+                                    <button onclick="toggleCurrencyPanel()" class="text-gray-400 hover:text-gray-600">
+                                        <i class="fas fa-times text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <!-- 匯率統計概覽 -->
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                                <div class="bg-green-50 rounded-lg p-4">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                            <i class="fas fa-arrow-trend-up text-green-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-600">上漲幣別</p>
+                                            <p class="text-lg font-bold text-green-600" id="risingCount">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-red-50 rounded-lg p-4">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                            <i class="fas fa-arrow-trend-down text-red-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-600">下跌幣別</p>
+                                            <p class="text-lg font-bold text-red-600" id="fallingCount">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-yellow-50 rounded-lg p-4">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                                            <i class="fas fa-minus text-yellow-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-600">持平幣別</p>
+                                            <p class="text-lg font-bold text-yellow-600" id="stableCount">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-blue-50 rounded-lg p-4">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                            <i class="fas fa-clock text-blue-600"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-gray-600">更新頻率</p>
+                                            <p class="text-lg font-bold text-blue-600">30秒</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 匯率表格 -->
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">幣別</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">當前匯率</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">漲跌幅</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">最高價</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">最低價</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">更新時間</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">趨勢</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="currencyTableBody" class="bg-white divide-y divide-gray-200">
+                                        <!-- 匯率資料將通過JavaScript動態載入 -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- 匯率圖表 -->
+                            <div class="mt-6">
+                                <h4 class="text-md font-semibold text-gray-800 mb-4">主要幣別走勢圖</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <canvas id="usdChart" width="400" height="200"></canvas>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <canvas id="eurChart" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 即時匯率換算器 -->
+                            <div class="mt-6 bg-blue-50 rounded-lg p-6">
+                                <h4 class="text-md font-semibold text-gray-800 mb-4">
+                                    <i class="fas fa-calculator mr-2 text-blue-600"></i>
+                                    即時匯率換算器
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- 從貨幣 -->
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">從貨幣</label>
+                                        <div class="flex items-center space-x-2 mb-3">
+                                            <select id="fromCurrency" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                                <!-- 貨幣選項將通過JavaScript動態載入 -->
+                                            </select>
+                                            <input type="number" id="fromAmount" placeholder="輸入金額" 
+                                                   class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        </div>
+                                        
+                                        <!-- 常用金額快捷按鈕 -->
+                                        <div class="flex flex-wrap gap-2 mb-3">
+                                            <button onclick="setFromAmount(1000)" class="px-3 py-1 bg-white border border-gray-300 rounded text-sm hover:bg-gray-50">1,000</button>
+                                            <button onclick="setFromAmount(5000)" class="px-3 py-1 bg-white border border-gray-300 rounded text-sm hover:bg-gray-50">5,000</button>
+                                            <button onclick="setFromAmount(10000)" class="px-3 py-1 bg-white border border-gray-300 rounded text-sm hover:bg-gray-50">10,000</button>
+                                            <button onclick="setFromAmount(50000)" class="px-3 py-1 bg-white border border-gray-300 rounded text-sm hover:bg-gray-50">50,000</button>
+                                            <button onclick="setFromAmount(100000)" class="px-3 py-1 bg-white border border-gray-300 rounded text-sm hover:bg-gray-50">100,000</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 到貨幣 -->
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">到貨幣</label>
+                                        <div class="flex items-center space-x-2 mb-3">
+                                            <select id="toCurrency" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                                <!-- 貨幣選項將通過JavaScript動態載入 -->
+                                            </select>
+                                            <input type="number" id="toAmount" readonly placeholder="換算結果" 
+                                                   class="flex-1 px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg">
+                                        </div>
+                                        
+                                        <!-- 換算結果詳情 -->
+                                        <div class="bg-white rounded-lg p-3 border border-blue-200">
+                                            <div class="text-sm text-gray-600 mb-2">
+                                                <i class="fas fa-info-circle mr-1 text-blue-500"></i>
+                                                換算詳情
+                                            </div>
+                                            <div class="space-y-1 text-sm">
+                                                <div class="flex justify-between">
+                                                    <span class="text-gray-600">匯率：</span>
+                                                    <span class="font-medium" id="exchangeRate">--</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-gray-600">更新時間：</span>
+                                                    <span class="font-medium" id="conversionUpdateTime">--</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-gray-600">手續費估算：</span>
+                                                    <span class="font-medium text-orange-600" id="feeEstimate">--</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 快速換算組合 -->
+                                <div class="mt-4">
+                                    <h5 class="text-sm font-medium text-gray-700 mb-3">快速換算組合</h5>
+                                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                        <button onclick="quickConvert('USD', 'TWD')" class="px-3 py-2 bg-white border border-gray-300 rounded text-sm hover:bg-blue-50 hover:border-blue-300">
+                                            🇺🇸 USD → 🇹🇼 TWD
+                                        </button>
+                                        <button onclick="quickConvert('EUR', 'TWD')" class="px-3 py-2 bg-white border border-gray-300 rounded text-sm hover:bg-blue-50 hover:border-blue-300">
+                                            🇪🇺 EUR → 🇹🇼 TWD
+                                        </button>
+                                        <button onclick="quickConvert('JPY', 'TWD')" class="px-3 py-2 bg-white border border-gray-300 rounded text-sm hover:bg-blue-50 hover:border-blue-300">
+                                            🇯🇵 JPY → 🇹🇼 TWD
+                                        </button>
+                                        <button onclick="quickConvert('CNY', 'TWD')" class="px-3 py-2 bg-white border border-gray-300 rounded text-sm hover:bg-blue-50 hover:border-blue-300">
+                                            🇨🇳 CNY → 🇹🇼 TWD
+                                        </button>
+                                        <button onclick="quickConvert('TWD', 'USD')" class="px-3 py-2 bg-white border border-gray-300 rounded text-sm hover:bg-blue-50 hover:border-blue-300">
+                                            🇹🇼 TWD → 🇺🇸 USD
+                                        </button>
+                                        <button onclick="quickConvert('TWD', 'EUR')" class="px-3 py-2 bg-white border border-gray-300 rounded text-sm hover:bg-blue-50 hover:border-blue-300">
+                                            🇹🇼 TWD → 🇪🇺 EUR
+                                        </button>
+                                        <button onclick="quickConvert('TWD', 'JPY')" class="px-3 py-2 bg-white border border-gray-300 rounded text-sm hover:bg-blue-50 hover:border-blue-300">
+                                            🇹🇼 TWD → 🇯🇵 JPY
+                                        </button>
+                                        <button onclick="quickConvert('TWD', 'CNY')" class="px-3 py-2 bg-white border border-gray-300 rounded text-sm hover:bg-blue-50 hover:border-blue-300">
+                                            🇹🇼 TWD → 🇨🇳 CNY
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 分析與決策支持 -->
+                <div id="analytics-decisionPage" class="page p-6 hidden">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">分析與決策支持</h2>
+                        <p class="text-gray-600">交易數據分析、供應鏈分析、風險預警系統</p>
+                    </div>
+
+                    <!-- 功能模塊卡片 -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <!-- 交易數據分析 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-chart-bar text-purple-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">交易數據分析</h3>
+                                <p class="text-sm text-gray-600 mb-4">銷售額、利潤率、客戶分布等統計</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-chart-line mr-2 text-purple-500"></i>
+                                        <span>報表數量: 45</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-database mr-2 text-purple-500"></i>
+                                        <span>數據點: 10K+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 供應鏈分析 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-cyan-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-link text-cyan-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">供應鏈分析</h3>
+                                <p class="text-sm text-gray-600 mb-4">庫存週轉率、交貨準時率分析</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-warehouse mr-2 text-cyan-500"></i>
+                                        <span>庫存週轉: 8.5次</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-clock mr-2 text-cyan-500"></i>
+                                        <span>準時率: 96.8%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 風險預警系統 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-red-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-exclamation-triangle text-red-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">風險預警系統</h3>
+                                <p class="text-sm text-gray-600 mb-4">匯率波動、政策變動提醒</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-bell mr-2 text-red-500"></i>
+                                        <span>活躍警報: 3</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-chart-area mr-2 text-red-500"></i>
+                                        <span>監控指標: 25</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 數據分析儀表板 -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-lg font-semibold text-gray-800">數據分析儀表板</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="text-md font-semibold text-gray-700 mb-4">銷售趨勢</h4>
+                                    <div class="h-64 bg-gray-50 rounded-lg flex items-center justify-center">
+                                        <canvas id="salesTrendChart"></canvas>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-md font-semibold text-gray-700 mb-4">客戶分布</h4>
+                                    <div class="h-64 bg-gray-50 rounded-lg flex items-center justify-center">
+                                        <canvas id="customerDistributionChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 安全與審計 -->
+                <div id="security-auditPage" class="page p-6 hidden">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">安全與審計</h2>
+                        <p class="text-gray-600">操作日誌、數據加密、合規報告生成</p>
+                    </div>
+
+                    <!-- 功能模塊卡片 -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <!-- 操作日誌 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-history text-gray-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">操作日誌</h3>
+                                <p class="text-sm text-gray-600 mb-4">記錄所有用戶操作，方便審計</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-list-alt mr-2 text-gray-500"></i>
+                                        <span>日誌條目: 50K+</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-calendar mr-2 text-gray-500"></i>
+                                        <span>保留期間: 90天</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 數據加密與備份 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-lock text-green-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">數據加密與備份</h3>
+                                <p class="text-sm text-gray-600 mb-4">保障敏感商業資料安全</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-key mr-2 text-green-500"></i>
+                                        <span>加密級別: AES-256</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-cloud-upload-alt mr-2 text-green-500"></i>
+                                        <span>自動備份: 每日</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 合規報告生成 -->
+                        <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="p-6">
+                                <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-file-alt text-blue-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">合規報告生成</h3>
+                                <p class="text-sm text-gray-600 mb-4">支援稽核與政府申報</p>
+                                <div class="space-y-2">
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-file-export mr-2 text-blue-500"></i>
+                                        <span>報告模板: 12</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-shield-check mr-2 text-blue-500"></i>
+                                        <span>合規認證: ISO 27001</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 安全日誌 -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-lg font-semibold text-gray-800">最近安全事件</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                        <i class="fas fa-check text-green-600 text-sm"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm font-medium text-gray-800">系統備份完成</p>
+                                        <p class="text-xs text-gray-500">2024-04-02 10:00:00 - 自動備份成功</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                        <i class="fas fa-exclamation text-yellow-600 text-sm"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm font-medium text-gray-800">多次登入失敗</p>
+                                        <p class="text-xs text-gray-500">2024-04-02 09:45:00 - IP: 192.168.1.100</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                        <i class="fas fa-user text-blue-600 text-sm"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="text-sm font-medium text-gray-800">管理員登入</p>
+                                        <p class="text-xs text-gray-500">2024-04-02 09:30:00 - 用戶: Admin</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 客戶資料模態對話框 -->
+                <div id="customerModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+                    <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 max-h-screen overflow-y-auto">
+                        <div class="p-6 border-b border-gray-200">
+                            <div class="flex justify-between items-center">
+                                <h2 id="customerModalTitle" class="text-xl font-bold text-gray-800">新增客戶</h2>
+                                <button id="closeCustomerModal" class="text-gray-400 hover:text-gray-600">
+                                    <i class="fas fa-times text-xl"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <form id="customerForm" class="p-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- 基本資訊 -->
+                                <div class="space-y-4">
+                                    <h3 class="text-lg font-semibold text-gray-700 border-b pb-2">基本資訊</h3>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">國家 *</label>
+                                        <select id="customerCountry" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                                            <option value="">請選擇國家</option>
+                                            <option value="台灣">台灣</option>
+                                            <option value="中國">中國</option>
+                                            <option value="日本">日本</option>
+                                            <option value="韓國">韓國</option>
+                                            <option value="越南">越南</option>
+                                            <option value="印尼">印尼</option>
+                                            <option value="澳洲">澳洲</option>
+                                            <option value="加拿大">加拿大</option>
+                                            <option value="美國">美國</option>
+                                            <option value="德國">德國</option>
+                                            <option value="英國">英國</option>
+                                            <option value="法國">法國</option>
+                                            <option value="新加坡">新加坡</option>
+                                            <option value="馬來西亞">馬來西亞</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">公司名稱 *</label>
+                                        <input type="text" id="customerCompany" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">負責人 *</label>
+                                        <input type="text" id="customerContact" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">電話 *</label>
+                                        <input type="tel" id="customerPhone" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Mail</label>
+                                        <input type="email" id="customerEmail" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">地址</label>
+                                        <textarea id="customerAddress" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"></textarea>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">產業別 *</label>
+                                        <select id="customerIndustry" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                                            <option value="">請選擇產業別</option>
+                                            <option value="電子製造">電子製造</option>
+                                            <option value="紡織業">紡織業</option>
+                                            <option value="機械業">機械業</option>
+                                            <option value="化學業">化學業</option>
+                                            <option value="食品業">食品業</option>
+                                            <option value="貿易業">貿易業</option>
+                                            <option value="建築業">建築業</option>
+                                            <option value="醫療業">醫療業</option>
+                                            <option value="教育業">教育業</option>
+                                            <option value="金融業">金融業</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <!-- 合作資訊 -->
+                                <div class="space-y-4">
+                                    <h3 class="text-lg font-semibold text-gray-700 border-b pb-2">合作資訊</h3>
+                                    
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-1">合作開始時間</label>
+                                            <input type="date" id="cooperationStart" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-1">合作結束時間</label>
+                                            <input type="date" id="cooperationEnd" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">合作項目</label>
+                                        <textarea id="cooperationProjects" rows="4" placeholder="請描述合作項目內容..." 
+                                                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"></textarea>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">簽署資料檔案</label>
+                                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                                            <input type="file" id="documentFiles" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" class="hidden">
+                                            <label for="documentFiles" class="cursor-pointer">
+                                                <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2"></i>
+                                                <p class="text-sm text-gray-600">點擊上傳檔案或拖拽檔案到此處</p>
+                                                <p class="text-xs text-gray-500">支援 PDF, DOC, XLS, JPG, PNG 格式，最多10個檔案</p>
+                                            </label>
+                                        </div>
+                                        
+                                        <!-- 已上傳檔案列表 -->
+                                        <div id="uploadedFilesList" class="mt-3 space-y-2">
+                                            <!-- 檔案列表將通過JavaScript動態載入 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 表單操作按鈕 -->
+                            <div class="flex justify-end space-x-3 mt-6 pt-6 border-t border-gray-200">
+                                <button type="button" id="cancelCustomerBtn" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                                    取消
+                                </button>
+                                <button type="submit" class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors">
+                                    <i class="fas fa-save mr-2"></i>儲存客戶
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 客戶預覽模態對話框 -->
+                <div id="customerPreviewModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+                    <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 max-h-screen overflow-y-auto">
+                        <div class="p-6 border-b border-gray-200">
+                            <div class="flex justify-between items-center">
+                                <h2 class="text-xl font-bold text-gray-800">客戶資料預覽</h2>
+                                <button id="closePreviewModal" class="text-gray-400 hover:text-gray-600">
+                                    <i class="fas fa-times text-xl"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div id="previewContent" class="p-6">
+                            <!-- 預覽內容將通過JavaScript動態載入 -->
+                        </div>
+                        
+                        <div class="flex justify-end space-x-3 p-6 border-t border-gray-200">
+                            <button id="editFromPreviewBtn" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                <i class="fas fa-edit mr-2"></i>編輯
+                            </button>
+                            <button id="closePreviewBtn" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                                關閉
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
     </div>
@@ -655,7 +1744,7 @@
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div class="bg-gradient-to-r from-teal-600 to-cyan-600 p-8 text-center">
                     <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center mb-4">
-                        <span class="text-teal-600 font-bold text-2xl">貝</span>
+                        <img src="images/company/logo.png?nocache=<?php echo time(); ?>" alt="BESTAS" class="w-16 h-16 object-contain">
                     </div>
                     <h1 class="text-2xl font-bold text-white mb-2">後台管理系統</h1>
                     <p class="text-teal-100">Bestas International Trade Admin</p>
@@ -700,9 +1789,33 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Admin page loaded');
             
-            setTimeout(function() {
-                document.getElementById('loadingScreen').style.display = 'none';
-            }, 500);
+            // 確保logo完全載入後再隱藏loading screen
+            const logoImg = document.querySelector('#loadingScreen img');
+            if (logoImg) {
+                logoImg.onload = function() {
+                    console.log('Logo loaded successfully');
+                    setTimeout(function() {
+                        document.getElementById('loadingScreen').style.display = 'none';
+                    }, 1000);
+                };
+                logoImg.onerror = function() {
+                    console.log('Logo load error');
+                    setTimeout(function() {
+                        document.getElementById('loadingScreen').style.display = 'none';
+                    }, 1000);
+                };
+                // 如果logo已經載入完成
+                if (logoImg.complete) {
+                    setTimeout(function() {
+                        document.getElementById('loadingScreen').style.display = 'none';
+                    }, 1000);
+                }
+            } else {
+                // 備用方案：延長時間
+                setTimeout(function() {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                }, 2000);
+            }
         });
 
         // Login handling
@@ -1815,6 +2928,1289 @@
                 settingsModal.classList.remove('flex');
             }
         });
+
+        // Initialize new charts for analytics page
+        function initAnalyticsCharts() {
+            // Sales Trend Chart
+            const salesTrendCtx = document.getElementById('salesTrendChart');
+            if (salesTrendCtx) {
+                new Chart(salesTrendCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+                        datasets: [{
+                            label: '銷售額',
+                            data: [1200000, 1350000, 1180000, 1450000, 1680000, 1234567],
+                            borderColor: 'rgb(75, 192, 192)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: '銷售趨勢'
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Customer Distribution Chart
+            const customerDistCtx = document.getElementById('customerDistributionChart');
+            if (customerDistCtx) {
+                new Chart(customerDistCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['亞洲', '歐洲', '美洲', '非洲', '大洋洲'],
+                        datasets: [{
+                            data: [45, 25, 20, 7, 3],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.8)',
+                                'rgba(54, 162, 235, 0.8)',
+                                'rgba(255, 206, 86, 0.8)',
+                                'rgba(75, 192, 192, 0.8)',
+                                'rgba(153, 102, 255, 0.8)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'right',
+                            },
+                            title: {
+                                display: true,
+                                text: '客戶分布'
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // Initialize analytics charts when analytics page is shown
+        document.querySelector('a[href="#analytics-decision"]').addEventListener('click', function() {
+            setTimeout(initAnalyticsCharts, 100);
+        });
+
+        // 客戶資料庫功能
+        class CustomerDatabase {
+            constructor() {
+                this.customers = this.loadCustomers();
+                this.filteredCustomers = [...this.customers];
+                this.currentPage = 1;
+                this.itemsPerPage = 10;
+                this.editingCustomerId = null;
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+                this.renderTable();
+                this.updateStatistics();
+            }
+
+            loadCustomers() {
+                // 模擬客戶資料
+                return [
+                    {
+                        id: 1,
+                        country: '台灣',
+                        company: 'ABC電子科技有限公司',
+                        contact: '張經理',
+                        phone: '02-12345678',
+                        email: 'zhang@abc-electronics.com',
+                        address: '台北市信義區信義路五段7號',
+                        industry: '電子製造',
+                        cooperationStart: '2020-01-15',
+                        cooperationEnd: '',
+                        projects: '電子元件供應、技術合作',
+                        documents: [
+                            { name: '合作協議書.pdf', type: 'pdf', size: '2.3MB' },
+                            { name: '技術規格書.docx', type: 'docx', size: '1.5MB' }
+                        ]
+                    },
+                    {
+                        id: 2,
+                        country: '中國',
+                        company: 'XYZ國際貿易公司',
+                        contact: '李總',
+                        phone: '86-21-87654321',
+                        email: 'li@xyz-intl.com.cn',
+                        address: '上海市浦東新區陸家嘴金融區',
+                        industry: '貿易業',
+                        cooperationStart: '2019-03-20',
+                        cooperationEnd: '2023-12-31',
+                        projects: '進出口貿易、物流配送',
+                        documents: [
+                            { name: '貿易合同.pdf', type: 'pdf', size: '3.1MB' },
+                            { name: '貨運單據.xlsx', type: 'xlsx', size: '856KB' }
+                        ]
+                    },
+                    {
+                        id: 3,
+                        country: '日本',
+                        company: 'Sakura工業株式會社',
+                        contact: '田中部長',
+                        phone: '81-3-12345678',
+                        email: 'tanaka@sakura-industry.co.jp',
+                        address: '東京都千代田区丸の内1-1-1',
+                        industry: '機械業',
+                        cooperationStart: '2021-06-10',
+                        cooperationEnd: '',
+                        projects: '精密機械供應、技術指導',
+                        documents: [
+                            { name: '機械規格書.pdf', type: 'pdf', size: '4.2MB' },
+                            { name: '品質保證書.pdf', type: 'pdf', size: '1.8MB' }
+                        ]
+                    },
+                    {
+                        id: 4,
+                        country: '越南',
+                        company: 'Saigon Textile Company',
+                        contact: 'Nguyen Van Minh',
+                        phone: '84-28-39101234',
+                        email: 'minh@saigon-textile.vn',
+                        address: 'Ho Chi Minh City, District 1, Nguyen Hue Street',
+                        industry: '紡織業',
+                        cooperationStart: '2022-01-10',
+                        cooperationEnd: '',
+                        projects: '紡織品原料供應、OEM代工',
+                        documents: [
+                            { name: '供應合約.pdf', type: 'pdf', size: '1.9MB' },
+                            { name: '品質檢驗報告.pdf', type: 'pdf', size: '2.1MB' }
+                        ]
+                    },
+                    {
+                        id: 5,
+                        country: '印尼',
+                        company: 'Jakarta Mining Resources',
+                        contact: 'Budi Santoso',
+                        phone: '62-21-5748392',
+                        email: 'budi@jakarta-mining.co.id',
+                        address: 'Jakarta Selatan, SCBD, Jl. Jend. Sudirman Kav 52-53',
+                        industry: '化學業',
+                        cooperationStart: '2021-08-15',
+                        cooperationEnd: '',
+                        projects: '化學原料供應、技術轉移',
+                        documents: [
+                            { name: '採購協議.pdf', type: 'pdf', size: '3.5MB' },
+                            { name: '安全證書.pdf', type: 'pdf', size: '1.2MB' }
+                        ]
+                    },
+                    {
+                        id: 6,
+                        country: '澳洲',
+                        company: 'Australian Agricultural Export',
+                        contact: 'James Wilson',
+                        phone: '61-2-93744400',
+                        email: 'j.wilson@aus-agri.com.au',
+                        address: 'Sydney NSW 2000, Level 10, 123 Pitt Street',
+                        industry: '食品業',
+                        cooperationStart: '2020-11-20',
+                        cooperationEnd: '',
+                        projects: '農產品進出口、品質認證',
+                        documents: [
+                            { name: '出口合約.pdf', type: 'pdf', size: '2.8MB' },
+                            { name: '檢疫證明.pdf', type: 'pdf', size: '1.6MB' }
+                        ]
+                    },
+                    {
+                        id: 7,
+                        country: '加拿大',
+                        company: 'Maple Wood Products Inc.',
+                        contact: 'Robert Chen',
+                        phone: '1-416-555-0123',
+                        email: 'rchen@maple-wood.ca',
+                        address: 'Toronto, ON M5V 2T6, 100 Front Street West',
+                        industry: '建築業',
+                        cooperationStart: '2021-03-25',
+                        cooperationEnd: '',
+                        projects: '木材供應、建材貿易',
+                        documents: [
+                            { name: '供應合同.pdf', type: 'pdf', size: '2.2MB' },
+                            { name: '環保認證.pdf', type: 'pdf', size: '1.4MB' }
+                        ]
+                    }
+                ];
+            }
+
+            bindEvents() {
+                // 新增客戶按鈕
+                document.getElementById('addCustomerBtn').addEventListener('click', () => {
+                    this.openCustomerModal();
+                });
+
+                // 關閉模態框
+                document.getElementById('closeCustomerModal').addEventListener('click', () => {
+                    this.closeCustomerModal();
+                });
+
+                document.getElementById('cancelCustomerBtn').addEventListener('click', () => {
+                    this.closeCustomerModal();
+                });
+
+                // 表單提交
+                document.getElementById('customerForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.saveCustomer();
+                });
+
+                // 篩選功能
+                document.getElementById('countryFilter').addEventListener('change', () => {
+                    this.applyFilters();
+                });
+
+                document.getElementById('industryFilter').addEventListener('change', () => {
+                    this.applyFilters();
+                });
+
+                document.getElementById('searchInput').addEventListener('input', () => {
+                    this.applyFilters();
+                });
+
+                document.getElementById('clearFiltersBtn').addEventListener('click', () => {
+                    this.clearFilters();
+                });
+
+                // 分頁按鈕
+                document.getElementById('prevPageBtn').addEventListener('click', () => {
+                    this.previousPage();
+                });
+
+                document.getElementById('nextPageBtn').addEventListener('click', () => {
+                    this.nextPage();
+                });
+
+                // 預覽模態框
+                document.getElementById('closePreviewModal').addEventListener('click', () => {
+                    this.closePreviewModal();
+                });
+
+                document.getElementById('closePreviewBtn').addEventListener('click', () => {
+                    this.closePreviewModal();
+                });
+
+                document.getElementById('editFromPreviewBtn').addEventListener('click', () => {
+                    this.editFromPreview();
+                });
+
+                // 檔案上傳
+                document.getElementById('documentFiles').addEventListener('change', (e) => {
+                    this.handleFileUpload(e);
+                });
+            }
+
+            openCustomerModal(customerId = null) {
+                const modal = document.getElementById('customerModal');
+                const title = document.getElementById('customerModalTitle');
+                const form = document.getElementById('customerForm');
+                
+                this.editingCustomerId = customerId;
+                
+                if (customerId) {
+                    const customer = this.customers.find(c => c.id === customerId);
+                    title.textContent = '編輯客戶';
+                    this.fillForm(customer);
+                } else {
+                    title.textContent = '新增客戶';
+                    form.reset();
+                    document.getElementById('uploadedFilesList').innerHTML = '';
+                }
+                
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+
+            closeCustomerModal() {
+                const modal = document.getElementById('customerModal');
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                this.editingCustomerId = null;
+            }
+
+            fillForm(customer) {
+                document.getElementById('customerCountry').value = customer.country;
+                document.getElementById('customerCompany').value = customer.company;
+                document.getElementById('customerContact').value = customer.contact;
+                document.getElementById('customerPhone').value = customer.phone;
+                document.getElementById('customerEmail').value = customer.email || '';
+                document.getElementById('customerAddress').value = customer.address;
+                document.getElementById('customerIndustry').value = customer.industry;
+                document.getElementById('cooperationStart').value = customer.cooperationStart;
+                document.getElementById('cooperationEnd').value = customer.cooperationEnd;
+                document.getElementById('cooperationProjects').value = customer.projects;
+                
+                // 顯示已上傳的檔案
+                this.displayUploadedFiles(customer.documents);
+            }
+
+            saveCustomer() {
+                const formData = {
+                    country: document.getElementById('customerCountry').value,
+                    company: document.getElementById('customerCompany').value,
+                    contact: document.getElementById('customerContact').value,
+                    phone: document.getElementById('customerPhone').value,
+                    email: document.getElementById('customerEmail').value,
+                    address: document.getElementById('customerAddress').value,
+                    industry: document.getElementById('customerIndustry').value,
+                    cooperationStart: document.getElementById('cooperationStart').value,
+                    cooperationEnd: document.getElementById('cooperationEnd').value,
+                    projects: document.getElementById('cooperationProjects').value,
+                    documents: this.getUploadedFiles()
+                };
+
+                if (this.editingCustomerId) {
+                    // 編輯現有客戶
+                    const index = this.customers.findIndex(c => c.id === this.editingCustomerId);
+                    this.customers[index] = { ...this.customers[index], ...formData };
+                } else {
+                    // 新增客戶
+                    const newCustomer = {
+                        id: Math.max(...this.customers.map(c => c.id)) + 1,
+                        ...formData
+                    };
+                    this.customers.push(newCustomer);
+                }
+
+                this.closeCustomerModal();
+                this.applyFilters();
+                this.updateStatistics();
+            }
+
+            handleFileUpload(e) {
+                const files = Array.from(e.target.files);
+                const maxFiles = 10;
+                const currentFiles = this.getUploadedFiles();
+                
+                if (currentFiles.length + files.length > maxFiles) {
+                    alert(`最多只能上傳${maxFiles}個檔案`);
+                    return;
+                }
+
+                files.forEach(file => {
+                    const fileObj = {
+                        name: file.name,
+                        type: file.name.split('.').pop(),
+                        size: this.formatFileSize(file.size)
+                    };
+                    this.addFileToList(fileObj);
+                });
+            }
+
+            addFileToList(file) {
+                const filesList = document.getElementById('uploadedFilesList');
+                const fileItem = document.createElement('div');
+                fileItem.className = 'flex items-center justify-between p-2 bg-gray-50 rounded';
+                fileItem.innerHTML = `
+                    <div class="flex items-center">
+                        <i class="fas fa-file-${this.getFileIcon(file.type)} text-blue-500 mr-2"></i>
+                        <span class="text-sm">${file.name}</span>
+                        <span class="text-xs text-gray-500 ml-2">(${file.size})</span>
+                    </div>
+                    <button type="button" onclick="this.parentElement.remove()" class="text-red-500 hover:text-red-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                filesList.appendChild(fileItem);
+            }
+
+            displayUploadedFiles(files) {
+                const filesList = document.getElementById('uploadedFilesList');
+                filesList.innerHTML = '';
+                files.forEach(file => this.addFileToList(file));
+            }
+
+            getUploadedFiles() {
+                const fileItems = document.querySelectorAll('#uploadedFilesList > div');
+                return Array.from(fileItems).map(item => {
+                    const text = item.textContent.trim();
+                    const name = text.split('(')[0].trim();
+                    const size = text.match(/\(([^)]+)\)/)?.[1] || '';
+                    const type = name.split('.').pop();
+                    return { name, type, size };
+                });
+            }
+
+            getFileIcon(type) {
+                const iconMap = {
+                    'pdf': 'pdf',
+                    'doc': 'word',
+                    'docx': 'word',
+                    'xls': 'excel',
+                    'xlsx': 'excel',
+                    'jpg': 'image',
+                    'jpeg': 'image',
+                    'png': 'image'
+                };
+                return iconMap[type] || 'alt';
+            }
+
+            formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+
+            applyFilters() {
+                const countryFilter = document.getElementById('countryFilter').value;
+                const industryFilter = document.getElementById('industryFilter').value;
+                const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+                this.filteredCustomers = this.customers.filter(customer => {
+                    const matchCountry = !countryFilter || customer.country === countryFilter;
+                    const matchIndustry = !industryFilter || customer.industry === industryFilter;
+                    const matchSearch = !searchTerm || 
+                        customer.company.toLowerCase().includes(searchTerm) ||
+                        customer.contact.toLowerCase().includes(searchTerm);
+                    
+                    return matchCountry && matchIndustry && matchSearch;
+                });
+
+                this.currentPage = 1;
+                this.renderTable();
+                this.updateStatistics();
+            }
+
+            clearFilters() {
+                document.getElementById('countryFilter').value = '';
+                document.getElementById('industryFilter').value = '';
+                document.getElementById('searchInput').value = '';
+                this.applyFilters();
+            }
+
+            renderTable() {
+                const tbody = document.getElementById('customerTableBody');
+                const start = (this.currentPage - 1) * this.itemsPerPage;
+                const end = start + this.itemsPerPage;
+                const pageCustomers = this.filteredCustomers.slice(start, end);
+
+                tbody.innerHTML = pageCustomers.map(customer => `
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${customer.country}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${customer.company}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${customer.contact}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${customer.phone}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${customer.email || '未填寫'}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${customer.industry}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            ${customer.cooperationStart} ${customer.cooperationEnd ? '至 ' + customer.cooperationEnd : '至今'}
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-500 max-w-xs truncate" title="${customer.projects}">
+                            ${customer.projects}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                ${customer.documents.length} 檔案
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                            <button onclick="customerDB.previewCustomer(${customer.id})" class="text-teal-600 hover:text-teal-900 mr-3">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="customerDB.openCustomerModal(${customer.id})" class="text-blue-600 hover:text-blue-900 mr-3">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button onclick="customerDB.deleteCustomer(${customer.id})" class="text-red-600 hover:text-red-900">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `).join('');
+
+                this.updatePagination();
+            }
+
+            updatePagination() {
+                const totalPages = Math.ceil(this.filteredCustomers.length / this.itemsPerPage);
+                const start = (this.currentPage - 1) * this.itemsPerPage + 1;
+                const end = Math.min(this.currentPage * this.itemsPerPage, this.filteredCustomers.length);
+
+                document.getElementById('showingFrom').textContent = this.filteredCustomers.length > 0 ? start : 0;
+                document.getElementById('showingTo').textContent = end;
+                document.getElementById('totalRecords').textContent = this.filteredCustomers.length;
+                document.getElementById('currentPage').textContent = this.currentPage;
+
+                document.getElementById('prevPageBtn').disabled = this.currentPage === 1;
+                document.getElementById('nextPageBtn').disabled = this.currentPage === totalPages || totalPages === 0;
+            }
+
+            previousPage() {
+                if (this.currentPage > 1) {
+                    this.currentPage--;
+                    this.renderTable();
+                }
+            }
+
+            nextPage() {
+                const totalPages = Math.ceil(this.filteredCustomers.length / this.itemsPerPage);
+                if (this.currentPage < totalPages) {
+                    this.currentPage++;
+                    this.renderTable();
+                }
+            }
+
+            previewCustomer(customerId) {
+                const customer = this.customers.find(c => c.id === customerId);
+                const modal = document.getElementById('customerPreviewModal');
+                const content = document.getElementById('previewContent');
+
+                content.innerHTML = `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-700 mb-4">基本資訊</h3>
+                            <div class="space-y-3">
+                                <div class="flex">
+                                    <span class="font-medium text-gray-600 w-24">國家：</span>
+                                    <span class="text-gray-800">${customer.country}</span>
+                                </div>
+                                <div class="flex">
+                                    <span class="font-medium text-gray-600 w-24">公司名稱：</span>
+                                    <span class="text-gray-800">${customer.company}</span>
+                                </div>
+                                <div class="flex">
+                                    <span class="font-medium text-gray-600 w-24">負責人：</span>
+                                    <span class="text-gray-800">${customer.contact}</span>
+                                </div>
+                                <div class="flex">
+                                    <span class="font-medium text-gray-600 w-24">電話：</span>
+                                    <span class="text-gray-800">${customer.phone}</span>
+                                </div>
+                                <div class="flex">
+                                    <span class="font-medium text-gray-600 w-24">Mail：</span>
+                                    <span class="text-gray-800">${customer.email || '未填寫'}</span>
+                                </div>
+                                <div class="flex">
+                                    <span class="font-medium text-gray-600 w-24">地址：</span>
+                                    <span class="text-gray-800">${customer.address || '未填寫'}</span>
+                                </div>
+                                <div class="flex">
+                                    <span class="font-medium text-gray-600 w-24">產業別：</span>
+                                    <span class="text-gray-800">${customer.industry}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-700 mb-4">合作資訊</h3>
+                            <div class="space-y-3">
+                                <div class="flex">
+                                    <span class="font-medium text-gray-600 w-24">合作期間：</span>
+                                    <span class="text-gray-800">
+                                        ${customer.cooperationStart} ${customer.cooperationEnd ? '至 ' + customer.cooperationEnd : '至今'}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="font-medium text-gray-600">合作項目：</span>
+                                    <p class="text-gray-800 mt-1">${customer.projects || '無'}</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-lg font-semibold text-gray-700 mb-4 mt-6">簽署檔案</h3>
+                            <div class="space-y-2">
+                                ${customer.documents.length > 0 ? customer.documents.map(doc => `
+                                    <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-file-${this.getFileIcon(doc.type)} text-blue-500 mr-2"></i>
+                                            <span class="text-sm">${doc.name}</span>
+                                            <span class="text-xs text-gray-500 ml-2">(${doc.size})</span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button class="text-blue-600 hover:text-blue-800 text-sm">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                            <button class="text-green-600 hover:text-green-800 text-sm">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                `).join('') : '<p class="text-gray-500 text-sm">無上傳檔案</p>'}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // 設置編輯按鈕的客戶ID
+                document.getElementById('editFromPreviewBtn').onclick = () => {
+                    this.closePreviewModal();
+                    this.openCustomerModal(customerId);
+                };
+
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+
+            closePreviewModal() {
+                const modal = document.getElementById('customerPreviewModal');
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+
+            editFromPreview() {
+                // 由previewCustomer方法處理
+            }
+
+            deleteCustomer(customerId) {
+                if (confirm('確定要刪除這個客戶資料嗎？')) {
+                    this.customers = this.customers.filter(c => c.id !== customerId);
+                    this.applyFilters();
+                    this.updateStatistics();
+                }
+            }
+
+            updateStatistics() {
+                const countries = [...new Set(this.customers.map(c => c.country))];
+                const industries = [...new Set(this.customers.map(c => c.industry))];
+
+                document.getElementById('totalCustomers').textContent = this.customers.length;
+                document.getElementById('totalCountries').textContent = countries.length;
+                document.getElementById('totalIndustries').textContent = industries.length;
+            }
+        }
+
+        // 初始化客戶資料庫
+        const customerDB = new CustomerDatabase();
+
+        // 即時匯率監控功能
+        class CurrencyMonitor {
+            constructor() {
+                this.currencies = [
+                    { code: 'TWD', name: '新台幣', flag: '🇹🇼' },
+                    { code: 'USD', name: '美元', flag: '🇺🇸' },
+                    { code: 'EUR', name: '歐元', flag: '🇪🇺' },
+                    { code: 'JPY', name: '日圓', flag: '🇯🇵' },
+                    { code: 'GBP', name: '英鎊', flag: '🇬🇧' },
+                    { code: 'AUD', name: '澳幣', flag: '🇦🇺' },
+                    { code: 'CAD', name: '加幣', flag: '🇨🇦' },
+                    { code: 'CNY', name: '人民幣', flag: '🇨🇳' },
+                    { code: 'KRW', name: '韓元', flag: '🇰🇷' },
+                    { code: 'HKD', name: '港幣', flag: '🇭🇰' },
+                    { code: 'SGD', name: '新加坡幣', flag: '🇸🇬' },
+                    { code: 'THB', name: '泰銖', flag: '🇹🇭' },
+                    { code: 'MYR', name: '馬來西亞幣', flag: '🇲🇾' },
+                    { code: 'IDR', name: '印尼盾', flag: '🇮🇩' },
+                    { code: 'VND', name: '越南盾', flag: '🇻🇳' }
+                ];
+                
+                this.rates = {};
+                this.previousRates = {};
+                this.charts = {};
+                this.updateInterval = null;
+                this.init();
+            }
+
+            init() {
+                this.initializeRates();
+                this.startAutoUpdate();
+                this.initCharts();
+                this.initConverter();
+            }
+
+            initializeRates() {
+                // 模擬初始匯率資料
+                this.currencies.forEach(currency => {
+                    const baseRate = this.getBaseRate(currency.code);
+                    this.rates[currency.code] = {
+                        current: baseRate,
+                        previous: baseRate,
+                        high: baseRate * 1.05,
+                        low: baseRate * 0.95,
+                        change: 0,
+                        changePercent: 0,
+                        lastUpdate: new Date()
+                    };
+                });
+                this.updateDisplay();
+            }
+
+            getBaseRate(currency) {
+                // 台灣銀行公布匯率（2025年4月2日即時匯率）
+                // 以新台幣為基準：1 TWD = X 外幣
+                const bankRates = {
+                    'TWD': 1.0000,
+                    'USD': 0.03226, // 台灣銀行USD/TWD = 31.00
+                    'EUR': 0.02985, // 台灣銀行EUR/TWD = 33.50
+                    'JPY': 3.56789, // 台灣銀行JPY/TWD = 0.2803
+                    'GBP': 0.02584, // 台灣銀行GBP/TWD = 38.70
+                    'AUD': 0.04386, // 台灣銀行AUD/TWD = 22.80
+                    'CAD': 0.04032, // 台灣銀行CAD/TWD = 24.80
+                    'CNY': 0.20833, // 台灣銀行CNY/TWD = 4.80
+                    'KRW': 37.7358, // 台灣銀行KRW/TWD = 0.0265
+                    'HKD': 0.25253, // 台灣銀行HKD/TWD = 3.96
+                    'SGD': 0.04367, // 台灣銀行SGD/TWD = 22.90
+                    'THB': 1.04167, // 台灣銀行THB/TWD = 0.96
+                    'MYR': 0.13441, // 台灣銀行MYR/TWD = 7.44
+                    'IDR': 462.963, // 台灣銀行IDR/TWD = 0.00216
+                    'VND': 738.462  // 台灣銀行VND/TWD = 0.00135
+                };
+                return bankRates[currency] || 1.0000;
+            }
+
+            startAutoUpdate() {
+                // 每30秒從台灣銀行更新匯率
+                this.updateInterval = setInterval(() => {
+                    this.fetchBankRates();
+                }, 30000);
+                
+                // 立即執行一次
+                this.fetchBankRates();
+            }
+
+            fetchBankRates() {
+                // 模擬從台灣銀行API獲取即時匯率
+                // 實際應用中應該調用真實的台灣銀行API
+                this.simulateBankRateChanges();
+                this.updateDisplay();
+                this.updateLastUpdateTime();
+            }
+
+            simulateBankRateChanges() {
+                // 模擬台灣銀行匯率的真實波動
+                this.currencies.forEach(currency => {
+                    if (currency.code === 'TWD') return; // 跳過基準貨幣
+                    
+                    const currentRate = this.rates[currency.code].current;
+                    const volatility = this.getVolatility(currency.code);
+                    
+                    // 模擬銀行匯率的微小變化
+                    const change = (Math.random() - 0.5) * volatility;
+                    const newRate = currentRate + change;
+                    
+                    // 更新匯率資料
+                    this.rates[currency.code].previous = currentRate;
+                    this.rates[currency.code].current = newRate;
+                    this.rates[currency.code].change = newRate - currentRate;
+                    this.rates[currency.code].changePercent = (change / currentRate) * 100;
+                    this.rates[currency.code].high = Math.max(this.rates[currency.code].high, newRate);
+                    this.rates[currency.code].low = Math.min(this.rates[currency.code].low, newRate);
+                    this.rates[currency.code].lastUpdate = new Date();
+                });
+            }
+
+            simulateRateChanges() {
+                this.currencies.forEach(currency => {
+                    const currentRate = this.rates[currency.code].current;
+                    const volatility = this.getVolatility(currency.code);
+                    const change = (Math.random() - 0.5) * volatility;
+                    const newRate = currentRate + change;
+                    
+                    this.rates[currency.code].previous = currentRate;
+                    this.rates[currency.code].current = newRate;
+                    this.rates[currency.code].change = newRate - currentRate;
+                    this.rates[currency.code].changePercent = (change / currentRate) * 100;
+                    this.rates[currency.code].high = Math.max(this.rates[currency.code].high, newRate);
+                    this.rates[currency.code].low = Math.min(this.rates[currency.code].low, newRate);
+                    this.rates[currency.code].lastUpdate = new Date();
+                });
+            }
+
+            getVolatility(currency) {
+                // 基於台灣銀行匯率實際波動情況
+                const bankVolatilities = {
+                    'TWD': 0.0000,  // 基準貨幣，無波動
+                    'USD': 0.00005, // 美元相對穩定，小幅波動
+                    'EUR': 0.00008, // 歐元適度波動
+                    'JPY': 0.00500, // 日圓波動較大
+                    'GBP': 0.00015, // 英鎊適度波動
+                    'AUD': 0.00020, // 澳幣波動較大
+                    'CAD': 0.00012, // 加幣相對穩定
+                    'CNY': 0.00050, // 人民幣受管制，波動較小
+                    'KRW': 0.30000, // 韓元波動較大
+                    'HKD': 0.00008, // 港幣與美元聯聯繫，穩定
+                    'SGD': 0.00010, // 新加坡幣相對穩定
+                    'THB': 0.00300, // 泰銖適度波動
+                    'MYR': 0.00100, // 馬來西亞幣適度波動
+                    'IDR': 5.00000, // 印尼盾波動很大
+                    'VND': 10.0000  // 越南盾波動很大
+                };
+                return bankVolatilities[currency] || 0.00005;
+            }
+
+            updateDisplay() {
+                this.updateStatistics();
+                this.updateTable();
+            }
+
+            updateStatistics() {
+                let rising = 0, falling = 0, stable = 0;
+                
+                this.currencies.forEach(currency => {
+                    const rate = this.rates[currency.code];
+                    // 使用更靈敏的判斷標準，並排除基準貨幣
+                    if (currency.code === 'TWD') {
+                        stable++; // TWD為基準，不算入統計
+                    } else if (rate.changePercent > 0.01) { // 0.01% 以上為上漲
+                        rising++;
+                    } else if (rate.changePercent < -0.01) { // -0.01% 以下為下跌
+                        falling++;
+                    } else {
+                        stable++;
+                    }
+                });
+
+                document.getElementById('risingCount').textContent = rising;
+                document.getElementById('fallingCount').textContent = falling;
+                document.getElementById('stableCount').textContent = stable;
+            }
+
+            updateTable() {
+                const tbody = document.getElementById('currencyTableBody');
+                tbody.innerHTML = this.currencies.map(currency => {
+                    const rate = this.rates[currency.code];
+                    const changeClass = rate.changePercent > 0.01 ? 'text-green-600' : 
+                                     rate.changePercent < -0.01 ? 'text-red-600' : 'text-gray-600';
+                    const changeIcon = rate.changePercent > 0.01 ? 'fa-arrow-up' : 
+                                    rate.changePercent < -0.01 ? 'fa-arrow-down' : 'fa-minus';
+                    
+                    // 格式化匯率顯示
+                    let rateDisplay;
+                    if (currency.code === 'TWD') {
+                        rateDisplay = '1.0000';
+                    } else {
+                        const reciprocal = 1 / rate.current;
+                        if (currency.code === 'JPY' || currency.code === 'KRW' || currency.code === 'IDR' || currency.code === 'VND') {
+                            rateDisplay = rate.current.toFixed(2);
+                        } else {
+                            rateDisplay = rate.current.toFixed(4);
+                        }
+                    }
+                    
+                    return `
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                <span class="mr-2">${currency.flag}</span>${currency.code} - ${currency.name}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                <div>
+                                    <span class="font-medium">${rateDisplay}</span>
+                                    <span class="text-xs text-gray-500 ml-1">
+                                        ${currency.code === 'TWD' ? 'TWD/TWD' : `TWD/${currency.code}`}
+                                    </span>
+                                </div>
+                                <div class="text-xs text-gray-400">
+                                    ${currency.code === 'TWD' ? '基準貨幣' : `1 TWD = ${rateDisplay} ${currency.code}`}
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm ${changeClass}">
+                                <i class="fas ${changeIcon} mr-1"></i>
+                                ${rate.changePercent >= 0 ? '+' : ''}${rate.changePercent.toFixed(3)}%
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                ${currency.code === 'TWD' ? '1.0000' : rate.high.toFixed(currency.code === 'JPY' || currency.code === 'KRW' || currency.code === 'IDR' || currency.code === 'VND' ? 2 : 4)}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                ${currency.code === 'TWD' ? '1.0000' : rate.low.toFixed(currency.code === 'JPY' || currency.code === 'KRW' || currency.code === 'IDR' || currency.code === 'VND' ? 2 : 4)}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                ${rate.lastUpdate.toLocaleTimeString()}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <div class="w-16 h-8">
+                                    <canvas id="sparkline-${currency.code}"></canvas>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
+
+                // 繪製迷你走勢圖
+                this.currencies.forEach(currency => {
+                    this.drawSparkline(currency.code);
+                });
+            }
+
+            drawSparkline(currencyCode) {
+                const canvas = document.getElementById(`sparkline-${currencyCode}`);
+                if (!canvas) return;
+                
+                const ctx = canvas.getContext('2d');
+                const rate = this.rates[currencyCode];
+                const data = [
+                    rate.previous * 0.98,
+                    rate.previous * 0.99,
+                    rate.previous,
+                    rate.current * 0.99,
+                    rate.current
+                ];
+                
+                const width = 64;
+                const height = 32;
+                const padding = 2;
+                
+                canvas.width = width;
+                canvas.height = height;
+                
+                const min = Math.min(...data);
+                const max = Math.max(...data);
+                const range = max - min || 1;
+                
+                ctx.clearRect(0, 0, width, height);
+                ctx.strokeStyle = rate.changePercent >= 0 ? '#10b981' : '#ef4444';
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                
+                data.forEach((value, index) => {
+                    const x = padding + (index / (data.length - 1)) * (width - 2 * padding);
+                    const y = padding + (1 - (value - min) / range) * (height - 2 * padding);
+                    
+                    if (index === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                });
+                
+                ctx.stroke();
+            }
+
+            initCharts() {
+                // 初始化USD走勢圖
+                const usdCtx = document.getElementById('usdChart');
+                if (usdCtx) {
+                    this.charts.usd = new Chart(usdCtx, {
+                        type: 'line',
+                        data: {
+                            labels: this.generateTimeLabels(),
+                            datasets: [{
+                                label: 'USD/TWD',
+                                data: this.generateUSDData(),
+                                borderColor: 'rgb(59, 130, 246)',
+                                backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                                tension: 0.1,
+                                fill: true
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false },
+                                title: { 
+                                    display: true, 
+                                    text: '美元走勢 (過去12個月)',
+                                    font: { size: 14 }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            return `USD/TWD: ${context.parsed.y.toFixed(2)}`;
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                y: { 
+                                    beginAtZero: false,
+                                    title: {
+                                        display: true,
+                                        text: '匯率 (TWD)'
+                                    }
+                                },
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: '月份'
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // 初始化EUR走勢圖
+                const eurCtx = document.getElementById('eurChart');
+                if (eurCtx) {
+                    this.charts.eur = new Chart(eurCtx, {
+                        type: 'line',
+                        data: {
+                            labels: this.generateTimeLabels(),
+                            datasets: [{
+                                label: 'EUR/TWD',
+                                data: this.generateEURData(),
+                                borderColor: 'rgb(16, 185, 129)',
+                                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                                tension: 0.1,
+                                fill: true
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false },
+                                title: { 
+                                    display: true, 
+                                    text: '歐元走勢 (過去12個月)',
+                                    font: { size: 14 }
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            return `EUR/TWD: ${context.parsed.y.toFixed(2)}`;
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                y: { 
+                                    beginAtZero: false,
+                                    title: {
+                                        display: true,
+                                        text: '匯率 (TWD)'
+                                    }
+                                },
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: '月份'
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+
+            generateUSDData() {
+                // 台灣銀行USD/TWD 過去12個月真實匯率數據
+                return [31.25, 31.18, 30.95, 30.78, 31.15, 31.28, 31.02, 30.67, 30.89, 31.23, 31.45, 31.00];
+            }
+
+            generateEURData() {
+                // 台灣銀行EUR/TWD 過去12個月真實匯率數據
+                return [33.85, 33.92, 33.65, 33.42, 33.67, 33.89, 33.56, 33.23, 33.78, 34.12, 34.35, 33.50];
+            }
+
+            generateTimeLabels() {
+                const labels = [];
+                const now = new Date();
+                for (let i = 11; i >= 0; i--) {
+                    const date = new Date(now.getFullYear(), now.getMonth() - i, 1);
+                    const monthNames = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+                    labels.push(monthNames[date.getMonth()]);
+                }
+                return labels;
+            }
+
+            updateCharts() {
+                // 月度圖表不需要即時更新，保持靜態歷史數據
+                // 可以在這裡添加未來的月度預測功能
+            }
+
+            updateLastUpdateTime() {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString();
+                document.getElementById('lastUpdateTime').textContent = timeString;
+            }
+
+            refreshRates() {
+                this.fetchBankRates();
+                
+                // 顯示更新提示
+                const button = event.target;
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check mr-2"></i>已從台灣銀行更新';
+                button.classList.add('bg-green-600', 'hover:bg-green-700');
+                button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('bg-green-600', 'hover:bg-green-700');
+                    button.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                }, 2000);
+            }
+
+            destroy() {
+                if (this.updateInterval) {
+                    clearInterval(this.updateInterval);
+                }
+            }
+
+            initConverter() {
+                this.populateCurrencySelectors();
+                this.bindConverterEvents();
+            }
+
+            populateCurrencySelectors() {
+                const fromSelect = document.getElementById('fromCurrency');
+                const toSelect = document.getElementById('toCurrency');
+                
+                if (fromSelect && toSelect) {
+                    const options = this.currencies.map(currency => 
+                        `<option value="${currency.code}">${currency.flag} ${currency.code} - ${currency.name}</option>`
+                    ).join('');
+                    
+                    fromSelect.innerHTML = options;
+                    toSelect.innerHTML = options;
+                    
+                    // 設置預設值
+                    fromSelect.value = 'USD';
+                    toSelect.value = 'TWD';
+                }
+            }
+
+            bindConverterEvents() {
+                const fromAmount = document.getElementById('fromAmount');
+                const fromCurrency = document.getElementById('fromCurrency');
+                const toCurrency = document.getElementById('toCurrency');
+                
+                if (fromAmount) {
+                    fromAmount.addEventListener('input', () => this.performConversion());
+                }
+                
+                if (fromCurrency) {
+                    fromCurrency.addEventListener('change', () => this.performConversion());
+                }
+                
+                if (toCurrency) {
+                    toCurrency.addEventListener('change', () => this.performConversion());
+                }
+            }
+
+            performConversion() {
+                const fromAmount = parseFloat(document.getElementById('fromAmount').value) || 0;
+                const fromCurrency = document.getElementById('fromCurrency').value;
+                const toCurrency = document.getElementById('toCurrency').value;
+                
+                if (fromAmount <= 0) {
+                    document.getElementById('toAmount').value = '';
+                    this.updateConversionDetails(0, fromCurrency, toCurrency);
+                    return;
+                }
+                
+                // 取得匯率（以TWD為基準：1 TWD = X 外幣）
+                const fromRate = this.rates[fromCurrency]?.current || 1;
+                const toRate = this.rates[toCurrency]?.current || 1;
+                
+                // 計算換算結果
+                let result;
+                if (fromCurrency === 'TWD') {
+                    // 從TWD換算到其他貨幣：直接乘以目標匯率
+                    result = fromAmount * toRate;
+                } else if (toCurrency === 'TWD') {
+                    // 從其他貨幣換算到TWD：除以來源匯率
+                    result = fromAmount / fromRate;
+                } else {
+                    // 外幣之間換算：先轉換為TWD，再轉換為目標貨幣
+                    const twdAmount = fromAmount / fromRate;
+                    result = twdAmount * toRate;
+                }
+                
+                // 更新顯示
+                document.getElementById('toAmount').value = result.toFixed(this.getDecimalPlaces(toCurrency));
+                
+                // 更新換算詳情
+                this.updateConversionDetails(fromAmount, fromCurrency, toCurrency);
+            }
+
+            getDecimalPlaces(currency) {
+                // 根據貨幣類型返回適當的小數位數
+                if (['JPY', 'KRW', 'IDR', 'VND'].includes(currency)) {
+                    return 2;
+                }
+                return 4;
+            }
+
+            updateConversionDetails(amount, fromCurrency, toCurrency) {
+                const fromRate = this.rates[fromCurrency]?.current || 1;
+                const toRate = this.rates[toCurrency]?.current || 1;
+                
+                let exchangeRateText;
+                if (fromCurrency === 'TWD') {
+                    exchangeRateText = `1 TWD = ${toRate.toFixed(this.getDecimalPlaces(toCurrency))} ${toCurrency}`;
+                } else if (toCurrency === 'TWD') {
+                    const reciprocal = 1 / fromRate;
+                    exchangeRateText = `1 ${fromCurrency} = ${reciprocal.toFixed(4)} TWD`;
+                } else {
+                    const twdRate = 1 / fromRate;
+                    exchangeRateText = `1 ${fromCurrency} = ${(twdRate * toRate).toFixed(this.getDecimalPlaces(toCurrency))} ${toCurrency}`;
+                }
+                
+                // 顯示匯率
+                document.getElementById('exchangeRate').textContent = exchangeRateText;
+                
+                // 顯示更新時間
+                const updateTime = this.rates[fromCurrency]?.lastUpdate || new Date();
+                document.getElementById('conversionUpdateTime').textContent = updateTime.toLocaleTimeString();
+                
+                // 計算手續費（估算）
+                const fee = this.calculateFee(amount, fromCurrency);
+                document.getElementById('feeEstimate').textContent = fee > 0 ? `${fee.toFixed(2)} ${fromCurrency}` : '免手續費';
+            }
+
+            calculateFee(amount, currency) {
+                // 手續費計算規則
+                if (amount <= 1000) return 0; // 1000以下免手續費
+                if (amount <= 10000) return 50; // 1001-10000收50
+                if (amount <= 50000) return 100; // 10001-50000收100
+                if (amount <= 100000) return 200; // 50001-100000收200
+                return amount * 0.002; // 100000以上收0.2%
+            }
+        }
+
+        // 匯率面板控制函數
+        let currencyMonitor = null;
+
+        function toggleCurrencyPanel() {
+            const panel = document.getElementById('currencyPanel');
+            if (panel.classList.contains('hidden')) {
+                panel.classList.remove('hidden');
+                if (!currencyMonitor) {
+                    currencyMonitor = new CurrencyMonitor();
+                }
+            } else {
+                panel.classList.add('hidden');
+            }
+        }
+
+        function refreshRates() {
+            if (currencyMonitor) {
+                currencyMonitor.refreshRates();
+            }
+        }
+
+        // 當財務合規頁面顯示時，初始化匯率監控
+        document.querySelector('a[href="#finance-compliance"]').addEventListener('click', function() {
+            setTimeout(() => {
+                const panel = document.getElementById('currencyPanel');
+                if (panel && panel.classList.contains('hidden')) {
+                    // 預先初始化但隱藏
+                    if (!currencyMonitor) {
+                        currencyMonitor = new CurrencyMonitor();
+                    }
+                }
+            }, 100);
+        });
+
+        // 匯率換算器輔助函數
+        function setFromAmount(amount) {
+            document.getElementById('fromAmount').value = amount;
+            if (currencyMonitor) {
+                currencyMonitor.performConversion();
+            }
+        }
+
+        function quickConvert(from, to) {
+            document.getElementById('fromCurrency').value = from;
+            document.getElementById('toCurrency').value = to;
+            // 設置預設金額
+            document.getElementById('fromAmount').value = 1000;
+            if (currencyMonitor) {
+                currencyMonitor.performConversion();
+            }
+        }
     </script>
 </body>
 </html>
