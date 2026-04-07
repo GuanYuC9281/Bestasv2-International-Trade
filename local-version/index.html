@@ -27,7 +27,7 @@
     </div>
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center space-x-3">
@@ -181,21 +181,25 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-24 pb-16 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+    <section class="h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat" style="background-image: url('images/harbor-bg.png')">
+        <!-- 背景遮罩 -->
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between h-full">
+            <div class="text-center flex-1 flex flex-col justify-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
                     專業的國際貿易解決方案
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">
                     貝達國際貿易提供全面的採購和進出口服務，連接您到全球商業機會
                 </p>
+            </div>
+            <div class="text-center pb-16">
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <a href="contact-optimized.html" class="inline-flex items-center px-8 py-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
                         <i class="fas fa-envelope mr-3"></i>
                         立即聯絡
                     </a>
-                    <a href="services.html" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg border border-teal-200">
+                    <a href="services-optimized.html" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg border border-teal-200">
                         <i class="fas fa-th-large mr-3"></i>
                         查看服務
                     </a>
@@ -316,11 +320,11 @@
             <h2 class="text-4xl font-bold mb-6">準備開始您的國際貿易之旅？</h2>
             <p class="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">聯繫我們，獲得專業的貿易諮詢和服務</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <a href="contact-optimized.html" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
                     <i class="fas fa-phone mr-3"></i>
                     聯繫我們
                 </a>
-                <a href="services.html" class="inline-flex items-center px-8 py-4 bg-teal-700 text-white font-semibold rounded-lg hover:bg-teal-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <a href="services-optimized.html" class="inline-flex items-center px-8 py-4 bg-teal-700 text-white font-semibold rounded-lg hover:bg-teal-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
                     <i class="fas fa-list mr-3"></i>
                     查看服務
                 </a>
