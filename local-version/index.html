@@ -26,6 +26,81 @@
         </div>
     </div>
 
+    <!-- Privacy Notice Modal -->
+    <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
+        <div class="bg-white rounded-lg shadow-2xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6 sm:p-8">
+                <!-- Header -->
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">隱私權聲明</h2>
+                    <p class="text-gray-600">歡迎來到貝達國際貿易有限公司</p>
+                </div>
+
+                <!-- Privacy Notice Content -->
+                <div class="mb-6 text-center">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full mb-4">
+                        <i class="fas fa-shield-alt text-3xl text-blue-600"></i>
+                    </div>
+                </div>
+
+                <!-- Privacy Policy Text -->
+                <div class="text-sm text-gray-700 mb-6 space-y-4">
+                    <div class="bg-gray-50 rounded-lg p-6 text-left">
+                        <h3 class="font-bold text-lg text-gray-800 mb-4 text-center">隱私權保護聲明</h3>
+                        
+                        <div class="space-y-3">
+                            <p class="text-gray-700">
+                                <strong class="text-blue-600">親愛的客戶：</strong><br>
+                                感謝您選擇貝達國際貿易有限公司。我們承諾保護您的隱私權益，並依據個人資料保護法相關規定，制定本隱私權聲明。
+                            </p>
+                            
+                            <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded">
+                                <h4 class="font-semibold text-blue-800 mb-3">📋 重要聲明：</h4>
+                                <ul class="space-y-2 text-blue-700">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2 flex-shrink-0"></i>
+                                        <span>我們僅在提供服務所需範圍內收集您的個人資料</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2 flex-shrink-0"></i>
+                                        <span>您的個人資料將被妥善保管，不會外洩或提供給第三方</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2 flex-shrink-0"></i>
+                                        <span>我們採取適當安全措施保護您的個人資料</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2 flex-shrink-0"></i>
+                                        <span>您有權查詢、更正或刪除您的個人資料</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                                <p class="text-yellow-800 text-sm">
+                                    <i class="fas fa-info-circle text-yellow-600 mr-2"></i>
+                                    <strong>使用本網站即表示您同意我們的隱私權聲明。</strong><br>
+                                    如有任何疑問，請聯繫我們的客服團隊。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex justify-center px-4 sm:px-6">
+                    <button onclick="acceptPrivacy()" class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[120px] sm:min-w-[140px]">
+                        <i class="fas fa-check mr-2 sm:mr-3"></i>
+                        我同意
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,7 +184,7 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-200">
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-200 fixed top-16 left-0 right-0 z-40 max-h-[calc(100vh-4rem)] overflow-y-auto">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-home">首頁</a>
                 
@@ -181,27 +256,27 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat" style="background-image: url('images/harbor-bg.png')">
+    <section class="min-h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat pt-16" style="background-image: url('images/harbor-bg.png')">
         <!-- 背景遮罩 -->
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between h-full">
-            <div class="text-center flex-1 flex flex-col justify-center">
-                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+            <div class="text-center mb-8 sm:mb-12">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
                     專業的國際貿易解決方案
                 </h1>
-                <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">
+                <p class="text-lg sm:text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">
                     貝達國際貿易提供全面的採購和進出口服務，連接您到全球商業機會
                 </p>
             </div>
-            <div class="text-center pb-16">
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="contact-optimized.html" class="inline-flex items-center px-8 py-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        <i class="fas fa-envelope mr-3"></i>
-                        立即聯絡
+            <div class="text-center">
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-6">
+                    <a href="contact-optimized.html" class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto min-w-[140px] sm:min-w-[160px]">
+                        <i class="fas fa-envelope mr-2 sm:mr-3"></i>
+                        <span class="text-sm sm:text-base">立即聯絡</span>
                     </a>
-                    <a href="services-optimized.html" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg border border-teal-200">
-                        <i class="fas fa-th-large mr-3"></i>
-                        查看服務
+                    <a href="services-optimized.html" class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg border border-teal-200 w-full sm:w-auto min-w-[140px] sm:min-w-[160px]">
+                        <i class="fas fa-th-large mr-2 sm:mr-3"></i>
+                        <span class="text-sm sm:text-base">查看服務</span>
                     </a>
                 </div>
             </div>
@@ -520,6 +595,15 @@
             const savedLang = localStorage.getItem('preferredLanguage') || 'zh-TW';
             changeLanguage(savedLang);
             
+            // Check if user has accepted privacy policy
+            const privacyAccepted = localStorage.getItem('privacyAccepted');
+            if (!privacyAccepted) {
+                // Show privacy modal after loading screen
+                setTimeout(() => {
+                    showPrivacyModal();
+                }, 800);
+            }
+            
             // Hide loading screen
             setTimeout(function() {
                 const loadingScreen = document.getElementById('loadingScreen');
@@ -601,6 +685,60 @@
             if (!button && dropdown && !dropdown.classList.contains('invisible')) {
                 dropdown.classList.add('invisible');
                 dropdown.classList.remove('opacity-100');
+            }
+        });
+
+        // Privacy Modal Functions
+        function showPrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                // Prevent body scroll when modal is open
+                document.body.style.overflow = 'hidden';
+                console.log('Privacy modal shown');
+            }
+        }
+
+        function hidePrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                // Restore body scroll
+                document.body.style.overflow = 'auto';
+                console.log('Privacy modal hidden');
+            }
+        }
+
+        function acceptPrivacy() {
+            // Save acceptance to localStorage
+            localStorage.setItem('privacyAccepted', 'true');
+            localStorage.setItem('privacyAcceptedDate', new Date().toISOString());
+            
+            // Hide modal
+            hidePrivacyModal();
+            
+            console.log('Privacy policy accepted');
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('privacyModal');
+            const modalContent = event.target.closest('.bg-white');
+            
+            if (modal && !modalContent && !modal.classList.contains('hidden')) {
+                // Don't close if clicking outside, user must explicitly accept
+                console.log('Clicked outside modal - keeping modal open');
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modal = document.getElementById('privacyModal');
+                if (modal && !modal.classList.contains('hidden')) {
+                    // Don't close with Escape, user must explicitly accept
+                    console.log('Escape key pressed - keeping modal open');
+                }
             }
         });
     </script>
