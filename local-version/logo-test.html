@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo測試頁面</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <h1 class="text-2xl font-bold mb-4">Logo測試頁面</h1>
+    
+    <div class="space-y-8">
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="text-lg font-semibold mb-2">原始Logo (無緩存破壞)</h2>
+            <img src="images/company/logo.png" alt="Logo" class="w-32 h-32 object-contain border border-gray-300">
+        </div>
+        
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="text-lg font-semibold mb-2">緩存破壞Logo (新時間戳)</h2>
+            <img src="images/company/logo.png?v=202604021010" alt="Logo" class="w-32 h-32 object-contain border border-gray-300">
+        </div>
+        
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="text-lg font-semibold mb-2">隨機參數Logo</h2>
+            <img src="images/company/logo.png?random=12345" alt="Logo" class="w-32 h-32 object-contain border border-gray-300">
+        </div>
+    </div>
+    
+    <div class="mt-8">
+        <button onclick="location.reload()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            重新整理頁面
+        </button>
+        <button onclick="clearCacheAndReload()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 ml-2">
+            清除緩存並重新整理
+        </button>
+    </div>
+    
+    <script>
+        function clearCacheAndReload() {
+            // 清除緩存並重新整理
+            if ('caches' in window) {
+                caches.keys().then(function(names) {
+                    names.forEach(function(name) {
+                        caches.delete(name);
+                    });
+                });
+            }
+            location.reload(true);
+        }
+    </script>
+</body>
+</html>

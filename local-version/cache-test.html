@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>強制緩存清除測試</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body class="bg-gray-100 p-8">
+    <h1 class="text-2xl font-bold mb-4">強制緩存清除測試</h1>
+    
+    <div class="space-y-8">
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="text-lg font-semibold mb-2">當前時間戳Logo</h2>
+            <img src="images/company/logo.png?v=202604021020&t=123456" alt="Logo" class="w-32 h-32 object-contain border border-gray-300">
+            <p class="text-sm text-gray-600 mt-2">時間戳: 202604021020&t=123456</p>
+        </div>
+        
+        <div class="bg-white p-4 rounded-lg shadow">
+            <h2 class="text-lg font-semibold mb-2">隨機參數Logo</h2>
+            <img src="images/company/logo.png?random=<?php echo time(); ?>" alt="Logo" class="w-32 h-32 object-contain border border-gray-300">
+            <p class="text-sm text-gray-600 mt-2">隨機參數: <?php echo time(); ?></p>
+        </div>
+    </div>
+    
+    <div class="mt-8 space-x-4">
+        <button onclick="clearAllCache()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+            清除所有緩存
+        </button>
+        <button onclick="openAdmin()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 ml-2">
+            打開後台
+        </button>
+    </div>
+    
+    <script>
+        function clearAllCache() {
+            // 清除所有可能的緩存
+            if ('caches' in window) {
+                caches.keys().then(function(names) {
+                    names.forEach(function(name) {
+                        caches.delete(name);
+                    });
+                });
+            }
+            
+            // 清除localStorage
+            localStorage.clear();
+            
+            // 清除sessionStorage
+            sessionStorage.clear();
+            
+            alert('緩存已清除！請重新整理頁面。');
+        }
+        
+        function openAdmin() {
+            // 在新窗口打開後台，避免緩存影響
+            window.open('admin.html?v=' + Date.now(), '_blank');
+        }
+        
+        // 頁面載入完成後執行
+        window.addEventListener('load', function() {
+            console.log('頁面載入完成');
+        });
+    </script>
+</body>
+</html>

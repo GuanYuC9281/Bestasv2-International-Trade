@@ -225,12 +225,201 @@
         </div>
     </section>
 
+    <!-- Business Categories -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">營運分類</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">探索我們多樣化的產品分類，找到您需要的商品</p>
+            </div>
+            
+            <!-- Category Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Industrial Hardware -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-tools text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">工業五金</h3>
+                            <p class="text-purple-100">Industrial Hardware</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h4 class="font-bold text-gray-900 mb-2">不銹鋼螺絲組</h4>
+                            <p class="text-gray-600 text-sm">高品質304/316不銹鋼螺絲，適用於各類工業應用</p>
+                        </div>
+                        <button onclick="showProductDetail('industrial-hardware')" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-200 font-medium">
+                                <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                    </div>
+                </div>
+
+                <!-- Mechanical Parts -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-cog text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">機械零件</h3>
+                            <p class="text-blue-100">Mechanical Parts</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h4 class="font-bold text-gray-900 mb-2">CNC精密加工件</h4>
+                            <p class="text-gray-600 text-sm">客製化CNC精密加工零件，符合國際品質標準</p>
+                        </div>
+                        <button onclick="showProductDetail('mechanical-parts')" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-200 font-medium">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Building Materials -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-building text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">建材 / 工程配件</h3>
+                            <p class="text-green-100">Building Materials</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h4 class="font-bold text-gray-900 mb-2">建築用鋼結構配件</h4>
+                            <p class="text-gray-600 text-sm">各類建築工程用鋼結構配件與連接件</p>
+                        </div>
+                        <button onclick="showProductDetail('building-materials')" class="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all duration-200 font-medium">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Engineering Accessories -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-hard-hat text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">工程配件</h3>
+                            <p class="text-orange-100">Engineering Accessories</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h4 class="font-bold text-gray-900 mb-2">工程配件組件</h4>
+                            <p class="text-gray-600 text-sm">專業工程配件與組件，適用於各種應用</p>
+                        </div>
+                        <button onclick="showProductDetail('engineering-accessories')" class="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-2 px-4 rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-200 font-medium">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- IT System Integration -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-laptop-code text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">資訊系統整合</h3>
+                            <p class="text-indigo-100">IT System Integration</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h4 class="font-bold text-gray-900 mb-2">系統整合解決方案</h4>
+                            <p class="text-gray-600 text-sm">綜合IT系統整合服務，用於業務優化</p>
+                        </div>
+                        <button onclick="showProductDetail('it-integration')" class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white py-2 px-4 rounded-lg hover:from-indigo-600 hover:to-purple-600 transition-all duration-200 font-medium">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Business Consulting -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-lightbulb text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">新事業開發顧問</h3>
+                            <p class="text-teal-100">Business Consulting</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h4 class="font-bold text-gray-900 mb-2">新事業發展諮詢</h4>
+                            <p class="text-gray-600 text-sm">專業諮詢服務，用於新業務開發和市場擴張</p>
+                        </div>
+                        <button onclick="showProductDetail('business-consulting')" class="w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-lg hover:from-teal-600 hover:to-cyan-600 transition-all duration-200 font-medium">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Products -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-utensils text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">食品類</h3>
+                            <p class="text-yellow-100">Food Products</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h4 class="font-bold text-gray-900 mb-2">優質食品項目</h4>
+                            <p class="text-gray-600 text-sm">具有國際品質認證的優質食品產品</p>
+                        </div>
+                        <button onclick="showProductDetail('food-products')" class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-2 px-4 rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-200 font-medium">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Custom Procurement -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group md:col-span-2 lg:col-span-1">
+                    <div class="h-48 bg-gradient-to-br from-red-500 to-pink-500 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-search text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">客製採購品</h3>
+                            <p class="text-red-100">Custom Procurement</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h4 class="font-bold text-gray-900 mb-2">客製精密閥門</h4>
+                            <p class="text-gray-600 text-sm">依據客戶需求客製的精密閥門與流體控制元件</p>
+                        </div>
+                        <button onclick="showProductDetail('custom-procurement')" class="w-full bg-gradient-to-r from-red-500 to-pink-500 text-white py-2 px-4 rounded-lg hover:from-red-600 hover:to-pink-600 transition-all duration-200 font-medium">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Overview -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">核心服務</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">我們提供專業的國際貿易服務，為您的業務增添價值</p>
+                <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">核心服務</h2>
+                <p class="text-2xl md:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed">我們提供專業的國際貿易服務，為您的業務增添價值</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="text-center p-6 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50 hover:shadow-lg transition-all duration-300">
@@ -693,7 +882,337 @@
         </div>
     </footer>
 
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
+        <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white border-b border-gray-200 p-4 sm:p-6 z-10">
+                <div class="flex items-center justify-between">
+                    <h3 id="productModalTitle" class="text-2xl font-bold text-gray-900">Product Details</h3>
+                    <button onclick="closeProductModal()" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors duration-200">
+                        <i class="fas fa-times text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="productModalContent" class="p-4 sm:p-6">
+                <!-- Product details will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Product detail data
+        const productDetails = {
+            'industrial-hardware': {
+                title: '工業五金',
+                subtitle: 'Industrial Hardware',
+                image: 'images/products/industrial-hardware.jpg',
+                description: '高品質工業五金組件，適用於各種應用',
+                features: [
+                    '304/316不銹鋼材料',
+                    '耐腐蝕性和耐用性',
+                    'ISO認證品質標準',
+                    '可訂製尺寸和規格'
+                ],
+                specifications: [
+                    '材料：不銹鋼304/316',
+                    '尺寸範圍：M2-M24',
+                    '表面處理：鈍化',
+                    '包裝：散裝或訂製'
+                ],
+                applications: [
+                    '機械製造',
+                    '建築工程',
+                    '汽車工業',
+                    '海洋應用'
+                ]
+            },
+            'mechanical-parts': {
+                title: '機械零件',
+                subtitle: 'Mechanical Parts',
+                image: 'images/products/mechanical-parts.jpg',
+                description: '精密加工的機械零件，具有嚴格公差',
+                features: [
+                    'CNC精密加工',
+                    '公差：±0.01mm',
+                    '多種材料可選',
+                    '品質檢驗保證'
+                ],
+                specifications: [
+                    '加工方法：CNC加工',
+                    '公差：±0.01mm',
+                    '材料：鋁、鋼、黃銅',
+                    '表面光潔度：Ra 0.8-1.6'
+                ],
+                applications: [
+                    '自動化設備',
+                    '醫療設備',
+                    '航空組件',
+                    '精密儀器'
+                ]
+            },
+            'building-materials': {
+                title: '建材 / 工程配件',
+                subtitle: 'Building Materials',
+                image: 'images/products/building-materials.jpg',
+                description: '建築和工程用鋼結構配件',
+                features: [
+                    '高強度鋼結構',
+                    '耐候性塗層',
+                    '易安裝設計',
+                    '符合建築規範'
+                ],
+                specifications: [
+                    '材料：Q235/Q345鋼',
+                    '表面：熱浸鍍鋅',
+                    '承載能力：訂製',
+                    '標準：GB/ASTM/EN'
+                ],
+                applications: [
+                    '鋼結構建築',
+                    '橋樑建設',
+                    '工業設施',
+                    '基礎設施項目'
+                ]
+            },
+            'engineering-accessories': {
+                title: '工程配件',
+                subtitle: 'Engineering Accessories',
+                image: 'images/products/engineering-accessories.jpg',
+                description: '專業工程配件和組件',
+                features: [
+                    '耐用結構',
+                    '易於維護',
+                    '經濟實惠的解決方案',
+                    '提供技術支援'
+                ],
+                specifications: [
+                    '材料：多種',
+                    '可訂製設計',
+                    '品質保證',
+                    '快速交付'
+                ],
+                applications: [
+                    '工業項目',
+                    '建築工地',
+                    '維護作業',
+                    '改造項目'
+                ]
+            },
+            'it-integration': {
+                title: '資訊系統整合',
+                subtitle: 'IT System Integration',
+                image: 'images/products/it-integration.jpg',
+                description: '綜合IT系統整合服務',
+                features: [
+                    '客製化解決方案',
+                    '可擴展架構',
+                    '24/7支援',
+                    '專注安全性'
+                ],
+                specifications: [
+                    '平台：多種',
+                    '整合：API/資料庫',
+                    '安全性：企業級',
+                    '支援：24/7'
+                ],
+                applications: [
+                    '業務自動化',
+                    '數據管理',
+                    '雲端整合',
+                    '系統優化'
+                ]
+            },
+            'business-consulting': {
+                title: '新事業開發顧問',
+                subtitle: 'Business Consulting',
+                image: 'images/products/business-consulting.jpg',
+                description: '新業務開發的專業諮詢',
+                features: [
+                    '行業專業知識',
+                    '市場分析',
+                    '戰略規劃',
+                    '實施支援'
+                ],
+                specifications: [
+                    '諮詢類型：戰略性',
+                    '持續時間：項目制',
+                    '團隊：資深顧問',
+                    '交付成果：訂製報告'
+                ],
+                applications: [
+                    '市場進入',
+                    '業務擴張',
+                    '流程優化',
+                    '戰略規劃'
+                ]
+            },
+            'food-products': {
+                title: '食品類',
+                subtitle: 'Food Products',
+                image: 'images/products/food-products.jpg',
+                description: '具有國際認證的優質食品產品',
+                features: [
+                    '品質認證',
+                    '國際標準',
+                    '新鮮天然',
+                    '可持續採購'
+                ],
+                specifications: [
+                    '認證：HACCP/ISO',
+                    '保質期：多種',
+                    '包裝：訂製',
+                    '產地：多種來源'
+                ],
+                applications: [
+                    '餐飲服務',
+                    '零售分銷',
+                    '食品加工',
+                    '出口市場'
+                ]
+            },
+            'custom-procurement': {
+                title: '客製採購品',
+                subtitle: 'Custom Procurement',
+                image: 'images/products/custom-procurement.jpg',
+                description: '客製精密閥門和流體控制組件',
+                features: [
+                    '客製規格',
+                    '高精度',
+                    '品質測試',
+                    '技術諮詢'
+                ],
+                specifications: [
+                    '材料：多種',
+                    '尺寸：訂製',
+                    '壓力：多種等級',
+                    '標準：API/ISO'
+                ],
+                applications: [
+                    '流體控制系統',
+                    '工業過程',
+                    '化學處理',
+                    '水處理'
+                ]
+            }
+        };
+
+        // Product modal functions
+        function showProductDetail(productId) {
+            const product = productDetails[productId];
+            if (!product) return;
+
+            const modal = document.getElementById('productModal');
+            const title = document.getElementById('productModalTitle');
+            const content = document.getElementById('productModalContent');
+
+            title.textContent = product.title;
+            
+            content.innerHTML = `
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="aspect-w-16 aspect-h-12 bg-gray-100 rounded-lg overflow-hidden mb-4">
+                            <img src="${product.image}" alt="${product.title}" class="w-full h-64 object-cover" onerror="this.src='images/products/default-product.jpg'">
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">快速概述</h4>
+                            <p class="text-gray-600 text-sm">${product.description}</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class="fas fa-star text-yellow-500 mr-2"></i>
+                                主要特色
+                            </h4>
+                            <ul class="space-y-2">
+                                ${product.features.map(feature => `
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-check-circle text-green-500 mt-0.5 flex-shrink-0"></i>
+                                        <span class="text-gray-700 text-sm">${feature}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class="fas fa-cog text-blue-500 mr-2"></i>
+                                技術規格
+                            </h4>
+                            <ul class="space-y-2">
+                                ${product.specifications.map(spec => `
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-info-circle text-blue-500 mt-0.5 flex-shrink-0"></i>
+                                        <span class="text-gray-700 text-sm">${spec}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class="fas fa-industry text-purple-500 mr-2"></i>
+                                應用領域
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                ${product.applications.map(app => `
+                                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">${app}</span>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <p class="text-blue-800 text-sm">
+                                <i class="fas fa-info-circle text-blue-600 mr-2"></i>
+                                如需詳細規格和價格資訊，請聯繫我們的銷售團隊。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                    <a href="contact-optimized.html" class="flex-1 bg-teal-600 text-white py-3 px-6 rounded-lg hover:bg-teal-700 transition-colors duration-200 text-center font-semibold">
+                        <i class="fas fa-envelope mr-2"></i>
+                        請求報價
+                    </a>
+                    <button onclick="closeProductModal()" class="flex-1 bg-gray-200 text-gray-700 py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors duration-200 font-semibold">
+                        關閉
+                    </button>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProductModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('productModal');
+            const modalContent = event.target.closest('.bg-white');
+            
+            if (modal && !modalContent && !modal.classList.contains('hidden')) {
+                closeProductModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modal = document.getElementById('productModal');
+                if (modal && !modal.classList.contains('hidden')) {
+                    closeProductModal();
+                }
+            }
+        });
+
         // Translation data
         const translations = {
             'zh-TW': {
