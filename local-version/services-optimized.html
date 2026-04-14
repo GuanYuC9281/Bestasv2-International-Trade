@@ -65,13 +65,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 flex items-center justify-center">
-                        <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
-                    </div>
-                    <div>
-                        <h1 class="text-xl font-bold text-gray-900" id="companyName">貝達國際貿易有限公司</h1>
-                        <p class="text-xs text-gray-500">International Trade</p>
-                    </div>
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-900" id="companyName">貝達國際貿易有限公司</h1>
+                            <p class="text-xs text-gray-500">International Trade</p>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="hidden lg:flex items-center space-x-8">
@@ -96,7 +98,8 @@
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
                         <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <a href="#procurement" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-services-procurement">採購代理</a>
+                            <a href="#business-categories" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-services-businessCategories">營運分類</a>
+                            <a href="#procurement" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-services-procurement">採購代理</a>
                             <a href="#import-export" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-services-importExport">進出口服務</a>
                             <a href="#matching" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-services-matching">供應商媒合</a>
                             <a href="#quotation" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-services-quotation">報價與樣品安排</a>
@@ -169,6 +172,7 @@
                         <i class="fas fa-chevron-down text-xs"></i>
                     </button>
                     <div id="mobile-services" class="hidden pl-4 space-y-1 mt-1">
+                        <a href="#business-categories" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-businessCategories">營運分類</a>
                         <a href="#procurement" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-procurement">採購代理</a>
                         <a href="#import-export" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-importExport">進出口服務</a>
                         <a href="#matching" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-matching">供應商媒合</a>
@@ -226,7 +230,7 @@
     </section>
 
     <!-- Business Categories -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="business-categories" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">營運分類</h2>

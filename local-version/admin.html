@@ -39,7 +39,7 @@
                 </a>
                 <a href="#users" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
                     <i class="fas fa-users w-5 mr-3"></i>
-                    用戶管理
+                    帳號管理
                 </a>
                 <a href="#products" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
                     <i class="fas fa-box w-5 mr-3"></i>
@@ -84,6 +84,10 @@
                 <a href="#security-audit" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
                     <i class="fas fa-shield-alt w-5 mr-3"></i>
                     安全審計
+                </a>
+                <a href="#realtime-status" class="nav-item flex items-center px-6 py-3 text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">
+                    <i class="fas fa-stream w-5 mr-3"></i>
+                    即時狀態清單
                 </a>
             </nav>
         </div>
@@ -342,15 +346,15 @@
 
                 <!-- Users Management Page -->
                 <div id="usersPage" class="page hidden p-6">
-                    <h1 class="text-2xl font-bold text-gray-800 mb-6">用戶管理</h1>
+                    <h1 class="text-2xl font-bold text-gray-800 mb-6">帳號管理</h1>
                     
                     <!-- Users Table -->
                     <div class="bg-white rounded-lg shadow">
                         <div class="p-6 border-b border-gray-200">
                             <div class="flex justify-between items-center">
-                                <h3 class="text-lg font-semibold text-gray-800">用戶列表</h3>
-                                <button class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
-                                    <i class="fas fa-plus mr-2"></i>新增用戶
+                                <h3 class="text-lg font-semibold text-gray-800">帳號列表</h3>
+                                <button onclick="showAddAccountModal()" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+                                    <i class="fas fa-plus mr-2"></i>新增帳號
                                 </button>
                             </div>
                         </div>
@@ -358,26 +362,17 @@
                             <table class="w-full">
                                 <thead class="bg-gray-50">
                                     <tr>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">用戶名稱</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">帳號名稱</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">夥伴名稱</th>
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">電子郵件</th>
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">角色</th>
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">狀態</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">密碼</th>
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
                                     </tr>
                                 </thead>
-                                <tbody class="bg-white divide-y divide-gray-200">
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Admin</td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">admin@bestas-intl.com</td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">管理員</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">活躍</span>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                            <button class="text-teal-600 hover:text-teal-900 mr-3">編輯</button>
-                                            <button class="text-red-600 hover:text-red-900">刪除</button>
-                                        </td>
-                                    </tr>
+                                <tbody class="bg-white divide-y divide-gray-200" id="accountTableBody">
+                                    <!-- This will be populated by JavaScript -->
                                 </tbody>
                             </table>
                         </div>
@@ -1568,6 +1563,115 @@
                                         <p class="text-xs text-gray-500">2024-04-02 09:30:00 - 用戶: Admin</p>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 即時狀態清單 -->
+                <div id="realtime-statusPage" class="page p-6 hidden">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">即時狀態清單</h2>
+                        <p class="text-gray-600">監控所有前後台更新的內容及狀態</p>
+                    </div>
+
+                    <!-- 狀態過濾器 -->
+                    <div class="bg-white rounded-lg shadow p-6 mb-6">
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <div class="flex items-center">
+                                <label class="text-sm font-medium text-gray-700 mr-2">類型：</label>
+                                <select id="statusFilter" class="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                                    <option value="all">全部</option>
+                                    <option value="frontend">前台更新</option>
+                                    <option value="backend">後台更新</option>
+                                    <option value="system">系統更新</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center">
+                                <label class="text-sm font-medium text-gray-700 mr-2">狀態：</label>
+                                <select id="stateFilter" class="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                                    <option value="all">全部</option>
+                                    <option value="success">成功</option>
+                                    <option value="pending">處理中</option>
+                                    <option value="failed">失敗</option>
+                                </select>
+                            </div>
+                            <button onclick="refreshStatusList()" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+                                <i class="fas fa-sync-alt mr-2"></i>刷新
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 狀態統計 -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-600">總更新數</p>
+                                    <p class="text-2xl font-bold text-gray-800" id="totalUpdates">0</p>
+                                </div>
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-database text-blue-600 text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-600">成功</p>
+                                    <p class="text-2xl font-bold text-green-600" id="successCount">0</p>
+                                </div>
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600 text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-600">處理中</p>
+                                    <p class="text-2xl font-bold text-yellow-600" id="pendingCount">0</p>
+                                </div>
+                                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-clock text-yellow-600 text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-600">失敗</p>
+                                    <p class="text-2xl font-bold text-red-600" id="failedCount">0</p>
+                                </div>
+                                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-times text-red-600 text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 狀態清單 -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-lg font-semibold text-gray-800">更新記錄</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="overflow-x-auto">
+                                <table class="w-full">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">時間</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">類型</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">內容</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">用戶</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">狀態</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">詳情</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200" id="statusTableBody">
+                                        <!-- This will be populated by JavaScript -->
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -4211,6 +4315,444 @@
                 currencyMonitor.performConversion();
             }
         }
+
+        // Enhanced Account Management Functions
+        let accounts = [
+            { id: 1, name: 'Admin', partnerName: '貝達國際', email: 'admin@bestas-intl.com', role: '管理員', status: '活躍', password: 'admin123' },
+            { id: 2, name: 'User1', partnerName: '台灣電子', email: 'user1@bestas-intl.com', role: '用戶', status: '活躍', password: 'user123' },
+            { id: 3, name: 'User2', partnerName: '香港貿易', email: 'user2@bestas-intl.com', role: '用戶', status: '停用', password: 'user456' }
+        ];
+        let currentEditId = null;
+
+        // Show add account modal
+        function showAddAccountModal() {
+            currentEditId = null;
+            const modal = createAccountModal("新增帳號", true);
+            document.body.appendChild(modal);
+            modal.classList.remove("hidden");
+        }
+
+        // Edit account
+        function editAccount(id) {
+            currentEditId = id;
+            const account = accounts.find(a => a.id === id);
+            if (account) {
+                const modal = createAccountModal("編輯帳號", false);
+                document.body.appendChild(modal);
+                document.getElementById("accountName").value = account.name;
+                document.getElementById("partnerName").value = account.partnerName || '';
+                document.getElementById("accountEmail").value = account.email;
+                document.getElementById("accountRole").value = account.role;
+                document.getElementById("accountStatus").value = account.status;
+                modal.classList.remove("hidden");
+            }
+        }
+
+        // Delete account
+        function deleteAccount(id) {
+            if (confirm("確定要刪除這個帳號嗎？")) {
+                accounts = accounts.filter(a => a.id !== id);
+                renderAccountTable();
+                alert("Account deleted successfully");
+            }
+        }
+
+        // Create account modal
+        function createAccountModal(title, showPassword) {
+            // Remove existing modal if present
+            const existingModal = document.getElementById('accountModal');
+            if (existingModal) {
+                existingModal.remove();
+            }
+
+            const modal = document.createElement('div');
+            modal.id = 'accountModal';
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4';
+            modal.innerHTML = `
+                <div class="bg-white rounded-lg shadow-xl w-full max-w-lg mx-auto max-h-[90vh] overflow-y-auto">
+                    <div class="p-6 border-b border-gray-200 sticky top-0 bg-white">
+                        <div class="flex justify-between items-center">
+                            <h2 class="text-xl font-bold text-gray-800">${title}</h2>
+                            <button onclick="closeAccountModal()" class="text-gray-400 hover:text-gray-600 p-2 hover:bg-gray-100 rounded-full transition-colors">
+                                <i class="fas fa-times text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <form id="accountForm" onsubmit="event.preventDefault(); saveAccount();">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">帳號名稱</label>
+                                    <input type="text" id="accountName" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">夥伴名稱</label>
+                                    <input type="text" id="partnerName" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">電子郵件</label>
+                                    <input type="email" id="accountEmail" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">角色</label>
+                                    <select id="accountRole" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                                        <option value="管理員">管理員</option>
+                                        <option value="用戶">用戶</option>
+                                        <option value="財務">財務</option>
+                                        <option value="業務">業務</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">狀態</label>
+                                    <select id="accountStatus" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                                        <option value="活躍">活躍</option>
+                                        <option value="停用">停用</option>
+                                    </select>
+                                </div>
+                                ${showPassword ? `
+                                <div class="md:col-span-2">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">密碼</label>
+                                    <input type="password" id="accountPassword" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                                </div>
+                                ` : ''}
+                            </div>
+                            <div class="mt-6 flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-3">
+                                <button type="button" onclick="closeAccountModal()" class="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                                    取消
+                                </button>
+                                <button type="submit" class="w-full sm:w-auto px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors">
+                                    儲存
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            `;
+            return modal;
+        }
+
+        // Save account
+        function saveAccount() {
+            const name = document.getElementById("accountName").value;
+            const partnerName = document.getElementById("partnerName").value;
+            const email = document.getElementById("accountEmail").value;
+            const role = document.getElementById("accountRole").value;
+            const status = document.getElementById("accountStatus").value;
+            const password = document.getElementById("accountPassword")?.value;
+
+            if (currentEditId) {
+                // Edit existing account
+                const account = accounts.find(a => a.id === currentEditId);
+                if (account) {
+                    account.name = name;
+                    account.partnerName = partnerName;
+                    account.email = email;
+                    account.role = role;
+                    account.status = status;
+                    if (password) {
+                        account.password = password;
+                    }
+                }
+            } else {
+                // Add new account
+                const newAccount = {
+                    id: Math.max(...accounts.map(a => a.id)) + 1,
+                    name,
+                    partnerName,
+                    email,
+                    role,
+                    status,
+                    password: password || 'default123'
+                };
+                accounts.push(newAccount);
+            }
+
+            renderAccountTable();
+            closeAccountModal();
+            alert("Account saved successfully");
+        }
+
+        // Close modal
+        function closeAccountModal() {
+            const modal = document.getElementById('accountModal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        // Render account table
+        function renderAccountTable() {
+            const tbody = document.getElementById('accountTableBody');
+            if (!tbody) return;
+
+            tbody.innerHTML = accounts.map(account => `
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${account.name}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${account.partnerName || '-'}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${account.email}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${account.role}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${account.status === '活躍' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
+                            ${account.status}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">******</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button onclick="editAccount(${account.id})" class="text-teal-600 hover:text-teal-900 mr-3">編輯</button>
+                        <button onclick="deleteAccount(${account.id})" class="text-red-600 hover:text-red-900">刪除</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Initialize account table when page loads
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                renderAccountTable();
+            }, 1000);
+            
+            // Initialize permission control for realtime status
+            checkPermissionForRealtimeStatus();
+            
+            // Initialize status monitoring
+            initStatusMonitoring();
+        });
+
+        // Permission control for realtime status
+        function checkPermissionForRealtimeStatus() {
+            // Get current user role (from localStorage or session)
+            const currentUser = JSON.parse(localStorage.getItem('currentUser')) || { role: '管理員' };
+            const allowedRoles = ['管理員', 'Manager'];
+            
+            const realtimeStatusNav = document.querySelector('a[href="#realtime-status"]');
+            const realtimeStatusPage = document.getElementById('realtime-statusPage');
+            
+            if (!allowedRoles.includes(currentUser.role)) {
+                // Hide navigation item
+                if (realtimeStatusNav) {
+                    realtimeStatusNav.style.display = 'none';
+                }
+                // Hide page
+                if (realtimeStatusPage) {
+                    realtimeStatusPage.style.display = 'none';
+                }
+            }
+        }
+
+        // Status monitoring data
+        let statusUpdates = [
+            {
+                id: 1,
+                timestamp: '2024-04-14 14:30:00',
+                type: 'frontend',
+                content: '首頁Banner圖片更新',
+                user: 'Admin',
+                status: 'success',
+                details: '成功更新首頁Banner圖片，文件大小2.5MB'
+            },
+            {
+                id: 2,
+                timestamp: '2024-04-14 14:25:00',
+                type: 'backend',
+                content: '新增帳號: User3',
+                user: 'Admin',
+                status: 'success',
+                details: '成功新增帳號User3，角色為用戶'
+            },
+            {
+                id: 3,
+                timestamp: '2024-04-14 14:20:00',
+                type: 'system',
+                content: '系統備份',
+                user: 'System',
+                status: 'pending',
+                details: '正在執行每日自動備份...'
+            },
+            {
+                id: 4,
+                timestamp: '2024-04-14 14:15:00',
+                type: 'frontend',
+                content: '產品頁面內容更新',
+                user: 'Manager',
+                status: 'success',
+                details: '成功更新產品頁面內容，共更新15個產品'
+            },
+            {
+                id: 5,
+                timestamp: '2024-04-14 14:10:00',
+                type: 'backend',
+                content: '訂單狀態同步',
+                user: 'System',
+                status: 'failed',
+                details: '訂單狀態同步失敗，錯誤代碼: 500'
+            }
+        ];
+
+        // Initialize status monitoring
+        function initStatusMonitoring() {
+            renderStatusTable();
+            updateStatusStats();
+            
+            // Auto-refresh every 30 seconds
+            setInterval(() => {
+                addSimulatedUpdate();
+                refreshStatusList();
+            }, 30000);
+        }
+
+        // Render status table
+        function renderStatusTable() {
+            const tbody = document.getElementById('statusTableBody');
+            if (!tbody) return;
+
+            const statusFilter = document.getElementById('statusFilter')?.value || 'all';
+            const stateFilter = document.getElementById('stateFilter')?.value || 'all';
+
+            let filteredUpdates = statusUpdates;
+
+            if (statusFilter !== 'all') {
+                filteredUpdates = filteredUpdates.filter(u => u.type === statusFilter);
+            }
+
+            if (stateFilter !== 'all') {
+                filteredUpdates = filteredUpdates.filter(u => u.status === stateFilter);
+            }
+
+            tbody.innerHTML = filteredUpdates.map(update => `
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${update.timestamp}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getTypeColor(update.type)}">
+                            ${getTypeLabel(update.type)}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${update.content}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${update.user}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusColor(update.status)}">
+                            ${getStatusLabel(update.status)}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        <button onclick="showStatusDetails(${update.id})" class="text-teal-600 hover:text-teal-900">
+                            查看詳情
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Get type color
+        function getTypeColor(type) {
+            switch(type) {
+                case 'frontend': return 'bg-blue-100 text-blue-800';
+                case 'backend': return 'bg-purple-100 text-purple-800';
+                case 'system': return 'bg-gray-100 text-gray-800';
+                default: return 'bg-gray-100 text-gray-800';
+            }
+        }
+
+        // Get type label
+        function getTypeLabel(type) {
+            switch(type) {
+                case 'frontend': return '前台更新';
+                case 'backend': return '後台更新';
+                case 'system': return '系統更新';
+                default: return type;
+            }
+        }
+
+        // Get status color
+        function getStatusColor(status) {
+            switch(status) {
+                case 'success': return 'bg-green-100 text-green-800';
+                case 'pending': return 'bg-yellow-100 text-yellow-800';
+                case 'failed': return 'bg-red-100 text-red-800';
+                default: return 'bg-gray-100 text-gray-800';
+            }
+        }
+
+        // Get status label
+        function getStatusLabel(status) {
+            switch(status) {
+                case 'success': return '成功';
+                case 'pending': return '處理中';
+                case 'failed': return '失敗';
+                default: return status;
+            }
+        }
+
+        // Update status statistics
+        function updateStatusStats() {
+            const total = statusUpdates.length;
+            const success = statusUpdates.filter(u => u.status === 'success').length;
+            const pending = statusUpdates.filter(u => u.status === 'pending').length;
+            const failed = statusUpdates.filter(u => u.status === 'failed').length;
+
+            document.getElementById('totalUpdates').textContent = total;
+            document.getElementById('successCount').textContent = success;
+            document.getElementById('pendingCount').textContent = pending;
+            document.getElementById('failedCount').textContent = failed;
+        }
+
+        // Refresh status list
+        function refreshStatusList() {
+            renderStatusTable();
+            updateStatusStats();
+        }
+
+        // Show status details
+        function showStatusDetails(id) {
+            const update = statusUpdates.find(u => u.id === id);
+            if (update) {
+                alert(`詳情：\n\n時間：${update.timestamp}\n類型：${getTypeLabel(update.type)}\n內容：${update.content}\n用戶：${update.user}\n狀態：${getStatusLabel(update.status)}\n\n${update.details}`);
+            }
+        }
+
+        // Add simulated update
+        function addSimulatedUpdate() {
+            const types = ['frontend', 'backend', 'system'];
+            const contents = [
+                '頁面內容更新',
+                '數據同步',
+                '系統檢查',
+                '用戶操作記錄',
+                '訂單處理'
+            ];
+            const users = ['Admin', 'Manager', 'User1', 'System'];
+            const statuses = ['success', 'pending', 'failed'];
+
+            const newUpdate = {
+                id: Math.max(...statusUpdates.map(u => u.id)) + 1,
+                timestamp: new Date().toLocaleString('zh-TW'),
+                type: types[Math.floor(Math.random() * types.length)],
+                content: contents[Math.floor(Math.random() * contents.length)],
+                user: users[Math.floor(Math.random() * users.length)],
+                status: statuses[Math.floor(Math.random() * statuses.length)],
+                details: '自動生成的模擬更新記錄'
+            };
+
+            statusUpdates.unshift(newUpdate);
+            
+            // Keep only last 50 updates
+            if (statusUpdates.length > 50) {
+                statusUpdates = statusUpdates.slice(0, 50);
+            }
+        }
+
+        // Filter change listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusFilter = document.getElementById('statusFilter');
+            const stateFilter = document.getElementById('stateFilter');
+
+            if (statusFilter) {
+                statusFilter.addEventListener('change', refreshStatusList);
+            }
+
+            if (stateFilter) {
+                stateFilter.addEventListener('change', refreshStatusList);
+            }
+        });
     </script>
 </body>
 </html>
