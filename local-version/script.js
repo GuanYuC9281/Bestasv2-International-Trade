@@ -19,10 +19,16 @@ const translations = {
         },
         about: {
             companyIntro: '公司簡介',
-            missionVision: '使命 / 願景',
-            coreValues: '核心價值',
-            markets: '市場與地區',
-            whyChooseUs: '為什麼選擇我們'
+            missionVision: '使命與願景',
+            coreValues: '核心理念',
+            markets: '市場與地區'
+        },
+        services: {
+            procurement: '採購代理',
+            importExport: '進出口服務',
+            matching: '供應商媒合',
+            quotation: '報價與樣品',
+            orderCoordination: '訂單與交貨協調'
         },
         hero: {
             title: '專業國際貿易解決方案',
@@ -76,7 +82,7 @@ const translations = {
             save: '儲存',
             cancel: '取消',
             edit: '編輯',
-            delete: '刪除',
+            deleteAction: '刪除',
             success: '成功',
             error: '錯誤',
             loading: '載入中...',
@@ -108,8 +114,7 @@ const translations = {
             companyIntro: 'Company Introduction',
             missionVision: 'Mission / Vision',
             coreValues: 'Core Values',
-            markets: 'Markets & Regions',
-            whyChooseUs: 'Why Choose Us'
+            markets: 'Markets & Regions'
         },
         services: {
             procurement: 'Procurement Agency',
@@ -170,7 +175,7 @@ const translations = {
             save: 'Save',
             cancel: 'Cancel',
             edit: 'Edit',
-            delete: 'Delete',
+            deleteAction: 'Delete',
             success: 'Success',
             error: 'Error',
             loading: 'Loading...',
@@ -202,8 +207,7 @@ const translations = {
             companyIntro: '会社紹介',
             missionVision: '使命・ビジョン',
             coreValues: 'コアバリュー',
-            markets: '市場・地域',
-            whyChooseUs: 'なぜ私たちを選ぶのか'
+            markets: '市場・地域'
         },
         services: {
             procurement: '調達代理',
@@ -269,7 +273,7 @@ const translations = {
             save: '保存',
             cancel: 'キャンセル',
             edit: '編集',
-            delete: '削除',
+            deleteAction: '削除',
             success: '成功',
             error: 'エラー',
             loading: '読み込み中...',
@@ -301,8 +305,7 @@ const translations = {
             companyIntro: 'Giới thiệu Công ty',
             missionVision: 'Sứ mệnh & Tầm nhìn',
             coreValues: 'Giá trị cốt lõi',
-            markets: 'Thị trường & Khu vực',
-            whyChooseUs: 'Tại sao chọn chúng tôi'
+            markets: 'Thị trường & Khu vực'
         },
         services: {
             procurement: 'Đại lý Mua hàng',
@@ -357,7 +360,7 @@ const translations = {
             save: 'Lưu',
             cancel: 'Hủy',
             edit: 'Chỉnh sửa',
-            delete: 'Xóa',
+            deleteAction: 'Xóa',
             success: 'Thành công',
             error: 'Lỗi',
             loading: 'Đang tải...',
