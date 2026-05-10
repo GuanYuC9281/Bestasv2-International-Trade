@@ -78,6 +78,19 @@ nav .nav-link {
     align-items: center !important;
 }
 
+/* Responsive navigation font size */
+@media (max-width: 1024px) {
+    nav .nav-link {
+        font-size: 0.9em !important;
+    }
+}
+
+@media (max-width: 768px) {
+    nav .nav-link {
+        font-size: 0.85em !important;
+    }
+}
+
 nav .nav-link:hover {
     color: #3b82f6 !important;
 }
@@ -251,4 +264,41 @@ html {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Categories Slider Styles */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+/* Category card hover effects for mobile */
+@media (max-width: 1024px) {
+    #categoriesContainer .group:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Scroll button animations */
+@media (min-width: 1024px) {
+    [onclick*="scrollCategories"] {
+        transition: all 0.3s ease;
+    }
+    
+    [onclick*="scrollCategories"]:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    [onclick*="scrollCategories"]:active {
+        transform: scale(0.95);
+    }
 }
