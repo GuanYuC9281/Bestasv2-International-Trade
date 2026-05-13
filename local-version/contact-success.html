@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訊息發送成功 - 貝達國際貿易有限公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100 flex items-center justify-center z-50">
+        <div class="text-center">
+            <div class="w-32 h-32 mx-auto mb-8 flex items-center justify-center">
+                <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain animate-pulse">
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">貝達國際貿易有限公司</h1>
+            <p class="text-lg text-gray-600 mb-8">載入中...</p>
+            <div class="flex justify-center space-x-2">
+                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+            </div>
+            <p class="text-sm text-gray-500 mt-8">載入中...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900" id="companyName">貝達國際貿易有限公司</h1>
+                        <p class="text-xs text-gray-500">International Trade</p>
+                    </div>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link" id="nav-home">首頁</a>
+                    <a href="about.html" class="nav-link" id="nav-about">關於我們</a>
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-products">產品與服務</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                           <a href="services.html#business-categories" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-services-businessCategories">營運項目</a>
+                            <a href="services.html#matching" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-services-matching">供應鏈整合</a>
+                            <a href="services.html#partner-recruitment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg" id="nav-services-partnerRecruitment">經銷合作</a>
+                        </div>
+                    </div>
+                                        <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-news">各項產品解決方案</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 max-h-96 overflow-y-auto">
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <h4 class="text-sm font-semibold text-gray-900">【空污防治】</h4>
+                            </div>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">油煙處理</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化學氣相處理</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">油漆除塵</a>
+                            
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <h4 class="text-sm font-semibold text-gray-900">【建造/工程應用】</h4>
+                            </div>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">噴漆設備</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化工廠</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">靜電油煙設備</a>
+                            
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <h4 class="text-sm font-semibold text-gray-900">【行業應用】</h4>
+                            </div>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">金工</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化學產業</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">餐飲廚房</a>
+                            
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <h4 class="text-sm font-semibold text-gray-900">【通風零件】</h4>
+                            </div>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">風管</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">風機</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">濾網</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">集塵設備</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg">客製配件</a>
+                        </div>
+                    </div>
+                    <a href="faq.html" class="nav-link" id="nav-faq">常見問題</a>
+                    <a href="contact.html" class="nav-link" id="nav-contact">聯絡我們</a>
+                </div>
+
+                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-home">首頁</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-about">關於我們</a>
+                <div class="space-y-1">
+                    <button onclick="toggleMobileServices()" class="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                        <span id="mobile-nav-products">產品與服務</span>
+                        <i class="fas fa-chevron-down text-xs" id="mobile-services-chevron"></i>
+                    </button>
+                    <div id="mobile-services" class="hidden pl-4 space-y-1 mt-1">
+                        <a href="services.html#business-categories" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-businessCategories">營運分類</a>
+                        <a href="services.html#procurement" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-procurement">一站式採購與供應服務</a>
+                        <a href="services.html#import-export" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-importExport">整合與進出口服務</a>
+                        <a href="services.html#matching" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-matching">供應鏈整合與客製服務</a>
+                        <a href="services.html#quotation" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-quotation">企業報價與產品選擇</a>
+                        <a href="services.html#coordination" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-orderCoordination">訂單管理與交付整合</a>
+                        <a href="services.html#partner-recruitment" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-partnerRecruitment">經銷合作夥伴招募</a>
+                    </div>
+                </div>
+                <a href="process.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-process">合作流程</a>
+                <!-- Solutions Dropdown -->
+                <div class="px-3 py-2">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-solutions')">
+                        <span id="mobile-nav-news">各項產品解決方案</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-solutions" class="hidden pl-4 space-y-1 mt-1">
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">【空污防治】</h4>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">油煙處理</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">化學氣相處理</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">油漆除塵</a>
+                        </div>
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">【建造/工程應用】</h4>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">噴漆設備</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">化工廠</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">靜電油煙設備</a>
+                        </div>
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">【行業應用】</h4>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">金工</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">化學產業</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">餐飲廚房</a>
+                        </div>
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">【通風零件】</h4>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">風管</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">風機</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">濾網</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">集塵設備</a>
+                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">客製配件</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-faq">常見問題</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-contact">聯絡我們</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Success Content -->
+    <section class="h-screen flex items-center justify-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                <!-- Success Icon -->
+                <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
+                    <i class="fas fa-check-circle text-green-600 text-5xl"></i>
+                </div>
+                
+                <!-- Success Message -->
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    訊息發送成功!
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    我們已收到您的表單，我們將盡快與您聯繫!
+                </p>
+                
+                <!-- Additional Info -->
+                <div class="bg-teal-50 rounded-lg p-6 mb-8">
+                    <div class="flex items-center justify-center space-x-2 text-teal-700">
+                        <i class="fas fa-info-circle"></i>
+                        <p class="text-sm md:text-base">
+                            我們會在 24 小時內回覆您的訊息，請留意您的電子郵件信箱
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="index.html" class="inline-flex items-center px-8 py-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-home mr-3"></i>
+                        回首頁
+                    </a>
+                    <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg border border-teal-200">
+                        <i class="fas fa-envelope mr-3"></i>
+                        再次聯絡
+                    </a>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <p class="text-gray-500 mb-4">如果您有緊急需求，也可以直接透過以下方式聯繫我們：</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center text-sm">
+                        <div class="flex items-center justify-center space-x-2 text-gray-600">
+                            <i class="fas fa-phone text-teal-600"></i>
+                            <span>+886-985-328-164</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-2 text-gray-600">
+                            <i class="fas fa-envelope text-teal-600"></i>
+                            <span>info@bestas-intl.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 flex items-center justify-center">
+                            <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold text-lg" id="companyName-footer">貝達國際貿易有限公司</h3>
+                            <p class="text-gray-400 text-sm">International Trade</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">專業的國際貿易服務提供商，致力於為客戶創造最大商業價值</p>
+                    <div class="space-y-2">
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-phone mr-2 text-teal-400"></i>
+                            +886-985-328-164
+                        </p>
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-envelope mr-2 text-teal-400"></i>
+                            info@bestas-intl.com
+                        </p>
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2 text-teal-400"></i>
+                            台北市文山區木柵路二段
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">快速連結</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">首頁</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">關於我們</a></li>
+                        <li><a href="services.html#coordination" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-services-orderCoordination">訂單與交期協調</a>
+                            <a href="services.html#partner-recruitment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg" id="nav-services-partnerRecruitment">經銷合作夥伴招募</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">聯絡我們</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">服務項目</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#business-categories" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">營運項目</a></li>
+                        <li><a href="services.html#partner-recruitment" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">經銷合作夥伴招募</a></li>
+                        <li><a href="services.html#matching" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">供應鏈整合服務</a></li>
+                        <li><a href="services.html#quotation" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">報價服務</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">聯絡我們</h3>
+                    <p class="text-gray-400 mb-4">透過以下方式聯繫我們</p>
+                    <div class="flex space-x-4">
+                        <a href="https://line.me/ti/p/@bestas-intl" target="_blank" class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors duration-200">
+                            <i class="fab fa-line text-white"></i>
+                        </a>
+                        <a href="https://facebook.com/bestas-intl" target="_blank" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="https://instagram.com/bestas-intl" target="_blank" class="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="mailto:info@bestas-intl.com" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-200">
+                            <i class="fas fa-envelope text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400 text-sm"> 2026 <span id="companyName-footer-2">貝達國際貿易有限公司</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Translation data
+        const translations = {
+            'zh-TW': {
+                companyName: '貝達國際貿易有限公司',
+                currentLangDisplay: '繁體中文',
+                'nav-home': '首頁',
+                'nav-about-missionVision': '使命與願景',
+                'nav-products': '產品與服務',
+                'nav-process': '合作流程',
+                'nav-news': '各項產品解決方案',
+                'nav-faq': '常見問題',
+                'nav-contact': '聯絡我們',
+                'nav-services-businessCategories': '營運分類',
+                'nav-services-procurement': '採購代理',
+                'nav-services-importExport': '進出口服務',
+                'nav-services-matching': '供應商媒合',
+                'nav-services-quotation': '報價與樣品安排',
+                'nav-services-orderCoordination': '訂單與交期協調',
+                'nav-services-partnerRecruitment': '經銷合作夥伴招募'
+            },
+            'en': {
+                companyName: 'Bestas International Trade Co., Ltd.',
+                currentLangDisplay: 'English',
+                'nav-home': 'Home',
+                'nav-about': 'About Us',
+                'nav-products': 'Products & Services',
+                'nav-process': 'Process',
+                'nav-news': 'News',
+                'nav-faq': 'FAQ',
+                'nav-contact': 'Contact',
+                'nav-services-businessCategories': 'Business Categories',
+                'nav-services-procurement': 'Procurement Agency',
+                'nav-services-importExport': 'Import-Export Services',
+                'nav-services-matching': 'Supplier Matching',
+                'nav-services-quotation': 'Quotation & Samples',
+                'nav-services-orderCoordination': 'Order & Delivery Coordination',
+                'nav-services-partnerRecruitment': 'Partner Recruitment'
+            },
+            'ja': {
+                companyName: 'ベスタス国際貿易有限公司',
+                currentLangDisplay: '日本語',
+                'nav-home': 'ホーム',
+                'nav-about': '会社概要',
+                'nav-products': '製品・サービス',
+                'nav-process': 'プロセス',
+                'nav-news': 'ニュース',
+                'nav-faq': 'よくある質問',
+                'nav-contact': 'お問い合わせ',
+                'nav-services-businessCategories': '事業分類',
+                'nav-services-procurement': '調達代理',
+                'nav-services-importExport': '輸出入サービス',
+                'nav-services-matching': 'サプライヤーマッチング',
+                'nav-services-quotation': '見積もりとサンプル',
+                'nav-services-orderCoordination': '注文と納期調整',
+                'nav-services-partnerRecruitment': '販売パートナー募集'
+            },
+            'vi': {
+                companyName: 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
+                currentLangDisplay: 'Tiếng Việt',
+                'nav-home': 'Trang chủ',
+                'nav-about': 'Về chúng tôi',
+                'nav-products': 'Sản phẩm & Dịch vụ',
+                'nav-process': 'Quy trình',
+                'nav-news': 'Tin tức',
+                'nav-faq': 'Câu hỏi thường gặp',
+                'nav-contact': 'Liên hệ',
+                'nav-services-businessCategories': 'Phân loại Kinh doanh',
+                'nav-services-procurement': 'Đại lý Mua hàng',
+                'nav-services-importExport': 'Dịch vụ Xuất nhập khẩu',
+                'nav-services-matching': 'Kết nối Nhà cung cấp',
+                'nav-services-quotation': 'Báo giá & Mẫu',
+                'nav-services-orderCoordination': 'Điều phối Đơn hàng & Giao hàng',
+                'nav-services-partnerRecruitment': 'Tuyển dụng Đối tác Kinh doanh'
+            }
+        };
+
+        let currentLanguage = 'zh-TW';
+
+        // Update page language
+        function updateLanguage(lang) {
+            currentLanguage = lang;
+            const translation = translations[lang];
+            
+            // Update all elements with translation keys
+            for (const [key, value] of Object.entries(translation)) {
+                const elements = document.querySelectorAll(`#${key}`);
+                elements.forEach(element => {
+                    if (element) {
+                        element.textContent = value;
+                    }
+                });
+            }
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Hide loading screen after page loads
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loadingScreen');
+                if (loadingScreen) {
+                    loadingScreen.style.opacity = '0';
+                    loadingScreen.style.transition = 'opacity 0.5s ease-out';
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                    }, 500);
+                }
+            }, 1500);
+            
+            // Load saved language
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            if (savedLanguage && translations[savedLanguage]) {
+                updateLanguage(savedLanguage);
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Mobile services toggle
+        function toggleMobileServices() {
+            const mobileServices = document.getElementById('mobile-services');
+            const chevron = document.getElementById('mobile-services-chevron');
+            
+            mobileServices.classList.toggle('hidden');
+            chevron.classList.toggle('fa-chevron-down');
+            chevron.classList.toggle('fa-chevron-up');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.add('bg-transparent');
+                navbar.classList.remove('bg-white', 'shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
