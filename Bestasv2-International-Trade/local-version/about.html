@@ -3,67 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>貝達國際貿易有限公司</title>
+    <title>關於我們 - 貝達國際貿易有限公司</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-50">
     <!-- Loading Screen -->
-    <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center z-50">
-        <div class="text-center">
-            <div class="w-32 h-32 mx-auto mb-8 flex items-center justify-center">
-                <img src="images/company/logo.png?v=202604021007" alt="貝達國際貿易有限公司" class="w-full h-full object-contain animate-pulse">
+    <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100 flex items-center justify-center z-50">
+        <div class="text-center w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+            <!-- 載入標題 -->
+            <div class="mb-6 sm:mb-8">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                    <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain animate-pulse">
+                </div>
+                <h1 class="text-lg sm:text-xl font-bold text-gray-800">貝達國際貿易有限公司</h1>
             </div>
-            <h1 class="text-3xl font-bold text-gray-800 mb-4">貝達國際貿易有限公司</h1>
-            <p class="text-lg text-gray-600 mb-8">專業國際貿易解決方案</p>
-            <div class="flex justify-center space-x-2">
-                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
-                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
-                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+            
+            <!-- 飛機動畫容器 -->
+            <div class="relative h-32 sm:h-40 mb-6 sm:mb-8">
+                <!-- 起點：台北101 🏙️ -->
+                <div class="absolute left-2 sm:left-0 top-1/2 transform -translate-y-1/2">
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-5xl mb-1 sm:mb-2">🏙️</div>
+                    </div>
+                </div>
+                
+                <!-- 終點：全球 🌍 -->
+                <div class="absolute right-2 sm:right-0 top-1/2 transform -translate-y-1/2">
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-5xl animate-pulse">🌍</div>
+                    </div>
+                </div>
+                
+                <!-- 飛行路徑 -->
+                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 160">
+                    <path d="M 50 80 Q 200 40 350 80" stroke="#cbd5e1" stroke-width="2" fill="none" stroke-dasharray="8,4" opacity="0.6"/>
+                </svg>
+                
+                <!-- 飛機 ✈︎ -->
+                <div id="airplane" class="absolute top-1/2 transform -translate-y-1/2 transition-all duration-3000 ease-in-out left-[30px] sm:left-[50px]">
+                    <div class="relative">
+                        <div class="text-2xl sm:text-3xl transform rotate-0 transition-transform duration-3000">✈︎</div>
+                        <!-- 飛行軌跡 -->
+                        <div class="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-blue-400 rounded-full opacity-40 animate-ping"></div>
+                    </div>
+                </div>
             </div>
-            <p class="text-sm text-gray-500 mt-8">載入中...</p>
-        </div>
-    </div>
-
-    <!-- Privacy Notice Modal -->
-    <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
-        <div class="bg-white rounded-lg shadow-2xl max-w-md w-full mx-4 max-h-[85vh] overflow-y-auto">
-            <div class="p-4 sm:p-6">
-                <!-- Header -->
-                <div class="text-center mb-4">
-                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                        <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
-                    </div>
-                    <h2 class="text-xl font-bold text-gray-800 mb-1">隱私權聲明</h2>
-                    <p class="text-sm text-gray-600">歡迎來到貝達國際貿易有限公司</p>
-                </div>
-
-                <!-- Privacy Notice Content -->
-                <div class="mb-4 text-center">
-                    <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-3">
-                        <i class="fas fa-shield-alt text-2xl text-blue-600"></i>
-                    </div>
-                </div>
-
-                <!-- Privacy Policy Text -->
-                <div class="text-sm text-gray-700 mb-4 space-y-3">
-                    <div class="bg-gray-50 rounded-lg p-4 text-left">
-                        <div class="space-y-2">
-                            <p class="text-gray-700 text-sm leading-relaxed">
-                                本網站使用 Cookie，以提升您的瀏覽體驗並分析網站流量。繼續使用本網站，即表示您同意我們使用 Cookie。詳細內容請參閱
-                                <a href="privacy-policy.html" target="_blank" class="text-blue-600 hover:text-blue-800 underline font-semibold">隱私權政策</a>。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="flex flex-col sm:flex-row gap-3 justify-center px-4 sm:px-6">
-                    <button onclick="acceptPrivacy()" class="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[100px] sm:min-w-[120px]">
-                        <i class="fas fa-check mr-2"></i>
-                        OK
-                    </button>
+            
+            <!-- 載入進度條 -->
+            <div class="w-full max-w-xs sm:max-w-md mx-auto">
+                <div class="bg-gray-200 rounded-full h-2 sm:h-3 overflow-hidden">
+                    <div id="progressBar" class="bg-gradient-to-r from-teal-500 to-blue-600 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
                 </div>
             </div>
         </div>
@@ -86,17 +77,17 @@
                 </div>
 
                 <div class="hidden lg:flex items-center space-x-8">
-                    <a href="index.html" class="nav-link-active" id="nav-home">首頁</a>
+                    <a href="index.html" class="nav-link" id="nav-home">首頁</a>
                     <div class="relative group">
-                        <button class="nav-link flex items-center space-x-1">
+                        <button class="nav-link-active flex items-center space-x-1">
                             <span id="nav-about">關於我們</span>
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
                         <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <a href="about.html#company-intro" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-about-companyIntro">公司簡介</a>
-                            <a href="about.html#mission-vision" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-missionVision">使命與願景</a>
-                            <a href="about.html#core-values" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-coreValues">核心理念</a>
-                            <a href="about.html#markets" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-markets">市場與地區</a>
+                            <a href="#company-intro" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-about-companyIntro">公司簡介</a>
+                            <a href="#mission-vision" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-missionVision">使命與願景</a>
+                            <a href="#core-values" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-coreValues">核心理念</a>
+                            <a href="#markets" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-markets">市場與地區</a>
                         </div>
                     </div>
 
@@ -154,24 +145,24 @@
                     <!-- Language Selector -->
                     <div class="relative group">
                         <button class="nav-link flex items-center space-x-2" onclick="toggleLanguageDropdown()">
-                            <i class="fas fa-globe text-blue-600"></i>
+                            <i class="fas fa-globe text-teal-600"></i>
                             <span class="language-current" id="currentLangDisplay">中文</span>
                             <i class="fas fa-chevron-down text-xs text-gray-500"></i>
                         </button>
                         <div class="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" id="languageDropdown">
-                            <button onclick="changeLanguage('zh-TW')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-lg flex items-center space-x-2">
+                            <button onclick="changeLanguage('zh-TW')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg flex items-center space-x-2">
                                 <span class="text-lg">🇹🇼</span>
                                 <span>繁體中文</span>
                             </button>
-                            <button onclick="changeLanguage('en')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
+                            <button onclick="changeLanguage('en')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 flex items-center space-x-2">
                                 <span class="text-lg">🇺🇸</span>
                                 <span>English</span>
                             </button>
-                            <button onclick="changeLanguage('ja')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
+                            <button onclick="changeLanguage('ja')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 flex items-center space-x-2">
                                 <span class="text-lg">🇯🇵</span>
                                 <span>日本語</span>
                             </button>
-                            <button onclick="changeLanguage('vi')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-lg flex items-center space-x-2">
+                            <button onclick="changeLanguage('vi')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg flex items-center space-x-2">
                                 <span class="text-lg">🇻🇳</span>
                                 <span>Tiếng Việt</span>
                             </button>
@@ -197,11 +188,11 @@
                         <i class="fas fa-chevron-down text-xs"></i>
                     </button>
                     <div id="mobile-about" class="hidden pl-4 space-y-1 mt-1">
-                        <a href="about.html#company-intro" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-companyIntro">公司簡介</a>
-                        <a href="about.html#mission-vision" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-missionVision">使命與願景</a>
-                        <a href="about.html#core-values" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-coreValues">核心理念</a>
-                        <a href="about.html#markets" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-markets">市場與地區</a>
-                    </div>
+                        <a href="#company-intro" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-companyIntro">公司簡介</a>
+                        <a href="#mission-vision" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-missionVision">使命與願景</a>
+                        <a href="#core-values" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-coreValues">核心理念</a>
+                        <a href="#markets" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-markets">市場與地區</a>
+                        </div>
                 </div>
 
                 <!-- Services Dropdown -->
@@ -259,7 +250,7 @@
                 <div class="px-3 py-2 border-t border-gray-200 mt-2 pt-4">
                     <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-language')">
                         <div class="flex items-center space-x-2">
-                            <i class="fas fa-globe text-blue-600"></i>
+                            <i class="fas fa-globe text-teal-600"></i>
                             <span class="language-current" id="mobile-currentLangDisplay">中文</span>
                         </div>
                         <i class="fas fa-chevron-down text-xs"></i>
@@ -288,153 +279,225 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat pt-16" style="background-image: url('images/harbor-bg.png')">
-        <!-- 背景遮罩 -->
+    <section class="h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat pt-16" style="background-image: url('images/about.png?v=202604080141')">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-            <div class="text-center mb-8 sm:mb-12">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-                    專業的國際貿易解決方案
-                </h1>
-                <p class="text-lg sm:text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">
-                    貝達國際貿易提供全面的採購和進出口服務，連接您到全球商業機會
-                </p>
-            </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-6">
-                    <a href="contact.html" class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto min-w-[140px] sm:min-w-[160px]">
-                        <i class="fas fa-envelope mr-2 sm:mr-3"></i>
-                        <span class="text-sm sm:text-base">立即聯絡</span>
-                    </a>
-                    <a href="services.html" class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg border border-teal-200 w-full sm:w-auto min-w-[140px] sm:min-w-[160px]">
-                        <i class="fas fa-th-large mr-2 sm:mr-3"></i>
-                        <span class="text-sm sm:text-base">查看服務</span>
-                    </a>
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">關於我們</h1>
+                <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">了解貝達國際貿易的專業團隊與服務理念</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Introduction -->
+    <section id="company-intro" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">公司簡介</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        貝達國際貿易有限公司致力於為企業提供高效率、低風險的國際採購與供應鏈解決方案。
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        憑我們具備超過20年的製造端實務經驗，結合供應鏈整合與一站式工程能力，深入理解產品特性、生產流程與品質控管關鍵，
+                        協助客戶精準媒合合適供應商，有效降低採購風險並提升整體效率。
+                        透過整合台灣、越南與中國的供應鏈資源，我們提供從採購代理、報價打樣到生產控管與出貨交付的一站式服務，
+                        讓企業在跨國採購過程中更加安心、高效且可控。
+                    </p>
+                </div>
+                <div class="relative">
+                    <div class="space-y-6">
+                        <!-- 台北辦公室 -->
+                        <div class="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900">台北</h3>
+                                    <p class="text-sm text-gray-600">營運中心</p>
+                                </div>
+                            </div>
+                                                        <div class="mt-4 text-gray-600">
+                                <p class="text-sm">📍 台北市</p>
+                                <p class="text-sm">📞 +886-985-328-164</p>
+                                <p class="text-sm">🌐 info@bestas-intl.com</p>
+                            </div>
+                        </div>
+
+                        <!-- 胡志明市辦公室 -->
+                        <div class="bg-gradient-to-br from-cyan-50 to-sky-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900">胡志明市</h3>
+                                    <p class="text-sm text-gray-600">東南亞製造營運中心</p>
+                                </div>
+                            </div>
+                                                        <div class="mt-4 text-gray-600">
+                                <p class="text-sm">📍 胡志明市</p>
+                                <p class="text-sm">📞 +84-28-3779-0881</p>
+                                <p class="text-sm">🌐 info@codanh.com</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section (Business Categories preview marquee) -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 border-b border-gray-100">
+    <!-- Mission & Vision -->
+    <section id="mission-vision" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">營運項目</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">探索我們多樣化的產品分類，找到您需要的商品</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">使命與願景</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">我們的理念和未來發展方向</p>
             </div>
-
-            <div class="home-categories-marquee relative mb-12">
-                <div class="home-categories-marquee-track">
-                    <div class="home-categories-marquee-set">
-                        <div class="home-categories-marquee-item"><img src="images/products/air-pollution/pulse-bag-filter.png" alt="脈衝袋濾集塵設備" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/air-pollution/pp-spray-tower.png" alt="PP 噴淋塔設備" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/air-pollution/metal-grinding-filter.png" alt="金屬研磨粉塵過濾設備" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/fans/high-pressure-forward-curved.png" alt="高壓前傾式風機" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/fans/high-pressure-backward-curved.png" alt="高壓後傾式風機" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/fans/medium-pressure-backward-curved-1.png" alt="中壓後傾式風機" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/fans/風機圖示.png" alt="工業風機" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/galvanized-duct.png" alt="鍍鋅風管" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/galvanized-fittings.png" alt="鍍鋅風管配件" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/stainless-steel-duct.png" alt="不鏽鋼風管" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/rectangular-duct.png" alt="矩形風管" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/pp-plastic-duct.png" alt="PP 塑膠風管" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/pp-plastic-fittings.png" alt="PP 塑膠風管配件" loading="lazy"></div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="text-center p-8 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50">
+                    <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bullseye text-white text-3xl"></i>
                     </div>
-                    <div class="home-categories-marquee-set" aria-hidden="true">
-                        <div class="home-categories-marquee-item"><img src="images/products/air-pollution/pulse-bag-filter.png" alt="" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/air-pollution/pp-spray-tower.png" alt="" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/air-pollution/metal-grinding-filter.png" alt="" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/fans/high-pressure-forward-curved.png" alt="" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/fans/high-pressure-backward-curved.png" alt="" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/fans/medium-pressure-backward-curved-1.png" alt="" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/fans/風機圖示.png" alt="" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/galvanized-duct.png" alt="" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/galvanized-fittings.png" alt="" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/stainless-steel-duct.png" alt="" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/rectangular-duct.png" alt="" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/pp-plastic-duct.png" alt="" loading="lazy"></div>
-                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/pp-plastic-fittings.png" alt="" loading="lazy"></div>
-                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">使命</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        成為企業值得信賴的採購與供應鏈合作夥伴，透過專業整合與實務經驗，協助客戶降低成本、控管風險，並提升跨國採購的效率與穩定性。
+                    </p>
                 </div>
-            </div>
-
-            <div class="text-center">
-                <a href="services.html#business-categories" class="inline-flex items-center justify-center px-8 py-3 bg-[#1a2744] text-white font-semibold rounded-lg hover:bg-[#152038] transition-all duration-200 shadow-lg hover:shadow-xl">
-                    <span>了解更多</span>
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <div class="text-center p-8 rounded-xl bg-gradient-to-br from-cyan-50 to-sky-50">
+                    <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-eye text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">願景</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        成為具影響力的國際貿易與供應鏈整合平台，建立高效率、透明且可持續的全球商業合作模式，為企業提供長期穩定具競爭力的國際貿易解決方案。
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-20 bg-gray-50">
+    <!-- Core Values -->
+    <section id="core-values" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">為什麼選擇貝達國際貿易</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">我們致力於提供最專業、最可靠的國際貿易服務</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">核心理念</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-teal-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">誠信</h3>
+                    <p class="text-gray-600">穩定合作，值得信賴</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-cyan-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">專業</h3>
+                    <p class="text-gray-600">掌握供應鏈與品質關鍵</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-sky-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lightbulb text-sky-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">創新</h3>
+                    <p class="text-gray-600">快速回應，精準執行</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-globe text-emerald-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">全球</h3>
+                    <p class="text-gray-600">整合跨國供應資源</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Markets & Regions -->
+    <section id="markets" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">市場與地區</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">專注於亞洲供應鏈整合，以越南與台灣為核心市場，並延伸至中國供應資源。</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <i class="fas fa-globe text-white text-3xl"></i>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="text-3xl font-bold text-teal-600 mb-4">🇻🇳 越南</div>
+                    <p class="text-gray-600 mb-4">主要生產與供應鏈據點可客製化製造</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-teal-100 text-teal-600 rounded-full text-sm">主要市場</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">全球網絡</h3>
-                    <p class="text-gray-600 mb-4">連接全球供應商和市場，為您提供最佳商業機會</p>
                 </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-sky-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <i class="fas fa-shield-alt text-white text-3xl"></i>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="text-3xl font-bold text-cyan-600 mb-4">🇹🇼 台灣</div>
+                    <p class="text-gray-600 mb-4">品質控管與技術支持確保產品穩定與交付品質</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-cyan-100 text-cyan-600 rounded-full text-sm">重要市場</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">安全可靠</h3>
-                    <p class="text-gray-600 mb-4">嚴格的品質控制和風險管理，確保交易安全</p>
                 </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-sky-50 to-emerald-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-sky-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <i class="fas fa-chart-line text-white text-3xl"></i>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="text-3xl font-bold text-sky-600 mb-4">🇨🇳 中國</div>
+                    <p class="text-gray-600 mb-4">輔助供應來源多元產品需求</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-sky-100 text-sky-600 rounded-full text-sm">發展市場</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">高效服務</h3>
-                    <p class="text-gray-600 mb-4">專業團隊提供快速響應，確保業務順利進行</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Preview Section -->
-    <section class="py-20 bg-white">
+    <!-- Why Choose Us -->
+    <section id="why-choose-us" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">核心服務</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">提供全方位的國際貿易解決方案</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">我們的優勢</h2>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200">
-                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-shopping-cart text-teal-600 text-xl"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50 hover:shadow-lg transition-all duration-300">
+                    <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-white text-3xl"></i>
                     </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">採購代理</h4>
-                    <p class="text-gray-600 text-sm">專業全球採購服務</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">穩定供應來源</h3>
+                    <p class="text-gray-600">整合自有製造與供應鏈資源確保產品穩定供應</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200">
-                    <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-exchange-alt text-cyan-600 text-xl"></i>
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-sky-50 hover:shadow-lg transition-all duration-300">
+                    <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-network-wired text-white text-3xl"></i>
                     </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">進出口服務</h4>
-                    <p class="text-gray-600 text-sm">完整流程管理</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">跨國供應整合</h3>
+                    <p class="text-gray-600">串聯越南、台灣與中國資源提升採購彈性與效率</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200">
-                    <div class="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-handshake text-sky-600 text-xl"></i>
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-sky-50 to-emerald-50 hover:shadow-lg transition-all duration-300">
+                    <div class="w-20 h-20 bg-sky-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-white text-3xl"></i>
                     </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">供應鏈整合服務</h4>
-                    <p class="text-gray-600 text-sm">精確匹配合作</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">品質控管</h3>
+                    <p class="text-gray-600">掌握生產流程與品質標準</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200">
-                    <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-file-invoice text-emerald-600 text-xl"></i>
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 hover:shadow-lg transition-all duration-300">
+                    <div class="w-20 h-20 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-clock text-white text-3xl"></i>
                     </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">報價服務</h4>
-                    <p class="text-gray-600 text-sm">快速報價處理</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">高效對接</h3>
+                    <p class="text-gray-600">快速回應需求與報價縮短採購與溝通時間</p>
+                </div>
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50 hover:shadow-lg transition-all duration-300">
+                    <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-chart-line text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">成本優化</h3>
+                    <p class="text-gray-600">透過供應鏈整合與策略採購降低整體成本</p>
+                </div>
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-sky-50 hover:shadow-lg transition-all duration-300">
+                    <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-certificate text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">一站式交付</h3>
+                    <p class="text-gray-600">從採購、生產到出貨，統一管理</p>
                 </div>
             </div>
         </div>
@@ -463,10 +526,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Company Info -->
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-3">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
                         <div class="w-12 h-12 flex items-center justify-center">
-                            <img src="images/company/logo.png?v=202604021007" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                            <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h3 class="text-white font-bold text-lg" id="companyName-footer">貝達國際貿易有限公司</h3>
@@ -649,23 +712,80 @@
             const savedLang = localStorage.getItem('preferredLanguage') || 'zh-TW';
             changeLanguage(savedLang);
             
-            // Check if user has accepted privacy policy
-            const privacyAccepted = localStorage.getItem('privacyAccepted');
-            if (!privacyAccepted) {
-                // Show privacy modal after loading screen
+            // Hide loading screen with airplane animation
+            setTimeout(function() {
+                startLoadingAnimation();
+            }, 100);
+            
+            function startLoadingAnimation() {
+                const airplane = document.getElementById('airplane');
+                const progressBar = document.getElementById('progressBar');
+                
+                if (!airplane || !progressBar) {
+                    hideLoadingScreen();
+                    return;
+                }
+                
+                let progress = 0;
+                
+                // 獲取容器的實際寬度
+                const container = airplane.parentElement;
+                const containerWidth = container.offsetWidth;
+                const screenWidth = window.innerWidth;
+                
+                // 根據螢幕尺寸和容器寬度決定終點位置
+                let endPosition;
+                
+                if (screenWidth < 640) {
+                    // 手機端 - 飛到容器80%位置
+                    endPosition = Math.floor(containerWidth * 0.8) + 'px';
+                } else if (screenWidth < 1024) {
+                    // 平板端 - 飛到容器85%位置
+                    endPosition = Math.floor(containerWidth * 0.85) + 'px';
+                } else {
+                    // 桌面端 - 飛到容器90%位置
+                    endPosition = Math.floor(containerWidth * 0.9) + 'px';
+                }
+                
+                console.log('Screen width:', screenWidth, 'Container width:', containerWidth, 'End position:', endPosition);
+                
+                // 飛機飛行動畫
+                airplane.style.transition = 'left 3s ease-in-out';
                 setTimeout(() => {
-                    showPrivacyModal();
-                }, 800);
+                    airplane.style.left = endPosition; // 響應式終點位置
+                    // 添加飛機傾斜效果
+                    airplane.querySelector('div').style.transform = 'rotate(-10deg)';
+                }, 100);
+                
+                // 進度條動畫
+                const progressInterval = setInterval(() => {
+                    progress += Math.random() * 15 + 5; // 隨機增加5-20%
+                    
+                    if (progress >= 100) {
+                        progress = 100;
+                        clearInterval(progressInterval);
+                        
+                        // 動畫完成後隱藏載入畫面
+                        setTimeout(() => {
+                            hideLoadingScreen();
+                        }, 500);
+                    }
+                    
+                    progressBar.style.width = progress + '%';
+                }, 300);
             }
             
-            // Hide loading screen
-            setTimeout(function() {
+            function hideLoadingScreen() {
                 const loadingScreen = document.getElementById('loadingScreen');
                 if (loadingScreen) {
-                    loadingScreen.style.display = 'none';
-                    console.log('Loading screen hidden');
+                    loadingScreen.style.opacity = '0';
+                    loadingScreen.style.transition = 'opacity 0.5s ease-out';
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                        console.log('Loading screen hidden with airplane animation');
+                    }, 500);
                 }
-            }, 500);
+            }
         });
 
         function changeLanguage(lang) {
@@ -739,65 +859,6 @@
             if (!button && dropdown && !dropdown.classList.contains('invisible')) {
                 dropdown.classList.add('invisible');
                 dropdown.classList.remove('opacity-100');
-            }
-        });
-
-        // Privacy Modal Functions
-        function showPrivacyModal() {
-            const modal = document.getElementById('privacyModal');
-            if (modal) {
-                modal.classList.remove('hidden');
-                // Prevent body scroll when modal is open
-                document.body.style.overflow = 'hidden';
-                console.log('Privacy modal shown');
-            }
-        }
-
-        function hidePrivacyModal() {
-            const modal = document.getElementById('privacyModal');
-            if (modal) {
-                modal.classList.add('hidden');
-                // Restore body scroll
-                document.body.style.overflow = 'auto';
-                console.log('Privacy modal hidden');
-            }
-        }
-
-        function viewPrivacyPolicy() {
-            // Open privacy policy page in new tab
-            window.open('privacy-policy.html', '_blank');
-        }
-
-        function acceptPrivacy() {
-            // Save acceptance to localStorage
-            localStorage.setItem('privacyAccepted', 'true');
-            localStorage.setItem('privacyAcceptedDate', new Date().toISOString());
-            
-            // Hide modal
-            hidePrivacyModal();
-            
-            console.log('Privacy policy accepted');
-        }
-
-        // Close modal when clicking outside
-        document.addEventListener('click', function(event) {
-            const modal = document.getElementById('privacyModal');
-            const modalContent = event.target.closest('.bg-white');
-            
-            if (modal && !modalContent && !modal.classList.contains('hidden')) {
-                // Don't close if clicking outside, user must explicitly accept
-                console.log('Clicked outside modal - keeping modal open');
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                const modal = document.getElementById('privacyModal');
-                if (modal && !modal.classList.contains('hidden')) {
-                    // Don't close with Escape, user must explicitly accept
-                    console.log('Escape key pressed - keeping modal open');
-                }
             }
         });
     </script>
