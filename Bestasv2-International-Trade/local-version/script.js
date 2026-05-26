@@ -12,7 +12,7 @@ const translations = {
             about: '關於我們',
             products: '產品與服務',
             process: '合作流程',
-            news: '各項產品解決方案',
+            news: '各項環保解決方案',
             faq: '常見問題',
             contact: '聯絡我們',
             admin: '管理後台'
