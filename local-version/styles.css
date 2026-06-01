@@ -313,7 +313,11 @@ html {
 .home-categories-marquee-track {
     display: flex;
     width: max-content;
-    animation: home-categories-marquee 60s linear infinite;
+    animation: home-categories-marquee 20s linear infinite;
+}
+
+.reverse-track {
+    animation-direction: reverse;
 }
 
 .home-categories-marquee-track:hover {
