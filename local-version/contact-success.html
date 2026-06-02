@@ -241,7 +241,7 @@
     </nav>
 
     <!-- Success Content -->
-    <section class="h-screen flex items-center justify-center">
+    <section class="min-h-screen pt-24 pb-12 flex items-center justify-center">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
                 <!-- Success Icon -->
@@ -381,153 +381,59 @@
 
     <script src="script.js"></script>
     <script>
-        // Translation data
-        const translations = {
-            'zh-TW': {
-                companyName: '貝達國際貿易有限公司',
-                currentLangDisplay: '繁體中文',
-                'nav-home': '首頁',
-                'nav-about-missionVision': '使命與願景',
-                'nav-products': '產品與服務',
-                'nav-process': '合作流程',
-                'nav-news': '各項環保解決方案',
-                'nav-faq': '常見問題',
-                'nav-contact': '聯絡我們',
-                'nav-services-businessCategories': '營運分類',
-                'nav-services-procurement': '採購代理',
-                'nav-services-importExport': '進出口服務',
-                'nav-services-matching': '供應商媒合',
-                'nav-services-quotation': '報價與樣品安排',
-                'nav-services-orderCoordination': '訂單與交期協調',
-                'nav-services-partnerRecruitment': '經銷合作夥伴招募'
-            },
-            'en': {
-                companyName: 'Bestas International Trade Co., Ltd.',
-                currentLangDisplay: 'English',
-                'nav-home': 'Home',
-                'nav-about': 'About Us',
-                'nav-products': 'Products & Services',
-                'nav-process': 'Process',
-                'nav-news': 'News',
-                'nav-faq': 'FAQ',
-                'nav-contact': 'Contact',
-                'nav-services-businessCategories': 'Business Categories',
-                'nav-services-procurement': 'Procurement Agency',
-                'nav-services-importExport': 'Import-Export Services',
-                'nav-services-matching': 'Supplier Matching',
-                'nav-services-quotation': 'Quotation & Samples',
-                'nav-services-orderCoordination': 'Order & Delivery Coordination',
-                'nav-services-partnerRecruitment': 'Partner Recruitment'
-            },
-            'ja': {
-                companyName: 'ベスタス国際貿易有限公司',
-                currentLangDisplay: '日本語',
-                'nav-home': 'ホーム',
-                'nav-about': '会社概要',
-                'nav-products': '製品・サービス',
-                'nav-process': 'プロセス',
-                'nav-news': 'ニュース',
-                'nav-faq': 'よくある質問',
-                'nav-contact': 'お問い合わせ',
-                'nav-services-businessCategories': '事業分類',
-                'nav-services-procurement': '調達代理',
-                'nav-services-importExport': '輸出入サービス',
-                'nav-services-matching': 'サプライヤーマッチング',
-                'nav-services-quotation': '見積もりとサンプル',
-                'nav-services-orderCoordination': '注文と納期調整',
-                'nav-services-partnerRecruitment': '販売パートナー募集'
-            },
-            'vi': {
-                companyName: 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
-                currentLangDisplay: 'Tiếng Việt',
-                'nav-home': 'Trang chủ',
-                'nav-about': 'Về chúng tôi',
-                'nav-products': 'Sản phẩm & Dịch vụ',
-                'nav-process': 'Quy trình',
-                'nav-news': 'Tin tức',
-                'nav-faq': 'Câu hỏi thường gặp',
-                'nav-contact': 'Liên hệ',
-                'nav-services-businessCategories': 'Phân loại Kinh doanh',
-                'nav-services-procurement': 'Đại lý Mua hàng',
-                'nav-services-importExport': 'Dịch vụ Xuất nhập khẩu',
-                'nav-services-matching': 'Kết nối Nhà cung cấp',
-                'nav-services-quotation': 'Báo giá & Mẫu',
-                'nav-services-orderCoordination': 'Điều phối Đơn hàng & Giao hàng',
-                'nav-services-partnerRecruitment': 'Tuyển dụng Đối tác Kinh doanh'
-            }
-        };
+window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        loadingScreen.style.opacity = '0';
+        loadingScreen.style.transition = 'opacity 0.5s ease-out';
 
-        let currentLanguage = 'zh-TW';
+        setTimeout(function() {
+            loadingScreen.style.display = 'none';
+        }, 500);
+    }
+});
 
-        // Update page language
-        function updateLanguage(lang) {
-            currentLanguage = lang;
-            const translation = translations[lang];
-            
-            // Update all elements with translation keys
-            for (const [key, value] of Object.entries(translation)) {
-                const elements = document.querySelectorAll(`#${key}`);
-                elements.forEach(element => {
-                    if (element) {
-                        element.textContent = value;
-                    }
-                });
-            }
-            
-            // Update HTML lang attribute
-            document.documentElement.lang = lang;
-            
-            // Save language preference
-            localStorage.setItem('preferredLanguage', lang);
-        }
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const icon = menuBtn ? menuBtn.querySelector('i') : null;
 
-        // Hide loading screen after page loads
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const loadingScreen = document.getElementById('loadingScreen');
-                if (loadingScreen) {
-                    loadingScreen.style.opacity = '0';
-                    loadingScreen.style.transition = 'opacity 0.5s ease-out';
-                    setTimeout(() => {
-                        loadingScreen.style.display = 'none';
-                    }, 500);
-                }
-            }, 1500);
-            
-            // Load saved language
-            const savedLanguage = localStorage.getItem('preferredLanguage');
-            if (savedLanguage && translations[savedLanguage]) {
-                updateLanguage(savedLanguage);
-            }
-        });
+    mobileMenu.classList.toggle('hidden');
 
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('hidden');
-        }
+    if (icon) {
+        icon.className = mobileMenu.classList.contains('hidden')
+            ? 'fas fa-bars text-xl'
+            : 'fas fa-times text-xl';
+    }
+}
 
-        // Mobile services toggle
-        function toggleMobileServices() {
-            const mobileServices = document.getElementById('mobile-services');
-            const chevron = document.getElementById('mobile-services-chevron');
-            
-            mobileServices.classList.toggle('hidden');
-            chevron.classList.toggle('fa-chevron-down');
-            chevron.classList.toggle('fa-chevron-up');
-        }
+function toggleMobileSubmenu(submenuId) {
+    const submenu = document.getElementById(submenuId);
+    if (!submenu) return;
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-white', 'shadow-lg');
-                navbar.classList.remove('bg-transparent');
-            } else {
-                navbar.classList.add('bg-transparent');
-                navbar.classList.remove('bg-white', 'shadow-lg');
-            }
-        });
-    </script>
+    submenu.classList.toggle('hidden');
+
+    const button = submenu.previousElementSibling;
+    const icon = button ? button.querySelector('i') : null;
+
+    if (icon) {
+        icon.className = submenu.classList.contains('hidden')
+            ? 'fas fa-chevron-down text-xs'
+            : 'fas fa-chevron-up text-xs';
+    }
+}
+
+function toggleLanguageDropdown() {
+    const dropdown = document.getElementById('languageDropdown');
+    if (!dropdown) return;
+
+    dropdown.classList.toggle('invisible');
+    dropdown.classList.toggle('opacity-100');
+}
+
+function changeLanguage(lang) {
+    console.log('Language switch disabled temporarily:', lang);
+}
+</script>
 </body>
 </html>
