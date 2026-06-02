@@ -279,126 +279,201 @@
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">產品與服務</h1>
-                <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">全方位的國際貿易解決方案，滿足您的各種商業需求</p>
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">工業設備中心</h1>
+                <p class="text-xl md:text-2xl text-white leading-relaxed mb-8 max-w-3xl mx-auto drop-shadow-lg">提供高品質環保設備與工業通風設備，滿足不同產業需求</p>
             </div>
         </div>
     </section>
 
     <!-- Business Categories -->
-    <section id="business-categories" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="business-categories" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">營運項目</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">探索我們多樣化的產品分類，找到您需要的商品</p>
+                <h2 class="text-4xl font-bold text-[#0f2742] mb-4">營運項目</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">探索我們多樣化的產品分類，找到您需要的商品</p>
             </div>
             
-            <!-- Category Slider -->
-            <div class="relative mb-12">
-                <!-- Left Scroll Button -->
-                <button onclick="scrollCategories('left')" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-200 -ml-6 hidden lg:block">
-                    <i class="fas fa-chevron-left text-gray-700"></i>
-                </button>
-                
-                <!-- Right Scroll Button -->
-                <button onclick="scrollCategories('right')" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-200 -mr-6 hidden lg:block">
-                    <i class="fas fa-chevron-right text-gray-700"></i>
-                </button>
-                
-                <!-- Categories Container -->
-                <div id="categoriesContainer" class="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4" style="scrollbar-width: none; -ms-overflow-style: none;">
-                    <!-- Industrial Hardware -->
-                    <div class="flex-none w-80 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-96">
-                        <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
-                            <div class="text-center">
-                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-tools text-white text-2xl"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-white">通風設備產品</h3>
+            <div id="categoriesContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[25rem] border border-slate-200">
+                    <div class="h-48 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
+                                <img src="images/products/fans/風機圖示.png" alt="通風設備產品" class="w-full h-full object-contain p-3 transition-transform duration-300 group-hover:scale-105">
                             </div>
-                        </div>
-                        <div class="p-6 flex flex-col flex-1">
-                            <div class="mb-auto">
-                                <h4 class="font-bold text-gray-900 mb-2">工業通風・排氣・集塵・空氣污染防治整合方案</h4>
-                            </div>
-                            <button onclick="showProductDetail('industrial-hardware')" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-200 font-medium mt-4">
-                                    <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
-                                </button>
+                            <h3 class="text-xl font-bold text-white">通風設備產品</h3>
                         </div>
                     </div>
-
-                    <!-- Mechanical Parts -->
-                    <div class="flex-none w-80 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-96">
-                        <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
-                            <div class="text-center">
-                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-cog text-white text-2xl"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-white">空污防治設備</h3>
-                            </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="mb-auto">
+                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">工業通風、排氣、集塵、空氣污染防治整合方案</h4>
                         </div>
-                        <div class="p-6 flex flex-col flex-1">
-                            <div class="mb-auto">
-                                <h4 class="font-bold text-gray-900 mb-2">工業空氣污染防治整合解決方案</h4>
+                        <button onclick="showProductDetail('industrial-hardware')" class="w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[25rem] border border-slate-200">
+                    <div class="h-48 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
+                                <img src="images/products/solutions/空污防治解決方案網站頁面.png" alt="空污防治設備" class="w-full h-full object-contain p-3 transition-transform duration-300 group-hover:scale-105">
                             </div>
-                            <button onclick="showProductDetail('mechanical-parts')" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-200 font-medium mt-4">
-                                <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
-                            </button>
+                            <h3 class="text-xl font-bold text-white">空污防治設備</h3>
                         </div>
                     </div>
-
-                    <!-- Building Materials -->
-                    <div class="flex-none w-80 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-96">
-                        <div class="h-48 bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center flex-shrink-0">
-                            <div class="text-center">
-                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-building text-white text-2xl"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-white">通風零件供應</h3>
-                            </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="mb-auto">
+                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">工業空氣污染防治整合解決方案</h4>
                         </div>
-                        <div class="p-6 flex flex-col flex-1">
-                            <div class="mb-auto">
-                                <h4 class="font-bold text-gray-900 mb-2">提供多樣化通風管道與配件，滿足各式工程需求</h4>
+                        <button onclick="showProductDetail('mechanical-parts')" class="w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[25rem] border border-slate-200">
+                    <div class="h-48 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
+                                <img src="images/products/ventilation-parts/galvanized-duct.png" alt="通風零件供應" class="w-full h-full object-contain p-3 transition-transform duration-300 group-hover:scale-105">
                             </div>
-                            <button onclick="showProductDetail('building-materials')" class="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all duration-200 font-medium mt-4">
-                                <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
-                            </button>
+                            <h3 class="text-xl font-bold text-white">通風零件供應</h3>
                         </div>
                     </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="mb-auto">
+                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">提供多樣化通風管道與配件，滿足各式工程需求</h4>
+                        </div>
+                        <button onclick="showProductDetail('building-materials')" class="w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
 
-                    <!-- Engineering Accessories -->
-                    <div class="flex-none w-80 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col h-96">
-                        <div class="h-48 bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center flex-shrink-0">
-                            <div class="text-center">
-                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-hard-hat text-white text-2xl"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-white">客製化產品</h3>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[25rem] border border-slate-200">
+                    <div class="h-48 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
+                                <img src="images/products/ventilation-parts/galvanized-fittings.png" alt="客製化產品" class="w-full h-full object-contain p-3 transition-transform duration-300 group-hover:scale-105">
                             </div>
+                            <h3 class="text-xl font-bold text-white">客製化產品</h3>
                         </div>
-                        <div class="p-6 flex flex-col flex-1">
-                            <div class="mb-auto">
-                                <h4 class="font-bold text-gray-900 mb-2">依需求打造最適合的解決方案</h4>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="mb-auto">
+                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">依需求打造最適合的解決方案</h4>
+                        </div>
+                        <button onclick="showProductDetail('engineering-accessories')" class="w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[25rem] border border-slate-200">
+                    <div class="h-48 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
+                                <img src="images/products/ventilation-parts/galvanized-duct.png" alt="風管" class="w-full h-full object-contain p-3 transition-transform duration-300 group-hover:scale-105">
                             </div>
-                            <button onclick="showProductDetail('engineering-accessories')" class="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-2 px-4 rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-200 font-medium mt-4">
-                                <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
-                            </button>
+                            <h3 class="text-xl font-bold text-white">風管</h3>
                         </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="mb-auto">
+                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">各式圓管、方管、鍍鋅、不鏽鋼與 PP 風管供應</h4>
+                        </div>
+                        <button onclick="showProductDetail('building-materials')" class="w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[25rem] border border-slate-200">
+                    <div class="h-48 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
+                                <img src="images/products/fans/風機圖示.png" alt="風機" class="w-full h-full object-contain p-3 transition-transform duration-300 group-hover:scale-105">
+                            </div>
+                            <h3 class="text-xl font-bold text-white">風機</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="mb-auto">
+                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">高壓、中壓、低壓與軸流風機產品供應</h4>
+                        </div>
+                        <button onclick="showProductDetail('industrial-hardware')" class="w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[25rem] border border-slate-200">
+                    <div class="h-48 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
+                                <img src="images/products/equipment/hepa-filter.png" alt="濾網" class="w-full h-full object-contain p-3 transition-transform duration-300 group-hover:scale-105">
+                            </div>
+                            <h3 class="text-xl font-bold text-white">濾網</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="mb-auto">
+                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">HEPA、袋式、活性碳與蜂巢式濾材產品</h4>
+                        </div>
+                        <button onclick="showProductDetail('mechanical-parts')" class="w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[25rem] border border-slate-200">
+                    <div class="h-48 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
+                                <img src="images/products/equipment/bag-filter-collector.png" alt="集塵設備" class="w-full h-full object-contain p-3 transition-transform duration-300 group-hover:scale-105">
+                            </div>
+                            <h3 class="text-xl font-bold text-white">集塵設備</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="mb-auto">
+                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">脈衝袋濾、濾筒、旋風與粉塵處理設備</h4>
+                        </div>
+                        <button onclick="showProductDetail('mechanical-parts')" class="w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[25rem] border border-slate-200">
+                    <div class="h-48 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
+                                <img src="images/products/ventilation-parts/pp-plastic-fittings.png" alt="客製配件" class="w-full h-full object-contain p-3 transition-transform duration-300 group-hover:scale-105">
+                            </div>
+                            <h3 class="text-xl font-bold text-white">客製配件</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="mb-auto">
+                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">彎頭、三通、法蘭、轉接與特殊尺寸訂製</h4>
+                        </div>
+                        <button onclick="showProductDetail('engineering-accessories')" class="w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4">
+                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
- 
-
-    <!-- CTA Section -->
+     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-r from-teal-600 to-cyan-600 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
            <h2 class="text-4xl font-bold mb-6">開始您的採購計畫</h2>
             <p class="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">詳情了解更多 立即聯繫! </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-white text-[#0f2742] font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
                     <i class="fas fa-phone mr-3"></i>
                     聯繫我們
                 </a>
@@ -428,15 +503,15 @@
                     <p class="text-gray-400 mb-4">專業的國際貿易服務提供商，致力於為客戶創造最大商業價值</p>
                     <div class="space-y-2">
                         <p class="flex items-center text-sm text-gray-400">
-                            <i class="fas fa-phone mr-2 text-teal-400"></i>
+                            <i class="fas fa-phone mr-2 text-[#1f4f78]"></i>
                             +886-985-328-164
                         </p>
                         <p class="flex items-center text-sm text-gray-400">
-                            <i class="fas fa-envelope mr-2 text-teal-400"></i>
+                            <i class="fas fa-envelope mr-2 text-[#1f4f78]"></i>
                             info@bestas-intl.com
                         </p>
                         <p class="flex items-center text-sm text-gray-400">
-                            <i class="fas fa-map-marker-alt mr-2 text-teal-400"></i>
+                            <i class="fas fa-map-marker-alt mr-2 text-[#1f4f78]"></i>
                             台北市文山區木柵路二段
                         </p>
                     </div>
@@ -490,12 +565,12 @@
 
     <!-- Product Detail Modal -->
     <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
-        <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
-            <div class="sticky top-0 bg-white border-b border-gray-200 p-4 sm:p-6 z-10">
+        <div class="bg-slate-50 rounded-xl shadow-2xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto border border-slate-200">
+            <div class="sticky top-0 bg-[#0f2742] border-b border-[#183b5c] p-4 sm:p-6 z-10">
                 <div class="flex items-center justify-between">
-                    <h3 id="productModalTitle" class="text-2xl font-bold text-gray-900">Product Details</h3>
-                    <button onclick="closeProductModal()" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors duration-200">
-                        <i class="fas fa-times text-gray-600"></i>
+                    <h3 id="productModalTitle" class="text-2xl font-bold text-white">Product Details</h3>
+                    <button onclick="closeProductModal()" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-200">
+                        <i class="fas fa-times text-white"></i>
                     </button>
                 </div>
             </div>
@@ -1040,8 +1115,8 @@
                             <div class="mb-12">
                                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                     ${product.features.map(feature => `
-                                        <div class="text-center p-6 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-xl hover:shadow-lg transition-all duration-300 group">
-                                            <div class="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                                        <div class="text-center p-6 bg-gradient-to-br from-slate-50 to-blue-50 rounded-xl hover:shadow-lg transition-all duration-300 group">
+                                            <div class="w-16 h-16 bg-[#0f2742] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                                                 <i class="${feature.icon} text-white text-2xl"></i>
                                             </div>
                                             <h3 class="font-bold text-gray-900 mb-2">${feature.title}</h3>
@@ -1070,7 +1145,7 @@
                                                     <div class="space-y-2">
                                                         ${productItem.features.map(feature => `
                                                             <div class="flex items-center space-x-2">
-                                                                <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                                                <div class="w-5 h-5 bg-[#0f2742] rounded-full flex items-center justify-center flex-shrink-0">
                                                                     <i class="fas fa-check text-white text-xs"></i>
                                                                 </div>
                                                                 <span class="text-gray-700 text-sm">${feature}</span>
@@ -1086,13 +1161,13 @@
                         `).join('')}
                         
                         <!-- CTA Section -->
-                        <div class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-6 text-center">
+                        <div class="bg-gradient-to-r from-slate-50 to-blue-50 rounded-xl p-6 text-center">
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">${product.cta.title}</h3>
                             <p class="text-gray-600 mb-6">${product.cta.description}</p>
                             
                             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                                 ${product.cta.buttons.map(button => `
-                                    <a href="${button.href}" class="${button.primary ? 'bg-teal-600 text-white hover:bg-teal-700' : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'} py-3 px-6 rounded-lg transition-colors duration-200 font-semibold flex items-center justify-center">
+                                    <a href="${button.href}" class="${button.primary ? 'bg-[#0f2742] text-white hover:bg-[#17395c]' : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'} py-3 px-6 rounded-lg transition-colors duration-200 font-semibold flex items-center justify-center">
                                         ${button.primary ? '<i class="fas fa-calculator mr-2"></i>' : '<i class="fas fa-phone mr-2"></i>'}
                                         ${button.text}
                                     </a>
@@ -1120,16 +1195,16 @@
                             <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">客製化服務流程</h3>
                             <div class="relative">
                                 <!-- Process Line for Desktop -->
-                                <div class="hidden lg:block absolute top-16 left-0 right-0 h-1 bg-gradient-to-r from-teal-200 via-teal-400 to-teal-200 rounded-full"></div>
+                                <div class="hidden lg:block absolute top-16 left-0 right-0 h-1 bg-gradient-to-r from-[#b7c7d8] via-[#1f4f78] to-[#b7c7d8] rounded-full"></div>
                                 
                                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
                                     ${product.serviceProcess.map((process, index) => `
                                         <div class="relative">
                                             <!-- Process Card -->
-                                            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 text-center group border-2 border-transparent hover:border-teal-200">
+                                            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 text-center group border-2 border-transparent hover:border-[#b7c7d8]">
                                                 <!-- Step Number -->
                                                 <div class="relative mb-6">
-                                                    <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto text-white font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                                    <div class="w-16 h-16 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] rounded-full flex items-center justify-center mx-auto text-white font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
                                                         ${process.step}
                                                     </div>
                                                     <!-- Glow Effect -->
@@ -1137,7 +1212,7 @@
                                                 </div>
                                                 
                                                 <!-- Process Title -->
-                                                <h4 class="font-bold text-gray-900 mb-3 text-lg group-hover:text-teal-600 transition-colors duration-300">
+                                                <h4 class="font-bold text-gray-900 mb-3 text-lg group-hover:text-[#0f2742] transition-colors duration-300">
                                                     ${process.title}
                                                 </h4>
                                                 
@@ -1148,7 +1223,7 @@
                                                 
                                                 <!-- Decorative Element -->
                                                 <div class="mt-4 flex justify-center">
-                                                    <div class="w-8 h-1 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                                    <div class="w-8 h-1 bg-gradient-to-r from-[#0f2742] to-[#1f4f78] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                                 </div>
                                             </div>
                                             
@@ -1156,8 +1231,8 @@
                                             ${index < product.serviceProcess.length - 1 ? `
                                                 <div class="hidden lg:block absolute top-16 left-full w-full">
                                                     <div class="flex items-center justify-center">
-                                                        <div class="w-full h-0.5 bg-gradient-to-r from-teal-300 to-transparent"></div>
-                                                        <i class="fas fa-chevron-right text-teal-400 text-sm ml-2"></i>
+                                                        <div class="w-full h-0.5 bg-gradient-to-r from-[#1f4f78] to-transparent"></div>
+                                                        <i class="fas fa-chevron-right text-[#1f4f78] text-sm ml-2"></i>
                                                     </div>
                                                 </div>
                                             ` : ''}
@@ -1165,7 +1240,7 @@
                                             <!-- Mobile/Tablet Connection Arrow -->
                                             ${index < product.serviceProcess.length - 1 && index % 2 === 1 ? `
                                                 <div class="lg:hidden absolute top-full left-1/2 transform -translate-x-1/2 mt-4">
-                                                    <i class="fas fa-chevron-down text-teal-400 text-lg"></i>
+                                                    <i class="fas fa-chevron-down text-[#1f4f78] text-lg"></i>
                                                 </div>
                                             ` : ''}
                                         </div>
@@ -1181,7 +1256,7 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     ${product.customItems.map(item => `
                                         <div class="flex items-center space-x-3">
-                                            <div class="w-6 h-6 bg-teal-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <div class="w-6 h-6 bg-[#0f2742] rounded-full flex items-center justify-center flex-shrink-0">
                                                 <i class="fas fa-check text-white text-xs"></i>
                                             </div>
                                             <span class="text-gray-700 font-medium">${item}</span>
@@ -1208,13 +1283,13 @@
                         </div>
                         
                         <!-- CTA Section -->
-                        <div class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-8 text-center">
+                        <div class="bg-gradient-to-r from-slate-50 to-blue-50 rounded-xl p-8 text-center">
                             <h3 class="text-xl font-semibold text-gray-900 mb-3">${product.cta.title}</h3>
                             <p class="text-gray-600 mb-6">${product.cta.description}</p>
                             
                             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                                 ${product.cta.buttons.map(button => `
-                                    <a href="${button.href}" class="${button.primary ? 'bg-teal-600 text-white hover:bg-teal-700' : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'} py-3 px-6 rounded-lg transition-colors duration-200 font-semibold flex items-center justify-center">
+                                    <a href="${button.href}" class="${button.primary ? 'bg-[#0f2742] text-white hover:bg-[#17395c]' : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'} py-3 px-6 rounded-lg transition-colors duration-200 font-semibold flex items-center justify-center">
                                         ${button.primary ? '<i class="fas fa-calculator mr-2"></i>' : '<i class="fas fa-phone mr-2"></i>'}
                                         ${button.text}
                                     </a>
@@ -1246,13 +1321,13 @@
                         <div>
                             <div class="mb-6">
                                 <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
-                                    <i class="fas fa-star text-yellow-500 mr-2"></i>
+                                    <i class="fas fa-star text-[#0f2742] mr-2"></i>
                                     主要特色
                                 </h4>
                                 <ul class="space-y-2">
                                     ${product.features.map(feature => `
                                         <li class="flex items-start space-x-2">
-                                            <i class="fas fa-check-circle text-green-500 mt-0.5 flex-shrink-0"></i>
+                                            <i class="fas fa-check-circle text-[#0f2742] mt-0.5 flex-shrink-0"></i>
                                             <span class="text-gray-700 text-sm">${feature}</span>
                                         </li>
                                     `).join('')}
@@ -1261,13 +1336,13 @@
                             
                             <div class="mb-6">
                                 <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
-                                    <i class="fas fa-cog text-blue-500 mr-2"></i>
+                                    <i class="fas fa-cog text-[#0f2742] mr-2"></i>
                                     技術規格
                                 </h4>
                                 <ul class="space-y-2">
                                     ${product.specifications.map(spec => `
                                         <li class="flex items-start space-x-2">
-                                            <i class="fas fa-info-circle text-blue-500 mt-0.5 flex-shrink-0"></i>
+                                            <i class="fas fa-info-circle text-[#0f2742] mt-0.5 flex-shrink-0"></i>
                                             <span class="text-gray-700 text-sm">${spec}</span>
                                         </li>
                                     `).join('')}
@@ -1276,19 +1351,19 @@
                             
                             <div class="mb-6">
                                 <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
-                                    <i class="fas fa-industry text-purple-500 mr-2"></i>
+                                    <i class="fas fa-industry text-[#0f2742] mr-2"></i>
                                     應用領域
                                 </h4>
                                 <div class="flex flex-wrap gap-2">
                                     ${product.applications.map(app => `
-                                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">${app}</span>
+                                        <span class="px-3 py-1 bg-slate-100 text-[#0f2742] rounded-full text-sm">${app}</span>
                                     `).join('')}
                                 </div>
                             </div>
                             
-                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                                <p class="text-blue-800 text-sm">
-                                    <i class="fas fa-info-circle text-blue-600 mr-2"></i>
+                            <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                                <p class="text-[#0f2742] text-sm">
+                                    <i class="fas fa-info-circle text-[#0f2742] mr-2"></i>
                                     如需詳細規格和價格資訊，請聯繫我們的銷售團隊。
                                 </p>
                             </div>
@@ -1296,7 +1371,7 @@
                     </div>
                     
                     <div class="mt-8 flex flex-col sm:flex-row gap-4">
-                        <a href="contact.html" class="flex-1 bg-teal-600 text-white py-3 px-6 rounded-lg hover:bg-teal-700 transition-colors duration-200 text-center font-semibold">
+                        <a href="contact.html" class="flex-1 bg-[#0f2742] text-white py-3 px-6 rounded-lg hover:bg-[#17395c] transition-colors duration-200 text-center font-semibold">
                             <i class="fas fa-envelope mr-2"></i>
                             請求報價
                         </a>
@@ -1320,7 +1395,7 @@
         // Close modal when clicking outside
         document.addEventListener('click', function(event) {
             const modal = document.getElementById('productModal');
-            const modalContent = event.target.closest('.bg-white');
+            const modalContent = event.target.closest('#productModal > div');
             
             if (modal && !modalContent && !modal.classList.contains('hidden')) {
                 closeProductModal();
@@ -1592,37 +1667,6 @@
             }
         });
 
-        // Categories slider functionality
-        function scrollCategories(direction) {
-            const container = document.getElementById('categoriesContainer');
-            const scrollAmount = 350; // Adjust based on card width + gap
-            
-            if (direction === 'left') {
-                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            } else {
-                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }
-        }
-
-        // Auto-hide/show scroll buttons based on scroll position
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('categoriesContainer');
-            const leftButton = document.querySelector('[onclick*="scrollCategories(\'left\')"]');
-            const rightButton = document.querySelector('[onclick*="scrollCategories(\'right\')"]');
-            
-            if (container && leftButton && rightButton) {
-                function updateScrollButtons() {
-                    const isAtStart = container.scrollLeft <= 0;
-                    const isAtEnd = container.scrollLeft >= (container.scrollWidth - container.clientWidth);
-                    
-                    leftButton.style.display = isAtStart ? 'none' : 'flex';
-                    rightButton.style.display = isAtEnd ? 'none' : 'flex';
-                }
-                
-                container.addEventListener('scroll', updateScrollButtons);
-                updateScrollButtons(); // Initial state
-            }
-        });
     </script>
 </body>
 </html>
