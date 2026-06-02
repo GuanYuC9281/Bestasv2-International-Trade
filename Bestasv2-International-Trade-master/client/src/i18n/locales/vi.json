@@ -1,0 +1,162 @@
+{
+  "common": {
+    "companyName": "Công Ty TNHH Thương Mại Quốc Tế Bestas",
+    "phone": "+886-985-328-164",
+    "address": "Đoạn 2, Đường Muzha, Quận Wenshan, Thành phố Đài Bắc",
+    "loading": "Đang tải...",
+    "readMore": "Đọc thêm",
+    "contactUs": "Liên hệ",
+    "learnMore": "Tìm hiểu thêm",
+    "backToTop": "Về đầu trang",
+    "search": "Tìm kiếm",
+    "menu": "Menu",
+    "close": "Đóng",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa",
+    "add": "Thêm",
+    "submit": "Gửi",
+    "confirm": "Xác nhận",
+    "success": "Thành công",
+    "error": "Lỗi",
+    "warning": "Cảnh báo",
+    "info": "Thông tin"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Về chúng tôi",
+    "products": "Sản phẩm & Dịch vụ",
+    "process": "Quy trình",
+    "news": "Tin tức",
+    "faq": "Câu hỏi thường gặp",
+    "contact": "Liên hệ",
+    "admin": "Quản trị"
+  },
+  "home": {
+    "hero": {
+      "title": "Giải pháp Thương mại Quốc tế Chuyên nghiệp",
+      "subtitle": "Bestas International Trade cung cấp dịch vụ mua hàng và xuất nhập khẩu toàn diện, kết nối bạn với cơ hội kinh doanh toàn cầu",
+      "cta": "Liên hệ ngay"
+    },
+    "services": {
+      "title": "Tổng quan Dịch vụ",
+      "procurement": "Đại lý Mua hàng",
+      "procurementDesc": "Dịch vụ mua hàng toàn cầu chuyên nghiệp để tìm nhà cung cấp tốt nhất cho bạn",
+      "importExport": "Dịch vụ Xuất nhập khẩu",
+      "importExportDesc": "Quản lý quy trình xuất nhập khẩu hoàn chỉnh đảm bảo thông quan suôn sẻ",
+      "matching": "Kết nối Nhà cung cấp",
+      "matchingDesc": "Kết nối nhà cung cấp chính xác để cải thiện hiệu quả hợp tác",
+      "quotation": "Báo giá & Mẫu",
+      "quotationDesc": "Báo giá nhanh và sắp xếp mẫu để tăng tốc quyết định"
+    },
+    "advantages": {
+      "title": "Tại sao chọn chúng tôi",
+      "experience": {
+        "title": "Kinh nghiệm phong phú",
+        "desc": "Nhiều năm kinh nghiệm thương mại quốc tế, am hiểu quy tắc thị trường các nước"
+      },
+      "network": {
+        "title": "Mạng lưới toàn cầu",
+        "desc": "Mạng lưới nhà cung cấp toàn cầu cung cấp lựa chọn đa dạng"
+      },
+      "quality": {
+        "title": "Đảm bảo chất lượng",
+        "desc": "Kiểm soát chất lượng nghiêm ngặt đảm bảo sản phẩm đạt tiêu chuẩn"
+      },
+      "service": {
+        "title": "Dịch vụ tận tâm",
+        "desc": "Dịch vụ chuyên dụng một đối một, theo dõi từng bước"
+      }
+    },
+    "categories": {
+      "title": "Phân loại Ngành",
+      "hardware": "Phần cứng Công nghiệp",
+      "machinery": "Linh kiện Máy móc",
+      "construction": "Vật liệu Xây dựng",
+      "custom": "Mua hàng Tùy chỉnh"
+    },
+    "process": {
+      "title": "Quy trình Hợp tác",
+      "steps": [
+        "Xác nhận Nhu cầu",
+        "Xác nhận Thông số",
+        "Phát triển Nhà cung cấp",
+        "Báo giá & Mẫu",
+        "Đặt hàng",
+        "Theo dõi Vận chuyển"
+      ]
+    }
+  },
+  "about": {
+    "title": "Về chúng tôi",
+    "intro": "Kể từ khi thành lập, Bestas International Trade đã cam kết cung cấp dịch vụ thương mại quốc tế chuyên nghiệp",
+    "mission": "Sứ mệnh",
+    "missionDesc": "Trở thành đối tác thương mại quốc tế đáng tin cậy nhất cho khách hàng, tạo ra giá trị kinh doanh tối đa",
+    "vision": "Tầm nhìn",
+    "visionDesc": "Xây dựng nền tảng dịch vụ thương mại hàng đầu toàn cầu, thúc đẩy trao đổi kinh doanh quốc tế",
+    "values": "Giá trị cốt lõi",
+    "valuesDesc": "Chuyên nghiệp, Chính trực, Đổi mới, Dịch vụ",
+    "markets": "Thị trường & Khu vực",
+    "marketsDesc": "Phạm vi dịch vụ bao gồm Châu Á, Châu Âu, Châu Mỹ và các khu vực khác"
+  },
+  "products": {
+    "title": "Sản phẩm & Dịch vụ",
+    "procurement": {
+      "title": "Đại lý Mua hàng",
+      "desc": "Dịch vụ mua hàng toàn cầu chuyên nghiệp giúp khách hàng tìm nhà cung cấp và sản phẩm tốt nhất"
+    },
+    "importExport": {
+      "title": "Dịch vụ Xuất nhập khẩu",
+      "desc": "Quản lý quy trình xuất nhập khẩu hoàn chỉnh bao gồm thông quan, logistics, bảo hiểm và các dịch vụ trọn gói"
+    },
+    "matching": {
+      "title": "Kết nối Nhà cung cấp",
+      "desc": "Kết nối chính xác nhà cung cấp phù hợp nhất theo nhu cầu khách hàng, cải thiện hiệu quả hợp tác"
+    },
+    "quotation": {
+      "title": "Báo giá & Sắp xếp Mẫu",
+      "desc": "Dịch vụ báo giá nhanh và chính xác, hỗ trợ sắp xếp giao hàng và xác nhận mẫu"
+    },
+    "order": {
+      "title": "Phối hợp Đơn hàng & Giao hàng",
+      "desc": "Theo dõi hoàn toàn tiến độ sản xuất đơn hàng để đảm bảo giao hàng đúng hạn"
+    },
+    "tracking": {
+      "title": "Theo dõi Vận chuyển",
+      "desc": "Theo dõi trạng thái vận chuyển hàng hóa theo thời gian thực để đảm bảo giao hàng an toàn"
+    }
+  },
+  "admin": {
+    "dashboard": "Bảng điều khiển",
+    "newsManagement": "Quản lý Tin tức",
+    "contactManagement": "Quản lý Liên hệ",
+    "productManagement": "Quản lý Sản phẩm",
+    "serviceManagement": "Quản lý Dịch vụ",
+    "systemSettings": "Cài đặt Hệ thống",
+    "performanceMonitoring": "Giám sát Hiệu suất",
+    "overview": "Tổng quan",
+    "statistics": "Thống kê",
+    "recentActivity": "Hoạt động gần đây",
+    "quickActions": "Hành động nhanh"
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "form": {
+      "name": "Tên",
+      "email": "Email",
+      "phone": "Điện thoại",
+      "company": "Tên công ty",
+      "subject": "Chủ đề",
+      "message": "Tin nhắn",
+      "submit": "Gửi biểu mẫu"
+    },
+    "info": {
+      "title": "Thông tin liên hệ",
+      "phone": "Điện thoại",
+      "email": "Email",
+      "address": "Địa chỉ",
+      "hours": "Giờ làm việc"
+    }
+  }
+}
