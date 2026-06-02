@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貝達國際貿易有限公司 - 預覽版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3b82f6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .slide-up {
+            animation: slideUp 0.5s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">貝</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">貝達國際貿易有限公司</h1>
+                        <p class="text-xs text-gray-500">International Trade</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium">首頁</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium">關於我們</a>
+                    <a href="#products" class="text-gray-700 hover:text-blue-600 font-medium">產品與服務</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">聯絡我們</a>
+                    <a href="#admin" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">管理後台</a>
+                </div>
+                <button class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center justify-center">
+        <div class="text-center text-white px-4 fade-in">
+            <div class="w-32 h-32 mx-auto bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-8">
+                <span class="text-4xl font-bold">貝達</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">專業國際貿易解決方案</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+                貝達國際貿易有限公司提供全方位的採購代理、進出口服務，為您連接全球商機
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-lg">
+                    立即諮詢
+                </button>
+                <button class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold rounded-lg">
+                    了解更多
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 slide-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">服務總覽</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    專業的國際貿易服務，為您的業務提供全方位支援
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-globe text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">採購代理</h3>
+                    <p class="text-gray-600 mb-4">專業的全球採購服務，為您找到最優質的供應商</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">了解更多 →</a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-chart-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">進出口服務</h3>
+                    <p class="text-gray-600 mb-4">完整的進出口流程管理，確保貨物順利通關</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">了解更多 →</a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-users text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">供應商媒合</h3>
+                    <p class="text-gray-600 mb-4">精準匹配供應商需求，提升合作效率</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">了解更多 →</a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-check-circle text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">報價與樣品</h3>
+                    <p class="text-gray-600 mb-4">快速報價與樣品安排，加速決策流程</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">了解更多 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">為什麼選擇我們</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    為什麼選擇貝達國際貿易作為您的合作夥伴
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600">
+                        <i class="fas fa-star text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">豐富經驗</h3>
+                    <p class="text-gray-600">多年國際貿易經驗，深谙各國市場規則</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600">
+                        <i class="fas fa-globe text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">全球網絡</h3>
+                    <p class="text-gray-600">遍布全球的供應商網絡，提供多元化選擇</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">品質保證</h3>
+                    <p class="text-gray-600">嚴格的品質管控，確保產品符合標準</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">貼心服務</h3>
+                    <p class="text-gray-600">一對一專屬服務，全程跟進每個環節</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">聯絡我們</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    我們期待與您合作，請透過以下方式聯繫我們
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">送出聯絡表單</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">姓名 *</label>
+                                <input type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="請輸入您的姓名">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">電子郵件 *</label>
+                                <input type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">主題 *</label>
+                            <input type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="請輸入主題">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">訊息內容 *</label>
+                            <textarea required rows="6" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="請詳細描述您的需求..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 font-medium">
+                            送出表單
+                        </button>
+                    </form>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">聯絡資訊</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-phone text-blue-600 w-5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">電話</h4>
+                                    <p class="text-gray-600">+886-985-328-164</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-envelope text-blue-600 w-5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">電子郵件</h4>
+                                    <p class="text-gray-600">info@bestas-trade.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-map-marker-alt text-blue-600 w-5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">地址</h4>
+                                    <p class="text-gray-600">台北市文山區木柵路二段</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-600 rounded-xl shadow-lg p-8 text-white">
+                        <h3 class="text-xl font-bold mb-4">關注我們</h3>
+                        <p class="mb-6 opacity-90">透過社群媒體了解我們的最新動態</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center hover:bg-opacity-30">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center hover:bg-opacity-30">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center hover:bg-opacity-30">
+                                <i class="fab fa-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-6">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">貝</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold">貝達國際貿易有限公司</h3>
+                        <p class="text-sm text-gray-400">International Trade Co., Ltd.</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                    <div>
+                        <h4 class="font-semibold mb-4">關於我們</h4>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><a href="#" class="hover:text-white">公司簡介</a></li>
+                            <li><a href="#" class="hover:text-white">使命願景</a></li>
+                            <li><a href="#" class="hover:text-white">核心價值</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">服務項目</h4>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><a href="#" class="hover:text-white">採購代理</a></li>
+                            <li><a href="#" class="hover:text-white">進出口服務</a></li>
+                            <li><a href="#" class="hover:text-white">供應商媒合</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">聯絡方式</h4>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fas fa-phone mr-2"></i>+886-985-328-164</li>
+                            <li><i class="fas fa-envelope mr-2"></i>info@bestas-trade.com</li>
+                            <li><i class="fas fa-map-marker-alt mr-2"></i>台北市文山區木柵路二段</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-400 text-sm">© 2024 貝達國際貿易有限公司. All rights reserved.</p>
+                    <p class="text-gray-400 text-sm mt-2">Designed with ❤️ for international trade excellence</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 簡單的互動效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 平滑滾動
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // 表單提交處理
+            document.querySelector('form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('這是預覽版本，表單功能需要完整的後端支援');
+            });
+
+            // 導航欄滾動效果
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 20) {
+                    nav.classList.add('shadow-lg');
+                } else {
+                    nav.classList.remove('shadow-lg');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

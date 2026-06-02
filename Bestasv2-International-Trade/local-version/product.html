@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>各項環保解決方案 - 貝達國際貿易有限公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100 flex items-center justify-center z-50">
+        <div class="text-center w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+            <!-- 載入標題 -->
+            <div class="mb-6 sm:mb-8">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                    <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain animate-pulse">
+                </div>
+                <h1 class="text-lg sm:text-xl font-bold text-gray-800">貝達國際貿易有限公司</h1>
+            </div>
+            
+            <!-- 飛機動畫容器 -->
+            <div class="relative h-32 sm:h-40 mb-6 sm:mb-8">
+                <!-- 起點：台北101 🏙️ -->
+                <div class="absolute left-2 sm:left-0 top-1/2 transform -translate-y-1/2">
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-5xl mb-1 sm:mb-2">🏙️</div>
+                    </div>
+                </div>
+                
+                <!-- 終點：全球 🌍 -->
+                <div class="absolute right-2 sm:right-0 top-1/2 transform -translate-y-1/2">
+                    <div class="text-center">
+                        <div class="text-3xl sm:text-5xl animate-pulse">🌍</div>
+                    </div>
+                </div>
+                
+                <!-- 飛行路徑 -->
+                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 160">
+                    <path d="M 50 80 Q 200 40 350 80" stroke="#cbd5e1" stroke-width="2" fill="none" stroke-dasharray="8,4" opacity="0.6"/>
+                </svg>
+                
+                <!-- 飛機 ✈︎ -->
+                <div id="airplane" class="absolute top-1/2 transform -translate-y-1/2 transition-all duration-3000 ease-in-out left-[30px] sm:left-[50px]">
+                    <div class="relative">
+                        <div class="text-2xl sm:text-3xl transform rotate-0 transition-transform duration-3000">✈︎</div>
+                        <!-- 飛行軌跡 -->
+                        <div class="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-blue-400 rounded-full opacity-40 animate-ping"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 載入進度條 -->
+            <div class="w-full max-w-xs sm:max-w-md mx-auto">
+                <div class="bg-gray-200 rounded-full h-2 sm:h-3 overflow-hidden">
+                    <div id="progressBar" class="bg-gradient-to-r from-teal-500 to-blue-600 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-900" id="companyName">貝達國際貿易有限公司</h1>
+                            <p class="text-xs text-gray-500">International Trade</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-4 lg:space-x-6">
+                    <a href="index.html" class="nav-link" id="nav-home">首頁</a>
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-about">關於我們</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="about.html#company-intro" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-companyIntro">公司簡介</a>
+                            <a href="about.html#mission-vision" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-missionVision">使命與願景</a>
+                            <a href="about.html#core-values" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-coreValues">核心理念</a>
+                            <a href="about.html#markets" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-markets">市場與地區</a>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-products">產品與服務</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="services.html#business-categories" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-services-businessCategories">營運項目</a>
+                            <a href="services.html#matching" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-services-matching">供應鏈整合</a>
+                            <a href="services.html#partner-recruitment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg" id="nav-services-partnerRecruitment">經銷合作</a>
+                        </div>
+                    </div>
+                                        <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-news">各項環保解決方案</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 max-h-96 overflow-y-auto">
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <h4 class="text-sm font-semibold text-gray-900">【空污防治】</h4>
+                            </div>
+                            <a href="oil-smoke-treatment.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">油煙處理</a>
+                            <a href="#air-pollution-control" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化學氣相處理</a>
+                            <a href="#air-pollution-control" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">油漆除塵</a>
+                            
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <h4 class="text-sm font-semibold text-gray-900">【建造/工程應用】</h4>
+                            </div>
+                            <a href="#construction-engineering" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">噴漆設備</a>
+                            <a href="#construction-engineering" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化工廠</a>
+                            <a href="#construction-engineering" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">靜電油煙設備</a>
+                            
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <h4 class="text-sm font-semibold text-gray-900">【行業應用】</h4>
+                            </div>
+                            <a href="#industry-application" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">金工</a>
+                            <a href="#industry-application" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化學產業</a>
+                            <a href="#industry-application" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">餐飲廚房</a>
+                            
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <h4 class="text-sm font-semibold text-gray-900">【通風零件】</h4>
+                            </div>
+                            <a href="#ventilation-parts" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">風管</a>
+                            <a href="#ventilation-parts" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">風機</a>
+                            <a href="#ventilation-parts" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">濾網</a>
+                            <a href="#ventilation-parts" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">集塵設備</a>
+                            <a href="#ventilation-parts" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg">客製配件</a>
+                        </div>
+                    </div>
+                    <a href="faq.html" class="nav-link" id="nav-faq">常見問題</a>
+                    <a href="contact.html" class="nav-link" id="nav-contact">聯絡我們</a>
+                    
+                    <!-- Language Selector -->
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-2" onclick="toggleLanguageDropdown()">
+                            <i class="fas fa-globe text-teal-600"></i>
+                            <span class="language-current" id="currentLangDisplay">中文</span>
+                            <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" id="languageDropdown">
+                            <button onclick="changeLanguage('zh-TW')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg flex items-center space-x-2">
+                                <span class="text-lg">🇹🇼</span>
+                                <span>繁體中文</span>
+                            </button>
+                            <button onclick="changeLanguage('en')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 flex items-center space-x-2">
+                                <span class="text-lg">🇺🇸</span>
+                                <span>English</span>
+                            </button>
+                            <button onclick="changeLanguage('ja')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 flex items-center space-x-2">
+                                <span class="text-lg">🇯🇵</span>
+                                <span>日本語</span>
+                            </button>
+                            <button onclick="changeLanguage('vi')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg flex items-center space-x-2">
+                                <span class="text-lg">🇻🇳</span>
+                                <span>Tiếng Việt</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 fixed top-16 left-0 right-0 z-40 max-h-[calc(100vh-4rem)] overflow-y-auto">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-home">首頁</a>
+                
+                <!-- About Dropdown -->
+                <div class="px-3 py-2">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-about')">
+                        <span id="mobile-nav-about">關於我們</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-about" class="hidden pl-4 space-y-1 mt-1">
+                        <a href="about.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-companyIntro">公司簡介</a>
+                            <a href="about.html#mission-vision" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-missionVision">使命與願景</a>
+                            <a href="about.html#core-values" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-coreValues">核心理念</a>
+                        <a href="about.html#markets" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-markets">市場與地區</a>
+                                            </div>
+                </div>
+
+                <!-- Services Dropdown -->
+                <div class="px-3 py-2">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-services')">
+                        <span id="mobile-nav-products">產品與服務</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-services" class="hidden pl-4 space-y-1 mt-1">
+                        <a href="services.html#business-categories" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-businessCategories">營運項目</a>
+                        <a href="services.html#matching" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-matching">供應鏈整合</a>
+                        <a href="services.html#partner-recruitment" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-partnerRecruitment">經銷合作</a>
+                    </div>
+                </div>
+
+                                <!-- Solutions Dropdown -->
+                <div class="px-3 py-2">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-solutions')">
+                        <span id="mobile-nav-news">各項環保解決方案</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-solutions" class="hidden pl-4 space-y-1 mt-1 max-h-96 overflow-y-auto">
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">【空污防治】</h4>
+                            <a href="oil-smoke-treatment.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">油煙處理</a>
+                            <a href="#air-pollution-control" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">化學氣相處理</a>
+                            <a href="#air-pollution-control" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">油漆除塵</a>
+                        </div>
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">【建造/工程應用】</h4>
+                            <a href="#construction-engineering" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">噴漆設備</a>
+                            <a href="#construction-engineering" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">化工廠</a>
+                            <a href="#construction-engineering" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">靜電油煙設備</a>
+                        </div>
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">【行業應用】</h4>
+                            <a href="#industry-application" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">金工</a>
+                            <a href="#industry-application" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">化學產業</a>
+                            <a href="#industry-application" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">餐飲廚房</a>
+                        </div>
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">【通風零件】</h4>
+                            <a href="#ventilation-parts" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">風管</a>
+                            <a href="#ventilation-parts" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">風機</a>
+                            <a href="#ventilation-parts" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">濾網</a>
+                            <a href="#ventilation-parts" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">集塵設備</a>
+                            <a href="#ventilation-parts" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">客製配件</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-faq">常見問題</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-contact">聯絡我們</a>
+                
+                <!-- Language Selector for Mobile -->
+                <div class="px-3 py-2 border-t border-gray-200 mt-2 pt-4">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-language')">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-globe text-teal-600"></i>
+                            <span class="language-current" id="mobile-currentLangDisplay">中文</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-language" class="hidden pl-4 space-y-1 mt-1">
+                        <button onclick="changeLanguage('zh-TW')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇹🇼</span>
+                            <span>繁體中文</span>
+                        </button>
+                        <button onclick="changeLanguage('en')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇺🇸</span>
+                            <span>English</span>
+                        </button>
+                        <button onclick="changeLanguage('ja')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇯🇵</span>
+                            <span>日本語</span>
+                        </button>
+                        <button onclick="changeLanguage('vi')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇻🇳</span>
+                            <span>Tiếng Việt</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat pt-16" style="background-image: url('images/news.png')">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">各項環保解決方案</h1>
+                <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">提供完整的通風與空污防治設備解決方案，滿足各種產業需求</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 空污防治專區 -->
+    <section id="air-pollution-control" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 主標題區 -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">空污防治解決方案</h2>
+                <p class="text-xl text-blue-800 font-semibold mb-3">專業規劃・高效處理・守護環境</p>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    完整空污防治設備與整合服務，改善工業製程排放問題，協助企業符合環保法規與永續發展需求。
+                </p>
+            </div>
+
+            <!-- 四大優勢 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">符合法規</h3>
+                    <p class="text-sm text-gray-600">符合環保排放標準</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">高效處理</h3>
+                    <p class="text-sm text-gray-600">提升污染處理效率</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-leaf text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">節能省電</h3>
+                    <p class="text-sm text-gray-600">降低系統運行成本</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-headset text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">專業服務</h3>
+                    <p class="text-sm text-gray-600">完整售後與技術支援</p>
+                </div>
+            </div>
+
+            <!-- 三大解決方案 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 01 油煙處理 -->
+                <div class="bg-gray-100 rounded-xl p-6 h-full flex flex-col">
+                    <!-- 主圖片位置 -->
+                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                        <img src="images/solutions/oil-smoke-main.jpg" alt="油煙處理" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-sm">01</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">油煙處理</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6 text-lg font-semibold">
+                        適用於餐飲業油煙排放場所，有效去除油煙、異味與懸浮微粒。
+                    </p>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
+                        <div class="space-y-2">
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">靜電式油煙處理機</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">活性碳除味設備</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">水洗式油煙設備</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">廚房排煙系統</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="oil-smoke-treatment.html" class="block bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full text-center">
+                        了解更多
+                    </a>
+                </div>
+
+                <!-- 02 化學氣相處理 -->
+                <div class="bg-gray-100 rounded-xl p-6 h-full flex flex-col">
+                    <!-- 主圖片位置 -->
+                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                        <img src="images/solutions/chemical-gas-main.jpg" alt="化學氣相處理" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-sm">02</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">化學氣相處理</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6 text-lg font-semibold">
+                        針對化學製程產生之VOCs、酸鹼廢氣等，提供高效率氣體淨化。
+                    </p>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
+                        <div class="space-y-2">
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">PP噴淋塔設備</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">化學洗滌塔</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">活性碳吸附設備</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">RTO／RCO 系統</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto">
+                        了解更多
+                    </button>
+                </div>
+
+                <!-- 03 油漆除塵 -->
+                <div class="bg-gray-100 rounded-xl p-6 h-full flex flex-col">
+                    <!-- 主圖片位置 -->
+                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                        <img src="images/solutions/paint-dust-main.jpg" alt="油漆除塵" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-sm">03</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">油漆除塵</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6 text-lg font-semibold">
+                        適用於噴塗、研磨與粉塵製程環境，有效收集粉塵與漆霧。
+                    </p>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
+                        <div class="space-y-2">
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">水洗式漆霧處理機</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">乾式濾網設備</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">粉塵集塵設備</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto">
+                        了解更多
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-4">專業空污防治・打造潔淨環境</h2>
+            <p class="text-xl text-white mb-8">立即聯繫我們，取得最適合的空污防治方案</p>
+            <a href="contact.html" class="inline-block bg-white hover:bg-gray-100 text-blue-900 font-bold px-8 py-4 rounded-lg text-lg transition-colors duration-300">
+                立即諮詢方案
+            </a>
+        </div>
+    </section>
+
+    <!-- 建造/工程應用專區 -->
+    <section id="construction-engineering" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 主標題區 -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">建造/工程應用解決方案</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    完整建造與工程應用設備整合服務，提升工業製程效率，確保工程品質與作業安全。
+                </p>
+            </div>
+
+            <!-- 四大優勢 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-hard-hat text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">專業工程</h3>
+                    <p class="text-sm text-gray-600">符合工程標準規範</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">高效建造</h3>
+                    <p class="text-sm text-gray-600">縮短工程施工時程</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">安全可靠</h3>
+                    <p class="text-sm text-gray-600">確保作業環境安全</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-cogs text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">客製規劃</h3>
+                    <p class="text-sm text-gray-600">滿足特殊工程需求</p>
+                </div>
+            </div>
+
+            <!-- 三大解決方案 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 01 噴漆設備 -->
+                <div class="bg-gray-50 rounded-xl p-6 h-full flex flex-col">
+                    <!-- 主圖片位置 -->
+                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                        <img src="images/solutions/spray-equipment-main.jpg" alt="噴漆設備" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-sm">01</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">噴漆設備</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6 text-lg font-semibold">
+                        適用於汽車、家具、金屬製品等噴塗作業，提供完整噴漆系統解決方案。
+                    </p>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
+                        <div class="space-y-2">
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">噴漆房</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">噴槍設備</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">空壓機系統</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">烘烤系統</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto">
+                        了解更多
+                    </button>
+                </div>
+
+                <!-- 02 化工廠 -->
+                <div class="bg-gray-50 rounded-xl p-6 h-full flex flex-col">
+                    <!-- 主圖片位置 -->
+                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                        <img src="images/solutions/chemical-plant-main.jpg" alt="化工廠" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-sm">02</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">化工廠</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6 text-lg font-semibold">
+                        專為化學製程設計的設備與系統，確保生產安全與效率提升。
+                    </p>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
+                        <div class="space-y-2">
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">反應釜設備</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">蒸餾塔</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">儲存槽</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">管路系統</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto">
+                        了解更多
+                    </button>
+                </div>
+
+                <!-- 03 靜電油煙設備 -->
+                <div class="bg-gray-50 rounded-xl p-6 h-full flex flex-col">
+                    <!-- 主圖片位置 -->
+                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                        <img src="images/solutions/electrostatic-main.jpg" alt="靜電油煙設備" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-sm">03</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">靜電油煙設備</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6 text-lg font-semibold">
+                        高效靜電油煙處理技術，適用於各種工業油煙處理需求。
+                    </p>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
+                        <div class="space-y-2">
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">靜電集塵器</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">高壓電源</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">集塵板</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">控制系統</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto">
+                        了解更多
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行業應用專區 -->
+    <section id="industry-application" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 主標題區 -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">行業應用解決方案</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    針對不同產業特性提供專業化解決方案，量身打造符合產業需求的設備系統，提升整體營運效率與競爭力。
+                </p>
+            </div>
+
+            <!-- 四大優勢 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-industry text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">產業專精</h3>
+                    <p class="text-sm text-gray-600">深入了解產業需求</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-cogs text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">客製設計</h3>
+                    <p class="text-sm text-gray-600">量身打造解決方案</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">效益提升</h3>
+                    <p class="text-sm text-gray-600">優化營運效率</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-headset text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">專業支援</h3>
+                    <p class="text-sm text-gray-600">完整技術服務</p>
+                </div>
+            </div>
+
+            <!-- 三大解決方案 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 01 金工 -->
+                <div class="bg-gray-50 rounded-xl p-6 h-full flex flex-col">
+                    <!-- 主圖片位置 -->
+                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                        <img src="images/solutions/metalworking-main.jpg" alt="金工" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-sm">01</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">金工</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6 text-lg font-semibold">
+                        專為金屬加工業設計的通風與除塵系統，有效處理金屬粉塵與有害氣體。
+                    </p>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
+                        <div class="space-y-2">
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">研磨集塵機</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">焊接煙霧抽排</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">切割機設備</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">金屬拋光</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto">
+                        了解更多
+                    </button>
+                </div>
+
+                <!-- 02 化學產業 -->
+                <div class="bg-gray-50 rounded-xl p-6 h-full flex flex-col">
+                    <!-- 主圖片位置 -->
+                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                        <img src="images/solutions/chemical-industry-main.jpg" alt="化學產業" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-sm">02</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">化學產業</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6 text-lg font-semibold">
+                        化學製程專用通風與安全設備，確保生產環境安全與環保標準。
+                    </p>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
+                        <div class="space-y-2">
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">通風櫃</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">氣體偵測</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">緊急淋浴</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">化學品儲存</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto">
+                        了解更多
+                    </button>
+                </div>
+
+                <!-- 03 餐飲廚房 -->
+                <div class="bg-gray-50 rounded-xl p-6 h-full flex flex-col">
+                    <!-- 主圖片位置 -->
+                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                        <img src="images/solutions/kitchen-main.jpg" alt="餐飲廚房" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-sm">03</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">餐飲廚房</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6 text-lg font-semibold">
+                        餐飲業專用通風與油煙處理系統，打造安全舒適的廚房工作環境。
+                    </p>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
+                        <div class="space-y-2">
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">廚房通風</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">食品加工</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-3 shadow-sm">
+                                <p class="text-base font-semibold text-gray-700 text-center">中央廚房</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto">
+                        了解更多
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 通風零件專區 -->
+    <section id="ventilation-parts" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 主標題區 -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">通風零件解決方案</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    提供完整通風系統零件與配件，支援各種通風設備維護與升級需求，確保系統運行效率與穩定性。
+                </p>
+            </div>
+
+            <!-- 四大優勢 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-certificate text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">高品質零件</h3>
+                    <p class="text-sm text-gray-600">符合工業級標準</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-puzzle-piece text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">系統整合</h3>
+                    <p class="text-sm text-gray-600">完美匹配各種設備</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-magic text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">客製服務</h3>
+                    <p class="text-sm text-gray-600">滿足特殊需求</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-truck text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">快速供應</h3>
+                    <p class="text-sm text-gray-600">及時配送服務</p>
+                </div>
+            </div>
+
+            <!-- 五大解決方案 -->
+            <div class="space-y-12">
+                <!-- 01 風管 -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-12 h-full flex flex-col">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white font-bold text-lg">01</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">風管</h3>
+                    </div>
+                    
+                    <p class="text-xl text-gray-700 mb-8 leading-relaxed font-semibold">
+                        各種規格與材質的風管系統，<br>
+                        滿足不同通風需求與空間限制。
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">產品項目</h4>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/galvanized-duct.jpg" alt="鍍鋅風管" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">鍍鋅風管</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/stainless-duct.jpg" alt="不銹鋼風管" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">不銹鋼風管</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/flexible-duct.jpg" alt="伸縮風管" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">伸縮風管</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/insulated-duct.jpg" alt="保溫風管" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">保溫風管</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 mt-auto">
+                        了解更多
+                    </button>
+                </div>
+
+                <!-- 02 風機 -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-12 h-full flex flex-col">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white font-bold text-lg">02</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">風機</h3>
+                    </div>
+                    
+                    <p class="text-xl text-gray-700 mb-8 leading-relaxed font-semibold">
+                        高效能風機設備，提供穩定可靠的通風動力。
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">產品項目</h4>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/centrifugal-fan.jpg" alt="離心風機" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">離心風機</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/axial-fan.jpg" alt="軸流風機" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">軸流風機</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/inline-fan.jpg" alt="管線風機" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">管線風機</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/explosion-proof-fan.jpg" alt="防爆風機" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">防爆風機</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 mt-auto">
+                        了解更多
+                    </button>
+                </div>
+
+                <!-- 03 濾網 -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-12 h-full flex flex-col">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white font-bold text-lg">03</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">濾網</h3>
+                    </div>
+                    
+                    <p class="text-xl text-gray-700 mb-8 leading-relaxed font-semibold">
+                        各種等級與材質的過濾網，確保空氣品質。
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">產品項目</h4>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/hepa-filter.jpg" alt="HEPA濾網" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">HEPA濾網</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/activated-carbon-filter.jpg" alt="活性碳濾網" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">活性碳濾網</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/pre-filter.jpg" alt="初效濾網" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">初效濾網</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/pocket-filter.jpg" alt="袋式濾網" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">袋式濾網</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 mt-auto">
+                        了解更多
+                    </button>
+                </div>
+
+                <!-- 04 集塵設備 -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-12 h-full flex flex-col">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white font-bold text-lg">04</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">集塵設備</h3>
+                    </div>
+                    
+                    <p class="text-xl text-gray-700 mb-8 leading-relaxed font-semibold">
+                        高效集塵系統，有效收集各種粉塵與顆粒物。
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">產品項目</h4>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/cyclone-collector.jpg" alt="旋風集塵器" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">旋風集塵器</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/bag-filter-collector.jpg" alt="袋式集塵器" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">袋式集塵器</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/cartridge-collector.jpg" alt="濾筒集塵器" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">濾筒集塵器</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/portable-vacuum.jpg" alt="移動式吸塵器" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">移動式吸塵器</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 mt-auto">
+                        了解更多
+                    </button>
+                </div>
+
+                <!-- 05 客製配件 -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-12 h-full flex flex-col">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white font-bold text-lg">05</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-900">客製配件</h3>
+                    </div>
+                    
+                    <p class="text-xl text-gray-700 mb-8 leading-relaxed font-semibold">
+                        依據客戶需求設計製造的專屬配件，<br>
+                        完美整合現有系統。
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">產品項目</h4>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/custom-fitting.jpg" alt="客製接頭" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">客製接頭</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/special-bracket.jpg" alt="特殊支架" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">特殊支架</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="w-full h-32 bg-gray-200 rounded-lg mb-3 flex items-center justify-center">
+                                    <img src="images/equipment/custom-panel.jpg" alt="客製面板" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                <p class="text-lg font-semibold text-gray-700 text-center">客製面板</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 mt-auto">
+                        了解更多
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">需要產品諮詢？</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">聯繫我們，獲得專業的通風與空污防治設備解決方案</p>
+                <div class="max-w-md mx-auto">
+                    <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-phone mr-3"></i>
+                        立即聯繫
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 flex items-center justify-center">
+                            <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold text-lg" id="companyName-footer">貝達國際貿易有限公司</h3>
+                            <p class="text-gray-400 text-sm">International Trade</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">專業的國際貿易服務提供商，致力於為客戶創造最大商業價值</p>
+                    <div class="space-y-2">
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-phone mr-2 text-teal-400"></i>
+                            +886-985-328-164
+                        </p>
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-envelope mr-2 text-teal-400"></i>
+                            info@bestas-intl.com
+                        </p>
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2 text-teal-400"></i>
+                            台北市文山區木柵路二段
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">快速連結</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">首頁</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">關於我們</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">服務項目</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">聯絡我們</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">服務項目</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#business-categories" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">營運項目</a></li>
+                        <li><a href="services.html#partner-recruitment" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">經銷合作夥伴招募</a></li>
+                        <li><a href="services.html#matching" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">供應鏈整合服務</a></li>
+                        <li><a href="services.html#quotation" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">報價服務</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">聯絡我們</h3>
+                    <p class="text-gray-400 mb-4">透過以下方式聯繫我們</p>
+                    <div class="flex space-x-4">
+                        <a href="https://line.me/ti/p/@bestas-intl" target="_blank" class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors duration-200">
+                            <i class="fab fa-line text-white"></i>
+                        </a>
+                        <a href="https://facebook.com/bestas-intl" target="_blank" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="https://instagram.com/bestas-intl" target="_blank" class="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="mailto:info@bestas-intl.com" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-200">
+                            <i class="fas fa-envelope text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2026 <span id="companyName-footer-2">貝達國際貿易有限公司</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Translation data
+        const translations = {
+            'zh-TW': {
+                companyName: '貝達國際貿易有限公司',
+                'companyName-footer': '貝達國際貿易有限公司',
+                'companyName-footer-2': '貝達國際貿易有限公司',
+                currentLangDisplay: '中文',
+                'nav-home': '首頁',
+                'nav-about': '關於我們',
+                'nav-products': '產品與服務',
+                'nav-process': '合作流程',
+                'nav-news': '各項環保解決方案',
+                'nav-faq': '常見問題',
+                'nav-contact': '聯絡我們',
+                'nav-about-companyIntro': '公司簡介',
+                'nav-about-missionVision': '使命與願景',
+                'nav-about-coreValues': '核心理念',
+                'nav-about-markets': '市場與地區',
+                                'nav-services-procurement': '採購代理',
+                'nav-services-importExport': '進出口服務',
+                'nav-services-matching': '供應商媒合',
+                'nav-services-quotation': '報價與樣品安排',
+                'nav-services-orderCoordination': '訂單與交期協調',
+                'nav-services-partnerRecruitment': '經銷合作夥伴招募'
+            },
+            'en': {
+                companyName: 'Bestas International Trade Co., Ltd.',
+                'companyName-footer': 'Bestas International Trade Co., Ltd.',
+                'companyName-footer-2': 'Bestas International Trade Co., Ltd.',
+                currentLangDisplay: 'English',
+                'nav-home': 'Home',
+                'nav-about': 'About Us',
+                'nav-products': 'Products & Services',
+                'nav-process': 'Process',
+                'nav-news': 'News',
+                'nav-faq': 'FAQ',
+                'nav-contact': 'Contact',
+                'nav-about-companyIntro': 'Company Introduction',
+                'nav-about-missionVision': 'Mission / Vision',
+                'nav-about-coreValues': 'Core Values',
+                'nav-about-markets': 'Markets & Regions',
+                'nav-about-whyChooseUs': 'Why Choose Us',
+                'nav-services-procurement': 'Procurement Agency',
+                'nav-services-importExport': 'Import-Export Services',
+                'nav-services-matching': 'Supplier Matching',
+                'nav-services-quotation': 'Quotation & Samples',
+                'nav-services-orderCoordination': 'Order & Delivery Coordination',
+                'nav-services-partnerRecruitment': 'Partner Recruitment'
+            },
+            'ja': {
+                companyName: 'ベスタス国際貿易有限公司',
+                'companyName-footer': 'ベスタス国際貿易有限公司',
+                'companyName-footer-2': 'ベスタス国際貿易有限公司',
+                currentLangDisplay: '日本語',
+                'nav-home': 'ホーム',
+                'nav-about': '会社概要',
+                'nav-products': '製品・サービス',
+                'nav-process': 'プロセス',
+                'nav-news': 'ニュース',
+                'nav-faq': 'よくある質問',
+                'nav-contact': 'お問い合わせ',
+                'nav-about-companyIntro': '会社紹介',
+                'nav-about-missionVision': '使命・ビジョン',
+                'nav-about-coreValues': 'コアバリュー',
+                'nav-about-markets': '市場・地域',
+                'nav-about-whyChooseUs': 'なぜ私たちを選ぶのか',
+                'nav-services-procurement': '調達代理',
+                'nav-services-importExport': '輸出入サービス',
+                'nav-services-matching': 'サプライヤーマッチング',
+                'nav-services-quotation': '見積もりとサンプル',
+                'nav-services-orderCoordination': '注文と納期調整',
+                'nav-services-partnerRecruitment': '販売パートナー募集'
+            },
+            'vi': {
+                companyName: 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
+                'companyName-footer': 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
+                'companyName-footer-2': 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
+                currentLangDisplay: 'Tiếng Việt',
+                'nav-home': 'Trang chủ',
+                'nav-about': 'Về chúng tôi',
+                'nav-products': 'Sản phẩm & Dịch vụ',
+                'nav-process': 'Quy trình',
+                'nav-news': 'Tin tức',
+                'nav-faq': 'Câu hỏi thường gặp',
+                'nav-contact': 'Liên hệ',
+                'nav-about-companyIntro': 'Giới thiệu Công ty',
+                'nav-about-missionVision': 'Sứ mệnh & Tầm nhìn',
+                'nav-about-coreValues': 'Giá trị cốt lõi',
+                'nav-about-markets': 'Thị trường & Khu vực',
+                'nav-about-whyChooseUs': 'Tại sao chọn chúng tôi',
+                'nav-services-procurement': 'Đại lý Mua hàng',
+                'nav-services-importExport': 'Dịch vụ Xuất nhập khẩu',
+                'nav-services-matching': 'Kết nối Nhà cung cấp',
+                'nav-services-quotation': 'Báo giá & Mẫu',
+                'nav-services-orderCoordination': 'Điều phối Đơn hàng & Giao hàng',
+                'nav-services-partnerRecruitment': 'Tuyển dụng Đối tác Kinh doanh'
+            }
+        };
+
+        let currentLanguage = 'zh-TW';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded successfully');
+            
+            // Load saved language
+            const savedLang = localStorage.getItem('preferredLanguage') || 'zh-TW';
+            changeLanguage(savedLang);
+            
+            // Hide loading screen with airplane animation
+            setTimeout(function() {
+                startLoadingAnimation();
+            }, 100);
+            
+            function startLoadingAnimation() {
+                const airplane = document.getElementById('airplane');
+                const progressBar = document.getElementById('progressBar');
+                
+                if (!airplane || !progressBar) {
+                    hideLoadingScreen();
+                    return;
+                }
+                
+                let progress = 0;
+                
+                // 獲取容器的實際寬度
+                const container = airplane.parentElement;
+                const containerWidth = container.offsetWidth;
+                const screenWidth = window.innerWidth;
+                
+                // 根據螢幕尺寸和容器寬度決定終點位置
+                let endPosition;
+                
+                if (screenWidth < 640) {
+                    // 手機端 - 飛到容器80%位置
+                    endPosition = Math.floor(containerWidth * 0.8) + 'px';
+                } else if (screenWidth < 1024) {
+                    // 平板端 - 飛到容器85%位置
+                    endPosition = Math.floor(containerWidth * 0.85) + 'px';
+                } else {
+                    // 桌面端 - 飛到容器90%位置
+                    endPosition = Math.floor(containerWidth * 0.9) + 'px';
+                }
+                
+                console.log('Screen width:', screenWidth, 'Container width:', containerWidth, 'End position:', endPosition);
+                
+                // 飛機飛行動畫
+                airplane.style.transition = 'left 3s ease-in-out';
+                setTimeout(() => {
+                    airplane.style.left = endPosition; // 響應式終點位置
+                    // 添加飛機傾斜效果
+                    airplane.querySelector('div').style.transform = 'rotate(-10deg)';
+                }, 100);
+                
+                // 進度條動畫
+                const progressInterval = setInterval(() => {
+                    progress += Math.random() * 15 + 5; // 隨機增加5-20%
+                    
+                    if (progress >= 100) {
+                        progress = 100;
+                        clearInterval(progressInterval);
+                        
+                        // 動畫完成後隱藏載入畫面
+                        setTimeout(() => {
+                            hideLoadingScreen();
+                        }, 500);
+                    }
+                    
+                    progressBar.style.width = progress + '%';
+                }, 300);
+            }
+            
+            function hideLoadingScreen() {
+                const loadingScreen = document.getElementById('loadingScreen');
+                if (loadingScreen) {
+                    loadingScreen.style.opacity = '0';
+                    loadingScreen.style.transition = 'opacity 0.5s ease-out';
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                        console.log('Loading screen hidden');
+                    }, 500);
+                }
+            }
+        });
+
+        function changeLanguage(lang) {
+            console.log('Changing language to:', lang);
+            currentLanguage = lang;
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Update all translatable elements
+            const translationsForLang = translations[lang];
+            Object.keys(translationsForLang).forEach(function(key) {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = translationsForLang[key];
+                }
+            });
+            
+            // Hide language dropdown
+            const dropdown = document.getElementById('languageDropdown');
+            if (dropdown) {
+                dropdown.classList.add('invisible');
+                dropdown.classList.remove('opacity-100');
+            }
+        }
+
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('invisible');
+                dropdown.classList.toggle('opacity-100');
+            }
+        }
+
+        // Mobile menu functions
+        let isMenuOpen = false;
+        
+        function toggleMobileMenu() {
+            isMenuOpen = !isMenuOpen;
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const icon = menuBtn.querySelector('i');
+            
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('hidden');
+            }
+            
+            if (icon) {
+                icon.className = isMenuOpen ? 'fas fa-times text-xl' : 'fas fa-bars text-xl';
+            }
+        }
+
+        function toggleMobileSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId);
+            if (submenu) {
+                submenu.classList.toggle('hidden');
+                
+                // Update chevron icon
+                const button = submenu.previousElementSibling;
+                if (button) {
+                    const icon = button.querySelector('i');
+                    if (icon) {
+                        icon.className = submenu.classList.contains('hidden') ? 'fas fa-chevron-down text-xs' : 'fas fa-chevron-up text-xs';
+                    }
+                }
+            }
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('languageDropdown');
+            const button = event.target.closest('.group');
+            if (!button && dropdown && !dropdown.classList.contains('invisible')) {
+                dropdown.classList.add('invisible');
+                dropdown.classList.remove('opacity-100');
+            }
+        });
+    </script>
+</body>
+</html>
