@@ -31,27 +31,39 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 flex items-center justify-center">
-                        <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
-                    </div>
-                    <div>
-                        <h1 class="text-xl font-bold text-gray-900" id="companyName">貝達國際貿易有限公司</h1>
-                        <p class="text-xs text-gray-500">International Trade</p>
-                    </div>
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-900" id="companyName">貝達國際貿易有限公司</h1>
+                            <p class="text-xs text-gray-500">International Trade</p>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="hidden lg:flex items-center space-x-8">
-                    <a href="index.html" class="nav-link" id="nav-home">首頁</a>
-                    <a href="about.html" class="nav-link" id="nav-about">關於我們</a>
+                    <a href="index.html" class="nav-link-active" id="nav-home">首頁</a>
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-about">關於我們</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="about.html#company-intro" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-about-companyIntro">公司簡介</a>
+                            <a href="about.html#mission-vision" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-missionVision">使命與願景</a>
+                            <a href="about.html#core-values" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-coreValues">核心理念</a>
+                            <a href="about.html#markets" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-markets">市場與地區</a>
+                        </div>
+                    </div>
+
                     <div class="relative group">
                         <button class="nav-link flex items-center space-x-1">
                             <span id="nav-products">產品與服務</span>
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
                         <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                           <a href="services.html#business-categories" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-services-businessCategories">營運項目</a>
-                            <a href="services.html#matching" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-services-matching">供應鏈整合</a>
-                            <a href="services.html#partner-recruitment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg" id="nav-services-partnerRecruitment">經銷合作</a>
+                            <a href="services.html#business-categories" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-services-businessCategories">營運項目</a>                
                         </div>
                     </div>
                                         <div class="relative group">
@@ -63,36 +75,63 @@
                             <div class="px-4 py-3 border-b border-gray-100">
                                 <h4 class="text-sm font-semibold text-gray-900">【空污防治】</h4>
                             </div>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">油煙處理</a>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化學氣相處理</a>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">油漆除塵</a>
+                            <a href="product.html#air-pollution-control" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">油煙處理</a>
+                            <a href="chemical-gas-treatment.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化學氣相處理</a>
+                            <a href="product.html#air-pollution-control" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">油漆除塵</a>
                             
                             <div class="px-4 py-3 border-b border-gray-100">
                                 <h4 class="text-sm font-semibold text-gray-900">【建造/工程應用】</h4>
                             </div>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">噴漆設備</a>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化工廠</a>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">靜電油煙設備</a>
+                            <a href="product.html#construction-engineering" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">噴漆設備</a>
+                            <a href="product.html#construction-engineering" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化工廠</a>
+                            <a href="product.html#construction-engineering" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">靜電油煙設備</a>
                             
                             <div class="px-4 py-3 border-b border-gray-100">
                                 <h4 class="text-sm font-semibold text-gray-900">【行業應用】</h4>
                             </div>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">金工</a>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化學產業</a>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">餐飲廚房</a>
+                            <a href="product.html#industry-application" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">金工</a>
+                            <a href="product.html#industry-application" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化學產業</a>
+                            <a href="product.html#industry-application" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">餐飲廚房</a>
                             
                             <div class="px-4 py-3 border-b border-gray-100">
                                 <h4 class="text-sm font-semibold text-gray-900">【通風零件】</h4>
                             </div>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">風管</a>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">風機</a>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">濾網</a>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">集塵設備</a>
-                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg">客製配件</a>
+                            <a href="product.html#ventilation-parts" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">風管</a>
+                            <a href="product.html#ventilation-parts" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">風機</a>
+                            <a href="product.html#ventilation-parts" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">濾網</a>
+                            <a href="product.html#ventilation-parts" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">集塵設備</a>
+                            <a href="product.html#ventilation-parts" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg">客製配件</a>
                         </div>
                     </div>
                     <a href="faq.html" class="nav-link" id="nav-faq">常見問題</a>
                     <a href="contact.html" class="nav-link" id="nav-contact">聯絡我們</a>
+                    
+                    <!-- Language Selector -->
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-2" onclick="toggleLanguageDropdown()">
+                            <i class="fas fa-globe text-blue-600"></i>
+                            <span class="language-current" id="currentLangDisplay">中文</span>
+                            <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" id="languageDropdown">
+                            <button onclick="changeLanguage('zh-TW')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-lg flex items-center space-x-2">
+                                <span class="text-lg">🇹🇼</span>
+                                <span>繁體中文</span>
+                            </button>
+                            <button onclick="changeLanguage('en')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
+                                <span class="text-lg">🇺🇸</span>
+                                <span>English</span>
+                            </button>
+                            <button onclick="changeLanguage('ja')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
+                                <span class="text-lg">🇯🇵</span>
+                                <span>日本語</span>
+                            </button>
+                            <button onclick="changeLanguage('vi')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-lg flex items-center space-x-2">
+                                <span class="text-lg">🇻🇳</span>
+                                <span>Tiếng Việt</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100" onclick="toggleMobileMenu()">
@@ -102,63 +141,101 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-200">
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-200 fixed top-16 left-0 right-0 z-40 max-h-[calc(100vh-4rem)] overflow-y-auto">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-home">首頁</a>
-                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-about">關於我們</a>
-                <div class="space-y-1">
-                    <button onclick="toggleMobileServices()" class="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
-                        <span id="mobile-nav-products">產品與服務</span>
-                        <i class="fas fa-chevron-down text-xs" id="mobile-services-chevron"></i>
+                
+                <!-- About Dropdown -->
+                <div class="px-3 py-2">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-about')">
+                        <span id="mobile-nav-about">關於我們</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
                     </button>
-                    <div id="mobile-services" class="hidden pl-4 space-y-1 mt-1">
-                        <a href="services.html#business-categories" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-businessCategories">營運分類</a>
-                        <a href="services.html#procurement" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-procurement">一站式採購與供應服務</a>
-                        <a href="services.html#import-export" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-importExport">整合與進出口服務</a>
-                        <a href="services.html#matching" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-matching">供應鏈整合與客製服務</a>
-                        <a href="services.html#quotation" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-quotation">企業報價與產品選擇</a>
-                        <a href="services.html#coordination" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-orderCoordination">訂單管理與交付整合</a>
-                        <a href="services.html#partner-recruitment" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-partnerRecruitment">經銷合作夥伴招募</a>
+                    <div id="mobile-about" class="hidden pl-4 space-y-1 mt-1">
+                        <a href="about.html#company-intro" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-companyIntro">公司簡介</a>
+                        <a href="about.html#mission-vision" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-missionVision">使命與願景</a>
+                        <a href="about.html#core-values" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-coreValues">核心理念</a>
+                        <a href="about.html#markets" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-markets">市場與地區</a>
                     </div>
                 </div>
-                <a href="process.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-process">合作流程</a>
-                <!-- Solutions Dropdown -->
+
+                <!-- Services Dropdown -->
+                <div class="px-3 py-2">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-services')">
+                        <span id="mobile-nav-products">產品與服務</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-services" class="hidden pl-4 space-y-1 mt-1">
+                        <a href="services.html#business-categories" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-businessCategories">營運項目</a> 
+                    </div>
+                </div>
+
+                                <!-- Solutions Dropdown -->
                 <div class="px-3 py-2">
                     <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-solutions')">
                         <span id="mobile-nav-news">各項環保解決方案</span>
                         <i class="fas fa-chevron-down text-xs"></i>
                     </button>
-                    <div id="mobile-solutions" class="hidden pl-4 space-y-1 mt-1">
+                    <div id="mobile-solutions" class="hidden pl-4 space-y-1 mt-1 max-h-96 overflow-y-auto">
                         <div class="px-3 py-2">
                             <h4 class="text-sm font-semibold text-gray-900 mb-2">【空污防治】</h4>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">油煙處理</a>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">化學氣相處理</a>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">油漆除塵</a>
+                            <a href="product.html#air-pollution-control" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">油煙處理</a>
+                            <a href="chemical-gas-treatment.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">化學氣相處理</a>
+                            <a href="product.html#air-pollution-control" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">油漆除塵</a>
                         </div>
                         <div class="px-3 py-2">
                             <h4 class="text-sm font-semibold text-gray-900 mb-2">【建造/工程應用】</h4>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">噴漆設備</a>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">化工廠</a>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">靜電油煙設備</a>
+                            <a href="product.html#construction-engineering" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">噴漆設備</a>
+                            <a href="product.html#construction-engineering" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">化工廠</a>
+                            <a href="product.html#construction-engineering" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">靜電油煙設備</a>
                         </div>
                         <div class="px-3 py-2">
                             <h4 class="text-sm font-semibold text-gray-900 mb-2">【行業應用】</h4>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">金工</a>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">化學產業</a>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">餐飲廚房</a>
+                            <a href="product.html#industry-application" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">金工</a>
+                            <a href="product.html#industry-application" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">化學產業</a>
+                            <a href="product.html#industry-application" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">餐飲廚房</a>
                         </div>
                         <div class="px-3 py-2">
                             <h4 class="text-sm font-semibold text-gray-900 mb-2">【通風零件】</h4>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">風管</a>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">風機</a>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">濾網</a>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">集塵設備</a>
-                            <a href="#" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">客製配件</a>
+                            <a href="product.html#ventilation-parts" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">風管</a>
+                            <a href="product.html#ventilation-parts" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">風機</a>
+                            <a href="product.html#ventilation-parts" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">濾網</a>
+                            <a href="product.html#ventilation-parts" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">集塵設備</a>
+                            <a href="product.html#ventilation-parts" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">客製配件</a>
                         </div>
                     </div>
                 </div>
                 <a href="faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-faq">常見問題</a>
                 <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-contact">聯絡我們</a>
+                
+                <!-- Language Selector for Mobile -->
+                <div class="px-3 py-2 border-t border-gray-200 mt-2 pt-4">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-language')">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-globe text-blue-600"></i>
+                            <span class="language-current" id="mobile-currentLangDisplay">中文</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-language" class="hidden pl-4 space-y-1 mt-1">
+                        <button onclick="changeLanguage('zh-TW')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇹🇼</span>
+                            <span>繁體中文</span>
+                        </button>
+                        <button onclick="changeLanguage('en')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇺🇸</span>
+                            <span>English</span>
+                        </button>
+                        <button onclick="changeLanguage('ja')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇯🇵</span>
+                            <span>日本語</span>
+                        </button>
+                        <button onclick="changeLanguage('vi')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇻🇳</span>
+                            <span>Tiếng Việt</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
