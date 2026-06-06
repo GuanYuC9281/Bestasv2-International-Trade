@@ -91,15 +91,7 @@
                         </div>
                     </div>
 
-                    <div class="relative group">
-                        <button class="nav-link flex items-center space-x-1">
-                            <span id="nav-products">產品與服務</span>
-                            <i class="fas fa-chevron-down text-xs"></i>
-                        </button>
-                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <a href="services.html#business-categories" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-services-businessCategories">營運項目</a>                
-                        </div>
-                    </div>
+                    <a href="services.html#business-categories" class="nav-link" id="nav-products">產品與服務</a>
                                         <div class="relative group">
                         <button class="nav-link flex items-center space-x-1">
                             <span id="nav-news">各項環保解決方案</span>
@@ -193,16 +185,7 @@
                     </div>
                 </div>
 
-                <!-- Services Dropdown -->
-                <div class="px-3 py-2">
-                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu('mobile-services')">
-                        <span id="mobile-nav-products">產品與服務</span>
-                        <i class="fas fa-chevron-down text-xs"></i>
-                    </button>
-                    <div id="mobile-services" class="hidden pl-4 space-y-1 mt-1">
-                        <a href="services.html#business-categories" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-services-businessCategories">營運項目</a> 
-                    </div>
-                </div>
+                <a href="services.html#business-categories" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-products">產品與服務</a>
 
                                 <!-- Solutions Dropdown -->
                 <div class="px-3 py-2">
@@ -467,334 +450,345 @@
     </section>
 
     <!-- 建造/工程應用專區 -->
-    <section id="construction-engineering" class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- 主標題區 -->
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">建造/工程應用解決方案</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    完整建造與工程應用設備整合服務，提升工業製程效率，確保工程品質與作業安全。
-                </p>
-            </div>
-
-            <!-- 四大優勢 -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-hard-hat text-white text-2xl"></i>
+    <section id="construction-engineering" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-10">
+                <div class="lg:col-span-7">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-1 bg-orange-500"></span>
+                        <span class="text-sm font-bold text-orange-700 tracking-widest">ENGINEERING SOLUTIONS</span>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">專業工程</h3>
-                    <p class="text-sm text-gray-600">符合工程標準規範</p>
+                    <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">建造／工程應用解決方案</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed max-w-3xl">
+                        依據製程需求與現場條件，提供客製化工程規劃、設備整合及施工服務，完整銜接設計、製造、安裝、試車與後續維護。
+                    </p>
                 </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-tools text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">高效建造</h3>
-                    <p class="text-sm text-gray-600">縮短工程施工時程</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-shield-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">安全可靠</h3>
-                    <p class="text-sm text-gray-600">確保作業環境安全</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-cogs text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">客製規劃</h3>
-                    <p class="text-sm text-gray-600">滿足特殊工程需求</p>
+                <div class="lg:col-span-5 bg-blue-950 text-white p-6 border-l-4 border-orange-500">
+                    <p class="text-sm font-bold text-orange-300 mb-2">一站式工程承攬</p>
+                    <p class="leading-relaxed text-blue-100">從風量評估、設備選型、管路配置到控制系統整合，由單一團隊負責工程品質與進度。</p>
                 </div>
             </div>
 
-            <!-- 三大解決方案 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 01 噴漆設備 -->
-                <div class="bg-gray-50 rounded-xl p-6 h-full flex flex-col">
-                    <!-- 主圖片位置 -->
-                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                        <img src="images/products/building/spray-equipment-main.png" alt="噴漆設備" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                    
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
-                            <span class="text-white font-bold text-sm">01</span>
-                        </div>
-                        <h3 class="text-3xl font-black text-gray-900">噴漆設備</h3>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-6 text-lg font-semibold">
-                        適用於汽車、家具、金屬製品等噴塗作業，提供完整噴漆系統解決方案。
-                    </p>
-                    
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
-                        <div class="space-y-2">
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">噴漆房</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">噴槍設備</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">空壓機系統</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">烘烤系統</p>
-                            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 border-y border-gray-300 mb-12">
+                <div class="py-5 pr-4 border-b lg:border-b-0 border-r border-gray-300">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-drafting-compass text-orange-600 text-xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-gray-900">工程規劃</h3>
+                            <p class="text-sm text-gray-500 mt-1">依現場條件客製設計方案</p>
                         </div>
                     </div>
-                    
-                    <a href="spray-equipment.html" class="block bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto text-center">了解更多</a>
                 </div>
+                <div class="py-5 px-4 border-b lg:border-b-0 lg:border-r border-gray-300">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-cogs text-orange-600 text-xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-gray-900">設備整合</h3>
+                            <p class="text-sm text-gray-500 mt-1">設備與工程一次完成</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-5 px-4 border-r border-gray-300">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-shield-alt text-orange-600 text-xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-gray-900">法規符合</h3>
+                            <p class="text-sm text-gray-500 mt-1">符合環保與安全規範</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-5 pl-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-tools text-orange-600 text-xl mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-gray-900">長期維護</h3>
+                            <p class="text-sm text-gray-500 mt-1">提供售後保養與技術支援</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <!-- 02 化工廠 -->
-                <div class="bg-gray-50 rounded-xl p-6 h-full flex flex-col">
-                    <!-- 主圖片位置 -->
-                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                        <img src="images/products/building/chemical-plant-main.png" alt="化工廠" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                    
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
-                            <span class="text-white font-bold text-sm">02</span>
-                        </div>
-                        <h3 class="text-3xl font-black text-gray-900">化工廠</h3>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-6 text-lg font-semibold">
-                        專為化學製程設計的設備與系統，確保生產安全與效率提升。
-                    </p>
-                    
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
-                        <div class="space-y-2">
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">反應釜設備</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">蒸餾塔</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">儲存槽</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">管路系統</p>
-                            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <article class="group bg-gray-100 border border-gray-300 h-full flex flex-col">
+                    <div class="relative h-56 overflow-hidden bg-gray-200">
+                        <img src="images/products/building/spray-equipment-main.png" alt="工業噴漆設備工程" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-x-0 bottom-0 bg-blue-950 bg-opacity-95 text-white px-5 py-3 flex items-center justify-between">
+                            <span class="text-sm font-bold tracking-widest">PAINTING SYSTEM</span>
+                            <span class="text-orange-300 font-black">01</span>
                         </div>
                     </div>
-                    
-                    <a href="chemical-plant-solution.html" class="block bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto text-center">了解更多</a>
-                </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">噴漆設備工程</h3>
+                        <p class="text-gray-600 leading-relaxed min-h-[4.5rem]">提供噴塗、漆霧攔截、廢氣抽排與烘烤系統整合，建立穩定、安全的塗裝作業環境。</p>
+                        <div class="bg-white border-l-4 border-orange-500 p-4 my-5">
+                            <h4 class="text-sm font-bold text-gray-900 mb-2">適用產業</h4>
+                            <p class="text-sm text-gray-600 leading-6">汽車零件、五金加工、家具製造、金屬塗裝</p>
+                        </div>
+                        <div class="mb-6">
+                            <h4 class="text-sm font-bold text-gray-900 mb-3">工程內容</h4>
+                            <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+                                <p><i class="fas fa-check text-orange-600 mr-2"></i>噴漆房</p>
+                                <p><i class="fas fa-check text-orange-600 mr-2"></i>烘烤房</p>
+                                <p><i class="fas fa-check text-orange-600 mr-2"></i>漆霧處理</p>
+                                <p><i class="fas fa-check text-orange-600 mr-2"></i>VOC治理</p>
+                            </div>
+                        </div>
+                        <a href="spray-equipment.html" class="mt-auto inline-flex items-center justify-between bg-blue-950 hover:bg-orange-700 text-white font-bold px-5 py-3 transition-colors">
+                            查看工程方案 <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
 
-                <!-- 03 靜電油煙設備 -->
-                <div class="bg-gray-50 rounded-xl p-6 h-full flex flex-col">
-                    <!-- 主圖片位置 -->
-                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                        <img src="images/products/building/electrostatic-main.png" alt="靜電油煙設備" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                    
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
-                            <span class="text-white font-bold text-sm">03</span>
-                        </div>
-                        <h3 class="text-3xl font-black text-gray-900">靜電油煙設備</h3>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-6 text-lg font-semibold">
-                        高效靜電油煙處理技術，適用於各種工業油煙處理需求。
-                    </p>
-                    
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
-                        <div class="space-y-2">
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">靜電集塵器</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">高壓電源</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">集塵板</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">控制系統</p>
-                            </div>
+                <article class="group bg-gray-100 border border-gray-300 h-full flex flex-col">
+                    <div class="relative h-56 overflow-hidden bg-gray-200">
+                        <img src="images/products/building/chemical-plant-main.png" alt="工業廢氣洗滌塔工程" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-x-0 bottom-0 bg-blue-950 bg-opacity-95 text-white px-5 py-3 flex items-center justify-between">
+                            <span class="text-sm font-bold tracking-widest">SCRUBBER SYSTEM</span>
+                            <span class="text-orange-300 font-black">02</span>
                         </div>
                     </div>
-                    
-                    <a href="electrostatic-oil-smoke.html" class="block bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto text-center">了解更多</a>
-                </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">廢氣洗滌塔工程</h3>
+                        <p class="text-gray-600 leading-relaxed min-h-[4.5rem]">針對酸鹼廢氣與水溶性污染物，整合耐腐蝕抽排管路、洗滌設備及自動加藥控制。</p>
+                        <div class="bg-white border-l-4 border-orange-500 p-4 my-5">
+                            <h4 class="text-sm font-bold text-gray-900 mb-2">適用產業</h4>
+                            <p class="text-sm text-gray-600 leading-6">化工廠、電鍍廠、表面處理廠、化學製造</p>
+                        </div>
+                        <div class="mb-6">
+                            <h4 class="text-sm font-bold text-gray-900 mb-3">工程內容</h4>
+                            <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+                                <p><i class="fas fa-check text-orange-600 mr-2"></i>PP洗滌塔</p>
+                                <p><i class="fas fa-check text-orange-600 mr-2"></i>FRP洗滌塔</p>
+                                <p><i class="fas fa-check text-orange-600 mr-2"></i>自動加藥</p>
+                                <p><i class="fas fa-check text-orange-600 mr-2"></i>廢氣處理</p>
+                            </div>
+                        </div>
+                        <a href="chemical-plant-solution.html" class="mt-auto inline-flex items-center justify-between bg-blue-950 hover:bg-orange-700 text-white font-bold px-5 py-3 transition-colors">
+                            查看工程方案 <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="group bg-gray-100 border border-gray-300 h-full flex flex-col">
+                    <div class="relative h-56 overflow-hidden bg-gray-200">
+                        <img src="images/products/building/electrostatic-main.png" alt="靜電油煙處理工程" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-x-0 bottom-0 bg-blue-950 bg-opacity-95 text-white px-5 py-3 flex items-center justify-between">
+                            <span class="text-sm font-bold tracking-widest">ESP SYSTEM</span>
+                            <span class="text-orange-300 font-black">03</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">靜電油煙工程</h3>
+                        <p class="text-gray-600 leading-relaxed min-h-[4.5rem]">依油煙量與排放條件配置靜電處理、除味及排煙系統，有效降低油霧與異味逸散。</p>
+                        <div class="bg-white border-l-4 border-orange-500 p-4 my-5">
+                            <h4 class="text-sm font-bold text-gray-900 mb-2">適用產業</h4>
+                            <p class="text-sm text-gray-600 leading-6">中央廚房、食品加工、金屬壓鑄、CNC加工</p>
+                        </div>
+                        <div class="mb-6">
+                            <h4 class="text-sm font-bold text-gray-900 mb-3">工程內容</h4>
+                            <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+                                <p><i class="fas fa-check text-orange-600 mr-2"></i>靜電油煙機</p>
+                                <p><i class="fas fa-check text-orange-600 mr-2"></i>油霧回收</p>
+                                <p><i class="fas fa-check text-orange-600 mr-2"></i>活性碳除味</p>
+                                <p><i class="fas fa-check text-orange-600 mr-2"></i>排煙系統</p>
+                            </div>
+                        </div>
+                        <a href="electrostatic-oil-smoke.html" class="mt-auto inline-flex items-center justify-between bg-blue-950 hover:bg-orange-700 text-white font-bold px-5 py-3 transition-colors">
+                            查看工程方案 <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- 行業應用專區 -->
-    <section id="industry-application" class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- 主標題區 -->
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">行業應用解決方案</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    針對不同產業特性提供專業化解決方案，量身打造符合產業需求的設備系統，提升整體營運效率與競爭力。
-                </p>
-            </div>
-
-            <!-- 四大優勢 -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-industry text-white text-2xl"></i>
+    <section id="industry-application" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-10">
+                <div class="lg:col-span-7">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-1 bg-orange-500"></span>
+                        <span class="text-sm font-bold text-orange-700 tracking-widest">INDUSTRY APPLICATIONS</span>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">產業專精</h3>
-                    <p class="text-sm text-gray-600">深入了解產業需求</p>
+                    <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">六大產業應用解決方案</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed max-w-3xl">
+                        依據製程污染特性、廠房條件與排放需求，整合工業通風、集塵、廢氣與油煙處理系統，提供從現場評估、設計製造到施工維護的一站式工程服務。
+                    </p>
                 </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-cogs text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">客製設計</h3>
-                    <p class="text-sm text-gray-600">量身打造解決方案</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">效益提升</h3>
-                    <p class="text-sm text-gray-600">優化營運效率</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-headset text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-1">專業支援</h3>
-                    <p class="text-sm text-gray-600">完整技術服務</p>
+                <div class="lg:col-span-5 border-l-4 border-blue-900 bg-white p-6 shadow-sm">
+                    <p class="text-sm font-bold text-blue-900 mb-2">工程規劃重點</p>
+                    <p class="text-gray-600 leading-relaxed">改善作業環境、穩定製程品質、降低能源耗用，並協助企業符合環保排放與職業安全要求。</p>
                 </div>
             </div>
 
-            <!-- 三大解決方案 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 01 金工 -->
-                <div class="bg-gray-50 rounded-xl p-6 h-full flex flex-col">
-                    <!-- 主圖片位置 -->
-                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                        <img src="images/solutions/metalworking-main.jpg" alt="金工" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                    
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
-                            <span class="text-white font-bold text-sm">01</span>
-                        </div>
-                        <h3 class="text-3xl font-black text-gray-900">金工</h3>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-6 text-lg font-semibold">
-                        專為金屬加工業設計的通風與除塵系統，有效處理金屬粉塵與有害氣體。
-                    </p>
-                    
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
-                        <div class="space-y-2">
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">研磨集塵機</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">焊接煙霧抽排</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">切割機設備</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">金屬拋光</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="metal-industry-solution.html" class="block bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto text-center">了解更多</a>
+            <div class="grid grid-cols-2 lg:grid-cols-4 border border-gray-300 bg-white mb-12">
+                <div class="p-5 border-b lg:border-b-0 border-r border-gray-300">
+                    <i class="fas fa-industry text-orange-600 text-xl mb-3"></i>
+                    <h3 class="font-bold text-gray-900">多產業經驗</h3>
+                    <p class="text-sm text-gray-500 mt-1">掌握各類製程污染特性</p>
                 </div>
+                <div class="p-5 border-b lg:border-b-0 lg:border-r border-gray-300">
+                    <i class="fas fa-drafting-compass text-orange-600 text-xl mb-3"></i>
+                    <h3 class="font-bold text-gray-900">客製化規劃</h3>
+                    <p class="text-sm text-gray-500 mt-1">依風量與現場條件設計</p>
+                </div>
+                <div class="p-5 border-r border-gray-300">
+                    <i class="fas fa-cogs text-orange-600 text-xl mb-3"></i>
+                    <h3 class="font-bold text-gray-900">系統整合能力</h3>
+                    <p class="text-sm text-gray-500 mt-1">設備、風管與控制整合</p>
+                </div>
+                <div class="p-5">
+                    <i class="fas fa-tools text-orange-600 text-xl mb-3"></i>
+                    <h3 class="font-bold text-gray-900">長期維護支援</h3>
+                    <p class="text-sm text-gray-500 mt-1">保養、耗材與效能改善</p>
+                </div>
+            </div>
 
-                <!-- 02 化學產業 -->
-                <div class="bg-gray-50 rounded-xl p-6 h-full flex flex-col">
-                    <!-- 主圖片位置 -->
-                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                        <img src="images/solutions/chemical-industry-main.jpg" alt="化學產業" class="w-full h-full object-cover rounded-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <article class="bg-white border border-gray-300 border-t-4 border-t-orange-500 shadow-sm h-full flex flex-col">
+                    <div class="relative h-44 overflow-hidden bg-gray-200">
+                        <img src="images/products/air-pollution/metal-grinding-filter.png" alt="金屬加工業研磨與集塵設備" class="w-full h-full object-cover">
+                        <span class="absolute top-0 left-0 bg-blue-950 text-white font-black px-4 py-3">01</span>
                     </div>
-                    
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
-                            <span class="text-white font-bold text-sm">02</span>
-                        </div>
-                        <h3 class="text-3xl font-black text-gray-900">化學產業</h3>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-6 text-lg font-semibold">
-                        化學製程專用通風與安全設備，確保生產環境安全與環保標準。
-                    </p>
-                    
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
-                        <div class="space-y-2">
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">通風櫃</p>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">金屬加工業</h3>
+                        <p class="text-gray-600 leading-relaxed min-h-[4.5rem]">針對 CNC、焊接、研磨與拋光製程，集中捕捉金屬粉塵、焊煙與熱氣。</p>
+                        <div class="grid grid-cols-2 gap-4 py-5 my-5 border-y border-gray-200 text-sm">
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">常見製程</h4>
+                                <p class="text-gray-600 leading-6">CNC加工<br>焊接／研磨<br>表面拋光</p>
                             </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">氣體偵測</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">緊急淋浴</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">化學品儲存</p>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">建議系統</h4>
+                                <p class="text-gray-600 leading-6">製程集塵<br>焊煙處理<br>廠房通風</p>
                             </div>
                         </div>
+                        <a href="metal-industry-solution.html" class="mt-auto inline-flex items-center justify-between font-bold text-blue-900 hover:text-orange-700 transition-colors">
+                            查看產業方案 <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
-                    
-                    <a href="chemical-industry-solution.html" class="block bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto text-center">了解更多</a>
-                </div>
+                </article>
 
-                <!-- 03 餐飲廚房 -->
-                <div class="bg-gray-50 rounded-xl p-6 h-full flex flex-col">
-                    <!-- 主圖片位置 -->
-                    <div class="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                        <img src="images/solutions/kitchen-main.jpg" alt="餐飲廚房" class="w-full h-full object-cover rounded-lg">
+                <article class="bg-white border border-gray-300 border-t-4 border-t-orange-500 shadow-sm h-full flex flex-col">
+                    <div class="relative h-44 overflow-hidden bg-gray-200">
+                        <img src="images/products/air-pollution/chemical-gas-main.png" alt="化工產業廢氣處理系統" class="w-full h-full object-cover">
+                        <span class="absolute top-0 left-0 bg-blue-950 text-white font-black px-4 py-3">02</span>
                     </div>
-                    
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
-                            <span class="text-white font-bold text-sm">03</span>
-                        </div>
-                        <h3 class="text-3xl font-black text-gray-900">餐飲廚房</h3>
-                    </div>
-                    
-                    <p class="text-gray-700 mb-6 text-lg font-semibold">
-                        餐飲業專用通風與油煙處理系統，打造安全舒適的廚房工作環境。
-                    </p>
-                    
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-3">設備項目</h4>
-                        <div class="space-y-2">
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">廚房通風</p>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">化工產業</h3>
+                        <p class="text-gray-600 leading-relaxed min-h-[4.5rem]">依酸鹼廢氣、VOCs、異味與防爆需求，規劃耐腐蝕抽排及廢氣淨化設備。</p>
+                        <div class="grid grid-cols-2 gap-4 py-5 my-5 border-y border-gray-200 text-sm">
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">常見製程</h4>
+                                <p class="text-gray-600 leading-6">化工製造<br>電鍍表處<br>原料混合</p>
                             </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">食品加工</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="text-base font-semibold text-gray-700 text-center">中央廚房</p>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">建議系統</h4>
+                                <p class="text-gray-600 leading-6">洗滌塔<br>VOC處理<br>防爆通風</p>
                             </div>
                         </div>
+                        <a href="chemical-industry-solution.html" class="mt-auto inline-flex items-center justify-between font-bold text-blue-900 hover:text-orange-700 transition-colors">
+                            查看產業方案 <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
-                    
-                    <a href="kitchen-exhaust-solution.html" class="block bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg transition-colors duration-300 w-full mt-auto text-center">了解更多</a>
-                </div>
+                </article>
+
+                <article class="bg-white border border-gray-300 border-t-4 border-t-orange-500 shadow-sm h-full flex flex-col">
+                    <div class="relative h-44 overflow-hidden bg-gray-200">
+                        <img src="images/products/air-pollution/oil-smoke-main.png" alt="餐飲與中央廚房油煙處理系統" class="w-full h-full object-cover">
+                        <span class="absolute top-0 left-0 bg-blue-950 text-white font-black px-4 py-3">03</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">餐飲與中央廚房</h3>
+                        <p class="text-gray-600 leading-relaxed min-h-[4.5rem]">整合排煙、補風、油煙與異味處理，維持廚房負壓及舒適的工作環境。</p>
+                        <div class="grid grid-cols-2 gap-4 py-5 my-5 border-y border-gray-200 text-sm">
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">常見製程</h4>
+                                <p class="text-gray-600 leading-6">餐廳廚房<br>中央廚房<br>團膳作業</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">建議系統</h4>
+                                <p class="text-gray-600 leading-6">油煙處理<br>排煙補風<br>異味處理</p>
+                            </div>
+                        </div>
+                        <a href="kitchen-exhaust-solution.html" class="mt-auto inline-flex items-center justify-between font-bold text-blue-900 hover:text-orange-700 transition-colors">
+                            查看產業方案 <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-white border border-gray-300 border-t-4 border-t-orange-500 shadow-sm h-full flex flex-col">
+                    <div class="relative h-44 overflow-hidden bg-gray-200">
+                        <img src="images/products/building/chemical-plant-main.png" alt="電子產業製程排氣與無塵通風" class="w-full h-full object-cover">
+                        <span class="absolute top-0 left-0 bg-blue-950 text-white font-black px-4 py-3">04</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">電子產業</h3>
+                        <p class="text-gray-600 leading-relaxed min-h-[4.5rem]">因應 PCB、半導體與電子組裝製程，建立穩定排氣、廢氣與潔淨通風環境。</p>
+                        <div class="grid grid-cols-2 gap-4 py-5 my-5 border-y border-gray-200 text-sm">
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">常見製程</h4>
+                                <p class="text-gray-600 leading-6">PCB製造<br>半導體<br>電子組裝</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">建議系統</h4>
+                                <p class="text-gray-600 leading-6">製程排氣<br>酸鹼廢氣<br>無塵通風</p>
+                            </div>
+                        </div>
+                        <a href="chemical-gas-treatment.html" class="mt-auto inline-flex items-center justify-between font-bold text-blue-900 hover:text-orange-700 transition-colors">
+                            查看產業方案 <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-white border border-gray-300 border-t-4 border-t-orange-500 shadow-sm h-full flex flex-col">
+                    <div class="relative h-44 overflow-hidden bg-gray-200">
+                        <img src="images/products/ventilation-parts/pp-plastic-duct.png" alt="塑膠與橡膠產業耐腐蝕通風管路" class="w-full h-full object-cover">
+                        <span class="absolute top-0 left-0 bg-blue-950 text-white font-black px-4 py-3">05</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">塑膠與橡膠產業</h3>
+                        <p class="text-gray-600 leading-relaxed min-h-[4.5rem]">處理射出、押出與混煉製程產生的熱氣、VOCs及異味，改善廠房換氣效率。</p>
+                        <div class="grid grid-cols-2 gap-4 py-5 my-5 border-y border-gray-200 text-sm">
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">常見製程</h4>
+                                <p class="text-gray-600 leading-6">射出成型<br>押出製程<br>橡膠混煉</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">建議系統</h4>
+                                <p class="text-gray-600 leading-6">VOC處理<br>異味吸附<br>廠房通風</p>
+                            </div>
+                        </div>
+                        <a href="chemical-gas-treatment.html" class="mt-auto inline-flex items-center justify-between font-bold text-blue-900 hover:text-orange-700 transition-colors">
+                            查看產業方案 <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-white border border-gray-300 border-t-4 border-t-orange-500 shadow-sm h-full flex flex-col">
+                    <div class="relative h-44 overflow-hidden bg-gray-200">
+                        <img src="images/products/equipment/bag-filter-collector.png" alt="食品加工產業通風與集塵設備" class="w-full h-full object-cover">
+                        <span class="absolute top-0 left-0 bg-blue-950 text-white font-black px-4 py-3">06</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">食品加工產業</h3>
+                        <p class="text-gray-600 leading-relaxed min-h-[4.5rem]">針對烘焙、炒製與原料加工產生的粉塵、油煙及熱氣，規劃衛生型抽排系統。</p>
+                        <div class="grid grid-cols-2 gap-4 py-5 my-5 border-y border-gray-200 text-sm">
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">常見製程</h4>
+                                <p class="text-gray-600 leading-6">食品工廠<br>烘焙產線<br>飲料製造</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">建議系統</h4>
+                                <p class="text-gray-600 leading-6">衛生通風<br>油煙處理<br>粉塵集塵</p>
+                            </div>
+                        </div>
+                        <a href="kitchen-exhaust-solution.html" class="mt-auto inline-flex items-center justify-between font-bold text-blue-900 hover:text-orange-700 transition-colors">
+                            查看產業方案 <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
