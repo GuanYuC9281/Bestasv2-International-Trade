@@ -798,6 +798,319 @@ html {
     }
 }
 
+/* Services page industrial catalog */
+.services-page {
+    color: #142033;
+    background: #f4f6f8;
+}
+
+.services-hero {
+    position: relative;
+    min-height: 38rem;
+    display: flex;
+    align-items: flex-end;
+    padding: 8rem 0 6rem;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+
+.services-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(5, 20, 36, 0.96) 0%, rgba(5, 25, 45, 0.78) 48%, rgba(5, 25, 45, 0.2) 100%);
+}
+
+.services-hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.14;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 52px 52px;
+}
+
+.services-hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.services-hero-copy {
+    max-width: 50rem;
+    padding: 0.75rem 0 0.75rem 2rem;
+    border-left: 6px solid #f97316;
+}
+
+.services-hero-copy h1 {
+    margin: 0 0 1rem;
+    color: #fff;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.04em;
+}
+
+.services-hero-copy p {
+    margin: 0;
+    color: #e2e8f0;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    line-height: 1.7;
+}
+
+.services-catalog-section {
+    position: relative;
+    padding: 7rem 0;
+    background: #eef2f6;
+}
+
+.services-catalog-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18%;
+    height: 5px;
+    background: #f97316;
+}
+
+.services-section-heading {
+    max-width: 48rem;
+    margin: 0 auto 4rem;
+    text-align: center;
+}
+
+.services-section-heading h2 {
+    margin: 0;
+    color: #0b1f3a;
+    font-size: clamp(2.3rem, 4vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.services-section-heading h2::after {
+    content: "";
+    display: block;
+    width: 4.5rem;
+    height: 4px;
+    margin: 1.25rem auto 0;
+    background: #f97316;
+}
+
+.services-section-heading p {
+    margin: 1.25rem auto 0;
+    color: #64748b;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+#categoriesContainer.services-catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+#categoriesContainer.services-catalog-grid > div {
+    min-height: 31rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #d8dee7;
+    border-top: 5px solid #f97316;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(11, 31, 58, 0.08);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+#categoriesContainer.services-catalog-grid > div:hover {
+    transform: translateY(-7px);
+    border-color: #f97316;
+    box-shadow: 0 20px 38px rgba(11, 31, 58, 0.14);
+}
+
+#categoriesContainer.services-catalog-grid > div > div:first-child {
+    height: 19rem;
+    min-height: 19rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(rgba(11, 31, 58, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11, 31, 58, 0.035) 1px, transparent 1px),
+        #f4f7fa;
+    background-size: 30px 30px;
+}
+
+#categoriesContainer.services-catalog-grid > div > div:first-child > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+}
+
+#categoriesContainer.services-catalog-grid > div > div:first-child > div > div {
+    width: 100%;
+    height: 13.5rem;
+    margin: 0;
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border: 0;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: inset 0 0 0 1px #d8dee7;
+}
+
+#categoriesContainer.services-catalog-grid > div > div:first-child img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+    object-fit: contain;
+    object-position: center center;
+    transition: transform 260ms ease;
+}
+
+#categoriesContainer.services-catalog-grid > div:hover > div:first-child img {
+    transform: scale(1.06);
+}
+
+#categoriesContainer.services-catalog-grid > div > div:first-child h3 {
+    margin: 1.1rem 0 0;
+    color: #0b1f3a;
+    font-size: 1.45rem;
+    font-weight: 900;
+    line-height: 1.3;
+}
+
+#categoriesContainer.services-catalog-grid > div > div:nth-child(2) {
+    min-height: 12rem;
+    padding: 1.75rem;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background: #fff;
+}
+
+#categoriesContainer.services-catalog-grid > div > div:nth-child(2) h4 {
+    margin: 0;
+    color: #526174;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.75;
+}
+
+#categoriesContainer.services-catalog-grid > div > div:nth-child(2) a {
+    min-height: 3.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid #0b1f3a;
+    border-radius: 0;
+    background: #0b1f3a;
+    color: #fff;
+    font-weight: 800;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+#categoriesContainer.services-catalog-grid > div > div:nth-child(2) a:hover {
+    border-color: #f97316;
+    background: #f97316;
+}
+
+#categoriesContainer.services-catalog-grid > div > div:nth-child(2) a i {
+    margin-left: 1rem;
+    transition: transform 180ms ease;
+}
+
+#categoriesContainer.services-catalog-grid > div > div:nth-child(2) a:hover i {
+    transform: translateX(4px);
+}
+
+.services-product-modal {
+    padding: 1rem;
+    background: rgba(5, 20, 36, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.services-product-modal-panel {
+    border: 1px solid #64748b;
+    border-radius: 0;
+    background: #f4f6f8;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+}
+
+.services-product-modal-header {
+    border-bottom: 4px solid #f97316;
+    background: #0b1f3a;
+}
+
+.services-product-modal-header button {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 0;
+}
+
+#productModalContent {
+    color: #142033;
+}
+
+@media (max-width: 1023px) {
+    #categoriesContainer.services-catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 639px) {
+    .services-hero {
+        min-height: 30rem;
+        padding: 7rem 0 4rem;
+        background-position: 62% center;
+    }
+
+    .services-hero-overlay {
+        background: rgba(5, 20, 36, 0.8);
+    }
+
+    .services-hero-copy {
+        padding-left: 1.25rem;
+    }
+
+    .services-catalog-section {
+        padding: 5rem 0;
+    }
+
+    #categoriesContainer.services-catalog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #categoriesContainer.services-catalog-grid > div {
+        min-height: auto;
+    }
+
+    #categoriesContainer.services-catalog-grid > div > div:first-child {
+        height: 17rem;
+        min-height: 17rem;
+    }
+
+    #categoriesContainer.services-catalog-grid > div > div:first-child > div > div {
+        height: 11.75rem;
+    }
+
+    #categoriesContainer.services-catalog-grid > div > div:nth-child(2) {
+        min-height: 10rem;
+    }
+}
+
 /* Contact page industrial layout */
 .contact-page,
 .contact-success-page,

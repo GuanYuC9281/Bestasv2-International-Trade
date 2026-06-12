@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-50">
+<body class="services-page bg-gray-50">
     <!-- Loading Screen -->
     <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100 flex items-center justify-center z-50">
         <div class="text-center w-full max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -239,25 +239,26 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat pt-16" style="background-image: url('images/services.png?v=202604080143')">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">工業設備中心</h1>
-                <p class="text-xl md:text-2xl text-white leading-relaxed mb-8 max-w-3xl mx-auto drop-shadow-lg">提供高品質環保設備與工業通風設備，滿足不同產業需求</p>
+    <section class="services-hero" style="background-image: url('images/services.png?v=202604080143')">
+        <div class="services-hero-overlay"></div>
+        <div class="services-hero-grid"></div>
+        <div class="services-hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="services-hero-copy">
+                <h1>工業設備中心</h1>
+                <p>提供高品質環保設備與工業通風設備，滿足不同產業需求</p>
             </div>
         </div>
     </section>
 
     <!-- Business Categories -->
-    <section id="business-categories" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section id="business-categories" class="services-catalog-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-[#0f2742] mb-4">營運項目</h2>
-                <p class="text-xl text-slate-600 max-w-3xl mx-auto">探索我們多樣化的產品分類，找到您需要的商品</p>
+            <div class="services-section-heading">
+                <h2>營運項目</h2>
+                <p>探索我們多樣化的產品分類，找到您需要的商品</p>
             </div>
             
-            <div id="categoriesContainer" class="grid grid-cols-2 sm:grid-cols-5 gap-3 lg:gap-4">
+            <div id="categoriesContainer" class="services-catalog-grid">
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[24rem] border border-slate-200">
                     <div class="h-48 sm:h-52 lg:h-56 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-4 lg:p-5">
                         <div class="text-center">
@@ -533,9 +534,9 @@
     </footer>
 
     <!-- Product Detail Modal -->
-    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
-        <div class="bg-slate-50 rounded-xl shadow-2xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto border border-slate-200">
-            <div class="sticky top-0 bg-[#0f2742] border-b border-[#183b5c] p-4 sm:p-6 z-10">
+    <div id="productModal" class="services-product-modal fixed inset-0 flex items-center justify-center z-[60] hidden">
+        <div class="services-product-modal-panel max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="services-product-modal-header sticky top-0 p-4 sm:p-6 z-10">
                 <div class="flex items-center justify-between">
                     <h3 id="productModalTitle" class="text-2xl font-bold text-white">Product Details</h3>
                     <button onclick="closeProductModal()" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-200">
