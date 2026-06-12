@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-50">
+<body class="about-page bg-gray-50">
     <!-- Loading Screen -->
     <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100 flex items-center justify-center z-50">
         <div class="text-center w-full max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -148,9 +148,7 @@
                     </div>
                 </div>
 
-                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+                <button id="mobileMenuBtn" class="mobile-menu-toggle lg:hidden" type="button" aria-label="開啟或關閉手機選單" aria-expanded="false" onclick="toggleMobileMenu(); this.classList.toggle('is-open'); this.setAttribute('aria-expanded', this.classList.contains('is-open'));"><span></span><span></span><span></span></button>
             </div>
         </div>
         
@@ -241,99 +239,98 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat pt-16" style="background-image: url('images/about.png?v=202604080141')">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">關於我們</h1>
-                <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">了解貝達國際貿易的專業團隊與服務理念</p>
+    <section class="about-hero" style="background-image: url('images/about.png?v=202604080141')">
+        <div class="about-hero-overlay"></div>
+        <div class="about-hero-grid"></div>
+        <div class="about-hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="about-hero-copy">
+                <h1>關於我們</h1>
+                <p>了解貝達國際貿易的專業團隊與服務理念</p>
             </div>
         </div>
     </section>
 
     <!-- Company Introduction -->
-    <section id="company-intro" class="py-20 bg-white">
+    <section id="company-intro" class="about-intro">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-4xl font-bold text-gray-900 mb-6">公司簡介</h2>
-                    <p class="text-lg text-gray-600 mb-6">
+            <div class="about-intro-layout">
+                <div class="about-intro-copy">
+                    <h2 class="about-section-title">公司簡介</h2>
+                    <p>
                         貝達國際貿易有限公司致力於為企業提供高效率、低風險的國際採購與供應鏈解決方案。
                     </p>
-                    <p class="text-lg text-gray-600 mb-8">
+                    <p>
                         憑我們具備超過20年的製造端實務經驗，結合供應鏈整合與一站式工程能力，深入理解產品特性、生產流程與品質控管關鍵，
                         協助客戶精準媒合合適供應商，有效降低採購風險並提升整體效率。
                         透過整合台灣、越南與中國的供應鏈資源，我們提供從採購代理、報價打樣到生產控管與出貨交付的一站式服務，
                         讓企業在跨國採購過程中更加安心、高效且可控。
                     </p>
                 </div>
-                <div class="relative">
-                    <div class="space-y-6">
+                <div class="about-office-list">
                         <!-- 台北辦公室 -->
-                        <div class="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <div class="flex items-center space-x-4 mb-4">
-                                <div class="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-map-marker-alt text-white"></i>
+                        <div class="about-office-card">
+                            <div class="about-office-header">
+                                <div class="about-office-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-bold text-gray-900">台北</h3>
-                                    <p class="text-sm text-gray-600">營運中心</p>
+                                    <h3>台北</h3>
+                                    <p>營運中心</p>
                                 </div>
                             </div>
-                                                        <div class="mt-4 text-gray-600">
-                                <p class="text-sm">📍 台北市</p>
-                                <p class="text-sm">📞 +886-985-328-164</p>
-                                <p class="text-sm">🌐 info@bestas-intl.com</p>
+                            <div class="about-office-details">
+                                <p>📍 台北市</p>
+                                <p>📞 +886-985-328-164</p>
+                                <p>🌐 info@bestas-intl.com</p>
                             </div>
                         </div>
 
                         <!-- 胡志明市辦公室 -->
-                        <div class="bg-gradient-to-br from-cyan-50 to-sky-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <div class="flex items-center space-x-4 mb-4">
-                                <div class="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-map-marker-alt text-white"></i>
+                        <div class="about-office-card">
+                            <div class="about-office-header">
+                                <div class="about-office-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-bold text-gray-900">胡志明市</h3>
-                                    <p class="text-sm text-gray-600">東南亞製造營運中心</p>
+                                    <h3>胡志明市</h3>
+                                    <p>東南亞製造營運中心</p>
                                 </div>
                             </div>
-                                                        <div class="mt-4 text-gray-600">
-                                <p class="text-sm">📍 胡志明市</p>
-                                <p class="text-sm">📞 +84-28-3779-0881</p>
-                                <p class="text-sm">🌐 info@codanh.com</p>
+                            <div class="about-office-details">
+                                <p>📍 胡志明市</p>
+                                <p>📞 +84-28-3779-0881</p>
+                                <p>🌐 info@codanh.com</p>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Mission & Vision -->
-    <section id="mission-vision" class="py-20 bg-gray-50">
+    <section id="mission-vision" class="about-mission">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">使命與願景</h2>
+            <div class="about-section-heading about-section-heading-light">
+                <h2>使命與願景</h2>
             </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="text-center p-8 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50">
-                    <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-bullseye text-white text-3xl"></i>
+            <div class="about-mission-grid">
+                <div class="about-mission-panel">
+                    <div class="about-mission-icon">
+                        <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3 class="text-3xl font-bold text-gray-900 leading-relaxed mb-4">使命</h3>
-                    <h4 class="text-2xl font-bold text-gray-900 leading-relaxed mb-4">讓工廠更安全、更潔淨、更高效</h4>
-                    <p class="text-gray-600 text-lg leading-relaxed">
+                    <h3>使命</h3>
+                    <h4>讓工廠更安全、更潔淨、更高效</h4>
+                    <p>
                        透過工業環境工程技術與專業設備，協助企業改善工作環境、降低汙染排放並提升生產效率
                     </p>
                 </div>
-                <div class="text-center p-8 rounded-xl bg-gradient-to-br from-cyan-50 to-sky-50">
-                    <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-eye text-white text-3xl"></i>
+                <div class="about-mission-panel">
+                    <div class="about-mission-icon">
+                        <i class="fas fa-eye"></i>
                     </div>
-                    <h3 class="text-3xl font-bold text-gray-900 mb-4">願景</h3>
-                    <h4 class="text-2xl font-bold text-gray-900 mb-4">成為亞洲工業環境工程值得信賴的夥伴</h4>
-                    <p class="text-gray-600 text-lg leading-relaxed">
+                    <h3>願景</h3>
+                    <h4>成為亞洲工業環境工程值得信賴的夥伴</h4>
+                    <p>
                         整合工程設計、設備製造、施工安裝、與維護服務，持續為製造業創造長期價值及永續競爭力
                     </p>
                 </div>
@@ -342,70 +339,70 @@
     </section>
 
     <!-- Core Values -->
-    <section id="core-values" class="py-20 bg-white">
+    <section id="core-values" class="about-capabilities">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">核心實力</h2>
+            <div class="about-section-heading">
+                <h2>核心實力</h2>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-industry text-teal-600 text-2xl"></i>
+            <div class="about-capability-grid">
+                <div class="about-capability-item">
+                    <div class="about-capability-icon">
+                        <i class="fas fa-industry"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 language-current mb-2">自有工廠製造</h3>
+                    <h3 class="language-current">自有工廠製造</h3>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-drafting-compass text-cyan-600 text-2xl"></i>
+                <div class="about-capability-item">
+                    <div class="about-capability-icon">
+                        <i class="fas fa-drafting-compass"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 language-current mb-2">專業工程設計</h3>
+                    <h3 class="language-current">專業工程設計</h3>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-cubes text-sky-600 text-2xl"></i>
+                <div class="about-capability-item">
+                    <div class="about-capability-icon">
+                        <i class="fas fa-cubes"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 language-current mb-2">一站式整合服務</h3>
+                    <h3 class="language-current">一站式整合服務</h3>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users-gear text-cyan-600 text-2xl"></i>
+                <div class="about-capability-item">
+                    <div class="about-capability-icon">
+                        <i class="fas fa-users-gear"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 language-current mb-2">台灣 & 越南專業團隊</h3>
+                    <h3 class="language-current">台灣 & 越南專業團隊</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Markets & Regions -->
-    <section id="markets" class="py-20 bg-gray-50">
+    <section id="markets" class="about-markets">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">服務版圖</h2>
-                <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">從設備製造到工程落地，提供跨區域整合服務。</p>
+            <div class="about-section-heading">
+                <h2>服務版圖</h2>
+                <p>從設備製造到工程落地，提供跨區域整合服務。</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-                    <div class="text-3xl font-bold text-teal-600 mb-4">🇻🇳 越南</div>
-                    <p class="text-gray-600 leading-relaxed mb-4">設備製造與工程施工</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-teal-100 text-teal-600 rounded-full text-sm">越南工廠</span>
+            <div class="about-market-grid">
+                <div class="about-market-card">
+                    <div class="about-market-country">🇻🇳 越南</div>
+                    <p>設備製造與工程施工</p>
+                    <div>
+                        <span>越南工廠</span>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-                    <div class="text-3xl font-bold text-cyan-600 mb-4">🇹🇼 台灣</div>
-                    <p class="text-gray-600 leading-relaxed mb-4">工程設計與品質管理</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-cyan-100 text-cyan-600 rounded-full text-sm">台灣技術中心</span>
+                <div class="about-market-card">
+                    <div class="about-market-country">🇹🇼 台灣</div>
+                    <p>工程設計與品質管理</p>
+                    <div>
+                        <span>台灣技術中心</span>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-                    <div class="text-3xl font-bold text-sky-600  mb-4">🇨🇳 中國</div>
-                    <p class="text-gray-600 leading-relaxed mb-4">台商與製造業客戶</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-sky-100 text-sky-600 rounded-full text-sm">亞洲服務網絡</span>
+                <div class="about-market-card">
+                    <div class="about-market-country">🇨🇳 中國</div>
+                    <p>台商與製造業客戶</p>
+                    <div>
+                        <span>亞洲服務網絡</span>
                     </div>
                 </div>
             </div>
@@ -413,70 +410,72 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section id="why-choose-us" class="py-20 bg-white">
+    <section id="why-choose-us" class="about-advantages">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">我們的優勢</h2>
-                <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">24年以上工程經驗，打造更安全、更潔淨、更高效的工業環境。</p>
+            <div class="about-section-heading">
+                <h2>我們的優勢</h2>
+                <p>24年以上工程經驗，打造更安全、更潔淨、更高效的工業環境。</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-industry text-white text-3xl"></i>
+            <div class="about-advantage-grid">
+                <div class="about-advantage-card">
+                    <div class="about-advantage-icon">
+                        <i class="fas fa-industry"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">自有工廠製造</h3>
-                    <p class="text-gray-600 leading-relaxed">風機、風管、洗滌塔及環保設備自主生產<br>確保品質穩定與交期可控</p>
+                    <h3>自有工廠製造</h3>
+                    <p>風機、風管、洗滌塔及環保設備自主生產<br>確保品質穩定與交期可控</p>
                 </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-sky-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-drafting-compass text-white text-3xl"></i>
+                <div class="about-advantage-card">
+                    <div class="about-advantage-icon">
+                        <i class="fas fa-drafting-compass"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">專業工程設計</h3>
-                    <p class="text-gray-600 leading-relaxed">AutoCAD + Inventor 3D建模<br>施工前精準規劃與模擬分析</p>
+                    <h3>專業工程設計</h3>
+                    <p>AutoCAD + Inventor 3D建模<br>施工前精準規劃與模擬分析</p>
                 </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-sky-50 to-emerald-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-sky-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-diagram-project text-white text-3xl"></i>
+                <div class="about-advantage-card">
+                    <div class="about-advantage-icon">
+                        <i class="fas fa-diagram-project"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">一站式工程整合</h3>
-                    <p class="text-gray-600 leading-relaxed">從評估、設計、製造到施工維護<br>單一窗口完整服務</p>
+                    <h3>一站式工程整合</h3>
+                    <p>從評估、設計、製造到施工維護<br>單一窗口完整服務</p>
                 </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-users-gear text-white text-3xl"></i>
+                <div class="about-advantage-card">
+                    <div class="about-advantage-icon">
+                        <i class="fas fa-users-gear"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">台灣 × 越南團隊</h3>
-                    <p class="text-gray-600 leading-relaxed">熟悉台商工廠需求<br>提供在地化快速支援</p>
+                    <h3>台灣 × 越南團隊</h3>
+                    <p>熟悉台商工廠需求<br>提供在地化快速支援</p>
                 </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-leaf text-white text-3xl"></i>
+                <div class="about-advantage-card">
+                    <div class="about-advantage-icon">
+                        <i class="fas fa-leaf"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">符合法規與ESG需求</h3>
-                    <p class="text-gray-600 leading-relaxed">協助企業符合環保法規<br>降低稽查與營運風險</p>
+                    <h3>符合法規與ESG需求</h3>
+                    <p>協助企業符合環保法規<br>降低稽查與營運風險</p>
                 </div>
-                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-cyan-50 to-sky-50 hover:shadow-lg transition-all duration-300">
-                    <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-screwdriver-wrench text-white text-3xl"></i>
+                <div class="about-advantage-card">
+                    <div class="about-advantage-icon">
+                        <i class="fas fa-screwdriver-wrench"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">長期售後維護</h3>
-                    <p class="text-gray-600 leading-relaxed">設備保養、技術支援<br>確保系統穩定運轉</p>
+                    <h3>長期售後維護</h3>
+                    <p>設備保養、技術支援<br>確保系統穩定運轉</p>
                 </div>
             </div>
         </div>
     </section>
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-teal-600 to-cyan-600 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold mb-6">開始您的工廠改善計畫</h2>
-            <p class="text-xl text-teal-100 leading-relaxed mb-8 max-w-2xl mx-auto">從現場評估、工程規劃到設備製造與施工安裝，提供完整工業環境改善解決方案。 </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    <i class="fas fa-phone mr-3"></i>
+    <section class="industrial-cta text-white">
+        <div class="industrial-cta-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="industrial-cta-copy">
+                <h2>開始您的工廠改善計畫</h2>
+                <p>從現場評估、工程規劃到設備製造與施工安裝，提供完整工業環境改善解決方案。 </p>
+            </div>
+            <div class="industrial-cta-actions">
+                <a href="contact.html" class="industrial-cta-button industrial-cta-button-primary">
+                    <i class="fas fa-phone"></i>
                     聯繫我們
                 </a>
-                <a href="services.html" class="inline-flex items-center px-8 py-4 bg-teal-700 text-white font-semibold rounded-lg hover:bg-teal-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    <i class="fas fa-list mr-3"></i>
+                <a href="services.html" class="industrial-cta-button industrial-cta-button-secondary">
+                    <i class="fas fa-list"></i>
                     產品與服務
                 </a>
             </div>

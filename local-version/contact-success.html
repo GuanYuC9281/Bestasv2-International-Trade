@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-50">
+<body class="contact-success-page bg-gray-50">
     <!-- Loading Screen -->
     <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100 flex items-center justify-center z-50">
         <div class="text-center">
@@ -114,9 +114,7 @@
                     </div>
                 </div>
 
-                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+                <button id="mobileMenuBtn" class="mobile-menu-toggle lg:hidden" type="button" aria-label="開啟或關閉手機選單" aria-expanded="false" onclick="toggleMobileMenu(); this.classList.toggle('is-open'); this.setAttribute('aria-expanded', this.classList.contains('is-open'));"><span></span><span></span><span></span></button>
             </div>
         </div>
         
@@ -207,54 +205,54 @@
     </nav>
 
     <!-- Success Content -->
-    <section class="min-h-screen pt-24 pb-12 flex items-center justify-center">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+    <section class="contact-success-section">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="contact-success-panel">
                 <!-- Success Icon -->
-                <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
-                    <i class="fas fa-check-circle text-green-600 text-5xl"></i>
+                <div class="contact-success-icon">
+                    <i class="fas fa-check-circle"></i>
                 </div>
                 
                 <!-- Success Message -->
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                <h1>
                     訊息發送成功!
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                <p class="contact-success-message">
                     我們已收到您的表單，我們將盡快與您聯繫!
                 </p>
                 
                 <!-- Additional Info -->
-                <div class="bg-teal-50 rounded-lg p-6 mb-8">
-                    <div class="flex items-center justify-center space-x-2 text-teal-700">
+                <div class="contact-success-notice">
+                    <div>
                         <i class="fas fa-info-circle"></i>
-                        <p class="text-sm md:text-base">
+                        <p>
                             我們會在 24 小時內回覆您的訊息，請留意您的電子郵件信箱
                         </p>
                     </div>
                 </div>
                 
                 <!-- Action Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="index.html" class="inline-flex items-center px-8 py-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        <i class="fas fa-home mr-3"></i>
+                <div class="contact-success-actions">
+                    <a href="index.html" class="contact-success-button contact-success-button-primary">
+                        <i class="fas fa-home"></i>
                         回首頁
                     </a>
-                    <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg border border-teal-200">
-                        <i class="fas fa-envelope mr-3"></i>
+                    <a href="contact.html" class="contact-success-button contact-success-button-secondary">
+                        <i class="fas fa-envelope"></i>
                         再次聯絡
                     </a>
                 </div>
                 
                 <!-- Contact Info -->
-                <div class="mt-12 pt-8 border-t border-gray-200">
-                    <p class="text-gray-500 mb-4">如果您有緊急需求，也可以直接透過以下方式聯繫我們：</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center text-sm">
-                        <div class="flex items-center justify-center space-x-2 text-gray-600">
-                            <i class="fas fa-phone text-teal-600"></i>
+                <div class="contact-success-emergency">
+                    <p>如果您有緊急需求，也可以直接透過以下方式聯繫我們：</p>
+                    <div>
+                        <div>
+                            <i class="fas fa-phone"></i>
                             <span>+886-985-328-164</span>
                         </div>
-                        <div class="flex items-center justify-center space-x-2 text-gray-600">
-                            <i class="fas fa-envelope text-teal-600"></i>
+                        <div>
+                            <i class="fas fa-envelope"></i>
                             <span>info@bestas-intl.com</span>
                         </div>
                     </div>

@@ -209,9 +209,7 @@ function toggleQuickContact() {
                     </div>
                 </div>
 
-                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+                <button id="mobileMenuBtn" class="mobile-menu-toggle lg:hidden" type="button" aria-label="開啟或關閉手機選單" aria-expanded="false" onclick="toggleMobileMenu(); this.classList.toggle('is-open'); this.setAttribute('aria-expanded', this.classList.contains('is-open'));"><span></span><span></span><span></span></button>
             </div>
         </div>
         
@@ -682,7 +680,7 @@ function toggleQuickContact() {
                 </a>
                 <a href="services.html" class="industrial-cta-button industrial-cta-button-secondary">
                     <i class="fas fa-list"></i>
-                    合作流程
+                    查看服務
                 </a>
             </div>
         </div>
