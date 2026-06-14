@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" class="industrial-loader-pending">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +11,8 @@
 </head>
 <body class="bg-gray-100">
     <!-- Loading Screen -->
-    <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-sky-100 flex items-center justify-center z-50">
-        <div class="text-center">
-            <div class="w-32 h-32 mx-auto mb-8 flex items-center justify-center bg-white rounded-lg">
-                <img src="images/company/logo.png?nocache=<?php echo time(); ?>" alt="BESTAS INTERNATIONAL TRADE" class="w-24 h-24 object-contain">
-            </div>
-            <h1 class="text-3xl font-bold text-gray-800 mb-4">貝達國際貿易後台</h1>
-            <p class="text-lg text-gray-600 mb-8">載入中...</p>
-        </div>
-    </div>
+    <div id="loadingScreen"></div>
+    <script src="industrial-loader.js"></script>
 
     <!-- Admin Dashboard -->
     <div id="adminDashboard" class="hidden flex min-h-screen">
@@ -4754,5 +4747,6 @@
             }
         });
     </script>
+    <script src="quick-contact.js"></script>
 </body>
 </html>

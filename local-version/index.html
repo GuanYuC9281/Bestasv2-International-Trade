@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" class="industrial-loader-pending">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,75 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<!-- Fixed Responsive Contact Sidebar -->
-<div class="fixed right-0 bottom-20 sm:bottom-6 z-50 flex items-end gap-2 sm:gap-3">
-    <div id="quickContactPanel" class="hidden w-[calc(100vw-4.25rem)] max-w-[18rem] sm:w-60 overflow-hidden rounded-l-lg border border-gray-200 bg-white shadow-2xl">
-        <a href="https://line.me/ti/p/@bestas-intl" target="_blank"
-           class="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-[#EEF3F8] transition-colors">
-            <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#06C755] text-white flex items-center justify-center">
-                <i class="fab fa-line text-lg sm:text-xl"></i>
-            </span>
-            LINE 
-        </a>
-
-        <a href="https://wa.me/886985328164" target="_blank"
-           class="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-[#EEF3F8] transition-colors border-t border-gray-100">
-            <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center">
-                <i class="fab fa-whatsapp text-lg sm:text-xl"></i>
-            </span>
-            WhatsApp
-        </a>
-
-        <a href="https://zalo.me/886985328164" target="_blank"
-           class="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-[#EEF3F8] transition-colors border-t border-gray-100">
-            <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0068FF] text-white flex items-center justify-center text-[10px] sm:text-xs font-bold">
-                Zalo
-            </span>
-            Zalo 
-        </a>
-    </div>
-
-    <button onclick="toggleQuickContact()" id="quickContactBtn"
-        class="flex h-28 w-11 sm:h-32 sm:w-12 flex-col items-center justify-center gap-2 rounded-l-lg bg-[#0B1F3A] text-white shadow-xl transition-colors hover:bg-[#12345C]"
-        aria-label="展開快速聯絡">
-        <i id="quickContactIcon" class="fas fa-comments text-base sm:text-lg"></i>
-        <span id="quickContactText" class="text-xs sm:text-sm font-semibold tracking-widest" style="writing-mode: vertical-rl;">
-            快速聯絡
-        </span>
-    </button>
-</div>
-<script>
-function toggleQuickContact() {
-    const panel = document.getElementById('quickContactPanel');
-    const icon = document.getElementById('quickContactIcon');
-    const text = document.getElementById('quickContactText');
-    const btn = document.getElementById('quickContactBtn');
-
-    panel.classList.toggle('hidden');
-
-    const isOpen = !panel.classList.contains('hidden');
-    icon.className = isOpen ? 'fas fa-times text-lg' : 'fas fa-comments text-lg';
-    text.textContent = isOpen ? '收起聯絡' : '快速聯絡';
-    btn.setAttribute('aria-label', isOpen ? '收起快速聯絡' : '展開快速聯絡');
-}
-</script>
 <body class="bg-gray-50">
     <!-- Loading Screen -->
-    <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center z-50">
-        <div class="text-center">
-            <div class="w-32 h-32 mx-auto mb-8 flex items-center justify-center">
-                <img src="images/company/logo.png?v=202604021007" alt="貝達國際貿易有限公司" class="w-full h-full object-contain animate-pulse">
-            </div>
-            <h1 class="text-3xl font-bold text-gray-800 mb-4">貝達國際貿易有限公司</h1>
-            <p class="text-lg text-gray-600 mb-8">專業國際貿易解決方案</p>
-            <div class="flex justify-center space-x-2">
-                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
-                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
-                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
-            </div>
-            <p class="text-sm text-gray-500 mt-8">載入中...</p>
-        </div>
-    </div>
+    <div id="loadingScreen"></div>
+    <script src="industrial-loader.js"></script>
 
     <!-- Privacy Notice Modal -->
     <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
@@ -300,27 +235,30 @@ function toggleQuickContact() {
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat pt-16" style="background-image: url('images/harbor-bg.png')">
-        <!-- 背景遮罩 -->
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-            <div class="text-center mb-8 sm:mb-12">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-                    工業環境與工程整合專家
-                </h1>
-                <p class="text-lg sm:text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">
-                    提供工業通風、中央集塵、VOC廢氣處理、洗滌塔及油煙處理一站式工程解決方案
-                </p>
-            </div>
-            <div class="text-center">
-                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-6">
-                    <a href="contact.html" class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto min-w-[140px] sm:min-w-[160px]">
-                        <i class="fas fa-envelope mr-2 sm:mr-3"></i>
-                        <span class="text-sm sm:text-base">立即聯絡</span>
+    <section class="home-industrial-hero" style="background-image: url('images/harbor-bg.png')">
+        <div class="home-industrial-hero-overlay"></div>
+        <div class="home-industrial-hero-grid"></div>
+        <div class="home-industrial-hero-frame"></div>
+        <div class="home-industrial-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="home-industrial-hero-panel">
+                <div class="home-industrial-hero-copy">
+                    <h1>
+                        工業環境與工程整合專家
+                    </h1>
+                    <p>
+                        提供工業通風、中央集塵、VOC廢氣處理、洗滌塔及油煙處理一站式工程解決方案
+                    </p>
+                </div>
+                <div class="home-industrial-hero-actions">
+                    <a href="contact.html" class="home-industrial-hero-button home-industrial-hero-button-primary">
+                        <span class="home-industrial-hero-button-icon"><i class="fas fa-envelope"></i></span>
+                        <span>立即聯絡</span>
+                        <i class="fas fa-arrow-right home-industrial-hero-button-arrow"></i>
                     </a>
-                    <a href="services.html" class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg border border-teal-200 w-full sm:w-auto min-w-[140px] sm:min-w-[160px]">
-                        <i class="fas fa-th-large mr-2 sm:mr-3"></i>
-                        <span class="text-sm sm:text-base">查看服務</span>
+                    <a href="services.html" class="home-industrial-hero-button home-industrial-hero-button-secondary">
+                        <span class="home-industrial-hero-button-icon"><i class="fas fa-th-large"></i></span>
+                        <span>查看服務</span>
+                        <i class="fas fa-arrow-right home-industrial-hero-button-arrow"></i>
                     </a>
                 </div>
             </div>
@@ -1029,5 +967,7 @@ function toggleQuickContact() {
             }
         });
     </script>
+    <script src="nav-active.js"></script>
+    <script src="quick-contact.js"></script>
 </body>
 </html>
