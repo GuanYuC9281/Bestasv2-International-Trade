@@ -101,12 +101,12 @@
                     </div>
                 </div>
 
-                <button id="mobileMenuBtn" class="mobile-menu-toggle lg:hidden" type="button" aria-label="開啟或關閉手機選單" aria-expanded="false" onclick="toggleMobileMenu(); this.classList.toggle('is-open'); this.setAttribute('aria-expanded', this.classList.contains('is-open'));"><span></span><span></span><span></span></button>
+                <button id="mobileMenuBtn" class="mobile-menu-toggle lg:hidden" type="button" aria-label="開啟或關閉手機選單" aria-expanded="false" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
             </div>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-200 fixed top-16 left-0 right-0 z-40 max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div id="mobileMenu" class="mobile-menu-panel hidden lg:hidden bg-white border-t border-gray-200 fixed top-16 left-0 right-0 z-40 max-h-[calc(100vh-4rem)] overflow-y-auto">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-home">首頁</a>
                 
@@ -116,7 +116,7 @@
                         <span id="mobile-nav-about">關於我們</span>
                         <i class="fas fa-chevron-down text-xs"></i>
                     </button>
-                    <div id="mobile-about" class="hidden pl-4 space-y-1 mt-1">
+                    <div id="mobile-about" class="mobile-submenu-panel hidden pl-4 space-y-1 mt-1">
                         <a href="about.html#company-intro" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-companyIntro">公司簡介</a>
                         <a href="about.html#mission-vision" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-missionVision">使命與願景</a>
                         <a href="about.html#core-values" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-coreValues">核心理念</a>
@@ -132,7 +132,7 @@
                         <span id="mobile-nav-news">各項環保解決方案</span>
                         <i class="fas fa-chevron-down text-xs"></i>
                     </button>
-                    <div id="mobile-solutions" class="hidden pl-4 space-y-1 mt-1 max-h-96 overflow-y-auto">
+                    <div id="mobile-solutions" class="mobile-submenu-panel hidden pl-4 space-y-1 mt-1 max-h-96 overflow-y-auto">
                         <div class="px-3 py-2">
                             <h4 class="text-sm font-semibold text-gray-900 mb-2">【工業環境工程解決方案】</h4>
                             <a href="product.html#oil-smoke-treatment" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">油煙處理系統</a>
@@ -168,7 +168,7 @@
                         </div>
                         <i class="fas fa-chevron-down text-xs"></i>
                     </button>
-                    <div id="mobile-language" class="hidden pl-4 space-y-1 mt-1">
+                    <div id="mobile-language" class="mobile-submenu-panel hidden pl-4 space-y-1 mt-1">
                         <button onclick="changeLanguage('zh-TW')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
                             <span class="text-lg">🇹🇼</span>
                             <span>繁體中文</span>
@@ -267,15 +267,36 @@
                         </div>
                     </div>
                     <div class="contact-form-field">
-                        <label>服務類型</label>
-                        <select>
-                            <option>請選擇服務類型</option>
-                            <option>採購代理</option>
-                            <option>進出口服務</option>
-                            <option>供應鏈整合服務</option>
-                            <option>報價與樣品安排</option>
-                            <option>其他服務</option>
-                        </select>
+                        <label>服務類型 *</label>
+                        <div class="contact-service-category-group" id="serviceCategoryGroup">
+                            <label class="contact-service-option">
+                                <input type="radio" name="serviceCategory" value="供應鏈整合服務" required>
+                                <span>供應鏈整合服務</span>
+                            </label>
+                            <label class="contact-service-option">
+                                <input type="radio" name="serviceCategory" value="環保工程解決方案" required>
+                                <span>環保工程解決方案</span>
+                            </label>
+                            <label class="contact-service-option">
+                                <input type="radio" name="serviceCategory" value="設備與產品" required>
+                                <span>設備與產品</span>
+                            </label>
+                            <label class="contact-service-option">
+                                <input type="radio" name="serviceCategory" value="其他" required>
+                                <span>其他</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="contact-form-field">
+                        <label for="serviceDetail">需求項目 *</label>
+                        <div class="contact-service-dropdown is-disabled" id="serviceDetailDropdown">
+                            <button type="button" class="contact-service-dropdown-toggle" id="serviceDetailToggle" aria-haspopup="listbox" aria-expanded="false" disabled>
+                                <span id="serviceDetailLabel">請先選擇服務類型</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="contact-service-dropdown-menu" id="serviceDetailMenu" role="listbox"></div>
+                        </div>
+                        <input type="hidden" id="serviceDetail" name="serviceDetail" required>
                     </div>
                     <div class="contact-form-field">
                         <label>訊息 *</label>
@@ -518,7 +539,118 @@
             // Load saved language
             const savedLang = localStorage.getItem('preferredLanguage') || 'zh-TW';
             changeLanguage(savedLang);
+            initializeServiceOptions();
         });
+
+        const serviceOptions = {
+            '供應鏈整合服務': [
+                '供應商開發與媒合',
+                '採購代理服務',
+                '客製化產品開發',
+                'OEM / ODM 代工合作',
+                '越南市場開發'
+            ],
+            '環保工程解決方案': [
+                '工廠通風系統',
+                '集塵系統',
+                '廢氣處理系統',
+                '油煙處理系統',
+                '設備改善與升級'
+            ],
+            '設備與產品': [
+                '工業風機設備',
+                '通風管道與配件',
+                '自有品牌設備',
+                '經銷合作洽談'
+            ],
+            '其他': [
+                '專案合作洽詢',
+                '其他需求'
+            ]
+        };
+
+        function initializeServiceOptions() {
+            const categoryInputs = document.querySelectorAll('input[name="serviceCategory"]');
+            categoryInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    updateServiceDetailOptions(this.value);
+                    const categoryGroup = document.getElementById('serviceCategoryGroup');
+                    if (categoryGroup) {
+                        categoryGroup.classList.remove('border-red-500');
+                    }
+                });
+            });
+
+            const detailToggle = document.getElementById('serviceDetailToggle');
+            if (detailToggle) {
+                detailToggle.addEventListener('click', toggleServiceDetailDropdown);
+            }
+        }
+
+        function updateServiceDetailOptions(category) {
+            const detailInput = document.getElementById('serviceDetail');
+            const detailLabel = document.getElementById('serviceDetailLabel');
+            const detailToggle = document.getElementById('serviceDetailToggle');
+            const detailMenu = document.getElementById('serviceDetailMenu');
+            const detailDropdown = document.getElementById('serviceDetailDropdown');
+            if (!detailInput || !detailLabel || !detailToggle || !detailMenu || !detailDropdown) {
+                return;
+            }
+
+            const options = serviceOptions[category] || [];
+            detailInput.value = '';
+            detailLabel.textContent = options.length ? '請選擇需求項目' : '請先選擇服務類型';
+            detailToggle.disabled = options.length === 0;
+            detailToggle.setAttribute('aria-expanded', 'false');
+            detailDropdown.classList.toggle('is-disabled', options.length === 0);
+            detailDropdown.classList.remove('is-open', 'border-red-500');
+            detailMenu.innerHTML = '';
+
+            options.forEach(option => {
+                const optionElement = document.createElement('button');
+                optionElement.type = 'button';
+                optionElement.className = 'contact-service-dropdown-item';
+                optionElement.setAttribute('role', 'option');
+                optionElement.textContent = option;
+                optionElement.addEventListener('click', function() {
+                    selectServiceDetail(option);
+                });
+                detailMenu.appendChild(optionElement);
+            });
+        }
+
+        function toggleServiceDetailDropdown() {
+            const detailDropdown = document.getElementById('serviceDetailDropdown');
+            const detailToggle = document.getElementById('serviceDetailToggle');
+            if (!detailDropdown || !detailToggle || detailToggle.disabled) {
+                return;
+            }
+
+            const isOpen = detailDropdown.classList.toggle('is-open');
+            detailToggle.setAttribute('aria-expanded', String(isOpen));
+            detailDropdown.classList.remove('border-red-500');
+        }
+
+        function selectServiceDetail(option) {
+            const detailInput = document.getElementById('serviceDetail');
+            const detailLabel = document.getElementById('serviceDetailLabel');
+            const detailDropdown = document.getElementById('serviceDetailDropdown');
+            const detailToggle = document.getElementById('serviceDetailToggle');
+            if (!detailInput || !detailLabel || !detailDropdown || !detailToggle) {
+                return;
+            }
+
+            detailInput.value = option;
+            detailLabel.textContent = option;
+            detailDropdown.classList.remove('is-open', 'border-red-500');
+            detailToggle.setAttribute('aria-expanded', 'false');
+
+            const items = detailDropdown.querySelectorAll('.contact-service-dropdown-item');
+            items.forEach(item => {
+                item.classList.toggle('is-selected', item.textContent === option);
+                item.setAttribute('aria-selected', String(item.textContent === option));
+            });
+        }
 
         function changeLanguage(lang) {
             console.log('Changing language to:', lang);
@@ -552,35 +684,73 @@
 
         // Mobile menu functions
         let isMenuOpen = false;
+        let mobileMenuAnimationTimer = null;
         
         function toggleMobileMenu() {
-            isMenuOpen = !isMenuOpen;
             const mobileMenu = document.getElementById('mobileMenu');
             const menuBtn = document.getElementById('mobileMenuBtn');
-            const icon = menuBtn.querySelector('i');
-            
-            if (mobileMenu) {
-                mobileMenu.classList.toggle('hidden');
+            if (!mobileMenu || !menuBtn) {
+                return;
             }
-            
-            if (icon) {
-                icon.className = isMenuOpen ? 'fas fa-times text-xl' : 'fas fa-bars text-xl';
+
+            isMenuOpen = !isMenuOpen;
+            clearTimeout(mobileMenuAnimationTimer);
+            menuBtn.classList.toggle('is-open', isMenuOpen);
+            menuBtn.setAttribute('aria-expanded', String(isMenuOpen));
+
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    mobileMenu.classList.add('is-open');
+                });
+                return;
             }
+
+            mobileMenu.classList.remove('is-open');
+            mobileMenuAnimationTimer = setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 240);
         }
 
         function toggleMobileSubmenu(submenuId) {
             const submenu = document.getElementById(submenuId);
-            if (submenu) {
-                submenu.classList.toggle('hidden');
-                
-                // Update chevron icon
-                const button = submenu.previousElementSibling;
-                if (button) {
-                    const icon = button.querySelector('i');
-                    if (icon) {
-                        icon.className = submenu.classList.contains('hidden') ? 'fas fa-chevron-down text-xs' : 'fas fa-chevron-up text-xs';
+            if (!submenu) {
+                return;
+            }
+
+            const isOpening = submenu.classList.contains('hidden') || !submenu.classList.contains('is-open');
+            const button = submenu.previousElementSibling;
+            const icon = button ? button.querySelector('i') : null;
+
+            if (isOpening) {
+                submenu.classList.remove('hidden');
+                submenu.style.maxHeight = '0px';
+                requestAnimationFrame(() => {
+                    submenu.classList.add('is-open');
+                    submenu.style.maxHeight = `${submenu.scrollHeight}px`;
+                });
+            } else {
+                submenu.style.maxHeight = `${submenu.scrollHeight}px`;
+                requestAnimationFrame(() => {
+                    submenu.classList.remove('is-open');
+                    submenu.style.maxHeight = '0px';
+                });
+
+                setTimeout(() => {
+                    if (!submenu.classList.contains('is-open')) {
+                        submenu.classList.add('hidden');
+                        submenu.style.maxHeight = '';
                     }
-                }
+                }, 240);
+            }
+
+            if (icon) {
+                icon.className = 'fas fa-chevron-down text-xs';
+            }
+
+            if (button) {
+                button.classList.toggle('is-open', isOpening);
+                button.setAttribute('aria-expanded', String(isOpening));
             }
         }
 
@@ -591,6 +761,16 @@
             if (!button && dropdown && !dropdown.classList.contains('invisible')) {
                 dropdown.classList.add('invisible');
                 dropdown.classList.remove('opacity-100');
+            }
+
+            const detailDropdown = document.getElementById('serviceDetailDropdown');
+            const clickedDetailDropdown = event.target.closest('#serviceDetailDropdown');
+            if (detailDropdown && !clickedDetailDropdown) {
+                detailDropdown.classList.remove('is-open');
+                const detailToggle = document.getElementById('serviceDetailToggle');
+                if (detailToggle) {
+                    detailToggle.setAttribute('aria-expanded', 'false');
+                }
             }
         });
 
@@ -607,11 +787,37 @@
             let isValid = true;
             
             requiredFields.forEach(field => {
+                if (field.type === 'radio') {
+                    const checkedRadio = form.querySelector(`input[name="${field.name}"]:checked`);
+                    const categoryGroup = document.getElementById('serviceCategoryGroup');
+                    if (!checkedRadio) {
+                        isValid = false;
+                        if (categoryGroup) {
+                            categoryGroup.classList.add('border-red-500');
+                        }
+                    } else if (categoryGroup) {
+                        categoryGroup.classList.remove('border-red-500');
+                    }
+                    return;
+                }
+
                 if (!field.value.trim()) {
                     isValid = false;
                     field.classList.add('border-red-500');
+                    if (field.id === 'serviceDetail') {
+                        const detailDropdown = document.getElementById('serviceDetailDropdown');
+                        if (detailDropdown) {
+                            detailDropdown.classList.add('border-red-500');
+                        }
+                    }
                 } else {
                     field.classList.remove('border-red-500');
+                    if (field.id === 'serviceDetail') {
+                        const detailDropdown = document.getElementById('serviceDetailDropdown');
+                        if (detailDropdown) {
+                            detailDropdown.classList.remove('border-red-500');
+                        }
+                    }
                 }
             });
             

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-TW" class="industrial-loader-pending">
 <head>
     <meta charset="UTF-8">
@@ -116,10 +116,10 @@
                         </div>
                     </div>
                 </div>
-                <button id="mobileMenuBtn" class="mobile-menu-toggle lg:hidden" type="button" aria-label="開啟或關閉手機選單" aria-expanded="false" onclick="toggleMobileMenu(); this.classList.toggle('is-open'); this.setAttribute('aria-expanded', this.classList.contains('is-open'));"><span></span><span></span><span></span></button>
+                <button id="mobileMenuBtn" class="mobile-menu-toggle lg:hidden" type="button" aria-label="開啟或關閉手機選單" aria-expanded="false" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
             </div>
         </div>
-        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-200 fixed top-16 left-0 right-0 z-40 max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div id="mobileMenu" class="mobile-menu-panel hidden lg:hidden bg-white border-t border-gray-200 fixed top-16 left-0 right-0 z-40 max-h-[calc(100vh-4rem)] overflow-y-auto">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-home">首頁</a>
                 <a href="faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-faq">常見問題</a>
@@ -428,6 +428,7 @@
         };
 
         let isMenuOpen = false;
+        let mobileMenuAnimationTimer = null;
 
         document.addEventListener('DOMContentLoaded', function() {
             changeLanguage(localStorage.getItem('preferredLanguage') || 'zh-TW');
@@ -458,14 +459,29 @@
         }
 
         function toggleMobileMenu() {
-            isMenuOpen = !isMenuOpen;
             const mobileMenu = document.getElementById('mobileMenu');
             const menuBtn = document.getElementById('mobileMenuBtn');
-            if (mobileMenu) mobileMenu.classList.toggle('hidden');
-            if (menuBtn) {
-                const icon = menuBtn.querySelector('i');
-                if (icon) icon.className = isMenuOpen ? 'fas fa-times text-xl' : 'fas fa-bars text-xl';
+            if (!mobileMenu || !menuBtn) {
+                return;
             }
+
+            isMenuOpen = !isMenuOpen;
+            clearTimeout(mobileMenuAnimationTimer);
+            menuBtn.classList.toggle('is-open', isMenuOpen);
+            menuBtn.setAttribute('aria-expanded', String(isMenuOpen));
+
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    mobileMenu.classList.add('is-open');
+                });
+                return;
+            }
+
+            mobileMenu.classList.remove('is-open');
+            mobileMenuAnimationTimer = setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 240);
         }
 
         function showPrivacyModal() {

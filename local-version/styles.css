@@ -1461,6 +1461,91 @@ html {
     color: #0b1f3a;
 }
 
+.mobile-menu-panel {
+    opacity: 0;
+    transform: translateY(-0.65rem) scale(0.985);
+    transform-origin: top center;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    box-shadow: 0 22px 42px rgba(11, 31, 58, 0.14);
+    transition: opacity 220ms ease, transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.mobile-menu-panel.is-open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.mobile-menu-panel > div > * {
+    opacity: 0;
+    transform: translateY(-0.35rem);
+    transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.mobile-menu-panel.is-open > div > * {
+    animation: mobileNavItemIn 260ms ease forwards;
+}
+
+.mobile-menu-panel.is-open > div > *:nth-child(1) { animation-delay: 35ms; }
+.mobile-menu-panel.is-open > div > *:nth-child(2) { animation-delay: 70ms; }
+.mobile-menu-panel.is-open > div > *:nth-child(3) { animation-delay: 105ms; }
+.mobile-menu-panel.is-open > div > *:nth-child(4) { animation-delay: 140ms; }
+.mobile-menu-panel.is-open > div > *:nth-child(5) { animation-delay: 175ms; }
+.mobile-menu-panel.is-open > div > *:nth-child(6) { animation-delay: 210ms; }
+.mobile-menu-panel.is-open > div > *:nth-child(7) { animation-delay: 245ms; }
+
+.mobile-menu-panel button i {
+    transition: transform 180ms ease;
+}
+
+.mobile-menu-panel button.is-open i {
+    transform: rotate(180deg);
+}
+
+.mobile-submenu-panel {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-0.35rem);
+    transform-origin: top center;
+    overflow: hidden;
+    transition: max-height 240ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 180ms ease, transform 220ms ease;
+}
+
+.mobile-submenu-panel.is-open {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-submenu-panel > * {
+    opacity: 0;
+    transform: translateY(-0.25rem);
+    transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.mobile-submenu-panel.is-open > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-submenu-panel.is-open > *:nth-child(1) { transition-delay: 35ms; }
+.mobile-submenu-panel.is-open > *:nth-child(2) { transition-delay: 70ms; }
+.mobile-submenu-panel.is-open > *:nth-child(3) { transition-delay: 105ms; }
+.mobile-submenu-panel.is-open > *:nth-child(4) { transition-delay: 140ms; }
+.mobile-submenu-panel.is-open > *:nth-child(5) { transition-delay: 175ms; }
+
+@keyframes mobileNavItemIn {
+    from {
+        opacity: 0;
+        transform: translateY(-0.35rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (min-width: 1024px) {
     .mobile-menu-toggle {
         display: none;
@@ -2105,16 +2190,20 @@ html {
 }
 
 .contact-form-wrap {
-    max-width: 54rem;
+    max-width: 56rem;
     margin: 0 auto;
 }
 
 .contact-form {
     position: relative;
-    padding: 3rem;
+    padding: 3.25rem;
+    border: 1px solid rgba(203, 213, 225, 0.75);
     border-top: 5px solid #f97316;
-    background: #fff;
-    box-shadow: 0 18px 40px rgba(11, 31, 58, 0.1);
+    border-radius: 1.35rem;
+    background:
+        linear-gradient(180deg, rgba(255, 247, 237, 0.54) 0%, rgba(255, 255, 255, 0) 18rem),
+        #fff;
+    box-shadow: 0 24px 60px rgba(11, 31, 58, 0.13);
 }
 
 .contact-form-grid {
@@ -2125,13 +2214,14 @@ html {
 }
 
 .contact-form-field {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.65rem;
 }
 
 .contact-form label {
     display: block;
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.7rem;
     color: #0b1f3a;
+    font-size: 0.96rem;
     font-weight: 800;
 }
 
@@ -2139,13 +2229,21 @@ html {
 .contact-form select,
 .contact-form textarea {
     width: 100%;
+    min-height: 3.45rem;
     padding: 0.95rem 1rem;
     border: 1px solid #cbd5e1;
-    border-radius: 0.2rem;
+    border-radius: 0.8rem;
     outline: none;
     background: #f8fafc;
     color: #142033;
-    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.contact-form input:hover,
+.contact-form select:hover,
+.contact-form textarea:hover {
+    border-color: #f97316;
+    background: #fff;
 }
 
 .contact-form input:focus,
@@ -2153,11 +2251,180 @@ html {
 .contact-form textarea:focus {
     border-color: #f97316;
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.13);
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.12);
 }
 
 .contact-form textarea {
+    min-height: 11rem;
     resize: vertical;
+}
+
+.contact-service-category-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    padding: 0.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.9rem;
+}
+
+.contact-service-category-group.border-red-500 {
+    border-color: #ef4444;
+}
+
+.contact-service-option {
+    margin: 0;
+    cursor: pointer;
+}
+
+.contact-service-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.contact-service-option span {
+    min-height: 3.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.85rem;
+    background: #f8fafc;
+    color: #142033;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-align: center;
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.contact-service-option:hover span {
+    border-color: #f97316;
+    background: #fff7ed;
+}
+
+.contact-service-option input:checked + span {
+    border-color: #f97316;
+    background: #f97316;
+    color: #fff;
+    box-shadow: 0 14px 26px rgba(249, 115, 22, 0.2);
+}
+
+.contact-service-option input:focus-visible + span {
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.18);
+}
+
+.contact-service-dropdown {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-service-dropdown-toggle {
+    width: 100%;
+    min-height: 3.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.95rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.85rem;
+    outline: none;
+    background: #f8fafc;
+    color: #142033;
+    font-size: 1rem;
+    text-align: left;
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.contact-service-dropdown-toggle i {
+    color: #0b1f3a;
+    font-size: 0.85rem;
+    transition: transform 180ms ease;
+}
+
+.contact-service-dropdown-toggle:hover,
+.contact-service-dropdown.is-open .contact-service-dropdown-toggle {
+    border-color: #f97316;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.13);
+}
+
+.contact-service-dropdown.is-open .contact-service-dropdown-toggle {
+    border-bottom-right-radius: 0.65rem;
+    border-bottom-left-radius: 0.65rem;
+}
+
+.contact-service-dropdown.is-open .contact-service-dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.contact-service-dropdown.is-disabled .contact-service-dropdown-toggle {
+    cursor: not-allowed;
+    color: #7c8998;
+    background: #eef2f6;
+}
+
+.contact-service-dropdown.border-red-500 .contact-service-dropdown-toggle {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+.contact-service-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.45rem);
+    left: 0;
+    right: 0;
+    max-height: 16rem;
+    display: none;
+    padding: 0.45rem;
+    border: 1px solid rgba(203, 213, 225, 0.95);
+    border-radius: 0.75rem;
+    background: #fff;
+    box-shadow: 0 18px 42px rgba(11, 31, 58, 0.18);
+    overflow-y: auto;
+}
+
+.contact-service-dropdown.is-open .contact-service-dropdown-menu {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.contact-service-dropdown-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 2.75rem;
+    padding: 0.7rem 0.85rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: #142033;
+    font-size: 1rem;
+    text-align: left;
+    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.contact-service-dropdown-item:hover,
+.contact-service-dropdown-item:focus-visible {
+    outline: none;
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.contact-service-dropdown-item.is-selected {
+    background: #f97316;
+    color: #fff;
+    font-weight: 800;
+}
+
+.contact-service-dropdown-item.is-selected::after {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.8rem;
 }
 
 .contact-form-submit {
@@ -2173,18 +2440,19 @@ html {
     justify-content: center;
     gap: 0.75rem;
     padding: 1rem 1.5rem;
-    border-radius: 0.25rem;
-    background: #f97316;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
     color: #fff;
     font-weight: 900;
     letter-spacing: 0.04em;
-    box-shadow: 0 12px 28px rgba(249, 115, 22, 0.2);
-    transition: transform 180ms ease, background-color 180ms ease;
+    box-shadow: 0 16px 34px rgba(249, 115, 22, 0.24);
+    transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
 }
 
 .contact-form-submit button:hover {
     transform: translateY(-3px);
-    background: #ea580c;
+    filter: brightness(1.02);
+    box-shadow: 0 20px 42px rgba(249, 115, 22, 0.3);
 }
 
 .contact-form-submit button:disabled {
@@ -2642,6 +2910,7 @@ html {
 
     .contact-info-grid,
     .contact-form-grid,
+    .contact-service-category-group,
     .privacy-policy-grid {
         grid-template-columns: 1fr;
     }
@@ -3680,8 +3949,15 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
     .mobile-menu-toggle,
-    .mobile-menu-toggle span {
+    .mobile-menu-toggle span,
+    .mobile-menu-panel,
+    .mobile-menu-panel > div > *,
+    .mobile-submenu-panel,
+    .mobile-submenu-panel > *,
+    .mobile-menu-panel button i {
+        animation: none !important;
         transition: none;
+        transform: none;
     }
 
     .industrial-cta-button {
