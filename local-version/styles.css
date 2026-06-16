@@ -1665,6 +1665,14 @@ html {
     gap: 1.25rem;
 }
 
+.services-mobile-carousel {
+    position: relative;
+}
+
+.services-carousel-arrow {
+    display: none;
+}
+
 #categoriesContainer.services-catalog-grid > div {
     min-height: 31rem;
     display: flex;
@@ -2005,25 +2013,121 @@ html {
         padding: 5rem 0;
     }
 
+    .services-mobile-carousel {
+        margin: 0 -1rem;
+        padding: 0 2.85rem;
+    }
+
     #categoriesContainer.services-catalog-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        gap: 1rem;
+        padding: 0.25rem 0 1.15rem;
+        overflow-x: auto;
+        overflow-y: visible;
+        scroll-behavior: smooth;
+        scroll-padding-inline: 0;
+        scroll-snap-type: x proximity;
+        overscroll-behavior-x: contain;
+        touch-action: pan-x;
+        cursor: grab;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    #categoriesContainer.services-catalog-grid.is-dragging {
+        cursor: grabbing;
+        scroll-behavior: auto;
+        user-select: none;
+    }
+
+    #categoriesContainer.services-catalog-grid.is-scrolling > div,
+    #categoriesContainer.services-catalog-grid.is-dragging > div,
+    #categoriesContainer.services-catalog-grid.is-scrolling img,
+    #categoriesContainer.services-catalog-grid.is-dragging img {
+        transition: none;
+    }
+
+    #categoriesContainer.services-catalog-grid::-webkit-scrollbar {
+        display: none;
     }
 
     #categoriesContainer.services-catalog-grid > div {
-        min-height: auto;
+        width: min(74vw, 18.5rem);
+        min-width: min(74vw, 18.5rem);
+        max-width: 18.5rem;
+        min-height: 25rem;
+        scroll-snap-align: center;
+        scroll-snap-stop: normal;
+        transform: translateZ(0);
+        backface-visibility: hidden;
     }
 
     #categoriesContainer.services-catalog-grid > div > div:first-child {
-        height: 17rem;
-        min-height: 17rem;
+        height: 15rem;
+        min-height: 15rem;
     }
 
     #categoriesContainer.services-catalog-grid > div > div:first-child > div > div {
-        height: 11.75rem;
+        height: 9.75rem;
     }
 
     #categoriesContainer.services-catalog-grid > div > div:nth-child(2) {
-        min-height: 10rem;
+        min-height: 9.5rem;
+        padding: 1.25rem;
+    }
+
+    #categoriesContainer.services-catalog-grid > div > div:first-child h3 {
+        font-size: 1.2rem;
+    }
+
+    #categoriesContainer.services-catalog-grid > div > div:nth-child(2) h4 {
+        font-size: 0.92rem;
+        line-height: 1.55;
+    }
+
+    #categoriesContainer.services-catalog-grid > div > div:nth-child(2) a {
+        min-height: 2.9rem;
+        margin-top: 1.1rem;
+        padding: 0.7rem 0.85rem;
+        font-size: 0.92rem;
+    }
+
+    .services-carousel-arrow {
+        width: 2.35rem;
+        height: 2.35rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        z-index: 3;
+        border: 1px solid rgba(203, 213, 225, 0.9);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.94);
+        color: #0b1f3a;
+        box-shadow: 0 14px 28px rgba(11, 31, 58, 0.16);
+        transform: translateY(-50%);
+        transition: background-color 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .services-carousel-arrow:hover,
+    .services-carousel-arrow:focus-visible {
+        outline: none;
+        background: #f97316;
+        color: #fff;
+        box-shadow: 0 16px 32px rgba(249, 115, 22, 0.28);
+    }
+
+    .services-carousel-arrow:active {
+        transform: translateY(-50%) scale(0.96);
+    }
+
+    .services-carousel-arrow-left {
+        left: 0.35rem;
+    }
+
+    .services-carousel-arrow-right {
+        right: 0.35rem;
     }
 }
 

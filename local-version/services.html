@@ -211,7 +211,14 @@
                 <p>探索我們多樣化的產品分類，找到您需要的商品</p>
             </div>
             
-            <div id="categoriesContainer" class="services-catalog-grid">
+            <div class="services-mobile-carousel">
+                <button type="button" class="services-carousel-arrow services-carousel-arrow-left" aria-label="向左瀏覽營運項目" onclick="scrollBusinessCategories(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button type="button" class="services-carousel-arrow services-carousel-arrow-right" aria-label="向右瀏覽營運項目" onclick="scrollBusinessCategories(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div id="categoriesContainer" class="services-catalog-grid">
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[24rem] border border-slate-200">
                     <div class="h-48 sm:h-52 lg:h-56 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-4 lg:p-5">
                         <div class="text-center">
@@ -381,6 +388,7 @@
                             <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -1543,6 +1551,91 @@
                 button.setAttribute('aria-expanded', String(isOpening));
             }
         }
+
+        function scrollBusinessCategories(direction) {
+            const container = document.getElementById('categoriesContainer');
+            if (!container) {
+                return;
+            }
+
+            const firstCard = container.querySelector(':scope > div');
+            const gap = parseFloat(getComputedStyle(container).columnGap || '0') || 0;
+            const scrollAmount = firstCard ? firstCard.getBoundingClientRect().width + gap : container.clientWidth * 0.78;
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        function initializeBusinessCategorySwipe() {
+            const container = document.getElementById('categoriesContainer');
+            if (!container) {
+                return;
+            }
+
+            let isDragging = false;
+            let startX = 0;
+            let startScrollLeft = 0;
+            let hasDragged = false;
+            let scrollSettledTimer = null;
+
+            container.addEventListener('scroll', function() {
+                container.classList.add('is-scrolling');
+                clearTimeout(scrollSettledTimer);
+                scrollSettledTimer = setTimeout(() => {
+                    container.classList.remove('is-scrolling');
+                }, 140);
+            }, { passive: true });
+
+            container.addEventListener('pointerdown', function(event) {
+                if (event.pointerType === 'touch') {
+                    return;
+                }
+
+                isDragging = true;
+                hasDragged = false;
+                startX = event.clientX;
+                startScrollLeft = container.scrollLeft;
+                container.classList.add('is-dragging');
+                container.setPointerCapture(event.pointerId);
+            });
+
+            container.addEventListener('pointermove', function(event) {
+                if (!isDragging) {
+                    return;
+                }
+
+                const deltaX = event.clientX - startX;
+                if (Math.abs(deltaX) > 4) {
+                    hasDragged = true;
+                }
+                container.scrollLeft = startScrollLeft - deltaX;
+            });
+
+            function finishDrag(event) {
+                if (!isDragging) {
+                    return;
+                }
+
+                isDragging = false;
+                container.classList.remove('is-dragging');
+                if (container.hasPointerCapture(event.pointerId)) {
+                    container.releasePointerCapture(event.pointerId);
+                }
+            }
+
+            container.addEventListener('pointerup', finishDrag);
+            container.addEventListener('pointercancel', finishDrag);
+            container.addEventListener('click', function(event) {
+                if (hasDragged) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    hasDragged = false;
+                }
+            }, true);
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeBusinessCategorySwipe);
 
         // Close dropdown when clicking outside
         document.addEventListener('click', function(event) {
