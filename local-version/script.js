@@ -21,7 +21,7 @@ const translations = {
             companyIntro: '公司簡介',
             missionVision: '使命與願景',
             coreValues: '核心理念',
-            markets: '市場與地區'
+            markets: '我們的優勢'
         },
         services: {
             procurement: '採購代理',
@@ -114,7 +114,7 @@ const translations = {
             companyIntro: 'Company Introduction',
             missionVision: 'Mission / Vision',
             coreValues: 'Core Values',
-            markets: 'Markets & Regions'
+            markets: 'Our Advantages'
         },
         services: {
             procurement: 'Procurement Agency',
@@ -207,7 +207,7 @@ const translations = {
             companyIntro: '会社紹介',
             missionVision: '使命・ビジョン',
             coreValues: 'コアバリュー',
-            markets: '市場・地域'
+            markets: '私たちの強み'
         },
         services: {
             procurement: '調達代理',
@@ -305,7 +305,7 @@ const translations = {
             companyIntro: 'Giới thiệu Công ty',
             missionVision: 'Sứ mệnh & Tầm nhìn',
             coreValues: 'Giá trị cốt lõi',
-            markets: 'Thị trường & Khu vực'
+            markets: 'Ưu thế của chúng tôi'
         },
         services: {
             procurement: 'Đại lý Mua hàng',

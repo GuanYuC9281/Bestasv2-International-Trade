@@ -6,7 +6,7 @@
     <title>貝達國際貿易有限公司</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260618-solutions-bg">
 </head>
 <body class="bg-gray-50">
     <!-- Loading Screen -->
@@ -83,7 +83,7 @@
                             <a href="about.html#company-intro" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-about-companyIntro">公司簡介</a>
                             <a href="about.html#mission-vision" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-missionVision">使命與願景</a>
                             <a href="about.html#core-values" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-coreValues">核心理念</a>
-                            <a href="about.html#markets" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-markets">市場與地區</a>
+                            <a href="about.html#why-choose-us" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-markets">我們的優勢</a>
                         </div>
                     </div>
 
@@ -163,7 +163,7 @@
                         <a href="about.html#company-intro" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-companyIntro">公司簡介</a>
                         <a href="about.html#mission-vision" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-missionVision">使命與願景</a>
                         <a href="about.html#core-values" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-coreValues">核心理念</a>
-                        <a href="about.html#markets" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-markets">市場與地區</a>
+                        <a href="about.html#why-choose-us" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-markets">我們的優勢</a>
                     </div>
                 </div>
 
@@ -356,7 +356,7 @@
     </section>
 
     <!-- 自有品牌設備 Section -->
-<section class="py-20 bg-gray-50">
+<section class="home-brand-section py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="text-center mb-14">
@@ -366,81 +366,88 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div class="home-brand-carousel">
+            <button type="button" class="home-brand-arrow home-brand-arrow-left" aria-label="向左瀏覽自有品牌設備" onclick="scrollHomeBrand(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button type="button" class="home-brand-arrow home-brand-arrow-right" aria-label="向右瀏覽自有品牌設備" onclick="scrollHomeBrand(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="home-brand-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
 
-            <div class="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
-                <div class="h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
-                    <img src="images/設備/玻璃鋼＿通風系統＿工業風機.png" alt="玻璃鋼通風系統與工業風機" class="w-full h-full object-cover" loading="lazy">
+                <div class="home-brand-card bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
+                    <div class="home-brand-media h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
+                        <img src="images/設備/玻璃鋼＿通風系統＿工業風機.jpg" alt="玻璃鋼通風系統與工業風機" class="home-brand-image w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">工業風機系列</h3>
+                    <p class="text-sm text-gray-500 mb-5">高效排風・穩定耐用</p>
+                    <a href="fan-solution.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
+                        了解更多 <span class="ml-2">→</span>
+                    </a>
+                    <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">工業風機系列</h3>
-                <p class="text-sm text-gray-500 mb-5">高效排風・穩定耐用</p>
-                <a href="fan-solution.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
-                    了解更多 <span class="ml-2">→</span>
-                </a>
-                <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
-            </div>
 
-            <div class="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
-                <div class="h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
-                    <img src="images/設備/明安脈衝集塵＿.png" alt="明安脈衝集塵設備" class="w-full h-full object-cover" loading="lazy">
+                <div class="home-brand-card bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
+                    <div class="home-brand-media h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
+                        <img src="images/設備/明安脈衝集塵.jpg" alt="明安脈衝集塵設備" class="home-brand-image w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">集塵設備系列</h3>
+                    <p class="text-sm text-gray-500 mb-5">粉塵收集・環境改善</p>
+                    <a href="collector-solution.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
+                        了解更多 <span class="ml-2">→</span>
+                    </a>
+                    <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">集塵設備系列</h3>
-                <p class="text-sm text-gray-500 mb-5">粉塵收集・環境改善</p>
-                <a href="collector-solution.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
-                    了解更多 <span class="ml-2">→</span>
-                </a>
-                <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
-            </div>
 
-            <div class="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
-                <div class="h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
-                    <img src="images/設備/ＶＯＣ除味系統_廢氣處理設備.png" alt="VOC除味系統與廢氣處理設備" class="w-full h-full object-cover" loading="lazy">
+                <div class="home-brand-card bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
+                    <div class="home-brand-media h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
+                        <img src="images/設備/ＶＯＣ除味系統_廢氣處理設備.jpg" alt="VOC除味系統與廢氣處理設備" class="home-brand-image w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">廢氣處理設備系列</h3>
+                    <p class="text-sm text-gray-500 mb-5">異味處理・空污防制</p>
+                    <a href="chemical-gas-treatment.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
+                        了解更多 <span class="ml-2">→</span>
+                    </a>
+                    <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">廢氣處理設備系列</h3>
-                <p class="text-sm text-gray-500 mb-5">異味處理・空污防制</p>
-                <a href="chemical-gas-treatment.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
-                    了解更多 <span class="ml-2">→</span>
-                </a>
-                <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
-            </div>
 
-            <div class="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
-                <div class="h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
-                    <img src="images/設備/油煙處理設備系統.png" alt="油煙處理設備系統" class="w-full h-full object-cover" loading="lazy">
+                <div class="home-brand-card bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
+                    <div class="home-brand-media h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
+                        <img src="images/設備/油煙處理設備系統.jpg" alt="油煙處理設備系統" class="home-brand-image w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">油煙處理設備系列</h3>
+                    <p class="text-sm text-gray-500 mb-5">油煙淨化・排放改善</p>
+                    <a href="oil-smoke-treatment.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
+                        了解更多 <span class="ml-2">→</span>
+                    </a>
+                    <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">油煙處理設備系列</h3>
-                <p class="text-sm text-gray-500 mb-5">油煙淨化・排放改善</p>
-                <a href="oil-smoke-treatment.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
-                    了解更多 <span class="ml-2">→</span>
-                </a>
-                <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
-            </div>
 
-            <div class="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
-                <div class="h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
-                    <img src="images/設備/風管配件.png" alt="工業風管配件" class="w-full h-full object-cover" loading="lazy">
+                <div class="home-brand-card bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
+                    <div class="home-brand-media h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
+                        <img src="images/設備/風管配件.jpg" alt="工業風管配件" class="home-brand-image w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">通風配件系列</h3>
+                    <p class="text-sm text-gray-500 mb-5">風管配件・客製製作</p>
+                    <a href="custom-parts-solution.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
+                        了解更多 <span class="ml-2">→</span>
+                    </a>
+                    <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">通風配件系列</h3>
-                <p class="text-sm text-gray-500 mb-5">風管配件・客製製作</p>
-                <a href="custom-parts-solution.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
-                    了解更多 <span class="ml-2">→</span>
-                </a>
-                <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
             </div>
-
         </div>
     </div>
 </section>
 
     <!-- Services Preview Section -->
-    <section class="py-20 bg-white">
+    <section class="home-solutions-section py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">環保工程解決方案</h2>
                 <p class="text-xl text-gray-600 max-w-3xl leading-relaxed mx-auto">協助企業改善工廠環境、降低污染排放並符合法規要求，打造安全、高效且永續的生產環境。</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-6 gap-6">
-    <div tabindex="0" class="group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+            <div class="home-solutions-grid grid md:grid-cols-2 lg:grid-cols-6 gap-6">
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
         <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
             <img src="images/products/fans/high-pressure-backward-curved.png" alt="工業通風系統" class="w-full h-full object-cover" loading="lazy">
         </div>
@@ -450,7 +457,7 @@
         </div>
     </div>
 
-    <div tabindex="0" class="group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
         <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
             <img src="images/products/air-pollution/chemical-gas-main.png" alt="中央集塵系統" class="w-full h-full object-cover" loading="lazy">
         </div>
@@ -460,7 +467,7 @@
         </div>
     </div>
 
-    <div tabindex="0" class="group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
         <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
             <img src="images/products/air-pollution/metal-grinding-filter.png" alt="有機廢氣處理系統" class="w-full h-full object-cover" loading="lazy">
         </div>
@@ -470,7 +477,7 @@
         </div>
     </div>
 
-    <div tabindex="0" class="group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
         <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
             <img src="images/products/air-pollution/oil-smoke-main.png" alt="油煙處理系統" class="w-full h-full object-cover" loading="lazy">
         </div>
@@ -480,7 +487,7 @@
         </div>
     </div>
 
-    <div tabindex="0" class="group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
         <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
             <img src="images/products/air-pollution/pp-spray-tower.png" alt="廢氣洗滌塔系統" class="w-full h-full object-cover" loading="lazy">
         </div>
@@ -490,7 +497,7 @@
         </div>
     </div>
 
-    <div tabindex="0" class="group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
         <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
             <img src="images/products/equipment/cyclone-collector.png" alt="噴漆設備工程" class="w-full h-full object-cover" loading="lazy">
         </div>
@@ -523,8 +530,8 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition">
-                <div class="h-44 bg-gray-100 overflow-hidden">
-                    <img src="images/精選工程案例/全工廠集塵系統工程.png" alt="全工廠集塵系統工程" class="w-full h-full object-cover" loading="lazy">
+                <div class="home-case-media h-44 bg-gray-100 overflow-hidden">
+                    <img src="images/精選工程案例/全工廠集塵系統工程.png" alt="全工廠集塵系統工程" class="home-case-image w-full h-full object-cover" loading="lazy">
                 </div>
                 <div class="p-5">
                     <h3 class="text-lg font-bold text-gray-900 leading-relaxed h-16 overflow-hidden mb-2">全工廠集塵系統工程</h3>
@@ -536,8 +543,8 @@
             </div>
 
             <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition">
-                <div class="h-44 bg-gray-100 overflow-hidden">
-                    <img src="images/精選工程案例/CNC 加工廠通風改善工程.png" alt="CNC 加工廠通風改善工程" class="w-full h-full object-cover" loading="lazy">
+                <div class="home-case-media h-44 bg-gray-100 overflow-hidden">
+                    <img src="images/精選工程案例/CNC 加工廠通風改善工程.png" alt="CNC 加工廠通風改善工程" class="home-case-image w-full h-full object-cover" loading="lazy">
                 </div>
                 <div class="p-5">
                     <h3 class="text-lg font-bold text-gray-900 leading-relaxed h-16 overflow-hidden mb-2">CNC 加工廠通風改善工程</h3>
@@ -549,8 +556,8 @@
             </div>
 
             <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition">
-                <div class="h-44 bg-gray-100 overflow-hidden">
-                    <img src="images/精選工程案例/電鍍廠廢氣處理系統.png" alt="電鍍廠廢氣處理系統" class="w-full h-full object-cover" loading="lazy">
+                <div class="home-case-media h-44 bg-gray-100 overflow-hidden">
+                    <img src="images/精選工程案例/電鍍廠廢氣處理系統.png" alt="電鍍廠廢氣處理系統" class="home-case-image w-full h-full object-cover" loading="lazy">
                 </div>
                 <div class="p-5">
                     <h3 class="text-lg font-bold text-gray-900 leading-relaxed h-16 overflow-hidden mb-2">電鍍廠廢氣處理系統</h3>
@@ -562,8 +569,8 @@
             </div>
 
             <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition">
-                <div class="h-44 bg-gray-100 overflow-hidden">
-                    <img src="images/精選工程案例/食品廠油煙處理工程.png" alt="食品廠油煙處理工程" class="w-full h-full object-cover" loading="lazy">
+                <div class="home-case-media h-44 bg-gray-100 overflow-hidden">
+                    <img src="images/精選工程案例/食品廠油煙處理工程.png" alt="食品廠油煙處理工程" class="home-case-image w-full h-full object-cover" loading="lazy">
                 </div>
                 <div class="p-5">
                     <h3 class="text-lg font-bold text-gray-900 leading-relaxed h-16 overflow-hidden mb-2">食品廠油煙處理工程</h3>
@@ -575,8 +582,8 @@
             </div>
 
             <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition">
-                <div class="h-44 bg-gray-100 overflow-hidden">
-                    <img src="images/精選工程案例/工業廠房整合工程.png" alt="工業廠房整合工程" class="w-full h-full object-cover" loading="lazy">
+                <div class="home-case-media h-44 bg-gray-100 overflow-hidden">
+                    <img src="images/精選工程案例/工業廠房整合工程.png" alt="工業廠房整合工程" class="home-case-image w-full h-full object-cover" loading="lazy">
                 </div>
                 <div class="p-5">
                     <h3 class="text-lg font-bold text-gray-900 leading-relaxed h-16 overflow-hidden mb-2">工業廠房整合工程</h3>
@@ -588,8 +595,8 @@
             </div>
 
             <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition">
-                <div class="h-44 bg-gray-100 overflow-hidden">
-                    <img src="images/精選工程案例/油煙處理設備系統.png" alt="油煙處理設備系統" class="w-full h-full object-cover" loading="lazy">
+                <div class="home-case-media h-44 bg-gray-100 overflow-hidden">
+                    <img src="images/精選工程案例/油煙處理設備系統.png" alt="油煙處理設備系統" class="home-case-image w-full h-full object-cover" loading="lazy">
                 </div>
                 <div class="p-5">
                     <h3 class="text-lg font-bold text-gray-900 leading-relaxed h-16 overflow-hidden mb-2">油煙處理設備系統</h3>
@@ -722,7 +729,7 @@
                 'nav-about-companyIntro': '公司簡介',
                 'nav-about-missionVision': '使命與願景',
                 'nav-about-coreValues': '核心理念',
-                'nav-about-markets': '市場與地區',
+                'nav-about-markets': '我們的優勢',
                                 'nav-services-procurement': '採購代理',
                 'nav-services-importExport': '進出口服務',
                 'nav-services-matching': '供應鏈整合服務',
@@ -745,7 +752,7 @@
                 'nav-about-companyIntro': 'Company Introduction',
                 'nav-about-missionVision': 'Mission / Vision',
                 'nav-about-coreValues': 'Core Values',
-                'nav-about-markets': 'Markets & Regions',
+                'nav-about-markets': 'Our Advantages',
                 'nav-about-whyChooseUs': 'Why Choose Us',
                 'nav-services-procurement': 'Procurement Agency',
                 'nav-services-importExport': 'Import-Export Services',
@@ -769,7 +776,7 @@
                 'nav-about-companyIntro': '会社紹介',
                 'nav-about-missionVision': '使命・ビジョン',
                 'nav-about-coreValues': 'コアバリュー',
-                'nav-about-markets': '市場・地域',
+                'nav-about-markets': '私たちの強み',
                 'nav-about-whyChooseUs': 'なぜ私たちを選ぶのか',
                 'nav-services-procurement': '調達代理',
                 'nav-services-importExport': '輸出入サービス',
@@ -793,7 +800,7 @@
                 'nav-about-companyIntro': 'Giới thiệu Công ty',
                 'nav-about-missionVision': 'Sứ mệnh & Tầm nhìn',
                 'nav-about-coreValues': 'Giá trị cốt lõi',
-                'nav-about-markets': 'Thị trường & Khu vực',
+                'nav-about-markets': 'Ưu thế của chúng tôi',
                 'nav-about-whyChooseUs': 'Tại sao chọn chúng tôi',
                 'nav-services-procurement': 'Đại lý Mua hàng',
                 'nav-services-importExport': 'Dịch vụ Xuất nhập khẩu',
@@ -933,6 +940,22 @@
                 button.classList.toggle('is-open', isOpening);
                 button.setAttribute('aria-expanded', String(isOpening));
             }
+        }
+
+        function scrollHomeBrand(direction) {
+            const grid = document.querySelector('.home-brand-grid');
+            const card = grid ? grid.querySelector('.home-brand-card') : null;
+            if (!grid || !card) {
+                return;
+            }
+
+            const gridStyle = window.getComputedStyle(grid);
+            const gap = parseFloat(gridStyle.columnGap || gridStyle.gap || '0') || 0;
+            const distance = card.getBoundingClientRect().width + gap;
+            grid.scrollTo({
+                left: grid.scrollLeft + (direction * distance),
+                behavior: 'smooth'
+            });
         }
 
         // Close dropdown when clicking outside
