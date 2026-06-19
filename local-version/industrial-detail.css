@@ -46,7 +46,7 @@
 }
 
 .industrial-detail-page .industrial-kicker {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 1.25rem;
@@ -121,7 +121,7 @@
 }
 
 .industrial-detail-page .product-detail-hero + div::before {
-    content: "INDUSTRIAL SYSTEMS / ENGINEERING SOLUTIONS";
+    content: none;
     position: absolute;
     top: 0;
     right: 1rem;
@@ -323,6 +323,10 @@
     display: none;
 }
 
+.industrial-detail-page .tracking-widest {
+    display: none;
+}
+
 .industrial-detail-page .product-equipment-card-numbered {
     overflow: hidden;
     padding: 0;
@@ -342,9 +346,11 @@
 }
 
 .industrial-detail-page .product-equipment-figure {
-    height: 12rem;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
     margin: 0 0 1.3rem;
-    padding: 1.2rem;
+    padding: 0;
     border-bottom: 1px solid #c7d0d7;
     border-radius: 0;
     background:
@@ -354,11 +360,26 @@
     background-size: 18px 18px;
 }
 
+.industrial-detail-page .product-equipment-figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .industrial-detail-page .product-equipment-card-numbered > h3,
 .industrial-detail-page .product-equipment-card-numbered > p,
 .industrial-detail-page .product-equipment-card-numbered > .product-industry-tags {
     margin-right: 1.25rem;
     margin-left: 1.25rem;
+}
+
+.industrial-detail-page .product-equipment-card-numbered > h3 {
+    min-height: 3.75rem;
+    line-height: 1.55;
+}
+
+.industrial-detail-page .product-equipment-card-numbered > p.text-sm {
+    min-height: 6.25rem;
 }
 
 .industrial-detail-page .product-equipment-card-numbered > .product-industry-tags {
@@ -371,6 +392,82 @@
     border: 1px solid #fdba74;
     border-radius: 0;
     font-weight: 700;
+}
+
+.industrial-detail-page .product-equipment-mobile-carousel {
+    position: relative;
+}
+
+.industrial-detail-page .product-equipment-carousel-arrow {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .industrial-detail-page .product-equipment-mobile-carousel {
+        margin-right: -1rem;
+        margin-left: -1rem;
+        padding-right: 2.9rem;
+        padding-left: 2.9rem;
+    }
+
+    .industrial-detail-page .product-equipment-mobile-carousel .product-equipment-track {
+        display: flex !important;
+        grid-template-columns: none !important;
+        gap: 1rem;
+        overflow-x: auto;
+        padding: 0 0.2rem 1rem;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .industrial-detail-page .product-equipment-mobile-carousel .product-equipment-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .industrial-detail-page .product-equipment-mobile-carousel .product-equipment-card-numbered {
+        flex: 0 0 min(78vw, 20.5rem);
+        scroll-snap-align: center;
+    }
+
+    .industrial-detail-page .product-equipment-carousel-arrow {
+        position: absolute;
+        top: 43%;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.4rem;
+        height: 2.4rem;
+        color: var(--factory-navy);
+        background: #fff;
+        border: 1px solid #cbd4db;
+        border-radius: 9999px;
+        box-shadow: 0 8px 18px rgba(10, 34, 56, 0.18);
+        transform: translateY(-50%);
+    }
+
+    .industrial-detail-page .product-equipment-carousel-arrow-left {
+        left: 0.5rem;
+    }
+
+    .industrial-detail-page .product-equipment-carousel-arrow-right {
+        right: 0.5rem;
+    }
+
+    .industrial-detail-page .product-equipment-carousel-arrow:disabled {
+        cursor: default;
+        opacity: 0.35;
+        box-shadow: none;
+    }
+
+    .industrial-detail-page .product-equipment-card-numbered > h3 {
+        min-height: 3.25rem;
+    }
+
+    .industrial-detail-page .product-equipment-card-numbered > p.text-sm {
+        min-height: 5.75rem;
+    }
 }
 
 .industrial-detail-page .product-application-item {

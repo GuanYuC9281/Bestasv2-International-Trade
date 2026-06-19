@@ -1626,14 +1626,22 @@ html {
 }
 
 .product-equipment-figure {
-    height: 9rem;
+    aspect-ratio: 1 / 1;
+    width: 100%;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(180deg, #f8fafc 0%, #eff6ff 100%);
     border-radius: 0.5rem;
-    padding: 0.75rem;
+    padding: 0.25rem;
+    overflow: hidden;
+}
+
+.product-equipment-figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .product-industry-tags {
@@ -1947,8 +1955,9 @@ html {
 }
 
 #categoriesContainer.services-catalog-grid > div > div:first-child {
-    height: 19rem;
-    min-height: 19rem;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    min-height: 0;
     padding: 1.5rem;
     display: flex;
     align-items: center;
@@ -1971,12 +1980,14 @@ html {
 }
 
 #categoriesContainer.services-catalog-grid > div > div:first-child > div > div {
-    width: 100%;
-    height: 13.5rem;
-    margin: 0;
+    width: min(100%, 15rem);
+    aspect-ratio: 1 / 1;
+    height: auto;
+    margin: 0 auto;
     padding: 1rem;
     display: grid;
     place-items: center;
+    position: relative;
     overflow: hidden;
     border: 0;
     border-radius: 0;
@@ -1986,8 +1997,12 @@ html {
 
 #categoriesContainer.services-catalog-grid > div > div:first-child img {
     display: block;
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
+    max-width: none;
+    max-height: none;
     margin: auto;
     padding: 0;
     object-fit: contain;
@@ -2317,12 +2332,17 @@ html {
     }
 
     #categoriesContainer.services-catalog-grid > div > div:first-child {
-        height: 15rem;
-        min-height: 15rem;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        min-height: 0;
+        padding: 1rem;
     }
 
     #categoriesContainer.services-catalog-grid > div > div:first-child > div > div {
-        height: 9.75rem;
+        width: min(100%, 13.5rem);
+        aspect-ratio: 1 / 1;
+        height: auto;
+        padding: 0.75rem;
     }
 
     #categoriesContainer.services-catalog-grid > div > div:nth-child(2) {
@@ -2374,6 +2394,15 @@ html {
 
     .services-carousel-arrow:active {
         transform: translateY(-50%) scale(0.96);
+    }
+
+    .services-carousel-arrow:disabled {
+        cursor: default;
+        opacity: 0.35;
+        color: #64748b;
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: none;
+        pointer-events: none;
     }
 
     .services-carousel-arrow-left {
