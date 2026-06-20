@@ -6,13 +6,13 @@
     <title>噴漆漆霧與粉塵工程 - 貝達國際貿易有限公司</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="industrial-detail.css?v=20260620-detail-carousel">
+    <link rel="stylesheet" href="styles.css?v=20260620-sidebar-scrollbar-right">
+    <link rel="stylesheet" href="industrial-detail.css?v=20260620-mobile-module-card-match-desktop">
 </head>
 <body class="bg-gray-50 industrial-detail-page">
     <!-- Loading Screen -->
     <div id="loadingScreen"></div>
-    <script src="industrial-loader.js"></script>
+    <script src="industrial-loader.js?v=20260620-bfcache-fix"></script>
 
     <!-- Privacy Notice Modal -->
     <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
@@ -146,7 +146,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
         <div class="lg:flex lg:gap-10 xl:gap-12">
             <!-- Product sidebar -->
-            <aside class="lg:w-64 xl:w-72 flex-shrink-0 mb-10 lg:mb-0">
+            <aside class="product-detail-aside flex-shrink-0 mb-10 lg:mb-0">
                 <div class="product-detail-sidebar lg:sticky lg:top-24">
                     <a href="product.html" class="flex items-center text-sm text-gray-600 hover:text-blue-900 mb-4 transition-colors">
                         <i class="fas fa-arrow-left mr-2"></i>返回產品總覽
@@ -220,7 +220,7 @@
                 </section>
 
                 <section class="mb-12">
-                    <div class="grid md:grid-cols-4 border-y border-gray-300">
+                    <div class="industrial-process-steps grid md:grid-cols-4 border-y border-gray-300">
                         <div class="p-5 border-b md:border-b-0 md:border-r border-gray-300">
                             <i class="fas fa-crosshairs text-orange-600 text-xl mb-3"></i>
                             <h3 class="font-bold text-gray-900">源頭捕集</h3>
@@ -246,8 +246,8 @@
 
                 <section class="mb-12">
                     <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-6">設備與系統配置</h2>
-                    <div class="grid md:grid-cols-3 gap-5">
-                        <article class="bg-white border border-gray-300">
+                    <div class="industrial-module-grid grid md:grid-cols-3 gap-5">
+                        <article class="industrial-module-card bg-white border border-gray-300">
                             <img src="images/products/air-pollution/paint-dust-main.png" alt="水洗式漆霧處理" class="h-44 w-full object-cover">
                             <div class="p-6">
                                 <span class="text-sm font-black text-orange-700">01</span>
@@ -255,7 +255,7 @@
                                 <p class="text-sm text-gray-600 leading-relaxed">以水幕或濕式洗滌方式捕捉漆霧，適合高漆霧量與連續噴塗作業。</p>
                             </div>
                         </article>
-                        <article class="bg-white border border-gray-300">
+                        <article class="industrial-module-card bg-white border border-gray-300">
                             <img src="images/products/equipment/pocket-filter.png" alt="乾式濾材設備" class="h-44 w-full object-cover">
                             <div class="p-6">
                                 <span class="text-sm font-black text-orange-700">02</span>
@@ -263,7 +263,7 @@
                                 <p class="text-sm text-gray-600 leading-relaxed">使用濾紙、袋式或 HEPA 濾材攔截漆霧與細微粉塵，維護更換快速。</p>
                             </div>
                         </article>
-                        <article class="bg-white border border-gray-300">
+                        <article class="industrial-module-card bg-white border border-gray-300">
                             <img src="images/products/equipment/cartridge-collector.png" alt="濾筒集塵設備" class="h-44 w-full object-cover">
                             <div class="p-6">
                                 <span class="text-sm font-black text-orange-700">03</span>
@@ -512,6 +512,6 @@
     <script src="nav-active.js?v=20260620-solution-nav"></script>
     <script src="quick-contact.js"></script>
     <script src="product-switcher.js"></script>
-    <script src="industrial-detail-carousel.js?v=20260620-detail-carousel-3"></script>
+    <script src="industrial-detail-carousel.js?v=20260620-mobile-module-carousel"></script>
 </body>
 </html>

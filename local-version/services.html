@@ -6,12 +6,12 @@
     <title>產品 - 貝達國際貿易有限公司</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=20260619-services-category-oil-smoke">
+    <link rel="stylesheet" href="styles.css?v=20260621-services-brand-button-center">
 </head>
 <body class="services-page bg-gray-50">
     <!-- Loading Screen -->
     <div id="loadingScreen"></div>
-    <script src="industrial-loader.js"></script>
+    <script src="industrial-loader.js?v=20260620-bfcache-fix"></script>
 
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg">
@@ -204,133 +204,94 @@
     </section>
 
     <!-- Business Categories -->
-    <section id="business-categories" class="services-catalog-section">
+    <section id="business-categories" class="home-brand-section py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="services-section-heading">
-                <p>探索我們多樣化的產品分類，找到您需要的商品</p>
+            <div class="text-center mb-14">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">自有品牌設備</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    工程規劃與施工外，我們亦提供自有品牌及客製化設備供應
+                </p>
             </div>
-            
-            <div class="services-mobile-carousel">
-                <button type="button" class="services-carousel-arrow services-carousel-arrow-left" aria-label="向左瀏覽通風設備" onclick="scrollBusinessCategories(-1)">
+
+            <div class="home-brand-carousel">
+                <button type="button" class="home-brand-arrow home-brand-arrow-left" aria-label="向左瀏覽自有品牌設備" onclick="scrollHomeBrand(-1)">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <button type="button" class="services-carousel-arrow services-carousel-arrow-right" aria-label="向右瀏覽通風設備" onclick="scrollBusinessCategories(1)">
+                <button type="button" class="home-brand-arrow home-brand-arrow-right" aria-label="向右瀏覽自有品牌設備" onclick="scrollHomeBrand(1)">
                     <i class="fas fa-chevron-right"></i>
                 </button>
-                <div id="categoriesContainer" class="services-catalog-grid">
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[24rem] border border-slate-200">
-                    <div class="h-48 sm:h-52 lg:h-56 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-4 lg:p-5">
-                        <div class="text-center">
-                            <div class="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
-                                <img src="images/products/air-pollution/oil-smoke-main.png" alt="油煙處理系統" class="w-full h-full object-contain p-2 transition-transform duration-300 group-hover:scale-105">
-                            </div>
-                            <h3 class="text-xl font-bold text-white">空污防治設備</h3>
+                <div class="home-brand-grid services-brand-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+                    <div class="home-brand-card bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
+                        <div class="home-brand-media h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
+                            <img src="images/設備/玻璃鋼＿通風系統＿工業風機.jpg" alt="玻璃鋼通風系統與工業風機" class="home-brand-image w-full h-full object-cover" loading="lazy">
                         </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <div class="mb-auto">
-                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">工業空氣污染防治整合解決方案</h4>
-                        </div>
-                        <a href="product.html#air-pollution-control" class="block w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4 text-center">
-                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">工業風機系列</h3>
+                        <p class="text-sm text-gray-500 mb-5">高效排風・穩定耐用</p>
+                        <a href="fan-solution.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
+                            了解更多 <span class="ml-2">→</span>
                         </a>
+                        <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
                     </div>
-                </div>
 
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[24rem] border border-slate-200">
-                    <div class="h-48 sm:h-52 lg:h-56 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-4 lg:p-5">
-                        <div class="text-center">
-                            <div class="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
-                                <img src="images/products/ventilation-parts/galvanized-duct.png" alt="風管" class="w-full h-full object-contain p-2 transition-transform duration-300 group-hover:scale-105">
-                            </div>
-                            <h3 class="text-xl font-bold text-white">風管</h3>
+                    <div class="home-brand-card bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
+                        <div class="home-brand-media h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
+                            <img src="images/設備/明安脈衝集塵.jpg" alt="明安脈衝集塵設備" class="home-brand-image w-full h-full object-cover" loading="lazy">
                         </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <div class="mb-auto">
-                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">各式圓管、方管、鍍鋅、不鏽鋼與 PP 風管供應</h4>
-                        </div>
-                        <a href="duct-solution.html" class="block w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4 text-center">
-                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">集塵設備系列</h3>
+                        <p class="text-sm text-gray-500 mb-5">粉塵收集・環境改善</p>
+                        <a href="collector-solution.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
+                            了解更多 <span class="ml-2">→</span>
                         </a>
+                        <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
                     </div>
-                </div>
 
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[24rem] border border-slate-200">
-                    <div class="h-48 sm:h-52 lg:h-56 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-4 lg:p-5">
-                        <div class="text-center">
-                            <div class="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
-                                <img src="images/products/fans/fan_product_06.png" alt="風機" class="w-full h-full object-contain p-2 transition-transform duration-300 group-hover:scale-105">
-                            </div>
-                            <h3 class="text-xl font-bold text-white">風機</h3>
+                    <div class="home-brand-card bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
+                        <div class="home-brand-media h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
+                            <img src="images/設備/ＶＯＣ除味系統_廢氣處理設備.jpg" alt="VOC除味系統與廢氣處理設備" class="home-brand-image w-full h-full object-cover" loading="lazy">
                         </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <div class="mb-auto">
-                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">高壓、中壓、低壓與軸流風機產品供應</h4>
-                        </div>
-                        <a href="fan-solution.html" class="block w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4 text-center">
-                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">廢氣處理設備系列</h3>
+                        <p class="text-sm text-gray-500 mb-5">異味處理・空污防制</p>
+                        <a href="chemical-gas-treatment.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
+                            了解更多 <span class="ml-2">→</span>
                         </a>
+                        <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
                     </div>
-                </div>
 
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[24rem] border border-slate-200">
-                    <div class="h-48 sm:h-52 lg:h-56 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-4 lg:p-5">
-                        <div class="text-center">
-                            <div class="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
-                                <img src="images/products/equipment/hepa-filter.png" alt="濾網" class="w-full h-full object-contain p-2 transition-transform duration-300 group-hover:scale-105">
-                            </div>
-                            <h3 class="text-xl font-bold text-white">濾網</h3>
+                    <div class="home-brand-card bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
+                        <div class="home-brand-media h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
+                            <img src="images/設備/油煙處理設備系統.jpg" alt="油煙處理設備系統" class="home-brand-image w-full h-full object-cover" loading="lazy">
                         </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <div class="mb-auto">
-                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">HEPA、袋式、活性碳與蜂巢式濾材產品</h4>
-                        </div>
-                        <a href="filter-solution.html" class="block w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4 text-center">
-                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">油煙處理設備系列</h3>
+                        <p class="text-sm text-gray-500 mb-5">油煙淨化・排放改善</p>
+                        <a href="oil-smoke-treatment.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
+                            了解更多 <span class="ml-2">→</span>
                         </a>
+                        <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
                     </div>
-                </div>
 
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[24rem] border border-slate-200">
-                    <div class="h-48 sm:h-52 lg:h-56 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-4 lg:p-5">
-                        <div class="text-center">
-                            <div class="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
-                                <img src="images/products/equipment/bag-filter-collector.png" alt="集塵設備" class="w-full h-full object-contain p-2 transition-transform duration-300 group-hover:scale-105">
-                            </div>
-                            <h3 class="text-xl font-bold text-white">集塵設備</h3>
+                    <div class="home-brand-card bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
+                        <div class="home-brand-media h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
+                            <img src="images/設備/風管配件.jpg" alt="工業風管配件" class="home-brand-image w-full h-full object-cover" loading="lazy">
                         </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <div class="mb-auto">
-                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">脈衝袋濾、濾筒、旋風與粉塵處理設備</h4>
-                        </div>
-                        <a href="collector-solution.html" class="block w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4 text-center">
-                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">通風配件系列</h3>
+                        <p class="text-sm text-gray-500 mb-5">風管配件・客製製作</p>
+                        <a href="duct-solution.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
+                            了解更多 <span class="ml-2">→</span>
                         </a>
+                        <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
                     </div>
-                </div>
 
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col min-h-[24rem] border border-slate-200">
-                    <div class="h-48 sm:h-52 lg:h-56 bg-gradient-to-br from-[#0f2742] to-[#1f4f78] flex items-center justify-center flex-shrink-0 p-4 lg:p-5">
-                        <div class="text-center">
-                            <div class="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 bg-white/95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
-                                <img src="images/products/ventilation-parts/pp-plastic-fittings.png" alt="客製配件" class="w-full h-full object-contain p-2 transition-transform duration-300 group-hover:scale-105">
-                            </div>
-                            <h3 class="text-xl font-bold text-white">客製配件</h3>
+                    <div class="home-brand-card bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm hover:shadow-lg transition group">
+                        <div class="home-brand-media h-40 bg-gray-100 rounded-lg mb-5 flex items-center justify-center overflow-hidden">
+                            <img src="images/products/ventilation-parts/galvanized-fittings.png" alt="鍍鋅風管配件" class="home-brand-image w-full h-full object-cover" loading="lazy">
                         </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <div class="mb-auto">
-                            <h4 class="font-bold text-[#0f2742] leading-relaxed mb-2">彎頭、三通、法蘭、轉接與特殊尺寸訂製</h4>
-                        </div>
-                        <a href="custom-parts-solution.html" class="block w-full bg-[#0f2742] text-white py-2 px-4 rounded-lg hover:bg-[#17395c] transition-all duration-200 font-medium mt-4 text-center">
-                            <span>了解更多</span> <i class="fas fa-arrow-right ml-2"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">客製配件</h3>
+                        <p class="text-sm text-gray-500 mb-5">彎頭・三通・法蘭・轉接與特殊尺寸訂製</p>
+                        <a href="custom-parts-solution.html" class="inline-flex items-center px-5 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
+                            了解更多 <span class="ml-2">→</span>
                         </a>
+                        <div class="h-1 bg-[#0B1F3A] mt-5 rounded-full"></div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
@@ -645,127 +606,64 @@
             }
         }
 
-        function scrollBusinessCategories(direction, containerId = 'categoriesContainer') {
-            const container = document.getElementById(containerId);
-            if (!container) {
+        function scrollHomeBrand(direction) {
+            const grid = document.querySelector('.home-brand-grid');
+            const card = grid ? grid.querySelector('.home-brand-card') : null;
+            if (!grid || !card) {
                 return;
             }
 
-            const firstCard = container.querySelector(':scope > div');
-            const gap = parseFloat(getComputedStyle(container).columnGap || '0') || 0;
-            const scrollAmount = firstCard ? firstCard.getBoundingClientRect().width + gap : container.clientWidth * 0.78;
-            container.scrollBy({
-                left: direction * scrollAmount,
+            const gridStyle = window.getComputedStyle(grid);
+            const gap = parseFloat(gridStyle.columnGap || gridStyle.gap || '0') || 0;
+            const distance = card.getBoundingClientRect().width + gap;
+            const maxScroll = Math.max(0, grid.scrollWidth - grid.clientWidth - 2);
+            if ((direction < 0 && grid.scrollLeft <= 2) || (direction > 0 && grid.scrollLeft >= maxScroll)) {
+                updateHomeBrandArrows();
+                return;
+            }
+
+            grid.scrollTo({
+                left: Math.max(0, Math.min(maxScroll, grid.scrollLeft + (direction * distance))),
                 behavior: 'smooth'
             });
 
             window.setTimeout(function() {
-                updateBusinessCategoryArrows(container);
+                updateHomeBrandArrows();
             }, 260);
         }
 
-        function updateBusinessCategoryArrows(container) {
-            if (!container) {
-                return;
-            }
-            const carousel = container.closest('.services-mobile-carousel');
-            const leftArrow = carousel ? carousel.querySelector('.services-carousel-arrow-left') : null;
-            const rightArrow = carousel ? carousel.querySelector('.services-carousel-arrow-right') : null;
-            if (!container || !leftArrow || !rightArrow) {
-                return;
-            }
-
-            const maxScroll = Math.max(0, container.scrollWidth - container.clientWidth - 2);
-            leftArrow.disabled = container.scrollLeft <= 2;
-            rightArrow.disabled = container.scrollLeft >= maxScroll;
-        }
-
-        function initializeBusinessCategorySwipe(container) {
-            if (!container) {
+        function updateHomeBrandArrows() {
+            const grid = document.querySelector('.home-brand-grid');
+            const carousel = document.querySelector('.home-brand-carousel');
+            const leftArrow = carousel ? carousel.querySelector('.home-brand-arrow-left') : null;
+            const rightArrow = carousel ? carousel.querySelector('.home-brand-arrow-right') : null;
+            if (!grid || !leftArrow || !rightArrow) {
                 return;
             }
 
-            let isDragging = false;
-            let startX = 0;
-            let startScrollLeft = 0;
-            let hasDragged = false;
-            let scrollSettledTimer = null;
-
-            container.addEventListener('scroll', function() {
-                container.classList.add('is-scrolling');
-                updateBusinessCategoryArrows(container);
-                clearTimeout(scrollSettledTimer);
-                scrollSettledTimer = setTimeout(() => {
-                    container.classList.remove('is-scrolling');
-                    updateBusinessCategoryArrows(container);
-                }, 140);
-            }, { passive: true });
-
-            container.addEventListener('pointerdown', function(event) {
-                if (event.pointerType === 'touch') {
-                    return;
-                }
-
-                isDragging = true;
-                hasDragged = false;
-                startX = event.clientX;
-                startScrollLeft = container.scrollLeft;
-                container.classList.add('is-dragging');
-                container.setPointerCapture(event.pointerId);
-            });
-
-            container.addEventListener('pointermove', function(event) {
-                if (!isDragging) {
-                    return;
-                }
-
-                const deltaX = event.clientX - startX;
-                if (Math.abs(deltaX) > 4) {
-                    hasDragged = true;
-                }
-                container.scrollLeft = startScrollLeft - deltaX;
-            });
-
-            function finishDrag(event) {
-                if (!isDragging) {
-                    return;
-                }
-
-                isDragging = false;
-                container.classList.remove('is-dragging');
-                if (container.hasPointerCapture(event.pointerId)) {
-                    container.releasePointerCapture(event.pointerId);
-                }
-                updateBusinessCategoryArrows(container);
-            }
-
-            container.addEventListener('pointerup', finishDrag);
-            container.addEventListener('pointercancel', finishDrag);
-            container.addEventListener('click', function(event) {
-                if (hasDragged) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    hasDragged = false;
-                }
-            }, true);
-
-            window.addEventListener('resize', function() {
-                updateBusinessCategoryArrows(container);
-            });
-            requestAnimationFrame(function() {
-                container.scrollLeft = 0;
-                updateBusinessCategoryArrows(container);
-            });
+            const maxScroll = Math.max(0, grid.scrollWidth - grid.clientWidth - 2);
+            leftArrow.disabled = grid.scrollLeft <= 2;
+            rightArrow.disabled = grid.scrollLeft >= maxScroll;
         }
 
         window.changeLanguage = changeLanguage;
         window.toggleLanguageDropdown = toggleLanguageDropdown;
         window.toggleMobileMenu = toggleMobileMenu;
         window.toggleMobileSubmenu = toggleMobileSubmenu;
-        window.scrollBusinessCategories = scrollBusinessCategories;
+        window.scrollHomeBrand = scrollHomeBrand;
 
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.services-catalog-grid').forEach(initializeBusinessCategorySwipe);
+            const homeBrandGrid = document.querySelector('.home-brand-grid');
+            if (homeBrandGrid) {
+                homeBrandGrid.addEventListener('scroll', function() {
+                    updateHomeBrandArrows();
+                }, { passive: true });
+
+                window.addEventListener('resize', updateHomeBrandArrows);
+                requestAnimationFrame(function() {
+                    updateHomeBrandArrows();
+                });
+            }
         });
 
         // Close dropdown when clicking outside
@@ -779,7 +677,6 @@
         });
 
     </script>
-    <script src="services-fallback.js"></script>
     <script src="nav-active.js?v=20260620-solution-nav"></script>
     <script src="quick-contact.js"></script>
 </body>

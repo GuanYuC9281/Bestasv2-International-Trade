@@ -6,13 +6,13 @@
     <title>VOC 廢氣處理系統 - 貝達國際貿易有限公司</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="industrial-detail.css?v=20260620-detail-carousel">
+    <link rel="stylesheet" href="styles.css?v=20260620-sidebar-scrollbar-right">
+    <link rel="stylesheet" href="industrial-detail.css?v=20260620-mobile-module-card-match-desktop">
 </head>
 <body class="bg-gray-50 industrial-detail-page">
     <!-- Loading Screen -->
     <div id="loadingScreen"></div>
-    <script src="industrial-loader.js"></script>
+    <script src="industrial-loader.js?v=20260620-bfcache-fix"></script>
 
     <!-- Privacy Notice Modal -->
     <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
@@ -139,7 +139,7 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
             <div class="industrial-kicker">VOC CONTROL / CHEMICAL EXHAUST</div>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">VOC 廢氣處理系統</h1>
-            <p class="text-xl md:text-2xl text-blue-100 mb-6 font-medium">高效處理酸鹼廢氣・VOCs・化學製程氣體</p>
+            <p class="text-xl md:text-2xl text-blue-100 mb-6 font-medium">高效處理酸鹼廢氣・揮發性有機物・化學製程氣體</p>
             <p class="text-base md:text-lg text-blue-50 max-w-3xl leading-relaxed mb-10">
                 針對化學製程、電鍍、PCB、半導體、印刷、塗裝等產業產生的廢氣問題，<br class="hidden md:inline">
                 提供合適的空污防治設備，協助降低異味、酸鹼氣體與有害氣體排放。
@@ -152,7 +152,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
         <div class="lg:flex lg:gap-10 xl:gap-12">
             <!-- Product sidebar -->
-            <aside class="lg:w-64 xl:w-72 flex-shrink-0 mb-10 lg:mb-0">
+            <aside class="product-detail-aside flex-shrink-0 mb-10 lg:mb-0">
                 <div class="product-detail-sidebar lg:sticky lg:top-24">
                     <a href="product.html" class="flex items-center text-sm text-gray-600 hover:text-blue-900 mb-4 transition-colors">
                         <i class="fas fa-arrow-left mr-2"></i>返回產品總覽
@@ -206,9 +206,9 @@
                         <div class="lg:col-span-3 p-6 md:p-8 border-b lg:border-b-0 lg:border-r border-gray-300">
                             <div class="flex items-center gap-3 mb-4">
                                 <span class="w-10 h-1 bg-orange-500"></span>
-                                <span class="text-sm font-bold text-orange-700 tracking-widest">EXHAUST GAS TREATMENT</span>
+                                <span class="text-sm font-bold text-orange-700 tracking-widest">廢氣處理工程</span>
                             </div>
-                            <h2 class="text-3xl font-black text-gray-900 mb-4">酸鹼廢氣與 VOCs 淨化工程</h2>
+                            <h2 class="text-3xl font-black text-gray-900 mb-4">酸鹼廢氣與揮發性有機物淨化工程</h2>
                             <p class="text-gray-600 leading-relaxed">
                                 依廢氣種類、濃度、溫度、濕度與排放標準，整合洗滌塔、活性碳吸附、風管、風機與控制系統，協助化工、電鍍、PCB、半導體與塗裝製程穩定達標排放。
                             </p>
@@ -216,7 +216,7 @@
                         <div class="lg:col-span-2 bg-blue-950 text-white p-6 md:p-8">
                             <p class="text-sm font-bold text-orange-300 mb-3">設計參數</p>
                             <div class="space-y-3 text-sm text-blue-100">
-                                <p><span class="font-bold text-white">污染物：</span>酸霧、鹼霧、VOCs、異味</p>
+                                <p><span class="font-bold text-white">污染物：</span>酸霧、鹼霧、揮發性有機物、異味</p>
                                 <p><span class="font-bold text-white">材料：</span>PP、FRP、不鏽鋼與鍍鋅管路</p>
                                 <p><span class="font-bold text-white">控制：</span>壓差、液位、加藥與風機連動</p>
                                 <p><span class="font-bold text-white">維護：</span>耗材更換與洗滌液管理</p>
@@ -226,7 +226,7 @@
                 </section>
 
                 <section class="mb-12">
-                    <div class="grid md:grid-cols-4 border-y border-gray-300">
+                    <div class="industrial-process-steps grid md:grid-cols-4 border-y border-gray-300">
                         <div class="p-5 border-b md:border-b-0 md:border-r border-gray-300">
                             <i class="fas fa-vial text-orange-600 text-xl mb-3"></i>
                             <h3 class="font-bold text-gray-900">廢氣分析</h3>
@@ -252,38 +252,38 @@
 
                 <section class="mb-12">
                     <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-6">處理系統模組</h2>
-                    <div class="grid md:grid-cols-2 gap-5">
-                        <article class="bg-gray-100 border border-gray-300 grid sm:grid-cols-5">
+                    <div class="industrial-module-grid grid md:grid-cols-2 gap-5">
+                        <article class="industrial-module-card bg-gray-100 border border-gray-300 grid sm:grid-cols-5">
                             <img src="images/products/air-pollution/pp-spray-tower.png" alt="PP洗滌塔" class="sm:col-span-2 h-52 sm:h-full w-full object-cover">
                             <div class="sm:col-span-3 p-6">
-                                <span class="text-sm font-black text-orange-700">01 / SCRUBBER</span>
+                                <span class="text-sm font-black text-orange-700">01</span>
                                 <h3 class="text-xl font-black text-gray-900 mt-2 mb-3">PP／FRP 洗滌塔</h3>
                                 <p class="text-sm text-gray-600 leading-relaxed mb-4">適用酸鹼廢氣、水溶性污染物與酸霧處理，可搭配循環水槽與自動加藥系統。</p>
                                 <p class="text-sm text-gray-700"><i class="fas fa-check text-orange-600 mr-2"></i>耐腐蝕、維護便利</p>
                             </div>
                         </article>
-                        <article class="bg-gray-100 border border-gray-300 grid sm:grid-cols-5">
+                        <article class="industrial-module-card bg-gray-100 border border-gray-300 grid sm:grid-cols-5">
                             <img src="images/products/equipment/activated-carbon-filter.png" alt="活性碳吸附設備" class="sm:col-span-2 h-52 sm:h-full w-full object-cover">
                             <div class="sm:col-span-3 p-6">
-                                <span class="text-sm font-black text-orange-700">02 / ADSORPTION</span>
+                                <span class="text-sm font-black text-orange-700">02</span>
                                 <h3 class="text-xl font-black text-gray-900 mt-2 mb-3">活性碳吸附設備</h3>
-                                <p class="text-sm text-gray-600 leading-relaxed mb-4">用於 VOCs、異味與低濃度有機廢氣末端處理，可依需求規劃抽屜式或箱體式設計。</p>
+                                <p class="text-sm text-gray-600 leading-relaxed mb-4">用於揮發性有機物、異味與低濃度有機廢氣末端處理，可依需求規劃抽屜式或箱體式設計。</p>
                                 <p class="text-sm text-gray-700"><i class="fas fa-check text-orange-600 mr-2"></i>耗材更換快速</p>
                             </div>
                         </article>
-                        <article class="bg-gray-100 border border-gray-300 grid sm:grid-cols-5">
+                        <article class="industrial-module-card bg-gray-100 border border-gray-300 grid sm:grid-cols-5">
                             <img src="images/products/air-pollution/chemical-gas-main.png" alt="化學洗滌系統" class="sm:col-span-2 h-52 sm:h-full w-full object-cover">
                             <div class="sm:col-span-3 p-6">
-                                <span class="text-sm font-black text-orange-700">03 / CHEMICAL WASH</span>
+                                <span class="text-sm font-black text-orange-700">03</span>
                                 <h3 class="text-xl font-black text-gray-900 mt-2 mb-3">化學洗滌系統</h3>
                                 <p class="text-sm text-gray-600 leading-relaxed mb-4">依氣體酸鹼性配置洗滌液與接觸時間，提升中和與去除效率。</p>
-                                <p class="text-sm text-gray-700"><i class="fas fa-check text-orange-600 mr-2"></i>可搭配 pH 控制</p>
+                                <p class="text-sm text-gray-700"><i class="fas fa-check text-orange-600 mr-2"></i>可搭配酸鹼值控制</p>
                             </div>
                         </article>
-                        <article class="bg-gray-100 border border-gray-300 grid sm:grid-cols-5">
+                        <article class="industrial-module-card bg-gray-100 border border-gray-300 grid sm:grid-cols-5">
                             <img src="images/products/equipment/galvanized-duct.png" alt="廢氣排風管路" class="sm:col-span-2 h-52 sm:h-full w-full object-cover">
                             <div class="sm:col-span-3 p-6">
-                                <span class="text-sm font-black text-orange-700">04 / EXHAUST SYSTEM</span>
+                                <span class="text-sm font-black text-orange-700">04</span>
                                 <h3 class="text-xl font-black text-gray-900 mt-2 mb-3">廢氣排風管路</h3>
                                 <p class="text-sm text-gray-600 leading-relaxed mb-4">整合風罩、風管、風機與排放口，確保製程廢氣有效收集並送入處理設備。</p>
                                 <p class="text-sm text-gray-700"><i class="fas fa-check text-orange-600 mr-2"></i>依阻抗配置風機</p>
@@ -517,6 +517,6 @@
     <script src="nav-active.js?v=20260620-solution-nav"></script>
     <script src="quick-contact.js"></script>
     <script src="product-switcher.js"></script>
-    <script src="industrial-detail-carousel.js?v=20260620-detail-carousel-3"></script>
+    <script src="industrial-detail-carousel.js?v=20260620-mobile-module-carousel"></script>
 </body>
 </html>

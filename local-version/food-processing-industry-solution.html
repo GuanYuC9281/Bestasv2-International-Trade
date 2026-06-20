@@ -6,13 +6,13 @@
     <title>食品加工產業通風集塵工程 - 貝達國際貿易有限公司</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="industrial-detail.css?v=20260620-detail-carousel">
+    <link rel="stylesheet" href="styles.css?v=20260620-sidebar-scrollbar-right">
+    <link rel="stylesheet" href="industrial-detail.css?v=20260620-mobile-advantage-four-col">
 </head>
 <body class="bg-gray-50 industrial-detail-page">
     <!-- Loading Screen -->
     <div id="loadingScreen"></div>
-    <script src="industrial-loader.js"></script>
+    <script src="industrial-loader.js?v=20260620-bfcache-fix"></script>
 
     <!-- Privacy Notice Modal -->
     <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
@@ -146,7 +146,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
         <div class="lg:flex lg:gap-10 xl:gap-12">
             <!-- Product sidebar -->
-            <aside class="lg:w-64 xl:w-72 flex-shrink-0 mb-10 lg:mb-0">
+            <aside class="product-detail-aside flex-shrink-0 mb-10 lg:mb-0">
                 <div class="product-detail-sidebar lg:sticky lg:top-24">
                     <a href="product.html" class="flex items-center text-sm text-gray-600 hover:text-blue-900 mb-4 transition-colors">
                         <i class="fas fa-arrow-left mr-2"></i>返回產品總覽
@@ -195,85 +195,68 @@
             </aside>
 
             <main class="flex-1 min-w-0">
-                <!-- 四大優勢 -->
-                <section class="mb-14">
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                        <div class="product-advantage-item">
-                            <div class="product-advantage-icon"><i class="fas fa-utensils"></i></div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-1">衛生設計</h3>
-                            <p class="text-sm text-gray-600">針對高溫油煙設計</p>
-                        </div>
-                        <div class="product-advantage-item">
-                            <div class="product-advantage-icon"><i class="fas fa-wind"></i></div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-1">粉塵收集</h3>
-                            <p class="text-sm text-gray-600">確保通風換氣效率</p>
-                        </div>
-                        <div class="product-advantage-item">
-                            <div class="product-advantage-icon"><i class="fas fa-fire-extinguisher"></i></div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-1">溫濕控制</h3>
-                            <p class="text-sm text-gray-600">符合消防法規</p>
-                        </div>
-                        <div class="product-advantage-item">
-                            <div class="product-advantage-icon"><i class="fas fa-tools"></i></div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-1">便於清潔</h3>
-                            <p class="text-sm text-gray-600">不鏽鋼材質好維護</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 產品設備 -->
+                <!-- 成果案例 -->
                 <section class="mb-14">
                     <div class="text-center mb-10">
-                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900">產品設備</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900">成果案例</h2>
                         <div class="product-section-title-line mx-auto mt-3"></div>
                     </div>
-                    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
-                        <article class="product-equipment-card-numbered">
-                            <span class="product-equipment-number">01</span>
-                            <div class="product-equipment-figure">
-                                <img src="images/products/equipment/stainless-duct.png" alt="廚房排煙罩" class="max-h-full max-w-full object-contain">
+                    <div class="industry-result-grid">
+                        <article class="industry-result-card">
+                            <span class="industry-result-number">01</span>
+                            <div class="industry-result-figure">
+                                <img src="images/精選工程案例/食品廠油煙處理工程.png" alt="食品廠油煙處理工程">
                             </div>
-                            <h3 class="text-lg font-bold text-blue-900 mb-3">衛生型局部排氣罩</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed mb-4">採用不鏽鋼材質製作，搭配油脂過濾板，有效捕集烹飪油煙，符合消防主管機關的安裝規範要求。</p>
-                            <p class="text-xs font-bold text-gray-500 mb-2">適用：</p>
-                            <div class="product-industry-tags">
-                                <span class="product-industry-tag">餐廳廚房</span><span class="product-industry-tag">飯店廚房</span><span class="product-industry-tag">中央廚房</span>
-                            </div>
-                        </article>
-                        <article class="product-equipment-card-numbered">
-                            <span class="product-equipment-number">02</span>
-                            <div class="product-equipment-figure">
-                                <img src="images/products/fans/high-pressure-forward-curved.png" alt="廚房專用排風機" class="max-h-full max-w-full object-contain">
-                            </div>
-                            <h3 class="text-lg font-bold text-blue-900 mb-3">食品製程排風機</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed mb-4">耐高溫、耐油污的廚房專用風機，葉輪採用不鏽鋼或鍍鋅材質，清洗維護方便，使用壽命長。</p>
-                            <p class="text-xs font-bold text-gray-500 mb-2">適用：</p>
-                            <div class="product-industry-tags">
-                                <span class="product-industry-tag">大型廚房</span><span class="product-industry-tag">美食廣場</span><span class="product-industry-tag">團膳業</span>
+                            <div class="industry-result-body">
+                                <h3>XX公司名稱</h3>
+                                <p class="industry-result-location">越南 胡志明市</p>
+                                <p>針對烘焙、炒製與熱加工排放，規劃油煙與熱氣處理設備。</p>
+                                <div class="industry-result-meta">
+                                    <span>合作重點</span>
+                                    <ul>
+                                        <li>油煙收集</li>
+                                        <li>熱氣排除</li>
+                                        <li>衛生動線配合</li>
+                                    </ul>
+                                </div>
                             </div>
                         </article>
-                        <article class="product-equipment-card-numbered">
-                            <span class="product-equipment-number">03</span>
-                            <div class="product-equipment-figure">
-                                <img src="images/products/building/electrostatic-main.png" alt="靜電油煙處理機" class="max-h-full max-w-full object-contain">
+                        <article class="industry-result-card">
+                            <span class="industry-result-number">02</span>
+                            <div class="industry-result-figure">
+                                <img src="images/精選工程案例/油煙處理設備系統.png" alt="油煙處理設備系統">
                             </div>
-                            <h3 class="text-lg font-bold text-blue-900 mb-3">袋濾式粉塵集塵設備</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed mb-4">二段式高壓靜電設計，有效去除油煙微粒與異味，排放達到環保標準，降低對周邊住戶的影響。</p>
-                            <p class="text-xs font-bold text-gray-500 mb-2">適用：</p>
-                            <div class="product-industry-tags">
-                                <span class="product-industry-tag">鬧區餐飲</span><span class="product-industry-tag">大樓廚房</span><span class="product-industry-tag">連鎖餐廳</span>
+                            <div class="industry-result-body">
+                                <h3>XX公司名稱</h3>
+                                <p class="industry-result-location">越南 胡志明市</p>
+                                <p>依現場排放路徑與設備保養需求，調整設備位置與管線配置。</p>
+                                <div class="industry-result-meta">
+                                    <span>合作重點</span>
+                                    <ul>
+                                        <li>設備配置</li>
+                                        <li>保養空間保留</li>
+                                        <li>排放品質改善</li>
+                                    </ul>
+                                </div>
                             </div>
                         </article>
-                        <article class="product-equipment-card-numbered">
-                            <span class="product-equipment-number">04</span>
-                            <div class="product-equipment-figure">
-                                <img src="images/products/ventilation-parts/galvanized-duct.png" alt="排煙管路系統" class="max-h-full max-w-full object-contain">
+                        <article class="industry-result-card">
+                            <span class="industry-result-number">03</span>
+                            <div class="industry-result-figure">
+                                <img src="images/精選工程案例/工業廠房整合工程.png" alt="工業廠房整合工程">
                             </div>
-                            <h3 class="text-lg font-bold text-blue-900 mb-3">不鏽鋼排氣管路</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed mb-4">依廚房空間設計最佳化排煙管路，採用鍍鋅或不鏽鋼材質，確保油脂不積存於管道，減少清潔工時。</p>
-                            <p class="text-xs font-bold text-gray-500 mb-2">適用：</p>
-                            <div class="product-industry-tags">
-                                <span class="product-industry-tag">管路規劃</span><span class="product-industry-tag">舊管更新</span><span class="product-industry-tag">消防申報</span>
+                            <div class="industry-result-body">
+                                <h3>XX公司名稱</h3>
+                                <p class="industry-result-location">越南 胡志明市</p>
+                                <p>整合粉塵、蒸氣與熱氣抽排，協助維持加工區舒適與整潔。</p>
+                                <div class="industry-result-meta">
+                                    <span>合作重點</span>
+                                    <ul>
+                                        <li>粉塵收集</li>
+                                        <li>蒸氣排除</li>
+                                        <li>產線施工協調</li>
+                                    </ul>
+                                </div>
                             </div>
                         </article>
                     </div>
@@ -352,7 +335,7 @@
                     <ul class="space-y-2">
                         <li><a href="product.html#air-pollution-control" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">空污防治工程</a></li>
                         <li><a href="product.html#construction-engineering" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">建造與工程應用</a></li>
-                        <li><a href="product.html#industry-application" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">六大產業應用</a></li>
+                        <li><a href="product.html#industry-application" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">行業精選案例</a></li>
                         <li><a href="services.html#business-categories" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">設備與零組件</a></li>
                     </ul>
                 </div>
@@ -514,6 +497,6 @@
     <script src="nav-active.js?v=20260620-solution-nav"></script>
     <script src="quick-contact.js"></script>
     <script src="product-switcher.js"></script>
-    <script src="industrial-detail-carousel.js?v=20260620-detail-carousel-3"></script>
+    <script src="industrial-detail-carousel.js?v=20260620-industry-result-mobile-carousel"></script>
 </body>
 </html>

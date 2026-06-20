@@ -6,13 +6,13 @@
     <title>工業油煙處理系統 - 貝達國際貿易有限公司</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="industrial-detail.css?v=20260620-detail-carousel">
+    <link rel="stylesheet" href="styles.css?v=20260620-sidebar-scrollbar-right">
+    <link rel="stylesheet" href="industrial-detail.css?v=20260620-mobile-module-card-match-desktop">
 </head>
 <body class="bg-gray-50 industrial-detail-page">
     <!-- Loading Screen -->
     <div id="loadingScreen"></div>
-    <script src="industrial-loader.js"></script>
+    <script src="industrial-loader.js?v=20260620-bfcache-fix"></script>
 
     <!-- Privacy Notice Modal -->
     <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
@@ -153,7 +153,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
         <div class="lg:flex lg:gap-10 xl:gap-12">
             <!-- Product sidebar -->
-            <aside class="lg:w-64 xl:w-72 flex-shrink-0 mb-10 lg:mb-0">
+            <aside class="product-detail-aside flex-shrink-0 mb-10 lg:mb-0">
                 <div class="product-detail-sidebar lg:sticky lg:top-24">
                     <a href="product.html" class="flex items-center text-sm text-gray-600 hover:text-blue-900 mb-4 transition-colors">
                         <i class="fas fa-arrow-left mr-2"></i>返回產品總覽
@@ -227,7 +227,7 @@
                 </section>
 
                 <section class="mb-12">
-                    <div class="grid md:grid-cols-4 border-y border-gray-300">
+                    <div class="industrial-process-steps grid md:grid-cols-4 border-y border-gray-300">
                         <div class="p-5 border-b md:border-b-0 md:border-r border-gray-300">
                             <i class="fas fa-search text-orange-600 text-xl mb-3"></i>
                             <h3 class="font-bold text-gray-900">現場勘查</h3>
@@ -258,8 +258,8 @@
                             <p class="text-gray-500 mt-2">依油煙量與排放條件組合配置</p>
                         </div>
                     </div>
-                    <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
-                        <article class="bg-gray-100 border border-gray-300 p-5 flex flex-col">
+                    <div class="industrial-module-grid grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+                        <article class="industrial-module-card bg-gray-100 border border-gray-300 p-5 flex flex-col">
                             <img src="images/products/building/electrostatic-main.png" alt="靜電油煙處理設備" class="h-36 w-full object-cover mb-4">
                             <h3 class="text-lg font-black text-gray-900 mb-2">靜電油煙處理機</h3>
                             <p class="text-sm text-gray-600 leading-relaxed mb-4">以高壓靜電捕集細小油煙粒子，適合連續排放與大風量現場。</p>
@@ -268,7 +268,7 @@
                                 <li><i class="fas fa-check text-orange-600 mr-2"></i>模組化清洗維護</li>
                             </ul>
                         </article>
-                        <article class="bg-gray-100 border border-gray-300 p-5 flex flex-col">
+                        <article class="industrial-module-card bg-gray-100 border border-gray-300 p-5 flex flex-col">
                             <img src="images/products/air-pollution/oil-smoke-main.png" alt="水洗油煙處理設備" class="h-36 w-full object-cover mb-4">
                             <h3 class="text-lg font-black text-gray-900 mb-2">水洗式處理設備</h3>
                             <p class="text-sm text-gray-600 leading-relaxed mb-4">利用水洗降溫與初步攔截油煙，適合高溫、高油煙排放環境。</p>
@@ -277,7 +277,7 @@
                                 <li><i class="fas fa-check text-orange-600 mr-2"></i>降低後端負載</li>
                             </ul>
                         </article>
-                        <article class="bg-gray-100 border border-gray-300 p-5 flex flex-col">
+                        <article class="industrial-module-card bg-gray-100 border border-gray-300 p-5 flex flex-col">
                             <img src="images/products/equipment/activated-carbon-filter.png" alt="活性碳除味設備" class="h-36 w-full object-cover mb-4">
                             <h3 class="text-lg font-black text-gray-900 mb-2">活性碳除味設備</h3>
                             <p class="text-sm text-gray-600 leading-relaxed mb-4">吸附殘留異味與有機氣體，提升排放端空氣品質。</p>
@@ -286,7 +286,7 @@
                                 <li><i class="fas fa-check text-orange-600 mr-2"></i>耗材更換方便</li>
                             </ul>
                         </article>
-                        <article class="bg-gray-100 border border-gray-300 p-5 flex flex-col">
+                        <article class="industrial-module-card bg-gray-100 border border-gray-300 p-5 flex flex-col">
                             <img src="images/products/fans/high-pressure-backward-curved.png" alt="排煙通風系統" class="h-36 w-full object-cover mb-4">
                             <h3 class="text-lg font-black text-gray-900 mb-2">排煙通風系統</h3>
                             <p class="text-sm text-gray-600 leading-relaxed mb-4">依管路阻抗配置風機與風管，維持穩定捕集與排放效率。</p>
@@ -523,6 +523,6 @@
     <script src="nav-active.js?v=20260620-solution-nav"></script>
     <script src="quick-contact.js"></script>
     <script src="product-switcher.js"></script>
-    <script src="industrial-detail-carousel.js?v=20260620-detail-carousel-3"></script>
+    <script src="industrial-detail-carousel.js?v=20260620-mobile-module-carousel"></script>
 </body>
 </html>

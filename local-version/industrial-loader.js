@@ -84,6 +84,16 @@
         });
     }
 
+    function hideLoaderForPageRestore() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        document.documentElement.classList.remove('industrial-loader-pending');
+        if (!loadingScreen) return;
+
+        loadingScreen.classList.add('is-exiting');
+        loadingScreen.style.setProperty('display', 'none', 'important');
+        loadingScreen.setAttribute('aria-hidden', 'true');
+    }
+
     function handleInternalNavigation(event) {
         if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 
@@ -108,4 +118,15 @@
     }
 
     document.addEventListener('click', handleInternalNavigation);
+    window.addEventListener('pagehide', (event) => {
+        if (event.persisted) {
+            hideLoaderForPageRestore();
+        }
+    });
+    window.addEventListener('pageshow', (event) => {
+        const navigationEntry = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+        if (event.persisted || (navigationEntry && navigationEntry.type === 'back_forward')) {
+            hideLoaderForPageRestore();
+        }
+    });
 })();

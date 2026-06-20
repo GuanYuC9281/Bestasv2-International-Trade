@@ -6,13 +6,13 @@
     <title>化工產業廢氣處理 - 貝達國際貿易有限公司</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="industrial-detail.css?v=20260620-detail-carousel">
+    <link rel="stylesheet" href="styles.css?v=20260620-sidebar-scrollbar-right">
+    <link rel="stylesheet" href="industrial-detail.css?v=20260620-mobile-advantage-four-col">
 </head>
 <body class="bg-gray-50 industrial-detail-page">
     <!-- Loading Screen -->
     <div id="loadingScreen"></div>
-    <script src="industrial-loader.js"></script>
+    <script src="industrial-loader.js?v=20260620-bfcache-fix"></script>
 
     <!-- Privacy Notice Modal -->
     <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
@@ -146,7 +146,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
         <div class="lg:flex lg:gap-10 xl:gap-12">
             <!-- Product sidebar -->
-            <aside class="lg:w-64 xl:w-72 flex-shrink-0 mb-10 lg:mb-0">
+            <aside class="product-detail-aside flex-shrink-0 mb-10 lg:mb-0">
                 <div class="product-detail-sidebar lg:sticky lg:top-24">
                     <a href="product.html" class="flex items-center text-sm text-gray-600 hover:text-blue-900 mb-4 transition-colors">
                         <i class="fas fa-arrow-left mr-2"></i>返回產品總覽
@@ -195,85 +195,68 @@
             </aside>
 
             <main class="flex-1 min-w-0">
-                <!-- 四大優勢 -->
-                <section class="mb-14">
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                        <div class="product-advantage-item">
-                            <div class="product-advantage-icon"><i class="fas fa-certificate"></i></div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-1">合規達標</h3>
-                            <p class="text-sm text-gray-600">符合排放管制</p>
-                        </div>
-                        <div class="product-advantage-item">
-                            <div class="product-advantage-icon"><i class="fas fa-recycle"></i></div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-1">溶劑回收</h3>
-                            <p class="text-sm text-gray-600">降低原料成本</p>
-                        </div>
-                        <div class="product-advantage-item">
-                            <div class="product-advantage-icon"><i class="fas fa-shield-alt"></i></div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-1">安全防爆</h3>
-                            <p class="text-sm text-gray-600">防爆級設備選項</p>
-                        </div>
-                        <div class="product-advantage-item">
-                            <div class="product-advantage-icon"><i class="fas fa-project-diagram"></i></div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-1">整合規劃</h3>
-                            <p class="text-sm text-gray-600">一站式設計服務</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 產品設備 -->
+                <!-- 成果案例 -->
                 <section class="mb-14">
                     <div class="text-center mb-10">
-                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900">產品設備</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900">成果案例</h2>
                         <div class="product-section-title-line mx-auto mt-3"></div>
                     </div>
-                    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
-                        <article class="product-equipment-card-numbered">
-                            <span class="product-equipment-number">01</span>
-                            <div class="product-equipment-figure">
-                                <img src="images/products/equipment/activated-carbon-filter.png" alt="活性碳吸附設備" class="max-h-full max-w-full object-contain">
+                    <div class="industry-result-grid">
+                        <article class="industry-result-card">
+                            <span class="industry-result-number">01</span>
+                            <div class="industry-result-figure">
+                                <img src="images/精選工程案例/電鍍廠廢氣處理系統.png" alt="電鍍廠廢氣處理系統">
                             </div>
-                            <h3 class="text-lg font-bold text-blue-900 mb-3">活性碳吸附設備</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed mb-4">高效吸附 VOCs 與有機溶劑蒸氣，可採用再生型蜂巢活性碳輪轉設計，結合脫附回收系統降低運行成本。</p>
-                            <p class="text-xs font-bold text-gray-500 mb-2">適用：</p>
-                            <div class="product-industry-tags">
-                                <span class="product-industry-tag">印刷業</span><span class="product-industry-tag">塗裝廠</span><span class="product-industry-tag">溶劑製程</span>
-                            </div>
-                        </article>
-                        <article class="product-equipment-card-numbered">
-                            <span class="product-equipment-number">02</span>
-                            <div class="product-equipment-figure">
-                                <img src="images/products/solutions/化學處理.png" alt="化學洗滌塔" class="max-h-full max-w-full object-contain">
-                            </div>
-                            <h3 class="text-lg font-bold text-blue-900 mb-3">化學洗滌塔</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed mb-4">針對酸霧、鹼霧與水溶性有害氣體，採用逆流洗滌設計，可依廢氣成分搭配鹼液、酸液或氧化劑進行中和處理。</p>
-                            <p class="text-xs font-bold text-gray-500 mb-2">適用：</p>
-                            <div class="product-industry-tags">
-                                <span class="product-industry-tag">電鍍廠</span><span class="product-industry-tag">半導體</span><span class="product-industry-tag">化工廠</span>
+                            <div class="industry-result-body">
+                                <h3>XX公司名稱</h3>
+                                <p class="industry-result-location">越南 胡志明市</p>
+                                <p>依酸鹼廢氣特性配置收集管線與洗滌設備，降低製程異味與腐蝕風險。</p>
+                                <div class="industry-result-meta">
+                                    <span>合作重點</span>
+                                    <ul>
+                                        <li>酸鹼廢氣收集</li>
+                                        <li>耐腐蝕管路</li>
+                                        <li>洗滌設備配置</li>
+                                    </ul>
+                                </div>
                             </div>
                         </article>
-                        <article class="product-equipment-card-numbered">
-                            <span class="product-equipment-number">03</span>
-                            <div class="product-equipment-figure">
-                                <img src="images/products/equipment/explosion-proof-fan.png" alt="防爆型抽風設備" class="max-h-full max-w-full object-contain">
+                        <article class="industry-result-card">
+                            <span class="industry-result-number">02</span>
+                            <div class="industry-result-figure">
+                                <img src="images/精選工程案例/工業廠房整合工程.png" alt="工業廠房整合工程">
                             </div>
-                            <h3 class="text-lg font-bold text-blue-900 mb-3">防爆型抽風設備</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed mb-4">適用於含可燃性蒸氣或爆炸性粉塵的環境，風機與電氣設備均採用防爆認證等級設計，確保作業安全。</p>
-                            <p class="text-xs font-bold text-gray-500 mb-2">適用：</p>
-                            <div class="product-industry-tags">
-                                <span class="product-industry-tag">有機溶劑區</span><span class="product-industry-tag">儲槽通風</span><span class="product-industry-tag">化工廠房</span>
+                            <div class="industry-result-body">
+                                <h3>XX公司名稱</h3>
+                                <p class="industry-result-location">越南 胡志明市</p>
+                                <p>配合現場儲槽、反應區與包裝區需求，規劃安全穩定的排氣動線。</p>
+                                <div class="industry-result-meta">
+                                    <span>合作重點</span>
+                                    <ul>
+                                        <li>局部排氣規劃</li>
+                                        <li>防蝕材質選用</li>
+                                        <li>施工界面整合</li>
+                                    </ul>
+                                </div>
                             </div>
                         </article>
-                        <article class="product-equipment-card-numbered">
-                            <span class="product-equipment-number">04</span>
-                            <div class="product-equipment-figure">
-                                <img src="images/products/equipment/galvanized-duct.png" alt="廢氣管路系統" class="max-h-full max-w-full object-contain">
+                        <article class="industry-result-card">
+                            <span class="industry-result-number">03</span>
+                            <div class="industry-result-figure">
+                                <img src="images/精選工程案例/全工廠集塵系統工程.png" alt="全工廠集塵系統工程">
                             </div>
-                            <h3 class="text-lg font-bold text-blue-900 mb-3">廢氣管路系統</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed mb-4">採用 PP 或 FRP 耐腐蝕管材配置廢氣收集管路，確保從產生源到處理設備全程密閉，降低洩漏風險。</p>
-                            <p class="text-xs font-bold text-gray-500 mb-2">適用：</p>
-                            <div class="product-industry-tags">
-                                <span class="product-industry-tag">整廠管路</span><span class="product-industry-tag">局部排氣</span><span class="product-industry-tag">客製工程</span>
+                            <div class="industry-result-body">
+                                <h3>XX公司名稱</h3>
+                                <p class="industry-result-location">越南 胡志明市</p>
+                                <p>從污染源位置與排放條件切入，協助業主建立後續擴充與維護的基礎。</p>
+                                <div class="industry-result-meta">
+                                    <span>合作重點</span>
+                                    <ul>
+                                        <li>污染源盤點</li>
+                                        <li>風量條件確認</li>
+                                        <li>後續維護便利</li>
+                                    </ul>
+                                </div>
                             </div>
                         </article>
                     </div>
@@ -352,7 +335,7 @@
                     <ul class="space-y-2">
                         <li><a href="product.html#air-pollution-control" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">空污防治工程</a></li>
                         <li><a href="product.html#construction-engineering" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">建造與工程應用</a></li>
-                        <li><a href="product.html#industry-application" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">六大產業應用</a></li>
+                        <li><a href="product.html#industry-application" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">行業精選案例</a></li>
                         <li><a href="services.html#business-categories" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">設備與零組件</a></li>
                     </ul>
                 </div>
@@ -514,6 +497,6 @@
     <script src="nav-active.js?v=20260620-solution-nav"></script>
     <script src="quick-contact.js"></script>
     <script src="product-switcher.js"></script>
-    <script src="industrial-detail-carousel.js?v=20260620-detail-carousel-3"></script>
+    <script src="industrial-detail-carousel.js?v=20260620-industry-result-mobile-carousel"></script>
 </body>
 </html>
