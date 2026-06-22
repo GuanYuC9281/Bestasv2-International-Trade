@@ -3,13 +3,110 @@
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+/* Home latest news ticker */
+.home-news-ticker {
+    position: relative;
+    z-index: 2;
+    margin-top: 4rem;
+    border-bottom: 1px solid rgba(203, 213, 225, 0.85);
+    background: #fff;
+}
+
+.home-news-ticker-inner {
+    min-height: 2.45rem;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.home-news-ticker-label {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    border-right: 1px solid #d8dee7;
+    color: #f97316;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+.home-news-ticker-label i {
+    font-size: 0.82rem;
+}
+
+.home-news-ticker-window {
+    min-width: 0;
+    overflow: hidden;
+    color: #334155;
+    font-size: 0.86rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.home-news-ticker-track {
+    width: max-content;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: home-news-ticker-scroll 32s linear infinite;
+}
+
+.home-news-ticker-set {
+    display: inline-flex;
+    align-items: center;
+    gap: 3rem;
+    padding-right: 3rem;
+}
+
+.home-news-ticker-set span {
+    position: relative;
+}
+
+.home-news-ticker-set span::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -1.65rem;
+    width: 0.38rem;
+    height: 0.38rem;
+    background: #f97316;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.home-news-ticker:hover .home-news-ticker-track {
+    animation-play-state: paused;
+}
+
+@keyframes home-news-ticker-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-news-ticker-track {
+        animation: none;
+    }
+}
+
 /* Home page industrial hero */
 .home-industrial-hero {
     position: relative;
     min-height: 42rem;
     display: flex;
     align-items: center;
-    padding: 7.5rem 0 4.5rem;
+    padding: 5rem 0 4.5rem;
     overflow: hidden;
     isolation: isolate;
     background-position: center;
@@ -182,9 +279,41 @@
 }
 
 @media (max-width: 767px) {
+    .home-news-ticker-inner {
+        min-height: 2.25rem;
+        padding: 0 1rem;
+    }
+
+    .home-news-ticker-label {
+        gap: 0.35rem;
+        padding-right: 0.65rem;
+        margin-right: 0.65rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.04em;
+    }
+
+    .home-news-ticker-window {
+        font-size: 0.74rem;
+    }
+
+    .home-news-ticker-track {
+        animation-duration: 26s;
+    }
+
+    .home-news-ticker-set {
+        gap: 2.25rem;
+        padding-right: 2.25rem;
+    }
+
+    .home-news-ticker-set span::after {
+        right: -1.28rem;
+        width: 0.32rem;
+        height: 0.32rem;
+    }
+
     .home-industrial-hero {
         min-height: 37rem;
-        padding: 6.25rem 0 2.75rem;
+        padding: 4.85rem 0 2.75rem;
         background-position: 62% center;
     }
 
@@ -4468,7 +4597,8 @@ html {
 
 .about-intro,
 .about-capabilities,
-.about-advantages {
+.about-advantages,
+.about-certifications {
     padding: 7rem 0;
     background: #fff;
 }
@@ -4857,6 +4987,147 @@ html {
     line-height: 1.85;
 }
 
+.about-certifications {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(135deg, #07182b 0%, #0b1f3a 56%, #132f4d 100%);
+    background-size: 42px 42px, 42px 42px, auto;
+}
+
+.about-certifications::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: min(36rem, 48vw);
+    height: 5px;
+    background: #f97316;
+}
+
+.about-certifications::after {
+    content: "";
+    position: absolute;
+    right: -7rem;
+    bottom: -8rem;
+    width: 24rem;
+    height: 24rem;
+    border: 2.5rem solid rgba(255, 255, 255, 0.055);
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+.about-certifications > div {
+    position: relative;
+    z-index: 1;
+}
+
+.about-certifications .about-section-heading h2 {
+    color: #fff;
+}
+
+.about-certifications .about-section-heading p {
+    color: #cbd5e1;
+}
+
+.about-certification-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.1rem;
+    align-items: stretch;
+}
+
+.about-certification-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 27rem;
+    padding: 0;
+    color: #fff;
+    background: transparent;
+    transition: transform 180ms ease;
+}
+
+.about-certification-card:hover {
+    transform: translateY(-4px);
+}
+
+.about-certification-document {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    display: grid;
+    place-items: center;
+    padding: 1.15rem;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 22px 38px rgba(0, 0, 0, 0.22);
+}
+
+.about-certification-document::before {
+    content: "";
+    position: absolute;
+    inset: 1rem;
+    background:
+        linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(255, 255, 255, 0)),
+        #fff;
+    box-shadow: inset 0 0 0 1px rgba(11, 31, 58, 0.1);
+}
+
+.about-certification-document::after {
+    content: "";
+    position: absolute;
+    inset: 2.05rem;
+    border: 1px dashed rgba(11, 31, 58, 0.24);
+}
+
+.about-certification-document span {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 6rem;
+    min-height: 2.15rem;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid rgba(249, 115, 22, 0.55);
+    color: #0b1f3a;
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+}
+
+.about-certification-meta {
+    min-height: 8rem;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 0.45rem;
+    padding: 1.1rem 0 0;
+}
+
+.about-certification-meta > span {
+    color: #f97316;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+}
+
+.about-certification-meta h3 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(0.94rem, 1vw, 1.08rem);
+    font-weight: 900;
+    line-height: 1.35;
+}
+
+.about-certification-meta p {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
 @media (max-width: 1023px) {
     .about-intro-layout {
         grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.85fr);
@@ -4866,6 +5137,10 @@ html {
     .about-capability-grid,
     .about-advantage-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-certification-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .about-capability-item:nth-child(2) {
@@ -4896,7 +5171,8 @@ html {
     .about-mission,
     .about-capabilities,
     .about-markets,
-    .about-advantages {
+    .about-advantages,
+    .about-certifications {
         padding: 5rem 0;
     }
 
@@ -5057,6 +5333,60 @@ html {
         line-height: 1.45;
     }
 
+    .about-certification-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65rem;
+    }
+
+    .about-certification-card {
+        min-height: 17.5rem;
+    }
+
+    .about-certification-card:hover {
+        transform: none;
+    }
+
+    .about-certification-document {
+        padding: 0.65rem;
+        box-shadow: 0 12px 22px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-certification-document::before {
+        inset: 0.58rem;
+    }
+
+    .about-certification-document::after {
+        inset: 1.25rem;
+    }
+
+    .about-certification-document span {
+        min-width: 4.4rem;
+        min-height: 1.65rem;
+        padding: 0.32rem 0.5rem;
+        font-size: 0.62rem;
+        letter-spacing: 0.08em;
+    }
+
+    .about-certification-meta {
+        min-height: 5.7rem;
+        gap: 0.25rem;
+        padding-top: 0.65rem;
+    }
+
+    .about-certification-meta > span {
+        font-size: 0.62rem;
+    }
+
+    .about-certification-meta h3 {
+        font-size: 0.72rem;
+        line-height: 1.3;
+    }
+
+    .about-certification-meta p {
+        font-size: 0.68rem;
+        line-height: 1.45;
+    }
+
     .about-mission-panel {
         min-height: 13rem;
         padding: 1.1rem 0.85rem;
@@ -5166,6 +5496,22 @@ html {
     }
 
     .about-mission-panel p {
+        font-size: 0.62rem;
+    }
+
+    .about-certification-grid {
+        gap: 0.55rem;
+    }
+
+    .about-certification-card {
+        min-height: 16.4rem;
+    }
+
+    .about-certification-meta h3 {
+        font-size: 0.66rem;
+    }
+
+    .about-certification-meta p {
         font-size: 0.62rem;
     }
 }
