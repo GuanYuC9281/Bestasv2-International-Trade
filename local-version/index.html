@@ -6,7 +6,7 @@
     <title>貝達國際貿易有限公司</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=20260623-home-news-ticker">
+    <link rel="stylesheet" href="styles.css?v=20260630-client-marquee">
 </head>
 <body class="bg-gray-50">
     <!-- Loading Screen -->
@@ -259,7 +259,7 @@
     </section>
 
     <!-- Hero Section -->
-    <section class="home-industrial-hero" style="background-image: url('images/harbor-bg.png')">
+    <section class="home-industrial-hero" style="background-image: url('images/index/harbor-bg.png')">
         <div class="home-industrial-hero-overlay"></div>
         <div class="home-industrial-hero-grid"></div>
         <div class="home-industrial-hero-frame"></div>
@@ -440,83 +440,97 @@
     </div>
 </section>
 
-
-<!-- 工程案例 Section -->
-<section class="home-cases-section py-20 bg-white">
+<!-- 精選合作案例 Section -->
+<section class="home-cases-section home-client-section py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-            <div>
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">精選工程案例</h2>
-                <p class="text-xl text-gray-600">
-                    實際工程經驗，提供客戶可信賴的規劃與施工成果
-                </p>
-            </div>
-
-            <a href="services.html#metal-industry-results" class="inline-flex items-center justify-center px-6 py-3 border border-[#0B1F3A] text-[#0B1F3A] rounded-md font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
-                查看所有案例 <span class="ml-2">→</span>
-            </a>
+        <div class="home-client-heading text-center mb-10">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">精選合作案例</h2>
+            <p class="text-xl text-gray-600">匯聚各產業合作成果，呈現值得信賴的工程與供應鏈服務經驗</p>
         </div>
 
-        <div class="home-cases-carousel">
-            <button type="button" class="home-case-arrow home-case-arrow-left" aria-label="向左瀏覽精選工程案例" onclick="scrollHomeCases(-1)">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button type="button" class="home-case-arrow home-case-arrow-right" aria-label="向右瀏覽精選工程案例" onclick="scrollHomeCases(1)">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-
-        <div id="homeCasesGrid" class="home-cases-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-
-
-            <div class="home-case-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition">
-                <div class="home-case-media h-44 bg-gray-100 overflow-hidden">
-                    <img src="images/精選工程案例/全工廠集塵系統工程.png" alt="全工廠集塵系統工程" class="home-case-image w-full h-full object-cover" loading="lazy">
-                </div>
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 leading-relaxed h-16 overflow-hidden mb-2">全工廠集塵系統工程</h3>
-                    <p class="text-sm text-gray-500 mb-4">越南・平陽省</p>
-                    <span class="inline-block px-4 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold">
-                        集塵系統
-                    </span>
+        <div class="client-marquee" aria-label="精選合作案例跑馬圖">
+            <div id="clientMarqueeViewport" class="client-marquee-viewport">
+                <div class="client-marquee-track">
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/1.jpg" alt="精選合作案例 1" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/2.jpg" alt="精選合作案例 2" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/3.jpg" alt="精選合作案例 3" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/4.jpg" alt="精選合作案例 4" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/5.jpg" alt="精選合作案例 5" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/6.jpg" alt="精選合作案例 6" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/7.jpg" alt="精選合作案例 7" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/8.jpg" alt="精選合作案例 8" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/9.jpg" alt="精選合作案例 9" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/10.jpg" alt="精選合作案例 10" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/11.jpg" alt="精選合作案例 11" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/12.jpg" alt="精選合作案例 12" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/1.jpg" alt="精選合作案例 1" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/2.jpg" alt="精選合作案例 2" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/3.jpg" alt="精選合作案例 3" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/4.jpg" alt="精選合作案例 4" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/5.jpg" alt="精選合作案例 5" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/6.jpg" alt="精選合作案例 6" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/7.jpg" alt="精選合作案例 7" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/8.jpg" alt="精選合作案例 8" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/9.jpg" alt="精選合作案例 9" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/10.jpg" alt="精選合作案例 10" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/11.jpg" alt="精選合作案例 11" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/12.jpg" alt="精選合作案例 12" loading="lazy">
+                    </div>
                 </div>
             </div>
-
-
-            <div class="home-case-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition">
-                <div class="home-case-media h-44 bg-gray-100 overflow-hidden">
-                    <img src="images/精選工程案例/電鍍廠廢氣處理系統.png" alt="電鍍廠廢氣處理系統" class="home-case-image w-full h-full object-cover" loading="lazy">
-                </div>
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 leading-relaxed h-16 overflow-hidden mb-2">電鍍廠廢氣處理系統</h3>
-                    <p class="text-sm text-gray-500 mb-4">越南・胡志明市</p>
-                    <span class="inline-block px-4 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold">
-                        廢氣處理
-                    </span>
-                </div>
-            </div>
-
-
-            <div class="home-case-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition">
-                <div class="home-case-media h-44 bg-gray-100 overflow-hidden">
-                    <img src="images/精選工程案例/食品廠油煙處理工程.png" alt="食品廠油煙處理工程" class="home-case-image w-full h-full object-cover" loading="lazy">
-                </div>
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 leading-relaxed h-16 overflow-hidden mb-2">食品廠油煙處理工程</h3>
-                    <p class="text-sm text-gray-500 mb-4">越南・平福省</p>
-                    <span class="inline-block px-4 py-2 border border-[#0B1F3A] text-[#0B1F3A] rounded-md text-sm font-semibold">
-                        油煙處理
-                    </span>
-                </div>
-            </div>
-
-        </div>
         </div>
     </div>
 </section>
 
-    <!-- CTA Section -->
+
+<!-- CTA Section -->
     <section class="industrial-cta text-white">
         <div class="industrial-cta-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="industrial-cta-copy">
@@ -846,62 +860,79 @@
                 button.setAttribute('aria-expanded', String(isOpening));
             }
         }
-
-        function scrollHomeCases(direction) {
-            const grid = document.getElementById('homeCasesGrid');
-            const card = grid ? grid.querySelector('.home-case-card') : null;
-            if (!grid || !card) {
+        function initClientMarquee() {
+            const viewport = document.getElementById('clientMarqueeViewport');
+            const track = viewport ? viewport.querySelector('.client-marquee-track') : null;
+            if (!viewport || !track) {
                 return;
             }
 
-            const gridStyle = window.getComputedStyle(grid);
-            const gap = parseFloat(gridStyle.columnGap || gridStyle.gap || '0') || 0;
-            const distance = card.getBoundingClientRect().width + gap;
-            const maxScroll = Math.max(0, grid.scrollWidth - grid.clientWidth - 2);
-            if ((direction < 0 && grid.scrollLeft <= 2) || (direction > 0 && grid.scrollLeft >= maxScroll)) {
-                updateHomeCaseArrows();
-                return;
+            let animationFrame = 0;
+            let lastTime = 0;
+            let isPointerDown = false;
+            let resumeTimer = 0;
+            const speed = 34;
+
+            function getLoopWidth() {
+                return Math.max(1, track.scrollWidth / 2);
             }
 
-            grid.scrollTo({
-                left: Math.max(0, Math.min(maxScroll, grid.scrollLeft + (direction * distance))),
-                behavior: 'smooth'
-            });
-
-            window.setTimeout(function() {
-                updateHomeCaseArrows();
-            }, 260);
-        }
-
-        function updateHomeCaseArrows() {
-            const grid = document.getElementById('homeCasesGrid');
-            const carousel = document.querySelector('.home-cases-carousel');
-            const leftArrow = carousel ? carousel.querySelector('.home-case-arrow-left') : null;
-            const rightArrow = carousel ? carousel.querySelector('.home-case-arrow-right') : null;
-            if (!grid || !leftArrow || !rightArrow) {
-                return;
+            function normalizeScroll() {
+                const loopWidth = getLoopWidth();
+                if (viewport.scrollLeft >= loopWidth) {
+                    viewport.scrollLeft -= loopWidth;
+                } else if (viewport.scrollLeft <= 0) {
+                    viewport.scrollLeft += loopWidth;
+                }
             }
 
-            const maxScroll = Math.max(0, grid.scrollWidth - grid.clientWidth - 2);
-            leftArrow.disabled = grid.scrollLeft <= 2;
-            rightArrow.disabled = grid.scrollLeft >= maxScroll;
-        }
+            function tick(time) {
+                if (!lastTime) {
+                    lastTime = time;
+                }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const grid = document.getElementById('homeCasesGrid');
-            if (!grid) {
-                return;
+                const delta = time - lastTime;
+                lastTime = time;
+
+                if (!isPointerDown && !document.hidden) {
+                    viewport.scrollLeft += (speed * delta) / 1000;
+                    normalizeScroll();
+                }
+
+                animationFrame = requestAnimationFrame(tick);
             }
 
-            grid.addEventListener('scroll', function() {
-                updateHomeCaseArrows();
+            function pause() {
+                isPointerDown = true;
+                window.clearTimeout(resumeTimer);
+            }
+
+            function resumeSoon() {
+                window.clearTimeout(resumeTimer);
+                resumeTimer = window.setTimeout(function() {
+                    isPointerDown = false;
+                    normalizeScroll();
+                }, 900);
+            }
+
+            viewport.scrollLeft = getLoopWidth() / 2;
+            viewport.addEventListener('pointerdown', pause, { passive: true });
+            viewport.addEventListener('pointerup', resumeSoon, { passive: true });
+            viewport.addEventListener('pointercancel', resumeSoon, { passive: true });
+            viewport.addEventListener('mouseleave', resumeSoon, { passive: true });
+            viewport.addEventListener('scroll', function() {
+                if (isPointerDown) {
+                    normalizeScroll();
+                }
             }, { passive: true });
 
-            window.addEventListener('resize', updateHomeCaseArrows);
-            requestAnimationFrame(function() {
-                updateHomeCaseArrows();
-            });
-        });
+            animationFrame = requestAnimationFrame(tick);
+            window.addEventListener('beforeunload', function() {
+                cancelAnimationFrame(animationFrame);
+            }, { once: true });
+        }
+
+        document.addEventListener('DOMContentLoaded', initClientMarquee);
 
         // Close dropdown when clicking outside
         document.addEventListener('click', function(event) {
