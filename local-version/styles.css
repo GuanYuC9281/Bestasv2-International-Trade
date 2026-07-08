@@ -1642,6 +1642,9 @@ html {
 
 .client-marquee {
     position: relative;
+    --client-gap: clamp(1rem, 2vw, 1.65rem);
+    --client-gap-half: clamp(0.5rem, 1vw, 0.825rem);
+    --client-side-padding: clamp(2.75rem, 8vw, 5.5rem);
     max-width: 68rem;
     margin: 0 auto;
 }
@@ -1687,8 +1690,15 @@ html {
     display: flex;
     width: max-content;
     align-items: center;
-    gap: clamp(1rem, 2vw, 1.65rem);
-    padding: 0.35rem clamp(2.75rem, 8vw, 5.5rem);
+    gap: var(--client-gap);
+    padding: 0.35rem var(--client-side-padding);
+    animation: client-marquee-scroll 34s linear infinite;
+    will-change: transform;
+}
+
+.client-marquee:hover .client-marquee-track,
+.client-marquee-viewport:active .client-marquee-track {
+    animation-play-state: paused;
 }
 
 .client-marquee-item {
@@ -1715,6 +1725,16 @@ html {
     height: 100%;
     object-fit: contain;
     padding: 0.85rem;
+}
+
+@keyframes client-marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% + var(--client-side-padding) - var(--client-gap-half)));
+    }
 }
 
 @media (max-width: 767px) {
@@ -1852,14 +1872,20 @@ html {
 
     .home-client-heading {
         margin-bottom: 1.7rem !important;
-        text-align: left;
+        text-align: center;
     }
 
     .home-client-heading p {
         max-width: 20rem;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
     }
 
     .client-marquee {
+        --client-gap: 0.85rem;
+        --client-gap-half: 0.425rem;
+        --client-side-padding: 2.25rem;
         max-width: none;
         margin-right: -1rem;
         margin-left: -1rem;
@@ -1871,8 +1897,9 @@ html {
     }
 
     .client-marquee-track {
-        gap: 0.85rem;
-        padding: 0.25rem 2.25rem;
+        gap: var(--client-gap);
+        padding: 0.25rem var(--client-side-padding);
+        animation-duration: 28s;
     }
 
     .client-marquee-item {

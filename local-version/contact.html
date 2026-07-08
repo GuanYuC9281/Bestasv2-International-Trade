@@ -259,42 +259,46 @@
                 <p>請填寫以下表單，我們將盡快與您聯繫</p>
             </div>
             <div class="contact-form-wrap">
-                <form class="contact-form" onsubmit="handleSubmit(event)" action="contact-success.html" method="GET">
+                <form class="contact-form" onsubmit="handleSubmit(event)" action="https://formsubmit.co/kuanyutrip8811@gmail.com" method="POST" target="formSubmitFrame">
+                    <input type="hidden" name="_subject" id="contactEmailSubject" value="網站聯絡表單｜新客戶詢問">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" id="formNextUrl" value="contact-success.html">
                     <div class="contact-form-grid">
                         <div>
                             <label>姓名 *</label>
-                            <input type="text" required placeholder="請輸入您的姓名">
+                            <input type="text" name="姓名" required placeholder="請輸入您的姓名">
                         </div>
                         <div>
                             <label>公司</label>
-                            <input type="text" placeholder="請輸入公司名稱">
+                            <input type="text" name="公司" placeholder="請輸入公司名稱">
                         </div>
                         <div>
                             <label>郵件 *</label>
-                            <input type="email" required placeholder="請輸入您的郵件">
+                            <input type="email" name="電子郵件" required placeholder="請輸入您的郵件">
                         </div>
                         <div>
                             <label>電話 *</label>
-                            <input type="tel" required placeholder="請輸入您的電話">
+                            <input type="tel" name="電話" required placeholder="請輸入您的電話">
                         </div>
                     </div>
                     <div class="contact-form-field">
                         <label>服務類型 *</label>
                         <div class="contact-service-category-group" id="serviceCategoryGroup">
                             <label class="contact-service-option">
-                                <input type="radio" name="serviceCategory" value="供應鏈整合服務" required>
+                                <input type="radio" name="服務類型" value="供應鏈整合服務" required>
                                 <span>供應鏈整合服務</span>
                             </label>
                             <label class="contact-service-option">
-                                <input type="radio" name="serviceCategory" value="環保工程解決方案" required>
+                                <input type="radio" name="服務類型" value="環保工程解決方案" required>
                                 <span>環保工程解決方案</span>
                             </label>
                             <label class="contact-service-option">
-                                <input type="radio" name="serviceCategory" value="設備與產品" required>
+                                <input type="radio" name="服務類型" value="設備與產品" required>
                                 <span>設備與產品</span>
                             </label>
                             <label class="contact-service-option">
-                                <input type="radio" name="serviceCategory" value="其他" required>
+                                <input type="radio" name="服務類型" value="其他" required>
                                 <span>其他</span>
                             </label>
                         </div>
@@ -308,11 +312,11 @@
                             </button>
                             <div class="contact-service-dropdown-menu" id="serviceDetailMenu" role="listbox"></div>
                         </div>
-                        <input type="hidden" id="serviceDetail" name="serviceDetail" required>
+                        <input type="hidden" id="serviceDetail" name="需求項目" required>
                     </div>
                     <div class="contact-form-field">
                         <label>訊息 *</label>
-                        <textarea required rows="6" placeholder="請輸入您的訊息..."></textarea>
+                        <textarea name="需求內容" required rows="6" placeholder="請輸入您的訊息..."></textarea>
                     </div>
                     <div class="contact-form-submit">
                         <button type="submit">
@@ -321,6 +325,7 @@
                         </button>
                     </div>
                 </form>
+                <iframe name="formSubmitFrame" id="formSubmitFrame" class="hidden" title="contact form delivery"></iframe>
             </div>
         </div>
     </section>
@@ -552,6 +557,15 @@
             const savedLang = localStorage.getItem('preferredLanguage') || 'zh-TW';
             changeLanguage(savedLang);
             initializeServiceOptions();
+
+            const formSubmitFrame = document.getElementById('formSubmitFrame');
+            if (formSubmitFrame) {
+                formSubmitFrame.addEventListener('load', function() {
+                    if (window.contactFormSubmitted) {
+                        window.location.href = 'contact-success.html';
+                    }
+                });
+            }
         });
 
         const serviceOptions = {
@@ -581,7 +595,7 @@
         };
 
         function initializeServiceOptions() {
-            const categoryInputs = document.querySelectorAll('input[name="serviceCategory"]');
+            const categoryInputs = document.querySelectorAll('input[name="服務類型"]');
             categoryInputs.forEach(input => {
                 input.addEventListener('change', function() {
                     updateServiceDetailOptions(this.value);
@@ -788,11 +802,8 @@
         // Handle form submission
         function handleSubmit(event) {
             event.preventDefault();
-            
-            // Get form data
             const form = event.target;
-            const formData = new FormData(form);
-            
+
             // Simple validation (all required fields should be filled)
             const requiredFields = form.querySelectorAll('[required]');
             let isValid = true;
@@ -832,22 +843,69 @@
                 }
             });
             
-            if (isValid) {
-                // Show loading state
-                const submitBtn = form.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i>發送中...';
-                submitBtn.disabled = true;
-                
-                // Simulate form submission (in real implementation, this would be an API call)
-                setTimeout(() => {
-                    // Redirect to success page
-                    window.location.href = 'contact-success.html';
-                }, 1500);
-            } else {
+            if (!isValid) {
                 // Show error message
                 alert('請填寫所有必填欄位');
+                return false;
             }
+
+            const nextUrlInput = document.getElementById('formNextUrl');
+            if (nextUrlInput) {
+                nextUrlInput.value = new URL('contact-success.html', window.location.href).href;
+            }
+
+            const fieldValue = (name) => {
+                const field = form.elements.namedItem(name);
+                return field ? field.value.trim() : '';
+            };
+
+            const selectedServiceCategory = form.querySelector('input[name="服務類型"]:checked');
+            const serviceCategory = selectedServiceCategory ? selectedServiceCategory.value.trim() : fieldValue('服務類型');
+            const customerName = fieldValue('姓名');
+            const subjectInput = document.getElementById('contactEmailSubject');
+            if (subjectInput) {
+                subjectInput.value = `網站聯絡表單｜${serviceCategory || '新客戶詢問'}｜${customerName || '未留姓名'}`;
+            }
+
+            try {
+                const submissionRecord = {
+                    id: Date.now(),
+                    name: fieldValue('姓名'),
+                    company: fieldValue('公司'),
+                    email: fieldValue('電子郵件'),
+                    phone: fieldValue('電話'),
+                    serviceCategory,
+                    serviceDetail: fieldValue('需求項目'),
+                    message: fieldValue('需求內容'),
+                    recipient: 'kuanyutrip8811@gmail.com',
+                    timestamp: new Date().toISOString()
+                };
+                const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+                submissions.push(submissionRecord);
+                localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
+            } catch (error) {
+                console.warn('Unable to save local contact backup:', error);
+            }
+
+            // Show loading state while the browser posts to FormSubmit.
+            const submitBtn = form.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i>發送中...';
+                submitBtn.disabled = true;
+            }
+
+            window.contactFormSubmitted = true;
+            window.setTimeout(function() {
+                if (window.contactFormSubmitted) {
+                    window.location.href = 'contact-success.html';
+                }
+            }, 2200);
+
+            window.setTimeout(function() {
+                HTMLFormElement.prototype.submit.call(form);
+            }, 0);
+
+            return false;
         }
     </script>
     <script src="nav-active.js?v=20260620-solution-nav"></script>
