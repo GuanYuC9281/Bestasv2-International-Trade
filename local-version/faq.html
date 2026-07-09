@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="zh-TW" class="industrial-loader-pending">
+<html lang="zh-TW" class="industrial-loader-pending" data-lang="zh-TW">
 
 <head>
 
@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260709-mobile-brand-2">
 
 </head>
 
@@ -30,11 +30,10 @@
                 <div class="flex items-center space-x-3">
                     <a href="index.html" class="flex items-center space-x-3">
                         <div class="w-10 h-10 flex items-center justify-center">
-                            <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                            <img src="images/company/logo.png" alt="??????????" class="w-full h-full object-contain">
                         </div>
                         <div>
-                            <h1 class="text-xl font-bold text-gray-900" id="companyName">貝達國際貿易有限公司</h1>
-                            <p class="text-xs text-gray-500">International Trade</p>
+                            <h1 class="text-xl font-bold text-gray-900" id="companyName">??????????</h1>
                         </div>
                     </a>
                 </div>
@@ -363,15 +362,13 @@
 
                         <div class="w-12 h-12 flex items-center justify-center">
 
-                            <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                            <img src="images/company/logo.png" alt="??????????" class="w-full h-full object-contain">
 
                         </div>
 
                         <div>
 
-                            <h3 class="text-white font-bold text-lg" id="companyName-footer">貝達國際貿易有限公司</h3>
-
-                            <p class="text-gray-400 text-sm">International Trade</p>
+                            <h3 class="text-white font-bold text-lg" id="companyName-footer">??????????</h3>
 
                         </div>
 
@@ -464,7 +461,7 @@
 
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
 
-                <p class="text-gray-400 text-sm">© 2026 <span id="companyName-footer-2">貝達國際貿易有限公司</span>. All rights reserved.</p>
+                <p class="text-gray-400 text-sm">© 2026 <span id="companyName-footer-2">??????????</span>. All rights reserved.</p>
 
             </div>
 
@@ -528,11 +525,11 @@
 
             'en': {
 
-                companyName: 'Bestas International Trade Co., Ltd.',
+                companyName: 'BESTAR SV CO.LTD',
 
-                'companyName-footer': 'Bestas International Trade Co., Ltd.',
+                'companyName-footer': 'BESTAR SV CO.LTD',
 
-                'companyName-footer-2': 'Bestas International Trade Co., Ltd.',
+                'companyName-footer-2': 'BESTAR SV CO.LTD',
 
                 currentLangDisplay: 'English',
 
@@ -686,11 +683,9 @@
 
             
 
-            // Load saved language
 
-            const savedLang = localStorage.getItem('preferredLanguage') || 'zh-TW';
 
-            changeLanguage(savedLang);
+            /* language handled by language-router.js */
         });
 
 
@@ -871,6 +866,7 @@
     </script>
 
     <script src="nav-active.js?v=20260620-solution-nav"></script>
+    <script src="language-router.js?v=20260709-mobile-brand-2"></script>
     <script src="quick-contact.js"></script>
 </body>
 

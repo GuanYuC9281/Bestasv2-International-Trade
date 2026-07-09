@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="vi" class="industrial-loader-pending" data-lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải pháp công nghiệp chế biến thực phẩm - Công ty TNHH Thương mại Quốc tế Beida</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=20260709-mobile-brand-2">
+    <link rel="stylesheet" href="industrial-detail.css?v=20260620-mobile-advantage-four-col">
+</head>
+<body class="bg-gray-50 industrial-detail-page">
+    <!-- Loading Screen -->
+    <div id="loadingScreen"></div>
+    <script src="industrial-loader.js?v=20260620-bfcache-fix"></script>
+
+    <!-- Privacy Notice Modal -->
+    <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
+        <div class="bg-white rounded-lg shadow-2xl max-w-md w-full mx-4 max-h-[85vh] overflow-y-auto">
+            <div class="p-4 sm:p-6">
+                <div class="text-center mb-4">
+                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                        <img src="images/company/logo.png" alt="C?NG TY TNHH TM SX &amp; DV BESTAR SV" class="w-full h-full object-contain">
+                    </div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-1">Tuyên bố về quyền riêng tư</h2>
+                    <p class="text-sm text-gray-600">Chào mừng bạn đến với Công ty TNHH Thương mại Quốc tế Beida</p>
+                </div>
+                <div class="mb-4 text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-3">
+                        <i class="fas fa-shield-alt text-2xl text-blue-600"></i>
+                    </div>
+                </div>
+                <div class="text-sm text-gray-700 mb-4 space-y-3">
+                    <div class="bg-gray-50 rounded-lg p-4 text-left">
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            Trang web này sử dụng cookie để cải thiện trải nghiệm duyệt web của bạn và phân tích lưu lượng truy cập trang web. Bằng cách tiếp tục sử dụng trang web này, bạn đồng ý với việc chúng tôi sử dụng cookie. Để biết chi tiết, vui lòng tham khảo
+                            <a href="privacy-policy-vi.html" target="_blank" class="text-blue-600 hover:text-blue-800 underline font-semibold">chính sách bảo mật</a>。
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center px-4 sm:px-6">
+                    <button onclick="acceptPrivacy()" class="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[100px] sm:min-w-[120px]">
+                        <i class="fas fa-check mr-2"></i>OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <a href="index-vi.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src="images/company/logo.png" alt="C?NG TY TNHH TM SX &amp; DV BESTAR SV" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-900" id="companyName">C?NG TY TNHH TM SX &amp; DV BESTAR SV</h1>
+                        </div>
+                    </a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index-vi.html" class="nav-link" id="nav-home">Trang chủ</a>
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-about">Về chúng tôi</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="about-vi.html#company-intro" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-about-companyIntro">Giới thiệu công ty</a>
+                            <a href="about-vi.html#mission-vision" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-missionVision">Sứ mệnh & Tầm nhìn</a>
+                            <a href="about-vi.html#core-values" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-coreValues">Giá trị cốt lõi</a>
+                            <a href="about-vi.html#why-choose-us" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-markets">Lợi thế của chúng tôi</a>
+                            <a href="about-vi.html#quality-certifications" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg" id="nav-about-certifications">Chứng nhận chất lượng</a>
+                        </div>
+                    </div>
+                    <a href="services-vi.html#business-categories" class="nav-link" id="nav-products">Sản phẩm</a>
+                    <div class="relative group">
+                        <button class="nav-link-active flex items-center space-x-1">
+                            <span id="nav-news">Giải pháp môi trường</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 max-h-96 overflow-y-auto">
+                            <div class="px-4 py-3 border-b border-gray-100"><h4 class="text-sm font-semibold text-gray-900">【Giải pháp kỹ thuật môi trường công nghiệp】</h4></div>
+                            <a href="product-vi.html#oil-smoke-treatment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Hệ thống xử lý khói dầu</a>
+                            <a href="product-vi.html#chemical-gas-treatment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Hệ thống xử lý khí thải VOC</a>
+                            <a href="product-vi.html#paint-dust-treatment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Kỹ thuật thiết bị phun sơn</a>
+                            <div class="px-4 py-3 border-b border-gray-100"><h4 class="text-sm font-semibold text-gray-900">[Ứng dụng xây dựng/kỹ thuật]</h4></div>
+                            <a href="product-vi.html#spray-equipment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Thiết bị phun sơn</a>
+                            <a href="product-vi.html#chemical-plant-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Máy lọc khí thải</a>
+                            <a href="product-vi.html#electrostatic-oil-smoke" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Khói dầu tĩnh</a>
+                            <div class="px-4 py-3 border-b border-gray-100"><h4 class="text-sm font-semibold text-gray-900">[Sáu giải pháp công nghiệp lớn]</h4></div>
+                            <a href="product-vi.html#metal-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">công nghiệp gia công kim loại</a>
+                            <a href="product-vi.html#chemical-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Công nghiệp hóa chất</a>
+                            <a href="product-vi.html#kitchen-exhaust-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Dịch vụ ăn uống và bếp trung tâm</a>
+                            <a href="product-vi.html#electronic-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Công nghiệp điện tử</a>
+                            <a href="product-vi.html#plastic-rubber-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Ngành nhựa và cao su</a>
+                            <a href="product-vi.html#food-processing-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Công nghiệp chế biến thực phẩm</a>
+                        </div>
+                    </div>
+                    <a href="faq-vi.html" class="nav-link" id="nav-faq">Câu hỏi thường gặp</a>
+                    <a href="contact-vi.html" class="nav-link" id="nav-contact">Liên hệ</a>
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-2" onclick="toggleLanguageDropdown()">
+                            <i class="fas fa-globe text-blue-600"></i>
+                            <span class="language-current" id="currentLangDisplay">Tiếng Việt</span>
+                            <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" id="languageDropdown">
+                            <button onclick="changeLanguage(&#x27;zh-TW&#x27;)" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-lg flex items-center space-x-2"><span class="text-lg">🇹🇼</span><span>繁體中文</span></button>
+                            <button onclick="changeLanguage(&#x27;en&#x27;)" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2"><span class="text-lg">🇺🇸</span><span>English</span></button>
+                            <button onclick="changeLanguage(&#x27;ja&#x27;)" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2"><span class="text-lg">🇯🇵</span><span>日本語</span></button>
+                            <button onclick="changeLanguage(&#x27;vi&#x27;)" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-lg flex items-center space-x-2"><span class="text-lg">🇻🇳</span><span>Tiếng Việt</span></button>
+                        </div>
+                    </div>
+                </div>
+                <button id="mobileMenuBtn" class="mobile-menu-toggle lg:hidden" type="button" aria-label="Bật hoặc tắt menu điện thoại" aria-expanded="false" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="mobile-menu-panel hidden lg:hidden bg-white border-t border-gray-200 fixed top-16 left-0 right-0 z-40 max-h-[calc(100vh-4rem)] overflow-y-auto">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index-vi.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-home">Trang chủ</a>
+                <a href="faq-vi.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-faq">Câu hỏi thường gặp</a>
+                <a href="contact-vi.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-contact">Liên hệ</a>
+                <a href="product-vi.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-news">Giải pháp môi trường</a>
+                <a href="product-vi.html#kitchen-exhaust-solution" class="block px-3 py-2 rounded-md text-base font-medium text-teal-700 bg-teal-50">Dịch vụ ăn uống và bếp trung tâm</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="product-detail-hero relative pt-16 bg-cover bg-center bg-no-repeat" style="background-image: url(&#x27;images/products/equipment/bag-filter-collector.png&#x27;)">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-950/90 via-blue-900/85 to-blue-900/75"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="industrial-kicker">FOOD PROCESSING / HYGIENIC VENTILATION</div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">Công nghiệp chế biến thực phẩm</h1>
+            <p class="text-xl md:text-2xl text-blue-100 mb-6 font-medium">Khói dầu, hơi nước và mùi hôi—cả an toàn thực phẩm và môi trường đều quan trọng</p>
+            <p class="text-base md:text-lg text-blue-50 max-w-3xl leading-relaxed">Để chiên, nướng, hấp và chế biến thịt và thủy sản, chúng tôi tích hợp xả khói hợp vệ sinh, loại bỏ độ ẩm, xử lý mùi và thông gió trong toàn nhà máy, có tính đến an toàn thực phẩm, phòng cháy chữa cháy và môi trường cộng đồng.</p>
+            <div class="industrial-hero-rail" aria-label="Khả năng dịch vụ kỹ thuật"><span><i class="fas fa-ruler-combined"></i>Điều tra hiện trường</span><span><i class="fas fa-drafting-compass"></i>Thiết kế hệ thống</span><span><i class="fas fa-industry"></i>Chế tạo thiết bị</span><span><i class="fas fa-tools"></i>Lắp đặt và bảo trì</span></div>
+        </div>
+    </section>
+
+    <!-- Main layout: sidebar + content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+        <div class="lg:flex lg:gap-10 xl:gap-12">
+            <!-- Product sidebar -->
+            <aside class="product-detail-aside flex-shrink-0 mb-10 lg:mb-0">
+                <div class="product-detail-sidebar lg:sticky lg:top-24">
+                    <a href="product-vi.html" class="flex items-center text-sm text-gray-600 hover:text-blue-900 mb-4 transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i>Quay lại tổng quan về sản phẩm
+                    </a>
+                    <h2 class="text-lg font-bold text-gray-900 mb-4 pb-3 border-b border-gray-200">Chuyển sản phẩm nhanh</h2>
+                    <nav class="space-y-5 text-sm max-h-[70vh] overflow-y-auto pr-1">
+                        <div>
+                            <p class="product-sidebar-group-title">【Giải pháp kỹ thuật môi trường công nghiệp】</p>
+                            <ul class="space-y-1 mt-2">
+                                <li><a href="oil-smoke-treatment-vi.html" class="product-sidebar-link">Hệ thống xử lý khói dầu</a></li>
+                                <li><a href="chemical-gas-treatment-vi.html" class="product-sidebar-link">Hệ thống xử lý khí thải VOC</a></li>
+                                <li><a href="paint-dust-treatment-vi.html" class="product-sidebar-link">Kỹ thuật thiết bị phun sơn</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="product-sidebar-group-title">[Ứng dụng xây dựng/kỹ thuật]</p>
+                            <ul class="space-y-1 mt-2">
+                                <li><a href="spray-equipment-vi.html" class="product-sidebar-link">Thiết bị phun sơn</a></li>
+                                <li><a href="chemical-plant-solution-vi.html" class="product-sidebar-link">Máy lọc khí thải</a></li>
+                                <li><a href="electrostatic-oil-smoke-vi.html" class="product-sidebar-link">Khói dầu tĩnh</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="product-sidebar-group-title">[Sáu giải pháp công nghiệp lớn]</p>
+                            <ul class="space-y-1 mt-2">
+                                <li><a href="metal-industry-solution-vi.html" class="product-sidebar-link">công nghiệp gia công kim loại</a></li>
+                                <li><a href="chemical-industry-solution-vi.html" class="product-sidebar-link">Công nghiệp hóa chất</a></li>
+                                <li><a href="kitchen-exhaust-solution-vi.html" class="product-sidebar-link">Dịch vụ ăn uống và bếp trung tâm</a></li>
+                                <li><a href="electronic-industry-solution-vi.html" class="product-sidebar-link">Công nghiệp điện tử</a></li>
+                                <li><a href="plastic-rubber-industry-solution-vi.html" class="product-sidebar-link">Ngành nhựa và cao su</a></li>
+                                <li><a href="food-processing-industry-solution-vi.html" class="product-sidebar-link is-active">Công nghiệp chế biến thực phẩm</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="product-sidebar-group-title">[Bộ phận thông gió]</p>
+                            <ul class="space-y-1 mt-2">
+                                <li><a href="duct-solution-vi.html" class="product-sidebar-link">ống dẫn khí</a></li>
+                                <li><a href="fan-solution-vi.html" class="product-sidebar-link">cái quạt</a></li>
+                                <li><a href="filter-solution-vi.html" class="product-sidebar-link">lọc</a></li>
+                                <li><a href="collector-solution-vi.html" class="product-sidebar-link">Thiết bị thu gom bụi</a></li>
+                                <li><a href="custom-parts-solution-vi.html" class="product-sidebar-link">Phụ kiện tùy chỉnh</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </aside>
+
+            <main class="flex-1 min-w-0">
+                <!-- 客戶痛點 -->
+                <section class="mb-12">
+                    <div class="bg-white border border-gray-200 border-l-4 border-l-orange-500 rounded-xl p-6 md:p-8 shadow-sm">
+                        <p class="text-sm font-black text-orange-600 mb-2">Điểm đau chung của khách hàng</p>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Bạn đang phải đối mặt với những vấn đề lĩnh vực này?</h2>
+                        <p class="text-gray-600 text-base md:text-lg leading-relaxed">Bạn có phải đối mặt với một lượng lớn khói dầu mỡ và hơi nước sinh ra khi chiên, nướng và nấu nướng trong quá trình chế biến thực phẩm không? Dầu mỡ còn sót lại có thể gây ra rủi ro về an toàn thực phẩm, nguy cơ cháy nổ, đồng thời mùi hôi cũng có thể ảnh hưởng đến mối quan hệ với cộng đồng xung quanh.</p>
+                    </div>
+                </section>
+
+                <!-- 推薦解決方案 -->
+                <section class="mb-14">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Giải pháp được đề xuất</h2>
+                        <div class="product-section-title-line mx-auto mt-3"></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <article class="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-11 h-11 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center mb-4"><i class="fas fa-bolt"></i></div>
+                            <h3 class="text-lg font-black text-blue-950 mb-2">Máy hút mùi tĩnh điện cấp thực phẩm</h3>
+                            <p class="text-gray-600 leading-relaxed">Nó sử dụng thân bằng thép không gỉ đáp ứng các yêu cầu vệ sinh của nhà máy thực phẩm để loại bỏ hiệu quả các hạt dầu mỡ và giảm ô nhiễm thứ cấp.</p>
+                        </article>
+                        <article class="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-11 h-11 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center mb-4"><i class="fas fa-water"></i></div>
+                            <h3 class="text-lg font-black text-blue-950 mb-2">Hệ thống loại bỏ hơi nước</h3>
+                            <p class="text-gray-600 leading-relaxed">Thiết kế đường thoát ẩm cho khu vực nấu ăn để tránh hiện tượng ngưng tụ hơi nước trong nhà xưởng ảnh hưởng đến kết cấu và chất lượng thực phẩm.</p>
+                        </article>
+                        <article class="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-11 h-11 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center mb-4"><i class="fas fa-leaf"></i></div>
+                            <h3 class="text-lg font-black text-blue-950 mb-2">Xử lý mùi cuối cùng</h3>
+                            <p class="text-gray-600 leading-relaxed">Mùi chiên và mùi nguyên liệu động vật được xử lý bằng photooxygen hoặc mô-đun than hoạt tính rồi thải ra.</p>
+                        </article>
+                        <article class="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-11 h-11 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center mb-4"><i class="fas fa-diagram-project"></i></div>
+                            <h3 class="text-lg font-black text-blue-950 mb-2">Quy hoạch thông gió toàn nhà máy</h3>
+                            <p class="text-gray-600 leading-relaxed">Được thiết kế theo yêu cầu phân vùng của HACCP, khu vực có nguy cơ cao được bảo vệ bằng áp suất dương và khu vực xả khí được cách ly bằng áp suất âm.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- 適用場景 -->
+                <section class="mb-14">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Các tình huống áp dụng</h2>
+                        <div class="product-section-title-line mx-auto mt-3"></div>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                        <div class="product-application-item"><i class="fas fa-check"></i><span>nhà máy thực phẩm</span></div>
+                        <div class="product-application-item"><i class="fas fa-check"></i><span>Nhà máy thực phẩm chiên</span></div>
+                        <div class="product-application-item"><i class="fas fa-check"></i><span>Nướng và sản xuất</span></div>
+                        <div class="product-application-item"><i class="fas fa-check"></i><span>Chế biến thịt</span></div>
+                        <div class="product-application-item"><i class="fas fa-check"></i><span>Chế biến thủy sản</span></div>
+                        <div class="product-application-item"><i class="fas fa-check"></i><span>Sản xuất túi điều hòa</span></div>
+                    </div>
+                </section>
+<!-- CTA -->
+                <section class="product-detail-cta rounded-2xl overflow-hidden relative">
+                    <div class="absolute inset-0 product-detail-cta-dots opacity-40"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-950 via-blue-900 to-blue-800"></div>
+                    <div class="relative px-6 py-12 md:px-12 md:py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+                        <div class="text-white max-w-xl">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">Cần một giải pháp thông gió và xả khí tuân thủ HACCP?</h2>
+                            <p class="text-blue-100 text-lg leading-relaxed">Theo các yêu cầu về quy trình và quy định vệ sinh của nhà máy thực phẩm, hãy lập kế hoạch giải pháp thông gió và thoát khí tuân thủ HACCP.</p>
+                        </div>
+                        <a href="contact-vi.html" class="inline-flex items-center justify-center flex-shrink-0 bg-white text-blue-900 font-bold px-8 py-4 rounded-full hover:bg-blue-50 transition-all duration-200 shadow-lg text-lg">
+                            Tư vấn ngay
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 flex items-center justify-center">
+                            <img src="images/company/logo.png?v=202604021007" alt="C?NG TY TNHH TM SX &amp; DV BESTAR SV" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold text-lg" id="companyName-footer">C?NG TY TNHH TM SX &amp; DV BESTAR SV</h3>
+                        </div>
+                    </div>
+<div class="space-y-2">
+                        <div class="footer-phone-list space-y-1">
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇹🇼</span><span>+886-960-542-166</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇹🇼</span><span>+886-985-328-164</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇻🇳</span><span>+84-28-3779-0881</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇻🇳</span><span>+84-90-337-3583</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇻🇳</span><span>+84-98-501-9620</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇨🇦🇺🇸</span><span>+1-437-984-0249</span></p>
+                        </div>
+                        <p class="flex items-center text-sm text-gray-400"><i class="fas fa-envelope mr-2 text-teal-400"></i>info@bestas-intl.com</p>
+                        <p class="flex items-center text-sm text-gray-400"><i class="fas fa-map-marker-alt mr-2 text-teal-400"></i>Đoạn 2, Đường Muzha, Quận Văn Sơn, Thành phố Đài Bắc</p>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Liên kết nhanh</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index-vi.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Trang chủ</a></li>
+                        <li><a href="about-vi.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Về chúng tôi</a></li>
+                        <li><a href="product-vi.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Sản phẩm & giải pháp</a></li>
+                        <li><a href="faq-vi.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Câu hỏi thường gặp</a></li>
+                        <li><a href="contact-vi.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Liên hệ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Product Solutions -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Sản phẩm & phương án</h3>
+                    <ul class="space-y-2">
+                        <li><a href="product-vi.html#air-pollution-control" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Dự án ngăn ngừa và kiểm soát ô nhiễm không khí</a></li>
+                        <li><a href="product-vi.html#construction-engineering" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Ứng dụng xây dựng và kỹ thuật</a></li>
+                        <li><a href="product-vi.html#industry-application" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Sáu giải pháp công nghiệp chính</a></li>
+                        <li><a href="services-vi.html#business-categories" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Thiết bị và linh kiện</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Liên hệ</h3>
+                    <p class="text-gray-400 mb-4">Liên hệ với chúng tôi qua các kênh sau</p>
+                    <div class="flex space-x-4">
+                        <a href="https://line.me/ti/p/@bestas-intl" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors duration-200"><i class="fab fa-line text-white"></i></a>
+                        <a href="https://wa.me/886985328164" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-10 h-10 bg-[#25d366] rounded-full flex items-center justify-center hover:bg-[#1fb759] transition-colors duration-200"><i class="fab fa-whatsapp text-white"></i></a>
+                        <a href="https://zalo.me/84903373583" target="_blank" rel="noopener noreferrer" aria-label="Zalo" class="w-10 h-10 bg-[#0068ff] rounded-full flex items-center justify-center hover:bg-[#0056d6] transition-colors duration-200"><span class="footer-social-zalo-mark">Zalo</span></a>
+                        <a href="mailto:info@bestas-intl.com" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-200"><i class="fas fa-envelope text-white"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2026 <span id="companyName-footer-2">C?NG TY TNHH TM SX &amp; DV BESTAR SV</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            'zh-TW': {
+                companyName: '貝達國際貿易有限公司',
+                'companyName-footer': '貝達國際貿易有限公司',
+                'companyName-footer-2': '貝達國際貿易有限公司',
+                currentLangDisplay: '中文',
+                'nav-home': '首頁', 'nav-about': '關於我們', 'nav-products': '產品',
+                'nav-news': '各項環保解決方案', 'nav-faq': '常見問題', 'nav-contact': '聯絡我們',
+                'nav-about-companyIntro': '公司簡介', 'nav-about-missionVision': '使命與願景',
+                'nav-about-coreValues': '核心理念', 'nav-about-markets': '我們的優勢',
+                'nav-services-businessCategories': '通風設備', 'nav-services-matching': '供應鏈整合',
+                'nav-services-partnerRecruitment': '經銷合作',
+                'mobile-nav-home': '首頁', 'mobile-nav-faq': '常見問題', 'mobile-nav-contact': '聯絡我們'
+            },
+            'en': {
+                companyName: 'BESTAR SV CO.LTD',
+                'companyName-footer': 'BESTAR SV CO.LTD',
+                'companyName-footer-2': 'BESTAR SV CO.LTD',
+                currentLangDisplay: 'English',
+                'nav-home': 'Home', 'nav-about': 'About Us', 'nav-products': 'Products',
+                'nav-news': 'Solutions', 'nav-faq': 'FAQ', 'nav-contact': 'Contact',
+                'nav-about-companyIntro': 'Company Introduction', 'nav-about-missionVision': 'Mission / Vision',
+                'nav-about-coreValues': 'Core Values', 'nav-about-markets': 'Our Advantages',
+                'nav-services-businessCategories': 'Business Categories', 'nav-services-matching': 'Supply Chain',
+                'nav-services-partnerRecruitment': 'Partner Recruitment',
+                'mobile-nav-home': 'Home', 'mobile-nav-faq': 'FAQ', 'mobile-nav-contact': 'Contact'
+            },
+            'ja': {
+                companyName: 'ベスタス国際貿易有限公司',
+                'companyName-footer': 'ベスタス国際貿易有限公司',
+                'companyName-footer-2': 'ベスタス国際貿易有限公司',
+                currentLangDisplay: '日本語',
+                'nav-home': 'ホーム', 'nav-about': '会社概要', 'nav-products': '製品',
+                'nav-news': '製品ソリューション', 'nav-faq': 'よくある質問', 'nav-contact': 'お問い合わせ',
+                'nav-about-companyIntro': '会社紹介', 'nav-about-missionVision': '使命・ビジョン',
+                'nav-about-coreValues': 'コアバリュー', 'nav-about-markets': '私たちの強み',
+                'nav-services-businessCategories': '事業項目', 'nav-services-matching': 'サプライチェーン',
+                'nav-services-partnerRecruitment': 'パートナー募集',
+                'mobile-nav-home': 'ホーム', 'mobile-nav-faq': 'よくある質問', 'mobile-nav-contact': 'お問い合わせ'
+            },
+            'vi': {
+                companyName: 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
+                'companyName-footer': 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
+                'companyName-footer-2': 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
+                currentLangDisplay: 'Tiếng Việt',
+                'nav-home': 'Trang chủ', 'nav-about': 'Về chúng tôi', 'nav-products': 'Sản phẩm',
+                'nav-news': 'Giải pháp', 'nav-faq': 'Câu hỏi thường gặp', 'nav-contact': 'Liên hệ',
+                'nav-about-companyIntro': 'Giới thiệu', 'nav-about-missionVision': 'Sứ mệnh & Tầm nhìn',
+                'nav-about-coreValues': 'Giá trị cốt lõi', 'nav-about-markets': 'Ưu thế của chúng tôi',
+                'nav-services-businessCategories': 'Danh mục', 'nav-services-matching': 'Chuỗi cung ứng',
+                'nav-services-partnerRecruitment': 'Đối tác',
+                'mobile-nav-home': 'Trang chủ', 'mobile-nav-faq': 'FAQ', 'mobile-nav-contact': 'Liên hệ'
+            }
+        };
+
+        let isMenuOpen = false;
+        let mobileMenuAnimationTimer = null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            /* language handled by language-router.js */
+            if (!localStorage.getItem('privacyAccepted')) {
+                setTimeout(showPrivacyModal, 800);
+            }
+            setTimeout(function() {
+                const el = document.getElementById('loadingScreen');
+                if (el) el.style.display = 'none';
+            }, 500);
+        });
+
+        function changeLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+            const t = translations[lang];
+            if (!t) return;
+            Object.keys(t).forEach(function(key) {
+                const el = document.getElementById(key);
+                if (el) el.textContent = t[key];
+            });
+            const dropdown = document.getElementById('languageDropdown');
+            if (dropdown) { dropdown.classList.add('invisible'); dropdown.classList.remove('opacity-100'); }
+        }
+
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            if (dropdown) { dropdown.classList.toggle('invisible'); dropdown.classList.toggle('opacity-100'); }
+        }
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            if (!mobileMenu || !menuBtn) {
+                return;
+            }
+
+            isMenuOpen = !isMenuOpen;
+            clearTimeout(mobileMenuAnimationTimer);
+            menuBtn.classList.toggle('is-open', isMenuOpen);
+            menuBtn.setAttribute('aria-expanded', String(isMenuOpen));
+
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    mobileMenu.classList.add('is-open');
+                });
+                return;
+            }
+
+            mobileMenu.classList.remove('is-open');
+            mobileMenuAnimationTimer = setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 240);
+        }
+
+        function showPrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+        }
+
+        function hidePrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) { modal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
+        }
+
+        function acceptPrivacy() {
+            localStorage.setItem('privacyAccepted', 'true');
+            localStorage.setItem('privacyAcceptedDate', new Date().toISOString());
+            hidePrivacyModal();
+        }
+
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('languageDropdown');
+            const button = event.target.closest('.group');
+            if (!button && dropdown && !dropdown.classList.contains('invisible')) {
+                dropdown.classList.add('invisible');
+                dropdown.classList.remove('opacity-100');
+            }
+        });
+    </script>
+    <script src="nav-active.js?v=20260620-solution-nav"></script>
+    <script src="language-router.js?v=20260709-mobile-brand-2"></script>
+    <script src="quick-contact.js"></script>
+    <script src="product-switcher.js"></script>
+    <script src="industrial-detail-carousel.js?v=20260620-industry-result-mobile-carousel"></script>
+</body>
+</html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-TW" class="industrial-loader-pending">
+<html lang="zh-TW" class="industrial-loader-pending" data-lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>工業風管系統 - 貝達國際貿易有限公司</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=20260628-detail-mobile-overflow-fix">
+    <link rel="stylesheet" href="styles.css?v=20260709-mobile-brand-2">
     <link rel="stylesheet" href="industrial-detail.css?v=20260620-mobile-advantage-four-col">
 </head>
 <body class="bg-gray-50 industrial-detail-page">
@@ -20,7 +20,7 @@
             <div class="p-4 sm:p-6">
                 <div class="text-center mb-4">
                     <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                        <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                        <img src="images/company/logo.png" alt="??????????" class="w-full h-full object-contain">
                     </div>
                     <h2 class="text-xl font-bold text-gray-800 mb-1">隱私權聲明</h2>
                     <p class="text-sm text-gray-600">歡迎來到貝達國際貿易有限公司</p>
@@ -54,11 +54,10 @@
                 <div class="flex items-center space-x-3">
                     <a href="index.html" class="flex items-center space-x-3">
                         <div class="w-10 h-10 flex items-center justify-center">
-                            <img src="images/company/logo.png" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                            <img src="images/company/logo.png" alt="??????????" class="w-full h-full object-contain">
                         </div>
                         <div>
-                            <h1 class="text-xl font-bold text-gray-900" id="companyName">貝達國際貿易有限公司</h1>
-                            <p class="text-xs text-gray-500">International Trade</p>
+                            <h1 class="text-xl font-bold text-gray-900" id="companyName">??????????</h1>
                         </div>
                     </a>
                 </div>
@@ -321,11 +320,10 @@
                 <div class="space-y-4">
                     <div class="flex items-center space-x-3">
                         <div class="w-12 h-12 flex items-center justify-center">
-                            <img src="images/company/logo.png?v=202604021007" alt="貝達國際貿易有限公司" class="w-full h-full object-contain">
+                            <img src="images/company/logo.png?v=202604021007" alt="??????????" class="w-full h-full object-contain">
                         </div>
                         <div>
-                            <h3 class="text-white font-bold text-lg" id="companyName-footer">貝達國際貿易有限公司</h3>
-                            <p class="text-gray-400 text-sm">International Trade</p>
+                            <h3 class="text-white font-bold text-lg" id="companyName-footer">??????????</h3>
                         </div>
                     </div>
 <div class="space-y-2">
@@ -375,7 +373,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400 text-sm">© 2026 <span id="companyName-footer-2">貝達國際貿易有限公司</span>. All rights reserved.</p>
+                <p class="text-gray-400 text-sm">© 2026 <span id="companyName-footer-2">??????????</span>. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -396,9 +394,9 @@
                 'mobile-nav-home': '首頁', 'mobile-nav-faq': '常見問題', 'mobile-nav-contact': '聯絡我們'
             },
             'en': {
-                companyName: 'Bestas International Trade Co., Ltd.',
-                'companyName-footer': 'Bestas International Trade Co., Ltd.',
-                'companyName-footer-2': 'Bestas International Trade Co., Ltd.',
+                companyName: 'BESTAR SV CO.LTD',
+                'companyName-footer': 'BESTAR SV CO.LTD',
+                'companyName-footer-2': 'BESTAR SV CO.LTD',
                 currentLangDisplay: 'English',
                 'nav-home': 'Home', 'nav-about': 'About Us', 'nav-products': 'Products',
                 'nav-news': 'Solutions', 'nav-faq': 'FAQ', 'nav-contact': 'Contact',
@@ -440,7 +438,7 @@
         let mobileMenuAnimationTimer = null;
 
         document.addEventListener('DOMContentLoaded', function() {
-            changeLanguage(localStorage.getItem('preferredLanguage') || 'zh-TW');
+            /* language handled by language-router.js */
             if (!localStorage.getItem('privacyAccepted')) {
                 setTimeout(showPrivacyModal, 800);
             }
@@ -519,6 +517,7 @@
         });
     </script>
     <script src="nav-active.js?v=20260620-solution-nav"></script>
+    <script src="language-router.js?v=20260709-mobile-brand-2"></script>
     <script src="quick-contact.js"></script>
     <script src="product-switcher.js"></script>
     <script src="industrial-detail-carousel.js?v=20260620-detail-carousel-3"></script>

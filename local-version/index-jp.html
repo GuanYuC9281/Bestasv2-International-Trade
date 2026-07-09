@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ja" data-lang="ja" class="industrial-loader-pending">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ベスタス国際貿易有限公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=20260709-mobile-brand-2">
+</head>
+<body class="bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loadingScreen"></div>
+    <script src="industrial-loader.js?v=20260620-bfcache-fix"></script>
+
+    <!-- Privacy Notice Modal -->
+    <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
+        <div class="bg-white rounded-lg shadow-2xl max-w-md w-full mx-4 max-h-[85vh] overflow-y-auto">
+            <div class="p-4 sm:p-6">
+                <!-- Header -->
+                <div class="text-center mb-4">
+                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                        <img src="images/company/logo.png" alt="BESTAR SV CO.LTD" class="w-full h-full object-contain">
+                    </div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-1">プライバシーに関する声明</h2>
+                    <p class="text-sm text-gray-600">北達国際貿易有限公司へようこそ。</p>
+                </div>
+
+                <!-- Privacy Notice Content -->
+                <div class="mb-4 text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-3">
+                        <i class="fas fa-shield-alt text-2xl text-blue-600"></i>
+                    </div>
+                </div>
+
+                <!-- Privacy Policy Text -->
+                <div class="text-sm text-gray-700 mb-4 space-y-3">
+                    <div class="bg-gray-50 rounded-lg p-4 text-left">
+                        <div class="space-y-2">
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                この Web サイトでは、閲覧エクスペリエンスを向上させ、Web サイトのトラフィックを分析するために Cookie を使用します。このサイトの使用を続けると、Cookie の使用に同意したことになります。詳細については、を参照してください。
+                                <a href="privacy-policy-jp.html" target="_blank" class="text-blue-600 hover:text-blue-800 underline font-semibold">プライバシーポリシー</a>。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 justify-center px-4 sm:px-6">
+                    <button onclick="acceptPrivacy()" class="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[100px] sm:min-w-[120px]">
+                        <i class="fas fa-check mr-2"></i>
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <a href="index-jp.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src="images/company/logo.png" alt="BESTAR SV CO.LTD" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-900" id="companyName">BESTAR SV CO.LTD</h1>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index-jp.html" class="nav-link-active" id="nav-home">ホーム</a>
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-about">会社情報</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="about-jp.html#company-intro" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-about-companyIntro">会社概要</a>
+                            <a href="about-jp.html#mission-vision" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-missionVision">使命とビジョン</a>
+                            <a href="about-jp.html#core-values" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-coreValues">基本理念</a>
+                            <a href="about-jp.html#why-choose-us" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-markets">私たちの強み</a>
+                            <a href="about-jp.html#quality-certifications" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg" id="nav-about-certifications">品質認証</a>
+                        </div>
+                    </div>
+
+                    <a href="services-jp.html#business-categories" class="nav-link" id="nav-products">製品</a>
+                                        <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-news">環境ソリューション</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 max-h-96 overflow-y-auto">
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <h4 class="text-sm font-semibold text-gray-900">【産業環境エンジニアリングソリューション】</h4>
+                            </div>
+                            <a href="product-jp.html#oil-smoke-treatment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">油煙処理装置</a>
+                            <a href="product-jp.html#chemical-gas-treatment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">VOC排ガス処理装置</a>
+                            <a href="product-jp.html#paint-dust-treatment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">スプレー塗装設備エンジニアリング</a>
+                            <div class="px-4 py-3 border-b border-gray-100"><h4 class="text-sm font-semibold text-gray-900">【建設・土木用途】</h4></div>
+                            <a href="product-jp.html#spray-equipment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">スプレー塗装設備</a>
+                            <a href="product-jp.html#chemical-plant-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">排ガススクラバー</a>
+                            <a href="product-jp.html#electrostatic-oil-smoke" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">静的な油煙</a>
+                            <div class="px-4 py-3 border-b border-gray-100"><h4 class="text-sm font-semibold text-gray-900">【6大産業ソリューション】</h4></div>
+                            <a href="product-jp.html#metal-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">金属加工業</a>
+                            <a href="product-jp.html#chemical-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化学工業</a>
+                            <a href="product-jp.html#kitchen-exhaust-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">ケータリングとセントラルキッチン</a>
+                            <a href="product-jp.html#electronic-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">エレクトロニクス産業</a>
+                            <a href="product-jp.html#plastic-rubber-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">プラスチックおよびゴム産業</a>
+                            <a href="product-jp.html#food-processing-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">食品加工業</a>
+                        </div>
+                    </div>
+                    <a href="faq-jp.html" class="nav-link" id="nav-faq">よくある質問</a>
+                    <a href="contact-jp.html" class="nav-link" id="nav-contact">お問い合わせ</a>
+                    
+                    <!-- Language Selector -->
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-2" onclick="toggleLanguageDropdown()">
+                            <i class="fas fa-globe text-blue-600"></i>
+                            <span class="language-current" id="currentLangDisplay">日本語</span>
+                            <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" id="languageDropdown">
+                            <button onclick="changeLanguage(&#x27;zh-TW&#x27;)" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-lg flex items-center space-x-2">
+                                <span class="text-lg">🇹🇼</span>
+                                <span>繁體中文</span>
+                            </button>
+                            <button onclick="changeLanguage(&#x27;en&#x27;)" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
+                                <span class="text-lg">🇺🇸</span>
+                                <span>English</span>
+                            </button>
+                            <button onclick="changeLanguage(&#x27;ja&#x27;)" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
+                                <span class="text-lg">🇯🇵</span>
+                                <span>日本語</span>
+                            </button>
+                            <button onclick="changeLanguage(&#x27;vi&#x27;)" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-lg flex items-center space-x-2">
+                                <span class="text-lg">🇻🇳</span>
+                                <span>Tiếng Việt</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="mobileMenuBtn" class="mobile-menu-toggle lg:hidden" type="button" aria-label="電話メニューをオンまたはオフにする" aria-expanded="false" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu-panel hidden lg:hidden bg-white border-t border-gray-200 fixed top-16 left-0 right-0 z-40 max-h-[calc(100vh-4rem)] overflow-y-auto">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index-jp.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-home">ホーム</a>
+                
+                <!-- About Dropdown -->
+                <div class="px-3 py-2">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu(&#x27;mobile-about&#x27;)">
+                        <span id="mobile-nav-about">会社情報</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-about" class="mobile-submenu-panel hidden pl-4 space-y-1 mt-1">
+                        <a href="about-jp.html#company-intro" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-companyIntro">会社概要</a>
+                        <a href="about-jp.html#mission-vision" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-missionVision">使命とビジョン</a>
+                        <a href="about-jp.html#core-values" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-coreValues">基本理念</a>
+                        <a href="about-jp.html#why-choose-us" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-markets">私たちの強み</a>
+                        <a href="about-jp.html#quality-certifications" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-certifications">品質認証</a>
+                    </div>
+                </div>
+
+                <a href="services-jp.html#business-categories" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-products">製品</a>
+
+                                <!-- Solutions Dropdown -->
+                <div class="px-3 py-2">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu(&#x27;mobile-solutions&#x27;)">
+                        <span id="mobile-nav-news">環境ソリューション</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-solutions" class="mobile-submenu-panel hidden pl-4 space-y-1 mt-1 max-h-96 overflow-y-auto">
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">【産業環境エンジニアリングソリューション】</h4>
+                            <a href="product-jp.html#oil-smoke-treatment" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">油煙処理装置</a>
+                            <a href="product-jp.html#chemical-gas-treatment" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">VOC排ガス処理装置</a>
+                            <a href="product-jp.html#paint-dust-treatment" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">スプレー塗装設備エンジニアリング</a>
+                        </div>
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">【建設・土木用途】</h4>
+                            <a href="product-jp.html#spray-equipment" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">スプレー塗装設備</a>
+                            <a href="product-jp.html#chemical-plant-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">排ガススクラバー</a>
+                            <a href="product-jp.html#electrostatic-oil-smoke" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">静的な油煙</a>
+                        </div>
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">【6大産業ソリューション】</h4>
+                            <a href="product-jp.html#metal-industry-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">金属加工業</a>
+                            <a href="product-jp.html#chemical-industry-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">化学工業</a>
+                            <a href="product-jp.html#kitchen-exhaust-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">ケータリングとセントラルキッチン</a>
+                            <a href="product-jp.html#electronic-industry-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">エレクトロニクス産業</a>
+                            <a href="product-jp.html#plastic-rubber-industry-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">プラスチックおよびゴム産業</a>
+                            <a href="product-jp.html#food-processing-industry-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">食品加工業</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="faq-jp.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-faq">よくある質問</a>
+                <a href="contact-jp.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-contact">お問い合わせ</a>
+                
+                <!-- Language Selector for Mobile -->
+                <div class="px-3 py-2 border-t border-gray-200 mt-2 pt-4">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu(&#x27;mobile-language&#x27;)">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-globe text-blue-600"></i>
+                            <span class="language-current" id="mobile-currentLangDisplay">日本語</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-language" class="mobile-submenu-panel hidden pl-4 space-y-1 mt-1">
+                        <button onclick="changeLanguage(&#x27;zh-TW&#x27;)" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇹🇼</span>
+                            <span>繁體中文</span>
+                        </button>
+                        <button onclick="changeLanguage(&#x27;en&#x27;)" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇺🇸</span>
+                            <span>English</span>
+                        </button>
+                        <button onclick="changeLanguage(&#x27;ja&#x27;)" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇯🇵</span>
+                            <span>日本語</span>
+                        </button>
+                        <button onclick="changeLanguage(&#x27;vi&#x27;)" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇻🇳</span>
+                            <span>Tiếng Việt</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Latest News Ticker -->
+    <section class="home-news-ticker" aria-label="最新ニュース放送">
+        <div class="home-news-ticker-inner">
+            <div class="home-news-ticker-label">
+                <i class="fas fa-bullhorn"></i>
+                <span>最新ニュース</span>
+            </div>
+            <div class="home-news-ticker-window">
+                <div class="home-news-ticker-track">
+                    <div class="home-news-ticker-set">
+                        <span>品質はあらゆるテスト手順から生まれます。当社のファン性能試験ラボは、ISO/IEC 17025、AMCA 210、CNAS、GB/T1236、QUATEST 3 などの多くの国際試験規格に準拠しており、あらゆるプロジェクトに信頼できる保証を提供します。</span>
+                        <span>産業用換気、集塵、大気汚染制御エンジニアリング サービスは、引き続き専門的なサポートを提供します。</span>
+                    </div>
+                    <div class="home-news-ticker-set" aria-hidden="true">
+                        <span>品質はあらゆるテスト手順から生まれます。当社のファン性能試験ラボは、ISO/IEC 17025、AMCA 210、CNAS、GB/T1236、QUATEST 3 などの多くの国際試験規格に準拠しており、あらゆるプロジェクトに信頼できる保証を提供します。</span>
+                        <span>産業用換気、集塵、大気汚染制御エンジニアリング サービスは、引き続き専門的なサポートを提供します。</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="home-industrial-hero" style="background-image: url(&#x27;images/index/harbor-bg.png&#x27;)">
+        <div class="home-industrial-hero-overlay"></div>
+        <div class="home-industrial-hero-grid"></div>
+        <div class="home-industrial-hero-frame"></div>
+        <div class="home-industrial-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="home-industrial-hero-panel">
+                <div class="home-industrial-hero-copy">
+                    <h1>
+                        産業環境およびエンジニアリング統合の専門家
+                    </h1>
+                    <p>
+                        産業用換気、集中集塵、VOC排ガス処理、スクラバー、油煙処理などのエンジニアリングソリューションをワンストップで提供
+                    </p>
+                </div>
+                <div class="home-industrial-hero-actions">
+                    <a href="contact-jp.html" class="home-industrial-hero-button home-industrial-hero-button-primary">
+                        <span class="home-industrial-hero-button-icon"><i class="fas fa-envelope"></i></span>
+                        <span>今すぐ相談</span>
+                        <i class="fas fa-arrow-right home-industrial-hero-button-arrow"></i>
+                    </a>
+                    <a href="services-jp.html" class="home-industrial-hero-button home-industrial-hero-button-secondary">
+                        <span class="home-industrial-hero-button-icon"><i class="fas fa-th-large"></i></span>
+                        <span>サービスを見る</span>
+                        <i class="fas fa-arrow-right home-industrial-hero-button-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section (Business Categories preview marquee) -->
+    <section class="home-marquee-section py-16 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-9">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-12 h-1 bg-orange-500"></span>
+                        <span class="text-sm font-bold text-orange-700 tracking-widest">機器の供給とエンジニアリングの統合</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-3">産業用換気および大気汚染防止装置</h2>
+                    <p class="text-lg text-gray-600">集塵、洗浄、ファン、カスタマイズされたエアダクトアクセサリをカバーする完全な構成が、工場の要件に従って提供されます。</p>
+                </div>
+                <a href="services-jp.html#business-categories" class="inline-flex items-center justify-between gap-8 border-2 border-[#0B1F3A] text-[#0B1F3A] font-bold px-6 py-3 hover:bg-[#0B1F3A] hover:text-white transition-colors">
+                    <span>詳しく見る</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="home-categories-marquee">
+                <div class="home-categories-marquee-track">
+                    <div class="home-categories-marquee-set">
+                        <div class="home-categories-marquee-item"><img src="images/products/air-pollution/metal-grinding-filter.png" alt="金属研削粉塵フィルター装置" loading="lazy"><div><span>防塵対策</span><strong>金属研削粉塵フィルター装置</strong></div></div>
+                        <div class="home-categories-marquee-item"><img src="images/products/air-pollution/pp-spray-tower.png" alt="PPスクラバー装置" loading="lazy"><div><span>スクラバー</span><strong>PPスクラバー装置</strong></div></div>
+                        <div class="home-categories-marquee-item"><img src="images/products/fans/fan_product_06.png" alt="多翼遠心ファン" loading="lazy"><div><span>産業用ファン</span><strong>多翼遠心ファン</strong></div></div>
+                        <div class="home-categories-marquee-item"><img src="images/products/fans/fan_product_10.png" alt="屋根換気扇" loading="lazy"><div><span>屋根のドラフト</span><strong>屋根換気扇</strong></div></div>
+                        <div class="home-categories-marquee-item"><img src="images/products/fans/inline-fan.jpg" alt="ダクトファン" loading="lazy"><div><span>ダクトファン</span><strong>ダクトファン</strong></div></div>
+                        <div class="home-categories-marquee-item"><img src="images/products/fans/medium-pressure-backward-curved-1.png" alt="中圧後傾ファン" loading="lazy"><div><span>産業用ファン</span><strong>中圧後傾ファン</strong></div></div>
+                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/pp-plastic-duct.png" alt="PPプラスチックエアダクト" loading="lazy"><div><span>耐食性配管</span><strong>PPプラスチックエアダクト</strong></div></div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="home-features-section py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+                <div class="home-features-copy lg:col-span-4">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-12 h-1 bg-orange-500"></span>
+                        <span class="text-sm font-bold text-orange-300 tracking-widest">エンジニアリング能力</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black text-white mb-5 leading-tight">設計から製造まで<br>工事現場へ行く</h2>
+                    <p class="text-lg text-slate-300 leading-relaxed mb-8">単一のチームが機器、エアダクト、制御、建設を統合して通信コストを削減し、プロジェクトの品質と進捗を保証します。</p>
+                </div>
+                <div class="home-features-grid lg:col-span-8 grid md:grid-cols-3 border border-white/20">
+                    <article class="home-feature-card">
+                        <div class="home-feature-number">01</div>
+                        <i class="fas fa-industry home-feature-icon"></i>
+                        <h3>自社工場で製造</h3>
+                        <p>機器とカスタマイズされたアクセサリは、安定した品質、柔軟な仕様、制御可能な納期を備えて独自に製造されています。</p>
+                        <ul>
+                            <li>カスタマイズされた装置の生産</li>
+                            <li>エアダクトおよび付属品の加工</li>
+                        </ul>
+                    </article>
+                    <article class="home-feature-card">
+                        <div class="home-feature-number">02</div>
+                        <i class="fas fa-hard-hat home-feature-icon"></i>
+                        <h3>24年以上のエンジニアリング経験</h3>
+                        <p>工場の換気、集塵、排ガス処理のニーズを熟知し、実現可能な改善ソリューションを提供します。</p>
+                        <ul>
+                            <li>現場での風量評価</li>
+                            <li>機器とパイプラインの統合</li>
+                        </ul>
+                    </article>
+                    <article class="home-feature-card">
+                        <div class="home-feature-number">03</div>
+                        <i class="fas fa-map-marked-alt home-feature-icon"></i>
+                        <h3>台湾・ベトナムチーム</h3>
+                        <p>国境を越えたコラボレーションとローカル サービスにより、建設、メンテナンス、サプライ チェーンのニーズに迅速に対応します。</p>
+                        <ul>
+                            <li>2 か所のテクニカル サポート</li>
+                            <li>現場での施工・メンテナンス</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview Section -->
+    <section class="home-solutions-section py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">環境工学ソリューション</h2>
+                <p class="text-xl text-gray-600 max-w-3xl leading-relaxed mx-auto">企業が工場環境を改善し、汚染物質の排出を削減し、規制要件を遵守し、安全で効率的かつ持続可能な生産環境を構築できるよう支援します。</p>
+            </div>
+            <div class="home-solutions-grid grid md:grid-cols-2 lg:grid-cols-6 gap-6">
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+        <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="images/products/fans/high-pressure-backward-curved.png" alt="産業用換気システム" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="relative z-10 transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
+            <h4 class="font-semibold text-gray-900 mb-5">産業用換気システム</h4>
+            <p class="text-gray-600 leading-relaxed text-sm">工場内の高温・蒸れ・風通し不足を改善し、作業環境の快適性と生産効率を向上します。</p>
+        </div>
+    </div>
+
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+        <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="images/products/air-pollution/chemical-gas-main.png" alt="集中集塵システム" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="relative z-10 transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
+            <h4 class="font-semibold text-gray-900 mb-5">集中集塵システム</h4>
+            <p class="text-gray-600 leading-relaxed text-sm">プロセスダストを収集して、粉塵汚染、機器の損失、労働衛生上のリスクを軽減します。</p>
+        </div>
+    </div>
+
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+        <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="images/products/air-pollution/metal-grinding-filter.png" alt="有機性排ガス処理システム" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="relative z-10 transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
+            <h4 class="font-semibold text-gray-900 mb-5">有機性排ガス処理システム</h4>
+            <p class="text-gray-600 leading-relaxed text-sm">VOC、有機溶剤、臭気ガスを浄化して環境リスクを軽減します</p>
+        </div>
+    </div>
+
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+        <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="images/products/air-pollution/oil-smoke-main.png" alt="油煙処理装置" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="relative z-10 transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
+            <h4 class="font-semibold text-gray-900 mb-5">油煙処理装置</h4>
+            <p class="text-gray-600 leading-relaxed text-sm">油煙、オイルミスト、臭気を効果的に除去し、外食産業や工業プロセスに適しています。</p>
+        </div>
+    </div>
+
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+        <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="images/products/air-pollution/pp-spray-tower.png" alt="排ガススクラバーシステム" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="relative z-10 transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
+            <h4 class="font-semibold text-gray-900 mb-5">排ガススクラバーシステム</h4>
+            <p class="text-gray-600 leading-relaxed text-sm">酸・アルカリ排ガス、腐食性ガス、特殊プロセス排出物への対応</p>
+        </div>
+    </div>
+
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+        <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="images/products/equipment/cyclone-collector.png" alt="スプレー塗装設備エンジニアリング" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="relative z-10 transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
+            <h4 class="font-semibold text-gray-900 mb-5">スプレー塗装設備エンジニアリング</h4>
+            <p class="text-gray-600 leading-relaxed text-sm">スプレーブース、ペイントミスト濾過、VOC制御を統合して、塗装の品質と環境上の利点を向上させます。</p>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- 精選合作案例 Section -->
+<section class="home-cases-section home-client-section py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="home-client-heading text-center mb-10">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">厳選した協力事例</h2>
+            <p class="text-xl text-gray-600">さまざまな業界の協力の成果を結集し、信頼できるエンジニアリングとサプライチェーンサービスの経験を提供します</p>
+        </div>
+
+        <div class="client-marquee" aria-label="協力事例集 競馬予想図">
+            <div id="clientMarqueeViewport" class="client-marquee-viewport">
+                <div class="client-marquee-track">
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/1.jpg" alt="連携事例1" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/2.jpg" alt="連携事例2" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/3.jpg" alt="連携事例3" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/4.jpg" alt="連携事例4" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/5.jpg" alt="連携事例5" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/6.jpg" alt="厳選した連携事例6" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/7.jpg" alt="厳選した連携事例7" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/8.jpg" alt="厳選した連携事例8" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/9.jpg" alt="厳選した協力事例9" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/10.jpg" alt="厳選した連携事例10" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/11.jpg" alt="厳選した協力事例11" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/12.jpg" alt="厳選した協力事例12" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/1.jpg" alt="連携事例1" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/2.jpg" alt="連携事例2" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/3.jpg" alt="連携事例3" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/4.jpg" alt="連携事例4" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/5.jpg" alt="連携事例5" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/6.jpg" alt="厳選した連携事例6" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/7.jpg" alt="厳選した連携事例7" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/8.jpg" alt="厳選した連携事例8" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/9.jpg" alt="厳選した協力事例9" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/10.jpg" alt="厳選した連携事例10" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/11.jpg" alt="厳選した協力事例11" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/12.jpg" alt="厳選した協力事例12" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA Section -->
+    <section class="industrial-cta text-white">
+        <div class="industrial-cta-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="industrial-cta-copy">
+                <h2>購入計画を始めましょう</h2>
+                <p>詳細はこちら 今すぐお問い合わせください。 </p>
+            </div>
+            <div class="industrial-cta-actions">
+                <a href="contact-jp.html" class="industrial-cta-button industrial-cta-button-primary">
+                    <i class="fas fa-phone"></i>
+                    お問い合わせ
+                </a>
+                <a href="services-jp.html" class="industrial-cta-button industrial-cta-button-secondary">
+                    <i class="fas fa-list"></i>
+                    サービスを見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 flex items-center justify-center">
+                            <img src="images/company/logo.png?v=202604021007" alt="BESTAR SV CO.LTD" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold text-lg" id="companyName-footer">BESTAR SV CO.LTD</h3>
+                        </div>
+                    </div>
+<div class="space-y-2">
+                        <div class="footer-phone-list space-y-1">
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇹🇼</span><span>+886-960-542-166</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇹🇼</span><span>+886-985-328-164</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇻🇳</span><span>+84-28-3779-0881</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇻🇳</span><span>+84-90-337-3583</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇻🇳</span><span>+84-98-501-9620</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇨🇦🇺🇸</span><span>+1-437-984-0249</span></p>
+                        </div>
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-envelope mr-2 text-teal-400"></i>
+                            info@bestas-intl.com
+                        </p>
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2 text-teal-400"></i>
+                            台北市文山区木柵路二段
+                        </p>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">クイックリンク</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index-jp.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">ホーム</a></li>
+                        <li><a href="about-jp.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">会社情報</a></li>
+                        <li><a href="product-jp.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">製品・ソリューション</a></li>
+                        <li><a href="faq-jp.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">よくある質問</a></li>
+                        <li><a href="contact-jp.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">お問い合わせ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Product Solutions -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">製品・プラン</h3>
+                    <ul class="space-y-2">
+                        <li><a href="product-jp.html#air-pollution-control" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">大気汚染防止・抑制事業</a></li>
+                        <li><a href="product-jp.html#construction-engineering" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">建設およびエンジニアリング用途</a></li>
+                        <li><a href="product-jp.html#industry-application" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">6つの主要な産業用ソリューション</a></li>
+                        <li><a href="services-jp.html#business-categories" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">機器とコンポーネント</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">お問い合わせ</h3>
+                    <p class="text-gray-400 mb-4">以下の方法でお問い合わせください</p>
+                    <div class="flex space-x-4">
+                        <a href="https://line.me/ti/p/@bestas-intl" target="_blank" class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors duration-200">
+                            <i class="fab fa-line text-white"></i>
+                        </a>
+                        <a href="https://wa.me/886985328164" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-10 h-10 bg-[#25d366] rounded-full flex items-center justify-center hover:bg-[#1fb759] transition-colors duration-200"><i class="fab fa-whatsapp text-white"></i></a>
+                        <a href="https://zalo.me/84903373583" target="_blank" rel="noopener noreferrer" aria-label="Zalo" class="w-10 h-10 bg-[#0068ff] rounded-full flex items-center justify-center hover:bg-[#0056d6] transition-colors duration-200"><span class="footer-social-zalo-mark">Zalo</span></a>
+                        <a href="mailto:info@bestas-intl.com" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-200">
+                            <i class="fas fa-envelope text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2026 <span id="companyName-footer-2">BESTAR SV CO.LTD</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const languagePages = {
+            'zh-TW': 'index.html',
+            en: 'index-en.html',
+            ja: 'index-jp.html',
+            vi: 'index-vi.html'
+        };
+
+        const languageSuffixes = {
+            en: '-en',
+            ja: '-jp',
+            vi: '-vi'
+        };
+
+        const languageLabels = {
+            'zh-TW': '中文',
+            en: 'English',
+            ja: '日本語',
+            vi: 'Tiếng Việt'
+        };
+
+        let currentLanguage = document.documentElement.dataset.lang || 'zh-TW';
+
+        function getLocalizedHref(href, lang) {
+            if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http')) {
+                return href;
+            }
+
+            const hashIndex = href.indexOf('#');
+            const hash = hashIndex >= 0 ? href.slice(hashIndex) : '';
+            const path = hashIndex >= 0 ? href.slice(0, hashIndex) : href;
+
+            if (!path || !path.endsWith('.html')) {
+                return href;
+            }
+
+            const cleanPath = path.replace(/-(en|jp|vi)(?=\.html$)/, '');
+            if (lang === 'zh-TW') {
+                return cleanPath + hash;
+            }
+
+            const suffix = languageSuffixes[lang];
+            return cleanPath.replace(/\.html$/, `${suffix}.html`) + hash;
+        }
+
+        function applyLanguageRouting() {
+            document.querySelectorAll('.language-current').forEach(function(element) {
+                element.textContent = languageLabels[currentLanguage] || languageLabels['zh-TW'];
+            });
+
+            document.querySelectorAll('a[href]').forEach(function(link) {
+                const href = link.getAttribute('href');
+                link.setAttribute('href', getLocalizedHref(href, currentLanguage));
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded successfully');
+
+            localStorage.setItem('preferredLanguage', currentLanguage);
+            applyLanguageRouting();
+            
+            // Check if user has accepted privacy policy
+            const privacyAccepted = localStorage.getItem('privacyAccepted');
+            if (!privacyAccepted) {
+                // Show privacy modal after loading screen
+                setTimeout(() => {
+                    showPrivacyModal();
+                }, 800);
+            }
+            
+            // Hide loading screen
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loadingScreen');
+                if (loadingScreen) {
+                    loadingScreen.style.display = 'none';
+                    console.log('Loading screen hidden');
+                }
+            }, 500);
+        });
+
+        function changeLanguage(lang) {
+            console.log('Changing language to:', lang);
+            localStorage.setItem('preferredLanguage', lang);
+            window.location.href = languagePages[lang] || languagePages['zh-TW'];
+        }
+
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('invisible');
+                dropdown.classList.toggle('opacity-100');
+            }
+        }
+
+        // Mobile menu functions
+        let isMenuOpen = false;
+        let mobileMenuAnimationTimer = null;
+        
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            if (!mobileMenu || !menuBtn) {
+                return;
+            }
+
+            isMenuOpen = !isMenuOpen;
+            clearTimeout(mobileMenuAnimationTimer);
+            menuBtn.classList.toggle('is-open', isMenuOpen);
+            menuBtn.setAttribute('aria-expanded', String(isMenuOpen));
+
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    mobileMenu.classList.add('is-open');
+                });
+                return;
+            }
+
+            mobileMenu.classList.remove('is-open');
+            mobileMenuAnimationTimer = setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 240);
+        }
+
+        function toggleMobileSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId);
+            if (!submenu) {
+                return;
+            }
+
+            const isOpening = submenu.classList.contains('hidden') || !submenu.classList.contains('is-open');
+            const button = submenu.previousElementSibling;
+            const icon = button ? button.querySelector('i') : null;
+
+            if (isOpening) {
+                submenu.classList.remove('hidden');
+                submenu.style.maxHeight = '0px';
+                requestAnimationFrame(() => {
+                    submenu.classList.add('is-open');
+                    submenu.style.maxHeight = `${submenu.scrollHeight}px`;
+                });
+            } else {
+                submenu.style.maxHeight = `${submenu.scrollHeight}px`;
+                requestAnimationFrame(() => {
+                    submenu.classList.remove('is-open');
+                    submenu.style.maxHeight = '0px';
+                });
+
+                setTimeout(() => {
+                    if (!submenu.classList.contains('is-open')) {
+                        submenu.classList.add('hidden');
+                        submenu.style.maxHeight = '';
+                    }
+                }, 240);
+            }
+
+            if (icon) {
+                icon.className = 'fas fa-chevron-down text-xs';
+            }
+
+            if (button) {
+                button.classList.toggle('is-open', isOpening);
+                button.setAttribute('aria-expanded', String(isOpening));
+            }
+        }
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('languageDropdown');
+            const button = event.target.closest('.group');
+            if (!button && dropdown && !dropdown.classList.contains('invisible')) {
+                dropdown.classList.add('invisible');
+                dropdown.classList.remove('opacity-100');
+            }
+        });
+
+        // Privacy Modal Functions
+        function showPrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                // Prevent body scroll when modal is open
+                document.body.style.overflow = 'hidden';
+                console.log('Privacy modal shown');
+            }
+        }
+
+        function hidePrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                // Restore body scroll
+                document.body.style.overflow = 'auto';
+                console.log('Privacy modal hidden');
+            }
+        }
+
+        function viewPrivacyPolicy() {
+            // Open privacy policy page in new tab
+            window.open('privacy-policy.html', '_blank');
+        }
+
+        function acceptPrivacy() {
+            // Save acceptance to localStorage
+            localStorage.setItem('privacyAccepted', 'true');
+            localStorage.setItem('privacyAcceptedDate', new Date().toISOString());
+            
+            // Hide modal
+            hidePrivacyModal();
+            
+            console.log('Privacy policy accepted');
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('privacyModal');
+            const modalContent = event.target.closest('.bg-white');
+            
+            if (modal && !modalContent && !modal.classList.contains('hidden')) {
+                // Don't close if clicking outside, user must explicitly accept
+                console.log('Clicked outside modal - keeping modal open');
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modal = document.getElementById('privacyModal');
+                if (modal && !modal.classList.contains('hidden')) {
+                    // Don't close with Escape, user must explicitly accept
+                    console.log('Escape key pressed - keeping modal open');
+                }
+            }
+        });
+    </script>
+    <script src="nav-active.js?v=20260620-solution-nav"></script>
+    <script src="language-router.js?v=20260709-mobile-brand-2"></script>
+    <script src="quick-contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi" class="industrial-loader-pending">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công Ty TNHH Thương Mại Quốc Tế Bestas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=20260709-mobile-brand-2">
+</head>
+<body class="bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loadingScreen"></div>
+    <script src="industrial-loader.js?v=20260620-bfcache-fix"></script>
+
+    <!-- Privacy Notice Modal -->
+    <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
+        <div class="bg-white rounded-lg shadow-2xl max-w-md w-full mx-4 max-h-[85vh] overflow-y-auto">
+            <div class="p-4 sm:p-6">
+                <!-- Header -->
+                <div class="text-center mb-4">
+                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                        <img src="images/company/logo.png" alt="C?NG TY TNHH TM SX &amp; DV BESTAR SV" class="w-full h-full object-contain">
+                    </div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-1">Tuyên bố về quyền riêng tư</h2>
+                    <p class="text-sm text-gray-600">Chào mừng bạn đến với Công ty TNHH Thương mại Quốc tế Beida</p>
+                </div>
+
+                <!-- Privacy Notice Content -->
+                <div class="mb-4 text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-3">
+                        <i class="fas fa-shield-alt text-2xl text-blue-600"></i>
+                    </div>
+                </div>
+
+                <!-- Privacy Policy Text -->
+                <div class="text-sm text-gray-700 mb-4 space-y-3">
+                    <div class="bg-gray-50 rounded-lg p-4 text-left">
+                        <div class="space-y-2">
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                Trang web này sử dụng cookie để cải thiện trải nghiệm duyệt web của bạn và phân tích lưu lượng truy cập trang web. Bằng cách tiếp tục sử dụng trang web này, bạn đồng ý với việc chúng tôi sử dụng cookie. Để biết chi tiết, vui lòng tham khảo
+                                <a href="privacy-policy-vi.html" target="_blank" class="text-blue-600 hover:text-blue-800 underline font-semibold">chính sách bảo mật</a>。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 justify-center px-4 sm:px-6">
+                    <button onclick="acceptPrivacy()" class="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[100px] sm:min-w-[120px]">
+                        <i class="fas fa-check mr-2"></i>
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <a href="index-vi.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src="images/company/logo.png" alt="C?NG TY TNHH TM SX &amp; DV BESTAR SV" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-900" id="companyName">C?NG TY TNHH TM SX &amp; DV BESTAR SV</h1>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index-vi.html" class="nav-link-active" id="nav-home">Trang chủ</a>
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-about">Về chúng tôi</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="about-vi.html#company-intro" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-about-companyIntro">Giới thiệu công ty</a>
+                            <a href="about-vi.html#mission-vision" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-missionVision">Sứ mệnh & Tầm nhìn</a>
+                            <a href="about-vi.html#core-values" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-coreValues">Giá trị cốt lõi</a>
+                            <a href="about-vi.html#why-choose-us" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-markets">Lợi thế của chúng tôi</a>
+                            <a href="about-vi.html#quality-certifications" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg" id="nav-about-certifications">Chứng nhận chất lượng</a>
+                        </div>
+                    </div>
+
+                    <a href="services-vi.html#business-categories" class="nav-link" id="nav-products">Sản phẩm</a>
+                                        <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-news">Giải pháp môi trường</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 max-h-96 overflow-y-auto">
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <h4 class="text-sm font-semibold text-gray-900">【Giải pháp kỹ thuật môi trường công nghiệp】</h4>
+                            </div>
+                            <a href="product-vi.html#oil-smoke-treatment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Hệ thống xử lý khói dầu</a>
+                            <a href="product-vi.html#chemical-gas-treatment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Hệ thống xử lý khí thải VOC</a>
+                            <a href="product-vi.html#paint-dust-treatment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Kỹ thuật thiết bị phun sơn</a>
+                            <div class="px-4 py-3 border-b border-gray-100"><h4 class="text-sm font-semibold text-gray-900">[Ứng dụng xây dựng/kỹ thuật]</h4></div>
+                            <a href="product-vi.html#spray-equipment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Thiết bị phun sơn</a>
+                            <a href="product-vi.html#chemical-plant-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Máy lọc khí thải</a>
+                            <a href="product-vi.html#electrostatic-oil-smoke" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Khói dầu tĩnh</a>
+                            <div class="px-4 py-3 border-b border-gray-100"><h4 class="text-sm font-semibold text-gray-900">[Sáu giải pháp công nghiệp lớn]</h4></div>
+                            <a href="product-vi.html#metal-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">công nghiệp gia công kim loại</a>
+                            <a href="product-vi.html#chemical-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Công nghiệp hóa chất</a>
+                            <a href="product-vi.html#kitchen-exhaust-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Dịch vụ ăn uống và bếp trung tâm</a>
+                            <a href="product-vi.html#electronic-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Công nghiệp điện tử</a>
+                            <a href="product-vi.html#plastic-rubber-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Ngành nhựa và cao su</a>
+                            <a href="product-vi.html#food-processing-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">Công nghiệp chế biến thực phẩm</a>
+                        </div>
+                    </div>
+                    <a href="faq-vi.html" class="nav-link" id="nav-faq">Câu hỏi thường gặp</a>
+                    <a href="contact-vi.html" class="nav-link" id="nav-contact">Liên hệ</a>
+                    
+                    <!-- Language Selector -->
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-2" onclick="toggleLanguageDropdown()">
+                            <i class="fas fa-globe text-blue-600"></i>
+                            <span class="language-current" id="currentLangDisplay">Tiếng Việt</span>
+                            <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" id="languageDropdown">
+                            <button onclick="changeLanguage(&#x27;zh-TW&#x27;)" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-lg flex items-center space-x-2">
+                                <span class="text-lg">🇹🇼</span>
+                                <span>繁體中文</span>
+                            </button>
+                            <button onclick="changeLanguage(&#x27;en&#x27;)" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
+                                <span class="text-lg">🇺🇸</span>
+                                <span>English</span>
+                            </button>
+                            <button onclick="changeLanguage(&#x27;ja&#x27;)" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
+                                <span class="text-lg">🇯🇵</span>
+                                <span>日本語</span>
+                            </button>
+                            <button onclick="changeLanguage(&#x27;vi&#x27;)" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-lg flex items-center space-x-2">
+                                <span class="text-lg">🇻🇳</span>
+                                <span>Tiếng Việt</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="mobileMenuBtn" class="mobile-menu-toggle lg:hidden" type="button" aria-label="Bật hoặc tắt menu điện thoại" aria-expanded="false" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu-panel hidden lg:hidden bg-white border-t border-gray-200 fixed top-16 left-0 right-0 z-40 max-h-[calc(100vh-4rem)] overflow-y-auto">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index-vi.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-home">Trang chủ</a>
+                
+                <!-- About Dropdown -->
+                <div class="px-3 py-2">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu(&#x27;mobile-about&#x27;)">
+                        <span id="mobile-nav-about">Về chúng tôi</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-about" class="mobile-submenu-panel hidden pl-4 space-y-1 mt-1">
+                        <a href="about-vi.html#company-intro" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-companyIntro">Giới thiệu công ty</a>
+                        <a href="about-vi.html#mission-vision" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-missionVision">Sứ mệnh & Tầm nhìn</a>
+                        <a href="about-vi.html#core-values" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-coreValues">Giá trị cốt lõi</a>
+                        <a href="about-vi.html#why-choose-us" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-markets">Lợi thế của chúng tôi</a>
+                        <a href="about-vi.html#quality-certifications" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md" id="mobile-nav-about-certifications">Chứng nhận chất lượng</a>
+                    </div>
+                </div>
+
+                <a href="services-vi.html#business-categories" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-products">Sản phẩm</a>
+
+                                <!-- Solutions Dropdown -->
+                <div class="px-3 py-2">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu(&#x27;mobile-solutions&#x27;)">
+                        <span id="mobile-nav-news">Giải pháp môi trường</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-solutions" class="mobile-submenu-panel hidden pl-4 space-y-1 mt-1 max-h-96 overflow-y-auto">
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">【Giải pháp kỹ thuật môi trường công nghiệp】</h4>
+                            <a href="product-vi.html#oil-smoke-treatment" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">Hệ thống xử lý khói dầu</a>
+                            <a href="product-vi.html#chemical-gas-treatment" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">Hệ thống xử lý khí thải VOC</a>
+                            <a href="product-vi.html#paint-dust-treatment" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">Kỹ thuật thiết bị phun sơn</a>
+                        </div>
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">[Ứng dụng xây dựng/kỹ thuật]</h4>
+                            <a href="product-vi.html#spray-equipment" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">Thiết bị phun sơn</a>
+                            <a href="product-vi.html#chemical-plant-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">Máy lọc khí thải</a>
+                            <a href="product-vi.html#electrostatic-oil-smoke" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">Khói dầu tĩnh</a>
+                        </div>
+                        <div class="px-3 py-2">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">[Sáu giải pháp công nghiệp lớn]</h4>
+                            <a href="product-vi.html#metal-industry-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">công nghiệp gia công kim loại</a>
+                            <a href="product-vi.html#chemical-industry-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">Công nghiệp hóa chất</a>
+                            <a href="product-vi.html#kitchen-exhaust-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">Dịch vụ ăn uống và bếp trung tâm</a>
+                            <a href="product-vi.html#electronic-industry-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">Công nghiệp điện tử</a>
+                            <a href="product-vi.html#plastic-rubber-industry-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">Ngành nhựa và cao su</a>
+                            <a href="product-vi.html#food-processing-industry-solution" class="block px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md">Công nghiệp chế biến thực phẩm</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="faq-vi.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-faq">Câu hỏi thường gặp</a>
+                <a href="contact-vi.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-contact">Liên hệ</a>
+                
+                <!-- Language Selector for Mobile -->
+                <div class="px-3 py-2 border-t border-gray-200 mt-2 pt-4">
+                    <button class="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md py-2" onclick="toggleMobileSubmenu(&#x27;mobile-language&#x27;)">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-globe text-blue-600"></i>
+                            <span class="language-current" id="mobile-currentLangDisplay">Tiếng Việt</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-language" class="mobile-submenu-panel hidden pl-4 space-y-1 mt-1">
+                        <button onclick="changeLanguage(&#x27;zh-TW&#x27;)" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇹🇼</span>
+                            <span>繁體中文</span>
+                        </button>
+                        <button onclick="changeLanguage(&#x27;en&#x27;)" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇺🇸</span>
+                            <span>English</span>
+                        </button>
+                        <button onclick="changeLanguage(&#x27;ja&#x27;)" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇯🇵</span>
+                            <span>日本語</span>
+                        </button>
+                        <button onclick="changeLanguage(&#x27;vi&#x27;)" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇻🇳</span>
+                            <span>Tiếng Việt</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Latest News Ticker -->
+    <section class="home-news-ticker" aria-label="Tin tức phát sóng mới nhất">
+        <div class="home-news-ticker-inner">
+            <div class="home-news-ticker-label">
+                <i class="fas fa-bullhorn"></i>
+                <span>Tin tức mới nhất</span>
+            </div>
+            <div class="home-news-ticker-window">
+                <div class="home-news-ticker-track">
+                    <div class="home-news-ticker-set">
+                        <span>Chất lượng đến từ mọi quy trình kiểm tra. Phòng thử nghiệm hiệu suất quạt của chúng tôi tuân thủ nhiều tiêu chuẩn thử nghiệm quốc tế như ISO/IEC 17025, AMCA 210, CNAS, GB/T1236 và QUATEST 3, mang đến sự đảm bảo đáng tin cậy cho mọi dự án.</span>
+                        <span>Các dịch vụ kỹ thuật thông gió công nghiệp, thu gom bụi và kiểm soát ô nhiễm không khí tiếp tục cung cấp sự hỗ trợ chuyên nghiệp.</span>
+                    </div>
+                    <div class="home-news-ticker-set" aria-hidden="true">
+                        <span>Chất lượng đến từ mọi quy trình kiểm tra. Phòng thử nghiệm hiệu suất quạt của chúng tôi tuân thủ nhiều tiêu chuẩn thử nghiệm quốc tế như ISO/IEC 17025, AMCA 210, CNAS, GB/T1236 và QUATEST 3, mang đến sự đảm bảo đáng tin cậy cho mọi dự án.</span>
+                        <span>Các dịch vụ kỹ thuật thông gió công nghiệp, thu gom bụi và kiểm soát ô nhiễm không khí tiếp tục cung cấp sự hỗ trợ chuyên nghiệp.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="home-industrial-hero" style="background-image: url(&#x27;images/index/harbor-bg.png&#x27;)">
+        <div class="home-industrial-hero-overlay"></div>
+        <div class="home-industrial-hero-grid"></div>
+        <div class="home-industrial-hero-frame"></div>
+        <div class="home-industrial-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="home-industrial-hero-panel">
+                <div class="home-industrial-hero-copy">
+                    <h1>
+                        Chuyên gia tích hợp môi trường công nghiệp và kỹ thuật
+                    </h1>
+                    <p>
+                        Cung cấp các giải pháp kỹ thuật tổng thể về thông gió công nghiệp, thu gom bụi tập trung, xử lý khí thải VOC, máy lọc khí và xử lý khói dầu
+                    </p>
+                </div>
+                <div class="home-industrial-hero-actions">
+                    <a href="contact-vi.html" class="home-industrial-hero-button home-industrial-hero-button-primary">
+                        <span class="home-industrial-hero-button-icon"><i class="fas fa-envelope"></i></span>
+                        <span>Liên hệ ngay</span>
+                        <i class="fas fa-arrow-right home-industrial-hero-button-arrow"></i>
+                    </a>
+                    <a href="services-vi.html" class="home-industrial-hero-button home-industrial-hero-button-secondary">
+                        <span class="home-industrial-hero-button-icon"><i class="fas fa-th-large"></i></span>
+                        <span>Xem dịch vụ</span>
+                        <i class="fas fa-arrow-right home-industrial-hero-button-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section (Business Categories preview marquee) -->
+    <section class="home-marquee-section py-16 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-9">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-12 h-1 bg-orange-500"></span>
+                        <span class="text-sm font-bold text-orange-700 tracking-widest">Cung cấp thiết bị và tích hợp kỹ thuật</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-3">Thiết bị thông gió công nghiệp và kiểm soát ô nhiễm không khí</h2>
+                    <p class="text-lg text-gray-600">Bao gồm thu gom bụi, rửa, quạt và các phụ kiện ống dẫn khí tùy chỉnh, cấu hình hoàn chỉnh được cung cấp theo yêu cầu của nhà máy.</p>
+                </div>
+                <a href="services-vi.html#business-categories" class="inline-flex items-center justify-between gap-8 border-2 border-[#0B1F3A] text-[#0B1F3A] font-bold px-6 py-3 hover:bg-[#0B1F3A] hover:text-white transition-colors">
+                    <span>Tìm hiểu thêm</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="home-categories-marquee">
+                <div class="home-categories-marquee-track">
+                    <div class="home-categories-marquee-set">
+                        <div class="home-categories-marquee-item"><img src="images/products/air-pollution/metal-grinding-filter.png" alt="Thiết bị lọc bụi mài kim loại" loading="lazy"><div><span>Kiểm soát bụi</span><strong>Thiết bị lọc bụi mài kim loại</strong></div></div>
+                        <div class="home-categories-marquee-item"><img src="images/products/air-pollution/pp-spray-tower.png" alt="Thiết bị chà sàn PP" loading="lazy"><div><span>Máy chà sàn</span><strong>Thiết bị chà sàn PP</strong></div></div>
+                        <div class="home-categories-marquee-item"><img src="images/products/fans/fan_product_06.png" alt="Quạt ly tâm nhiều cánh" loading="lazy"><div><span>Quạt công nghiệp</span><strong>Quạt ly tâm nhiều cánh</strong></div></div>
+                        <div class="home-categories-marquee-item"><img src="images/products/fans/fan_product_10.png" alt="Quạt hút mái nhà" loading="lazy"><div><span>gió mái</span><strong>Quạt hút mái nhà</strong></div></div>
+                        <div class="home-categories-marquee-item"><img src="images/products/fans/inline-fan.jpg" alt="Quạt ống gió" loading="lazy"><div><span>Quạt ống gió</span><strong>Quạt ống gió</strong></div></div>
+                        <div class="home-categories-marquee-item"><img src="images/products/fans/medium-pressure-backward-curved-1.png" alt="Quạt nghiêng ngược áp suất trung bình" loading="lazy"><div><span>Quạt công nghiệp</span><strong>Quạt nghiêng ngược áp suất trung bình</strong></div></div>
+                        <div class="home-categories-marquee-item"><img src="images/products/ventilation-parts/pp-plastic-duct.png" alt="Ống gió nhựa PP" loading="lazy"><div><span>Đường ống chống ăn mòn</span><strong>Ống gió nhựa PP</strong></div></div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="home-features-section py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+                <div class="home-features-copy lg:col-span-4">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-12 h-1 bg-orange-500"></span>
+                        <span class="text-sm font-bold text-orange-300 tracking-widest">Năng lực kỹ thuật</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black text-white mb-5 leading-tight">Từ thiết kế đến sản xuất<br>Đến địa điểm xây dựng</h2>
+                    <p class="text-lg text-slate-300 leading-relaxed mb-8">Một nhóm duy nhất tích hợp thiết bị, ống dẫn khí, điều khiển và xây dựng để giảm chi phí liên lạc và đảm bảo chất lượng cũng như tiến độ dự án.</p>
+                </div>
+                <div class="home-features-grid lg:col-span-8 grid md:grid-cols-3 border border-white/20">
+                    <article class="home-feature-card">
+                        <div class="home-feature-number">01</div>
+                        <i class="fas fa-industry home-feature-icon"></i>
+                        <h3>Sản xuất tại nhà máy riêng</h3>
+                        <p>Các thiết bị và phụ kiện theo yêu cầu được sản xuất độc lập, chất lượng ổn định, thông số kỹ thuật linh hoạt và thời gian giao hàng có thể kiểm soát được.</p>
+                        <ul>
+                            <li>Sản xuất thiết bị tùy chỉnh</li>
+                            <li>Gia công ống gió và phụ kiện</li>
+                        </ul>
+                    </article>
+                    <article class="home-feature-card">
+                        <div class="home-feature-number">02</div>
+                        <i class="fas fa-hard-hat home-feature-icon"></i>
+                        <h3>Hơn 24 năm kinh nghiệm kỹ thuật</h3>
+                        <p>Làm quen với nhu cầu thông gió, thu gom bụi và xử lý khí thải của nhà máy và cung cấp các giải pháp cải tiến có thể thực hiện được.</p>
+                        <ul>
+                            <li>Đánh giá thể tích không khí tại chỗ</li>
+                            <li>Tích hợp thiết bị và đường ống</li>
+                        </ul>
+                    </article>
+                    <article class="home-feature-card">
+                        <div class="home-feature-number">03</div>
+                        <i class="fas fa-map-marked-alt home-feature-icon"></i>
+                        <h3>Đội tuyển Đài Loan và Việt Nam</h3>
+                        <p>Sự hợp tác xuyên biên giới và các dịch vụ địa phương giúp đáp ứng nhanh chóng các nhu cầu về xây dựng, bảo trì và chuỗi cung ứng.</p>
+                        <ul>
+                            <li>Hỗ trợ kỹ thuật ở hai vị trí</li>
+                            <li>Xây dựng và bảo trì tại chỗ</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview Section -->
+    <section class="home-solutions-section py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Giải pháp kỹ thuật môi trường</h2>
+                <p class="text-xl text-gray-600 max-w-3xl leading-relaxed mx-auto">Hỗ trợ doanh nghiệp cải thiện môi trường nhà máy, giảm phát thải ô nhiễm và tuân thủ các yêu cầu quy định, đồng thời tạo môi trường sản xuất an toàn, hiệu quả và bền vững.</p>
+            </div>
+            <div class="home-solutions-grid grid md:grid-cols-2 lg:grid-cols-6 gap-6">
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+        <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="images/products/fans/high-pressure-backward-curved.png" alt="Hệ thống thông gió công nghiệp" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="relative z-10 transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
+            <h4 class="font-semibold text-gray-900 mb-5">Hệ thống thông gió công nghiệp</h4>
+            <p class="text-gray-600 leading-relaxed text-sm">Cải thiện nhiệt độ cao, nóng ngột ngạt và thiếu không khí lưu thông trong nhà máy, đồng thời cải thiện sự thoải mái và hiệu quả sản xuất của môi trường làm việc</p>
+        </div>
+    </div>
+
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+        <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="images/products/air-pollution/chemical-gas-main.png" alt="Hệ thống thu gom bụi trung tâm" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="relative z-10 transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
+            <h4 class="font-semibold text-gray-900 mb-5">Hệ thống thu gom bụi trung tâm</h4>
+            <p class="text-gray-600 leading-relaxed text-sm">Thu gom bụi quá trình để giảm ô nhiễm bụi, thất thoát thiết bị và rủi ro sức khỏe nghề nghiệp</p>
+        </div>
+    </div>
+
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+        <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="images/products/air-pollution/metal-grinding-filter.png" alt="Hệ thống xử lý khí thải hữu cơ" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="relative z-10 transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
+            <h4 class="font-semibold text-gray-900 mb-5">Hệ thống xử lý khí thải hữu cơ</h4>
+            <p class="text-gray-600 leading-relaxed text-sm">Làm sạch VOC, dung môi hữu cơ và khí có mùi để giảm thiểu rủi ro môi trường</p>
+        </div>
+    </div>
+
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+        <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="images/products/air-pollution/oil-smoke-main.png" alt="Hệ thống xử lý khói dầu" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="relative z-10 transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
+            <h4 class="font-semibold text-gray-900 mb-5">Hệ thống xử lý khói dầu</h4>
+            <p class="text-gray-600 leading-relaxed text-sm">Loại bỏ hiệu quả khói dầu, sương dầu và mùi hôi, thích hợp cho ngành phục vụ ăn uống và quy trình công nghiệp</p>
+        </div>
+    </div>
+
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+        <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="images/products/air-pollution/pp-spray-tower.png" alt="Hệ thống lọc khí thải" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="relative z-10 transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
+            <h4 class="font-semibold text-gray-900 mb-5">Hệ thống lọc khí thải</h4>
+            <p class="text-gray-600 leading-relaxed text-sm">Xử lý khí thải axit, kiềm, khí ăn mòn và khí thải quy trình đặc biệt</p>
+        </div>
+    </div>
+
+    <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+        <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="images/products/equipment/cyclone-collector.png" alt="Kỹ thuật thiết bị phun sơn" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="relative z-10 transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
+            <h4 class="font-semibold text-gray-900 mb-5">Kỹ thuật thiết bị phun sơn</h4>
+            <p class="text-gray-600 leading-relaxed text-sm">Tích hợp buồng phun, lọc sương sơn và kiểm soát VOC để nâng cao chất lượng sơn và lợi ích môi trường</p>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- 精選合作案例 Section -->
+<section class="home-cases-section home-client-section py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="home-client-heading text-center mb-10">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Các trường hợp hợp tác được lựa chọn</h2>
+            <p class="text-xl text-gray-600">Tập hợp các kết quả hợp tác từ các ngành công nghiệp khác nhau để trình bày kinh nghiệm dịch vụ chuỗi cung ứng và kỹ thuật đáng tin cậy</p>
+        </div>
+
+        <div class="client-marquee" aria-label="Các trường hợp hợp tác chọn lọc Biểu đồ đua ngựa">
+            <div id="clientMarqueeViewport" class="client-marquee-viewport">
+                <div class="client-marquee-track">
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/1.jpg" alt="Các trường hợp hợp tác được lựa chọn 1" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/2.jpg" alt="Các trường hợp hợp tác được lựa chọn 2" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/3.jpg" alt="Các trường hợp hợp tác được lựa chọn 3" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/4.jpg" alt="Các trường hợp hợp tác được lựa chọn 4" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/5.jpg" alt="Các trường hợp hợp tác được lựa chọn 5" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/6.jpg" alt="Các trường hợp hợp tác được lựa chọn 6" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/7.jpg" alt="Các trường hợp hợp tác được lựa chọn 7" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/8.jpg" alt="Các trường hợp hợp tác được lựa chọn 8" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/9.jpg" alt="Các trường hợp hợp tác được lựa chọn 9" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/10.jpg" alt="Các trường hợp hợp tác được lựa chọn 10" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/11.jpg" alt="Các trường hợp hợp tác được lựa chọn 11" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="false">
+                        <img src="images/client/12.jpg" alt="Các trường hợp hợp tác được lựa chọn 12" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/1.jpg" alt="Các trường hợp hợp tác được lựa chọn 1" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/2.jpg" alt="Các trường hợp hợp tác được lựa chọn 2" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/3.jpg" alt="Các trường hợp hợp tác được lựa chọn 3" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/4.jpg" alt="Các trường hợp hợp tác được lựa chọn 4" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/5.jpg" alt="Các trường hợp hợp tác được lựa chọn 5" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/6.jpg" alt="Các trường hợp hợp tác được lựa chọn 6" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/7.jpg" alt="Các trường hợp hợp tác được lựa chọn 7" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/8.jpg" alt="Các trường hợp hợp tác được lựa chọn 8" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/9.jpg" alt="Các trường hợp hợp tác được lựa chọn 9" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/10.jpg" alt="Các trường hợp hợp tác được lựa chọn 10" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/11.jpg" alt="Các trường hợp hợp tác được lựa chọn 11" loading="lazy">
+                    </div>
+                    <div class="client-marquee-item" aria-hidden="true">
+                        <img src="images/client/12.jpg" alt="Các trường hợp hợp tác được lựa chọn 12" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA Section -->
+    <section class="industrial-cta text-white">
+        <div class="industrial-cta-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="industrial-cta-copy">
+                <h2>Bắt đầu kế hoạch mua hàng của bạn</h2>
+                <p>Tìm hiểu thêm Liên hệ với chúng tôi ngay bây giờ! </p>
+            </div>
+            <div class="industrial-cta-actions">
+                <a href="contact-vi.html" class="industrial-cta-button industrial-cta-button-primary">
+                    <i class="fas fa-phone"></i>
+                    Liên hệ
+                </a>
+                <a href="services-vi.html" class="industrial-cta-button industrial-cta-button-secondary">
+                    <i class="fas fa-list"></i>
+                    Xem dịch vụ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 flex items-center justify-center">
+                            <img src="images/company/logo.png?v=202604021007" alt="C?NG TY TNHH TM SX &amp; DV BESTAR SV" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold text-lg" id="companyName-footer">C?NG TY TNHH TM SX &amp; DV BESTAR SV</h3>
+                        </div>
+                    </div>
+<div class="space-y-2">
+                        <div class="footer-phone-list space-y-1">
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇹🇼</span><span>+886-960-542-166</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇹🇼</span><span>+886-985-328-164</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇻🇳</span><span>+84-28-3779-0881</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇻🇳</span><span>+84-90-337-3583</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇻🇳</span><span>+84-98-501-9620</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇨🇦🇺🇸</span><span>+1-437-984-0249</span></p>
+                        </div>
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-envelope mr-2 text-teal-400"></i>
+                            info@bestas-intl.com
+                        </p>
+                        <p class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2 text-teal-400"></i>
+                            Đoạn 2, Đường Muzha, Quận Văn Sơn, Thành phố Đài Bắc
+                        </p>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Liên kết nhanh</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index-vi.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Trang chủ</a></li>
+                        <li><a href="about-vi.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Về chúng tôi</a></li>
+                        <li><a href="product-vi.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Sản phẩm & giải pháp</a></li>
+                        <li><a href="faq-vi.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Câu hỏi thường gặp</a></li>
+                        <li><a href="contact-vi.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Liên hệ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Product Solutions -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Sản phẩm & phương án</h3>
+                    <ul class="space-y-2">
+                        <li><a href="product-vi.html#air-pollution-control" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Dự án ngăn ngừa và kiểm soát ô nhiễm không khí</a></li>
+                        <li><a href="product-vi.html#construction-engineering" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Ứng dụng xây dựng và kỹ thuật</a></li>
+                        <li><a href="product-vi.html#industry-application" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Sáu giải pháp công nghiệp chính</a></li>
+                        <li><a href="services-vi.html#business-categories" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">Thiết bị và linh kiện</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Liên hệ</h3>
+                    <p class="text-gray-400 mb-4">Liên hệ với chúng tôi qua các kênh sau</p>
+                    <div class="flex space-x-4">
+                        <a href="https://line.me/ti/p/@bestas-intl" target="_blank" class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors duration-200">
+                            <i class="fab fa-line text-white"></i>
+                        </a>
+                        <a href="https://wa.me/886985328164" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-10 h-10 bg-[#25d366] rounded-full flex items-center justify-center hover:bg-[#1fb759] transition-colors duration-200"><i class="fab fa-whatsapp text-white"></i></a>
+                        <a href="https://zalo.me/84903373583" target="_blank" rel="noopener noreferrer" aria-label="Zalo" class="w-10 h-10 bg-[#0068ff] rounded-full flex items-center justify-center hover:bg-[#0056d6] transition-colors duration-200"><span class="footer-social-zalo-mark">Zalo</span></a>
+                        <a href="mailto:info@bestas-intl.com" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-200">
+                            <i class="fas fa-envelope text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2026 <span id="companyName-footer-2">C?NG TY TNHH TM SX &amp; DV BESTAR SV</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const languagePages = {
+            'zh-TW': 'index.html',
+            en: 'index-en.html',
+            ja: 'index-jp.html',
+            vi: 'index-vi.html'
+        };
+
+        const languageSuffixes = {
+            en: '-en',
+            ja: '-jp',
+            vi: '-vi'
+        };
+
+        const languageLabels = {
+            'zh-TW': '中文',
+            en: 'English',
+            ja: '日本語',
+            vi: 'Tiếng Việt'
+        };
+
+        let currentLanguage = document.documentElement.dataset.lang || 'zh-TW';
+
+        function getLocalizedHref(href, lang) {
+            if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http')) {
+                return href;
+            }
+
+            const hashIndex = href.indexOf('#');
+            const hash = hashIndex >= 0 ? href.slice(hashIndex) : '';
+            const path = hashIndex >= 0 ? href.slice(0, hashIndex) : href;
+
+            if (!path || !path.endsWith('.html')) {
+                return href;
+            }
+
+            const cleanPath = path.replace(/-(en|jp|vi)(?=\.html$)/, '');
+            if (lang === 'zh-TW') {
+                return cleanPath + hash;
+            }
+
+            const suffix = languageSuffixes[lang];
+            return cleanPath.replace(/\.html$/, `${suffix}.html`) + hash;
+        }
+
+        function applyLanguageRouting() {
+            document.querySelectorAll('.language-current').forEach(function(element) {
+                element.textContent = languageLabels[currentLanguage] || languageLabels['zh-TW'];
+            });
+
+            document.querySelectorAll('a[href]').forEach(function(link) {
+                const href = link.getAttribute('href');
+                link.setAttribute('href', getLocalizedHref(href, currentLanguage));
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded successfully');
+
+            localStorage.setItem('preferredLanguage', currentLanguage);
+            applyLanguageRouting();
+            
+            // Check if user has accepted privacy policy
+            const privacyAccepted = localStorage.getItem('privacyAccepted');
+            if (!privacyAccepted) {
+                // Show privacy modal after loading screen
+                setTimeout(() => {
+                    showPrivacyModal();
+                }, 800);
+            }
+            
+            // Hide loading screen
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loadingScreen');
+                if (loadingScreen) {
+                    loadingScreen.style.display = 'none';
+                    console.log('Loading screen hidden');
+                }
+            }, 500);
+        });
+
+        function changeLanguage(lang) {
+            console.log('Changing language to:', lang);
+            localStorage.setItem('preferredLanguage', lang);
+            window.location.href = languagePages[lang] || languagePages['zh-TW'];
+        }
+
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('invisible');
+                dropdown.classList.toggle('opacity-100');
+            }
+        }
+
+        // Mobile menu functions
+        let isMenuOpen = false;
+        let mobileMenuAnimationTimer = null;
+        
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            if (!mobileMenu || !menuBtn) {
+                return;
+            }
+
+            isMenuOpen = !isMenuOpen;
+            clearTimeout(mobileMenuAnimationTimer);
+            menuBtn.classList.toggle('is-open', isMenuOpen);
+            menuBtn.setAttribute('aria-expanded', String(isMenuOpen));
+
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    mobileMenu.classList.add('is-open');
+                });
+                return;
+            }
+
+            mobileMenu.classList.remove('is-open');
+            mobileMenuAnimationTimer = setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 240);
+        }
+
+        function toggleMobileSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId);
+            if (!submenu) {
+                return;
+            }
+
+            const isOpening = submenu.classList.contains('hidden') || !submenu.classList.contains('is-open');
+            const button = submenu.previousElementSibling;
+            const icon = button ? button.querySelector('i') : null;
+
+            if (isOpening) {
+                submenu.classList.remove('hidden');
+                submenu.style.maxHeight = '0px';
+                requestAnimationFrame(() => {
+                    submenu.classList.add('is-open');
+                    submenu.style.maxHeight = `${submenu.scrollHeight}px`;
+                });
+            } else {
+                submenu.style.maxHeight = `${submenu.scrollHeight}px`;
+                requestAnimationFrame(() => {
+                    submenu.classList.remove('is-open');
+                    submenu.style.maxHeight = '0px';
+                });
+
+                setTimeout(() => {
+                    if (!submenu.classList.contains('is-open')) {
+                        submenu.classList.add('hidden');
+                        submenu.style.maxHeight = '';
+                    }
+                }, 240);
+            }
+
+            if (icon) {
+                icon.className = 'fas fa-chevron-down text-xs';
+            }
+
+            if (button) {
+                button.classList.toggle('is-open', isOpening);
+                button.setAttribute('aria-expanded', String(isOpening));
+            }
+        }
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('languageDropdown');
+            const button = event.target.closest('.group');
+            if (!button && dropdown && !dropdown.classList.contains('invisible')) {
+                dropdown.classList.add('invisible');
+                dropdown.classList.remove('opacity-100');
+            }
+        });
+
+        // Privacy Modal Functions
+        function showPrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                // Prevent body scroll when modal is open
+                document.body.style.overflow = 'hidden';
+                console.log('Privacy modal shown');
+            }
+        }
+
+        function hidePrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                // Restore body scroll
+                document.body.style.overflow = 'auto';
+                console.log('Privacy modal hidden');
+            }
+        }
+
+        function viewPrivacyPolicy() {
+            // Open privacy policy page in new tab
+            window.open('privacy-policy.html', '_blank');
+        }
+
+        function acceptPrivacy() {
+            // Save acceptance to localStorage
+            localStorage.setItem('privacyAccepted', 'true');
+            localStorage.setItem('privacyAcceptedDate', new Date().toISOString());
+            
+            // Hide modal
+            hidePrivacyModal();
+            
+            console.log('Privacy policy accepted');
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('privacyModal');
+            const modalContent = event.target.closest('.bg-white');
+            
+            if (modal && !modalContent && !modal.classList.contains('hidden')) {
+                // Don't close if clicking outside, user must explicitly accept
+                console.log('Clicked outside modal - keeping modal open');
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modal = document.getElementById('privacyModal');
+                if (modal && !modal.classList.contains('hidden')) {
+                    // Don't close with Escape, user must explicitly accept
+                    console.log('Escape key pressed - keeping modal open');
+                }
+            }
+        });
+    </script>
+    <script src="nav-active.js?v=20260620-solution-nav"></script>
+    <script src="language-router.js?v=20260709-mobile-brand-2"></script>
+    <script src="quick-contact.js"></script>
+</body>
+</html>

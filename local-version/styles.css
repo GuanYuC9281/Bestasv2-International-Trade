@@ -1058,6 +1058,103 @@ html {
     scroll-behavior: smooth;
 }
 
+#companyName {
+    display: block;
+    max-width: none;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: nowrap;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    text-align: left;
+}
+
+#companyName-footer {
+    display: block;
+    max-width: none;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    font-size: 1.125rem;
+    line-height: 1.35;
+}
+
+@media (max-width: 1023px) {
+    #navbar .h-16 {
+        position: relative;
+    }
+
+    #navbar .h-16 > .flex.items-center.space-x-3:first-child {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    #navbar a:has(#companyName) {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        inset: 0 3.25rem 0 0;
+        width: auto;
+        height: 100%;
+        min-width: 0;
+        z-index: 2;
+    }
+
+    #navbar a:has(#companyName) > div:first-child {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        z-index: 2;
+        transform: translateY(-50%);
+    }
+
+    #navbar a:has(#companyName) > div:last-child {
+        position: absolute;
+        left: 3.25rem;
+        right: 3.25rem;
+        top: 50%;
+        display: flex;
+        justify-content: center;
+        min-width: 0;
+        transform: translateY(-50%);
+    }
+
+    #companyName {
+        max-width: 100%;
+        font-size: 1.25rem;
+        line-height: 1.08;
+        text-align: center;
+        white-space: normal;
+    }
+
+    html[data-lang="vi"] #companyName {
+        font-size: 1.05rem;
+        line-height: 1.05;
+    }
+
+    #mobileMenuBtn {
+        position: relative;
+        z-index: 3;
+    }
+}
+
+html[data-lang="vi"] #companyName-footer {
+    line-height: 1.25;
+}
+
+html[data-lang="vi"] #companyName-footer-2 {
+    display: inline-block;
+    max-width: 100%;
+    line-height: 1.35;
+    vertical-align: top;
+}
+
+#nav-about-certifications,
+#mobile-nav-about-certifications,
+#quality-certifications {
+    display: none !important;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
