@@ -6,7 +6,7 @@
     <title>貝達國際貿易有限公司</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=20260709-mobile-brand-2">
+    <link rel="stylesheet" href="styles.css?v=20260712-mobile-solution-cards">
 </head>
 <body class="bg-gray-50">
     <!-- Loading Screen -->
@@ -124,21 +124,21 @@
                             <i class="fas fa-chevron-down text-xs text-gray-500"></i>
                         </button>
                         <div class="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" id="languageDropdown">
-                            <button onclick="changeLanguage('zh-TW')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 first:rounded-t-lg flex items-center space-x-2">
+                            <button onclick="changeLanguage('zh-TW')" class="first:rounded-t-lg language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
                                 <span class="text-lg">🇹🇼</span>
                                 <span>繁體中文</span>
                             </button>
-                            <button onclick="changeLanguage('en')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
+<button onclick="changeLanguage('vi')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
+                                <span class="text-lg">🇻🇳</span>
+                                <span>Tiếng Việt</span>
+                            </button>
+<button onclick="changeLanguage('en')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
                                 <span class="text-lg">🇺🇸</span>
                                 <span>English</span>
                             </button>
-                            <button onclick="changeLanguage('ja')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
+<button onclick="changeLanguage('ja')" class="last:rounded-b-lg language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2">
                                 <span class="text-lg">🇯🇵</span>
                                 <span>日本語</span>
-                            </button>
-                            <button onclick="changeLanguage('vi')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 last:rounded-b-lg flex items-center space-x-2">
-                                <span class="text-lg">🇻🇳</span>
-                                <span>Tiếng Việt</span>
                             </button>
                         </div>
                     </div>
@@ -213,21 +213,21 @@
                         <i class="fas fa-chevron-down text-xs"></i>
                     </button>
                     <div id="mobile-language" class="mobile-submenu-panel hidden pl-4 space-y-1 mt-1">
-                        <button onclick="changeLanguage('zh-TW')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                        <button onclick="changeLanguage('zh-TW')" class="first:rounded-t-lg w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
                             <span class="text-lg">🇹🇼</span>
                             <span>繁體中文</span>
                         </button>
-                        <button onclick="changeLanguage('en')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+<button onclick="changeLanguage('vi')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+                            <span class="text-lg">🇻🇳</span>
+                            <span>Tiếng Việt</span>
+                        </button>
+<button onclick="changeLanguage('en')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
                             <span class="text-lg">🇺🇸</span>
                             <span>English</span>
                         </button>
-                        <button onclick="changeLanguage('ja')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
+<button onclick="changeLanguage('ja')" class="last:rounded-b-lg w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
                             <span class="text-lg">🇯🇵</span>
                             <span>日本語</span>
-                        </button>
-                        <button onclick="changeLanguage('vi')" class="w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2">
-                            <span class="text-lg">🇻🇳</span>
-                            <span>Tiếng Việt</span>
                         </button>
                     </div>
                 </div>
@@ -374,7 +374,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">環保工程解決方案</h2>
-                <p class="text-xl text-gray-600 max-w-3xl leading-relaxed mx-auto">協助企業改善工廠環境、降低污染排放並符合法規要求，打造安全、高效且永續的生產環境。</p>
+                <div class="home-solutions-intro text-gray-600 mx-auto">
+                    <p>協助企業改善工廠環境，</p>
+                    <p>降低污染排放並符合法規要求。</p>
+                    <p>同時打造安全、高效率且可持續的生產環境。</p>
+                </div>
             </div>
             <div class="home-solutions-grid grid md:grid-cols-2 lg:grid-cols-6 gap-6">
     <div tabindex="0" class="home-solution-card group relative min-h-[230px] cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-md transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
@@ -865,7 +869,7 @@
         });
     </script>
     <script src="nav-active.js?v=20260620-solution-nav"></script>
-    <script src="language-router.js?v=20260709-mobile-brand-2"></script>
+    <script src="language-router.js?v=20260712-contact-gallery-text"></script>
     <script src="quick-contact.js"></script>
 </body>
 </html>

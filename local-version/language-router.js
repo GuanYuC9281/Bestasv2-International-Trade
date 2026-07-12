@@ -12,6 +12,15 @@
         vi: 'Ti\u1ebfng Vi\u1ec7t'
     };
 
+    const languageOrder = ['zh-TW', 'vi', 'en', 'ja'];
+
+    const languageOptionMeta = {
+        'zh-TW': { flag: 'TW', label: '\u7e41\u9ad4\u4e2d\u6587' },
+        vi: { flag: 'VN', label: 'Ti\u1ebfng Vi\u1ec7t' },
+        en: { flag: 'US', label: 'English' },
+        ja: { flag: 'JP', label: '\u65e5\u672c\u8a9e' }
+    };
+
     const companyNameByLang = {
         'zh-TW': '\u8c9d\u9054\u570b\u969b\u8cbf\u6613\u6709\u9650\u516c\u53f8',
         en: 'BESTAR SV CO.LTD',
@@ -20,7 +29,7 @@
     };
 
     const companyNameMarkupByLang = {
-        vi: 'C\u00d4NG TY TNHH TM SX & DV<br>BESTAR SV'
+        vi: 'C\u00d4NG TY TNHH TM SX &<br>DV BESTAR SV'
     };
 
     function getCurrentLanguage() {
@@ -95,6 +104,86 @@
         });
     }
 
+    function getLanguageButtonLang(button) {
+        const onclick = button.getAttribute('onclick') || '';
+        const match = onclick.match(/changeLanguage\((?:'|&quot;|&#x27;|\")([^'\"&]+)(?:'|&quot;|&#x27;|\")\)/);
+        return match ? match[1] : '';
+    }
+
+    function normalizeLanguageButton(button, lang, isDesktop) {
+        const meta = languageOptionMeta[lang];
+        if (!meta) {
+            return;
+        }
+
+        button.setAttribute('onclick', `changeLanguage('${lang}')`);
+        button.classList.remove('first:rounded-t-lg', 'last:rounded-b-lg');
+        if (lang === languageOrder[0]) {
+            button.classList.add('first:rounded-t-lg');
+        }
+        if (lang === languageOrder[languageOrder.length - 1]) {
+            button.classList.add('last:rounded-b-lg');
+        }
+
+        const spans = button.querySelectorAll('span');
+        if (spans.length >= 2) {
+            spans[0].textContent = meta.flag;
+            spans[1].textContent = meta.label;
+        } else {
+            button.innerHTML = `<span class="${isDesktop ? 'text-lg' : 'text-xs font-semibold uppercase tracking-wide'}">${meta.flag}</span><span>${meta.label}</span>`;
+        }
+    }
+
+    function createLanguageButton(lang, isDesktop) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = isDesktop
+            ? 'language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2'
+            : 'w-full text-left px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md flex items-center space-x-2';
+        normalizeLanguageButton(button, lang, isDesktop);
+        return button;
+    }
+
+    function orderLanguageButtons(container, isDesktop) {
+        if (!container) {
+            return;
+        }
+
+        const existingButtons = Array.from(container.querySelectorAll('button')).filter((button) => getLanguageButtonLang(button));
+        const buttonsByLang = new Map(existingButtons.map((button) => [getLanguageButtonLang(button), button]));
+        const orderedButtons = languageOrder.map((lang) => {
+            const button = buttonsByLang.get(lang) || createLanguageButton(lang, isDesktop);
+            normalizeLanguageButton(button, lang, isDesktop);
+            return button;
+        });
+
+        orderedButtons.forEach((button) => container.appendChild(button));
+    }
+
+    function ensureMobileLanguageMenu() {
+        const mobileMenuBody = document.querySelector('#mobileMenu > div');
+        if (!mobileMenuBody || document.getElementById('mobile-language')) {
+            return;
+        }
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'px-3 py-2 border-t border-gray-200 mt-2 pt-4';
+        wrapper.innerHTML = `
+            <div class="flex items-center space-x-2 text-gray-700 py-2">
+                <i class="fas fa-globe text-blue-600"></i>
+                <span class="language-current" id="mobile-currentLangDisplay">${labelByLang[getCurrentLanguage()] || labelByLang['zh-TW']}</span>
+            </div>
+            <div id="mobile-language" class="mobile-submenu-panel pl-4 space-y-1 mt-1"></div>
+        `;
+        mobileMenuBody.appendChild(wrapper);
+    }
+
+    function applyLanguageMenuOrder() {
+        orderLanguageButtons(document.getElementById('languageDropdown'), true);
+        ensureMobileLanguageMenu();
+        orderLanguageButtons(document.getElementById('mobile-language'), false);
+    }
+
     function applyLanguageRouting() {
         const lang = getCurrentLanguage();
         document.querySelectorAll('.language-current').forEach((element) => {
@@ -104,6 +193,7 @@
         applyCompanyName(lang);
         applyBrandHomeLink(lang);
         hideQualityCertification();
+        applyLanguageMenuOrder();
 
         document.querySelectorAll('a[href]').forEach((link) => {
             const href = link.getAttribute('href');

@@ -1079,6 +1079,23 @@ html {
     line-height: 1.35;
 }
 
+@media (min-width: 1024px) {
+    #navbar a:has(#companyName) {
+        flex-shrink: 0;
+        margin-right: 2rem;
+    }
+
+    #navbar .h-16 > .hidden {
+        margin-left: 2rem;
+    }
+
+    html[data-lang="vi"] #companyName {
+        font-size: 1.05rem;
+        line-height: 1.08;
+        white-space: normal;
+    }
+}
+
 @media (max-width: 1023px) {
     #navbar .h-16 {
         position: relative;
@@ -1147,6 +1164,14 @@ html[data-lang="vi"] #companyName-footer-2 {
     max-width: 100%;
     line-height: 1.35;
     vertical-align: top;
+}
+
+@media (max-width: 640px) {
+    html[data-lang="vi"] .about-market-card p {
+        font-size: 0.98rem;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+    }
 }
 
 #nav-about-certifications,
@@ -1455,6 +1480,18 @@ html[data-lang="vi"] #companyName-footer-2 {
     white-space: nowrap;
 }
 
+.home-solutions-intro {
+    display: grid;
+    gap: 0.4rem;
+    max-width: 46rem;
+    font-size: 1.125rem;
+    line-height: 1.75;
+}
+
+.home-solutions-intro p {
+    margin: 0;
+}
+
 .home-solution-card {
     background: rgba(255, 255, 255, 0.9) !important;
     border-color: rgba(174, 184, 193, 0.9) !important;
@@ -1644,13 +1681,21 @@ html[data-lang="vi"] #companyName-footer-2 {
         white-space: normal;
     }
 
+    .home-solutions-intro {
+        max-width: 21rem;
+        gap: 0.35rem;
+        font-size: 0.98rem;
+        line-height: 1.65;
+    }
+
     .home-solutions-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 0.75rem !important;
     }
 
     .home-solution-card {
-        min-height: 8.75rem !important;
+        min-height: 0 !important;
+        height: auto !important;
         padding: 0.8rem !important;
         border-radius: 0.65rem !important;
         box-shadow: 0 8px 18px rgba(15, 23, 42, 0.07) !important;
@@ -1660,15 +1705,35 @@ html[data-lang="vi"] #companyName-footer-2 {
         margin-bottom: 0.55rem !important;
         font-size: 0.92rem !important;
         line-height: 1.35 !important;
+        overflow-wrap: anywhere;
+        hyphens: auto;
     }
 
     .home-solution-card p {
-        display: -webkit-box;
-        overflow: hidden;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
+        display: block;
+        overflow: visible;
+        -webkit-line-clamp: unset;
         font-size: 0.75rem !important;
-        line-height: 1.5 !important;
+        line-height: 1.48 !important;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
+
+    html[lang="en"] .home-solution-card h4,
+    html[lang="vi"] .home-solution-card h4 {
+        font-size: 0.86rem !important;
+        line-height: 1.32 !important;
+    }
+
+    html[lang="en"] .home-solution-card p,
+    html[lang="vi"] .home-solution-card p {
+        font-size: 0.68rem !important;
+        line-height: 1.42 !important;
+    }
+
+    html[lang="ja"] .home-solution-card p {
+        font-size: 0.72rem !important;
+        line-height: 1.46 !important;
     }
 }
 

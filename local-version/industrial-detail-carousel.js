@@ -134,25 +134,84 @@
             return src.trim();
         }).filter(Boolean);
     }
+    function getCurrentLanguage() {
+        return document.documentElement.dataset.lang || document.documentElement.lang || 'zh-TW';
+    }
+
+    function getGalleryLabels() {
+        var labels = {
+            'zh-TW': {
+                dialog: '\u5de5\u7a0b\u6210\u679c\u5716\u700f\u89bd',
+                close: '\u95dc\u9589\u5de5\u7a0b\u6210\u679c\u5716',
+                eyebrow: '\u5de5\u7a0b\u6210\u679c\u5716',
+                previous: '\u4e0a\u4e00\u5f35\u5de5\u7a0b\u6210\u679c\u5716',
+                next: '\u4e0b\u4e00\u5f35\u5de5\u7a0b\u6210\u679c\u5716',
+                image: '\u5de5\u7a0b\u6210\u679c\u5716',
+                dot: '\u67e5\u770b\u7b2c {index} \u5f35\u5de5\u7a0b\u6210\u679c\u5716',
+                fallbackTitle: '\u5de5\u7a0b\u6210\u679c',
+                card: '\u67e5\u770b\u516c\u53f8\u5de5\u7a0b\u6210\u679c\u5716',
+                view: '\u67e5\u770b\u5de5\u7a0b\u6210\u679c'
+            },
+            en: {
+                dialog: 'Project result gallery',
+                close: 'Close project result gallery',
+                eyebrow: 'Project Result Images',
+                previous: 'Previous project image',
+                next: 'Next project image',
+                image: 'project result image',
+                dot: 'View project image {index}',
+                fallbackTitle: 'Project Results',
+                card: 'View company project result images',
+                view: 'View Project Results'
+            },
+            ja: {
+                dialog: '\u65bd\u5de5\u5b9f\u7e3e\u753b\u50cf\u30ae\u30e3\u30e9\u30ea\u30fc',
+                close: '\u65bd\u5de5\u5b9f\u7e3e\u753b\u50cf\u3092\u9589\u3058\u308b',
+                eyebrow: '\u65bd\u5de5\u5b9f\u7e3e\u753b\u50cf',
+                previous: '\u524d\u306e\u65bd\u5de5\u5b9f\u7e3e\u753b\u50cf',
+                next: '\u6b21\u306e\u65bd\u5de5\u5b9f\u7e3e\u753b\u50cf',
+                image: '\u65bd\u5de5\u5b9f\u7e3e\u753b\u50cf',
+                dot: '{index} \u679a\u76ee\u306e\u65bd\u5de5\u5b9f\u7e3e\u753b\u50cf\u3092\u898b\u308b',
+                fallbackTitle: '\u65bd\u5de5\u5b9f\u7e3e',
+                card: '\u4f1a\u793e\u306e\u65bd\u5de5\u5b9f\u7e3e\u753b\u50cf\u3092\u898b\u308b',
+                view: '\u65bd\u5de5\u5b9f\u7e3e\u3092\u898b\u308b'
+            },
+            vi: {
+                dialog: 'B\u1ed9 s\u01b0u t\u1eadp h\u00ecnh \u1ea3nh k\u1ebft qu\u1ea3 d\u1ef1 \u00e1n',
+                close: '\u0110\u00f3ng h\u00ecnh \u1ea3nh k\u1ebft qu\u1ea3 d\u1ef1 \u00e1n',
+                eyebrow: 'H\u00ecnh \u1ea3nh k\u1ebft qu\u1ea3 d\u1ef1 \u00e1n',
+                previous: 'H\u00ecnh tr\u01b0\u1edbc',
+                next: 'H\u00ecnh ti\u1ebfp theo',
+                image: 'h\u00ecnh \u1ea3nh k\u1ebft qu\u1ea3 d\u1ef1 \u00e1n',
+                dot: 'Xem h\u00ecnh k\u1ebft qu\u1ea3 d\u1ef1 \u00e1n th\u1ee9 {index}',
+                fallbackTitle: 'K\u1ebft qu\u1ea3 d\u1ef1 \u00e1n',
+                card: 'Xem h\u00ecnh \u1ea3nh k\u1ebft qu\u1ea3 d\u1ef1 \u00e1n c\u1ee7a c\u00f4ng ty',
+                view: 'Xem k\u1ebft qu\u1ea3 d\u1ef1 \u00e1n'
+            }
+        };
+        return labels[getCurrentLanguage()] || labels['zh-TW'];
+    }
+
 
     function createGalleryModal() {
+        var labels = getGalleryLabels();
         var modal = document.createElement('div');
         modal.className = 'industry-gallery-modal hidden';
         modal.setAttribute('role', 'dialog');
         modal.setAttribute('aria-modal', 'true');
-        modal.setAttribute('aria-label', '工程成果圖瀏覽');
+        modal.setAttribute('aria-label', labels.dialog);
         modal.innerHTML = [
             '<div class="industry-gallery-backdrop" data-gallery-close></div>',
             '<div class="industry-gallery-panel">',
-            '  <button type="button" class="industry-gallery-close" aria-label="關閉工程成果圖" data-gallery-close><i class="fas fa-times"></i></button>',
+            '  <button type="button" class="industry-gallery-close" aria-label="' + labels.close + '" data-gallery-close><i class="fas fa-times"></i></button>',
             '  <div class="industry-gallery-header">',
-            '    <p>工程成果圖</p>',
+            '    <p>' + labels.eyebrow + '</p>',
             '    <h3 id="industryGalleryTitle"></h3>',
             '  </div>',
             '  <div class="industry-gallery-stage">',
-            '    <button type="button" class="industry-gallery-nav industry-gallery-prev" aria-label="上一張工程成果圖"><i class="fas fa-chevron-left"></i></button>',
+            '    <button type="button" class="industry-gallery-nav industry-gallery-prev" aria-label="' + labels.previous + '"><i class="fas fa-chevron-left"></i></button>',
             '    <img id="industryGalleryImage" src="" alt="">',
-            '    <button type="button" class="industry-gallery-nav industry-gallery-next" aria-label="下一張工程成果圖"><i class="fas fa-chevron-right"></i></button>',
+            '    <button type="button" class="industry-gallery-nav industry-gallery-next" aria-label="' + labels.next + '"><i class="fas fa-chevron-right"></i></button>',
             '  </div>',
             '  <div class="industry-gallery-footer">',
             '    <span id="industryGalleryCounter"></span>',
@@ -181,6 +240,7 @@
         var activeGallery = [];
         var activeIndex = 0;
         var touchStartX = 0;
+        var labels = getGalleryLabels();
 
         function renderGallery() {
             if (!activeGallery.length) {
@@ -239,6 +299,11 @@
             var button = card.querySelector('.industry-result-view-button');
             if (button) {
                 button.setAttribute('aria-haspopup', 'dialog');
+                button.setAttribute('aria-label', labels.view);
+                var buttonText = button.querySelector('span');
+                if (buttonText) {
+                    buttonText.textContent = labels.view;
+                }
                 button.addEventListener('click', function (event) {
                     event.preventDefault();
                     event.stopPropagation();
