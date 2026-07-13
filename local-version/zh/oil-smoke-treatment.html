@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="industrial-loader-pending" data-lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工業油煙處理系統 - 貝達國際貿易有限公司</title>
+    
+    <link rel="canonical" href="/zh/oil-smoke-treatment.html">
+    <link rel="alternate" hreflang="zh-TW" href="/zh/oil-smoke-treatment.html">
+    <link rel="alternate" hreflang="en" href="/en/oil-smoke-treatment.html">
+    <link rel="alternate" hreflang="vi" href="/vi/oil-smoke-treatment.html">
+    <link rel="alternate" hreflang="ja" href="/jp/oil-smoke-treatment.html">
+    <link rel="alternate" hreflang="x-default" href="/zh/oil-smoke-treatment.html">
+<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css?v=20260712-mobile-solution-cards">
+    <link rel="stylesheet" href="../industrial-detail.css?v=20260620-mobile-module-card-match-desktop">
+</head>
+<body class="bg-gray-50 industrial-detail-page">
+    <!-- Loading Screen -->
+    <div id="loadingScreen"></div>
+    <script src="../industrial-loader.js?v=20260620-bfcache-fix"></script>
+
+    <!-- Privacy Notice Modal -->
+    <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60] hidden">
+        <div class="bg-white rounded-lg shadow-2xl max-w-md w-full mx-4 max-h-[85vh] overflow-y-auto">
+            <div class="p-4 sm:p-6">
+                <div class="text-center mb-4">
+                    <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                        <img src="../images/company/logo.png" alt="??????????" class="w-full h-full object-contain">
+                    </div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-1">隱私權聲明</h2>
+                    <p class="text-sm text-gray-600">歡迎來到貝達國際貿易有限公司</p>
+                </div>
+                <div class="mb-4 text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-3">
+                        <i class="fas fa-shield-alt text-2xl text-blue-600"></i>
+                    </div>
+                </div>
+                <div class="text-sm text-gray-700 mb-4 space-y-3">
+                    <div class="bg-gray-50 rounded-lg p-4 text-left">
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            本網站使用 Cookie，以提升您的瀏覽體驗並分析網站流量。繼續使用本網站，即表示您同意我們使用 Cookie。詳細內容請參閱
+                            <a href="privacy-policy.html" target="_blank" class="text-blue-600 hover:text-blue-800 underline font-semibold">隱私權政策</a>。
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center px-4 sm:px-6">
+                    <button onclick="acceptPrivacy()" class="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[100px] sm:min-w-[120px]">
+                        <i class="fas fa-check mr-2"></i>
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation (same as index) -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src="../images/company/logo.png" alt="??????????" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-900" id="companyName">??????????</h1>
+                        </div>
+                    </a>
+                        </div>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link" id="nav-home">首頁</a>
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1">
+                            <span id="nav-about">關於我們</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="about.html#company-intro" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 first:rounded-t-lg" id="nav-about-companyIntro">公司簡介</a>
+                            <a href="about.html#mission-vision" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-missionVision">使命與願景</a>
+                            <a href="about.html#core-values" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-coreValues">核心理念</a>
+                            <a href="about.html#why-choose-us" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200" id="nav-about-markets">我們的優勢</a>
+                            <a href="about.html#quality-certifications" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200 last:rounded-b-lg" id="nav-about-certifications">品質認證</a>
+                        </div>
+                    </div>
+                    <a href="services.html#business-categories" class="nav-link" id="nav-products">產品</a>
+                    <div class="relative group">
+                        <button class="nav-link-active flex items-center space-x-1">
+                            <span id="nav-news">各項環保解決方案</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 max-h-96 overflow-y-auto">
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <h4 class="text-sm font-semibold text-gray-900">【工業環境工程解決方案】</h4>
+                            </div>
+                            <a href="product.html#oil-smoke-treatment" class="block px-4 py-3 text-sm text-teal-700 bg-teal-50 font-medium">油煙處理系統</a>
+                            <a href="product.html#chemical-gas-treatment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">VOC廢氣處理系統</a>
+                            <a href="product.html#paint-dust-treatment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">噴漆設備工程</a>
+                            <div class="px-4 py-3 border-b border-gray-100"><h4 class="text-sm font-semibold text-gray-900">【建造/工程應用】</h4></div>
+                            <a href="product.html#spray-equipment" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">噴漆設備</a>
+                            <a href="product.html#chemical-plant-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">廢氣洗滌塔</a>
+                            <a href="product.html#electrostatic-oil-smoke" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">靜電油煙</a>
+                            <div class="px-4 py-3 border-b border-gray-100"><h4 class="text-sm font-semibold text-gray-900">【六大產業解決方案】</h4></div>
+                            <a href="product.html#metal-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">金屬加工業</a>
+                            <a href="product.html#chemical-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">化工產業</a>
+                            <a href="product.html#kitchen-exhaust-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">餐飲與中央廚房</a>
+                            <a href="product.html#electronic-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">電子產業</a>
+                            <a href="product.html#plastic-rubber-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">塑膠與橡膠產業</a>
+                            <a href="product.html#food-processing-industry-solution" class="block px-4 py-3 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-600 transition-colors duration-200">食品加工產業</a>
+                        </div>
+                        </div>
+                    <a href="faq.html" class="nav-link" id="nav-faq">常見問題</a>
+                    <a href="contact.html" class="nav-link" id="nav-contact">聯絡我們</a>
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-2" onclick="toggleLanguageDropdown()">
+                            <i class="fas fa-globe text-blue-600"></i>
+                            <span class="language-current" id="currentLangDisplay">中文</span>
+                            <i class="fas fa-chevron-down text-xs text-gray-500"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-40 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50" id="languageDropdown">
+                            <button onclick="changeLanguage('zh-TW')" class="first:rounded-t-lg language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2"><span class="text-lg">🇹🇼</span><span>繁體中文</span></button>
+<button onclick="changeLanguage('vi')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2"><span class="text-lg">🇻🇳</span><span>Tiếng Việt</span></button>
+<button onclick="changeLanguage('en')" class="language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2"><span class="text-lg">🇺🇸</span><span>English</span></button>
+<button onclick="changeLanguage('ja')" class="last:rounded-b-lg language-btn w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2"><span class="text-lg">🇯🇵</span><span>日本語</span></button>
+                        </div>
+                    </div>
+                </div>
+                <button id="mobileMenuBtn" class="mobile-menu-toggle lg:hidden" type="button" aria-label="開啟或關閉手機選單" aria-expanded="false" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="mobile-menu-panel hidden lg:hidden bg-white border-t border-gray-200 fixed top-16 left-0 right-0 z-40 max-h-[calc(100vh-4rem)] overflow-y-auto">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-home">首頁</a>
+                <a href="faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-faq">常見問題</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-contact">聯絡我們</a>
+                <a href="product.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" id="mobile-nav-news">各項環保解決方案</a>
+                <a href="product.html#oil-smoke-treatment" class="block px-3 py-2 rounded-md text-base font-medium text-teal-700 bg-teal-50">油煙處理系統</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="product-detail-hero relative pt-16 bg-cover bg-center bg-no-repeat" style="background-image: url('../images/products/air-pollution/oil-smoke-main.png')">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-950/90 via-blue-900/85 to-blue-900/75"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="industrial-kicker">OIL FUME CONTROL / EXHAUST ENGINEERING</div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">工業油煙處理系統</h1>
+            <p class="text-xl md:text-2xl text-blue-100 mb-6 font-medium">高效去除油煙・降低異味・打造清新環境</p>
+            <p class="text-base md:text-lg text-blue-50 max-w-3xl leading-relaxed">
+                針對餐飲業、食品加工業與中央廚房等油煙排放場所，<br class="hidden sm:inline">
+                提供油煙處理設備與整合方案，<br class="hidden sm:inline">
+                有效去除油煙、異味與懸浮微粒。
+            </p>
+            <div class="industrial-hero-rail" aria-label="工程服務能力"><span><i class="fas fa-ruler-combined"></i>現場勘查</span><span><i class="fas fa-wind"></i>風量規劃</span><span><i class="fas fa-industry"></i>設備整合</span><span><i class="fas fa-tools"></i>清洗維護</span></div>
+        </div>
+    </section>
+
+    <!-- Main layout: sidebar + content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+        <div class="lg:flex lg:gap-10 xl:gap-12">
+            <!-- Product sidebar -->
+            <aside class="product-detail-aside flex-shrink-0 mb-10 lg:mb-0">
+                <div class="product-detail-sidebar lg:sticky lg:top-24">
+                    <a href="product.html" class="flex items-center text-sm text-gray-600 hover:text-blue-900 mb-4 transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i>返回產品總覽
+                    </a>
+                    <h2 class="text-lg font-bold text-gray-900 mb-4 pb-3 border-b border-gray-200">快速切換產品</h2>
+                    <nav class="space-y-5 text-sm max-h-[70vh] overflow-y-auto pr-1">
+                        <div>
+                            <p class="product-sidebar-group-title">【工業環境工程解決方案】</p>
+                            <ul class="space-y-1 mt-2">
+                                <li><a href="oil-smoke-treatment.html" class="product-sidebar-link is-active">油煙處理系統</a></li>
+                                <li><a href="chemical-gas-treatment.html" class="product-sidebar-link">VOC廢氣處理系統</a></li>
+                                <li><a href="paint-dust-treatment.html" class="product-sidebar-link">噴漆設備工程</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="product-sidebar-group-title">【建造/工程應用】</p>
+                            <ul class="space-y-1 mt-2">
+                                <li><a href="spray-equipment.html" class="product-sidebar-link">噴漆設備</a></li>
+                                <li><a href="chemical-plant-solution.html" class="product-sidebar-link">廢氣洗滌塔</a></li>
+                                <li><a href="electrostatic-oil-smoke.html" class="product-sidebar-link">靜電油煙</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="product-sidebar-group-title">【六大產業解決方案】</p>
+                            <ul class="space-y-1 mt-2">
+                                <li><a href="metal-industry-solution.html" class="product-sidebar-link">金屬加工業</a></li>
+                                <li><a href="chemical-industry-solution.html" class="product-sidebar-link">化工產業</a></li>
+                                <li><a href="kitchen-exhaust-solution.html" class="product-sidebar-link">餐飲與中央廚房</a></li>
+                                <li><a href="electronic-industry-solution.html" class="product-sidebar-link">電子產業</a></li>
+                                <li><a href="plastic-rubber-industry-solution.html" class="product-sidebar-link">塑膠與橡膠產業</a></li>
+                                <li><a href="food-processing-industry-solution.html" class="product-sidebar-link">食品加工產業</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="product-sidebar-group-title">【通風零件】</p>
+                            <ul class="space-y-1 mt-2">
+                                <li><a href="duct-solution.html" class="product-sidebar-link">風管</a></li>
+                                <li><a href="fan-solution.html" class="product-sidebar-link">風機</a></li>
+                                <li><a href="filter-solution.html" class="product-sidebar-link">濾網</a></li>
+                                <li><a href="collector-solution.html" class="product-sidebar-link">集塵設備</a></li>
+                                <li><a href="custom-parts-solution.html" class="product-sidebar-link">客製配件</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </aside>
+
+            <main class="flex-1 min-w-0">
+                <section class="mb-10 border border-gray-300 bg-white">
+                    <div class="grid lg:grid-cols-5">
+                        <div class="lg:col-span-3 p-6 md:p-8 border-b lg:border-b-0 lg:border-r border-gray-300">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="w-10 h-1 bg-orange-500"></span>
+                                <span class="text-sm font-bold text-orange-700 tracking-widest">OIL SMOKE CONTROL</span>
+                            </div>
+                            <h2 class="text-3xl font-black text-gray-900 mb-4">工業油煙與異味處理工程</h2>
+                            <p class="text-gray-600 leading-relaxed">
+                                針對中央廚房、食品加工、壓鑄與 CNC 油霧製程，依現場風量、油煙濃度、管路阻抗與排放位置規劃完整處理系統，降低油煙、油霧與異味排放。
+                            </p>
+                        </div>
+                        <div class="lg:col-span-2 bg-blue-950 text-white p-6 md:p-8">
+                            <p class="text-sm font-bold text-orange-300 mb-3">工程重點</p>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div><p class="text-2xl font-black">95%+</p><p class="text-blue-100">油煙捕集效率</p></div>
+                                <div><p class="text-2xl font-black">24H</p><p class="text-blue-100">連續運轉規劃</p></div>
+                                <div><p class="text-2xl font-black">低阻</p><p class="text-blue-100">節能風量設計</p></div>
+                                <div><p class="text-2xl font-black">模組</p><p class="text-blue-100">便於清洗維護</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-12">
+                    <div class="industrial-process-steps grid md:grid-cols-4 border-y border-gray-300">
+                        <div class="p-5 border-b md:border-b-0 md:border-r border-gray-300">
+                            <i class="fas fa-search text-orange-600 text-xl mb-3"></i>
+                            <h3 class="font-bold text-gray-900">現場勘查</h3>
+                            <p class="text-sm text-gray-500 mt-1">確認煙源、風量與排放路徑</p>
+                        </div>
+                        <div class="p-5 border-b md:border-b-0 md:border-r border-gray-300">
+                            <i class="fas fa-drafting-compass text-orange-600 text-xl mb-3"></i>
+                            <h3 class="font-bold text-gray-900">系統配置</h3>
+                            <p class="text-sm text-gray-500 mt-1">搭配靜電、水洗、除味與風機</p>
+                        </div>
+                        <div class="p-5 border-b md:border-b-0 md:border-r border-gray-300">
+                            <i class="fas fa-tools text-orange-600 text-xl mb-3"></i>
+                            <h3 class="font-bold text-gray-900">施工安裝</h3>
+                            <p class="text-sm text-gray-500 mt-1">整合設備、風管與控制盤</p>
+                        </div>
+                        <div class="p-5">
+                            <i class="fas fa-clipboard-check text-orange-600 text-xl mb-3"></i>
+                            <h3 class="font-bold text-gray-900">試車維護</h3>
+                            <p class="text-sm text-gray-500 mt-1">協助清洗保養與效能檢查</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-12">
+                    <div class="flex items-end justify-between gap-6 mb-6">
+                        <div>
+                            <h2 class="text-2xl md:text-3xl font-black text-gray-900">核心設備模組</h2>
+                            <p class="text-gray-500 mt-2">依油煙量與排放條件組合配置</p>
+                        </div>
+                    </div>
+                    <div class="industrial-module-grid grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+                        <article class="industrial-module-card bg-gray-100 border border-gray-300 p-5 flex flex-col">
+                            <img src="../images/products/building/electrostatic-main.png" alt="靜電油煙處理設備" class="h-36 w-full object-cover mb-4">
+                            <h3 class="text-lg font-black text-gray-900 mb-2">靜電油煙處理機</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">以高壓靜電捕集細小油煙粒子，適合連續排放與大風量現場。</p>
+                            <ul class="text-sm text-gray-600 space-y-2 mt-auto">
+                                <li><i class="fas fa-check text-orange-600 mr-2"></i>低阻力、低耗能</li>
+                                <li><i class="fas fa-check text-orange-600 mr-2"></i>模組化清洗維護</li>
+                            </ul>
+                        </article>
+                        <article class="industrial-module-card bg-gray-100 border border-gray-300 p-5 flex flex-col">
+                            <img src="../images/products/air-pollution/oil-smoke-main.png" alt="水洗油煙處理設備" class="h-36 w-full object-cover mb-4">
+                            <h3 class="text-lg font-black text-gray-900 mb-2">水洗式處理設備</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">利用水洗降溫與初步攔截油煙，適合高溫、高油煙排放環境。</p>
+                            <ul class="text-sm text-gray-600 space-y-2 mt-auto">
+                                <li><i class="fas fa-check text-orange-600 mr-2"></i>降溫與除油同步</li>
+                                <li><i class="fas fa-check text-orange-600 mr-2"></i>降低後端負載</li>
+                            </ul>
+                        </article>
+                        <article class="industrial-module-card bg-gray-100 border border-gray-300 p-5 flex flex-col">
+                            <img src="../images/products/equipment/activated-carbon-filter.png" alt="活性碳除味設備" class="h-36 w-full object-cover mb-4">
+                            <h3 class="text-lg font-black text-gray-900 mb-2">活性碳除味設備</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">吸附殘留異味與有機氣體，提升排放端空氣品質。</p>
+                            <ul class="text-sm text-gray-600 space-y-2 mt-auto">
+                                <li><i class="fas fa-check text-orange-600 mr-2"></i>降低排放異味</li>
+                                <li><i class="fas fa-check text-orange-600 mr-2"></i>耗材更換方便</li>
+                            </ul>
+                        </article>
+                        <article class="industrial-module-card bg-gray-100 border border-gray-300 p-5 flex flex-col">
+                            <img src="../images/products/fans/high-pressure-backward-curved.png" alt="排煙通風系統" class="h-36 w-full object-cover mb-4">
+                            <h3 class="text-lg font-black text-gray-900 mb-2">排煙通風系統</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">依管路阻抗配置風機與風管，維持穩定捕集與排放效率。</p>
+                            <ul class="text-sm text-gray-600 space-y-2 mt-auto">
+                                <li><i class="fas fa-check text-orange-600 mr-2"></i>穩定風量靜壓</li>
+                                <li><i class="fas fa-check text-orange-600 mr-2"></i>降低油煙外逸</li>
+                            </ul>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="mb-12 bg-blue-950 text-white p-6 md:p-8">
+                    <h2 class="text-2xl font-black mb-6">適用場域</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="border border-white/20 p-4"><i class="fas fa-utensils text-orange-300 mb-3"></i><p class="font-bold">餐飲廚房</p></div>
+                        <div class="border border-white/20 p-4"><i class="fas fa-warehouse text-orange-300 mb-3"></i><p class="font-bold">中央廚房</p></div>
+                        <div class="border border-white/20 p-4"><i class="fas fa-industry text-orange-300 mb-3"></i><p class="font-bold">食品加工</p></div>
+                        <div class="border border-white/20 p-4"><i class="fas fa-cogs text-orange-300 mb-3"></i><p class="font-bold">CNC油霧</p></div>
+                        <div class="border border-white/20 p-4"><i class="fas fa-fire text-orange-300 mb-3"></i><p class="font-bold">壓鑄製程</p></div>
+                        <div class="border border-white/20 p-4"><i class="fas fa-bread-slice text-orange-300 mb-3"></i><p class="font-bold">烘焙產線</p></div>
+                    </div>
+                </section>
+
+                <section class="border border-gray-300 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-3">需要油煙處理工程規劃？</h2>
+                        <p class="text-gray-600">提供現場評估、設備選型、管路配置與施工維護建議。</p>
+                    </div>
+                    <a href="contact.html" class="inline-flex items-center justify-center bg-blue-950 hover:bg-orange-700 text-white font-bold px-8 py-4 transition-colors">
+                        立即諮詢 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </section>
+            </main>
+        </div>
+        </div>
+
+    <!-- Footer (same as index) -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 flex items-center justify-center">
+                            <img src="../images/company/logo.png?v=202604021007" alt="??????????" class="w-full h-full object-contain">
+                        </div>
+                <div>
+                            <h3 class="text-white font-bold text-lg" id="companyName-footer">??????????</h3>
+                        </div>
+                    </div>
+<div class="space-y-2">
+                        <div class="footer-phone-list space-y-1">
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇹🇼</span><span>+886-960-542-166</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇹🇼</span><span>+886-985-328-164</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇻🇳</span><span>+84-28-3779-0881</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇻🇳</span><span>+84-90-337-3583</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇻🇳</span><span>+84-98-501-9620</span></p>
+                            <p class="flex items-start text-sm text-gray-400"><span class="footer-phone-flag mr-2 mt-0.5" aria-hidden="true">🇨🇦🇺🇸</span><span>+1-437-984-0249</span></p>
+                        </div>
+                        <p class="flex items-center text-sm text-gray-400"><i class="fas fa-envelope mr-2 text-teal-400"></i>info@bestas-intl.com</p>
+                        <p class="flex items-center text-sm text-gray-400"><i class="fas fa-map-marker-alt mr-2 text-teal-400"></i>台北市文山區木柵路二段</p>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">快速連結</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">首頁</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">關於我們</a></li>
+                        <li><a href="product.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">產品與解決方案</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">常見問題</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">聯絡我們</a></li>
+                    </ul>
+                </div>
+
+                <!-- Product Solutions -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">產品與方案</h3>
+                    <ul class="space-y-2">
+                        <li><a href="product.html#air-pollution-control" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">空污防治工程</a></li>
+                        <li><a href="product.html#construction-engineering" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">建造與工程應用</a></li>
+                        <li><a href="product.html#industry-application" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">六大產業解決方案</a></li>
+                        <li><a href="services.html#business-categories" class="text-gray-400 hover:text-teal-400 transition-colors duration-200">設備與零組件</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">聯絡我們</h3>
+                    <p class="text-gray-400 mb-4">透過以下方式聯繫我們</p>
+                    <div class="flex space-x-4">
+                        <a href="https://line.me/ti/p/@bestas-intl" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors duration-200"><i class="fab fa-line text-white"></i></a>
+                        <a href="https://wa.me/886985328164" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-10 h-10 bg-[#25d366] rounded-full flex items-center justify-center hover:bg-[#1fb759] transition-colors duration-200"><i class="fab fa-whatsapp text-white"></i></a>
+                        <a href="https://zalo.me/84903373583" target="_blank" rel="noopener noreferrer" aria-label="Zalo" class="w-10 h-10 bg-[#0068ff] rounded-full flex items-center justify-center hover:bg-[#0056d6] transition-colors duration-200"><span class="footer-social-zalo-mark">Zalo</span></a>
+                        <a href="mailto:info@bestas-intl.com" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-200"><i class="fas fa-envelope text-white"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2026 <span id="companyName-footer-2">??????????</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            'zh-TW': {
+                companyName: '貝達國際貿易有限公司',
+                'companyName-footer': '貝達國際貿易有限公司',
+                'companyName-footer-2': '貝達國際貿易有限公司',
+                currentLangDisplay: '中文',
+                'nav-home': '首頁', 'nav-about': '關於我們', 'nav-products': '產品',
+                'nav-news': '各項環保解決方案', 'nav-faq': '常見問題', 'nav-contact': '聯絡我們',
+                'nav-about-companyIntro': '公司簡介', 'nav-about-missionVision': '使命與願景',
+                'nav-about-coreValues': '核心理念', 'nav-about-markets': '我們的優勢',
+                'nav-services-businessCategories': '通風設備', 'nav-services-matching': '供應鏈整合',
+                'nav-services-partnerRecruitment': '經銷合作',
+                'mobile-nav-home': '首頁', 'mobile-nav-faq': '常見問題', 'mobile-nav-contact': '聯絡我們'
+            },
+            'en': {
+                companyName: 'BESTAR SV CO.LTD',
+                'companyName-footer': 'BESTAR SV CO.LTD',
+                'companyName-footer-2': 'BESTAR SV CO.LTD',
+                currentLangDisplay: 'English',
+                'nav-home': 'Home', 'nav-about': 'About Us', 'nav-products': 'Products',
+                'nav-news': 'Solutions', 'nav-faq': 'FAQ', 'nav-contact': 'Contact',
+                'nav-about-companyIntro': 'Company Introduction', 'nav-about-missionVision': 'Mission / Vision',
+                'nav-about-coreValues': 'Core Values', 'nav-about-markets': 'Our Advantages',
+                'nav-services-businessCategories': 'Business Categories', 'nav-services-matching': 'Supply Chain',
+                'nav-services-partnerRecruitment': 'Partner Recruitment',
+                'mobile-nav-home': 'Home', 'mobile-nav-faq': 'FAQ', 'mobile-nav-contact': 'Contact'
+            },
+            'ja': {
+                companyName: 'ベスタス国際貿易有限公司',
+                'companyName-footer': 'ベスタス国際貿易有限公司',
+                'companyName-footer-2': 'ベスタス国際貿易有限公司',
+                currentLangDisplay: '日本語',
+                'nav-home': 'ホーム', 'nav-about': '会社概要', 'nav-products': '製品',
+                'nav-news': '製品ソリューション', 'nav-faq': 'よくある質問', 'nav-contact': 'お問い合わせ',
+                'nav-about-companyIntro': '会社紹介', 'nav-about-missionVision': '使命・ビジョン',
+                'nav-about-coreValues': 'コアバリュー', 'nav-about-markets': '私たちの強み',
+                'nav-services-businessCategories': '事業項目', 'nav-services-matching': 'サプライチェーン',
+                'nav-services-partnerRecruitment': 'パートナー募集',
+                'mobile-nav-home': 'ホーム', 'mobile-nav-faq': 'よくある質問', 'mobile-nav-contact': 'お問い合わせ'
+            },
+            'vi': {
+                companyName: 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
+                'companyName-footer': 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
+                'companyName-footer-2': 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
+                currentLangDisplay: 'Tiếng Việt',
+                'nav-home': 'Trang chủ', 'nav-about': 'Về chúng tôi', 'nav-products': 'Sản phẩm',
+                'nav-news': 'Giải pháp', 'nav-faq': 'Câu hỏi thường gặp', 'nav-contact': 'Liên hệ',
+                'nav-about-companyIntro': 'Giới thiệu', 'nav-about-missionVision': 'Sứ mệnh & Tầm nhìn',
+                'nav-about-coreValues': 'Giá trị cốt lõi', 'nav-about-markets': 'Ưu thế của chúng tôi',
+                'nav-services-businessCategories': 'Danh mục', 'nav-services-matching': 'Chuỗi cung ứng',
+                'nav-services-partnerRecruitment': 'Đối tác',
+                'mobile-nav-home': 'Trang chủ', 'mobile-nav-faq': 'FAQ', 'mobile-nav-contact': 'Liên hệ'
+            }
+        };
+
+        let isMenuOpen = false;
+        let mobileMenuAnimationTimer = null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            /* language handled by language-router.js */
+            if (!localStorage.getItem('privacyAccepted')) {
+                setTimeout(showPrivacyModal, 800);
+            }
+            setTimeout(function() {
+                const el = document.getElementById('loadingScreen');
+                if (el) el.style.display = 'none';
+            }, 500);
+        });
+
+        function changeLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+            const t = translations[lang];
+            if (!t) return;
+            Object.keys(t).forEach(function(key) {
+                const el = document.getElementById(key);
+                if (el) el.textContent = t[key];
+            });
+            const dropdown = document.getElementById('languageDropdown');
+            if (dropdown) { dropdown.classList.add('invisible'); dropdown.classList.remove('opacity-100'); }
+        }
+
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            if (dropdown) { dropdown.classList.toggle('invisible'); dropdown.classList.toggle('opacity-100'); }
+        }
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            if (!mobileMenu || !menuBtn) {
+                return;
+            }
+
+            isMenuOpen = !isMenuOpen;
+            clearTimeout(mobileMenuAnimationTimer);
+            menuBtn.classList.toggle('is-open', isMenuOpen);
+            menuBtn.setAttribute('aria-expanded', String(isMenuOpen));
+
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    mobileMenu.classList.add('is-open');
+                });
+                return;
+            }
+
+            mobileMenu.classList.remove('is-open');
+            mobileMenuAnimationTimer = setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 240);
+        }
+
+        function showPrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+        }
+
+        function hidePrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) { modal.classList.add('hidden'); document.body.style.overflow = 'auto'; }
+        }
+
+        function acceptPrivacy() {
+            localStorage.setItem('privacyAccepted', 'true');
+            localStorage.setItem('privacyAcceptedDate', new Date().toISOString());
+            hidePrivacyModal();
+        }
+
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('languageDropdown');
+            const button = event.target.closest('.group');
+            if (!button && dropdown && !dropdown.classList.contains('invisible')) {
+                dropdown.classList.add('invisible');
+                dropdown.classList.remove('opacity-100');
+            }
+        });
+    </script>
+    <script src="../nav-active.js?v=20260620-solution-nav"></script>
+    <script src="../language-router.js?v=20260712-contact-gallery-text"></script>
+    <script src="../quick-contact.js"></script>
+    <script src="../product-switcher.js"></script>
+    <script src="../industrial-detail-carousel.js?v=20260712-gallery-i18n"></script>
+</body>
+</html>

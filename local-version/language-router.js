@@ -1,8 +1,9 @@
 (function () {
-    const suffixByLang = {
-        en: '-en',
-        ja: '-jp',
-        vi: '-vi'
+    const folderByLang = {
+        'zh-TW': 'zh',
+        en: 'en',
+        ja: 'jp',
+        vi: 'vi'
     };
 
     const labelByLang = {
@@ -58,12 +59,7 @@
             return href;
         }
 
-        const cleanPath = parts.path.replace(/-(en|jp|vi)(?=\.html$)/, '');
-        if (lang === 'zh-TW') {
-            return cleanPath + parts.hash;
-        }
-
-        return cleanPath.replace(/\.html$/, `${suffixByLang[lang]}.html`) + parts.hash;
+        return parts.path.replace(/-(en|jp|vi)(?=\.html$)/, '') + parts.hash;
     }
 
     function applyCompanyName(lang) {
@@ -203,8 +199,11 @@
 
     window.changeLanguage = function changeLanguage(lang) {
         localStorage.setItem('preferredLanguage', lang);
-        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-        const target = localizeHref(currentPath + window.location.hash, lang);
+        const targetFolder = folderByLang[lang] || folderByLang['zh-TW'];
+        const currentPath = (window.location.pathname.split('/').pop() || 'index.html').replace(/-(en|jp|vi)(?=\.html$)/, '');
+        const target = currentPath === 'index.html'
+            ? `../${targetFolder}/`
+            : `../${targetFolder}/${currentPath}${window.location.hash}`;
         window.location.href = target;
     };
 
