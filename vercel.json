@@ -1,18 +1,508 @@
 {
-  "version": 2,
-  "builds": [
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "redirects": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
-    }
-  ],
-  "routes": [
+      "source": "/about-en.html",
+      "destination": "/en/about.html",
+      "statusCode": 301
+    },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/about-jp.html",
+      "destination": "/jp/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/about-vi.html",
+      "destination": "/vi/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/about.html",
+      "destination": "/zh/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/chemical-gas-treatment-en.html",
+      "destination": "/en/chemical-gas-treatment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/chemical-gas-treatment-jp.html",
+      "destination": "/jp/chemical-gas-treatment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/chemical-gas-treatment-vi.html",
+      "destination": "/vi/chemical-gas-treatment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/chemical-gas-treatment.html",
+      "destination": "/zh/chemical-gas-treatment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/chemical-industry-solution-en.html",
+      "destination": "/en/chemical-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/chemical-industry-solution-jp.html",
+      "destination": "/jp/chemical-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/chemical-industry-solution-vi.html",
+      "destination": "/vi/chemical-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/chemical-industry-solution.html",
+      "destination": "/zh/chemical-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/chemical-plant-solution-en.html",
+      "destination": "/en/chemical-plant-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/chemical-plant-solution-jp.html",
+      "destination": "/jp/chemical-plant-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/chemical-plant-solution-vi.html",
+      "destination": "/vi/chemical-plant-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/chemical-plant-solution.html",
+      "destination": "/zh/chemical-plant-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/collector-solution-en.html",
+      "destination": "/en/collector-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/collector-solution-jp.html",
+      "destination": "/jp/collector-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/collector-solution-vi.html",
+      "destination": "/vi/collector-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/collector-solution.html",
+      "destination": "/zh/collector-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-en.html",
+      "destination": "/en/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-jp.html",
+      "destination": "/jp/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-success-en.html",
+      "destination": "/en/contact-success.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-success-jp.html",
+      "destination": "/jp/contact-success.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-success-vi.html",
+      "destination": "/vi/contact-success.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-success.html",
+      "destination": "/zh/contact-success.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-vi.html",
+      "destination": "/vi/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/zh/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/custom-parts-solution-en.html",
+      "destination": "/en/custom-parts-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/custom-parts-solution-jp.html",
+      "destination": "/jp/custom-parts-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/custom-parts-solution-vi.html",
+      "destination": "/vi/custom-parts-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/custom-parts-solution.html",
+      "destination": "/zh/custom-parts-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/duct-solution-en.html",
+      "destination": "/en/duct-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/duct-solution-jp.html",
+      "destination": "/jp/duct-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/duct-solution-vi.html",
+      "destination": "/vi/duct-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/duct-solution.html",
+      "destination": "/zh/duct-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/electronic-industry-solution-en.html",
+      "destination": "/en/electronic-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/electronic-industry-solution-jp.html",
+      "destination": "/jp/electronic-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/electronic-industry-solution-vi.html",
+      "destination": "/vi/electronic-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/electronic-industry-solution.html",
+      "destination": "/zh/electronic-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/electrostatic-oil-smoke-en.html",
+      "destination": "/en/electrostatic-oil-smoke.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/electrostatic-oil-smoke-jp.html",
+      "destination": "/jp/electrostatic-oil-smoke.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/electrostatic-oil-smoke-vi.html",
+      "destination": "/vi/electrostatic-oil-smoke.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/electrostatic-oil-smoke.html",
+      "destination": "/zh/electrostatic-oil-smoke.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fan-solution-en.html",
+      "destination": "/en/fan-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fan-solution-jp.html",
+      "destination": "/jp/fan-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fan-solution-vi.html",
+      "destination": "/vi/fan-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/fan-solution.html",
+      "destination": "/zh/fan-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/faq-en.html",
+      "destination": "/en/faq.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/faq-jp.html",
+      "destination": "/jp/faq.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/faq-vi.html",
+      "destination": "/vi/faq.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/faq.html",
+      "destination": "/zh/faq.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/filter-solution-en.html",
+      "destination": "/en/filter-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/filter-solution-jp.html",
+      "destination": "/jp/filter-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/filter-solution-vi.html",
+      "destination": "/vi/filter-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/filter-solution.html",
+      "destination": "/zh/filter-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/food-processing-industry-solution-en.html",
+      "destination": "/en/food-processing-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/food-processing-industry-solution-jp.html",
+      "destination": "/jp/food-processing-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/food-processing-industry-solution-vi.html",
+      "destination": "/vi/food-processing-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/food-processing-industry-solution.html",
+      "destination": "/zh/food-processing-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/index-en.html",
+      "destination": "/en/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index-jp.html",
+      "destination": "/jp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index-vi.html",
+      "destination": "/vi/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.html",
+      "destination": "/zh/",
+      "statusCode": 301
+    },
+    {
+      "source": "/kitchen-exhaust-solution-en.html",
+      "destination": "/en/kitchen-exhaust-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/kitchen-exhaust-solution-jp.html",
+      "destination": "/jp/kitchen-exhaust-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/kitchen-exhaust-solution-vi.html",
+      "destination": "/vi/kitchen-exhaust-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/kitchen-exhaust-solution.html",
+      "destination": "/zh/kitchen-exhaust-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/metal-industry-solution-en.html",
+      "destination": "/en/metal-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/metal-industry-solution-jp.html",
+      "destination": "/jp/metal-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/metal-industry-solution-vi.html",
+      "destination": "/vi/metal-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/metal-industry-solution.html",
+      "destination": "/zh/metal-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/oil-smoke-treatment-en.html",
+      "destination": "/en/oil-smoke-treatment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/oil-smoke-treatment-jp.html",
+      "destination": "/jp/oil-smoke-treatment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/oil-smoke-treatment-vi.html",
+      "destination": "/vi/oil-smoke-treatment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/oil-smoke-treatment.html",
+      "destination": "/zh/oil-smoke-treatment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/paint-dust-treatment-en.html",
+      "destination": "/en/paint-dust-treatment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/paint-dust-treatment-jp.html",
+      "destination": "/jp/paint-dust-treatment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/paint-dust-treatment-vi.html",
+      "destination": "/vi/paint-dust-treatment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/paint-dust-treatment.html",
+      "destination": "/zh/paint-dust-treatment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/plastic-rubber-industry-solution-en.html",
+      "destination": "/en/plastic-rubber-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/plastic-rubber-industry-solution-jp.html",
+      "destination": "/jp/plastic-rubber-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/plastic-rubber-industry-solution-vi.html",
+      "destination": "/vi/plastic-rubber-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/plastic-rubber-industry-solution.html",
+      "destination": "/zh/plastic-rubber-industry-solution.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy-policy-en.html",
+      "destination": "/en/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy-policy-jp.html",
+      "destination": "/jp/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy-policy-vi.html",
+      "destination": "/vi/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy-policy.html",
+      "destination": "/zh/privacy-policy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-en.html",
+      "destination": "/en/product.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-jp.html",
+      "destination": "/jp/product.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-vi.html",
+      "destination": "/vi/product.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product.html",
+      "destination": "/zh/product.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/services-en.html",
+      "destination": "/en/services.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/services-jp.html",
+      "destination": "/jp/services.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/services-vi.html",
+      "destination": "/vi/services.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/services.html",
+      "destination": "/zh/services.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/spray-equipment-en.html",
+      "destination": "/en/spray-equipment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/spray-equipment-jp.html",
+      "destination": "/jp/spray-equipment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/spray-equipment-vi.html",
+      "destination": "/vi/spray-equipment.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/spray-equipment.html",
+      "destination": "/zh/spray-equipment.html",
+      "statusCode": 301
     }
   ]
 }
