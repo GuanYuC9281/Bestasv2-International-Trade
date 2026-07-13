@@ -23,7 +23,7 @@
             <div class="industrial-loader-grid" aria-hidden="true"></div>
             <div class="industrial-loader-panel">
                 <div class="industrial-loader-status">
-                    <img src="images/company/logo.png" alt="" class="industrial-loader-logo">
+                    <img src="../images/company/logo.png" alt="" class="industrial-loader-logo">
                     <span>貝達國際貿易有限公司</span>
                 </div>
                 <div class="industrial-loader-machine" aria-hidden="true">

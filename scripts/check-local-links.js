@@ -5,6 +5,7 @@ const root = path.resolve(__dirname, "..");
 const siteRoot = path.join(root, "local-version");
 const languageDirs = ["zh", "en", "vi", "jp"];
 const htmlRoots = languageDirs.map((lang) => path.join(siteRoot, lang));
+const sharedRoots = [siteRoot];
 
 const attrPattern = /\b(href|src|poster|data-src|data-background|data-gallery|action|content|srcset)\s*=\s*(["'])([\s\S]*?)\2/gi;
 const cssUrlPattern = /url\(([^)]*)\)/gi;
@@ -148,12 +149,51 @@ function checkHtmlFile(file, issues) {
   }
 }
 
+function checkCssFile(file, issues) {
+  const text = fs.readFileSync(file, "utf8");
+  let match;
+  cssUrlPattern.lastIndex = 0;
+  while ((match = cssUrlPattern.exec(text))) {
+    checkOne(file, stripCssQuotes(match[1]), lineNumberAt(text, match.index), issues);
+  }
+}
+
+function checkSharedJsTemplateAttrs(file, issues) {
+  const text = fs.readFileSync(file, "utf8");
+  let match;
+  attrPattern.lastIndex = 0;
+  while ((match = attrPattern.exec(text))) {
+    const value = match[3];
+    if (value.includes("${")) continue;
+
+    const line = lineNumberAt(text, match.index);
+    for (const lang of languageDirs) {
+      const representativePage = path.join(siteRoot, lang, "index.html");
+      if (match[1].toLowerCase() === "srcset") {
+        checkSrcset(representativePage, value, line, issues);
+      } else if (match[1].toLowerCase() === "data-gallery") {
+        checkGallery(representativePage, value, line, issues);
+      } else {
+        checkOne(representativePage, value, line, issues);
+      }
+    }
+  }
+}
+
 function main() {
   const htmlFiles = htmlRoots.flatMap((dir) => walk(dir, (file) => file.toLowerCase().endsWith(".html")));
+  const sharedCssFiles = sharedRoots.flatMap((dir) => walk(dir, (file) => file.toLowerCase().endsWith(".css")));
+  const sharedJsFiles = sharedRoots.flatMap((dir) => walk(dir, (file) => file.toLowerCase().endsWith(".js")));
   const issues = [];
 
   for (const file of htmlFiles) {
     checkHtmlFile(file, issues);
+  }
+  for (const file of sharedCssFiles) {
+    checkCssFile(file, issues);
+  }
+  for (const file of sharedJsFiles) {
+    checkSharedJsTemplateAttrs(file, issues);
   }
 
   if (issues.length) {
@@ -164,7 +204,7 @@ function main() {
     process.exit(1);
   }
 
-  console.log(`Local link check passed for ${htmlFiles.length} HTML files.`);
+  console.log(`Local link check passed for ${htmlFiles.length} HTML files, ${sharedCssFiles.length} shared CSS files, and ${sharedJsFiles.length} shared JS files.`);
 }
 
 main();

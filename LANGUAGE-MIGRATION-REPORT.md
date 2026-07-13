@@ -144,10 +144,13 @@
 
 ## Invalid Links
 
-- `scripts/check-local-links.js` passed for 100 HTML files.
+- `scripts/check-local-links.js` passed for 100 HTML files, 2 shared CSS files, and 8 shared JS files.
 - One broken product image path was found during validation and fixed:
   - `../images/products/equipment/inline-fan.png`
   - changed to `../images/products/fans/inline-fan.jpg`
+- One loader logo path was found during strict QA and fixed:
+  - `images/company/logo.png`
+  - changed to `../images/company/logo.png`
 
 ## JavaScript Path Updates
 
@@ -208,7 +211,7 @@ node scripts/check-local-links.js
 Expected success output:
 
 ```text
-Local link check passed for 100 HTML files.
+Local link check passed for 100 HTML files, 2 shared CSS files, and 8 shared JS files.
 ```
 
 ## How To Restore Or Revert
