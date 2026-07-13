@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "buildCommand": null,
-  "outputDirectory": "local-version",
+  "outputDirectory": ".",
   "redirects": [
     {
       "source": "/about-en.html",
