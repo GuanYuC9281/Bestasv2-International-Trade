@@ -214,7 +214,7 @@ Bestasv2-International-Trade/
 
 **貝達國際貿易有限公司**
 - 📱 電話: +886-985-328-164
-- 📧 郵箱: info@bestas-trade.com
+- 📧 郵箱: bestasvvn@gmail.com
 - 📍 地址: 台北市文山區木柵路二段
 
 ---
