@@ -41,12 +41,12 @@
         widget.setAttribute('aria-label', t.widget);
         widget.innerHTML = `
             <div id="quickContactPanel" class="quick-contact-panel" aria-hidden="true">
-                <a href="https://line.me/ti/p/@bestas-intl" target="_blank" rel="noopener noreferrer" class="quick-contact-link">
+                <a href="https://line.me/ti/p/@942oqhpe" target="_blank" rel="noopener noreferrer" class="quick-contact-link">
                     <span class="quick-contact-link-icon quick-contact-line"><i class="fab fa-line"></i></span>
                     <span>LINE</span>
                     <i class="fas fa-arrow-up-right-from-square quick-contact-link-arrow"></i>
                 </a>
-                <a href="https://wa.me/886985328164" target="_blank" rel="noopener noreferrer" class="quick-contact-link">
+                <a href="https://wa.me/842837790881" target="_blank" rel="noopener noreferrer" class="quick-contact-link">
                     <span class="quick-contact-link-icon quick-contact-whatsapp"><i class="fab fa-whatsapp"></i></span>
                     <span>WhatsApp</span>
                     <i class="fas fa-arrow-up-right-from-square quick-contact-link-arrow"></i>
