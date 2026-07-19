@@ -1523,15 +1523,23 @@ html[data-lang="vi"] #companyName-footer-2 {
 .services-page .services-brand-grid .home-brand-card {
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .services-page .services-brand-grid .home-brand-card h3 {
-    min-height: 1.7rem;
-    white-space: nowrap;
+    min-height: 3.4rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
 }
 
 .services-page .services-brand-grid .home-brand-card p {
-    min-height: 2.75rem;
+    min-height: 4.25rem;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
 }
 
 .services-page .services-brand-grid .home-brand-card a {
@@ -1545,7 +1553,7 @@ html[data-lang="vi"] #companyName-footer-2 {
     }
 
     .services-page .services-brand-grid .home-brand-card h3 {
-        font-size: clamp(0.94rem, 1.04vw, 1.12rem) !important;
+        font-size: clamp(0.9rem, 0.95vw, 1.04rem) !important;
         line-height: 1.35 !important;
     }
 
@@ -1555,6 +1563,16 @@ html[data-lang="vi"] #companyName-footer-2 {
         justify-content: center;
         font-size: 0.88rem !important;
         line-height: 1.6 !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    .services-page .services-brand-grid .home-brand-card h3 {
+        min-height: 4.15rem;
+    }
+
+    .services-page .services-brand-grid .home-brand-card p {
+        min-height: 4.65rem;
     }
 }
 
@@ -1594,6 +1612,11 @@ html[data-lang="vi"] #companyName-footer-2 {
         scrollbar-width: none;
     }
 
+    .services-page .services-brand-grid {
+        display: flex !important;
+        grid-template-columns: none !important;
+    }
+
     .home-brand-grid::-webkit-scrollbar {
         display: none;
     }
@@ -1605,6 +1628,12 @@ html[data-lang="vi"] #companyName-footer-2 {
         scroll-snap-align: center;
     }
 
+    .services-page .services-brand-grid .home-brand-card {
+        flex: 0 0 min(72vw, 17rem);
+        width: min(72vw, 17rem);
+        min-width: min(72vw, 17rem);
+    }
+
     .home-brand-media {
         margin-bottom: 1rem !important;
     }
@@ -1613,11 +1642,17 @@ html[data-lang="vi"] #companyName-footer-2 {
         margin-bottom: 0.45rem !important;
         font-size: 1rem !important;
         line-height: 1.35 !important;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        hyphens: auto;
     }
 
     .home-brand-card p {
         margin-bottom: 1rem !important;
         font-size: 0.78rem !important;
+        line-height: 1.5 !important;
+        overflow-wrap: anywhere;
+        hyphens: auto;
     }
 
     .home-brand-card a {
@@ -2722,6 +2757,119 @@ html[data-lang="vi"] #companyName-footer-2 {
     color: #1e40af;
     background: #dbeafe;
     border-radius: 9999px;
+}
+
+#air-pollution-control article.group,
+#construction-engineering article.group {
+    min-width: 0;
+    overflow: hidden;
+}
+
+#air-pollution-control article.group > div:last-child,
+#construction-engineering article.group > div:last-child {
+    min-width: 0;
+}
+
+#air-pollution-control article.group h3,
+#air-pollution-control article.group h4,
+#air-pollution-control article.group p,
+#construction-engineering article.group h3,
+#construction-engineering article.group h4,
+#construction-engineering article.group p {
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+#air-pollution-control article.group > div:last-child > h3 {
+    min-height: 4.8rem !important;
+}
+
+#air-pollution-control article.group > div:last-child > p {
+    height: 10rem !important;
+}
+
+#air-pollution-control article.group > div:last-child > div.mb-6 {
+    height: 21.75rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#air-pollution-control article.group > div:last-child > div.mb-6 > .grid {
+    grid-auto-rows: 4.35rem;
+}
+
+#air-pollution-control article.group > div:last-child > div.mb-6 > .grid > p {
+    height: 4.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.35;
+}
+
+#construction-engineering article.group > div:last-child > h3 {
+    min-height: 4.8rem;
+}
+
+#construction-engineering article.group > div:last-child > p:first-of-type {
+    height: 8.25rem !important;
+}
+
+#construction-engineering article.group > div:last-child > .bg-white.border-l-4 {
+    height: 8.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#construction-engineering article.group > div:last-child > .bg-white.border-l-4 > h4 {
+    min-height: 1.35rem;
+}
+
+#construction-engineering article.group > div:last-child > .bg-white.border-l-4 > p {
+    min-height: 3.6rem;
+}
+
+#construction-engineering article.group > div:last-child > .mb-6 {
+    height: 8rem;
+}
+
+#construction-engineering article.group > div:last-child > .mb-6 .grid > p {
+    min-height: 2.6rem;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.45;
+}
+
+#air-pollution-control article.group > div:last-child > a,
+#construction-engineering article.group > div:last-child > a {
+    min-height: 3rem;
+}
+
+@media (max-width: 767px) {
+    #air-pollution-control article.group > div:last-child > h3,
+    #construction-engineering article.group > div:last-child > h3 {
+        min-height: 3.75rem !important;
+        font-size: 1.35rem !important;
+        line-height: 1.35 !important;
+    }
+
+    #air-pollution-control article.group > div:last-child > p,
+    #construction-engineering article.group > div:last-child > p:first-of-type {
+        height: 10rem !important;
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    #air-pollution-control article.group > div:last-child > div.mb-6 {
+        height: 21.75rem;
+    }
+
+    #construction-engineering article.group > div:last-child > .bg-white.border-l-4 {
+        height: 8.5rem;
+    }
+
+    #construction-engineering article.group > div:last-child > .mb-6 {
+        height: 8rem;
+    }
 }
 
 .industry-result-grid,
