@@ -1355,6 +1355,8 @@ html[data-lang="vi"] #companyName-footer-2 {
 
 .home-feature-card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     min-height: 25rem;
     padding: 2rem 1.5rem;
     color: #fff;
@@ -1408,7 +1410,7 @@ html[data-lang="vi"] #companyName-footer-2 {
 }
 
 .home-feature-card ul {
-    margin-top: 1.5rem;
+    margin-top: auto;
     padding-top: 1.25rem;
     border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -1427,6 +1429,18 @@ html[data-lang="vi"] #companyName-footer-2 {
     margin-right: 0.65rem;
     background: #f97316;
     transform: rotate(45deg);
+}
+
+@media (min-width: 768px) {
+    .home-feature-card h3 {
+        min-height: 4rem;
+        line-height: 1.45;
+    }
+
+    .home-feature-card > p {
+        min-height: 7.25rem;
+        margin-bottom: 1.35rem;
+    }
 }
 
 .home-brand-media {
