@@ -6378,7 +6378,7 @@ body.industry-gallery-open {
 
 .about-market-card {
     position: relative;
-    height: 16rem;
+    min-height: 16rem;
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
@@ -6402,10 +6402,21 @@ body.industry-gallery-open {
 .about-market-country {
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-width: 0;
     margin-bottom: 1.25rem;
     color: #0b1f3a;
     font-size: 1.75rem;
     font-weight: 900;
+    overflow-wrap: anywhere;
+}
+
+.about-market-icon {
+    flex: 0 0 auto;
+    font-size: 0.78em;
+    line-height: 1;
 }
 
 .about-market-card p {
@@ -6428,12 +6439,15 @@ body.industry-gallery-open {
     position: relative;
     z-index: 1;
     display: inline-block;
+    max-width: 100%;
     padding: 0.55rem 0.8rem;
     border-left: 3px solid #f97316;
     background: #eef2f6;
     color: #163d68;
     font-size: 0.85rem;
     font-weight: 800;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
 }
 
 .about-advantage-grid {
@@ -6760,13 +6774,13 @@ body.industry-gallery-open {
     }
 
     .about-market-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.6rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr));
+        gap: 0.75rem;
     }
 
     .about-market-card {
-        height: 8.4rem;
-        padding: 0.85rem 0.55rem;
+        min-height: 10.5rem;
+        padding: 0.95rem 0.7rem;
         border-top-width: 3px;
         box-shadow: 0 8px 18px rgba(11, 31, 58, 0.08);
     }
@@ -6780,15 +6794,16 @@ body.industry-gallery-open {
     }
 
     .about-market-country {
+        gap: 0.35rem;
         margin-bottom: 0.55rem;
-        font-size: 0.82rem;
+        font-size: 0.9rem;
         line-height: 1.35;
     }
 
     .about-market-card p {
-        min-height: 2.15rem;
+        min-height: 2.35rem;
         margin-bottom: 0.45rem;
-        font-size: 0.68rem;
+        font-size: 0.72rem;
         line-height: 1.45;
     }
 
