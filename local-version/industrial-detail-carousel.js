@@ -176,7 +176,7 @@
                 card: '\u4f1a\u793e\u306e\u65bd\u5de5\u5b9f\u7e3e\u753b\u50cf\u3092\u898b\u308b',
                 view: '\u65bd\u5de5\u5b9f\u7e3e\u3092\u898b\u308b'
             },
-            vi: {
+            vn: {
                 dialog: 'B\u1ed9 s\u01b0u t\u1eadp h\u00ecnh \u1ea3nh k\u1ebft qu\u1ea3 d\u1ef1 \u00e1n',
                 close: '\u0110\u00f3ng h\u00ecnh \u1ea3nh k\u1ebft qu\u1ea3 d\u1ef1 \u00e1n',
                 eyebrow: 'H\u00ecnh \u1ea3nh k\u1ebft qu\u1ea3 d\u1ef1 \u00e1n',

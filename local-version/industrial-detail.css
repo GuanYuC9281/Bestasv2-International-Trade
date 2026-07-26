@@ -177,17 +177,33 @@
     display: flex;
     align-items: center;
     gap: 0.45rem;
+    min-width: 0;
     color: var(--factory-steel);
     font-size: 0.69rem;
     letter-spacing: 0.07em;
 }
 
+html[data-lang="en"] .industrial-detail-page .product-sidebar-group-title,
+html[data-lang="vn"] .industrial-detail-page .product-sidebar-group-title {
+    align-items: flex-start;
+    line-height: 1.35;
+    letter-spacing: 0.03em;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+
 .industrial-detail-page .product-sidebar-group-title::before {
     content: "";
+    flex: 0 0 0.45rem;
     width: 0.45rem;
     height: 0.45rem;
     background: var(--factory-orange);
     transform: rotate(45deg);
+}
+
+html[data-lang="en"] .industrial-detail-page .product-sidebar-group-title::before,
+html[data-lang="vn"] .industrial-detail-page .product-sidebar-group-title::before {
+    margin-top: 0.22rem;
 }
 
 .industrial-detail-page .product-sidebar-link {
@@ -195,6 +211,17 @@
     color: #354654;
     border-left: 2px solid #cbd4db;
     border-radius: 0;
+}
+
+html[data-lang="en"] .industrial-detail-page .product-sidebar-link {
+    display: block;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    word-break: normal;
 }
 
 .industrial-detail-page .product-sidebar-link:hover {

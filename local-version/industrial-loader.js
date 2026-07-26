@@ -14,7 +14,7 @@
             loadingLabel: '\u30da\u30fc\u30b8\u3092\u8aad\u307f\u8fbc\u307f\u4e2d',
             companyName: '\u30d9\u30b9\u30bf\u56fd\u969b\u8cbf\u6613\u682a\u5f0f\u4f1a\u793e'
         },
-        vi: {
+        vn: {
             loadingLabel: '\u0110ang t\u1ea3i trang',
             companyName: 'C\u00d4NG TY TNHH TM SX & DV BESTAR SV'
         }

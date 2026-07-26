@@ -1089,7 +1089,7 @@ html {
         margin-left: 2rem;
     }
 
-    html[data-lang="vi"] #companyName {
+    html[data-lang="vn"] #companyName {
         font-size: 1.05rem;
         line-height: 1.08;
         white-space: normal;
@@ -1144,7 +1144,7 @@ html {
         white-space: normal;
     }
 
-    html[data-lang="vi"] #companyName {
+    html[data-lang="vn"] #companyName {
         font-size: 1.05rem;
         line-height: 1.05;
     }
@@ -1155,11 +1155,11 @@ html {
     }
 }
 
-html[data-lang="vi"] #companyName-footer {
+html[data-lang="vn"] #companyName-footer {
     line-height: 1.25;
 }
 
-html[data-lang="vi"] #companyName-footer-2 {
+html[data-lang="vn"] #companyName-footer-2 {
     display: inline-block;
     max-width: 100%;
     line-height: 1.35;
@@ -1167,7 +1167,7 @@ html[data-lang="vi"] #companyName-footer-2 {
 }
 
 @media (max-width: 640px) {
-    html[data-lang="vi"] .about-market-card p {
+    html[data-lang="vn"] .about-market-card p {
         font-size: 0.98rem;
         line-height: 1.45;
         overflow-wrap: anywhere;
@@ -1769,13 +1769,13 @@ html[data-lang="vi"] #companyName-footer-2 {
     }
 
     html[lang="en"] .home-solution-card h4,
-    html[lang="vi"] .home-solution-card h4 {
+    html[lang="vn"] .home-solution-card h4 {
         font-size: 0.86rem !important;
         line-height: 1.32 !important;
     }
 
     html[lang="en"] .home-solution-card p,
-    html[lang="vi"] .home-solution-card p {
+    html[lang="vn"] .home-solution-card p {
         font-size: 0.68rem !important;
         line-height: 1.42 !important;
     }
@@ -2368,6 +2368,18 @@ html[data-lang="vi"] #companyName-footer-2 {
     letter-spacing: 0.02em;
 }
 
+html[data-lang="en"] #navbar h4,
+html[data-lang="vn"] #navbar h4,
+html[data-lang="en"] #mobileMenu h4,
+html[data-lang="vn"] #mobileMenu h4,
+html[data-lang="en"] .product-sidebar-group-title,
+html[data-lang="vn"] .product-sidebar-group-title {
+    max-width: 100%;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+
 .product-sidebar-link {
     display: block;
     padding: 0.5rem 0.75rem;
@@ -2407,6 +2419,11 @@ html[data-lang="vi"] #companyName-footer-2 {
 
     .product-sidebar-group-title {
         white-space: nowrap;
+    }
+
+    html[data-lang="en"] .product-sidebar-group-title,
+    html[data-lang="vn"] .product-sidebar-group-title {
+        white-space: normal;
     }
 
     .product-sidebar-link {

@@ -15,8 +15,8 @@
       "statusCode": 301
     },
     {
-      "source": "/about-vi.html",
-      "destination": "/vi/about.html",
+      "source": "/about-vn.html",
+      "destination": "/vn/about.html",
       "statusCode": 301
     },
     {
@@ -35,8 +35,8 @@
       "statusCode": 301
     },
     {
-      "source": "/chemical-gas-treatment-vi.html",
-      "destination": "/vi/chemical-gas-treatment.html",
+      "source": "/chemical-gas-treatment-vn.html",
+      "destination": "/vn/chemical-gas-treatment.html",
       "statusCode": 301
     },
     {
@@ -55,8 +55,8 @@
       "statusCode": 301
     },
     {
-      "source": "/chemical-industry-solution-vi.html",
-      "destination": "/vi/chemical-industry-solution.html",
+      "source": "/chemical-industry-solution-vn.html",
+      "destination": "/vn/chemical-industry-solution.html",
       "statusCode": 301
     },
     {
@@ -75,8 +75,8 @@
       "statusCode": 301
     },
     {
-      "source": "/chemical-plant-solution-vi.html",
-      "destination": "/vi/chemical-plant-solution.html",
+      "source": "/chemical-plant-solution-vn.html",
+      "destination": "/vn/chemical-plant-solution.html",
       "statusCode": 301
     },
     {
@@ -95,8 +95,8 @@
       "statusCode": 301
     },
     {
-      "source": "/collector-solution-vi.html",
-      "destination": "/vi/collector-solution.html",
+      "source": "/collector-solution-vn.html",
+      "destination": "/vn/collector-solution.html",
       "statusCode": 301
     },
     {
@@ -125,8 +125,8 @@
       "statusCode": 301
     },
     {
-      "source": "/contact-success-vi.html",
-      "destination": "/vi/contact-success.html",
+      "source": "/contact-success-vn.html",
+      "destination": "/vn/contact-success.html",
       "statusCode": 301
     },
     {
@@ -135,8 +135,8 @@
       "statusCode": 301
     },
     {
-      "source": "/contact-vi.html",
-      "destination": "/vi/contact.html",
+      "source": "/contact-vn.html",
+      "destination": "/vn/contact.html",
       "statusCode": 301
     },
     {
@@ -155,8 +155,8 @@
       "statusCode": 301
     },
     {
-      "source": "/custom-parts-solution-vi.html",
-      "destination": "/vi/custom-parts-solution.html",
+      "source": "/custom-parts-solution-vn.html",
+      "destination": "/vn/custom-parts-solution.html",
       "statusCode": 301
     },
     {
@@ -175,8 +175,8 @@
       "statusCode": 301
     },
     {
-      "source": "/duct-solution-vi.html",
-      "destination": "/vi/duct-solution.html",
+      "source": "/duct-solution-vn.html",
+      "destination": "/vn/duct-solution.html",
       "statusCode": 301
     },
     {
@@ -195,8 +195,8 @@
       "statusCode": 301
     },
     {
-      "source": "/electronic-industry-solution-vi.html",
-      "destination": "/vi/electronic-industry-solution.html",
+      "source": "/electronic-industry-solution-vn.html",
+      "destination": "/vn/electronic-industry-solution.html",
       "statusCode": 301
     },
     {
@@ -215,8 +215,8 @@
       "statusCode": 301
     },
     {
-      "source": "/electrostatic-oil-smoke-vi.html",
-      "destination": "/vi/electrostatic-oil-smoke.html",
+      "source": "/electrostatic-oil-smoke-vn.html",
+      "destination": "/vn/electrostatic-oil-smoke.html",
       "statusCode": 301
     },
     {
@@ -235,8 +235,8 @@
       "statusCode": 301
     },
     {
-      "source": "/fan-solution-vi.html",
-      "destination": "/vi/fan-solution.html",
+      "source": "/fan-solution-vn.html",
+      "destination": "/vn/fan-solution.html",
       "statusCode": 301
     },
     {
@@ -255,8 +255,8 @@
       "statusCode": 301
     },
     {
-      "source": "/faq-vi.html",
-      "destination": "/vi/faq.html",
+      "source": "/faq-vn.html",
+      "destination": "/vn/faq.html",
       "statusCode": 301
     },
     {
@@ -275,8 +275,8 @@
       "statusCode": 301
     },
     {
-      "source": "/filter-solution-vi.html",
-      "destination": "/vi/filter-solution.html",
+      "source": "/filter-solution-vn.html",
+      "destination": "/vn/filter-solution.html",
       "statusCode": 301
     },
     {
@@ -295,8 +295,8 @@
       "statusCode": 301
     },
     {
-      "source": "/food-processing-industry-solution-vi.html",
-      "destination": "/vi/food-processing-industry-solution.html",
+      "source": "/food-processing-industry-solution-vn.html",
+      "destination": "/vn/food-processing-industry-solution.html",
       "statusCode": 301
     },
     {
@@ -315,8 +315,8 @@
       "statusCode": 301
     },
     {
-      "source": "/index-vi.html",
-      "destination": "/vi/",
+      "source": "/index-vn.html",
+      "destination": "/vn/",
       "statusCode": 301
     },
     {
@@ -335,8 +335,8 @@
       "statusCode": 301
     },
     {
-      "source": "/kitchen-exhaust-solution-vi.html",
-      "destination": "/vi/kitchen-exhaust-solution.html",
+      "source": "/kitchen-exhaust-solution-vn.html",
+      "destination": "/vn/kitchen-exhaust-solution.html",
       "statusCode": 301
     },
     {
@@ -355,8 +355,8 @@
       "statusCode": 301
     },
     {
-      "source": "/metal-industry-solution-vi.html",
-      "destination": "/vi/metal-industry-solution.html",
+      "source": "/metal-industry-solution-vn.html",
+      "destination": "/vn/metal-industry-solution.html",
       "statusCode": 301
     },
     {
@@ -375,8 +375,8 @@
       "statusCode": 301
     },
     {
-      "source": "/oil-smoke-treatment-vi.html",
-      "destination": "/vi/oil-smoke-treatment.html",
+      "source": "/oil-smoke-treatment-vn.html",
+      "destination": "/vn/oil-smoke-treatment.html",
       "statusCode": 301
     },
     {
@@ -395,8 +395,8 @@
       "statusCode": 301
     },
     {
-      "source": "/paint-dust-treatment-vi.html",
-      "destination": "/vi/paint-dust-treatment.html",
+      "source": "/paint-dust-treatment-vn.html",
+      "destination": "/vn/paint-dust-treatment.html",
       "statusCode": 301
     },
     {
@@ -415,8 +415,8 @@
       "statusCode": 301
     },
     {
-      "source": "/plastic-rubber-industry-solution-vi.html",
-      "destination": "/vi/plastic-rubber-industry-solution.html",
+      "source": "/plastic-rubber-industry-solution-vn.html",
+      "destination": "/vn/plastic-rubber-industry-solution.html",
       "statusCode": 301
     },
     {
@@ -435,8 +435,8 @@
       "statusCode": 301
     },
     {
-      "source": "/privacy-policy-vi.html",
-      "destination": "/vi/privacy-policy.html",
+      "source": "/privacy-policy-vn.html",
+      "destination": "/vn/privacy-policy.html",
       "statusCode": 301
     },
     {
@@ -455,8 +455,8 @@
       "statusCode": 301
     },
     {
-      "source": "/product-vi.html",
-      "destination": "/vi/product.html",
+      "source": "/product-vn.html",
+      "destination": "/vn/product.html",
       "statusCode": 301
     },
     {
@@ -475,8 +475,8 @@
       "statusCode": 301
     },
     {
-      "source": "/services-vi.html",
-      "destination": "/vi/services.html",
+      "source": "/services-vn.html",
+      "destination": "/vn/services.html",
       "statusCode": 301
     },
     {
@@ -495,8 +495,8 @@
       "statusCode": 301
     },
     {
-      "source": "/spray-equipment-vi.html",
-      "destination": "/vi/spray-equipment.html",
+      "source": "/spray-equipment-vn.html",
+      "destination": "/vn/spray-equipment.html",
       "statusCode": 301
     },
     {

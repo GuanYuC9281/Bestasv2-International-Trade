@@ -18,7 +18,7 @@
                 closedText: 'クイック連絡',
                 openText: '連絡を閉じる'
             },
-            vi: {
+            vn: {
                 widget: 'Liên hệ nhanh',
                 open: 'Mở liên hệ nhanh',
                 close: 'Đóng liên hệ nhanh',

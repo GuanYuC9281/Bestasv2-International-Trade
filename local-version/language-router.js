@@ -3,21 +3,21 @@
         'zh-TW': 'zh',
         en: 'en',
         ja: 'jp',
-        vi: 'vi'
+        vn: 'vn'
     };
 
     const labelByLang = {
         'zh-TW': '\u4e2d\u6587',
         en: 'English',
         ja: '\u65e5\u672c\u8a9e',
-        vi: 'Ti\u1ebfng Vi\u1ec7t'
+        vn: 'Ti\u1ebfng Vi\u1ec7t'
     };
 
-    const languageOrder = ['zh-TW', 'vi', 'en', 'ja'];
+    const languageOrder = ['zh-TW', 'vn', 'en', 'ja'];
 
     const languageOptionMeta = {
         'zh-TW': { flag: 'TW', label: '\u7e41\u9ad4\u4e2d\u6587' },
-        vi: { flag: 'VN', label: 'Ti\u1ebfng Vi\u1ec7t' },
+        vn: { flag: 'VN', label: 'Ti\u1ebfng Vi\u1ec7t' },
         en: { flag: 'US', label: 'English' },
         ja: { flag: 'JP', label: '\u65e5\u672c\u8a9e' }
     };
@@ -26,11 +26,11 @@
         'zh-TW': '\u8c9d\u9054\u570b\u969b\u8cbf\u6613\u6709\u9650\u516c\u53f8',
         en: 'BESTAR SV CO.LTD',
         ja: '\u30d9\u30b9\u30bf\u56fd\u969b\u8cbf\u6613\u682a\u5f0f\u4f1a\u793e',
-        vi: 'C\u00d4NG TY TNHH TM SX & DV BESTAR SV'
+        vn: 'C\u00d4NG TY TNHH TM SX & DV BESTAR SV'
     };
 
     const companyNameMarkupByLang = {
-        vi: 'C\u00d4NG TY TNHH TM SX &<br>DV BESTAR SV'
+        vn: 'C\u00d4NG TY TNHH TM SX &<br>DV BESTAR SV'
     };
 
     function getCurrentLanguage() {
@@ -59,7 +59,7 @@
             return href;
         }
 
-        return parts.path.replace(/-(en|jp|vi)(?=\.html$)/, '') + parts.hash;
+        return parts.path.replace(/-(en|jp|vn)(?=\.html$)/, '') + parts.hash;
     }
 
     function applyCompanyName(lang) {
@@ -200,7 +200,7 @@
     window.changeLanguage = function changeLanguage(lang) {
         localStorage.setItem('preferredLanguage', lang);
         const targetFolder = folderByLang[lang] || folderByLang['zh-TW'];
-        const currentPath = (window.location.pathname.split('/').pop() || 'index.html').replace(/-(en|jp|vi)(?=\.html$)/, '');
+        const currentPath = (window.location.pathname.split('/').pop() || 'index.html').replace(/-(en|jp|vn)(?=\.html$)/, '');
         const target = currentPath === 'index.html'
             ? `../${targetFolder}/`
             : `../${targetFolder}/${currentPath}${window.location.hash}`;

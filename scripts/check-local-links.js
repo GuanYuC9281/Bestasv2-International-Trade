@@ -3,7 +3,7 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const siteRoot = path.join(root, "local-version");
-const languageDirs = ["zh", "en", "vi", "jp"];
+const languageDirs = ["zh", "en", "vn", "jp"];
 const htmlRoots = languageDirs.map((lang) => path.join(siteRoot, lang));
 const sharedRoots = [siteRoot];
 

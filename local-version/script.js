@@ -92,10 +92,10 @@ const translations = {
                 'zh-TW': '繁體中文',
                 'en': 'English',
                 'ja': '日本語',
-                'vi': 'Tiếng Việt'
+                'vn': 'Tiếng Việt'
             }
         }
-    }
+    ,
     'en': {
         companyName: 'Bestas International Trade Co., Ltd.',
         phone: '+886-985-328-164',
@@ -185,10 +185,10 @@ const translations = {
                 'zh-TW': '繁體中文',
                 'en': 'English',
                 'ja': '日本語',
-                'vi': 'Tiếng Việt'
+                'vn': 'Tiếng Việt'
             }
         }
-    },
+    ,
     'ja': {
         companyName: 'ベスタ国際貿易株式会社',
         phone: '+886-985-328-164',
@@ -283,11 +283,11 @@ const translations = {
                 'zh-TW': '繁體中文',
                 'en': 'English',
                 'ja': '日本語',
-                'vi': 'Tiếng Việt'
+                'vn': 'Tiếng Việt'
             }
         }
     },
-    'vi': {
+    'vn': {
         companyName: 'Công Ty TNHH Thương Mại Quốc Tế Bestas',
         phone: '+886-985-328-164',
         address: 'Đoạn 2, Đường Muzha, Quận Wenshan, Thành phố Đài Bắc',
@@ -370,7 +370,7 @@ const translations = {
                 'zh-TW': '繁體中文',
                 'en': 'English',
                 'ja': '日本語',
-                'vi': 'Tiếng Việt'
+                'vn': 'Tiếng Việt'
             }
         }
     }
