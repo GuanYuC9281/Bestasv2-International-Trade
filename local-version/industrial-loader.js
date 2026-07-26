@@ -50,8 +50,28 @@
         `).join('');
     }
 
+    function isLoaderDisabledForPage() {
+        return document.documentElement.dataset.skipIndustrialLoader === 'true'
+            || (document.body && document.body.classList.contains('contact-success-page'));
+    }
+
+    function hideLoaderImmediately(loadingScreen) {
+        document.documentElement.classList.remove('industrial-loader-pending');
+        if (!loadingScreen) return;
+
+        loadingScreen.dataset.industrialLoaderReady = 'true';
+        loadingScreen.classList.add('is-exiting');
+        loadingScreen.style.setProperty('display', 'none', 'important');
+        loadingScreen.setAttribute('aria-hidden', 'true');
+    }
+
     function initializeIndustrialLoader() {
         const loadingScreen = document.getElementById('loadingScreen');
+        if (isLoaderDisabledForPage()) {
+            hideLoaderImmediately(loadingScreen);
+            return;
+        }
+
         if (!loadingScreen || loadingScreen.dataset.industrialLoaderReady === 'true') return;
 
         loadingScreen.dataset.industrialLoaderReady = 'true';
@@ -102,6 +122,11 @@
     }
 
     function showLoaderBeforeNavigation(url) {
+        if (isLoaderDisabledForPage()) {
+            window.location.href = url;
+            return;
+        }
+
         const loadingScreen = document.getElementById('loadingScreen');
         if (!loadingScreen) {
             window.location.href = url;

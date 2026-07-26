@@ -266,7 +266,7 @@
                 <p>Vui lòng điền vào mẫu dưới đây và chúng tôi sẽ liên hệ với bạn sớm nhất có thể</p>
             </div>
             <div class="contact-form-wrap">
-                <form class="contact-form" onsubmit="handleSubmit(event)" action="https://formsubmit.co/kuanyutrip8811@gmail.com" method="POST" target="formSubmitFrame">
+                <form class="contact-form" onsubmit="handleSubmit(event)" action="https://formsubmit.co/info@bestasv.vn" method="POST" target="formSubmitFrame">
                     <input type="hidden" name="_subject" id="contactEmailSubject" value="網站聯絡表單｜新客戶詢問">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
@@ -562,14 +562,6 @@
             /* language handled by language-router.js */
             initializeServiceOptions();
 
-            const formSubmitFrame = document.getElementById('formSubmitFrame');
-            if (formSubmitFrame) {
-                formSubmitFrame.addEventListener('load', function() {
-                    if (window.contactFormSubmitted) {
-                        window.location.href='contact-success.html';
-                    }
-                });
-            }
         });
 
         const serviceOptions = {
@@ -682,25 +674,11 @@
         }
 
         function changeLanguage(lang) {
-            console.log('Changing language to:', lang);
-            currentLanguage = lang;
+            const folderByLang = { 'zh-TW': 'zh', en: 'en', ja: 'jp', vn: 'vn' };
+            const targetFolder = folderByLang[lang] || folderByLang['zh-TW'];
+            const currentPath = window.location.pathname.split('/').pop() || 'contact.html';
             localStorage.setItem('preferredLanguage', lang);
-            
-            // Update all translatable elements
-            const translationsForLang = translations[lang];
-            Object.keys(translationsForLang).forEach(function(key) {
-                const element = document.getElementById(key);
-                if (element) {
-                    element.textContent = translationsForLang[key];
-                }
-            });
-            
-            // Hide language dropdown
-            const dropdown = document.getElementById('languageDropdown');
-            if (dropdown) {
-                dropdown.classList.add('invisible');
-                dropdown.classList.remove('opacity-100');
-            }
+            window.location.href = `../${targetFolder}/${currentPath}${window.location.hash}`;
         }
 
         function toggleLanguageDropdown() {
@@ -853,9 +831,10 @@
                 return false;
             }
 
+            const successUrl = new URL('contact-success.html', window.location.href).href;
             const nextUrlInput = document.getElementById('formNextUrl');
             if (nextUrlInput) {
-                nextUrlInput.value = new URL('contact-success.html', window.location.href).href;
+                nextUrlInput.value = successUrl;
             }
 
             const fieldValue = (name) => {
@@ -881,7 +860,7 @@
                     serviceCategory,
                     serviceDetail: fieldValue('需求項目'),
                     message: fieldValue('需求內容'),
-                    recipient: 'kuanyutrip8811@gmail.com',
+                    recipient: 'info@bestasv.vn',
                     timestamp: new Date().toISOString()
                 };
                 const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
@@ -893,20 +872,48 @@
 
             // Show loading state while the browser posts to FormSubmit.
             const submitBtn = form.querySelector('button[type="submit"]');
+            const originalSubmitHtml = submitBtn ? submitBtn.innerHTML : '';
             if (submitBtn) {
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i>發送中...';
                 submitBtn.disabled = true;
             }
 
-            window.contactFormSubmitted = true;
-            window.setTimeout(function() {
-                if (window.contactFormSubmitted) {
-                    window.location.href='contact-success.html';
+            let didFinish = false;
+            const finishSubmission = () => {
+                if (didFinish) {
+                    return;
                 }
-            }, 2200);
+                didFinish = true;
+                window.contactFormSubmitted = false;
+                window.completeContactSubmit = null;
+                window.location.assign(successUrl);
+            };
+
+            window.contactFormSubmitted = true;
+            window.completeContactSubmit = finishSubmission;
+
+            const formSubmitFrame = document.getElementById('formSubmitFrame');
+            if (formSubmitFrame) {
+                formSubmitFrame.addEventListener('load', finishSubmission, { once: true });
+            }
+
+            const fallbackTimer = window.setTimeout(finishSubmission, 3200);
 
             window.setTimeout(function() {
-                HTMLFormElement.prototype.submit.call(form);
+                try {
+                    HTMLFormElement.prototype.submit.call(form);
+                } catch (error) {
+                    console.error('Unable to submit contact form:', error);
+                    window.clearTimeout(fallbackTimer);
+                    window.contactFormSubmitted = false;
+                    window.completeContactSubmit = null;
+                    didFinish = true;
+                    if (submitBtn) {
+                        submitBtn.innerHTML = originalSubmitHtml;
+                        submitBtn.disabled = false;
+                    }
+                    alert('表單送出時發生問題，請稍後再試或直接寄信至 info@bestasv.vn');
+                }
             }, 0);
 
             return false;

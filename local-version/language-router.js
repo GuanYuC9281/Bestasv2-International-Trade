@@ -182,6 +182,12 @@
 
     function applyLanguageRouting() {
         const lang = getCurrentLanguage();
+        try {
+            localStorage.setItem('preferredLanguage', lang);
+        } catch (error) {
+            console.warn('Unable to sync preferred language:', error);
+        }
+
         document.querySelectorAll('.language-current').forEach((element) => {
             element.textContent = labelByLang[lang] || labelByLang['zh-TW'];
         });

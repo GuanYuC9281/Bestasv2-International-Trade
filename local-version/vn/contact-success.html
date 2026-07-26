@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vn" class="industrial-loader-pending" data-lang="vn">
+<html lang="vn" data-lang="vn" data-skip-industrial-loader="true">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +17,6 @@
     <link rel="stylesheet" href="../styles.css?v=20260712-mobile-solution-cards">
 </head>
 <body class="contact-success-page bg-gray-50">
-    <!-- Loading Screen -->
-    <div id="loadingScreen"></div>
-    <script src="../industrial-loader.js?v=20260620-bfcache-fix"></script>
-
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -336,20 +332,7 @@
         </div>
     </footer>
 
-    <script src="../script.js"></script>
     <script>
-window.addEventListener('load', function() {
-    const loadingScreen = document.getElementById('loadingScreen');
-    if (loadingScreen) {
-        loadingScreen.style.opacity = '0';
-        loadingScreen.style.transition = 'opacity 0.5s ease-out';
-
-        setTimeout(function() {
-            loadingScreen.style.display = 'none';
-        }, 500);
-    }
-});
-
 let isMenuOpen = false;
 let mobileMenuAnimationTimer = null;
 
@@ -429,9 +412,6 @@ function toggleLanguageDropdown() {
     dropdown.classList.toggle('opacity-100');
 }
 
-function changeLanguage(lang) {
-    console.log('Language switch disabled temporarily:', lang);
-}
 </script>
     <script src="../nav-active.js?v=20260620-solution-nav"></script>
     <script src="../language-router.js?v=20260712-contact-gallery-text"></script>
