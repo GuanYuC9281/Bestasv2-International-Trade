@@ -12,7 +12,7 @@ const defaultSettings = {
   },
   contact: {
     phone: '+886-985-328-164',
-    email: 'bestasvvn@gmail.com',
+    email: 'info@bestasv.vn',
     address: '台北市文山區木柵路二段',
     hours: '週一至週五 9:00-18:00'
   },

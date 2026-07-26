@@ -1,6 +1,48 @@
 (function () {
     const DISPLAY_DURATION = 1800;
     const FADE_DURATION = 450;
+    const loaderCopyByLang = {
+        'zh-TW': {
+            loadingLabel: '\u9801\u9762\u8f09\u5165\u4e2d',
+            companyName: '\u8c9d\u9054\u570b\u969b\u8cbf\u6613\u6709\u9650\u516c\u53f8'
+        },
+        en: {
+            loadingLabel: 'Page loading',
+            companyName: 'BESTAR SV CO.LTD'
+        },
+        ja: {
+            loadingLabel: '\u30da\u30fc\u30b8\u3092\u8aad\u307f\u8fbc\u307f\u4e2d',
+            companyName: '\u30d9\u30b9\u30bf\u56fd\u969b\u8cbf\u6613\u682a\u5f0f\u4f1a\u793e'
+        },
+        vi: {
+            loadingLabel: '\u0110ang t\u1ea3i trang',
+            companyName: 'C\u00d4NG TY TNHH TM SX & DV BESTAR SV'
+        }
+    };
+
+    function normalizeLanguage(lang) {
+        if (!lang) return 'zh-TW';
+        if (lang === 'zh' || lang.toLowerCase().startsWith('zh-')) return 'zh-TW';
+        if (lang === 'jp') return 'ja';
+        return lang;
+    }
+
+    function getCurrentLanguage() {
+        return normalizeLanguage(document.documentElement.dataset.lang || document.documentElement.lang);
+    }
+
+    function getLoaderCopy() {
+        return loaderCopyByLang[getCurrentLanguage()] || loaderCopyByLang['zh-TW'];
+    }
+
+    function escapeHtml(value) {
+        return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
 
     function createFanBlades() {
         return Array.from({ length: 6 }, (_, index) => `
@@ -17,14 +59,15 @@
         loadingScreen.removeAttribute('style');
         loadingScreen.setAttribute('role', 'status');
         loadingScreen.setAttribute('aria-live', 'polite');
-        loadingScreen.setAttribute('aria-label', '頁面載入中');
+        const copy = getLoaderCopy();
+        loadingScreen.setAttribute('aria-label', copy.loadingLabel);
 
         loadingScreen.innerHTML = `
             <div class="industrial-loader-grid" aria-hidden="true"></div>
             <div class="industrial-loader-panel">
                 <div class="industrial-loader-status">
                     <img src="../images/company/logo.png" alt="" class="industrial-loader-logo">
-                    <span>貝達國際貿易有限公司</span>
+                    <span>${escapeHtml(copy.companyName)}</span>
                 </div>
                 <div class="industrial-loader-machine" aria-hidden="true">
                     <div class="industrial-loader-housing">
