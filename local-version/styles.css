@@ -7357,3 +7357,91 @@ img.object-cover[src*="/精選工程案例/"] {
         border-right: 0 !important;
     }
 }
+
+/* Shared company logo watermark */
+.site-watermark-mark {
+    --site-watermark-logo: url("images/company/logo.png");
+    --site-watermark-width: 5rem;
+    --site-watermark-offset: 0.75rem;
+    --site-watermark-padding: 0.75rem;
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    pointer-events: none;
+    line-height: 0;
+}
+
+.site-watermark-mark[hidden] {
+    display: none !important;
+}
+
+.site-image-watermark-mark {
+    z-index: 6;
+    contain: layout paint;
+}
+
+.site-background-watermark-mark {
+    inset: 0;
+    z-index: 1;
+}
+
+.site-has-background-watermark > .home-industrial-hero-container,
+.site-has-background-watermark > .services-hero-content,
+.site-has-background-watermark > .contact-hero-content,
+.site-has-background-watermark > .privacy-hero-content,
+.site-has-background-watermark > .faq-hero-content,
+.site-has-background-watermark > .about-hero-content,
+.site-has-background-watermark > .relative {
+    position: relative;
+    z-index: 2;
+}
+
+.site-watermark-mark::before,
+.site-watermark-mark::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+.site-watermark-mark::before {
+    width: calc(var(--site-watermark-width) + var(--site-watermark-padding));
+    height: calc((var(--site-watermark-width) * 0.617) + var(--site-watermark-padding));
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 0.45rem;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.14);
+    backdrop-filter: blur(1.5px);
+}
+
+.site-watermark-mark::after {
+    width: var(--site-watermark-width);
+    aspect-ratio: 230 / 142;
+    background-image: var(--site-watermark-logo);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.66;
+    filter:
+        drop-shadow(0 1px 1px rgba(255, 255, 255, 0.6))
+        drop-shadow(0 2px 4px rgba(15, 23, 42, 0.22));
+}
+
+.site-image-watermark-mark[data-watermark-compact="true"]::before {
+    display: none;
+}
+
+.site-image-watermark-mark[data-watermark-compact="true"]::after {
+    opacity: 0.58;
+}
+
+.site-background-watermark-mark::before {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.site-background-watermark-mark::after {
+    opacity: 0.48;
+}
