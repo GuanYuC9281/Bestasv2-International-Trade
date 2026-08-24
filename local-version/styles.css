@@ -7408,13 +7408,7 @@ img.object-cover[src*="/精選工程案例/"] {
 }
 
 .site-watermark-mark::before {
-    width: calc(var(--site-watermark-width) + var(--site-watermark-padding));
-    height: calc((var(--site-watermark-width) * 0.617) + var(--site-watermark-padding));
-    border: 1px solid rgba(255, 255, 255, 0.34);
-    border-radius: 0.45rem;
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.14);
-    backdrop-filter: blur(1.5px);
+    display: none;
 }
 
 .site-watermark-mark::after {
@@ -7439,7 +7433,7 @@ img.object-cover[src*="/精選工程案例/"] {
 }
 
 .site-background-watermark-mark::before {
-    background: rgba(255, 255, 255, 0.3);
+    display: none;
 }
 
 .site-background-watermark-mark::after {
