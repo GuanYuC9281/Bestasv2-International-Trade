@@ -133,11 +133,11 @@
 <body>
     <main>
         <div class="mark" aria-hidden="true">Zalo</div>
-        <h1 data-i18n="title">加入 Zalo 好友</h1>
-        <p data-i18n="intro">點擊按鈕後會開啟 Zalo 好友頁面。</p>
+        <h1 data-i18n="title">開啟 Zalo 聯絡</h1>
+        <p data-i18n="intro">按下後會複製號碼並開啟 Zalo。</p>
         <span class="phone" id="phoneText">84903373583</span>
         <div class="actions">
-            <a id="openZaloLink" href="https://zalo.me/84903373583" rel="noopener noreferrer" data-i18n="open">開啟 Zalo</a>
+            <a id="openZaloLink" href="zalo://conversation?phone=84903373583" rel="noopener noreferrer" data-i18n="open">複製號碼並開啟 Zalo</a>
             <button id="copyPhoneButton" type="button" data-i18n="copy">複製號碼</button>
         </div>
         <div class="status" id="status" role="status" aria-live="polite"></div>
@@ -146,34 +146,43 @@
     <script>
         (function () {
             const DEFAULT_PHONE = '84903373583';
+            const FALLBACK_NOTICE_DELAY = 900;
             const translations = {
                 en: {
-                    title: 'Add us on Zalo',
-                    intro: 'Tap the button to open the Zalo contact page.',
-                    open: 'Open Zalo',
+                    title: 'Contact us on Zalo',
+                    intro: 'The button copies the number and opens Zalo.',
+                    open: 'Copy number and open Zalo',
                     copy: 'Copy number',
-                    copied: 'Number copied'
+                    copied: 'Number copied',
+                    opening: 'Opening Zalo...',
+                    fallback: 'If Zalo did not open, search this number in Zalo.'
                 },
                 ja: {
-                    title: 'Zalo で友だち追加',
-                    intro: 'ボタンをタップして Zalo の連絡先ページを開きます。',
-                    open: 'Zalo を開く',
+                    title: 'Zalo で連絡',
+                    intro: 'ボタンをタップすると番号をコピーして Zalo を開きます。',
+                    open: '番号をコピーして Zalo を開く',
                     copy: '番号をコピー',
-                    copied: '番号をコピーしました'
+                    copied: '番号をコピーしました',
+                    opening: 'Zalo を開いています...',
+                    fallback: 'Zalo が開かない場合は、この番号を Zalo で検索してください。'
                 },
                 vn: {
-                    title: 'Thêm bạn trên Zalo',
-                    intro: 'Nhấn nút để mở trang liên hệ Zalo.',
-                    open: 'Mở Zalo',
+                    title: 'Liên hệ qua Zalo',
+                    intro: 'Nút này sẽ sao chép số và mở Zalo.',
+                    open: 'Sao chép số và mở Zalo',
                     copy: 'Sao chép số',
-                    copied: 'Đã sao chép số'
+                    copied: 'Đã sao chép số',
+                    opening: 'Đang mở Zalo...',
+                    fallback: 'Nếu Zalo không mở, hãy tìm số này trong Zalo.'
                 },
                 'zh-TW': {
-                    title: '加入 Zalo 好友',
-                    intro: '點擊按鈕後會開啟 Zalo 好友頁面。',
-                    open: '開啟 Zalo',
+                    title: '開啟 Zalo 聯絡',
+                    intro: '按下後會複製號碼並開啟 Zalo。',
+                    open: '複製號碼並開啟 Zalo',
                     copy: '複製號碼',
-                    copied: '已複製號碼'
+                    copied: '已複製號碼',
+                    opening: '正在開啟 Zalo...',
+                    fallback: '如果沒有開啟，請在 Zalo 搜尋這組號碼。'
                 }
             };
 
@@ -197,15 +206,38 @@
             });
 
             document.getElementById('phoneText').textContent = phone;
-            document.getElementById('openZaloLink').href = `https://zalo.me/${encodeURIComponent(phone)}`;
+            const appHref = `zalo://conversation?phone=${encodeURIComponent(phone)}`;
+            const openZaloLink = document.getElementById('openZaloLink');
+            const copyPhoneButton = document.getElementById('copyPhoneButton');
+            const status = document.getElementById('status');
+            openZaloLink.href = appHref;
 
-            document.getElementById('copyPhoneButton').addEventListener('click', async () => {
-                const status = document.getElementById('status');
+            async function copyPhone() {
+                if (!navigator.clipboard || !window.isSecureContext) return false;
+
                 try {
                     await navigator.clipboard.writeText(phone);
-                    status.textContent = t.copied;
+                    return true;
                 } catch (error) {
-                    status.textContent = phone;
+                    return false;
+                }
+            }
+
+            openZaloLink.addEventListener('click', async (event) => {
+                event.preventDefault();
+                await copyPhone();
+                status.textContent = t.opening;
+                window.location.href = appHref;
+                window.setTimeout(() => {
+                    status.textContent = t.fallback;
+                }, FALLBACK_NOTICE_DELAY);
+            });
+
+            copyPhoneButton.addEventListener('click', async () => {
+                if (await copyPhone()) {
+                    status.textContent = t.copied;
+                } else {
+                    status.textContent = `${t.copy}: ${phone}`;
                 }
             });
         })();

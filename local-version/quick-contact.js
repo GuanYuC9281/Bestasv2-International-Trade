@@ -46,7 +46,8 @@
     function getZaloBridgeHref(phone) {
         const params = new URLSearchParams({
             phone,
-            lang: getCurrentLang()
+            lang: getCurrentLang(),
+            v: '20260915-zalo-app-scheme'
         });
         return new URL(`../zalo-contact.html?${params.toString()}`, window.location.href).href;
     }
