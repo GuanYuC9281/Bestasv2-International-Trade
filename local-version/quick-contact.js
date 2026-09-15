@@ -32,10 +32,33 @@
         return /Android/i.test((window.navigator && window.navigator.userAgent) || '');
     }
 
+    function isIOSDevice() {
+        const navigatorRef = window.navigator || {};
+        const userAgent = navigatorRef.userAgent || '';
+        return /iPad|iPhone|iPod/i.test(userAgent)
+            || (/Macintosh/i.test(userAgent) && Number(navigatorRef.maxTouchPoints) > 1);
+    }
+
+    function getCurrentLang() {
+        return document.documentElement.dataset.lang || document.documentElement.lang || 'zh-TW';
+    }
+
+    function getZaloBridgeHref(phone) {
+        const params = new URLSearchParams({
+            phone,
+            lang: getCurrentLang()
+        });
+        return new URL(`../zalo-contact.html?${params.toString()}`, window.location.href).href;
+    }
+
     function getZaloProfileLink(phone) {
         const webHref = getZaloWebHref(phone);
         if (isAndroidDevice()) {
             return `intent://zalo.me/${encodeURIComponent(phone)}#Intent;scheme=https;package=com.zing.zalo;S.browser_fallback_url=${encodeURIComponent(webHref)};end`;
+        }
+
+        if (isIOSDevice()) {
+            return getZaloBridgeHref(phone);
         }
 
         return webHref;
