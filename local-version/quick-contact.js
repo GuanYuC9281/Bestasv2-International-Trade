@@ -47,7 +47,7 @@
         const params = new URLSearchParams({
             phone,
             lang: getCurrentLang(),
-            v: '20260915-zalo-app-scheme'
+            v: '20260915-zalo-phone-886985328164'
         });
         return new URL(`../zalo-contact.html?${params.toString()}`, window.location.href).href;
     }
@@ -149,7 +149,7 @@
                     <span>WhatsApp</span>
                     <i class="fas fa-arrow-up-right-from-square quick-contact-link-arrow"></i>
                 </a>
-                <a href="https://zalo.me/84903373583" target="_blank" rel="noopener noreferrer" class="quick-contact-link">
+                <a href="https://zalo.me/886985328164" target="_blank" rel="noopener noreferrer" class="quick-contact-link">
                     <span class="quick-contact-link-icon quick-contact-zalo">Zalo</span>
                     <span>Zalo</span>
                     <i class="fas fa-arrow-up-right-from-square quick-contact-link-arrow"></i>
