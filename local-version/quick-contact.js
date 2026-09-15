@@ -1,4 +1,61 @@
 (function () {
+    const ZALO_LINK_SELECTOR = 'a[href^="https://zalo.me/"], a[href^="http://zalo.me/"], a[href^="zalo://conversation"]';
+    const ZALO_CLICK_LOCK_MS = 1600;
+    let lastZaloOpenAt = 0;
+
+    function extractZaloPhone(rawHref) {
+        if (!rawHref) return '';
+
+        const normalizedHref = rawHref.trim();
+        const directMatch = normalizedHref.match(/^zalo:\/\/conversation\?phone=(\d+)/i);
+        if (directMatch) return directMatch[1];
+
+        try {
+            const url = new URL(normalizedHref, window.location.href);
+            if (url.hostname.toLowerCase() !== 'zalo.me') return '';
+
+            const pathMatch = url.pathname.match(/^\/(\d{8,15})\/?$/);
+            return pathMatch ? pathMatch[1] : '';
+        } catch (error) {
+            return '';
+        }
+    }
+
+    function getZaloDeepLink(phone) {
+        return `zalo://conversation?phone=${encodeURIComponent(phone)}`;
+    }
+
+    function normalizeZaloLinks(root) {
+        root.querySelectorAll(ZALO_LINK_SELECTOR).forEach((link) => {
+            const phone = link.dataset.zaloPhone || extractZaloPhone(link.getAttribute('href'));
+            if (!phone) return;
+
+            link.dataset.zaloPhone = phone;
+            link.dataset.zaloWebHref = `https://zalo.me/${phone}`;
+            link.setAttribute('href', getZaloDeepLink(phone));
+            link.removeAttribute('target');
+        });
+    }
+
+    function openZaloConversation(phone) {
+        const now = Date.now();
+        if (now - lastZaloOpenAt < ZALO_CLICK_LOCK_MS) return;
+
+        lastZaloOpenAt = now;
+        window.location.href = getZaloDeepLink(phone);
+    }
+
+    function handleZaloClick(event) {
+        const link = event.target.closest ? event.target.closest('a') : null;
+        if (!link) return;
+
+        const phone = link.dataset.zaloPhone || extractZaloPhone(link.getAttribute('href'));
+        if (!phone) return;
+
+        event.preventDefault();
+        openZaloConversation(phone);
+    }
+
     function createQuickContact() {
         if (document.getElementById('quickContactWidget')) return;
 
@@ -64,6 +121,7 @@
         `;
 
         document.body.appendChild(widget);
+        normalizeZaloLinks(widget);
 
         const panel = widget.querySelector('#quickContactPanel');
         const button = widget.querySelector('#quickContactBtn');
@@ -96,6 +154,9 @@
             }
         });
     }
+
+    normalizeZaloLinks(document);
+    document.addEventListener('click', handleZaloClick, true);
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', createQuickContact, { once: true });
