@@ -1,5 +1,5 @@
 (function () {
-    const ZALO_LINK_SELECTOR = 'a[href^="https://zalo.me/"], a[href^="http://zalo.me/"], a[href^="zalo://conversation"]';
+    const ZALO_LINK_SELECTOR = 'a[href^="https://zalo.me/"], a[href^="http://zalo.me/"], a[href^="zalo://conversation"], a[href^="intent://zalo.me/"]';
     const ZALO_CLICK_LOCK_MS = 1600;
     let lastZaloOpenAt = 0;
 
@@ -9,6 +9,9 @@
         const normalizedHref = rawHref.trim();
         const directMatch = normalizedHref.match(/^zalo:\/\/conversation\?phone=(\d+)/i);
         if (directMatch) return directMatch[1];
+
+        const intentMatch = normalizedHref.match(/^intent:\/\/zalo\.me\/(\d{8,15})/i);
+        if (intentMatch) return intentMatch[1];
 
         try {
             const url = new URL(normalizedHref, window.location.href);
@@ -21,8 +24,21 @@
         }
     }
 
-    function getZaloDeepLink(phone) {
-        return `zalo://conversation?phone=${encodeURIComponent(phone)}`;
+    function getZaloWebHref(phone) {
+        return `https://zalo.me/${encodeURIComponent(phone)}`;
+    }
+
+    function isAndroidDevice() {
+        return /Android/i.test((window.navigator && window.navigator.userAgent) || '');
+    }
+
+    function getZaloProfileLink(phone) {
+        const webHref = getZaloWebHref(phone);
+        if (isAndroidDevice()) {
+            return `intent://zalo.me/${encodeURIComponent(phone)}#Intent;scheme=https;package=com.zing.zalo;S.browser_fallback_url=${encodeURIComponent(webHref)};end`;
+        }
+
+        return webHref;
     }
 
     function normalizeZaloLinks(root) {
@@ -31,18 +47,19 @@
             if (!phone) return;
 
             link.dataset.zaloPhone = phone;
-            link.dataset.zaloWebHref = `https://zalo.me/${phone}`;
-            link.setAttribute('href', getZaloDeepLink(phone));
+            link.dataset.zaloWebHref = getZaloWebHref(phone);
+            link.dataset.zaloProfileHref = getZaloProfileLink(phone);
+            link.setAttribute('href', link.dataset.zaloProfileHref);
             link.removeAttribute('target');
         });
     }
 
-    function openZaloConversation(phone) {
+    function openZaloProfile(phone) {
         const now = Date.now();
         if (now - lastZaloOpenAt < ZALO_CLICK_LOCK_MS) return;
 
         lastZaloOpenAt = now;
-        window.location.href = getZaloDeepLink(phone);
+        window.location.href = getZaloProfileLink(phone);
     }
 
     function handleZaloClick(event) {
@@ -53,7 +70,7 @@
         if (!phone) return;
 
         event.preventDefault();
-        openZaloConversation(phone);
+        openZaloProfile(phone);
     }
 
     function createQuickContact() {
