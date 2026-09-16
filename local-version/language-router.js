@@ -24,13 +24,13 @@
 
     const companyNameByLang = {
         'zh-TW': '\u8c9d\u9054\u570b\u969b\u8cbf\u6613\u6709\u9650\u516c\u53f8',
-        en: 'BESTAR SV CO.LTD',
+        en: 'Besta',
         ja: '\u30d9\u30b9\u30bf\u56fd\u969b\u8cbf\u6613\u682a\u5f0f\u4f1a\u793e',
-        vn: 'C\u00d4NG TY TNHH TM SX & DV BESTAR SV'
+        vn: 'C\u00d4NG TY TNHH TM SX & DV Besta'
     };
 
     const companyNameMarkupByLang = {
-        vn: 'C\u00d4NG TY TNHH TM SX &<br>DV BESTAR SV'
+        vn: 'C\u00d4NG TY TNHH TM SX &<br>DV Besta'
     };
 
     function getCurrentLanguage() {
