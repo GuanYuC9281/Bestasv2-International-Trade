@@ -97,7 +97,7 @@ const translations = {
         }
     ,
     'en': {
-        companyName: 'Besta International Trade Co., Ltd.',
+        companyName: 'Besta SV International Trade Co., Ltd.',
         phone: '+886-985-328-164',
         address: 'Section 2, Muzha Road, Wenshan District, Taipei City',
         nav: {
@@ -125,7 +125,7 @@ const translations = {
         },
         hero: {
             title: 'Professional International Trade Solutions',
-            subtitle: 'Besta International Trade provides comprehensive procurement and import-export services, connecting you to global business opportunities',
+            subtitle: 'Besta SV International Trade provides comprehensive procurement and import-export services, connecting you to global business opportunities',
             cta: 'Contact Now'
         },
             importExportDesc: 'Complete import-export process management ensuring smooth customs clearance',
@@ -136,7 +136,7 @@ const translations = {
         },
         about: {
             title: 'About Us',
-            intro: 'Since its establishment, Besta International Trade has been committed to providing professional international trade services',
+            intro: 'Since its establishment, Besta SV International Trade has been committed to providing professional international trade services',
             vision: 'Vision',
             visionDesc: 'To build a globally leading trade service platform, promoting international business exchange',
             mission: 'Mission',
@@ -288,7 +288,7 @@ const translations = {
         }
     },
     'vn': {
-        companyName: 'Công Ty TNHH Thương Mại Quốc Tế Besta',
+        companyName: 'Công Ty TNHH Thương Mại Quốc Tế Besta SV',
         phone: '+886-985-328-164',
         address: 'Đoạn 2, Đường Muzha, Quận Wenshan, Thành phố Đài Bắc',
         nav: {
@@ -316,12 +316,12 @@ const translations = {
         },
         hero: {
             title: 'Giải pháp Thương mại Quốc tế Chuyên nghiệp',
-            subtitle: 'Besta International Trade cung cấp dịch vụ mua hàng và xuất nhập khẩu toàn diện, kết nối bạn với cơ hội kinh doanh toàn cầu',
+            subtitle: 'Besta SV International Trade cung cấp dịch vụ mua hàng và xuất nhập khẩu toàn diện, kết nối bạn với cơ hội kinh doanh toàn cầu',
             cta: 'Liên hệ ngay'
         },
         about: {
             title: 'Về chúng tôi',
-            intro: 'Kể từ khi thành lập, Besta International Trade đã cam kết cung cấp dịch vụ thương mại quốc tế chuyên nghiệp',
+            intro: 'Kể từ khi thành lập, Besta SV International Trade đã cam kết cung cấp dịch vụ thương mại quốc tế chuyên nghiệp',
             vision: 'Tầm nhìn',
             visionDesc: 'Xây dựng nền tảng dịch vụ thương mại hàng đầu thế giới, thúc đẩy trao đổi kinh doanh quốc tế',
             mission: 'Sứ mệnh',

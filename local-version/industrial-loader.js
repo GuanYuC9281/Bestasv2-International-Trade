@@ -8,7 +8,7 @@
         },
         en: {
             loadingLabel: 'Page loading',
-            companyName: 'Besta'
+            companyName: 'Besta SV CO.LTD'
         },
         ja: {
             loadingLabel: '\u30da\u30fc\u30b8\u3092\u8aad\u307f\u8fbc\u307f\u4e2d',
@@ -16,7 +16,7 @@
         },
         vn: {
             loadingLabel: '\u0110ang t\u1ea3i trang',
-            companyName: 'C\u00d4NG TY TNHH TM SX & DV Besta'
+            companyName: 'C\u00d4NG TY TNHH TM SX & DV Besta SV'
         }
     };
 
