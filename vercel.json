@@ -5,6 +5,17 @@
   "outputDirectory": "local-version",
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "bestasv2-international-trade.vercel.app"
+        }
+      ],
+      "destination": "https://bestasv.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/about-en.html",
       "destination": "/en/about.html",
       "statusCode": 301
