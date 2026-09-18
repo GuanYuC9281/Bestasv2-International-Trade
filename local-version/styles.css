@@ -1092,7 +1092,11 @@ html {
     html[data-lang="vn"] #companyName {
         font-size: 1.05rem;
         line-height: 1.08;
-        white-space: normal;
+        white-space: nowrap;
+    }
+
+    html[data-lang="vn"] #companyName br {
+        display: none;
     }
 }
 

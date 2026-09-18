@@ -30,7 +30,7 @@
     };
 
     const companyNameMarkupByLang = {
-        vn: 'C\u00d4NG TY TNHH TM SX &<br>DV Besta SV'
+        vn: 'C\u00d4NG TY TNHH TM SX & <br>DV Besta SV'
     };
 
     function getCurrentLanguage() {
