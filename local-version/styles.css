@@ -1092,11 +1092,39 @@ html {
     html[data-lang="vn"] #companyName {
         font-size: 1.05rem;
         line-height: 1.08;
-        white-space: nowrap;
+        display: inline-block;
+        min-width: max-content;
+        white-space: nowrap !important;
     }
 
     html[data-lang="vn"] #companyName br {
-        display: none;
+        display: none !important;
+    }
+
+    html[data-lang="vn"] #navbar .h-16 > .flex.items-center.space-x-3:first-child,
+    html[data-lang="vn"] #navbar a:has(#companyName) {
+        flex: 0 0 auto;
+        min-width: max-content;
+    }
+
+    html[data-lang="vn"] #navbar a:has(#companyName) {
+        margin-right: 1rem;
+    }
+
+    html[data-lang="vn"] #navbar .h-16 > .hidden {
+        margin-left: 1rem;
+    }
+
+    html[data-lang="vn"] #navbar .h-16 > .hidden > :not([hidden]) ~ :not([hidden]) {
+        margin-left: 1.25rem;
+    }
+
+    html[data-lang="vn"] #navbar .nav-link {
+        font-size: 1rem !important;
+    }
+
+    html[data-lang="vn"] #navbar .nav-link-active {
+        font-size: 1.15em !important;
     }
 }
 
