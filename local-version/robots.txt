@@ -41,3 +41,4 @@ User-agent: xAI-Bot
 Allow: /
 
 Sitemap: https://bestasv.com/sitemap.xml
+Sitemap: https://bestasv.vn/sitemap-vn.xml

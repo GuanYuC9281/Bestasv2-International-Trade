@@ -3,6 +3,23 @@
   "framework": null,
   "buildCommand": null,
   "outputDirectory": "local-version",
+  "headers": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "bestasv2-international-trade.vercel.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    }
+  ],
   "redirects": [
     {
       "source": "/:path*",
