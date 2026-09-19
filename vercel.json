@@ -3,6 +3,14 @@
   "framework": null,
   "buildCommand": null,
   "outputDirectory": "local-version",
+  "proxy": {
+    "entrypoint": "proxy.mjs",
+    "matcher": [
+      "/vn",
+      "/vn/:path*",
+      "/__vn/:path*"
+    ]
+  },
   "headers": [
     {
       "source": "/__vn/:path*",
