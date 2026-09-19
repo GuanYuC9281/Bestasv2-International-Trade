@@ -55,6 +55,39 @@
       "permanent": true
     },
     {
+      "source": "/zh/",
+      "has": [
+        {
+          "type": "host",
+          "value": "bestasv2-international-trade\\.vercel\\.app"
+        }
+      ],
+      "destination": "https://bestasv.com/zh/",
+      "permanent": true
+    },
+    {
+      "source": "/en/",
+      "has": [
+        {
+          "type": "host",
+          "value": "bestasv2-international-trade\\.vercel\\.app"
+        }
+      ],
+      "destination": "https://bestasv.com/en/",
+      "permanent": true
+    },
+    {
+      "source": "/jp/",
+      "has": [
+        {
+          "type": "host",
+          "value": "bestasv2-international-trade\\.vercel\\.app"
+        }
+      ],
+      "destination": "https://bestasv.com/jp/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
