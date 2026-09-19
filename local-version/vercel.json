@@ -22,6 +22,39 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "bestasv2-international-trade\\.vercel\\.app"
+        }
+      ],
+      "destination": "https://bestasv.com/",
+      "permanent": true
+    },
+    {
+      "source": "/vn/",
+      "has": [
+        {
+          "type": "host",
+          "value": "bestasv2-international-trade\\.vercel\\.app"
+        }
+      ],
+      "destination": "https://bestasv.vn/vn/",
+      "permanent": true
+    },
+    {
+      "source": "/vn/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "bestasv2-international-trade\\.vercel\\.app"
+        }
+      ],
+      "destination": "https://bestasv.vn/vn/:path*",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
