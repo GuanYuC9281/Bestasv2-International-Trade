@@ -5,6 +5,15 @@
   "outputDirectory": ".",
   "headers": [
     {
+      "source": "/__vn/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
       "source": "/:path*",
       "has": [
         {
@@ -86,6 +95,26 @@
       ],
       "destination": "https://bestasv.com/jp/",
       "permanent": true
+    },
+    {
+      "source": "/zh/index.html",
+      "destination": "/zh/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/index.html",
+      "destination": "/en/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jp/index.html",
+      "destination": "/jp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vn/index.html",
+      "destination": "/vn/",
+      "statusCode": 301
     },
     {
       "source": "/:path*",
@@ -597,6 +626,48 @@
       "source": "/spray-equipment.html",
       "destination": "/zh/spray-equipment.html",
       "statusCode": 301
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/vn/",
+      "has": [
+        {
+          "type": "host",
+          "value": "bestasv\\.vn"
+        }
+      ],
+      "destination": "/__vn/vn/"
+    },
+    {
+      "source": "/vn/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "bestasv\\.vn"
+        }
+      ],
+      "destination": "/__vn/vn/:path*"
+    },
+    {
+      "source": "/vn/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www\\.bestasv\\.vn"
+        }
+      ],
+      "destination": "/__vn/vn/"
+    },
+    {
+      "source": "/vn/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www\\.bestasv\\.vn"
+        }
+      ],
+      "destination": "/__vn/vn/:path*"
     }
   ]
 }

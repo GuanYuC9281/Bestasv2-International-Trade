@@ -40,5 +40,23 @@ Allow: /
 User-agent: xAI-Bot
 Allow: /
 
+User-agent: Bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://bestasv.com/sitemap.xml
 Sitemap: https://bestasv.vn/sitemap-vn.xml
