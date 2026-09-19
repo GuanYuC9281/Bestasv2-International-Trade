@@ -3,14 +3,58 @@
   "framework": null,
   "buildCommand": null,
   "outputDirectory": ".",
-  "proxy": {
-    "entrypoint": "proxy.mjs",
-    "matcher": [
-      "/vn",
-      "/vn/:path*",
-      "/__vn/:path*"
-    ]
-  },
+  "routes": [
+    {
+      "src": "/vn/?",
+      "has": [
+        {
+          "type": "host",
+          "value": "bestasv\\.vn"
+        }
+      ],
+      "dest": "/__vn/vn/index.html"
+    },
+    {
+      "src": "/vn/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "bestasv\\.vn"
+        }
+      ],
+      "dest": "/__vn/vn/$1"
+    },
+    {
+      "src": "/vn/?",
+      "has": [
+        {
+          "type": "host",
+          "value": "www\\.bestasv\\.vn"
+        }
+      ],
+      "dest": "/__vn/vn/index.html"
+    },
+    {
+      "src": "/vn/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www\\.bestasv\\.vn"
+        }
+      ],
+      "dest": "/__vn/vn/$1"
+    },
+    {
+      "src": "/__vn/(.*)",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow"
+      },
+      "continue": true
+    },
+    {
+      "handle": "filesystem"
+    }
+  ],
   "headers": [
     {
       "source": "/__vn/:path*",

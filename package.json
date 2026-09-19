@@ -15,8 +15,5 @@
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2"
-  },
-  "dependencies": {
-    "@vercel/functions": "^3.9.8"
   }
 }
