@@ -5494,7 +5494,8 @@ body.industry-gallery-open {
     font-size: 2rem;
 }
 
-.privacy-header h1 {
+.privacy-header h1,
+.privacy-header h2 {
     margin: 0 0 1.25rem;
     color: #0b1f3a;
     font-size: clamp(2.4rem, 5vw, 3.75rem);
