@@ -1,0 +1,26 @@
+/* Vietnam-only content. Loaded by the three local company pages. */
+.vn-local-section { padding: 72px 24px; background: #fff; color: #172b42; }
+.vn-local-container { max-width: 1152px; margin: 0 auto; }
+.vn-local-muted { background: #f1f5f8; }
+.vn-local-eyebrow { color: #a44910; font-size: 13px; font-weight: 800; letter-spacing: .1em; margin-bottom: 14px; }
+.vn-local-section h2 { font-size: clamp(26px, 3vw, 38px); line-height: 1.25; font-weight: 800; margin: 0 0 24px; }
+.vn-local-section h3 { font-size: 21px; line-height: 1.4; font-weight: 750; margin: 0 0 14px; }
+.vn-local-section p { line-height: 1.8; margin: 0 0 20px; max-width: 950px; }
+.vn-local-section a:not(.vn-local-button) { color: #076c77; text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.vn-local-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; margin-top: 32px; }
+.vn-local-grid-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.vn-local-grid article { border-top: 3px solid #d77531; padding: 24px 0 8px; }
+.vn-local-number { display: block; color: #a44910; font-size: 30px; font-weight: 800; margin-bottom: 14px; }
+.vn-local-facts { display: grid; grid-template-columns: 1fr 1fr; margin-top: 32px; border-top: 1px solid #cbd5df; }
+.vn-local-facts > div { padding: 22px 24px 22px 0; border-bottom: 1px solid #cbd5df; }
+.vn-local-facts dt { color: #536475; font-size: 14px; margin-bottom: 6px; }
+.vn-local-facts dd { font-weight: 700; line-height: 1.6; margin: 0; }
+.vn-local-button { display: inline-block; background: #12304c; color: white; padding: 15px 24px; font-weight: 700; margin-top: 16px; border-radius: 4px; }
+.vn-local-button:hover { background: #076c77; }
+.home-industrial-hero-copy h1 { font-size: clamp(30px, 3.8vw, 48px); line-height: 1.25; }
+@media (max-width: 700px) {
+  .vn-local-section { padding: 44px 20px; }
+  .vn-local-grid, .vn-local-grid-two, .vn-local-facts { grid-template-columns: 1fr; }
+  .vn-local-grid { gap: 18px; }
+  .vn-local-facts > div { padding: 18px 0; }
+}

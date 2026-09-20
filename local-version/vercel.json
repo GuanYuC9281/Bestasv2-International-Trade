@@ -871,6 +871,26 @@
       "continue": true
     },
     {
+      "src": "/robots\\.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?bestasv\\.vn"
+        }
+      ],
+      "dest": "/robots-vn.txt"
+    },
+    {
+      "src": "/sitemap\\.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?bestasv\\.vn"
+        }
+      ],
+      "dest": "/sitemap-vn.xml"
+    },
+    {
       "handle": "filesystem"
     }
   ],

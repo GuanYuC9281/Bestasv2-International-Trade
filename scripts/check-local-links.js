@@ -5,6 +5,7 @@ const root = path.resolve(__dirname, "..");
 const siteRoot = path.join(root, "local-version");
 const languageDirs = ["zh", "en", "vn", "jp"];
 const htmlRoots = languageDirs.map((lang) => path.join(siteRoot, lang));
+htmlRoots.push(path.join(siteRoot, '__vn', 'vn'));
 const sharedRoots = [siteRoot];
 
 const attrPattern = /\b(href|src|poster|data-src|data-background|data-gallery|action|content|srcset)\s*=\s*(["'])([\s\S]*?)\2/gi;
@@ -60,7 +61,9 @@ function candidatePath(fromFile, value) {
   if (target.startsWith("/")) {
     resolved = path.join(siteRoot, target.replace(/^\/+/, ""));
   } else {
-    resolved = path.resolve(path.dirname(fromFile), target);
+    // Vietnam files are served at /vn/, not at their internal rewrite path.
+    const publicFile = fromFile.replace(path.join(siteRoot, '__vn') + path.sep, siteRoot + path.sep);
+    resolved = path.resolve(path.dirname(publicFile), target);
   }
 
   if (target.endsWith("/") || (fs.existsSync(resolved) && fs.statSync(resolved).isDirectory())) {
