@@ -86,6 +86,10 @@ for (const configFile of ['vercel.json', 'local-version/vercel.json']) {
     assert.equal(config.routes.find(route => matches(route, pathname, 'bestasv.com')), undefined, `${configFile}: global files remain direct`);
   }
 }
+const localAbout = fs.readFileSync(path.join(site, '__vn/vn/about.html'), 'utf8');
+for (const anchor of ['company-intro', 'mission-vision', 'core-values', 'why-choose-us', 'markets']) {
+  assert.ok(localAbout.includes(`id="${anchor}"`), `Vietnam about: preserve navigation target #${anchor}`);
+}
 assert.ok(!fs.readFileSync(path.join(site, 'robots.txt'), 'utf8').includes('Sitemap: https://bestasv.vn'));
 assert.ok(!fs.readFileSync(path.join(site, 'robots-vn.txt'), 'utf8').includes('Sitemap: https://bestasv.com'));
 console.log(`SEO checks passed: ${pageCount} pages, ${sitemapCount} sitemap entries, independent company content and host routing.`);
