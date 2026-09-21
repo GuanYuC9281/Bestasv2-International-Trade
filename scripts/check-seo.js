@@ -66,8 +66,12 @@ for (const file of ['index.html', 'about.html', 'contact.html']) {
   const global = fs.readFileSync(path.join(site, 'vn', file), 'utf8');
   const mainText = html => html.split('<!-- Hero Section -->')[1].split('<!-- Footer -->')[0]
     .replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-  assert.notEqual(mainText(local), mainText(global), `${file}: independent primary content`);
-  assert.ok(mainText(local).includes('0318644214'), `${file}: visible company identity`);
+  if (file === 'index.html') {
+    assert.equal(mainText(local), mainText(global), `${file}: match global Vietnamese homepage`);
+  } else {
+    assert.notEqual(mainText(local), mainText(global), `${file}: preserved local company content`);
+    assert.ok(mainText(local).includes('0318644214'), `${file}: visible company identity`);
+  }
   assert.equal((local.match(/<h1[ >]/g) || []).length, 1, `${file}: one primary heading`);
   const graph = JSON.parse(local.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
   assert.equal(graph.find(node => node['@type'] === 'Organization').taxID, '0318644214');
@@ -87,6 +91,11 @@ for (const configFile of ['vercel.json', 'local-version/vercel.json']) {
   }
 }
 const localAbout = fs.readFileSync(path.join(site, '__vn/vn/about.html'), 'utf8');
+const globalAbout = fs.readFileSync(path.join(site, 'vn/about.html'), 'utf8');
+const aboutMainWithoutIntro = html => html.split('<!-- Hero Section -->')[1].split('<!-- Footer -->')[0]
+  .replace(/<section[^>]*id="company-intro"[^>]*>[\s\S]*?<\/section>/, '')
+  .replace(/\s+/g, ' ').trim();
+assert.equal(aboutMainWithoutIntro(localAbout), aboutMainWithoutIntro(globalAbout), 'Vietnam about: match global content except preserved company information');
 for (const anchor of ['company-intro', 'mission-vision', 'core-values', 'why-choose-us', 'markets']) {
   assert.ok(localAbout.includes(`id="${anchor}"`), `Vietnam about: preserve navigation target #${anchor}`);
 }
