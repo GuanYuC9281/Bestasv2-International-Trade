@@ -1,4 +1,4 @@
-42 tests passed
+47 tests passed
 PASS 13 modules have valid default calculations
 PASS IAPWS saturation pressure at triple point
 PASS IAPWS saturation pressure at 100 C
@@ -10,7 +10,7 @@ PASS PM unit conversions
 PASS Continuity with selected pipe diameter
 PASS Cyclone geometry and cut size reference
 PASS Particle diameter equals d50 gives 50 percent grade efficiency
-PASS Unknown cyclone bulk efficiency is not inferred
+PASS Known-efficiency mode requires a provided bulk efficiency
 PASS Known PM chain and mass conservation
 PASS Stack volume corrects temperature and conserves pollutant mass
 PASS Measured stack flow override
@@ -41,3 +41,8 @@ PASS No cross-tool dependency: invalid air does not break heat
 PASS Segmented area convergence 1000 vs 2000 intervals
 PASS Segmented area scales inversely with U
 PASS All returned default numeric values are finite
+PASS Default stack all four PM results are numerical estimates
+PASS Measured efficiency disables estimated-basis marker
+PASS Missing measured cyclone efficiency explains stack dependency
+PASS Zero and complete cyclone capture conserve mass
+PASS All stack inputs preserve mass and annual-time relationship

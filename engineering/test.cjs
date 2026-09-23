@@ -15,8 +15,8 @@ test('PM unit conversions',()=>{near(r.base.load,21.6);near(value(r,'base','每�
 test('Continuity with selected pipe diameter',()=>{const s=E.defaults();s.duct.diameter=1;near(value(E.calculate(s),'duct','實際風速'),20/Math.PI);});
 test('Cyclone geometry and cut size reference',()=>{near(value(r,'cyclone','單台筒徑'),5/3);near(value(r,'cyclone','切割粒徑 d₅₀'),6.94506593245,1e-8);});
 test('Particle diameter equals d50 gives 50 percent grade efficiency',()=>{const s=E.defaults();s.base.dp=value(r,'cyclone','切割粒徑 d₅₀');near(value(E.calculate(s),'cyclone','代表粒徑分級效率'),50);});
-test('Unknown cyclone bulk efficiency is not inferred',()=>{assert.equal(r.summary.c,null);assert.equal(value(r,'cyclone','單機 PM 捕集量'),null);});
-test('Known PM chain and mass conservation',()=>{const s=E.defaults();s.cyclone.eta=80;s.bag.eta=90;s.esp.on=0;const v=E.calculate(s);near(v.summary.c,24);near(value(v,'stack','粒狀物排放率'),.12);near(value(v,'stack','PM 年排放量'),2073.6);});
+test('Known-efficiency mode requires a provided bulk efficiency',()=>{const s=E.defaults();s.cyclone.mode=1;const v=E.calculate(s);assert.equal(v.summary.c,null);assert.equal(value(v,'cyclone','單機 PM 捕集量'),null);});
+test('Known PM chain and mass conservation',()=>{const s=E.defaults();s.cyclone.mode=1;s.cyclone.eta=80;s.bag.eta=90;s.esp.on=0;const v=E.calculate(s);near(v.summary.c,24);near(value(v,'stack','粒狀物排放率'),.12);near(value(v,'stack','PM 年排放量'),2073.6);});
 test('Stack volume corrects temperature and conserves pollutant mass',()=>{const s=E.defaults();s.cyclone.on=0;const v=E.calculate(s),q=value(v,'stack','出口實際風量'),c=value(v,'stack','粒狀物出口濃度');near(q,18000*308.15/333.15);near(q*c,18000*v.summary.c);});
 test('Measured stack flow override',()=>{const s=E.defaults();s.stack.q=20000;near(value(E.calculate(s),'stack','出口實際風量'),20000);});
 test('Bag count rounds up and installed area meets design',()=>{near(value(r,'bag','濾袋數量'),146);assert.ok(value(r,'bag','實裝過濾面積')>=220);near(value(r,'bag','PM 捕集量'),21.492);});
@@ -46,4 +46,11 @@ test('No cross-tool dependency: invalid air does not break heat',()=>{const s=E.
 test('Segmented area convergence 1000 vs 2000 intervals',()=>{for(const id of ['water','gas']){const x=E.read(d,id),h=r.heat.model;const a=E.exchanger(d.heat,h,x,id==='water',1000),b=E.exchanger(d.heat,h,x,id==='water',2000);near(a.area,b.area,2e-6);}});
 test('Segmented area scales inversely with U',()=>{const s=E.defaults();s.water.u=120;near(value(E.calculate(s),'water','分段模型換熱面積'),value(r,'water','分段模型換熱面積')/2);});
 test('All returned default numeric values are finite',()=>{for(const section of Object.values(r))for(const row of section.rows)assert.ok(row.value===null||Number.isFinite(row.value));});
+
+test('Default stack all four PM results are numerical estimates',()=>{near(value(r,'stack','PM 排放量'),0.00022173224136422026,1e-12);near(value(r,'stack','PM 年排放量'),1.0643147585482573,1e-10);near(value(r,'stack','粒狀物出口濃度'),.013317845964355379,1e-12);near(value(r,'stack','粒狀物排放率'),.00006159228926783896,1e-12);assert.equal(r.stack.estimated,true);});
+test('Measured efficiency disables estimated-basis marker',()=>{const s=E.defaults();s.cyclone.mode=1;s.cyclone.eta=80;const v=E.calculate(s);assert.equal(v.stack.estimated,false);assert.equal(v.summary.estimated,false);});
+test('Missing measured cyclone efficiency explains stack dependency',()=>{const s=E.defaults();s.cyclone.mode=1;const v=E.calculate(s);assert.ok(v.stack.notes.some(n=>n.includes('缺少上游')));});
+test('Zero and complete cyclone capture conserve mass',()=>{for(const eta of [0,100]){const s=E.defaults();s.cyclone.mode=1;s.cyclone.eta=eta;s.bag.on=0;s.esp.on=0;const v=E.calculate(s);near(value(v,'stack','PM 排放量'),21.6*(1-eta/100));}});
+test('All stack inputs preserve mass and annual-time relationship',()=>{for(const [key,num]of [['t',80],['p',95],['q',24000],['v',20],['height',30]]){const s=E.defaults();s.stack[key]=num;const v=E.calculate(s),q=value(v,'stack','出口實際風量'),c=value(v,'stack','粒狀物出口濃度'),mass=value(v,'stack','PM 排放量');near(q*c/1e6,mass);near(value(v,'stack','PM 年排放量'),mass*16*300);near(value(v,'stack','粒狀物排放率')*3.6,mass);}});
+
 const text=`${passed} tests passed\n${report.join('\n')}\n`;fs.writeFileSync(__dirname+'/TEST-RESULTS.txt',text);console.log(text);
