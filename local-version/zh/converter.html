@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>風壓・風量・風速換算表｜貝達國際貿易</title>
+  <meta name="description" content="免費風壓、風量與風速換算工具，支援 Pa、mmAq、CFM、CMM 等單位，以及圓形、矩形風管的風速風量計算。">
+  <link rel="canonical" href="https://bestasv.com/zh/converter.html">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../converter.css">
+  <script src="../converter.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳至換算工具</a>
+  <header><div class="header-inner"><a class="brand" href="index.html"><img src="../images/company/logo.png" alt="" width="42" height="42"><span>貝達國際貿易<small>BESTA SV CO., LTD.</small></span></a><a class="home-link" href="fan-solution.html">返回官網</a></div></header>
+  <main id="main">
+    <div class="breadcrumb"><a href="index.html">首頁</a><span>／</span>風壓風量風速換算表</div>
+    <section class="intro"><h1>風壓風量風速換算表</h1></section>
+    <div class="tabs" role="tablist" aria-label="換算類型">
+      <button id="tab-pressure" role="tab" aria-selected="true" aria-controls="pressure" tabindex="0">風壓換算器</button>
+      <button id="tab-flow" role="tab" aria-selected="false" aria-controls="flow" tabindex="-1">風量換算器</button>
+      <button id="tab-duct" role="tab" aria-selected="false" aria-controls="duct" tabindex="-1">風速風量換算器</button>
+    </div>
+    <section class="panel" id="pressure" role="tabpanel" aria-labelledby="tab-pressure"><div class="section-head"><div><h2>風壓單位換算</h2><p>輸入任一欄位即可換算。</p></div><button class="reset" data-clear="pressure">清除</button></div><div class="unit-grid" id="pressure-fields"></div><p class="message" id="pressure-message" role="status"></p></section>
+    <section class="panel" id="flow" role="tabpanel" aria-labelledby="tab-flow" hidden><div class="section-head"><div><h2>風量單位換算</h2><p>輸入任一欄位即可換算。</p></div><button class="reset" data-clear="flow">清除</button></div><div class="unit-grid" id="flow-fields"></div><p class="message" id="flow-message" role="status"></p></section>
+    <section class="panel" id="duct" role="tabpanel" aria-labelledby="tab-duct" hidden><div class="section-head"><div><h2>風速與風量換算</h2><p>選擇風管形狀及已知條件，輸入尺寸即可計算。</p></div><button class="reset" data-clear="duct">清除</button></div>
+      <div class="duct-layout"><form id="duct-form" novalidate>
+        <div class="form-row"><label>計算方向<select id="direction"><option value="to-flow">已知風速 → 計算風量</option><option value="to-speed">已知風量 → 計算風速</option></select></label><label>風管形狀<select id="shape"><option value="round">圓形風管</option><option value="rectangle">矩形風管</option></select></label></div>
+        <div class="form-row"><label><span id="dimension-label">直徑</span><span class="input-wrap"><input id="dimension" type="number" min="0" step="any" inputmode="decimal" placeholder="例如 30" aria-describedby="duct-message"><span>cm</span></span></label><label id="width-field" hidden>寬度<span class="input-wrap"><input id="width" type="number" min="0" step="any" inputmode="decimal" placeholder="例如 20" aria-describedby="duct-message"><span>cm</span></span></label></div>
+        <label><span id="known-label">已知風速</span><span class="input-wrap"><input id="known" type="number" min="0" step="any" inputmode="decimal" placeholder="輸入數值" aria-describedby="duct-message"><span id="known-unit">m/s</span></span></label>
+        <p class="message" id="duct-message" role="status"></p>
+      </form><div class="result" aria-live="polite" aria-atomic="true"><p id="result-label">計算風量</p><output id="duct-result">—</output><span id="result-unit">CMM · m³/min</span></div></div>
+
+    </section>
+    <noscript><p class="note">請開啟 JavaScript 以使用即時換算功能。</p></noscript>
+  </main><footer>© 2026 貝達國際貿易有限公司 <span>BESTA SV CO.LTD</span></footer>
+</body>
+</html>
