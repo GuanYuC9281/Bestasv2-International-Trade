@@ -1,0 +1,43 @@
+42 tests passed
+PASS 13 modules have valid default calculations
+PASS IAPWS saturation pressure at triple point
+PASS IAPWS saturation pressure at 100 C
+PASS Steam table checkpoints 40 C / 90 C
+PASS Laminar Darcy coefficient
+PASS Transitional pipe flow rejected
+PASS Turbulent coefficient benchmark
+PASS PM unit conversions
+PASS Continuity with selected pipe diameter
+PASS Cyclone geometry and cut size reference
+PASS Particle diameter equals d50 gives 50 percent grade efficiency
+PASS Unknown cyclone bulk efficiency is not inferred
+PASS Known PM chain and mass conservation
+PASS Stack volume corrects temperature and conserves pollutant mass
+PASS Measured stack flow override
+PASS Bag count rounds up and installed area meets design
+PASS ESP target without area margin
+PASS HCl NaOH molar balance
+PASS Carbon mass, capacity and service time
+PASS Zero carbon loading does not return zero service time
+PASS Motor shaft vs electrical power
+PASS Disabled devices do not contribute pressure
+PASS Zero PM input has no division by zero
+PASS Heat dry-air/water mass balance
+PASS Heat independent inlet/outlet enthalpy balance
+PASS Heat is linear in dry normal volume
+PASS Counterflow water energy balance
+PASS Counterflow allows cold outlet above hot outlet
+PASS Both water operating modes agree
+PASS Both gas operating modes agree
+PASS Inactive cold flow input can be blank
+PASS Equal terminal temperature differences are stable
+PASS Nonpositive terminal approach rejected
+PASS Hot temperature inversion rejected
+PASS Saturation at or above total pressure rejected
+PASS 100 percent ESP and scrubber targets rejected
+PASS Negative, empty, NaN and Infinity inputs rejected
+PASS Discrete counts and mode values validated
+PASS No cross-tool dependency: invalid air does not break heat
+PASS Segmented area convergence 1000 vs 2000 intervals
+PASS Segmented area scales inversely with U
+PASS All returned default numeric values are finite

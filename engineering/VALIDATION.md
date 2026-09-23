@@ -1,0 +1,112 @@
+# 內部工程工具：公式查核與修正紀錄
+
+日期：2026-09-23。版本：internal-v1。
+
+本工具整合兩份原始 Excel 的計算用途，定位為有明確假設的工程初估。已查核公式、單位、依賴關係與程式結果；未取得實際設備試驗、廢氣成分分析、吸附等溫線或廠商性能資料，因此不能把範例值視為已驗證的設計保證值。
+
+## 功能完整性
+
+- 空污防制：基本條件、風管、旋風、袋濾、靜電、洗滌塔、活性碳、風機／馬達、煙囪、系統總覽。
+- 熱交換：物性參數、飽和廢氣冷凝熱負荷、氣水正反算、氣氣正反算、熱交換面積。
+- 所有原表的計算模組納入同一版本；226 個來源輸入／結果已逐項建立對應。總覽重複引用、說明與選項清單另外記錄，見 [COVERAGE.md](COVERAGE.md)。
+- 表內反覆引用的同一輸入共用一個欄位。情境 A/B 改為模式切換。原本不一致或用途不適當的結果有意修正，並非要求結果逐位等於原表。
+- 使用者可匯出／載入 JSON 條件與結果。計算全部在瀏覽器內完成，沒有 API、分析追蹤或資料上傳。
+
+## 上網查核的原始資料
+
+1. [IAPWS 飽和水物性補充釋出 SR1-86(1992)](https://iapws.org/technical-guidance/release/Supp-sat)：純水飽和蒸氣壓關係式。
+2. [ASHRAE 2025 Fundamentals，Psychrometrics](https://handbook.ashrae.org/Handbooks/F25/SI/F25_Ch01/F25_Ch01_si.aspx)：濕空氣組成、含濕比、焓與理想氣體近似。該章提到 −50 至 50°C、標準壓力下的特定誤差比較；本工具**不把該精度敘述外推到 90°C**。
+3. [EPA EPANET 2 User Manual](https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=P1007WWU.TXT)：Darcy–Weisbach 與不同雷諾數區間的摩擦係數處理。原文件是管網流體手冊；此處僅援用無因次管流關係，不將水的物性用於氣體。
+4. [NASA Wind-US 黏度模型](https://www.grc.nasa.gov/www/winddocs/user/keywords/viscosity.html)：Sutherland 型氣體黏度關係；參數依氣體種類而異。
+5. [EPA APTI Course 413](https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=2000MAZK.TXT)：旋風切割粒徑與分級捕集的工程模型。總效率需考慮粒徑質量分布，不能以單一代表粒徑代替。
+6. [EPA Fabric Filters 章節](https://www.epa.gov/sites/default/files/2020-07/documents/cs6ch1.pdf)：氣布比決定淨面積；清灰停用區所需額外面積需依設備配置決定。
+7. [EPA Electrostatic Precipitator Technology, Part I](https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9101FJFA.TXT)：Deutsch 型捕集效率關係及限制。
+8. [EPA Wet and Dry Scrubbers for Acid Gas Control](https://www.epa.gov/sites/default/files/2021-05/documents/wet_and_dry_scrubbers_section_5_chapter_1_control_cost_manual_7th_edition.pdf)：填充塔傳質單元、平衡、填料與操作參數。原表的 NTU 簡式只是特殊極限，並非該手冊的完整吸收塔設計模型。
+9. [EPA Carbon Adsorbers](https://www.epa.gov/sites/default/files/2018-10/documents/final_carbonadsorberschapter_7thedition.pdf) 與 [EPA 活性碳監測說明](https://www.epa.gov/air-emissions-monitoring-knowledge-base/monitoring-control-technique-activated-carbon-adsorber)：工作容量、突破與運轉監測的不同含義。
+10. [DOE Improving Fan System Performance](https://www.energy.gov/sites/default/files/2014/05/f16/fan_sourcebook.pdf)：風機總壓、功率與效率基準。
+11. [DOE Heat Transfer Handbook, Volume 2](https://www.energy.gov/documents/doe-hdbk-1012-92vol2)：能量平衡、對流換熱與 LMTD。
+
+以上來源支持物理關係與適用條件，不代表這套網站經上述機構認證。原 Excel 的 EPA 來源持續保留於對照內容；未將文獻中的設備範例參數套用成所有工況通用常數。
+
+## 實作公式與適用條件
+
+### 氣體、風管與煙囪
+
+Q 使用實際 m³/s，T 使用 K。ρ = P MW / (R T)，R = 8.314462618 kPa·m³/(kmol·K)。黏度預設空氣 Sutherland 近似，非空氣氣體可輸入黏度與密度覆寫。
+
+A = Q/v，D = √(4A/π)，Re = ρvD/μ。速度壓為 ρv²/2，管路壓損為 (fL/D + ΣK)ρv²/2。層流 Re < 2,000 使用 f = 64/Re；Re ≥ 4,000 使用 Swamee–Jain。轉捩區直接提示另外核算，沒有冒充確定值。粗糙度先由 mm 轉 m。此為低速、近似定密度流，非高壓可壓縮管流求解器。
+
+煙囪在相同氣體莫耳流率時：Qout = Qin × Tout/Tin × Pin/Pout。若加濕、冷凝、漏氣或反應改變組成，應使用出口實際風量欄位。污染物質量守恆：Cout × Qout = Cref × Qin。煙囪高度只是記錄，不計算擴散或最低法定高度。
+
+### 集塵、吸收與吸附
+
+旋風以 Lapple 型 d50 = √[9μb/(2π Ne Vi(ρp−ρg))]；分級效率 = 1/[1+(d50/dp)^β]。原表 β=2 是可調模型參數。串聯總質量效率改由使用者提供；未填則不計算整體 PM 濃度與排放量。
+
+袋濾面積 = 每分鐘實際風量／過濾風速；單袋有效面積 = πDL，袋數向上取整。清灰方式只作記錄，不自動推算氣布比。濾袋離線清灰的備用區面積仍須由設計者納入裕量。
+
+靜電：η = 1−exp(−wA/Q)，反算 A = −Q ln(1−η)/w。w 是有效經驗移動速度，不是與粉塵無關的物理常數。
+
+洗滌塔：截面積 = Q/v；循環液量依 L/G 換算。移除質量／污染物分子量得到 kmol/h，再乘反應莫耳比、藥劑分子量，除利用率並乘過量倍率。pH 只記錄。NTU = −ln(1−η)、H = HTU × NTU 僅適用平衡氣相濃度近零的簡化條件，沒有進行完整平衡、反應動力學或泛塔核算。
+
+活性碳：床面積 = Q/v，深度 = v × EBCT，碳量 = Q × EBCT × 堆積密度；容量時間 = 碳量 × 工作容量／污染物移除負荷，再乘額外折減係數。若工作容量本身已含床層利用折減，額外係數可填 100%。零負荷時不回傳「0 小時壽命」。結果更名為容量使用時間，避免把簡化容量法當成實際突破曲線。
+
+### 風機與馬達
+
+氣體功率 kW = Q × Δptotal / 1000。
+風機軸功率 = 氣體功率／風機總壓效率。
+馬達所需軸輸出 = 風機軸功率／傳動效率。
+電力輸入 = 馬達軸輸出／馬達效率。
+
+選定馬達額定 kW 與馬達軸輸出需求比較。原表把「傳動／馬達效率」合併且把總壓損標成靜壓，已拆分修正。總壓計算需要一致的端點基準；未回收出口動壓應計入其他損失。全系統暫採基本條件的流量／密度，不能直接當成跨降溫／增濕各段的完整流程模擬。
+
+### 飽和廢氣熱負荷
+
+Psat 採 IAPWS Wagner 型式，Tc=647.096 K、Pc=22064 kPa；本工具限 0.01–100°C，且要求 Psat < P。這只代表純水飽和壓公式，**不代表全套濕空氣計算是 IAPWS 真實混合氣模型**。
+
+含濕比 W = (MWwater/MWdry) Psat/(P−Psat)。乾氣分子量由輸入標準密度及理想氣體式反算，Nm³ 固定 0°C、101.325 kPa。預設密度 1.2923190576466714 kg/Nm³ 對應 MWdry=28.966；修改密度會同步改含濕比質量基準。實際成分不同時還須確認比熱、非理想性與化學反應。
+
+採共同零焓基準：hdry=cpd T、hvapor=2501+cpv T、hliquid=cpl T，T 為 °C。入口／出口皆飽和、入口無液滴、所有冷凝液隨熱側流至出口並以 Tout 排出。
+
+mdry = QN ρN；mcond = mdry(Win−Wout)。
+
+Q(kW) = mdry {cpd(Tin−Tout) + Win cpv(Tin−Tout) + (Win−Wout)[2501+(cpv−cpl)Tout]} / 3600。
+
+這等於入口總焓減去出口氣體與冷凝液總焓。不能在出口溫度的冷凝潛熱之外，再把該批冷凝液視為從入口溫度降下來並加一次完整液態顯熱。原表的混合計算路徑已修正。
+
+比熱為常數近似；高溫飽和／近沸點含水量大，真實氣體修正、溶解與化學反應等誤差不在本版解決範圍。顯示六位有效數字是格式，不表示六位物理精度。
+
+### 熱交換器
+
+冷側流量與出口溫度以 Q = mc cp ΔT 互相反算。兩端溫差分別為 Th,in−Tc,out 與 Th,out−Tc,in，均必須 >0。逆流允許冷側出口高於熱側出口，只要沿程沒有溫度交叉。
+
+原表端點 LMTD 及面積仍保留為對照。因飽和廢氣冷凝使熱側有效熱容量大幅變化，新增分段模型：
+
+H(T) = cpd T + W(T)[2501+cpv T] + [Win−W(T)]cpl T。
+q(T) = mdry[H(T)−H(Tout)]/3600，Tc(T)=Tc,in+3600q(T)/(mc cp)。
+
+以 1,000 個溫度區間、各段兩端局部溫差的 LMTD 計算並累加 dA = 1000 dq/(U ΔTlm,segment)。檢查所有分段節點的正溫差；此為數值檢查，不是對任意物性函數的解析極值保證。冷凝液沿熱側同行、無熱損、U 固定、局部飽和平衡的模型假設必須與設備一致；其他流型或分段排液需另核算。兩個預設案例從 1,000 增加到 2,000 區間的面積相對差小於 0.0002%。
+
+## 原表預設案例差異
+
+90→40°C、乾氣 1,000 Nm³/h、101.325 kPa：
+
+| 項目 | 原 Excel 公式重算 | 本版 |
+|---|---:|---:|
+| 冷凝水 | 1,777.6084 kg/h | 1,748.1556 kg/h |
+| 總熱負荷 | 1,311.3388 kW | 1,234.1520 kW |
+
+差異同時來自飽和壓公式、密度／物性常數與一致焓平衡修正，不能全部歸因於一個常數。此對照是讀取原公式後的數值重算，沒有聲稱在 Microsoft Excel 中執行了工作簿重算。
+
+修正後氣水案例，冷卻水 25→35°C、cp=4.186、ρ=1000、U=60：水量約 106.1383 m³/h。端點 LMTD 面積 668.1303 m²；含冷凝沿程變化的分段模型約 458.3177 m²。兩者不同反映模型差異，不能把後者直接當作設備廠的保證選型面積。
+
+## 測試狀態
+
+`node test.cjs`：42 項通過，詳見 [TEST-RESULTS.txt](TEST-RESULTS.txt)。涵蓋物性檢查點、流態、質量守恆、焓平衡、設備串聯、軸／電力區分、兩种正反算、一致性與數值收斂、空值／負值／無限值及不可能工況。
+
+逐項對照腳本檢查來源所有納入範圍的數值／公式欄位均有用途對應；這種完整性檢查與數值正確性測試分開看待。尚未完成全部參數組合的窮舉，也未進行真實設備的試車驗證。
+
+自動瀏覽器拒絕開啟本機 file:// 測試頁，因此此輪未完成自動畫面互動／手機瀏覽器測試，不將其列為通過。頁面提供響應式版面，但實機顯示與匯入／匯出操作仍待人工驗收。
+
+## 內部使用方式
+
+雙擊 index.html 即可離線開啟；整個資料夾可在內部傳遞。經使用者同意，此初版已改為公開 GitHub Pages 測試版。請勿在公開儲存庫提交內部案件資料。無登入頁不代表具有存取權限控制；若日後提供內部網址，應在伺服器／公司身分系統實作授權後才發布。
