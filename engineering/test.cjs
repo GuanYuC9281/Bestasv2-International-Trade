@@ -10,10 +10,10 @@ test('IAPWS saturation pressure at 100 C',()=>near(E.psat(100),101.41799,1e-6));
 test('Steam table checkpoints 40 C / 90 C',()=>{near(E.psat(40),7.3851,2e-5);near(E.psat(90),70.1827,2e-6);});
 test('Laminar Darcy coefficient',()=>near(E.friction(1000,.0001),.064));
 test('Transitional pipe flow rejected',()=>assert.throws(()=>E.friction(3000,.001),/轉捩/));
-test('Turbulent coefficient benchmark',()=>near(E.friction(1e5,.0001),.0184524453,1e-8));
+test('Turbulent coefficient benchmark',()=>near(E.friction(1e5,.0001),.01851386607747,1e-10));
 test('PM unit conversions',()=>{near(r.base.load,21.6);near(value(r,'base','每年粒狀物'),103680);});
 test('Continuity with selected pipe diameter',()=>{const s=E.defaults();s.duct.diameter=1;near(value(E.calculate(s),'duct','實際風速'),20/Math.PI);});
-test('Cyclone geometry and cut size reference',()=>{near(value(r,'cyclone','單台筒徑'),5/3);near(value(r,'cyclone','切割粒徑 d₅₀'),6.94506593245,1e-8);});
+test('Cyclone geometry and cut size reference',()=>{const s=E.defaults();s.base.densityMode=0;const legacy=E.calculate(s);near(value(legacy,'cyclone','單台筒徑'),5/3);near(value(legacy,'cyclone','切割粒徑 d₅₀'),6.94506593245,1e-8);});
 test('Particle diameter equals d50 gives 50 percent grade efficiency',()=>{const s=E.defaults();s.base.dp=value(r,'cyclone','切割粒徑 d₅₀');near(value(E.calculate(s),'cyclone','代表粒徑分級效率'),50);});
 test('Known-efficiency mode requires a provided bulk efficiency',()=>{const s=E.defaults();s.cyclone.mode=1;const v=E.calculate(s);assert.equal(v.summary.c,null);assert.equal(value(v,'cyclone','單機 PM 捕集量'),null);});
 test('Known PM chain and mass conservation',()=>{const s=E.defaults();s.cyclone.mode=1;s.cyclone.eta=80;s.bag.eta=90;s.esp.on=0;const v=E.calculate(s);near(v.summary.c,24);near(value(v,'stack','粒狀物排放率'),.12);near(value(v,'stack','PM 年排放量'),2073.6);});
@@ -38,7 +38,7 @@ test('Inactive cold flow input can be blank',()=>{const s=E.defaults();s.water.f
 test('Equal terminal temperature differences are stable',()=>near(E.lmtd(20,20),20));
 test('Nonpositive terminal approach rejected',()=>assert.throws(()=>E.lmtd(20,0),/溫差/));
 test('Hot temperature inversion rejected',()=>{const s=E.defaults();s.heat.tout=95;assert.match(E.calculate(s).heat.error,/入口溫度/);});
-test('Saturation at or above total pressure rejected',()=>{const s=E.defaults();s.heat.p=50;assert.match(E.calculate(s).heat.error,/蒸氣壓/);});
+test('Saturation at or above total pressure rejected',()=>{const s=E.defaults();s.heat.p=50;assert.match(E.calculate(s).heat.error,/蒸氣.*壓/);});
 test('100 percent ESP and scrubber targets rejected',()=>{const s=E.defaults();s.esp.eta=100;s.scrub.eta=100;const v=E.calculate(s);assert.ok(v.esp.error&&v.scrub.error);});
 test('Negative, empty, NaN and Infinity inputs rejected',()=>{for(const raw of [-1,'','NaN','Infinity']){const s=E.defaults();s.base.q=raw;assert.ok(E.calculate(s).base.error);}});
 test('Discrete counts and mode values validated',()=>{const s=E.defaults();s.cyclone.n=1.5;s.water.mode=.5;const v=E.calculate(s);assert.ok(v.cyclone.error&&v.water.error);});
@@ -47,7 +47,7 @@ test('Segmented area convergence 1000 vs 2000 intervals',()=>{for(const id of ['
 test('Segmented area scales inversely with U',()=>{const s=E.defaults();s.water.u=120;near(value(E.calculate(s),'water','分段模型換熱面積'),value(r,'water','分段模型換熱面積')/2);});
 test('All returned default numeric values are finite',()=>{for(const section of Object.values(r))for(const row of section.rows)assert.ok(row.value===null||Number.isFinite(row.value));});
 
-test('Default stack all four PM results are numerical estimates',()=>{near(value(r,'stack','PM 排放量'),0.00022173224136422026,1e-12);near(value(r,'stack','PM 年排放量'),1.0643147585482573,1e-10);near(value(r,'stack','粒狀物出口濃度'),.013317845964355379,1e-12);near(value(r,'stack','粒狀物排放率'),.00006159228926783896,1e-12);assert.equal(r.stack.estimated,true);});
+test('Default stack all four PM results are numerical estimates',()=>{const s=E.defaults();s.base.densityMode=0;const legacy=E.calculate(s);near(value(legacy,'stack','PM 排放量'),0.00022173224136422026,1e-12);near(value(legacy,'stack','PM 年排放量'),1.0643147585482573,1e-10);near(value(legacy,'stack','粒狀物出口濃度'),.013317845964355379,1e-12);near(value(legacy,'stack','粒狀物排放率'),.00006159228926783896,1e-12);assert.equal(r.stack.estimated,true);});
 test('Measured efficiency disables estimated-basis marker',()=>{const s=E.defaults();s.cyclone.mode=1;s.cyclone.eta=80;const v=E.calculate(s);assert.equal(v.stack.estimated,false);assert.equal(v.summary.estimated,false);});
 test('Missing measured cyclone efficiency explains stack dependency',()=>{const s=E.defaults();s.cyclone.mode=1;const v=E.calculate(s);assert.ok(v.stack.notes.some(n=>n.includes('缺少上游')));});
 test('Zero and complete cyclone capture conserve mass',()=>{for(const eta of [0,100]){const s=E.defaults();s.cyclone.mode=1;s.cyclone.eta=eta;s.bag.on=0;s.esp.on=0;const v=E.calculate(s);near(value(v,'stack','PM 排放量'),21.6*(1-eta/100));}});

@@ -1,0 +1,31 @@
+{
+  "checks": 675,
+  "referenceCases": 327,
+  "maxHeatErrorPercent": 1.2427010529658777,
+  "maxCondensateErrorPercent": 1.7572929918884594,
+  "maxActualWetFlowHeatErrorPercent": 1.1761257929086555,
+  "scope": "air-water mixture only; default constant cp and dry-air molecular weight; 80–200 kPa, 30–98°C inlet, 15–40°C outlet, 30–100% inlet RH; excludes inlet pure-water saturation pressure >=98% of total pressure"
+}
+
+PASS 327 independent CoolProp 8.0.0 reference cases; max heat error 1.24270%; max condensate error 1.75729% for condensate >0.01 kg/kg dry gas.
+PASS Wet actual versus dry normal flow has same physical heat duty
+PASS Unsaturated cooling above dewpoint has no condensation
+PASS Low-pressure unsaturated gas remains valid above water boiling temperature
+PASS Zero PM and absent measured efficiency returns four zero stack results
+PASS Zero PM cyclone single-machine mass and concentration are zero
+PASS Loaded impossible heat case returns explicit calculation issues
+PASS New-format export inputs survive roundtrip
+PASS Older records migrate new optional conditions and humidity fields
+PASS PSD mass percentages must add to 100
+PASS PSD rejects negative and missing particle diameters
+PASS One PSD bin reproduces single-particle model
+PASS Two-bin mixture matches separately evaluated grade efficiencies
+PASS Fan cooling changes actual volume and shaft duty proportionally
+PASS Independent duct operating temperature preserves gas mass flow
+PASS Scrubber removal uses local operating concentration and actual flow
+PASS Bag and ESP area respond to actual equipment volume
+PASS Measured equipment density controls velocity-pressure losses
+PASS Colebrook residual across 42 turbulent regime checkpoints
+PASS Humid air density matches independent partial-pressure mass sum
+PASS Legacy record preserves direct-mixture molecular-weight density basis
+PASS Known chemical molecular weights cannot silently disagree
