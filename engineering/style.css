@@ -3,3 +3,5 @@
 .value.unavailable{font-size:14px!important;white-space:normal;max-width:55%;line-height:1.6}
 
 textarea{font:inherit;line-height:1.6;width:100%;min-width:0;resize:vertical;padding:10px;border:0;color:var(--navy);background:white}textarea:disabled{opacity:.5;background:#f1f1ef}.input-row:has(textarea){align-items:flex-start}
+
+#export-preview{margin:24px 0;padding:16px;border:1px solid var(--line)}#export-preview[hidden]{display:none}#export-content{border:1px solid #ddd;max-width:100%;font-family:monospace;font-size:12px}#export-preview p{font-size:13px}
