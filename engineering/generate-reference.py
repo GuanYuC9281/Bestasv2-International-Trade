@@ -23,7 +23,7 @@ for p in [80,101.325,120,150,200]:
      idealwi=.621945764365*rh/100*psat(ti)/(p-rh/100*psat(ti))
      idealwo=min(idealwi,.621945764365*psat(to)/(p-psat(to)))
      approx=1.006*(ti-to)+idealwi*1.86*(ti-to)+(idealwi-idealwo)*(2501+(1.86-4.186)*to)
-     rows.append(dict(reference_specific_volume=HAPropsSI('V','T',ti+273.15,'P',p*1000,'W',wi),p=p,tin=ti,tout=to,rh=rh,reference_kJ_per_kgdry=ref,approx_kJ_per_kgdry=approx,error_percent=100*(approx/ref-1),condensate_reference=wi-wo,condensate_approx=idealwi-idealwo))
+     rows.append(dict(reference_density=(1+wi)/HAPropsSI('V','T',ti+273.15,'P',p*1000,'W',wi),reference_specific_volume=HAPropsSI('V','T',ti+273.15,'P',p*1000,'W',wi),p=p,tin=ti,tout=to,rh=rh,reference_kJ_per_kgdry=ref,approx_kJ_per_kgdry=approx,error_percent=100*(approx/ref-1),condensate_reference=wi-wo,condensate_approx=idealwi-idealwo))
     except ValueError as e:print('Skipped',p,ti,to,rh,str(e)[:100])
 Path(__file__).with_name('thermal-reference.json').write_text(json.dumps(rows),encoding='utf-8')
 print(json.dumps({'cases':len(rows),'max_abs_error_percent':max(abs(r['error_percent']) for r in rows),'default':[r for r in rows if r['p']==101.325 and r['tin']==90 and r['tout']==40 and r['rh']==100],'worst':max(rows,key=lambda r:abs(r['error_percent']))}))

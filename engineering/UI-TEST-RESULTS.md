@@ -1,120 +1,25 @@
-# 已發布頁面逐欄操作驗證
+# 客戶初估版網頁操作檢查
 
-日期：2026-09-24。GitHub Pages 線上頁面，13 個模組、101 個輸入欄位各變動一次，加上 13 個模組預設狀態，共 114 個案例通過。每個案例都比較畫面實際結果與計算核心輸出；此項驗證網頁接線與更新，物理公式的獨立核對另見 FIELD-AUDIT.md。
+日期：2026-09-29。在 GitHub Pages 線上實際操作 13 個模組、126 個輸入欄位各變動一次，加上 13 個預設狀態，共 **139 個案例通過**。逐案核對畫面所有結果列及錯誤訊息與計算核心輸出；這項檢查驗證網頁接線，独立物性比較另見 [CUSTOMER-REVIEW.md](CUSTOMER-REVIEW.md)。
 
-| 模組 | 欄位／預設狀態 | 結果 |
-|---|---|---|
-| base | default | 通過 |
-| base | q | 通過 |
-| base | t | 通過 |
-| base | p | 通過 |
-| base | mw | 通過 |
-| base | rho | 通過 |
-| base | mu | 通過 |
-| base | rh | 通過 |
-| base | pm | 通過 |
-| base | rhop | 通過 |
-| base | dp | 通過 |
-| base | hours | 通過 |
-| base | days | 通過 |
-| duct | default | 通過 |
-| duct | on | 通過 |
-| duct | v | 通過 |
-| duct | diameter | 通過 |
-| duct | length | 通過 |
-| duct | rough | 通過 |
-| duct | k | 通過 |
-| cyclone | default | 通過 |
-| cyclone | on | 通過 |
-| cyclone | mode | 通過 |
-| cyclone | n | 通過 |
-| cyclone | v | 通過 |
-| cyclone | a | 通過 |
-| cyclone | b | 通過 |
-| cyclone | ne | 通過 |
-| cyclone | beta | 通過 |
-| cyclone | k | 通過 |
-| cyclone | eta | 通過 |
-| bag | default | 通過 |
-| bag | on | 通過 |
-| bag | cleaning | 通過 |
-| bag | v | 通過 |
-| bag | d | 通過 |
-| bag | l | 通過 |
-| bag | margin | 通過 |
-| bag | eta | 通過 |
-| bag | loss | 通過 |
-| bag | tmax | 通過 |
-| esp | default | 通過 |
-| esp | on | 通過 |
-| esp | eta | 通過 |
-| esp | w | 通過 |
-| esp | margin | 通過 |
-| esp | loss | 通過 |
-| scrub | default | 通過 |
-| scrub | on | 通過 |
-| scrub | pollutant | 通過 |
-| scrub | reagent | 通過 |
-| scrub | cin | 通過 |
-| scrub | mw | 通過 |
-| scrub | eta | 通過 |
-| scrub | v | 通過 |
-| scrub | lg | 通過 |
-| scrub | htu | 通過 |
-| scrub | packing | 通過 |
-| scrub | demist | 通過 |
-| scrub | reagentMW | 通過 |
-| scrub | stoich | 通過 |
-| scrub | util | 通過 |
-| scrub | excess | 通過 |
-| scrub | ph | 通過 |
-| carbon | default | 通過 |
-| carbon | on | 通過 |
-| carbon | cin | 通過 |
-| carbon | eta | 通過 |
-| carbon | v | 通過 |
-| carbon | ebct | 通過 |
-| carbon | bulk | 通過 |
-| carbon | capacity | 通過 |
-| carbon | util | 通過 |
-| carbon | packing | 通過 |
-| carbon | rhmax | 通過 |
-| fan | default | 通過 |
-| fan | other | 通過 |
-| fan | margin | 通過 |
-| fan | eta | 通過 |
-| fan | drive | 通過 |
-| fan | motor | 通過 |
-| fan | rated | 通過 |
-| stack | default | 通過 |
-| stack | t | 通過 |
-| stack | p | 通過 |
-| stack | q | 通過 |
-| stack | v | 通過 |
-| stack | height | 通過 |
-| summary | default | 通過 |
-| heat | default | 通過 |
-| heat | tin | 通過 |
-| heat | tout | 通過 |
-| heat | q | 通過 |
-| heat | p | 通過 |
-| heat | cpd | 通過 |
-| heat | cpv | 通過 |
-| heat | cpl | 通過 |
-| heat | rhoN | 通過 |
-| water | default | 通過 |
-| water | mode | 通過 |
-| water | tin | 通過 |
-| water | tout | 通過 |
-| water | flow | 通過 |
-| water | cp | 通過 |
-| water | rho | 通過 |
-| water | u | 通過 |
-| gas | default | 通過 |
-| gas | mode | 通過 |
-| gas | tin | 通過 |
-| gas | tout | 通過 |
-| gas | flow | 通過 |
-| gas | cp | 通過 |
-| gas | u | 通過 |
-| gas | rhoN | 通過 |
+| 模組 | 案例數 |
+|---|---:|
+| base | 14 |
+| duct | 10 |
+| cyclone | 15 |
+| bag | 13 |
+| esp | 9 |
+| scrub | 20 |
+| carbon | 14 |
+| fan | 10 |
+| stack | 6 |
+| summary | 1 |
+| heat | 11 |
+| water | 8 |
+| gas | 8 |
+
+另確認有效紀錄、舊紀錄載入，以及無效熱側條件載入後明确列出 3 個無法計算模組。在 390×844 瀏覽器 viewport 檢查頁面無整頁水平溢出、PSD 模式啟用、零 PM 且旋風實測效率留空時，煙囪四項 PM 結果皆為 0。這是手機尺寸模擬，尚未在實體 iPhone／Android 測試。
+
+內建瀏覽器的下載事件無法確認實際檔案落地，因此未將下載檔案測試列為通過。已補上匯出紀錄的可查看／複製備援；其往返測試結果見後續紀錄。
+
+前版 2026-09-24 的 114 次案例已被本次 139 次操作覆蓋；原始工作簿欄位核對仍保留於 [FIELD-AUDIT.md](FIELD-AUDIT.md)。
