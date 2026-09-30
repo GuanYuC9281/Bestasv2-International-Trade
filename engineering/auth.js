@@ -42,7 +42,7 @@
         failures += 1;
         password.value = '';
         if (failures >= 3) {
-          location.replace('../');
+          location.replace('../index.html');
           return;
         }
         error.textContent = `帳號或密碼錯誤，還可嘗試 ${3 - failures} 次。`;
