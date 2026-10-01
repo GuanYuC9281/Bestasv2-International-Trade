@@ -27,6 +27,12 @@ for (const folder of ['zh', 'en', 'vn', 'jp', '__vn/vn']) {
       }
     }
     assert.ok(html.includes(`<html lang="${languages[lang]}"`), `${label}: correct document language`);
+    if (lang === 'zh') {
+      for (const id of ['companyName', 'companyName-footer', 'companyName-footer-2']) {
+        assert.ok(html.includes(`id="${id}">貝達國際貿易有限公司<`), `${label}: static brand text in ${id}`);
+      }
+      assert.ok(!/images\/company\/logo[^>]+alt="\?+"/.test(html), `${label}: readable logo alt text`);
+    }
     for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
       const data = JSON.parse(match[1]);
       if (lang === 'vn') {
@@ -47,12 +53,13 @@ for (const sitemap of ['sitemap.xml', 'sitemap-vn.xml']) {
   for (const url of urls) {
     const parsed = new URL(url);
     assert.equal(parsed.host, sitemap === 'sitemap-vn.xml' ? 'bestasv.vn' : 'bestasv.com');
-    // The existing global root is a language entry/redirect page.
-    if (parsed.pathname === '/') continue;
+    assert.notEqual(parsed.pathname, '/', `${sitemap}: exclude redirect-only root`);
     const [, lang, name] = parsed.pathname.split('/');
     const file = name || 'index.html';
     assert.equal(url, canonical(lang, file, sitemap === 'sitemap-vn.xml'), `${sitemap}: canonical entry`);
-    assert.ok(fs.existsSync(path.join(site, lang, file)), `${sitemap}: page exists`);
+    const publicFile = path.join(site, sitemap === 'sitemap-vn.xml' ? '__vn' : '', lang, file);
+    assert.ok(fs.existsSync(publicFile), `${sitemap}: page exists on the correct host`);
+    assert.ok(!/<meta name="robots" content="[^"]*noindex/.test(fs.readFileSync(publicFile, 'utf8')), `${sitemap}: page is indexable`);
     sitemapCount++;
   }
   if (sitemap === 'sitemap-vn.xml') {
@@ -66,12 +73,8 @@ for (const file of ['index.html', 'about.html', 'contact.html']) {
   const global = fs.readFileSync(path.join(site, 'vn', file), 'utf8');
   const mainText = html => html.split('<!-- Hero Section -->')[1].split('<!-- Footer -->')[0]
     .replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-  if (file === 'index.html') {
-    assert.equal(mainText(local), mainText(global), `${file}: match global Vietnamese homepage`);
-  } else {
-    assert.notEqual(mainText(local), mainText(global), `${file}: preserved local company content`);
-    assert.ok(mainText(local).includes('0318644214'), `${file}: visible company identity`);
-  }
+  assert.notEqual(mainText(local), mainText(global), `${file}: preserved local company content`);
+  assert.ok(mainText(local).includes('0318644214'), `${file}: visible company identity`);
   assert.equal((local.match(/<h1[ >]/g) || []).length, 1, `${file}: one primary heading`);
   const graph = JSON.parse(local.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
   assert.equal(graph.find(node => node['@type'] === 'Organization').taxID, '0318644214');
@@ -85,6 +88,15 @@ for (const configFile of ['vercel.json', 'local-version/vercel.json']) {
     assert.equal(config.routes.find(route => matches(route, '/vn/', host)).dest, '/__vn/vn/index.html');
     assert.equal(config.routes.find(route => matches(route, '/robots.txt', host)).dest, '/robots-vn.txt');
     assert.equal(config.routes.find(route => matches(route, '/sitemap.xml', host)).dest, '/sitemap-vn.xml');
+  }
+  for (const [host, target] of [['bestasv.com', 'https://bestasv.com/zh/'], ['bestasv.vn', 'https://bestasv.vn/vn/']]) {
+    for (const hostname of [host, `www.${host}`]) {
+      for (const pathname of ['/', '/index.html']) {
+        const route = config.routes.find(route => matches(route, pathname, hostname));
+        assert.equal(route.status, 308, `${configFile}: permanent entry redirect for ${hostname}${pathname}`);
+        assert.equal(route.headers.Location, target, `${configFile}: correct language and host`);
+      }
+    }
   }
   for (const pathname of ['/vn/', '/robots.txt', '/sitemap.xml']) {
     assert.equal(config.routes.find(route => matches(route, pathname, 'bestasv.com')), undefined, `${configFile}: global files remain direct`);
@@ -101,4 +113,21 @@ for (const anchor of ['company-intro', 'mission-vision', 'core-values', 'why-cho
 }
 assert.ok(!fs.readFileSync(path.join(site, 'robots.txt'), 'utf8').includes('Sitemap: https://bestasv.vn'));
 assert.ok(!fs.readFileSync(path.join(site, 'robots-vn.txt'), 'utf8').includes('Sitemap: https://bestasv.com'));
+for (const [folder, domain, brand, otherSite] of [
+  ['zh', 'bestasv.com', '貝達', 'https://bestasv.vn/vn/'],
+  ['__vn/vn', 'bestasv.vn', 'CÔNG TY TNHH TM SX &amp; DV BESTA SV', 'https://bestasv.com/zh/']
+]) {
+  const html = fs.readFileSync(path.join(site, folder, 'index.html'), 'utf8');
+  const heading = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1];
+  assert.ok(heading?.includes(folder === 'zh' ? '貝達' : 'BESTA SV'), `${domain}: brand in primary heading`);
+  const graph = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
+  const website = graph.find(node => node['@type'] === 'WebSite');
+  assert.equal(website.url, `https://${domain}/`, `${domain}: root-level website identity`);
+  assert.ok(website.name && website.alternateName.length, `${domain}: site name and alternatives`);
+  assert.equal(website.publisher['@id'], `https://${domain}/#organization`);
+  const profile = html.match(/<section class="brand-profile"[\s\S]*?<\/section>/)?.[0];
+  assert.ok(profile?.includes(brand), `${domain}: visible brand introduction`);
+  assert.ok(profile.includes(`href="${otherSite}"`), `${domain}: crawlable other official site`);
+  assert.ok(!/\bhidden\b|display:\s*none/.test(profile), `${domain}: brand content is visible`);
+}
 console.log(`SEO checks passed: ${pageCount} pages, ${sitemapCount} sitemap entries, independent company content and host routing.`);

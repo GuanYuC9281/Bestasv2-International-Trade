@@ -1,0 +1,16 @@
+.brand-profile { padding: 56px 24px; background: #fff; color: #172b42; }
+.brand-profile-inner { max-width: 1152px; margin: 0 auto; }
+.brand-profile-label { color: #a44910; font-size: 14px; font-weight: 700; letter-spacing: .05em; }
+.brand-profile h2 { margin: 12px 0 20px; font-size: clamp(24px, 3vw, 34px); font-weight: 800; line-height: 1.4; overflow-wrap: anywhere; }
+.brand-profile p { max-width: 980px; margin-bottom: 18px; line-height: 1.85; }
+.brand-profile a { color: #076c77; text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.brand-profile a:hover { color: #12304c; }
+.brand-profile a:focus-visible { outline: 2px solid #076c77; outline-offset: 4px; }
+.brand-profile-links { display: flex; flex-wrap: wrap; gap: 16px 28px; margin-top: 24px; font-weight: 700; }
+.brand-profile-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; border-block: 1px solid #d7dfe7; padding: 24px 0; margin: 24px 0; }
+.brand-profile-facts dt { font-size: 14px; color: #536475; margin-bottom: 6px; }
+.brand-profile-facts dd { margin: 0; font-weight: 700; line-height: 1.6; overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+    .brand-profile { padding: 36px 20px; }
+    .brand-profile-facts { grid-template-columns: 1fr; }
+}
