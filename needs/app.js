@@ -13,7 +13,7 @@ else{
   submitButton.disabled=true;submitStatus.textContent='正在確認需求服務狀態…';
   fetch(`${apiBase}/api/health`,{cache:'no-store'}).then(async response=>{
     if(!response.ok||!(await response.json()).ready)throw Error('服務未就緒');
-    submitButton.disabled=false;submitStatus.textContent='';
+    submitButton.disabled=false;submitStatus.textContent='';document.getElementById('preview-notice').hidden=true;
   }).catch(()=>{submitStatus.textContent='需求服務暫時無法使用，請稍後再試或聯絡 info@bestasv.vn。';});
 }
 
