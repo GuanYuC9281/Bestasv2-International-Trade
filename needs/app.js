@@ -20,7 +20,7 @@ else{
 function readRequirements(form){
   return {
     industry:form.get('industry'),process:form.get('process'),pollutants:form.getAll('pollutants'),
-    flow:form.get('flow'),flowBasis:form.get('flowBasis'),temperature:form.get('temperature'),humidity:form.get('humidity'),
+    pollutantDetails:form.get('pollutantDetails'),flow:form.get('flow'),flowBasis:form.get('flowBasis'),temperature:form.get('temperature'),humidity:form.get('humidity'),hoursPerDay:form.get('hoursPerDay'),
     target:form.get('target'),constraints:form.get('constraints'),location:form.get('location')
   };
 }

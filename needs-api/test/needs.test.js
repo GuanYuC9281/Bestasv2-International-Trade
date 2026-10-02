@@ -16,6 +16,7 @@ test('rejects bad consent, contact and out-of-range conditions',()=>{
   assert.throws(()=>validateSubmission({...valid,consent:false}));
   assert.throws(()=>validateSubmission({...valid,contact:{...valid.contact,email:'bad'}}));
   assert.throws(()=>validateSubmission({...valid,requirements:{...valid.requirements,humidity:150}}));
+  assert.throws(()=>validateSubmission({...valid,requirements:{...valid.requirements,hoursPerDay:25}}));
 });
 test('removes common contact data from AI-facing free text',()=>{
   const cleaned=deidentify({...valid.requirements,process:'聯絡 test@example.com 或 +886 2 1234 5678'});
