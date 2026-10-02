@@ -24,10 +24,12 @@
           <label>所在國家／城市<input name="location" maxlength="120" placeholder="例如：越南平陽"></label>
           <label class="wide">製程與排放情況 <b>*</b><textarea name="process" rows="4" maxlength="600" required placeholder="例如：金屬研磨產生乾燥粉塵，現有風管已配置…"></textarea><small>請勿在此欄填入姓名、電話或信箱。</small></label>
           <fieldset class="wide"><legend>主要處理項目 <b>*</b></legend><div class="checks"><label><input type="checkbox" name="pollutants" value="dust">粉塵／粒狀物</label><label><input type="checkbox" name="pollutants" value="acid">酸鹼氣體</label><label><input type="checkbox" name="pollutants" value="voc">VOC／溶劑</label><label><input type="checkbox" name="pollutants" value="oil">油煙／油霧</label><label><input type="checkbox" name="pollutants" value="odor">異味</label><label><input type="checkbox" name="pollutants" value="heat">高溫降溫</label><label><input type="checkbox" name="pollutants" value="ventilation">通風排氣</label><label><input type="checkbox" name="pollutants" value="other">其他</label></div></fieldset>
+          <label class="wide">污染物種類與已知濃度<textarea name="pollutantDetails" rows="2" maxlength="300" placeholder="例如：HCl 200 ppm；粉塵 500 mg/m³。請註明實際／標準、乾／濕基準"></textarea></label>
           <label>預估風量 <span class="unit-label" id="flow-unit">單位待確認</span><input name="flow" type="number" min="0.001" max="1000000000" step="any" inputmode="decimal" placeholder="未取得可留空"></label>
           <label>風量基準<select name="flowBasis"><option value="unknown">尚未確認</option><option value="actual">實際工況風量</option><option value="normal">標準狀態風量（Nm³/h）</option></select></label>
           <label>入口溫度 <span class="unit-label">°C</span><input name="temperature" type="number" min="-50" max="1000" step="any" inputmode="decimal" placeholder="未取得可留空"></label>
           <label>相對濕度 <span class="unit-label">%</span><input name="humidity" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="未取得可留空"></label>
+          <label>每日運轉時間 <span class="unit-label">h/day</span><input name="hoursPerDay" type="number" min="0.1" max="24" step="any" inputmode="decimal" placeholder="未取得可留空"></label>
           <label class="wide">希望改善的目標<textarea name="target" rows="2" maxlength="300" placeholder="例如：降低排氣粉塵、改善異味、更新現有設備"></textarea></label>
           <label class="wide">現場限制／補充說明<textarea name="constraints" rows="2" maxlength="300" placeholder="例如：空間有限、連續運轉、既有設備需保留"></textarea></label>
         </div>
