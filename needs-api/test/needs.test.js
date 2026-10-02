@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {validateSubmission,deidentify} from '../src/validation.js';
 import {validateRecommendation,recommend} from '../src/recommend.js';
 import {catalog} from '../src/catalog.js';
+import {makeNotice} from '../src/notice.js';
 
 const valid={requirements:{industry:'金屬加工',process:'研磨乾式粉塵',pollutants:['dust'],flow:'18000',flowBasis:'actual',temperature:'60',humidity:'50'},contact:{company:'範例公司',name:'測試人',phone:'+886 2 1234 5678',email:'TEST@example.com'},consent:true};
 test('validates customer fields and retains physical units',()=>{
@@ -41,4 +42,11 @@ test('AI request excludes structured contact fields and enforces strict output',
   };
   const result=await recommend(valid.requirements,{apiKey:'fake',model:'test-model',fetcher:fakeFetch});
   assert.equal(result.items[0].id,'pulse-bag');
+});
+test('notification uses the company inbox and correct flow basis',()=>{
+  const input=validateSubmission({...valid,requirements:{...valid.requirements,flowBasis:'normal'}});
+  const message=makeNotice({requestId:'test-id',...input,recommendation:null},{from:'test@example.invalid',to:'info@bestasv.vn'});
+  assert.equal(message.to,'info@bestasv.vn');
+  assert.match(message.text,/18000 Nm³\/h/);
+  assert.match(message.text,/待人工確認/);
 });
