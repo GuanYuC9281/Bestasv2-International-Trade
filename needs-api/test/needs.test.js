@@ -26,6 +26,24 @@ test('validates customer fields and retains physical units',()=>{
   assert.equal(output.requirements.flowDryness,'wet');
   assert.equal(output.contact.email,'test@example.com');
 });
+test('retains all selected need tables and omits unselected details',()=>{
+  const pollutants=['dust','acid','voc','oil','odor','heat','ventilation','other'];
+  const details={...valid.requirements.details,
+    acid:{species:'HCl',inletConcentration:'200',concentrationUnit:'ppmv',reagent:'yes'},
+    voc:{species:'甲苯',inletConcentration:'30',concentrationUnit:'ppmv',flammable:'possible'},
+    oil:{source:'machining',inletConcentration:'15'},odor:{species:'氨',frequency:'intermittent'},
+    heat:{targetTemperature:'45',coolingMedium:'water'},ventilation:{sourceCount:'3',staticPressure:'2400',ductLength:'70'},other:{notes:'另需現場勘查'}
+  };
+  const input=validateSubmission({...valid,requirements:{...valid.requirements,pollutants,details}});
+  assert.deepEqual(Object.keys(input.requirements.details),pollutants);
+  assert.equal(input.requirements.details.acid.inletConcentration,200);
+  assert.equal(input.requirements.details.ventilation.staticPressure,2400);
+  const notice=makeNotice({requestId:'many',...input},{from:'sender@example.invalid',to:'info@bestasv.vn'});
+  assert.match(notice.text,/甲苯/);
+  assert.match(notice.text,/現有系統總壓損 Pa：2400/);
+  const onlyDust=validateSubmission({...valid,requirements:{...valid.requirements,details:{...details,acid:{species:'不應儲存'}}}});
+  assert.equal(onlyDust.requirements.details.acid,undefined);
+});
 test('rejects bad consent, contact and out-of-range conditions',()=>{
   assert.throws(()=>validateSubmission({...valid,consent:false}));
   assert.throws(()=>validateSubmission({...valid,contact:{...valid.contact,email:'bad'}}));
