@@ -4,10 +4,32 @@ const submitStatus=document.getElementById('submit-status');
 const submitButton=document.getElementById('submit-needs');
 const apiBase=(window.BESTA_NEEDS_API_BASE||'').replace(/\/$/,'');
 let requestId=crypto.randomUUID();
+const detailPanels=[...document.querySelectorAll('.need-panel')];
+function selectedNeeds(){return [...needsForm.querySelectorAll('[name="pollutants"]:checked')].map(x=>x.value);}
+function syncDetails(){
+  const selected=new Set(selectedNeeds());
+  for(const panel of detailPanels){const active=selected.has(panel.dataset.need);panel.hidden=!active;panel.disabled=!active;}
+  document.getElementById('select-hint').hidden=selected.size>0;
+  updateDustLoading();
+}
+function updateDustLoading(){
+  const output=document.getElementById('dust-loading');
+  const flow=Number(needsForm.elements.flow.value),concentration=Number(needsForm.elements['dust.inletConcentration'].value);
+  const basis=needsForm.elements.flowBasis.value,dryness=needsForm.elements.flowDryness.value;
+  const compatible=needsForm.elements.flow.value!==''&&needsForm.elements['dust.inletConcentration'].value!==''&&Number.isFinite(flow)&&Number.isFinite(concentration)&&flow>0&&concentration>=0&&basis!=='unknown'&&dryness!=='unknown'&&needsForm.elements['dust.concentrationBasis'].value===`${basis}-${dryness}`;
+  output.hidden=!selectedNeeds().includes('dust')||!compatible;
+  if(!output.hidden)output.textContent=`依已填資料估算入口粉塵量：${(flow*concentration/1e6).toLocaleString('zh-TW',{maximumFractionDigits:4})} kg/h（風量與濃度同為${basis==='normal'?'標準狀態':'實際工況'}、${dryness==='dry'?'乾基':'濕基'}）。`;
+}
+needsForm.querySelectorAll('[name="pollutants"]').forEach(el=>el.addEventListener('change',syncDetails));
+needsForm.addEventListener('input',updateDustLoading);
+syncDetails();
 needsForm.elements.flowBasis.addEventListener('change',()=>{
   const basis=needsForm.elements.flowBasis.value;
   document.getElementById('flow-unit').textContent=basis==='normal'?'Nm³/h':basis==='actual'?'m³/h':'單位待確認';
+  updateDustLoading();
 });
+needsForm.elements['dust.concentrationBasis'].addEventListener('change',updateDustLoading);
+needsForm.elements.flowDryness.addEventListener('change',updateDustLoading);
 if(!apiBase){submitButton.disabled=true;submitStatus.textContent='需求工具目前為介面測試版；資料庫與通知服務完成部署後才開放送出。';}
 else{
   submitButton.disabled=true;submitStatus.textContent='正在確認需求服務狀態…';
@@ -18,9 +40,17 @@ else{
 }
 
 function readRequirements(form){
+  const pollutants=form.getAll('pollutants');
+  const details={};
+  for(const type of pollutants){
+    const panel=detailPanels.find(x=>x.dataset.need===type);
+    if(!panel)continue;
+    details[type]={};
+    for(const field of panel.querySelectorAll('[name]'))details[type][field.name.slice(type.length+1)]=form.get(field.name);
+  }
   return {
-    industry:form.get('industry'),process:form.get('process'),pollutants:form.getAll('pollutants'),
-    pollutantDetails:form.get('pollutantDetails'),flow:form.get('flow'),flowBasis:form.get('flowBasis'),temperature:form.get('temperature'),humidity:form.get('humidity'),hoursPerDay:form.get('hoursPerDay'),
+    industry:form.get('industry'),process:form.get('process'),pollutants,details,
+    flow:form.get('flow'),flowBasis:form.get('flowBasis'),flowDryness:form.get('flowDryness'),temperature:form.get('temperature'),pressure:form.get('pressure'),humidity:form.get('humidity'),hoursPerDay:form.get('hoursPerDay'),daysPerYear:form.get('daysPerYear'),
     target:form.get('target'),constraints:form.get('constraints'),location:form.get('location')
   };
 }
