@@ -2,6 +2,8 @@
 
 此服務供 GitHub Pages 的 `needs/` 客戶頁使用。GitHub Pages 只提供公開靜態檔案；MongoDB 連線、OpenAI 金鑰、SMTP 帳密與客戶資料只能放在本服務及受保護資料庫，**不可放在 GitHub 儲存庫或 `needs/config.js`**。
 
+若要依目前程式直接上線，請照 [Atlas＋Render＋Brevo 逐步部署指南](DEPLOYMENT-ATLAS-RENDER-BREVO.md)。Render 免費 Web Service 會封鎖常用 SMTP 連接埠，因此此 SMTP 架構要選付費 Web Service；Atlas 免費 M0 無備份，正式保存客戶資料建議選有每日備份的 Flex 或更高等級。
+
 ## 啟用
 
 1. 建立由公司掌控的 MongoDB Atlas 資料庫及最小權限的應用程式帳號，資料庫名稱建議 `besta_needs`，啟用 TLS、備份與 IP／網路存取限制。此程式第一次連線時會建立 `customer_needs` 集合、唯一需求編號索引，以及到期刪除索引。
