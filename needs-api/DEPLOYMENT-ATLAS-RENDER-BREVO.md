@@ -40,7 +40,7 @@ NOTIFY_TO=info@bestasv.vn
 | Language | Node |
 | Build Command | `npm ci` |
 | Start Command | `npm start` |
-| Compute | 付費 Web Service；免費服務封鎖 25／465／587 SMTP 連接埠 |
+| Compute | 正式對客戶開放建議付費常駐 Web Service；免費服務可先測試，但會休眠且封鎖 25／465／587 埠 |
 | Health Check Path | `/api/health` |
 
 在 Render 的 **Environment** 設定下列變數。值只填在 Render，不寫進儲存庫或公開的 `needs/config.js`。
@@ -64,10 +64,12 @@ DATA_RETENTION_DAYS=365
 
 `PORT` 可不填，由 Render 提供。`ADMIN_API_TOKEN` 只供受保護後台 API 查詢與補寄，不能放進公開網頁。Render 預設會給一個 HTTPS `onrender.com` 位址。
 
+若只是用虛構資料驗收、暫時使用 Render 免費 Web Service，Brevo 也支援 `SMTP_PORT=2525` 作為 587 被封鎖時的替代埠。程式仍要求 STARTTLS；需實際驗證該組帳號與伺服器可成功協商 TLS、收到測試信。免費服務閒置 15 分鐘會休眠，下一次請求可能需要約一分鐘恢復，不宜直接當正式客戶入口。
+
 ## 4. 接回 GitHub Pages 並驗收
 
 1. 後端啟動成功後，用瀏覽器讀取 `https://<Render 網址>/api/health`，應顯示 `ready:true`。若失敗，先檢查 Atlas 網路存取、資料庫使用者和 Render 日誌。
 2. 把 Render HTTPS 位址填入公開頁 `needs/config.js` 的 `BESTA_NEEDS_API_BASE`，部署到手機預覽分支後，送出按鈕才會開啟。**只填 URL，不填任何金鑰。**
 3. 用虛構公司與聯絡資料從手機送一次，逐一核對：頁面出現需求編號、Atlas `customer_needs` 出現同編號記錄、公司信箱收到通知、推薦連結指向公司產品。測試 AI 失敗及寄信失敗情境，確認資料仍保留且可人工追蹤。這四項未通過前不要收集真實客戶資料。
 
-參考：[Atlas 建立資料庫與連線](https://www.mongodb.com/docs/atlas/connect-to-database-deployment/)、[Atlas 備份差異](https://www.mongodb.com/docs/atlas/manage-clusters/)、[Render 部署子資料夾](https://render.com/docs/your-first-deploy)、[Render 連線 Atlas](https://render.com/docs/connect-to-mongodb-atlas)、[Render 免費服務限制](https://render.com/docs/free)、[Brevo SMTP 設定](https://help.brevo.com/hc/en-us/articles/7924908994450-Send-transactional-emails-using-Brevo-SMTP)。
+參考：[Atlas 建立資料庫與連線](https://www.mongodb.com/docs/atlas/connect-to-database-deployment/)、[Atlas 備份差異](https://www.mongodb.com/docs/atlas/manage-clusters/)、[Render 部署子資料夾](https://render.com/docs/your-first-deploy)、[Render 連線 Atlas](https://render.com/docs/connect-to-mongodb-atlas)、[Render 免費服務限制](https://render.com/docs/free)、[Brevo SMTP 設定](https://help.brevo.com/hc/en-us/articles/7924908994450-Send-transactional-emails-using-Brevo-SMTP)、[Brevo 2525 埠說明](https://help.brevo.com/hc/en-us/articles/10905415650322-Which-SMTP-port-should-I-use-Port-587-465-or-2525)。

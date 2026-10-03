@@ -2,7 +2,7 @@
 
 此服務供 GitHub Pages 的 `needs/` 客戶頁使用。GitHub Pages 只提供公開靜態檔案；MongoDB 連線、OpenAI 金鑰、SMTP 帳密與客戶資料只能放在本服務及受保護資料庫，**不可放在 GitHub 儲存庫或 `needs/config.js`**。
 
-若要依目前程式直接上線，請照 [Atlas＋Render＋Brevo 逐步部署指南](DEPLOYMENT-ATLAS-RENDER-BREVO.md)。Render 免費 Web Service 會封鎖常用 SMTP 連接埠，因此此 SMTP 架構要選付費 Web Service；Atlas 免費 M0 無備份，正式保存客戶資料建議選有每日備份的 Flex 或更高等級。
+若要依目前程式直接上線，請照 [Atlas＋Render＋Brevo 逐步部署指南](DEPLOYMENT-ATLAS-RENDER-BREVO.md)。Render 免費 Web Service 會封鎖 25／465／587 埠；Brevo 可用 2525 做虛構資料測試，但正式對客戶開放建議選常駐的付費 Web Service。Atlas 免費 M0 無備份，正式保存客戶資料建議選有每日備份的 Flex 或更高等級。
 
 ## 啟用
 
