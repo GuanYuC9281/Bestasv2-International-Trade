@@ -21,6 +21,8 @@
   display: inline-flex;
   align-items: center;
   gap: 13px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   color: #173b52;
   font-size: 22px;
   font-weight: 750;
@@ -29,8 +31,8 @@
   text-decoration: none;
 }
 .site-header .site-brand img { width: 48px; height: 38px; object-fit: contain; flex: none; }
-.site-header .site-brand span { display: block; font-size: inherit; letter-spacing: inherit; margin: 0; }
-.site-header .site-brand small { display: block; margin-top: 5px; color: #5b7180; font: 11px/1.2 "Microsoft JhengHei", sans-serif; letter-spacing: .12em; }
+.site-header .site-brand span { display: inline-flex; align-items: baseline; gap: 9px; font-size: inherit; letter-spacing: inherit; margin: 0; white-space: nowrap; }
+.site-header .site-brand small { display: inline; margin: 0; color: #5b7180; font: 11px/1.2 "Microsoft JhengHei", sans-serif; letter-spacing: .12em; }
 .site-nav {
   display: flex;
   align-items: stretch;
@@ -68,7 +70,11 @@
   .site-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 12px; gap: 0; overflow: visible; white-space: normal; }
   .converter-site-header .site-nav { padding-right: 12px; padding-left: 12px; }
   .site-header .site-nav a { min-height: 44px; justify-content: center; padding: 9px 4px; font-size: 12px; text-align: center; }
-  .site-header .site-brand { font-size: 19px; gap: 10px; }
-  .site-header .site-brand img { width: 42px; height: 34px; }
-  .site-header .site-brand small { font-size: 10px; }
+  .site-header .site-brand { font-size: 17px; gap: 8px; }
+  .site-header .site-brand img { width: 38px; height: 31px; }
+  .site-header .site-brand span { gap: 6px; }
+  .site-header .site-brand small { font-size: 9px; letter-spacing: .04em; }
+}
+@media (max-width: 300px) {
+  .converter-site-header .home-link { display: none; }
 }
