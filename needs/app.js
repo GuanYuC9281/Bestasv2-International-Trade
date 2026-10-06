@@ -30,7 +30,7 @@ needsForm.elements.flowBasis.addEventListener('change',()=>{
 });
 needsForm.elements['dust.concentrationBasis'].addEventListener('change',updateDustLoading);
 needsForm.elements.flowDryness.addEventListener('change',updateDustLoading);
-if(!apiBase){submitButton.disabled=true;submitStatus.textContent='需求工具目前為介面測試版；資料庫與通知服務完成部署後才開放送出。';}
+if(!apiBase){submitButton.disabled=true;submitStatus.textContent='正式送出尚未開放。可使用虛構聯絡資料測試推薦；測試不會傳送、寄信或儲存資料。';}
 else{
   submitButton.disabled=true;submitStatus.textContent='正在確認需求服務狀態…';
   fetch(`${apiBase}/api/health`,{cache:'no-store'}).then(async response=>{
@@ -67,6 +67,13 @@ function showRecommendation(data){
   for(const question of data.missing)missing.append(textElement('li','',question));
   box.hidden=false;box.scrollIntoView({behavior:'smooth',block:'start'});
 }
+document.getElementById('test-needs').addEventListener('click',()=>{
+  if(!needsForm.reportValidity())return;
+  const requirements=readRequirements(new FormData(needsForm));
+  if(!requirements.pollutants.length){submitStatus.textContent='請至少選擇一項需求項目。';return;}
+  showRecommendation(window.BestaPreview.recommend(requirements));
+  submitStatus.textContent='測試完成：只在本機產生規則初篩結果，沒有傳送、寄信或儲存客戶資料；正式 AI 結果可能不同。';
+});
 needsForm.addEventListener('submit',async event=>{
   event.preventDefault();
   if(!apiBase)return;

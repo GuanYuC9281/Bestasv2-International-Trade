@@ -8,14 +8,13 @@
   <link rel="stylesheet" href="../engineering/style.css">
   <link rel="stylesheet" href="style.css">
   <script defer src="config.js"></script>
-  <script defer src="../engineering/engine.js"></script>
-  <script defer src="../engineering/app.js"></script>
+  <script defer src="preview.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
-  <header><a class="brand" href="../index.html">BESTA<span>NEEDS TOOL</span></a><a class="back" href="../index.html">風量換算 ↗</a></header>
+  <header><a class="brand" href="../index.html">BESTA<span>NEEDS TOOL</span></a><a class="back" href="../calculator/">計算工具 ↗</a></header>
   <main>
-    <section class="hero"><div><p class="eyebrow">BESTA / 需求工具</p><h1>先說明現場，<br>再找合適的設備。</h1><p>選擇粉塵、廢氣、油煙或通風等現場問題，填寫對應的工程資料表；完成聯絡資訊後，取得貝達基銘現有產品的初步搭配建議。實際選型仍由工程人員依現場資料確認。</p><p id="preview-notice" class="preview-notice">介面預覽中：收件與推薦服務尚未開放，請勿填入真實客戶資料。下方計算工具可先試用。</p></div><div class="hero-index"><span>01</span><p>選擇現場問題</p><span>02</span><p>填寫專屬資料表</p><span>03</span><p>留下聯絡資訊</p><span>04</span><p>取得初步建議</p></div></section>
+    <section class="hero"><div><p class="eyebrow">BESTA / 需求工具</p><h1>先說明現場，<br>再找合適的設備。</h1><p>選擇粉塵、廢氣、油煙或通風等現場問題，填寫對應的工程資料表；完成聯絡資訊後，取得貝達基銘現有產品的初步搭配建議。實際選型仍由工程人員依現場資料確認。</p><p id="preview-notice" class="preview-notice">介面預覽中：收件與推薦服務尚未開放，請勿填入真實客戶資料。計算工具已移至獨立頁面，可先試用。</p></div><div class="hero-index"><span>01</span><p>選擇現場問題</p><span>02</span><p>填寫專屬資料表</p><span>03</span><p>留下聯絡資訊</p><span>04</span><p>取得初步建議</p></div></section>
 
     <form id="needs-form" novalidate>
       <section class="form-section" aria-labelledby="needs-title"><div class="section-head"><span>01 / 現場條件</span><h2 id="needs-title">請描述您的需求</h2><p>資料越完整，初步推薦越有參考價值。尚未取得的數據可留空，系統會列出需補充的項目。</p></div>
@@ -59,19 +58,14 @@
       </div></section>
       <section class="form-section contact-section" aria-labelledby="contact-title"><div class="section-head"><span>03 / 聯絡資訊</span><h2 id="contact-title">取得初步建議</h2><p>送出後，需求將保存於貝達基銘的受保護資料庫，並通知公司公開聯絡信箱。初步推薦會顯示在本頁。</p></div>
         <div class="form-grid"><label>客戶公司 <b>*</b><input name="company" maxlength="120" autocomplete="organization" required></label><label>聯絡人 <b>*</b><input name="name" maxlength="100" autocomplete="name" required></label><label>聯絡電話 <b>*</b><input name="phone" type="tel" maxlength="40" autocomplete="tel" required></label><label>聯絡信箱 <b>*</b><input name="email" type="email" maxlength="254" autocomplete="email" required></label></div>
-        <div class="consent"><label><input name="consent" type="checkbox" required>我同意貝達基銘為需求評估、回覆與後續聯繫保存及使用上述資料；聯絡欄位不會送交 AI 分析。請勿在製程描述填寫個資。可透過 <a href="mailto:info@bestasv.vn">info@bestasv.vn</a> 申請查詢或刪除。</label><a href="https://bestasv.com/zh/privacy-policy.html" target="_blank" rel="noopener noreferrer">查看隱私權聲明 ↗</a></div>
+        <div class="consent"><label><input name="consent" type="checkbox" required>我了解測試送出只在本機產生規則初篩，不會傳送或保存資料；若使用正式送出，我同意貝達基銘為需求評估、回覆與後續聯繫保存及使用上述資料。聯絡欄位不會送交 AI 分析。可透過 <a href="mailto:info@bestasv.vn">info@bestasv.vn</a> 申請查詢或刪除。</label><a href="https://bestasv.com/zh/privacy-policy.html" target="_blank" rel="noopener noreferrer">查看隱私權聲明 ↗</a></div>
         <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="submit-row"><button type="submit" id="submit-needs">送出需求並查看推薦 <span>↗</span></button><p id="submit-status" role="status" aria-live="polite"></p></div>
+        <div class="submit-row"><button type="button" id="test-needs">測試送出並查看推薦 <span>↗</span></button><button type="submit" id="submit-needs">正式送出需求 <span>↗</span></button><p id="submit-status" role="status" aria-live="polite"></p></div>
       </section>
     </form>
     <section id="recommendation" class="recommendation" hidden aria-live="polite"><div class="section-head"><span>04 / 初步建議</span><h2>可先評估的設備與方案</h2><p id="recommendation-summary"></p></div><div id="recommendation-items" class="recommendation-grid"></div><div class="missing"><h3>下一步需確認</h3><ul id="recommendation-missing"></ul></div><p class="fineprint">本結果僅供需求初篩，不代表排放達標、設備規格、效率或報價承諾；請由工程人員核對污染物性質、工況與法規要求。</p></section>
 
-    <section class="calculator" aria-labelledby="calculator-title"><div class="calculator-intro"><p class="eyebrow">ENGINEERING REFERENCE</p><h2 id="calculator-title">計算工具</h2><p>可先自行估算空污防制與廢氣熱交換條件。範例預設值不是您的現場數據，請逐一修改。此處的計算在瀏覽器進行，不會自動附加到需求表單。</p></div>
-      <div class="actions"><button id="save" type="button">匯出計算紀錄</button><button id="load" type="button">載入紀錄</button><input id="file" type="file" accept=".json" hidden><button id="reset" type="button">重設本工具</button></div>
-      <nav class="switch" aria-label="工具種類"><button data-group="air" class="active" type="button">01 <span>空污防制設計</span></button><button data-group="heat" type="button">02 <span>廢氣熱交換降溫</span></button></nav>
-      <div class="workspace"><nav id="modules" aria-label="計算模組"></nav><section id="panel"><div class="panel-heading"><span id="module-number"></span><h2 id="title"></h2></div><p id="note" class="note"></p><div class="work"><form id="inputs" novalidate></form><aside class="results"><p class="caption">計算結果</p><div id="result" aria-live="polite"></div></aside></div></section></div>
-      <p id="status" role="status"></p><details id="export-preview" hidden><summary>查看／複製本次匯出紀錄</summary><p>內容為目前兩套工具的輸入與結果。</p><textarea id="export-content" readonly rows="8" aria-label="匯出紀錄 JSON"></textarea></details>
-    </section>
+    <p class="separate-link"><a href="../fan-selection/">風機選型獨立頁 ↗</a>　<a href="../calculator/">前往計算工具 ↗</a></p>
     <footer><span>BESTA SV · NEEDS TOOL</span><small>估算結果須經工程覆核。Nm³ 以 0°C、101.325 kPa 為基準。</small></footer>
   </main>
 </body>
