@@ -1,0 +1,32 @@
+.recommendation-card a.recommendation-card-media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 205px;
+  margin: -23px -23px 20px;
+  padding: 15px;
+  overflow: hidden;
+  border-bottom: 1px solid #d7dddf;
+  background: #edf1f1;
+}
+.recommendation-card .recommendation-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.recommendation-card a.recommendation-card-media:hover { background: #e5ebeb; }
+.recommendation-image-credit {
+  position: absolute;
+  right: 9px;
+  bottom: 7px;
+  padding: 3px 5px;
+  background: rgba(255,255,255,.85);
+  color: #617480;
+  font-size: 10px;
+  line-height: 1.3;
+}
+@media (max-width: 650px) {
+  .recommendation-card a.recommendation-card-media { height: 195px; }
+}
