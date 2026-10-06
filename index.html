@@ -9,6 +9,8 @@
   <link rel="canonical" href="https://bestasv.com/zh/converter.html">
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="converter.css">
+  <script src="pressure-loss.js" defer></script>
+  <script src="pressure-loss-ui.js" defer></script>
   <script src="converter.js" defer></script>
 </head>
 <body>
@@ -16,11 +18,12 @@
   <header><div class="header-inner"><a class="brand" href="https://bestasv.com/zh/"><img src="logo.png" alt="" width="42" height="42"><span>貝達國際貿易<small>BESTA SV CO., LTD.</small></span></a><a class="home-link" href="https://bestasv.com/zh/">返回官網</a></div></header>
   <main id="main">
     <div class="breadcrumb"><a href="https://bestasv.com/zh/">首頁</a><span>／</span>風壓風量風速換算表</div>
-    <p><a href="engineering/index.html">空污防制與廢氣熱交換工具（測試版） →</a></p><section class="intro"><h1>風壓風量風速換算表</h1></section>
+    <nav class="tool-links" aria-label="其他工具"><a href="needs/">需求工具</a><a href="calculator/">計算工具</a><a href="fan-selection/">風機選型需求</a></nav><section class="intro"><h1>風壓風量風速換算表</h1></section>
     <div class="tabs" role="tablist" aria-label="換算類型">
       <button id="tab-pressure" role="tab" aria-selected="true" aria-controls="pressure" tabindex="0">風壓換算器</button>
       <button id="tab-flow" role="tab" aria-selected="false" aria-controls="flow" tabindex="-1">風量換算器</button>
       <button id="tab-duct" role="tab" aria-selected="false" aria-controls="duct" tabindex="-1">風速風量換算器</button>
+      <button id="tab-loss" role="tab" aria-selected="false" aria-controls="loss" tabindex="-1">壓損計算</button>
     </div>
     <section class="panel" id="pressure" role="tabpanel" aria-labelledby="tab-pressure"><div class="section-head"><div><h2>風壓單位換算</h2><p>輸入任一欄位即可換算。</p></div><button class="reset" data-clear="pressure">清除</button></div><div class="unit-grid" id="pressure-fields"></div><p class="message" id="pressure-message" role="status"></p></section>
     <section class="panel" id="flow" role="tabpanel" aria-labelledby="tab-flow" hidden><div class="section-head"><div><h2>風量單位換算</h2><p>輸入任一欄位即可換算。</p></div><button class="reset" data-clear="flow">清除</button></div><div class="unit-grid" id="flow-fields"></div><p class="message" id="flow-message" role="status"></p></section>
@@ -32,6 +35,22 @@
         <p class="message" id="duct-message" role="status"></p>
       </form><div class="result" aria-live="polite" aria-atomic="true"><p id="result-label">計算風量</p><output id="duct-result">—</output><span id="result-unit">CMM · m³/min</span></div></div>
 
+    </section>
+    <section class="panel" id="loss" role="tabpanel" aria-labelledby="tab-loss" hidden><div class="section-head"><div><h2>風管壓損計算</h2><p>單一等截面風管段；風量須為該段實際工況 m³/h。預設氣體值對應約 20°C 的乾燥空氣，現場不同時請修改。</p></div><button class="reset" id="loss-clear" type="button">清除</button></div>
+      <div class="loss-layout"><form id="loss-form" novalidate><div class="loss-fields">
+        <label>風管形狀<select id="loss-shape"><option value="round">圓形</option><option value="rectangle">矩形</option></select></label>
+        <label>實際工況風量 <small>m³/h</small><input id="loss-flow" type="number" min="0.001" step="any" inputmode="decimal" placeholder="例如 3600"></label>
+        <label>直管長度 <small>m</small><input id="loss-length" type="number" min="0" step="any" inputmode="decimal" placeholder="例如 20"></label>
+        <label id="loss-diameter-wrap">圓管內徑 <small>mm</small><input id="loss-diameter" type="number" min="1" step="any" inputmode="decimal" placeholder="例如 400"></label>
+        <label id="loss-width-wrap" hidden>矩形內寬 <small>mm</small><input id="loss-width" type="number" min="1" step="any" inputmode="decimal"></label>
+        <label id="loss-height-wrap" hidden>矩形內高 <small>mm</small><input id="loss-height" type="number" min="1" step="any" inputmode="decimal"></label>
+        <label>氣體密度 <small>kg/m³</small><input id="loss-density" type="number" min="0.001" step="any" inputmode="decimal" value="1.204"></label>
+        <label>動力黏度 <small>Pa·s</small><input id="loss-viscosity" type="number" min="0.000000001" step="any" inputmode="decimal" value="0.0000181"></label>
+        <label>絕對粗糙度 <small>mm</small><input id="loss-roughness" type="number" min="0" step="any" inputmode="decimal" value="0.09"></label>
+        <label>局部阻力係數總和 ΣK <small>無因次</small><input id="loss-k" type="number" min="0" step="any" inputmode="decimal" placeholder="未取得可留空"></label>
+        <label>設備壓損 <small>Pa</small><input id="loss-equipment" type="number" min="0" step="any" inputmode="decimal" placeholder="濾器等，未取得可留空"></label>
+      </div></form><div class="loss-results" aria-live="polite"><h3>本段計算結果</h3><div id="loss-result">請輸入風量、長度與尺寸。</div><p class="message" id="loss-message" role="status"></p></div></div>
+      <details class="loss-method"><summary>計算依據與適用範圍</summary><p>直管摩擦損失依 Darcy–Weisbach：ΔP = f × (L/Dh) × (ρv²/2)；紊流的 Darcy 摩擦係數以 Colebrook–White 迭代求解，圓管層流採 f = 64/Re。局部損失為 ΣK × ρv²/2；矩形管紊流用水力直徑 Dh = 2ab/(a+b)。設備壓損需由廠商規格或實測提供。多段不同風量／管徑、分支、漏風、系統效應、重力與溫差不在本單段工具內，需逐段計算及工程覆核。</p><p>預設粗糙度 0.09 mm 取自 ASHRAE 鍍鋅風管實測平均值；<a href="https://handbook.ashrae.org/Handbooks/F17/SI/f17_ch21/f17_ch21_si.aspx" target="_blank" rel="noopener noreferrer">ASHRAE 風管設計章節 ↗</a> 同時說明非圓管水力直徑與配件損失。其 Example 6 直管公開結果為 7.7 Pa，本程式依同一案例算得約 7.61 Pa。NIST 的<a href="https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.2294.pdf" target="_blank" rel="noopener noreferrer">摩擦係數實測報告 ↗</a>中，銅管測值與 Colebrook 相關式在其試驗條件下相差約 ±3%；這不能直接當成您現場風管的誤差保證。</p></details>
     </section>
     <noscript><p class="note">請開啟 JavaScript 以使用即時換算功能。</p></noscript>
   </main><footer>© 2026 貝達國際貿易有限公司 <span>BESTA SV CO.LTD</span></footer>

@@ -1,13 +1,13 @@
 # 需求工具 API
 
-此服務供 GitHub Pages 的 `needs/` 客戶頁使用。GitHub Pages 只提供公開靜態檔案；MongoDB 連線、OpenAI 金鑰、SMTP 帳密與客戶資料只能放在本服務及受保護資料庫，**不可放在 GitHub 儲存庫或 `needs/config.js`**。
+此服務供 GitHub Pages 的 `needs/` 客戶需求頁與 `fan-selection/` 獨立風機選型頁使用。GitHub Pages 只提供公開靜態檔案；MongoDB 連線、OpenAI 金鑰、SMTP 帳密與客戶資料只能放在本服務及受保護資料庫，**不可放在 GitHub 儲存庫或 `needs/config.js`**。兩頁可先用本機規則測試候選結果，但本機測試不代表正式 AI 回覆。
 
 若要依目前程式直接上線，請照 [Atlas＋Render＋Brevo 逐步部署指南](DEPLOYMENT-ATLAS-RENDER-BREVO.md)。Render 免費 Web Service 會封鎖 25／465／587 埠；Brevo 可用 2525 做虛構資料測試，但正式對客戶開放建議選常駐的付費 Web Service。Atlas 免費 M0 無備份，正式保存客戶資料建議選有每日備份的 Flex 或更高等級。
 
 ## 啟用
 
 1. 建立由公司掌控的 MongoDB Atlas 資料庫及最小權限的應用程式帳號，資料庫名稱建議 `besta_needs`，啟用 TLS、備份與 IP／網路存取限制。此程式第一次連線時會建立 `customer_needs` 集合、唯一需求編號索引，以及到期刪除索引。
-2. 將本資料夾部署至支援 Node.js 20+ 的 HTTPS 後端平台。執行 `npm ci`，啟動指令 `npm start`。
+2. 從完整儲存庫部署本資料夾至支援 Node.js 20+ 的 HTTPS 後端平台；風機計算共用 `../fan-selection/fan.js`，因此部署檢出必須包含該目錄。執行 `npm ci`，啟動指令 `npm start`。
 3. 複製 `.env.example` 的項目至**部署平台的秘密環境變數**，不要上傳實際 `.env`。`MONGODB_URI` 應使用資料庫專用帳號；`ADMIN_API_TOKEN` 至少 32 個隨機字元。SMTP 收件人預設為官網公開信箱 `info@bestasv.vn`。
 4. 將 GitHub Pages 來源網域設成 `PUBLIC_ORIGIN=https://guanyuc9281.github.io`；把 `needs/config.js` 的 API 位址設為步驟 2 的 HTTPS 網址。
 5. 使用**虛構資料**驗收：先確認 `GET /api/health` 回傳 `ready:true`；提交後核對 MongoDB 文件、寄信狀態與推薦產品連結。不要把真實客戶個資放進測試紀錄或 GitHub issue。

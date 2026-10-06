@@ -20,6 +20,7 @@ const optionalNumber=(source,key,min,max,label)=>{
 function validateDetails(raw,selected){
   const details={};
   for(const need of selected){
+    if(need==='fan')continue;
     const source=raw?.[need];
     if(!source||typeof source!=='object'||Array.isArray(source))throw new Error(`請填寫${need}需求資料表。`);
     details[need]={};
@@ -36,17 +37,43 @@ function validateDetails(raw,selected){
   return details;
 }
 
+function validateFanSelection(raw){
+  if(raw==null)return null;
+  if(typeof raw!=='object'||Array.isArray(raw))throw new Error('風機選型資料格式不正確。');
+  const fan={
+    flow:optionalNumber(raw,'flow',0.001,1e9,'風機入口實際風量'),
+    pressure:optionalNumber(raw,'pressure',0.001,1e6,'風機壓力需求'),
+    pressureBasis:oneOf(raw.pressureBasis,['unknown','total','static']),
+    gasCondition:oneOf(raw.gasCondition,['unknown','clean','dust','corrosive','oil']),
+    temperature:optionalNumber(raw,'temperature',-50,1000,'風機入口溫度'),
+    outletFlow:optionalNumber(raw,'outletFlow',0.001,1e9,'風機出口實際風量'),
+    outletDiameter:optionalNumber(raw,'outletDiameter',1,10000,'風機出口直徑'),
+    density:optionalNumber(raw,'density',0.01,100,'風機出口氣體密度'),
+    totalEfficiency:optionalNumber(raw,'totalEfficiency',1,100,'風機全壓效率'),
+    driveType:oneOf(raw.driveType??'unknown',['unknown','direct','belt']),
+    driveEfficiency:optionalNumber(raw,'driveEfficiency',1,100,'傳動效率'),
+    motorMargin:optionalNumber(raw,'motorMargin',1,2,'馬達選用倍率'),
+    notes:text(raw.notes,400)
+  };
+  if(!fan.pressureBasis||!fan.gasCondition||!fan.driveType)throw new Error('風機選型選項無效。');
+  if(fan.pressure!==null&&fan.pressureBasis==='unknown')throw new Error('請確認風機壓力是全壓或靜壓。');
+  if(fan.driveType==='direct'&&fan.driveEfficiency!==null)throw new Error('直結風機不需填傳動效率。');
+  return fan;
+}
+
 export function validateSubmission(raw){
   if(!raw||typeof raw!=='object'||Array.isArray(raw))throw new Error('請填寫需求資料。');
   const r=raw.requirements||{}, c=raw.contact||{};
   const requirements={
-    industry:text(r.industry,80),process:text(r.process,600),pollutants:Array.isArray(r.pollutants)?[...new Set(r.pollutants.filter(x=>['dust','acid','voc','oil','odor','heat','ventilation','other'].includes(x)))]:[],
+    industry:text(r.industry,80),process:text(r.process,600),pollutants:Array.isArray(r.pollutants)?[...new Set(r.pollutants.filter(x=>['dust','acid','voc','oil','odor','heat','ventilation','fan','other'].includes(x)))]:[],
     flow:numeric(r.flow,0.001,1e9),flowBasis:oneOf(r.flowBasis,['actual','normal','unknown']),flowDryness:oneOf(r.flowDryness,['dry','wet','unknown']),temperature:numeric(r.temperature,-50,1000),pressure:numeric(r.pressure,1,1000),humidity:numeric(r.humidity,0,100),hoursPerDay:numeric(r.hoursPerDay,0.1,24),daysPerYear:numeric(r.daysPerYear,1,366),
     target:text(r.target,300),constraints:text(r.constraints,300),location:text(r.location,120)
   };
   const contact={company:text(c.company,120),name:text(c.name,100),phone:text(c.phone,40),email:text(c.email,254).toLowerCase()};
-  if(!requirements.industry||!requirements.process||requirements.pollutants.length===0)throw new Error('請填寫產業、製程與污染物類型。');
+  if(!requirements.industry||!requirements.process||requirements.pollutants.length===0)throw new Error('請填寫產業、製程與需求類型。');
   requirements.details=validateDetails(r.details,requirements.pollutants);
+  requirements.fanSelection=requirements.pollutants.includes('fan')?validateFanSelection(r.fanSelection):null;
+  if(requirements.pollutants.includes('fan')&&!requirements.fanSelection)throw new Error('請填寫風機選型資料表。');
   if(requirements.flow===null&&r.flow!==''&&r.flow!=null)throw new Error('風量超出允許範圍。');
   if(requirements.temperature===null&&r.temperature!==''&&r.temperature!=null)throw new Error('溫度超出允許範圍。');
   if(requirements.humidity===null&&r.humidity!==''&&r.humidity!=null)throw new Error('濕度超出允許範圍。');

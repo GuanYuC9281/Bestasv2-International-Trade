@@ -6,6 +6,10 @@ import {catalog} from '../src/catalog.js';
 import {makeNotice} from '../src/notice.js';
 import {detailSchema} from '../src/validation.js';
 import {readFileSync} from 'node:fs';
+import {createRequire} from 'node:module';
+import {screenFan} from '../src/fan-selection.js';
+const require=createRequire(import.meta.url);
+const {calculate:calculateFan}=require('../../fan-selection/fan.js');
 
 const valid={requirements:{industry:'金屬加工',process:'研磨乾式粉塵',pollutants:['dust'],flow:'18000',flowBasis:'actual',flowDryness:'wet',temperature:'60',humidity:'50',details:{dust:{material:'鋼件研磨',particleDensity:'7800',d50:'30',inletConcentration:'500',concentrationBasis:'actual-wet',moisture:'dry',combustible:'unknown'}}},contact:{company:'範例公司',name:'測試人',phone:'+886 2 1234 5678',email:'TEST@example.com'},consent:true};
 test('each customer category form matches the API field schema',()=>{
@@ -103,4 +107,55 @@ test('notification uses the company inbox and correct flow basis',()=>{
   assert.match(message.text,/18000 Nm³\/h/);
   assert.match(message.text,/粒子真密度 kg\/m³：7800/);
   assert.match(message.text,/待人工確認/);
+});
+
+test('fan duty uses actual flow, total pressure and explicitly supplied efficiency',()=>{
+  const duty=calculateFan({flow:30000,pressure:1800,pressureBasis:'total',totalEfficiency:75,driveType:'direct',motorMargin:1.2});
+  assert.equal(duty.airPower,15);
+  assert.equal(duty.shaftPower,20);
+  assert.equal(duty.motorRatingMin,24);
+  assert.equal(calculateFan({flow:30000,pressure:1800,pressureBasis:'total'}).shaftPower,null);
+  assert.equal(calculateFan({flow:30000,pressure:1800,pressureBasis:'unknown'}).airPower,null);
+  const belt=calculateFan({flow:30000,pressure:1800,pressureBasis:'total',totalEfficiency:75,driveType:'belt',driveEfficiency:80,motorMargin:1.2});
+  assert.ok(Math.abs(belt.motorRatingMin-30)<1e-12);
+  assert.equal(calculateFan({flow:30000,pressure:1800,pressureBasis:'total',totalEfficiency:75,driveType:'belt',motorMargin:1.2}).motorRatingMin,null);
+});
+
+test('static pressure converts to total only with outlet size and gas density',()=>{
+  const incomplete=calculateFan({flow:3600,pressure:1000,pressureBasis:'static'});
+  assert.equal(incomplete.totalPressure,null);
+  assert.equal(incomplete.airPower,null);
+  const duty=calculateFan({flow:3600,pressure:1000,pressureBasis:'static',outletFlow:3600,outletDiameter:1000,density:1.2});
+  const velocity=1/(Math.PI/4);
+  assert.ok(Math.abs(duty.totalPressure-(1000+0.5*1.2*velocity**2))<1e-10);
+  assert.ok(Math.abs(duty.airPower-duty.totalPressure/1000)<1e-10);
+});
+
+test('fan selection data is validated, retained, and screened into company series',()=>{
+  const input=validateSubmission({...valid,requirements:{...valid.requirements,pollutants:['dust','fan'],fanSelection:{flow:'30000',pressure:'1800',pressureBasis:'total',gasCondition:'dust',temperature:'60',totalEfficiency:'75',driveType:'direct',motorMargin:'1.2',notes:'風機在集塵器前'}}});
+  assert.equal(input.requirements.fanSelection.flow,30000);
+  const screened=screenFan(input.requirements);
+  assert.equal(screened.duty.motorRatingMin,24);
+  assert.deepEqual(screened.candidates.map(x=>x.id),['medium-radial-fan']);
+  const checked=validateRecommendation({summary:'需先確認',items:[{id:'pulse-bag',reason:'乾式粉塵'}],missing:[]},input.requirements);
+  assert.ok(checked.items.some(x=>x.id==='medium-radial-fan'));
+  assert.equal(checked.fanDuty.airPower,15);
+  const notice=makeNotice({requestId:'fan-test',...input,recommendation:checked},{from:'sender@example.invalid',to:'info@bestasv.vn'});
+  assert.match(notice.text,/空氣功率：15 kW/);
+  assert.match(notice.text,/風機入口實際風量：30000 m³\/h/);
+  assert.throws(()=>validateSubmission({...valid,requirements:{...valid.requirements,pollutants:['fan'],fanSelection:{flow:'30000',pressure:'1800',pressureBasis:'unknown',gasCondition:'dust'}}}));
+});
+
+test('fan selection is on its own page, separate from the needs and calculator pages',()=>{
+  const needsHtml=readFileSync(new URL('../../needs/index.html',import.meta.url),'utf8');
+  const fanHtml=readFileSync(new URL('../../fan-selection/index.html',import.meta.url),'utf8');
+  assert.doesNotMatch(needsHtml,/name="pollutants" value="fan"/);
+  assert.doesNotMatch(needsHtml,/id="modules"/);
+  assert.match(fanHtml,/id="fan-form"/);
+  for(const field of ['flow','pressure','pressureBasis','gasCondition','temperature','outletFlow','outletDiameter','density','totalEfficiency','driveType','driveEfficiency','motorMargin','notes'])assert.ok(fanHtml.includes(`name="fan.${field}"`));
+  const input=validateSubmission({...valid,requirements:{...valid.requirements,pollutants:['fan'],details:{},fanSelection:{flow:'12000',pressure:'1500',pressureBasis:'total',gasCondition:'clean'}}});
+  assert.deepEqual(input.requirements.pollutants,['fan']);
+  assert.deepEqual(Object.keys(input.requirements.details),[]);
+  assert.ok(screenFan(input.requirements).candidates.some(x=>x.id==='medium-backward-fan'));
+  assert.throws(()=>validateSubmission({...valid,requirements:{...valid.requirements,pollutants:['fan'],details:{},fanSelection:null}}));
 });
