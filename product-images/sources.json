@@ -1,0 +1,233 @@
+{
+  "bag": {
+    "source": "https://bestasv.com/images/products/equipment/bag-filter-collector.png",
+    "sourcePixels": [
+      1448,
+      1086
+    ],
+    "savedPixels": [
+      960,
+      720
+    ]
+  },
+  "cartridge": {
+    "source": "https://bestasv.com/images/products/equipment/cartridge-collector.png",
+    "sourcePixels": [
+      1448,
+      1086
+    ],
+    "savedPixels": [
+      960,
+      720
+    ]
+  },
+  "cyclone": {
+    "source": "https://bestasv.com/images/products/equipment/cyclone-collector.png",
+    "sourcePixels": [
+      1536,
+      1024
+    ],
+    "savedPixels": [
+      960,
+      640
+    ]
+  },
+  "esp": {
+    "source": "https://bestasv.com/images/products/building/electrostatic-main.png",
+    "sourcePixels": [
+      1086,
+      1448
+    ],
+    "savedPixels": [
+      540,
+      720
+    ]
+  },
+  "scrubber": {
+    "source": "https://bestasv.com/images/products/air-pollution/pp-spray-tower.png",
+    "sourcePixels": [
+      1000,
+      1000
+    ],
+    "savedPixels": [
+      720,
+      720
+    ]
+  },
+  "chemical-wash": {
+    "source": "https://bestasv.com/images/products/air-pollution/chemical-gas-main.png",
+    "sourcePixels": [
+      1086,
+      1448
+    ],
+    "savedPixels": [
+      540,
+      720
+    ]
+  },
+  "carbon": {
+    "source": "https://bestasv.com/images/products/equipment/activated-carbon-filter.png",
+    "sourcePixels": [
+      1536,
+      1024
+    ],
+    "savedPixels": [
+      960,
+      640
+    ]
+  },
+  "oil-wash": {
+    "source": "https://bestasv.com/images/products/air-pollution/oil-smoke-main.png",
+    "sourcePixels": [
+      1672,
+      941
+    ],
+    "savedPixels": [
+      960,
+      540
+    ]
+  },
+  "fan": {
+    "source": "https://bestasv.com/images/products/fans/high-pressure-backward-curved.png",
+    "sourcePixels": [
+      1024,
+      1536
+    ],
+    "savedPixels": [
+      480,
+      720
+    ]
+  },
+  "hp-forward": {
+    "source": "https://bestasv.com/images/products/fans/high-pressure-forward-curved.png",
+    "sourcePixels": [
+      1024,
+      1536
+    ],
+    "savedPixels": [
+      480,
+      720
+    ]
+  },
+  "medium-backward": {
+    "source": "https://bestasv.com/images/products/fans/medium-pressure-backward-curved-1.png",
+    "sourcePixels": [
+      1024,
+      1536
+    ],
+    "savedPixels": [
+      480,
+      720
+    ]
+  },
+  "axial": {
+    "source": "https://bestasv.com/images/products/fans/fan_product_05.png",
+    "sourcePixels": [
+      1024,
+      1024
+    ],
+    "savedPixels": [
+      720,
+      720
+    ]
+  },
+  "duct": {
+    "source": "https://bestasv.com/images/products/ventilation-parts/rectangular-duct.png",
+    "sourcePixels": [
+      1024,
+      1536
+    ],
+    "savedPixels": [
+      480,
+      720
+    ]
+  },
+  "paint": {
+    "source": "https://bestasv.com/images/products/air-pollution/paint-dust-main.png",
+    "sourcePixels": [
+      1448,
+      1086
+    ],
+    "savedPixels": [
+      960,
+      720
+    ]
+  },
+  "multi-cyclone": {
+    "source": "https://www.codanh.com/products/dry_air_filtration/multi-cyclone.webp",
+    "sourcePixels": [
+      345,
+      453
+    ],
+    "savedPixels": [
+      345,
+      453
+    ]
+  },
+  "wet-dust": {
+    "source": "https://www.codanh.com/products/wet_air_filtration/metal-grinding.webp",
+    "sourcePixels": [
+      340,
+      428
+    ],
+    "savedPixels": [
+      340,
+      428
+    ]
+  },
+  "wet-cyclone": {
+    "source": "https://www.codanh.com/products/wet_air_filtration/wet-cyclone.webp",
+    "sourcePixels": [
+      469,
+      696
+    ],
+    "savedPixels": [
+      469,
+      696
+    ]
+  },
+  "rto": {
+    "source": "https://www.codanh.com/products/dry_air_filtration/RTO.webp",
+    "sourcePixels": [
+      239,
+      219
+    ],
+    "savedPixels": [
+      239,
+      219
+    ]
+  },
+  "radial": {
+    "source": "https://www.codanh.com/products/fans/quat-ly-tam-canh-cong-huong-kinh.webp",
+    "sourcePixels": [
+      330,
+      330
+    ],
+    "savedPixels": [
+      330,
+      330
+    ]
+  },
+  "frp": {
+    "source": "https://www.codanh.com/products/anti-corrosion/FRP_Fan.webp",
+    "sourcePixels": [
+      330,
+      330
+    ],
+    "savedPixels": [
+      330,
+      330
+    ]
+  },
+  "oil-esp": {
+    "source": "https://www.codanh.com/products/dry_air_filtration/may-loc-tinh-dien.webp",
+    "sourcePixels": [
+      1055,
+      1090
+    ],
+    "savedPixels": [
+      697,
+      720
+    ]
+  }
+}

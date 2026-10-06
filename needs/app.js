@@ -60,9 +60,7 @@ function showRecommendation(data){
   document.getElementById('recommendation-summary').textContent=data.summary;
   grid.replaceChildren();missing.replaceChildren();
   for(const item of data.items){
-    const card=textElement('article','recommendation-card','');
-    card.append(textElement('span','tag',item.category),textElement('h3','',item.name),textElement('p','',item.reason));
-    const link=textElement('a','','查看官網產品 ↗');link.href=item.url;link.target='_blank';link.rel='noopener noreferrer';card.append(link);grid.append(card);
+    grid.append(window.BestaProductImages.card(item));
   }
   for(const question of data.missing)missing.append(textElement('li','',question));
   box.hidden=false;box.scrollIntoView({behavior:'smooth',block:'start'});

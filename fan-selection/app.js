@@ -19,7 +19,7 @@ function show(result){
   spec.replaceChildren(el('h3','所需規格初估'));
   const d=result.fanDuty;
   if(d)for(const row of [`入口實際風量：${fmt(d.flow,'m³/h')}`,`全壓：${fmt(d.totalPressure,'Pa')}`,`空氣功率：${fmt(d.airPower,'kW')}`,`軸功率：${fmt(d.shaftPower,'kW')}`,`馬達額定輸出下限：${fmt(d.motorRatingMin,'kW')}`])spec.append(el('p',row));
-  cards.replaceChildren();for(const item of result.items){const card=el('article','','recommendation-card');card.append(el('span',item.category,'tag'),el('h3',item.name),el('p',item.reason));const a=el('a','查看官網產品 ↗');a.href=item.url;a.target='_blank';a.rel='noopener noreferrer';card.append(a);cards.append(card);}
+  cards.replaceChildren();for(const item of result.items)cards.append(window.BestaProductImages.card(item));
   missing.replaceChildren();for(const gap of result.missing)missing.append(el('li',gap));
   box.hidden=false;box.scrollIntoView({behavior:'smooth',block:'start'});
 }

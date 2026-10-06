@@ -49,11 +49,6 @@
   const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
   function activate(tab) {
     tabs.forEach(item => { const active = item === tab; item.setAttribute('aria-selected', String(active)); item.tabIndex = active ? 0 : -1; get(item.getAttribute('aria-controls')).hidden = !active; });
-    const currentNav = tab.getAttribute('aria-controls') === 'loss' ? 'loss' : 'converter';
-    document.querySelectorAll('.site-nav [data-nav]').forEach(link => {
-      if (link.dataset.nav === currentNav) link.setAttribute('aria-current', 'page');
-      else link.removeAttribute('aria-current');
-    });
   }
   function activateHashTab() {
     const hash = location.hash.slice(1);
@@ -62,7 +57,6 @@
   }
   window.addEventListener('hashchange', activateHashTab);
   activateHashTab();
-  document.querySelector('.site-nav [data-nav="loss"]').addEventListener('click', () => activate(get('tab-loss')));
   tabs.forEach((tab, index) => {
     tab.addEventListener('click', () => activate(tab));
     tab.addEventListener('keydown', event => {
