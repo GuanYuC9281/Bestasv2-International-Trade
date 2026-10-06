@@ -1,6 +1,7 @@
 'use strict';
 const form=document.getElementById('fan-form'),status=document.getElementById('fan-status');
 const base=(window.BESTA_NEEDS_API_BASE||'').replace(/\/$/,'');
+const requestId=crypto.randomUUID();
 const keys=['flow','pressure','pressureBasis','gasCondition','temperature','outletFlow','outletDiameter','density','totalEfficiency','driveType','driveEfficiency','motorMargin','notes'];
 const el=(tag,text,className)=>{const n=document.createElement(tag);n.textContent=text;if(className)n.className=className;return n;};
 const fmt=(n,unit)=>n==null?'待確認':`${Number(Number(n).toPrecision(5)).toLocaleString('zh-TW')} ${unit}`;
@@ -35,5 +36,5 @@ form.addEventListener('submit',async event=>{
   event.preventDefault();if(!base||!form.reportValidity())return;
   const data=new FormData(form),payload={requirements:requirements(data),contact:{company:data.get('company'),name:data.get('name'),phone:data.get('phone'),email:data.get('email')},consent:data.get('consent')==='on'};
   submit.disabled=true;status.textContent='正在保存需求與產生初步建議…';
-  try{const response=await fetch(`${base}/api/needs`,{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':crypto.randomUUID()},body:JSON.stringify(payload),cache:'no-store'});const result=await response.json();if(!response.ok)throw Error(result.error||'送出失敗');if(result.recommendation)show(result.recommendation);status.textContent=`需求已保存（編號 ${result.requestId}）。${result.notification==='sent'?'公司已收到通知。':'通知待補送。'}`;form.querySelectorAll('input,select,textarea,button').forEach(x=>x.disabled=true);}catch(e){status.textContent=e.message;submit.disabled=false;}
+  try{const response=await fetch(`${base}/api/needs`,{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':requestId},body:JSON.stringify(payload),cache:'no-store'});const result=await response.json();if(!response.ok)throw Error(result.error||'送出失敗');if(result.recommendation)show(result.recommendation);status.textContent=`需求已保存（編號 ${result.requestId}）。${result.notification==='sent'?'公司已收到通知。':'通知待補送。'}`;form.querySelectorAll('input,select,textarea,button').forEach(x=>x.disabled=true);}catch(e){status.textContent=e.message;submit.disabled=false;}
 });
