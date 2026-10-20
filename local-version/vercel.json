@@ -5,6 +5,32 @@
   "outputDirectory": ".",
   "routes": [
     {
+      "src": "/(?:index\\.html)?",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?bestasv\\.vn"
+        }
+      ],
+      "status": 301,
+      "headers": {
+        "Location": "https://bestasv.vn/vn/"
+      }
+    },
+    {
+      "src": "/(?:index\\.html)?",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?bestasv\\.com"
+        }
+      ],
+      "status": 301,
+      "headers": {
+        "Location": "https://bestasv.com/zh/"
+      }
+    },
+    {
       "src": "/",
       "headers": {
         "Location": "https://bestasv.com/"

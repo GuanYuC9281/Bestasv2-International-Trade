@@ -23,18 +23,33 @@ for (const folder of ['zh', 'en', 'vn', 'jp', '__vn/vn']) {
       assert.equal(alternates.size, 0, `${label}: local site is outside the global translation cluster`);
     } else {
       for (const [targetLang, hreflang] of Object.entries(languages)) {
+        // The standalone converter exists only in Chinese; do not advertise missing translations.
+        if (file === 'converter.html') {
+          assert.equal(alternates.size, 0, `${label}: untranslated tool has no language alternates`);
+          continue;
+        }
         assert.equal(alternates.get(hreflang), canonical(targetLang, file), `${label}: reciprocal ${hreflang} alternate`);
       }
     }
     assert.ok(html.includes(`<html lang="${languages[lang]}"`), `${label}: correct document language`);
     for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
       const data = JSON.parse(match[1]);
-      if (lang === 'vn') {
-        for (const node of data['@graph'] || [data]) {
-          if (node['@type'] === 'WebPage') assert.equal(node.url, canonical(lang, file, vietnamHost), `${label}: schema page URL`);
+      for (const node of data['@graph'] || [data]) {
+        if (node['@type'] === 'WebPage') assert.equal(node.url, canonical(lang, file, vietnamHost), `${label}: schema page URL`);
+        if (node['@type'] === 'Organization') {
+          assert.equal(node.address.streetAddress, 'D2/10A Đoàn Nguyễn Tuân', `${label}: street address`);
+          assert.equal(node.address.addressLocality, 'Bình Chánh', `${label}: locality`);
+          assert.equal(node.address.postalCode, '71810', `${label}: postal code`);
+          assert.equal(node.address.addressCountry, 'VN', `${label}: country`);
+          assert.ok(node.alternateName.includes('BESTA'), `${label}: short brand name`);
+          assert.ok(node.alternateName.includes('CÔNG TY TNHH TM SX & DV BESTA SV'), `${label}: full company name`);
         }
+        if (node['@type'] === 'WebSite') assert.equal(node.url, `https://bestasv.${vietnamHost ? 'vn' : 'com'}/`, `${label}: website domain`);
       }
     }
+    assert.ok(/<title>[^<]*besta/i.test(html), `${label}: searchable brand in title`);
+    assert.ok(!/木柵|Muzha|info@codanh\.com/i.test(html), `${label}: obsolete contact details removed`);
+    if (file !== 'converter.html') assert.ok(html.includes('D2/10A Đoàn Nguyễn Tuân, Bình Chánh, Vietnam, 71810'), `${label}: visible address`);
     pageCount++;
   }
 }
@@ -66,12 +81,8 @@ for (const file of ['index.html', 'about.html', 'contact.html']) {
   const global = fs.readFileSync(path.join(site, 'vn', file), 'utf8');
   const mainText = html => html.split('<!-- Hero Section -->')[1].split('<!-- Footer -->')[0]
     .replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-  if (file === 'index.html') {
-    assert.equal(mainText(local), mainText(global), `${file}: match global Vietnamese homepage`);
-  } else {
-    assert.notEqual(mainText(local), mainText(global), `${file}: preserved local company content`);
-    assert.ok(mainText(local).includes('0318644214'), `${file}: visible company identity`);
-  }
+  assert.notEqual(mainText(local), mainText(global), `${file}: distinct local company content`);
+  assert.ok(mainText(local).includes('0318644214'), `${file}: visible company identity`);
   assert.equal((local.match(/<h1[ >]/g) || []).length, 1, `${file}: one primary heading`);
   const graph = JSON.parse(local.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
   assert.equal(graph.find(node => node['@type'] === 'Organization').taxID, '0318644214');
@@ -82,9 +93,17 @@ for (const configFile of ['vercel.json', 'local-version/vercel.json']) {
   const matches = (route, pathname, host) => route.src && new RegExp(`^${route.src}$`).test(pathname)
     && (route.has || []).every(condition => condition.type === 'host' && new RegExp(`^${condition.value}$`).test(host));
   for (const host of ['bestasv.vn', 'www.bestasv.vn']) {
+    for (const pathname of ['/', '/index.html']) {
+      assert.equal(config.routes.find(route => matches(route, pathname, host)).headers.Location, 'https://bestasv.vn/vn/', `${configFile}: Vietnam entry stays in Vietnam`);
+    }
     assert.equal(config.routes.find(route => matches(route, '/vn/', host)).dest, '/__vn/vn/index.html');
     assert.equal(config.routes.find(route => matches(route, '/robots.txt', host)).dest, '/robots-vn.txt');
     assert.equal(config.routes.find(route => matches(route, '/sitemap.xml', host)).dest, '/sitemap-vn.xml');
+  }
+  for (const host of ['bestasv.com', 'www.bestasv.com']) {
+    for (const pathname of ['/', '/index.html']) {
+      assert.equal(config.routes.find(route => matches(route, pathname, host)).headers.Location, 'https://bestasv.com/zh/', `${configFile}: global entry`);
+    }
   }
   for (const pathname of ['/vn/', '/robots.txt', '/sitemap.xml']) {
     assert.equal(config.routes.find(route => matches(route, pathname, 'bestasv.com')), undefined, `${configFile}: global files remain direct`);

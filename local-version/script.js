@@ -6,7 +6,7 @@ const translations = {
     'zh-TW': {
         companyName: '貝達國際貿易有限公司',
         phone: '+886-985-328-164',
-        address: '台北市文山區木柵路二段',
+        address: 'D2/10A Đoàn Nguyễn Tuân, Bình Chánh, Vietnam, 71810',
         nav: {
             home: '首頁',
             about: '關於我們',
@@ -99,7 +99,7 @@ const translations = {
     'en': {
         companyName: 'Besta SV International Trade Co., Ltd.',
         phone: '+886-985-328-164',
-        address: 'Section 2, Muzha Road, Wenshan District, Taipei City',
+        address: 'D2/10A Đoàn Nguyễn Tuân, Bình Chánh, Vietnam, 71810',
         nav: {
             home: 'Home',
             about: 'About Us',
@@ -192,7 +192,7 @@ const translations = {
     'ja': {
         companyName: 'ベスタ国際貿易株式会社',
         phone: '+886-985-328-164',
-        address: '台北市文山区木柵路二段',
+        address: 'D2/10A Đoàn Nguyễn Tuân, Bình Chánh, Vietnam, 71810',
         nav: {
             home: 'ホーム',
             about: '会社概要',
@@ -290,7 +290,7 @@ const translations = {
     'vn': {
         companyName: 'Công Ty TNHH Thương Mại Quốc Tế Besta SV',
         phone: '+886-985-328-164',
-        address: 'Đoạn 2, Đường Muzha, Quận Wenshan, Thành phố Đài Bắc',
+        address: 'D2/10A Đoàn Nguyễn Tuân, Bình Chánh, Vietnam, 71810',
         nav: {
             home: 'Trang chủ',
             about: 'Về chúng tôi',
