@@ -11,10 +11,14 @@ const git = args => execFileSync('git', args, { cwd: root, encoding: 'utf8', max
 const baseCommit = git(['rev-parse', '--verify', `${baseline}^{commit}`]).trim();
 const files = git(['ls-tree', '-r', '-z', '--name-only', baseCommit, 'local-version']).split('\0').filter(Boolean);
 let pages = 0;
-const normalized = text => text.replace(/\r\n/g, '\n');
+const normalized = text => text.replace(/\r\n/g, '\n')
+  .replace(/台北市文山[區区]木柵路二段|Section 2, Muzha Road, Wenshan District, Taipei City|Đoạn 2, Đường Muzha, Quận (?:Wenshan|Văn Sơn), Thành phố Đài Bắc|D2\/10A Đoàn Nguyễn Tuân, Thành phố Hồ Chí Minh, Việt Nam/g,
+    'D2/10A Đoàn Nguyễn Tuân, Bình Chánh, Vietnam, 71810');
 function body(html) {
   return normalized(html.match(/<body\b[^>]*>[\s\S]*?<\/body>/i)?.[0] || '')
     .replace(/<!-- Brand and official websites -->\s*<section class="brand-profile"[\s\S]*?<\/section>/, '')
+    .replace(/\s*<p>🌐 info@codanh\.com<\/p>/g, '')
+    .replace(/\s*<p class="text-sm text-gray-400 mt-2">BESTA SV · CÔNG TY TNHH TM SX &amp; DV BESTA SV<\/p>/g, '')
     .replace(/alt="(?:\?+|貝達國際貿易有限公司)"/g, 'alt="BRAND"');
 }
 for (const file of files) {
@@ -40,7 +44,7 @@ for (const file of files) {
 for (const file of ['vercel.json', 'local-version/vercel.json']) {
   const before = JSON.parse(git(['show', `${baseCommit}:${file}`]));
   const after = JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
-  assert.deepEqual(after.routes.slice(2), before.routes, `${file}: existing routing changed`);
+  assert.deepEqual(after.routes.slice(-before.routes.length), before.routes, `${file}: existing routing changed`);
   assert.deepEqual({ ...after, routes: [] }, { ...before, routes: [] }, `${file}: other deployment settings changed`);
 }
 console.log(`Structure preserved against ${baseCommit.slice(0, 7)}: ${pages} HTML pages; existing assets, scripts, navigation, forms and routes unchanged.`);

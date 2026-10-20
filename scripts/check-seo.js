@@ -27,6 +27,9 @@ for (const folder of ['zh', 'en', 'vn', 'jp', '__vn/vn']) {
       }
     }
     assert.ok(html.includes(`<html lang="${languages[lang]}"`), `${label}: correct document language`);
+    assert.ok(/<title>[^<]*besta/i.test(html), `${label}: searchable brand in title`);
+    assert.ok(!/木柵|Muzha|info@codanh\.com/i.test(html), `${label}: obsolete contact details removed`);
+    assert.ok(html.includes('D2/10A Đoàn Nguyễn Tuân, Bình Chánh, Vietnam, 71810'), `${label}: visible address`);
     if (lang === 'zh') {
       for (const id of ['companyName', 'companyName-footer', 'companyName-footer-2']) {
         assert.ok(html.includes(`id="${id}">貝達國際貿易有限公司<`), `${label}: static brand text in ${id}`);
@@ -35,6 +38,16 @@ for (const folder of ['zh', 'en', 'vn', 'jp', '__vn/vn']) {
     }
     for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
       const data = JSON.parse(match[1]);
+      const nodes = data['@graph'] || [data];
+      const organization = nodes.find(node => node['@type'] === 'Organization');
+      if (organization) {
+        assert.equal(organization.address.streetAddress, 'D2/10A Đoàn Nguyễn Tuân');
+        assert.equal(organization.address.addressLocality, 'Bình Chánh');
+        assert.equal(organization.address.addressCountry, 'VN');
+        assert.equal(organization.address.postalCode, '71810');
+        assert.ok(organization.alternateName.includes('BESTA'));
+        assert.ok(organization.alternateName.includes('CÔNG TY TNHH TM SX & DV BESTA SV'));
+      }
       if (lang === 'vn') {
         for (const node of data['@graph'] || [data]) {
           if (node['@type'] === 'WebPage') assert.equal(node.url, canonical(lang, file, vietnamHost), `${label}: schema page URL`);

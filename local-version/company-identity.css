@@ -1,0 +1,61 @@
+/* Company facts shared by the Vietnam home, about and contact pages. */
+.vn-local-section {
+    padding: 3rem 1.5rem;
+    background: #f8fafc;
+    color: #334155;
+}
+.vn-local-section + .vn-local-section {
+    padding-top: 0;
+}
+.vn-local-container {
+    max-width: 76rem;
+    margin: 0 auto;
+}
+.vn-local-eyebrow {
+    color: #0f766e;
+    font-size: .875rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+.vn-local-container h2 {
+    margin: .5rem 0 1rem;
+    color: #0b1f3a;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    line-height: 1.35;
+}
+.vn-local-container p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+.vn-local-container a {
+    color: #0f766e;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+}
+.vn-local-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.vn-local-facts > div {
+    padding: 1.25rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: .5rem;
+    overflow-wrap: anywhere;
+}
+.vn-local-facts dt {
+    margin-bottom: .5rem;
+    color: #0f766e;
+    font-weight: 700;
+}
+.vn-local-facts dd {
+    margin: 0;
+    line-height: 1.6;
+}
+@media (max-width: 640px) {
+    .vn-local-section { padding: 2rem 1rem; }
+    .vn-local-facts { grid-template-columns: 1fr; }
+}
